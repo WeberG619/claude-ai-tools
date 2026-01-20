@@ -1,0 +1,18 @@
+ERROR MESSAGE:
+Autodesk.Revit.Exceptions.InvalidOperationException: Cannot access this method without an active transaction.
+   at Autodesk.Revit.DB.Element.SetParameterValue(Parameter param, Object value)
+   at MyAddin.SetDoorMark(Document doc, ElementId doorId, String mark)
+
+CODE THAT CAUSED ERROR:
+public void SetDoorMark(Document doc, ElementId doorId, string mark)
+{
+    Element door = doc.GetElement(doorId);
+    Parameter markParam = door.get_Parameter(BuiltInParameter.ALL_MODEL_MARK);
+    markParam.Set(mark);  // Error occurs here
+}
+
+REVIT VERSION: 2024
+API VERSION: 2024.1
+
+WHAT I WAS TRYING TO DO:
+Set door mark parameter without starting a transaction

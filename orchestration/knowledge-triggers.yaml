@@ -1,0 +1,157 @@
+# Knowledge Base Auto-Loading Configuration
+# Maps project types to relevant knowledge files
+# Used by SessionStart hook to inject context
+
+version: "1.0"
+
+# Project type detection from Revit window title or memory
+project_patterns:
+
+  # Office/Commercial
+  - pattern: "OFFICE|COMMERCIAL|CORPORATE|WORKSPACE"
+    priority: 1
+    load:
+      - office-design.md
+      - egress-design.md
+      - hvac-systems.md
+      - florida-building-code-general.md
+    context: "Commercial office project - focus on open plan, core design, MEP coordination"
+
+  # Multi-Family Residential
+  - pattern: "MULTI.?FAMILY|APARTMENT|CONDO|RESIDENTIAL.*UNIT"
+    priority: 1
+    load:
+      - multi-family-design.md
+      - egress-design.md
+      - florida-building-code-accessibility.md
+      - plumbing-systems.md
+    context: "Multi-family residential - focus on unit types, corridors, accessibility"
+
+  # Single-Family Residential
+  - pattern: "SINGLE.?FAMILY|RESIDENCE|HOUSE|HOME|DUPLEX"
+    priority: 1
+    load:
+      - single-family-residential.md
+      - florida-residential-code.md
+      - kitchen-bath-design.md
+      - roof-assemblies.md
+    context: "Single-family residential - focus on Florida requirements, hurricane code"
+
+  # Healthcare
+  - pattern: "HEALTHCARE|MEDICAL|HOSPITAL|CLINIC|SURGERY|PATIENT"
+    priority: 1
+    load:
+      - healthcare-design.md
+      - florida-building-code-accessibility.md
+      - plumbing-systems.md
+      - hvac-systems.md
+    context: "Healthcare project - focus on FGI guidelines, patient flow, infection control"
+
+  # Hospitality
+  - pattern: "HOTEL|HOSPITALITY|RESORT|MOTEL|INN"
+    priority: 1
+    load:
+      - hospitality-design.md
+      - egress-design.md
+      - fire-protection.md
+      - kitchen-bath-design.md
+    context: "Hospitality project - focus on room types, FF&E, back-of-house"
+
+  # Retail
+  - pattern: "RETAIL|STORE|SHOP|MALL|TENANT"
+    priority: 1
+    load:
+      - retail-design.md
+      - egress-design.md
+      - florida-building-code-general.md
+      - electrical-systems.md
+    context: "Retail project - focus on storefront, tenant buildout, egress"
+
+  # Educational
+  - pattern: "SCHOOL|EDUCATION|UNIVERSITY|COLLEGE|CLASSROOM"
+    priority: 1
+    load:
+      - educational-design.md
+      - egress-design.md
+      - acoustics-design.md
+      - florida-building-code-accessibility.md
+    context: "Educational project - focus on classroom sizing, circulation, acoustics"
+
+  # Industrial/Warehouse
+  - pattern: "INDUSTRIAL|WAREHOUSE|MANUFACTURING|DISTRIBUTION|FACTORY"
+    priority: 1
+    load:
+      - industrial-design.md
+      - structural-basics.md
+      - fire-protection.md
+      - hvac-systems.md
+    context: "Industrial project - focus on clear heights, loading, fire separation"
+
+  # Religious/Assembly
+  - pattern: "CHURCH|RELIGIOUS|WORSHIP|ASSEMBLY|THEATER|AUDITORIUM"
+    priority: 1
+    load:
+      - religious-assembly.md
+      - egress-design.md
+      - acoustics-design.md
+      - fire-protection.md
+    context: "Assembly project - focus on seating capacity, egress width, acoustics"
+
+# Task-based triggers (supplement project type)
+task_patterns:
+
+  # CD Production
+  - pattern: "CD|CONSTRUCTION.?DOC|SHEET|DETAIL"
+    load:
+      - cd-standards.md
+      - annotation-standards.md
+      - detail-library.md
+    context: "CD production task - focus on documentation standards"
+
+  # Code Review
+  - pattern: "CODE|COMPLIANCE|EGRESS|ADA|ACCESSIBILITY"
+    load:
+      - code-compliance.md
+      - egress-design.md
+      - accessibility-detailed.md
+      - florida-building-code-general.md
+    context: "Code review task - focus on IBC/FBC compliance"
+
+  # MEP Coordination
+  - pattern: "MEP|COORDINATION|CLASH|CEILING.?SPACE"
+    load:
+      - mep-coordination.md
+      - hvac-systems.md
+      - electrical-systems.md
+      - plumbing-systems.md
+    context: "MEP coordination task - focus on routing, clearances"
+
+  # Cost Estimating
+  - pattern: "COST|ESTIMATE|BUDGET|VALUE"
+    load:
+      - cost-estimating.md
+      - value-engineering.md
+      - material-selection.md
+    context: "Cost task - focus on SF costs, VE options"
+
+  # Florida-Specific
+  - pattern: "FLORIDA|MIAMI|HVHZ|HURRICANE|WIND.?ZONE"
+    load:
+      - florida-requirements.md
+      - florida-hvhz-wind-requirements.md
+      - florida-building-code-general.md
+    context: "Florida project - focus on HVHZ, wind loads, impact glazing"
+
+# Default knowledge files (always useful)
+defaults:
+  - room-standards.md
+  - revit-best-practices.md
+
+# Memory integration
+memory:
+  # Check for project-specific memories
+  recall_project: true
+  # Check for recent corrections
+  recall_corrections: true
+  # Minimum importance for auto-recall
+  min_importance: 6

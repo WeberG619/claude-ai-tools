@@ -1,0 +1,73 @@
+#!/usr/bin/env python3
+"""
+Simple speech function for Claude to read summaries aloud.
+Usage: python speak.py "Text to speak"
+
+Uses Piper TTS (local neural voice) for FREE unlimited natural speech.
+No API limits, no cloud dependencies - runs 100% locally.
+"""
+
+import subprocess
+import sys
+import os
+from pathlib import Path
+
+# Voice model location
+VOICE_MODEL = Path(r"D:\_CLAUDE-TOOLS\voice-assistant\piper-voices\en_US-ryan-high.onnx")
+AUDIO_DIR = Path(r"D:\.playwright-mcp\audio")
+AUDIO_DIR.mkdir(parents=True, exist_ok=True)
+
+def speak(text):
+    """Speak text using Piper TTS (local neural voice - natural sounding)"""
+    try:
+        # Clean text for shell
+        safe_text = text.replace('"', "'")
+        safe_text = safe_text.replace('\n', ' ').replace('\r', '')
+        safe_text = ' '.join(safe_text.split())
+
+        if not safe_text:
+            return
+
+        # Generate unique temp file for audio
+        audio_file = AUDIO_DIR / f"speech_{os.getpid()}.wav"
+
+        # Use piper to generate speech, then playsound to play it
+        # All in one Python script executed by Windows Python
+        script = f'''
+import subprocess
+from playsound import playsound
+import os
+
+# Generate audio with piper
+proc = subprocess.run(
+    ['piper', '-m', r'{VOICE_MODEL}', '-f', r'{audio_file}'],
+    input="{safe_text}",
+    text=True,
+    capture_output=True
+)
+
+if proc.returncode == 0 and os.path.exists(r'{audio_file}'):
+    playsound(r'{audio_file}')
+    os.remove(r'{audio_file}')
+else:
+    print(f"Piper error: {{proc.stderr}}")
+'''
+
+        result = subprocess.run(
+            ["python", "-c", script],
+            capture_output=True,
+            timeout=180,
+            text=True
+        )
+
+        if result.returncode != 0:
+            print(f"Error: {result.stderr}")
+
+    except subprocess.TimeoutExpired:
+        print("Speech timed out")
+    except Exception as e:
+        print(f"Error: {e}")
+
+if __name__ == "__main__":
+    if len(sys.argv) > 1:
+        speak(" ".join(sys.argv[1:]))

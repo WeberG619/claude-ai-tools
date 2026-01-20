@@ -1,0 +1,145 @@
+# Revit Model Builder Skill
+
+## Overview
+This skill provides expertise for building Revit models programmatically through the RevitMCPBridge MCP server. It includes wall patterns, element placement strategies, and validation rules.
+
+## When to Use
+- Building Revit models from floor plan data
+- Creating walls, doors, windows programmatically
+- Converting PDF floor plans to Revit
+- Batch element placement
+
+## Core Patterns
+
+### Wall Creation Pattern
+```json
+{
+  "method": "createWall",
+  "params": {
+    "startPoint": [x1, y1, z1],
+    "endPoint": [x2, y2, z2],
+    "wallTypeId": 12345,
+    "levelId": 67890,
+    "height": 10.0,
+    "structural": false
+  }
+}
+```
+
+### Coordinate System
+- Origin (0,0) is typically at southwest corner or Grid 1/A intersection
+- X increases going EAST (right)
+- Y increases going NORTH (up)
+- Z increases going UP
+- All dimensions in FEET (Revit internal units)
+
+### Common Wall Types
+| Type | Typical Use | Thickness |
+|------|-------------|-----------|
+| Generic - 8" | Exterior | 8" (0.667') |
+| Generic - 6" | Interior load-bearing | 6" (0.5') |
+| Generic - 4" | Interior partition | 4" (0.333') |
+| CMU - 8" | Exterior (Florida) | 8" |
+
+### Grid-Based Placement
+When placing from grid specifications:
+1. Read grid_definition first to get grid positions
+2. Grid lines define CENTERLINES not faces
+3. Walls should align to grid centerlines
+4. Always verify orientation before placement
+
+### Perimeter Wall Strategy
+1. Start at southwest corner (origin)
+2. Go clockwise: South → East → North → West
+3. Ensure walls connect at corners
+4. Verify closed loop before interior walls
+
+### Door/Window Placement
+- Host wall must exist first
+- Location is along wall centerline
+- Height is sill height from level
+- Width/height from family type
+
+## Validation Rules
+
+### Before Placement
+- [ ] Revit project is open
+- [ ] Target level exists
+- [ ] Wall/family types exist in project
+- [ ] No modal dialogs open
+
+### After Placement
+- [ ] Element count increased as expected
+- [ ] Elements at correct locations
+- [ ] No overlapping walls
+- [ ] Doors/windows hosted properly
+
+### Common Errors
+| Error | Cause | Solution |
+|-------|-------|----------|
+| Null reference | No active document | Open Revit project first |
+| Type not found | Family not loaded | Load family or use available type |
+| Transaction failed | Invalid geometry | Check wall endpoints differ |
+| Timeout | Revit busy | Close dialogs, wait, retry |
+
+## Workflow Templates
+
+### Simple Rectangle Building
+```
+1. Define corners (4 points)
+2. Create 4 exterior walls (clockwise)
+3. Verify closed perimeter
+4. Add interior partitions
+5. Place doors at openings
+6. Place windows on exterior walls
+7. Validate model
+```
+
+### Floor Plan Reconstruction
+```
+1. Extract geometry from PDF
+2. Identify walls (thick lines, parallel pairs)
+3. Classify exterior vs interior
+4. Scale to real-world dimensions
+5. Place walls by segment
+6. Connect wall endpoints
+7. Detect and place doors
+8. Detect and place windows
+9. Validate vs source PDF
+```
+
+## Best Practices
+
+### Batching
+- Group related operations (all walls, then all doors)
+- Use single transaction for batch when possible
+- Verify after each batch, not each element
+
+### Error Recovery
+- Save before major operations
+- Track placed element IDs
+- Can delete batch if validation fails
+- Always have rollback plan
+
+### Performance
+- Query types once, cache results
+- Minimize MCP round-trips
+- Batch similar operations
+- Use element IDs not names for placement
+
+## MCP Methods Reference
+
+### Querying
+- `getLevels` - Get available levels
+- `getWallTypes` - Get wall types
+- `getElementsByCategory` - Get elements by category
+
+### Creating
+- `createWall` - Create wall segment
+- `placeFamilyInstance` - Place door/window/fixture
+- `createFloor` - Create floor by boundary
+
+### Verifying
+- `getElementLocation` - Check element position
+- `getElementsByCategory` - Count elements
+- `captureActiveView` - Screenshot for validation

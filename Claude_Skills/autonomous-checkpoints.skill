@@ -1,0 +1,229 @@
+# Autonomous Workflow Checkpoint Gates
+
+## Overview
+Defines approval gates for AI-driven workflows to ensure human oversight at critical decision points while maintaining automation efficiency.
+
+## Core Principle
+**Automate the routine, checkpoint the critical.**
+
+---
+
+## Checkpoint Gate Types
+
+### GATE TYPE 1: Confirmation Gate
+**Purpose**: Verify understanding before starting
+**When**: Beginning of multi-step workflows
+**Action**: Show plan, get "proceed" confirmation
+
+```
+Example:
+Claude: "I'll create 15 walls from the CAD import. Here's the plan:
+- 8 exterior walls (6" CMU)
+- 7 interior partitions (4" steel stud)
+Proceed?"
+User: "yes" / "no" / adjustments
+```
+
+### GATE TYPE 2: Validation Gate
+**Purpose**: Verify results match expectations
+**When**: After significant model changes
+**Action**: Show before/after, get approval to continue
+
+```
+Example:
+Claude: "Created 8 exterior walls. Screenshot comparison:
+[Expected from CAD] vs [Actual in Revit]
+Continue with interior walls?"
+```
+
+### GATE TYPE 3: Decision Gate
+**Purpose**: Choose between multiple valid approaches
+**When**: Architecture/design decisions
+**Action**: Present options with trade-offs
+
+```
+Example:
+Claude: "For the detail sheets, I can:
+A) 4x4 grid layout (16 details/sheet)
+B) Variable height layout (more details, less uniform)
+C) Match existing A502 pattern
+Which approach?"
+```
+
+### GATE TYPE 4: Safety Gate
+**Purpose**: Prevent irreversible changes
+**When**: Before deletions, overwrites, commits
+**Action**: Explicit confirmation with consequences
+
+```
+Example:
+Claude: "About to delete 23 walls to replace with corrected geometry.
+This cannot be undone without file revert.
+Type 'DELETE' to confirm."
+```
+
+---
+
+## Per-Pipeline Checkpoint Placement
+
+### CD Set Assembly Pipeline
+
+| Phase | Gate Type | Trigger |
+|-------|-----------|---------|
+| Sheet Setup | Confirmation | Before creating any sheets |
+| View Placement | Validation | After first sheet layout |
+| Detail Layout | Decision | If multiple layouts possible |
+| Final QC | Validation | Before marking complete |
+
+### Markup-to-Model Pipeline
+
+| Phase | Gate Type | Trigger |
+|-------|-----------|---------|
+| Source Confirmation | Confirmation | Before processing PDF/CAD |
+| Test Wall | Validation | After single wall placement |
+| Batch Walls | Validation | After all walls, before openings |
+| Final Comparison | Validation | Model vs source comparison |
+
+### Detail Transfer Pipeline
+
+| Phase | Gate Type | Trigger |
+|-------|-----------|---------|
+| Source Selection | Confirmation | Before loading source library |
+| Type Mapping | Decision | How to map types to target |
+| Batch Import | Validation | After sample import |
+| Sheet Placement | Validation | After first sheet layout |
+
+---
+
+## Implementing Checkpoints
+
+### In Pipeline Skills
+Mark checkpoints with:
+```
+**Checkpoint: [Description]**
+Gate Type: [Confirmation/Validation/Decision/Safety]
+Wait for: [What response is needed]
+```
+
+### In Claude's Behavior
+When reaching a checkpoint:
+1. Stop processing
+2. Present checkpoint information
+3. Wait for explicit user response
+4. Only proceed after approval
+
+### Checkpoint Communication Format
+```
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CHECKPOINT: [Phase Name]
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Status: [What was just completed]
+
+Results:
+• [Key metric 1]
+• [Key metric 2]
+
+Next Action: [What will happen if approved]
+
+Options:
+[1] Proceed as planned
+[2] Adjust [specific parameter]
+[3] Stop and review
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+```
+
+---
+
+## Bypass Conditions
+
+Checkpoints can be bypassed when:
+
+1. **Explicit user instruction**: "Run without stopping"
+2. **Trusted pattern**: Operation matches known-good pattern
+3. **Low risk**: Operation is fully reversible
+4. **Previous approval**: Same operation approved earlier in session
+
+### Bypass Syntax
+User can say:
+- "Proceed without checkpoints" - bypass all for this pipeline
+- "Trust the walls" - bypass specific operation type
+- "Auto-approve until sheets" - bypass until specific phase
+
+---
+
+## Error at Checkpoints
+
+If an error occurs AT a checkpoint:
+
+1. **Do not proceed**
+2. **Report error clearly**
+3. **Suggest recovery options**
+4. **Wait for guidance**
+
+```
+━━━ CHECKPOINT ERROR ━━━
+Phase: Wall Placement
+Issue: 3 walls failed to place (invalid host level)
+
+Options:
+[1] Skip failed walls, continue with rest
+[2] Fix level issue, retry all
+[3] Stop for investigation
+━━━━━━━━━━━━━━━━━━━━━━
+```
+
+---
+
+## Checkpoint Logging
+
+All checkpoints should be logged to memory:
+
+```python
+memory_store(
+    content=f"Checkpoint passed: {phase}",
+    memory_type="outcome",
+    project=current_project,
+    tags=["checkpoint", phase, "approved"]
+)
+```
+
+This enables:
+- Session continuity (know where we left off)
+- Pattern learning (which checkpoints usually pass)
+- Audit trail (what was approved when)
+
+---
+
+## Quick Reference
+
+| Situation | Gate Type | Response Needed |
+|-----------|-----------|-----------------|
+| Starting new pipeline | Confirmation | "proceed" or adjust |
+| Completed phase | Validation | "continue" or fix |
+| Multiple approaches | Decision | Selection A/B/C |
+| Deleting elements | Safety | Explicit "DELETE" |
+| Creating >10 elements | Validation | Review sample first |
+| Modifying existing | Safety | Confirm changes |
+
+---
+
+## For Full Autonomy
+
+When user wants full autonomous mode:
+
+1. **Define scope explicitly**: "Autonomous for wall placement only"
+2. **Set risk tolerance**: "Auto-approve under 10 elements"
+3. **Establish rollback**: "Checkpoint every 20 operations"
+4. **Require summary**: "Report at end of each phase"
+
+Even in autonomous mode, maintain:
+- Error stopping (always stop on error)
+- Session logging (always log what was done)
+- Final verification (always compare to source at end)
+
+---
+
+*Last Updated: 2026-01-06*
+*Version: 1.0*

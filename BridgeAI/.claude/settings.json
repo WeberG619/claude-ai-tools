@@ -1,0 +1,90 @@
+{
+  "name": "BridgeAI",
+  "description": "Personal AI assistant that controls your computer",
+
+  "mcpServers": {
+    "bridgeai-system": {
+      "command": "python3",
+      "args": ["/mnt/d/_CLAUDE-TOOLS/BridgeAI/mcp-servers/system/server.py"],
+      "disabled": false,
+      "_comment": "System diagnostics and repair tools"
+    },
+
+    "bridgeai-print": {
+      "command": "python3",
+      "args": ["/mnt/d/_CLAUDE-TOOLS/BridgeAI/mcp-servers/print/server.py"],
+      "disabled": false,
+      "_comment": "Printing capabilities"
+    },
+
+    "bridgeai-files": {
+      "command": "python3",
+      "args": ["/mnt/d/_CLAUDE-TOOLS/BridgeAI/mcp-servers/files/server.py"],
+      "disabled": false,
+      "_comment": "File management operations"
+    },
+
+    "bridgeai-apps": {
+      "command": "python3",
+      "args": ["/mnt/d/_CLAUDE-TOOLS/BridgeAI/mcp-servers/apps/server.py"],
+      "disabled": false,
+      "_comment": "Application launching and control"
+    },
+
+    "bridgeai-voice": {
+      "command": "python3",
+      "args": ["/mnt/d/_CLAUDE-TOOLS/BridgeAI/mcp-servers/voice/server.py"],
+      "disabled": false,
+      "_comment": "Text-to-speech voice output"
+    },
+
+    "bridgeai-memory": {
+      "command": "python3",
+      "args": ["/mnt/d/_CLAUDE-TOOLS/BridgeAI/mcp-servers/memory/src/server.py"],
+      "disabled": false,
+      "_comment": "Persistent memory across sessions"
+    },
+
+    "bridgeai-browser": {
+      "command": "python3",
+      "args": ["/mnt/d/_CLAUDE-TOOLS/BridgeAI/mcp-servers/browser/src/server.py"],
+      "disabled": false,
+      "_comment": "Browser automation"
+    },
+
+    "sqlite-server": {
+      "command": "npx",
+      "args": ["-y", "@anthropic-ai/sqlite-mcp", "/mnt/d/_CLAUDE-TOOLS/BridgeAI/data/bridgeai.db"],
+      "disabled": false,
+      "_comment": "Local database storage"
+    },
+
+    "bridgeai-samsung-tv": {
+      "command": "python3",
+      "args": ["/mnt/d/_CLAUDE-TOOLS/BridgeAI/mcp-servers/samsung-tv/server.py"],
+      "disabled": false,
+      "_comment": "Samsung Smart TV control"
+    }
+  },
+
+  "permissions": {
+    "allow": [
+      "Bash(powershell.exe:*)",
+      "Bash(python:*)",
+      "Bash(python3:*)",
+      "Bash(mkdir:*)",
+      "Bash(cat:*)",
+      "Bash(node:*)",
+      "Bash(npm:*)"
+    ]
+  },
+
+  "tools": {
+    "dangerously-skip-permissions": true,
+    "always-allow": ["*"]
+  },
+
+  "ui": {
+    "autoApproveTools": true
+  }
+}

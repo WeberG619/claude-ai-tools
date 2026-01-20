@@ -1,0 +1,3090 @@
+﻿{
+    "lightingFixtures":  [
+
+                         ],
+    "ceilings":  [
+
+                 ],
+    "wallTypes":  [
+                      {
+                          "wallTypeId":  219,
+                          "name":  "Generic - 6\"",
+                          "kind":  "Basic",
+                          "width":  0.5,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  220,
+                          "name":  "Interior - 5\" Partition (2-hr)",
+                          "kind":  "Basic",
+                          "width":  0.41666666666666663,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  221,
+                          "name":  "Exterior - Brick on Mtl. Stud",
+                          "kind":  "Basic",
+                          "width":  1.15625,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  249,
+                          "name":  "Generic - 8\"",
+                          "kind":  "Basic",
+                          "width":  0.6666666666666666,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  250,
+                          "name":  "Exterior - Brick on CMU",
+                          "kind":  "Basic",
+                          "width":  1.625,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  251,
+                          "name":  "Generic - 12\"",
+                          "kind":  "Basic",
+                          "width":  1.0,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  252,
+                          "name":  "Generic - 5\"",
+                          "kind":  "Basic",
+                          "width":  0.4166666666666667,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  253,
+                          "name":  "Generic - 12\" Masonry",
+                          "kind":  "Basic",
+                          "width":  0.96875,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  254,
+                          "name":  "Generic - 8\" Masonry",
+                          "kind":  "Basic",
+                          "width":  0.6354166666666666,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  255,
+                          "name":  "Generic - 6\" Masonry",
+                          "kind":  "Basic",
+                          "width":  0.46875,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  256,
+                          "name":  "Exterior - CMU Insulated",
+                          "kind":  "Basic",
+                          "width":  2.208333333333333,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  257,
+                          "name":  "Generic - 4\" Brick",
+                          "kind":  "Basic",
+                          "width":  0.3333333333333333,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  258,
+                          "name":  "Interior - 3 1/8\" Partition (1-hr)",
+                          "kind":  "Basic",
+                          "width":  0.2604166666666667,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  261,
+                          "name":  "Interior - 4 7/8\" Partition (1-hr)",
+                          "kind":  "Basic",
+                          "width":  0.40624999999999994,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  262,
+                          "name":  "Interior - 6 1/8\" Partition (2-hr)",
+                          "kind":  "Basic",
+                          "width":  0.5104166666666666,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  263,
+                          "name":  "Interior - 5 1/2\" Partition (1-hr)",
+                          "kind":  "Basic",
+                          "width":  0.45833333333333326,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  264,
+                          "name":  "Exterior - EIFS on Mtl. Stud",
+                          "kind":  "Basic",
+                          "width":  1.0208333333333333,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  21854,
+                          "name":  "Curtain Wall 1",
+                          "kind":  "Curtain",
+                          "width":  0.08333333333333333,
+                          "familyName":  "Curtain Wall"
+                      },
+                      {
+                          "wallTypeId":  29243,
+                          "name":  "Foundation - 12\" Concrete",
+                          "kind":  "Basic",
+                          "width":  1.0,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  29244,
+                          "name":  "Retaining - 12\" Concrete",
+                          "kind":  "Basic",
+                          "width":  1.0,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  43831,
+                          "name":  "Generic - 8\" - Filled",
+                          "kind":  "Basic",
+                          "width":  0.6666666666666666,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  45098,
+                          "name":  "Soffit - 1/2\" GWB \u0026 Metal Stud",
+                          "kind":  "Basic",
+                          "width":  0.16666666666666666,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  47381,
+                          "name":  "Exterior - Brick and CMU on MTL. Stud",
+                          "kind":  "Basic",
+                          "width":  1.15625,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  56765,
+                          "name":  "Storefront",
+                          "kind":  "Curtain",
+                          "width":  0.08333333333333333,
+                          "familyName":  "Curtain Wall"
+                      },
+                      {
+                          "wallTypeId":  56766,
+                          "name":  "Exterior Glazing",
+                          "kind":  "Curtain",
+                          "width":  0.08333333333333333,
+                          "familyName":  "Curtain Wall"
+                      },
+                      {
+                          "wallTypeId":  76677,
+                          "name":  "Exterior - Brick Over CMU w Metal Stud",
+                          "kind":  "Stacked",
+                          "width":  1.4895833333333333,
+                          "familyName":  "Stacked Wall"
+                      },
+                      {
+                          "wallTypeId":  83171,
+                          "name":  "Exterior - CMU on Mtl. Stud",
+                          "kind":  "Basic",
+                          "width":  1.4895833333333333,
+                          "familyName":  "Basic Wall"
+                      }
+                  ],
+    "structuralBeams":  [
+
+                        ],
+    "familyTypes":  [
+
+                    ],
+    "roofs":  [
+
+              ],
+    "railings":  [
+
+                 ],
+    "curtainWalls":  [
+
+                     ],
+    "phases":  [
+                   {
+                       "phaseId":  32440,
+                       "phaseName":  "Existing",
+                       "sequenceNumber":  1
+                   },
+                   {
+                       "phaseId":  118390,
+                       "phaseName":  "New Construction",
+                       "sequenceNumber":  2
+                   }
+               ],
+    "projectInfo":  {
+                        "success":  true,
+                        "result":  {
+                                       "name":  "Concrete Stain",
+                                       "number":  "Project Number",
+                                       "author":  "",
+                                       "status":  "Project Status",
+                                       "address":  "Enter address here",
+                                       "clientName":  "Hunter Panel",
+                                       "buildingName":  "",
+                                       "organizationName":  "",
+                                       "organizationDescription":  "",
+                                       "isPinned":  false,
+                                       "isWorkshared":  false,
+                                       "title":  "Concrete-Stain_EPMAR",
+                                       "pathname":  "D:\\003 - RESOURCES\\01 - REVIT LIBRARY\\REVIT LIBRARY - Custom\\Sheets\\Concrete-Stain_EPMAR.rvt"
+                                   }
+                    },
+    "schedules":  [
+                      {
+                          "scheduleId":  148263,
+                          "scheduleName":  "Development - All Data",
+                          "category":  "Unknown",
+                          "fieldCount":  67,
+                          "filterCount":  0,
+                          "isKeySchedule":  false,
+                          "isMaterialTakeoff":  true
+                      },
+                      {
+                          "scheduleId":  159714,
+                          "scheduleName":  "Development - All Materials",
+                          "category":  "Casework",
+                          "fieldCount":  36,
+                          "filterCount":  0,
+                          "isKeySchedule":  false,
+                          "isMaterialTakeoff":  true
+                      },
+                      {
+                          "scheduleId":  167366,
+                          "scheduleName":  "EPMAR Material Schedule - COPY TO PROJECT",
+                          "category":  "Floors",
+                          "fieldCount":  21,
+                          "filterCount":  1,
+                          "isKeySchedule":  false,
+                          "isMaterialTakeoff":  true
+                      },
+                      {
+                          "scheduleId":  168106,
+                          "scheduleName":  "Schedule - Rembrandt Polymer Stains",
+                          "category":  "Casework",
+                          "fieldCount":  6,
+                          "filterCount":  1,
+                          "isKeySchedule":  false,
+                          "isMaterialTakeoff":  true
+                      },
+                      {
+                          "scheduleId":  168112,
+                          "scheduleName":  "Schedule - Kemiko Stone Tone Stains",
+                          "category":  "Casework",
+                          "fieldCount":  7,
+                          "filterCount":  1,
+                          "isKeySchedule":  false,
+                          "isMaterialTakeoff":  true
+                      },
+                      {
+                          "scheduleId":  168740,
+                          "scheduleName":  "Schedule - Primers",
+                          "category":  "Casework",
+                          "fieldCount":  8,
+                          "filterCount":  1,
+                          "isKeySchedule":  false,
+                          "isMaterialTakeoff":  true
+                      },
+                      {
+                          "scheduleId":  168746,
+                          "scheduleName":  "Schedule - Floor Finishes",
+                          "category":  "Casework",
+                          "fieldCount":  8,
+                          "filterCount":  1,
+                          "isKeySchedule":  false,
+                          "isMaterialTakeoff":  true
+                      },
+                      {
+                          "scheduleId":  169138,
+                          "scheduleName":  "EPMAR Floor Schedule - COPY TO PROJECT",
+                          "category":  "Floors",
+                          "fieldCount":  41,
+                          "filterCount":  0,
+                          "isKeySchedule":  false,
+                          "isMaterialTakeoff":  false
+                      },
+                      {
+                          "scheduleId":  169934,
+                          "scheduleName":  "Development - Material Sample Schedule",
+                          "category":  "Casework",
+                          "fieldCount":  15,
+                          "filterCount":  0,
+                          "isKeySchedule":  false,
+                          "isMaterialTakeoff":  true
+                      },
+                      {
+                          "scheduleId":  169960,
+                          "scheduleName":  "Schedule - Slabs w/ Kemiko Stone Tone Stain",
+                          "category":  "Floors",
+                          "fieldCount":  5,
+                          "filterCount":  1,
+                          "isKeySchedule":  false,
+                          "isMaterialTakeoff":  false
+                      },
+                      {
+                          "scheduleId":  169967,
+                          "scheduleName":  "Schedule - Slabs w/ Rembrandt Polymer Stain",
+                          "category":  "Floors",
+                          "fieldCount":  5,
+                          "filterCount":  1,
+                          "isKeySchedule":  false,
+                          "isMaterialTakeoff":  false
+                      },
+                      {
+                          "scheduleId":  175004,
+                          "scheduleName":  "\u003cRevision Schedule\u003e",
+                          "category":  "Unknown",
+                          "fieldCount":  4,
+                          "filterCount":  0,
+                          "isKeySchedule":  false,
+                          "isMaterialTakeoff":  false
+                      },
+                      {
+                          "scheduleId":  175009,
+                          "scheduleName":  "\u003cRevision Schedule\u003e 2",
+                          "category":  "Unknown",
+                          "fieldCount":  4,
+                          "filterCount":  0,
+                          "isKeySchedule":  false,
+                          "isMaterialTakeoff":  false
+                      },
+                      {
+                          "scheduleId":  175014,
+                          "scheduleName":  "\u003cRevision Schedule\u003e 3",
+                          "category":  "Unknown",
+                          "fieldCount":  4,
+                          "filterCount":  0,
+                          "isKeySchedule":  false,
+                          "isMaterialTakeoff":  false
+                      },
+                      {
+                          "scheduleId":  175019,
+                          "scheduleName":  "\u003cRevision Schedule\u003e 4",
+                          "category":  "Unknown",
+                          "fieldCount":  4,
+                          "filterCount":  0,
+                          "isKeySchedule":  false,
+                          "isMaterialTakeoff":  false
+                      }
+                  ],
+    "columns":  [
+
+                ],
+    "furniture":  [
+
+                  ],
+    "pipes":  [
+
+              ],
+    "extractedAt":  "2025-12-08 08:42:53",
+    "fileName":  "Concrete-Stain_EPMAR.rvt",
+    "views":  [
+                  {
+                      "viewId":  32,
+                      "viewName":  "Concrete Slab with Rembrandt Polymer Stain",
+                      "viewType":  "FloorPlan",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  36,
+                      "viewName":  "Concrete Slab with Rembrandt Polymer Stain",
+                      "viewType":  "CeilingPlan",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  3651,
+                      "viewName":  "Project View",
+                      "viewType":  "ProjectBrowser",
+                      "isTemplate":  false,
+                      "scale":  24
+                  },
+                  {
+                      "viewId":  9948,
+                      "viewName":  "3",
+                      "viewType":  "FloorPlan",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  9952,
+                      "viewName":  "3",
+                      "viewType":  "CeilingPlan",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  29154,
+                      "viewName":  "East",
+                      "viewType":  "Elevation",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  29181,
+                      "viewName":  "North",
+                      "viewType":  "Elevation",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  29191,
+                      "viewName":  "West",
+                      "viewType":  "Elevation",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  29201,
+                      "viewName":  "South",
+                      "viewType":  "Elevation",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  29237,
+                      "viewName":  "Site",
+                      "viewType":  "FloorPlan",
+                      "isTemplate":  false,
+                      "scale":  240
+                  },
+                  {
+                      "viewId":  101014,
+                      "viewName":  "System Browser",
+                      "viewType":  "SystemBrowser",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  140798,
+                      "viewName":  "Concrete Slab with Kemiko Stone Tone Stain",
+                      "viewType":  "FloorPlan",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  140806,
+                      "viewName":  "Concrete Slab with Kemiko Stone Tone Stain",
+                      "viewType":  "CeilingPlan",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  142394,
+                      "viewName":  "Kemiko Stone Tone Stains",
+                      "viewType":  "DrawingSheet",
+                      "isTemplate":  false,
+                      "scale":  1
+                  },
+                  {
+                      "viewId":  142574,
+                      "viewName":  "Perspective View",
+                      "viewType":  "ThreeD",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  147765,
+                      "viewName":  "Tapered",
+                      "viewType":  "CeilingPlan",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  148263,
+                      "viewName":  "Development - All Data",
+                      "viewType":  "Schedule",
+                      "isTemplate":  false,
+                      "scale":  1
+                  },
+                  {
+                      "viewId":  148549,
+                      "viewName":  "Kemiko Stone Tone Samples",
+                      "viewType":  "FloorPlan",
+                      "isTemplate":  false,
+                      "scale":  4
+                  },
+                  {
+                      "viewId":  148557,
+                      "viewName":  "Kemiko Stone Tone Samples",
+                      "viewType":  "CeilingPlan",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  155007,
+                      "viewName":  "{3D}",
+                      "viewType":  "ThreeD",
+                      "isTemplate":  false,
+                      "scale":  2
+                  },
+                  {
+                      "viewId":  159714,
+                      "viewName":  "Development - All Materials",
+                      "viewType":  "Schedule",
+                      "isTemplate":  false,
+                      "scale":  1
+                  },
+                  {
+                      "viewId":  166489,
+                      "viewName":  "Rembrandt Polymer Stains",
+                      "viewType":  "DrawingSheet",
+                      "isTemplate":  false,
+                      "scale":  1
+                  },
+                  {
+                      "viewId":  167366,
+                      "viewName":  "EPMAR Material Schedule - COPY TO PROJECT",
+                      "viewType":  "Schedule",
+                      "isTemplate":  false,
+                      "scale":  1
+                  },
+                  {
+                      "viewId":  167434,
+                      "viewName":  "Rembrandt Samples - Standard Colors",
+                      "viewType":  "FloorPlan",
+                      "isTemplate":  false,
+                      "scale":  8
+                  },
+                  {
+                      "viewId":  167792,
+                      "viewName":  "Rembrandt Samples - Designer Colors",
+                      "viewType":  "FloorPlan",
+                      "isTemplate":  false,
+                      "scale":  8
+                  },
+                  {
+                      "viewId":  168106,
+                      "viewName":  "Schedule - Rembrandt Polymer Stains",
+                      "viewType":  "Schedule",
+                      "isTemplate":  false,
+                      "scale":  1
+                  },
+                  {
+                      "viewId":  168112,
+                      "viewName":  "Schedule - Kemiko Stone Tone Stains",
+                      "viewType":  "Schedule",
+                      "isTemplate":  false,
+                      "scale":  1
+                  },
+                  {
+                      "viewId":  168164,
+                      "viewName":  "Floor Finish Samples",
+                      "viewType":  "FloorPlan",
+                      "isTemplate":  false,
+                      "scale":  8
+                  },
+                  {
+                      "viewId":  168434,
+                      "viewName":  "Primer Samples",
+                      "viewType":  "FloorPlan",
+                      "isTemplate":  false,
+                      "scale":  8
+                  },
+                  {
+                      "viewId":  168724,
+                      "viewName":  "Primers and Finishes",
+                      "viewType":  "DrawingSheet",
+                      "isTemplate":  false,
+                      "scale":  1
+                  },
+                  {
+                      "viewId":  168740,
+                      "viewName":  "Schedule - Primers",
+                      "viewType":  "Schedule",
+                      "isTemplate":  false,
+                      "scale":  1
+                  },
+                  {
+                      "viewId":  168746,
+                      "viewName":  "Schedule - Floor Finishes",
+                      "viewType":  "Schedule",
+                      "isTemplate":  false,
+                      "scale":  1
+                  },
+                  {
+                      "viewId":  169115,
+                      "viewName":  "Slab Types",
+                      "viewType":  "DrawingSheet",
+                      "isTemplate":  false,
+                      "scale":  1
+                  },
+                  {
+                      "viewId":  169138,
+                      "viewName":  "EPMAR Floor Schedule - COPY TO PROJECT",
+                      "viewType":  "Schedule",
+                      "isTemplate":  false,
+                      "scale":  1
+                  },
+                  {
+                      "viewId":  169934,
+                      "viewName":  "Development - Material Sample Schedule",
+                      "viewType":  "Schedule",
+                      "isTemplate":  false,
+                      "scale":  1
+                  },
+                  {
+                      "viewId":  169960,
+                      "viewName":  "Schedule - Slabs w/ Kemiko Stone Tone Stain",
+                      "viewType":  "Schedule",
+                      "isTemplate":  false,
+                      "scale":  1
+                  },
+                  {
+                      "viewId":  169967,
+                      "viewName":  "Schedule - Slabs w/ Rembrandt Polymer Stain",
+                      "viewType":  "Schedule",
+                      "isTemplate":  false,
+                      "scale":  1
+                  },
+                  {
+                      "viewId":  175004,
+                      "viewName":  "\u003cRevision Schedule\u003e",
+                      "viewType":  "Schedule",
+                      "isTemplate":  false,
+                      "scale":  1
+                  },
+                  {
+                      "viewId":  175009,
+                      "viewName":  "\u003cRevision Schedule\u003e 2",
+                      "viewType":  "Schedule",
+                      "isTemplate":  false,
+                      "scale":  1
+                  },
+                  {
+                      "viewId":  175014,
+                      "viewName":  "\u003cRevision Schedule\u003e 3",
+                      "viewType":  "Schedule",
+                      "isTemplate":  false,
+                      "scale":  1
+                  },
+                  {
+                      "viewId":  175019,
+                      "viewName":  "\u003cRevision Schedule\u003e 4",
+                      "viewType":  "Schedule",
+                      "isTemplate":  false,
+                      "scale":  1
+                  }
+              ],
+    "plumbingFixtures":  [
+
+                         ],
+    "doors":  [
+
+              ],
+    "floorTypes":  [
+                       {
+                           "floorTypeId":  117725,
+                           "name":  "6\" Foundation Slab",
+                           "familyName":  "Foundation Slab",
+                           "isFoundation":  true
+                       },
+                       {
+                           "floorTypeId":  167395,
+                           "name":  "Concrete Slab with Kemiko Stone Tone Stain - Color as Specified",
+                           "familyName":  "Floor",
+                           "isFoundation":  false
+                       },
+                       {
+                           "floorTypeId":  169026,
+                           "name":  "Concrete Slab with Kemiko Stone Tone Stain - Malay Tan",
+                           "familyName":  "Floor",
+                           "isFoundation":  false
+                       },
+                       {
+                           "floorTypeId":  169027,
+                           "name":  "Concrete Slab with Kemiko Stone Tone Stain - Green Lawn",
+                           "familyName":  "Floor",
+                           "isFoundation":  false
+                       },
+                       {
+                           "floorTypeId":  169028,
+                           "name":  "Concrete Slab with Kemiko Stone Tone Stain - Black",
+                           "familyName":  "Floor",
+                           "isFoundation":  false
+                       },
+                       {
+                           "floorTypeId":  169029,
+                           "name":  "Concrete Slab with Kemiko Stone Tone Stain - Cola",
+                           "familyName":  "Floor",
+                           "isFoundation":  false
+                       },
+                       {
+                           "floorTypeId":  169030,
+                           "name":  "Concrete Slab with Kemiko Stone Tone Stain - English Red",
+                           "familyName":  "Floor",
+                           "isFoundation":  false
+                       },
+                       {
+                           "floorTypeId":  169031,
+                           "name":  "Concrete Slab with Kemiko Stone Tone Stain - Aqua Blue",
+                           "familyName":  "Floor",
+                           "isFoundation":  false
+                       },
+                       {
+                           "floorTypeId":  169032,
+                           "name":  "Concrete Slab with Kemiko Stone Tone Stain - Golden Wheat",
+                           "familyName":  "Floor",
+                           "isFoundation":  false
+                       },
+                       {
+                           "floorTypeId":  169033,
+                           "name":  "Concrete Slab with Kemiko Stone Tone Stain - Vintage Umber",
+                           "familyName":  "Floor",
+                           "isFoundation":  false
+                       },
+                       {
+                           "floorTypeId":  169133,
+                           "name":  "Concrete Slab with Rembrandt Polymer Stain - Color as Specified",
+                           "familyName":  "Floor",
+                           "isFoundation":  false
+                       },
+                       {
+                           "floorTypeId":  169896,
+                           "name":  "Concrete Slab with Rembrandt Polymer Stain - Adobe",
+                           "familyName":  "Floor",
+                           "isFoundation":  false
+                       },
+                       {
+                           "floorTypeId":  169897,
+                           "name":  "Concrete Slab with Rembrandt Polymer Stain - Black",
+                           "familyName":  "Floor",
+                           "isFoundation":  false
+                       },
+                       {
+                           "floorTypeId":  169898,
+                           "name":  "Concrete Slab with Rembrandt Polymer Stain - Oyster",
+                           "familyName":  "Floor",
+                           "isFoundation":  false
+                       },
+                       {
+                           "floorTypeId":  169899,
+                           "name":  "Concrete Slab with Rembrandt Polymer Stain - Sand",
+                           "familyName":  "Floor",
+                           "isFoundation":  false
+                       },
+                       {
+                           "floorTypeId":  169900,
+                           "name":  "Concrete Slab with Rembrandt Polymer Stain - Tweed",
+                           "familyName":  "Floor",
+                           "isFoundation":  false
+                       },
+                       {
+                           "floorTypeId":  169901,
+                           "name":  "Concrete Slab with Rembrandt Polymer Stain - White",
+                           "familyName":  "Floor",
+                           "isFoundation":  false
+                       },
+                       {
+                           "floorTypeId":  169902,
+                           "name":  "Concrete Slab with Rembrandt Polymer Stain - Phthalo Blue",
+                           "familyName":  "Floor",
+                           "isFoundation":  false
+                       },
+                       {
+                           "floorTypeId":  169903,
+                           "name":  "Concrete Slab with Rembrandt Polymer Stain - Phthalo Green",
+                           "familyName":  "Floor",
+                           "isFoundation":  false
+                       },
+                       {
+                           "floorTypeId":  169904,
+                           "name":  "Concrete Slab with Rembrandt Polymer Stain - Medium Yellow",
+                           "familyName":  "Floor",
+                           "isFoundation":  false
+                       },
+                       {
+                           "floorTypeId":  169905,
+                           "name":  "Concrete Slab with Rembrandt Polymer Stain - Yellow Oxide",
+                           "familyName":  "Floor",
+                           "isFoundation":  false
+                       },
+                       {
+                           "floorTypeId":  169906,
+                           "name":  "Concrete Slab with Rembrandt Polymer Stain - Monoazo Red",
+                           "familyName":  "Floor",
+                           "isFoundation":  false
+                       },
+                       {
+                           "floorTypeId":  169907,
+                           "name":  "Concrete Slab with Rembrandt Polymer Stain - Red Oxide",
+                           "familyName":  "Floor",
+                           "isFoundation":  false
+                       },
+                       {
+                           "floorTypeId":  169908,
+                           "name":  "Concrete Slab with Rembrandt Polymer Stain - Orange",
+                           "familyName":  "Floor",
+                           "isFoundation":  false
+                       },
+                       {
+                           "floorTypeId":  169909,
+                           "name":  "Concrete Slab with Rembrandt Polymer Stain - Raw Umber",
+                           "familyName":  "Floor",
+                           "isFoundation":  false
+                       },
+                       {
+                           "floorTypeId":  169910,
+                           "name":  "Concrete Slab with Rembrandt Polymer Stain - Raw Sienna",
+                           "familyName":  "Floor",
+                           "isFoundation":  false
+                       },
+                       {
+                           "floorTypeId":  169911,
+                           "name":  "Concrete Slab with Rembrandt Polymer Stain - Burnt Umber",
+                           "familyName":  "Floor",
+                           "isFoundation":  false
+                       },
+                       {
+                           "floorTypeId":  169912,
+                           "name":  "Concrete Slab with Rembrandt Polymer Stain - Burnt Sienna",
+                           "familyName":  "Floor",
+                           "isFoundation":  false
+                       },
+                       {
+                           "floorTypeId":  169913,
+                           "name":  "Concrete Slab with Rembrandt Polymer Stain - Violet",
+                           "familyName":  "Floor",
+                           "isFoundation":  false
+                       },
+                       {
+                           "floorTypeId":  169914,
+                           "name":  "Concrete Slab with Rembrandt Polymer Stain - Designer Finish - Antique",
+                           "familyName":  "Floor",
+                           "isFoundation":  false
+                       },
+                       {
+                           "floorTypeId":  169915,
+                           "name":  "Concrete Slab with Rembrandt Polymer Stain - Designer Finish - Azteca",
+                           "familyName":  "Floor",
+                           "isFoundation":  false
+                       },
+                       {
+                           "floorTypeId":  169916,
+                           "name":  "Concrete Slab with Rembrandt Polymer Stain - Designer Finish - Blue Suede",
+                           "familyName":  "Floor",
+                           "isFoundation":  false
+                       },
+                       {
+                           "floorTypeId":  169917,
+                           "name":  "Concrete Slab with Rembrandt Polymer Stain - Designer Finish - Burl",
+                           "familyName":  "Floor",
+                           "isFoundation":  false
+                       },
+                       {
+                           "floorTypeId":  169918,
+                           "name":  "Concrete Slab with Rembrandt Polymer Stain - Designer Finish - Camouflage",
+                           "familyName":  "Floor",
+                           "isFoundation":  false
+                       },
+                       {
+                           "floorTypeId":  169919,
+                           "name":  "Concrete Slab with Rembrandt Polymer Stain - Designer Finish - Cappuccino",
+                           "familyName":  "Floor",
+                           "isFoundation":  false
+                       },
+                       {
+                           "floorTypeId":  169920,
+                           "name":  "Concrete Slab with Rembrandt Polymer Stain - Designer Finish - Classy",
+                           "familyName":  "Floor",
+                           "isFoundation":  false
+                       },
+                       {
+                           "floorTypeId":  169921,
+                           "name":  "Concrete Slab with Rembrandt Polymer Stain - Designer Finish - Coral",
+                           "familyName":  "Floor",
+                           "isFoundation":  false
+                       },
+                       {
+                           "floorTypeId":  169922,
+                           "name":  "Concrete Slab with Rembrandt Polymer Stain - Designer Finish - Deep Sea",
+                           "familyName":  "Floor",
+                           "isFoundation":  false
+                       },
+                       {
+                           "floorTypeId":  169923,
+                           "name":  "Concrete Slab with Rembrandt Polymer Stain - Designer Finish - Midnight",
+                           "familyName":  "Floor",
+                           "isFoundation":  false
+                       },
+                       {
+                           "floorTypeId":  169924,
+                           "name":  "Concrete Slab with Rembrandt Polymer Stain - Designer Finish - Nebula",
+                           "familyName":  "Floor",
+                           "isFoundation":  false
+                       },
+                       {
+                           "floorTypeId":  169925,
+                           "name":  "Concrete Slab with Rembrandt Polymer Stain - Designer Finish - Slate",
+                           "familyName":  "Floor",
+                           "isFoundation":  false
+                       },
+                       {
+                           "floorTypeId":  169926,
+                           "name":  "Concrete Slab with Rembrandt Polymer Stain - Designer Finish - Soft Leather",
+                           "familyName":  "Floor",
+                           "isFoundation":  false
+                       },
+                       {
+                           "floorTypeId":  169927,
+                           "name":  "Concrete Slab with Rembrandt Polymer Stain - Designer Finish - Spring",
+                           "familyName":  "Floor",
+                           "isFoundation":  false
+                       },
+                       {
+                           "floorTypeId":  169928,
+                           "name":  "Concrete Slab with Rembrandt Polymer Stain - Designer Finish - Toast and Butter",
+                           "familyName":  "Floor",
+                           "isFoundation":  false
+                       },
+                       {
+                           "floorTypeId":  169929,
+                           "name":  "Concrete Slab with Rembrandt Polymer Stain - Designer Finish - Trip",
+                           "familyName":  "Floor",
+                           "isFoundation":  false
+                       }
+                   ],
+    "sheets":  [
+
+               ],
+    "structuralColumns":  [
+
+                          ],
+    "filePath":  "D:\\003 - RESOURCES\\01 - REVIT LIBRARY\\REVIT LIBRARY - Custom\\Sheets\\Concrete-Stain_EPMAR.rvt",
+    "stairs":  [
+
+               ],
+    "ceilingTypes":  [
+                         {
+                             "ceilingTypeId":  227,
+                             "name":  "Generic",
+                             "familyName":  "Basic Ceiling"
+                         },
+                         {
+                             "ceilingTypeId":  44748,
+                             "name":  "GWB on Mtl. Stud",
+                             "familyName":  "Compound Ceiling"
+                         },
+                         {
+                             "ceilingTypeId":  44749,
+                             "name":  "2\u0027 x 4\u0027 ACT System",
+                             "familyName":  "Compound Ceiling"
+                         },
+                         {
+                             "ceilingTypeId":  44750,
+                             "name":  "2\u0027 x 2\u0027 ACT System",
+                             "familyName":  "Compound Ceiling"
+                         },
+                         {
+                             "ceilingTypeId":  44798,
+                             "name":  "Generic - 4\"",
+                             "familyName":  "Roof Soffit"
+                         }
+                     ],
+    "walls":  [
+
+              ],
+    "foundations":  [
+
+                    ],
+    "rooms":  [
+
+              ],
+    "worksets":  [
+
+                 ],
+    "floors":  [
+                   {
+                       "floorId":  167378,
+                       "typeName":  "Concrete Slab with Kemiko Stone Tone Stain - Malay Tan",
+                       "typeId":  169026,
+                       "level":  "Concrete Slab with Kemiko Stone Tone Stain",
+                       "area":  100.0,
+                       "thickness":  1.0052083333333333,
+                       "structural":  false
+                   },
+                   {
+                       "floorId":  168831,
+                       "typeName":  "Concrete Slab with Kemiko Stone Tone Stain - Green Lawn",
+                       "typeId":  169027,
+                       "level":  "Concrete Slab with Kemiko Stone Tone Stain",
+                       "area":  100.0,
+                       "thickness":  1.0052083333333333,
+                       "structural":  false
+                   },
+                   {
+                       "floorId":  168850,
+                       "typeName":  "Concrete Slab with Kemiko Stone Tone Stain - Black",
+                       "typeId":  169028,
+                       "level":  "Concrete Slab with Kemiko Stone Tone Stain",
+                       "area":  100.0,
+                       "thickness":  1.0052083333333333,
+                       "structural":  false
+                   },
+                   {
+                       "floorId":  168869,
+                       "typeName":  "Concrete Slab with Kemiko Stone Tone Stain - Cola",
+                       "typeId":  169029,
+                       "level":  "Concrete Slab with Kemiko Stone Tone Stain",
+                       "area":  100.0,
+                       "thickness":  1.0052083333333333,
+                       "structural":  false
+                   },
+                   {
+                       "floorId":  168892,
+                       "typeName":  "Concrete Slab with Kemiko Stone Tone Stain - English Red",
+                       "typeId":  169030,
+                       "level":  "Concrete Slab with Kemiko Stone Tone Stain",
+                       "area":  100.0,
+                       "thickness":  1.0052083333333333,
+                       "structural":  false
+                   },
+                   {
+                       "floorId":  168909,
+                       "typeName":  "Concrete Slab with Kemiko Stone Tone Stain - Aqua Blue",
+                       "typeId":  169031,
+                       "level":  "Concrete Slab with Kemiko Stone Tone Stain",
+                       "area":  100.0,
+                       "thickness":  1.0052083333333333,
+                       "structural":  false
+                   },
+                   {
+                       "floorId":  168924,
+                       "typeName":  "Concrete Slab with Kemiko Stone Tone Stain - Golden Wheat",
+                       "typeId":  169032,
+                       "level":  "Concrete Slab with Kemiko Stone Tone Stain",
+                       "area":  100.0,
+                       "thickness":  1.0052083333333333,
+                       "structural":  false
+                   },
+                   {
+                       "floorId":  168941,
+                       "typeName":  "Concrete Slab with Kemiko Stone Tone Stain - Vintage Umber",
+                       "typeId":  169033,
+                       "level":  "Concrete Slab with Kemiko Stone Tone Stain",
+                       "area":  100.0,
+                       "thickness":  1.0052083333333333,
+                       "structural":  false
+                   },
+                   {
+                       "floorId":  169012,
+                       "typeName":  "Concrete Slab with Kemiko Stone Tone Stain - Color as Specified",
+                       "typeId":  167395,
+                       "level":  "Concrete Slab with Kemiko Stone Tone Stain",
+                       "area":  100.0,
+                       "thickness":  1.0052083333333333,
+                       "structural":  false
+                   },
+                   {
+                       "floorId":  169062,
+                       "typeName":  "Concrete Slab with Rembrandt Polymer Stain - Color as Specified",
+                       "typeId":  169133,
+                       "level":  "Concrete Slab with Rembrandt Polymer Stain",
+                       "area":  100.0,
+                       "thickness":  1.0052083333333333,
+                       "structural":  false
+                   },
+                   {
+                       "floorId":  169156,
+                       "typeName":  "Concrete Slab with Rembrandt Polymer Stain - Adobe",
+                       "typeId":  169896,
+                       "level":  "Concrete Slab with Rembrandt Polymer Stain",
+                       "area":  100.0,
+                       "thickness":  1.0052083333333333,
+                       "structural":  false
+                   },
+                   {
+                       "floorId":  169173,
+                       "typeName":  "Concrete Slab with Rembrandt Polymer Stain - Black",
+                       "typeId":  169897,
+                       "level":  "Concrete Slab with Rembrandt Polymer Stain",
+                       "area":  100.0,
+                       "thickness":  1.0052083333333333,
+                       "structural":  false
+                   },
+                   {
+                       "floorId":  169192,
+                       "typeName":  "Concrete Slab with Rembrandt Polymer Stain - Oyster",
+                       "typeId":  169898,
+                       "level":  "Concrete Slab with Rembrandt Polymer Stain",
+                       "area":  100.0,
+                       "thickness":  1.0052083333333333,
+                       "structural":  false
+                   },
+                   {
+                       "floorId":  169209,
+                       "typeName":  "Concrete Slab with Rembrandt Polymer Stain - Sand",
+                       "typeId":  169899,
+                       "level":  "Concrete Slab with Rembrandt Polymer Stain",
+                       "area":  100.0,
+                       "thickness":  1.0052083333333333,
+                       "structural":  false
+                   },
+                   {
+                       "floorId":  169224,
+                       "typeName":  "Concrete Slab with Rembrandt Polymer Stain - Tweed",
+                       "typeId":  169900,
+                       "level":  "Concrete Slab with Rembrandt Polymer Stain",
+                       "area":  100.0,
+                       "thickness":  1.0052083333333333,
+                       "structural":  false
+                   },
+                   {
+                       "floorId":  169241,
+                       "typeName":  "Concrete Slab with Rembrandt Polymer Stain - White",
+                       "typeId":  169901,
+                       "level":  "Concrete Slab with Rembrandt Polymer Stain",
+                       "area":  100.0,
+                       "thickness":  1.0052083333333333,
+                       "structural":  false
+                   },
+                   {
+                       "floorId":  169266,
+                       "typeName":  "Concrete Slab with Rembrandt Polymer Stain - Phthalo Blue",
+                       "typeId":  169902,
+                       "level":  "Concrete Slab with Rembrandt Polymer Stain",
+                       "area":  100.0,
+                       "thickness":  1.0052083333333333,
+                       "structural":  false
+                   },
+                   {
+                       "floorId":  169275,
+                       "typeName":  "Concrete Slab with Rembrandt Polymer Stain - Phthalo Green",
+                       "typeId":  169903,
+                       "level":  "Concrete Slab with Rembrandt Polymer Stain",
+                       "area":  100.0,
+                       "thickness":  1.0052083333333333,
+                       "structural":  false
+                   },
+                   {
+                       "floorId":  169284,
+                       "typeName":  "Concrete Slab with Rembrandt Polymer Stain - Medium Yellow",
+                       "typeId":  169904,
+                       "level":  "Concrete Slab with Rembrandt Polymer Stain",
+                       "area":  100.0,
+                       "thickness":  1.0052083333333333,
+                       "structural":  false
+                   },
+                   {
+                       "floorId":  169293,
+                       "typeName":  "Concrete Slab with Rembrandt Polymer Stain - Yellow Oxide",
+                       "typeId":  169905,
+                       "level":  "Concrete Slab with Rembrandt Polymer Stain",
+                       "area":  100.0,
+                       "thickness":  1.0052083333333333,
+                       "structural":  false
+                   },
+                   {
+                       "floorId":  169302,
+                       "typeName":  "Concrete Slab with Rembrandt Polymer Stain - Monoazo Red",
+                       "typeId":  169906,
+                       "level":  "Concrete Slab with Rembrandt Polymer Stain",
+                       "area":  100.0,
+                       "thickness":  1.0052083333333333,
+                       "structural":  false
+                   },
+                   {
+                       "floorId":  169311,
+                       "typeName":  "Concrete Slab with Rembrandt Polymer Stain - Red Oxide",
+                       "typeId":  169907,
+                       "level":  "Concrete Slab with Rembrandt Polymer Stain",
+                       "area":  100.0,
+                       "thickness":  1.0052083333333333,
+                       "structural":  false
+                   },
+                   {
+                       "floorId":  169320,
+                       "typeName":  "Concrete Slab with Rembrandt Polymer Stain - Orange",
+                       "typeId":  169908,
+                       "level":  "Concrete Slab with Rembrandt Polymer Stain",
+                       "area":  100.0,
+                       "thickness":  1.0052083333333333,
+                       "structural":  false
+                   },
+                   {
+                       "floorId":  169343,
+                       "typeName":  "Concrete Slab with Rembrandt Polymer Stain - Raw Umber",
+                       "typeId":  169909,
+                       "level":  "Concrete Slab with Rembrandt Polymer Stain",
+                       "area":  100.0,
+                       "thickness":  1.0052083333333333,
+                       "structural":  false
+                   },
+                   {
+                       "floorId":  169351,
+                       "typeName":  "Concrete Slab with Rembrandt Polymer Stain - Raw Sienna",
+                       "typeId":  169910,
+                       "level":  "Concrete Slab with Rembrandt Polymer Stain",
+                       "area":  100.0,
+                       "thickness":  1.0052083333333333,
+                       "structural":  false
+                   },
+                   {
+                       "floorId":  169359,
+                       "typeName":  "Concrete Slab with Rembrandt Polymer Stain - Burnt Umber",
+                       "typeId":  169911,
+                       "level":  "Concrete Slab with Rembrandt Polymer Stain",
+                       "area":  100.0,
+                       "thickness":  1.0052083333333333,
+                       "structural":  false
+                   },
+                   {
+                       "floorId":  169367,
+                       "typeName":  "Concrete Slab with Rembrandt Polymer Stain - Burnt Sienna",
+                       "typeId":  169912,
+                       "level":  "Concrete Slab with Rembrandt Polymer Stain",
+                       "area":  100.0,
+                       "thickness":  1.0052083333333333,
+                       "structural":  false
+                   },
+                   {
+                       "floorId":  169375,
+                       "typeName":  "Concrete Slab with Rembrandt Polymer Stain - Violet",
+                       "typeId":  169913,
+                       "level":  "Concrete Slab with Rembrandt Polymer Stain",
+                       "area":  100.0,
+                       "thickness":  1.0052083333333333,
+                       "structural":  false
+                   },
+                   {
+                       "floorId":  169383,
+                       "typeName":  "Concrete Slab with Rembrandt Polymer Stain - Designer Finish - Antique",
+                       "typeId":  169914,
+                       "level":  "Concrete Slab with Rembrandt Polymer Stain",
+                       "area":  100.0,
+                       "thickness":  1.0052083333333333,
+                       "structural":  false
+                   },
+                   {
+                       "floorId":  169391,
+                       "typeName":  "Concrete Slab with Rembrandt Polymer Stain - Designer Finish - Azteca",
+                       "typeId":  169915,
+                       "level":  "Concrete Slab with Rembrandt Polymer Stain",
+                       "area":  100.0,
+                       "thickness":  1.0052083333333333,
+                       "structural":  false
+                   },
+                   {
+                       "floorId":  169420,
+                       "typeName":  "Concrete Slab with Rembrandt Polymer Stain - Designer Finish - Blue Suede",
+                       "typeId":  169916,
+                       "level":  "Concrete Slab with Rembrandt Polymer Stain",
+                       "area":  100.0,
+                       "thickness":  1.0052083333333333,
+                       "structural":  false
+                   },
+                   {
+                       "floorId":  169428,
+                       "typeName":  "Concrete Slab with Rembrandt Polymer Stain - Designer Finish - Burl",
+                       "typeId":  169917,
+                       "level":  "Concrete Slab with Rembrandt Polymer Stain",
+                       "area":  100.0,
+                       "thickness":  1.0052083333333333,
+                       "structural":  false
+                   },
+                   {
+                       "floorId":  169436,
+                       "typeName":  "Concrete Slab with Rembrandt Polymer Stain - Designer Finish - Camouflage",
+                       "typeId":  169918,
+                       "level":  "Concrete Slab with Rembrandt Polymer Stain",
+                       "area":  100.0,
+                       "thickness":  1.0052083333333333,
+                       "structural":  false
+                   },
+                   {
+                       "floorId":  169444,
+                       "typeName":  "Concrete Slab with Rembrandt Polymer Stain - Designer Finish - Cappuccino",
+                       "typeId":  169919,
+                       "level":  "Concrete Slab with Rembrandt Polymer Stain",
+                       "area":  100.0,
+                       "thickness":  1.0052083333333333,
+                       "structural":  false
+                   },
+                   {
+                       "floorId":  169452,
+                       "typeName":  "Concrete Slab with Rembrandt Polymer Stain - Designer Finish - Classy",
+                       "typeId":  169920,
+                       "level":  "Concrete Slab with Rembrandt Polymer Stain",
+                       "area":  100.0,
+                       "thickness":  1.0052083333333333,
+                       "structural":  false
+                   },
+                   {
+                       "floorId":  169460,
+                       "typeName":  "Concrete Slab with Rembrandt Polymer Stain - Designer Finish - Coral",
+                       "typeId":  169921,
+                       "level":  "Concrete Slab with Rembrandt Polymer Stain",
+                       "area":  100.0,
+                       "thickness":  1.0052083333333333,
+                       "structural":  false
+                   },
+                   {
+                       "floorId":  169468,
+                       "typeName":  "Concrete Slab with Rembrandt Polymer Stain - Designer Finish - Deep Sea",
+                       "typeId":  169922,
+                       "level":  "Concrete Slab with Rembrandt Polymer Stain",
+                       "area":  100.0,
+                       "thickness":  1.0052083333333333,
+                       "structural":  false
+                   },
+                   {
+                       "floorId":  169497,
+                       "typeName":  "Concrete Slab with Rembrandt Polymer Stain - Designer Finish - Midnight",
+                       "typeId":  169923,
+                       "level":  "Concrete Slab with Rembrandt Polymer Stain",
+                       "area":  100.0,
+                       "thickness":  1.0052083333333333,
+                       "structural":  false
+                   },
+                   {
+                       "floorId":  169505,
+                       "typeName":  "Concrete Slab with Rembrandt Polymer Stain - Designer Finish - Nebula",
+                       "typeId":  169924,
+                       "level":  "Concrete Slab with Rembrandt Polymer Stain",
+                       "area":  100.0,
+                       "thickness":  1.0052083333333333,
+                       "structural":  false
+                   },
+                   {
+                       "floorId":  169513,
+                       "typeName":  "Concrete Slab with Rembrandt Polymer Stain - Designer Finish - Slate",
+                       "typeId":  169925,
+                       "level":  "Concrete Slab with Rembrandt Polymer Stain",
+                       "area":  100.0,
+                       "thickness":  1.0052083333333333,
+                       "structural":  false
+                   },
+                   {
+                       "floorId":  169521,
+                       "typeName":  "Concrete Slab with Rembrandt Polymer Stain - Designer Finish - Soft Leather",
+                       "typeId":  169926,
+                       "level":  "Concrete Slab with Rembrandt Polymer Stain",
+                       "area":  100.0,
+                       "thickness":  1.0052083333333333,
+                       "structural":  false
+                   },
+                   {
+                       "floorId":  169529,
+                       "typeName":  "Concrete Slab with Rembrandt Polymer Stain - Designer Finish - Spring",
+                       "typeId":  169927,
+                       "level":  "Concrete Slab with Rembrandt Polymer Stain",
+                       "area":  100.0,
+                       "thickness":  1.0052083333333333,
+                       "structural":  false
+                   },
+                   {
+                       "floorId":  169537,
+                       "typeName":  "Concrete Slab with Rembrandt Polymer Stain - Designer Finish - Toast and Butter",
+                       "typeId":  169928,
+                       "level":  "Concrete Slab with Rembrandt Polymer Stain",
+                       "area":  100.0,
+                       "thickness":  1.0052083333333333,
+                       "structural":  false
+                   },
+                   {
+                       "floorId":  169545,
+                       "typeName":  "Concrete Slab with Rembrandt Polymer Stain - Designer Finish - Trip",
+                       "typeId":  169929,
+                       "level":  "Concrete Slab with Rembrandt Polymer Stain",
+                       "area":  100.0,
+                       "thickness":  1.0052083333333333,
+                       "structural":  false
+                   }
+               ],
+    "grids":  [
+
+              ],
+    "ducts":  [
+
+              ],
+    "windowTypes":  [
+                        {
+                            "typeId":  60407,
+                            "familyName":  "Fixed",
+                            "typeName":  "36\" x 48\"",
+                            "width":  3.0,
+                            "height":  4.0,
+                            "isActive":  false
+                        },
+                        {
+                            "typeId":  60409,
+                            "familyName":  "Fixed",
+                            "typeName":  "24\" x 48\"",
+                            "width":  2.0,
+                            "height":  4.0,
+                            "isActive":  false
+                        },
+                        {
+                            "typeId":  60411,
+                            "familyName":  "Fixed",
+                            "typeName":  "24\" x 24\"",
+                            "width":  2.0,
+                            "height":  2.0,
+                            "isActive":  false
+                        },
+                        {
+                            "typeId":  60413,
+                            "familyName":  "Fixed",
+                            "typeName":  "16\" x 24\"",
+                            "width":  1.3333333333333333,
+                            "height":  2.0,
+                            "isActive":  false
+                        },
+                        {
+                            "typeId":  60415,
+                            "familyName":  "Fixed",
+                            "typeName":  "16\" x 48\"",
+                            "width":  1.3333333333333333,
+                            "height":  4.0,
+                            "isActive":  false
+                        },
+                        {
+                            "typeId":  60417,
+                            "familyName":  "Fixed",
+                            "typeName":  "16\" x 72\"",
+                            "width":  1.3333333333333333,
+                            "height":  6.0,
+                            "isActive":  false
+                        },
+                        {
+                            "typeId":  60419,
+                            "familyName":  "Fixed",
+                            "typeName":  "24\" x 72\"",
+                            "width":  2.0,
+                            "height":  6.0,
+                            "isActive":  false
+                        },
+                        {
+                            "typeId":  60421,
+                            "familyName":  "Fixed",
+                            "typeName":  "36\" x 24\"",
+                            "width":  3.0,
+                            "height":  2.0,
+                            "isActive":  false
+                        },
+                        {
+                            "typeId":  60423,
+                            "familyName":  "Fixed",
+                            "typeName":  "36\" x 72\"",
+                            "width":  3.0,
+                            "height":  6.0,
+                            "isActive":  false
+                        }
+                    ],
+    "loadedFamilies":  [
+                           {
+                               "familyId":  118392,
+                               "name":  "Area Tag",
+                               "category":  "Area Tags",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  127959,
+                               "name":  "Baluster - Round",
+                               "category":  "Balusters",
+                               "typeCount":  3,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  128421,
+                               "name":  "Baluster - Square",
+                               "category":  "Balusters",
+                               "typeCount":  4,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  118596,
+                               "name":  "Callout Head",
+                               "category":  "Callout Heads",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  159720,
+                               "name":  "2008_Material Sample",
+                               "category":  "Casework",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  122790,
+                               "name":  "Rectangular Column",
+                               "category":  "Columns",
+                               "typeCount":  3,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  21943,
+                               "name":  "Empty System Panel",
+                               "category":  "Curtain Panels",
+                               "typeCount":  1,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  20915,
+                               "name":  "System Panel",
+                               "category":  "Curtain Panels",
+                               "typeCount":  3,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  28596,
+                               "name":  "Circular Mullion",
+                               "category":  "Curtain Wall Mullions",
+                               "typeCount":  1,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  43497,
+                               "name":  "L Corner Mullion",
+                               "category":  "Curtain Wall Mullions",
+                               "typeCount":  1,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  43509,
+                               "name":  "Quad Corner Mullion",
+                               "category":  "Curtain Wall Mullions",
+                               "typeCount":  1,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  28595,
+                               "name":  "Rectangular Mullion",
+                               "category":  "Curtain Wall Mullions",
+                               "typeCount":  3,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  43505,
+                               "name":  "Trapezoid Corner Mullion",
+                               "category":  "Curtain Wall Mullions",
+                               "typeCount":  1,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  43501,
+                               "name":  "V Corner Mullion",
+                               "category":  "Curtain Wall Mullions",
+                               "typeCount":  1,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  110386,
+                               "name":  "Brick Standard",
+                               "category":  "Detail Items",
+                               "typeCount":  3,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  110049,
+                               "name":  "W-Wide Flange-Section",
+                               "category":  "Detail Items",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  118993,
+                               "name":  "Door Tag",
+                               "category":  "Door Tags",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  123210,
+                               "name":  "Single-Flush",
+                               "category":  "Doors",
+                               "typeCount":  7,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  173124,
+                               "name":  "Elevation Mark Circle - Upgrade",
+                               "category":  "Elevation Marks",
+                               "typeCount":  2,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  173353,
+                               "name":  "Elevation Mark Pointer_Circle",
+                               "category":  "Elevation Marks",
+                               "typeCount":  4,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  172853,
+                               "name":  "Elevation Mark Pointer_Square",
+                               "category":  "Elevation Marks",
+                               "typeCount":  2,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  172635,
+                               "name":  "Elevation Mark Square - Upgrade",
+                               "category":  "Elevation Marks",
+                               "typeCount":  2,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  142974,
+                               "name":  "Floor Annotation",
+                               "category":  "Floor Tags",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  130914,
+                               "name":  "Desk",
+                               "category":  "Furniture",
+                               "typeCount":  3,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  118802,
+                               "name":  "Centerline",
+                               "category":  "Generic Annotations",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  120322,
+                               "name":  "North Arrow 2",
+                               "category":  "Generic Annotations",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  143183,
+                               "name":  "GenericTag",
+                               "category":  "Generic Model Tags",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  119524,
+                               "name":  "Grid Head - Circle",
+                               "category":  "Grid Heads",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  119719,
+                               "name":  "Grid Head - No Bubble",
+                               "category":  "Grid Heads",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  117754,
+                               "name":  "Keynote Tag",
+                               "category":  "Keynote Tags",
+                               "typeCount":  3,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  119914,
+                               "name":  "Level Head - Circle",
+                               "category":  "Level Heads",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  120130,
+                               "name":  "Level Head - No Bubble",
+                               "category":  "Level Heads",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  117968,
+                               "name":  "Material Tag",
+                               "category":  "Material Tags",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  124428,
+                               "name":  "Parking Space",
+                               "category":  "Parking",
+                               "typeCount":  4,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  124857,
+                               "name":  "Tree - Deciduous",
+                               "category":  "Planting",
+                               "typeCount":  6,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  125693,
+                               "name":  "Circular Handrail",
+                               "category":  "Profiles",
+                               "typeCount":  2,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  126344,
+                               "name":  "Fascia-Flat",
+                               "category":  "Profiles",
+                               "typeCount":  5,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  126570,
+                               "name":  "Gutter Profile-Bevel",
+                               "category":  "Profiles",
+                               "typeCount":  7,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  126828,
+                               "name":  "Parapet Cap-Precast",
+                               "category":  "Profiles",
+                               "typeCount":  4,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  125912,
+                               "name":  "Rectangular Handrail",
+                               "category":  "Profiles",
+                               "typeCount":  2,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  127062,
+                               "name":  "Reveal-Brick Course",
+                               "category":  "Profiles",
+                               "typeCount":  3,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  127286,
+                               "name":  "Sill-Precast",
+                               "category":  "Profiles",
+                               "typeCount":  3,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  127510,
+                               "name":  "Slab Edge-Thickened",
+                               "category":  "Profiles",
+                               "typeCount":  3,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  138161,
+                               "name":  "Stair Nosing - Lip",
+                               "category":  "Profiles",
+                               "typeCount":  2,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  138396,
+                               "name":  "Stair Nosing - Std",
+                               "category":  "Profiles",
+                               "typeCount":  2,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  127736,
+                               "name":  "Wall Sweep-Brick Soldier Course",
+                               "category":  "Profiles",
+                               "typeCount":  3,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  120524,
+                               "name":  "Room Tag",
+                               "category":  "Room Tags",
+                               "typeCount":  3,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  120736,
+                               "name":  "Section Head - Filled",
+                               "category":  "Section Marks",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  120962,
+                               "name":  "Section Head - no arrow",
+                               "category":  "Section Marks",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  121160,
+                               "name":  "Section Head - Open",
+                               "category":  "Section Marks",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  121362,
+                               "name":  "Section Tail - Filled",
+                               "category":  "Section Marks",
+                               "typeCount":  2,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  121576,
+                               "name":  "Section Tail - Filled Horizontal",
+                               "category":  "Section Marks",
+                               "typeCount":  2,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  121790,
+                               "name":  "Spot Elevation - Crosshair",
+                               "category":  "Spot Elevation Symbols",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  121980,
+                               "name":  "Spot Elevation - Target Filled",
+                               "category":  "Spot Elevation Symbols",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  138633,
+                               "name":  "Stair Tag",
+                               "category":  "Stair Tags",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  128890,
+                               "name":  "W-Wide Flange-Column",
+                               "category":  "Structural Columns",
+                               "typeCount":  2,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  129390,
+                               "name":  "W-Wide Flange",
+                               "category":  "Structural Framing",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  146434,
+                               "name":  "A 8.5 x 11 Vertical - ARCAT",
+                               "category":  "Title Blocks",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  166865,
+                               "name":  "ARCAT E1 30 x 42 Horizontal",
+                               "category":  "Title Blocks",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  145018,
+                               "name":  "B 11 x 17 Horizontal",
+                               "category":  "Title Blocks",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  145688,
+                               "name":  "B 11 x 17 Horizontal - ARCAT",
+                               "category":  "Title Blocks",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  119192,
+                               "name":  "E1 30 x 42 Horizontal",
+                               "category":  "Title Blocks",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  122183,
+                               "name":  "View Title",
+                               "category":  "View Titles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  133614,
+                               "name":  "Wall Annotation",
+                               "category":  "Wall Tags",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  122388,
+                               "name":  "Wall Tag",
+                               "category":  "Wall Tags",
+                               "typeCount":  2,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  122592,
+                               "name":  "Window Tag",
+                               "category":  "Window Tags",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  130350,
+                               "name":  "Fixed",
+                               "category":  "Windows",
+                               "typeCount":  9,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           }
+                       ],
+    "doorTypes":  [
+                      {
+                          "typeId":  59772,
+                          "familyName":  "Single-Flush",
+                          "typeName":  "36\" x 84\"",
+                          "width":  3.0,
+                          "height":  7.0,
+                          "isActive":  false
+                      },
+                      {
+                          "typeId":  59774,
+                          "familyName":  "Single-Flush",
+                          "typeName":  "34\" x 84\"",
+                          "width":  2.833333333333333,
+                          "height":  7.0,
+                          "isActive":  false
+                      },
+                      {
+                          "typeId":  59776,
+                          "familyName":  "Single-Flush",
+                          "typeName":  "32\" x 84\"",
+                          "width":  2.6666666666666665,
+                          "height":  7.0,
+                          "isActive":  false
+                      },
+                      {
+                          "typeId":  59778,
+                          "familyName":  "Single-Flush",
+                          "typeName":  "30\" x 84\"",
+                          "width":  2.5,
+                          "height":  7.0,
+                          "isActive":  false
+                      },
+                      {
+                          "typeId":  59780,
+                          "familyName":  "Single-Flush",
+                          "typeName":  "30\" x 80\"",
+                          "width":  2.5,
+                          "height":  6.666666666666667,
+                          "isActive":  false
+                      },
+                      {
+                          "typeId":  59782,
+                          "familyName":  "Single-Flush",
+                          "typeName":  "36\" x 80\"",
+                          "width":  3.0,
+                          "height":  6.666666666666667,
+                          "isActive":  false
+                      },
+                      {
+                          "typeId":  59784,
+                          "familyName":  "Single-Flush",
+                          "typeName":  "34\" x 80\"",
+                          "width":  2.833333333333333,
+                          "height":  6.666666666666667,
+                          "isActive":  false
+                      }
+                  ],
+    "electricalCircuits":  [
+
+                           ],
+    "mepSystems":  [
+
+                   ],
+    "roofTypes":  [
+                      {
+                          "roofTypeId":  18448,
+                          "name":  "Sloped Glazing",
+                          "familyName":  "Sloped Glazing"
+                      },
+                      {
+                          "roofTypeId":  144969,
+                          "name":  "NA",
+                          "familyName":  "Basic Roof"
+                      }
+                  ],
+    "levels":  [
+                   {
+                       "levelId":  140797,
+                       "name":  "Concrete Slab with Kemiko Stone Tone Stain",
+                       "elevation":  -1.1368683772161603E-12
+                   },
+                   {
+                       "levelId":  30,
+                       "name":  "Concrete Slab with Rembrandt Polymer Stain",
+                       "elevation":  4.999999999998863
+                   },
+                   {
+                       "levelId":  9946,
+                       "name":  "3",
+                       "elevation":  9.99999999999811
+                   },
+                   {
+                       "levelId":  147756,
+                       "name":  "Tapered",
+                       "elevation":  29.99999999999818
+                   },
+                   {
+                       "levelId":  148548,
+                       "name":  "Kemiko Stone Tone Samples",
+                       "elevation":  58.499999999998174
+                   }
+               ],
+    "materials":  [
+                      {
+                          "materialId":  142432,
+                          "name":  "06100_Roof Framing - Dimensional Lumber",
+                          "materialClass":  "Unassigned",
+                          "color":  "1LNx",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  142433,
+                          "name":  "06160_Roof Deck - Oriented Strand Board Sheathing",
+                          "materialClass":  "Unassigned",
+                          "color":  "1LNx",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  142436,
+                          "name":  "07000_Roof Covering",
+                          "materialClass":  "Unassigned",
+                          "color":  "dV1I",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  142437,
+                          "name":  "07310_Roof Coverings - Asphalt Shingles",
+                          "materialClass":  "Unassigned",
+                          "color":  "dV1I",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  142438,
+                          "name":  "07310_Roof Coverings - ASTM D226-Type 1 Underlayment",
+                          "materialClass":  "Unassigned",
+                          "color":  "YmJi",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  142439,
+                          "name":  "07220_Polyisocyanurate Insulation - Thickness as Specified",
+                          "materialClass":  "Unassigned",
+                          "color":  "+e/m",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  142440,
+                          "name":  "07310_Roof Coverings - ASTM D226-Type 2 Underlayment",
+                          "materialClass":  "Unassigned",
+                          "color":  "YmJi",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  142444,
+                          "name":  "07550_Roof Coverings - Modified Bituminous",
+                          "materialClass":  "Unassigned",
+                          "color":  "PUhA",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  142445,
+                          "name":  "07500_Roof Coverings - Membrane",
+                          "materialClass":  "Unassigned",
+                          "color":  "1wAA",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  143538,
+                          "name":  "07500_Roof Fasteners",
+                          "materialClass":  "Unassigned",
+                          "color":  "1wAA",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  144662,
+                          "name":  "03310_Roof Deck - Structural Concrete",
+                          "materialClass":  "Unassigned",
+                          "color":  "wMDA",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  144663,
+                          "name":  "03510_Roof Deck - Cementitious Wood Fiber",
+                          "materialClass":  "Unassigned",
+                          "color":  "1MnB",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  144664,
+                          "name":  "03510_Roof Deck - Gypsum",
+                          "materialClass":  "Unassigned",
+                          "color":  "////",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  144665,
+                          "name":  "03520_Roof Deck - Lightweight Insulating Concrete",
+                          "materialClass":  "Unassigned",
+                          "color":  "9/fv",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  144666,
+                          "name":  "05310_Roof Deck - Steel",
+                          "materialClass":  "Unassigned",
+                          "color":  "vE5O",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  144667,
+                          "name":  "06160_Roof Deck - CDX Plywood Sheathing",
+                          "materialClass":  "Unassigned",
+                          "color":  "1LNx",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  144668,
+                          "name":  "06160_Roof Deck - Dimensional Lumber Sheathing",
+                          "materialClass":  "Unassigned",
+                          "color":  "1LNx",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  144928,
+                          "name":  "07590_Roof Coverings - Prepared Existing Roof",
+                          "materialClass":  "Unassigned",
+                          "color":  "1wAA",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  144941,
+                          "name":  "07500_Roof Coverings - Venting Base Sheet",
+                          "materialClass":  "Unassigned",
+                          "color":  "1wAA",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  144942,
+                          "name":  "07500_Roof Attachment - ASTM D312 Asphalt",
+                          "materialClass":  "Unassigned",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  144943,
+                          "name":  "07500_Roof Attachment - Insulation Adhesive",
+                          "materialClass":  "Unassigned",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  146026,
+                          "name":  "Default",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  146033,
+                          "name":  "Poche",
+                          "materialClass":  "Unassigned",
+                          "color":  "AAD/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  159721,
+                          "name":  "Default Wall",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  159722,
+                          "name":  "Default Roof",
+                          "materialClass":  "Unassigned",
+                          "color":  "AH8A",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  159723,
+                          "name":  "Glass",
+                          "materialClass":  "Unassigned",
+                          "color":  "mZmZ",
+                          "transparency":  100,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  159724,
+                          "name":  "Phase-Demo",
+                          "materialClass":  "Unassigned",
+                          "color":  "/wAA",
+                          "transparency":  40,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  159725,
+                          "name":  "Phase-Exist",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  159726,
+                          "name":  "Phase-Temp",
+                          "materialClass":  "Unassigned",
+                          "color":  "AAD/",
+                          "transparency":  40,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  159727,
+                          "name":  "Default Light Source",
+                          "materialClass":  "Unassigned",
+                          "color":  "//8A",
+                          "transparency":  75,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  167347,
+                          "name":  "EPMAR Kemiko Stone Tone Stain - Color as Specified in 03 35 13",
+                          "materialClass":  "EPMAR Kemiko Stone Tone Stains",
+                          "color":  "hwAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  167355,
+                          "name":  "EPMAR Rembrandt Polymer Stain - Color as Specified in 03 35 13",
+                          "materialClass":  "EPMAR Rembrandt Polymer Stains",
+                          "color":  "hwAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  167399,
+                          "name":  "Structural Concrete as Specified in 03 31 00",
+                          "materialClass":  "Concrete",
+                          "color":  "v7Kt",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  167400,
+                          "name":  "EPMAR Kemiko Stone Tone Stain - Malay Tan",
+                          "materialClass":  "Miscellaneous",
+                          "color":  "TDwo",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  167401,
+                          "name":  "EPMAR Kemiko Stone Tone Stain - Green Lawn",
+                          "materialClass":  "Miscellaneous",
+                          "color":  "Mzkp",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  167402,
+                          "name":  "EPMAR Kemiko Stone Tone Stain - Black",
+                          "materialClass":  "EPMAR Kemiko Stone Tone Stains",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  167403,
+                          "name":  "EPMAR Kemiko Stone Tone Stain - Cola",
+                          "materialClass":  "Miscellaneous",
+                          "color":  "MiEZ",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  167404,
+                          "name":  "EPMAR Kemiko Stone Tone Stain - English Red",
+                          "materialClass":  "Miscellaneous",
+                          "color":  "LBob",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  167405,
+                          "name":  "EPMAR Kemiko Stone Tone Stain - Aqua Blue",
+                          "materialClass":  "Miscellaneous",
+                          "color":  "L0A9",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  167406,
+                          "name":  "EPMAR Kemiko Stone Tone Stain - Golden Wheat",
+                          "materialClass":  "Miscellaneous",
+                          "color":  "U0g6",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  167407,
+                          "name":  "EPMAR Kemiko Stone Tone Stain - Vintage Umber",
+                          "materialClass":  "Miscellaneous",
+                          "color":  "PC0k",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  167408,
+                          "name":  "EPMAR Rembrandt Polymer Stain - Base Adobe",
+                          "materialClass":  "EPMAR Rembrandt Polymer Stains",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  167409,
+                          "name":  "EPMAR Rembrandt Polymer Stain - Base Black",
+                          "materialClass":  "EPMAR Rembrandt Polymer Stains",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  167410,
+                          "name":  "EPMAR Rembrandt Polymer Stain - Base Oyster",
+                          "materialClass":  "EPMAR Rembrandt Polymer Stains",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  167411,
+                          "name":  "EPMAR Rembrandt Polymer Stain - Base Sand",
+                          "materialClass":  "EPMAR Rembrandt Polymer Stains",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  167412,
+                          "name":  "EPMAR Rembrandt Polymer Stain - Base Tweed",
+                          "materialClass":  "EPMAR Rembrandt Polymer Stains",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  167413,
+                          "name":  "EPMAR Rembrandt Polymer Stain - Base White",
+                          "materialClass":  "EPMAR Rembrandt Polymer Stains",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  167414,
+                          "name":  "EPMAR Rembrandt Polymer Stain - Phthalo Blue",
+                          "materialClass":  "EPMAR Rembrandt Polymer Stains",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  167415,
+                          "name":  "EPMAR Rembrandt Polymer Stain - Medium Yellow",
+                          "materialClass":  "EPMAR Rembrandt Polymer Stains",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  167416,
+                          "name":  "EPMAR Rembrandt Polymer Stain - Yellow Oxide",
+                          "materialClass":  "EPMAR Rembrandt Polymer Stains",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  167417,
+                          "name":  "EPMAR Rembrandt Polymer Stain - Monoazo Red",
+                          "materialClass":  "EPMAR Rembrandt Polymer Stains",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  167418,
+                          "name":  "EPMAR Rembrandt Polymer Stain - Red Oxide",
+                          "materialClass":  "EPMAR Rembrandt Polymer Stains",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  167419,
+                          "name":  "EPMAR Rembrandt Polymer Stain - Orange",
+                          "materialClass":  "EPMAR Rembrandt Polymer Stains",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  167420,
+                          "name":  "EPMAR Rembrandt Polymer Stain - Phthalo Green",
+                          "materialClass":  "EPMAR Rembrandt Polymer Stains",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  167421,
+                          "name":  "EPMAR Rembrandt Polymer Stain - Raw Umber",
+                          "materialClass":  "EPMAR Rembrandt Polymer Stains",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  167422,
+                          "name":  "EPMAR Rembrandt Polymer Stain - Raw Sienna",
+                          "materialClass":  "EPMAR Rembrandt Polymer Stains",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  167423,
+                          "name":  "EPMAR Rembrandt Polymer Stain - Burnt Umber",
+                          "materialClass":  "EPMAR Rembrandt Polymer Stains",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  167424,
+                          "name":  "EPMAR Rembrandt Polymer Stain - Burnt Sienna",
+                          "materialClass":  "EPMAR Rembrandt Polymer Stains",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  167425,
+                          "name":  "EPMAR Rembrandt Polymer Stain - Violet",
+                          "materialClass":  "EPMAR Rembrandt Polymer Stains",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  167757,
+                          "name":  "EPMAR Rembrandt Polymer Stain - Antique",
+                          "materialClass":  "EPMAR Rembrandt Polymer Stains - Designer Colors",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  167777,
+                          "name":  "EPMAR Rembrandt Polymer Stain - Azteca",
+                          "materialClass":  "EPMAR Rembrandt Polymer Stains - Designer Colors",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  167778,
+                          "name":  "EPMAR Rembrandt Polymer Stain - Blue Suede",
+                          "materialClass":  "EPMAR Rembrandt Polymer Stains - Designer Colors",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  167779,
+                          "name":  "EPMAR Rembrandt Polymer Stain - Burl",
+                          "materialClass":  "EPMAR Rembrandt Polymer Stains - Designer Colors",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  167780,
+                          "name":  "EPMAR Rembrandt Polymer Stain - Camouflage",
+                          "materialClass":  "EPMAR Rembrandt Polymer Stains - Designer Colors",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  167781,
+                          "name":  "EPMAR Rembrandt Polymer Stain - Cappuccino",
+                          "materialClass":  "EPMAR Rembrandt Polymer Stains - Designer Colors",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  167782,
+                          "name":  "EPMAR Rembrandt Polymer Stain - Classy",
+                          "materialClass":  "EPMAR Rembrandt Polymer Stains - Designer Colors",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  167783,
+                          "name":  "EPMAR Rembrandt Polymer Stain - Coral",
+                          "materialClass":  "EPMAR Rembrandt Polymer Stains - Designer Colors",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  167784,
+                          "name":  "EPMAR Rembrandt Polymer Stain - Deep Sea",
+                          "materialClass":  "EPMAR Rembrandt Polymer Stains - Designer Colors",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  167785,
+                          "name":  "EPMAR Rembrandt Polymer Stain - Midnight",
+                          "materialClass":  "EPMAR Rembrandt Polymer Stains - Designer Colors",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  167786,
+                          "name":  "EPMAR Rembrandt Polymer Stain - Nebula",
+                          "materialClass":  "EPMAR Rembrandt Polymer Stains - Designer Colors",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  167787,
+                          "name":  "EPMAR Rembrandt Polymer Stain - Slate",
+                          "materialClass":  "EPMAR Rembrandt Polymer Stains - Designer Colors",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  167788,
+                          "name":  "EPMAR Rembrandt Polymer Stain - Soft Leather",
+                          "materialClass":  "EPMAR Rembrandt Polymer Stains - Designer Colors",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  167789,
+                          "name":  "EPMAR Rembrandt Polymer Stain - Spring",
+                          "materialClass":  "EPMAR Rembrandt Polymer Stains - Designer Colors",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  167790,
+                          "name":  "EPMAR Rembrandt Polymer Stain - Toast and Butter",
+                          "materialClass":  "EPMAR Rembrandt Polymer Stains - Designer Colors",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  167791,
+                          "name":  "EPMAR Rembrandt Polymer Stain - Trip",
+                          "materialClass":  "EPMAR Rembrandt Polymer Stains - Designer Colors",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  168135,
+                          "name":  "EPMAR Kemiko Stone Tone Buff-On Wax II",
+                          "materialClass":  "Concrete Finishes",
+                          "color":  "5eXl",
+                          "transparency":  100,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  168141,
+                          "name":  "EPMAR Kemiko Easy Shine Mop-On",
+                          "materialClass":  "Concrete Finishes",
+                          "color":  "5eXl",
+                          "transparency":  100,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  168142,
+                          "name":  "EPMAR Kemiko Stone Tone Sealer II",
+                          "materialClass":  "Concrete Finishes",
+                          "color":  "5eXl",
+                          "transparency":  100,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  168143,
+                          "name":  "EPMAR Kemiko SS2700 - Clear Polyurethane",
+                          "materialClass":  "Concrete Finishes",
+                          "color":  "5eXl",
+                          "transparency":  100,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  168144,
+                          "name":  "EPMAR Kemiko SS2700 - White Polyurethane",
+                          "materialClass":  "Concrete Finishes",
+                          "color":  "5eXl",
+                          "transparency":  100,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  168145,
+                          "name":  "EPMAR Kemiko SS2700 - Gloss Polyurethane",
+                          "materialClass":  "Concrete Finishes",
+                          "color":  "5eXl",
+                          "transparency":  100,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  168148,
+                          "name":  "No Primer",
+                          "materialClass":  "Concrete Primers",
+                          "color":  "5eXl",
+                          "transparency":  100,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  168149,
+                          "name":  "EPMAR Kemiko SS1600 Primer",
+                          "materialClass":  "Concrete Primers",
+                          "color":  "5eXl",
+                          "transparency":  100,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  168150,
+                          "name":  "EPMAR Kemiko SS3700 Primer",
+                          "materialClass":  "Concrete Primers",
+                          "color":  "5eXl",
+                          "transparency":  100,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  168151,
+                          "name":  "EPMAR Kemiko SS3800 Primer",
+                          "materialClass":  "Concrete Primers",
+                          "color":  "5eXl",
+                          "transparency":  100,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  168152,
+                          "name":  "No Finish",
+                          "materialClass":  "Concrete Finishes",
+                          "color":  "5eXl",
+                          "transparency":  100,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  168153,
+                          "name":  "EPMAR Kemiko SS3700 WB High Gloss Epoxy - Clear",
+                          "materialClass":  "Concrete Finishes",
+                          "color":  "5eXl",
+                          "transparency":  100,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  168154,
+                          "name":  "EPMAR Kemiko SS3700 WB High Gloss Epoxy - White",
+                          "materialClass":  "Concrete Finishes",
+                          "color":  "5eXl",
+                          "transparency":  100,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  168155,
+                          "name":  "EPMAR Kemiko SS3700 WB High Gloss Epoxy - Gray",
+                          "materialClass":  "Concrete Finishes",
+                          "color":  "5eXl",
+                          "transparency":  100,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  168156,
+                          "name":  "EPMAR Kemiko SS3700 WB High Gloss Epoxy - Tan",
+                          "materialClass":  "Concrete Finishes",
+                          "color":  "5eXl",
+                          "transparency":  100,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  168157,
+                          "name":  "EPMAR Kemiko SS3700 WB High Gloss Epoxy - Spanish Red",
+                          "materialClass":  "Concrete Finishes",
+                          "color":  "5eXl",
+                          "transparency":  100,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  168158,
+                          "name":  "EPMAR Kemiko SS3700 WB High Gloss Epoxy - Light Gray",
+                          "materialClass":  "Concrete Finishes",
+                          "color":  "5eXl",
+                          "transparency":  100,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  168159,
+                          "name":  "EPMAR Kemiko SS3700 WB High Gloss Epoxy - Beige",
+                          "materialClass":  "Concrete Finishes",
+                          "color":  "5eXl",
+                          "transparency":  100,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  168160,
+                          "name":  "EPMAR Kemiko SS3700 WB High Gloss Epoxy - Diego Blue",
+                          "materialClass":  "Concrete Finishes",
+                          "color":  "5eXl",
+                          "transparency":  100,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  168161,
+                          "name":  "EPMAR Kemiko SS3700 WB High Gloss Epoxy - Yellow",
+                          "materialClass":  "Concrete Finishes",
+                          "color":  "5eXl",
+                          "transparency":  100,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  168162,
+                          "name":  "EPMAR Kemiko SS3700 WB High Gloss Epoxy - Navajo White",
+                          "materialClass":  "Concrete Finishes",
+                          "color":  "5eXl",
+                          "transparency":  100,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  168163,
+                          "name":  "EPMAR Kemiko Sta-Natural Concrete Penetrant",
+                          "materialClass":  "Concrete Primers",
+                          "color":  "5eXl",
+                          "transparency":  100,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  170888,
+                          "name":  "Carbon Steel",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  170889,
+                          "name":  "Copper",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  170890,
+                          "name":  "Ductile Iron",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  170891,
+                          "name":  "Plastic",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  170892,
+                          "name":  "Stainless Steel",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  172180,
+                          "name":  "System-Zones",
+                          "materialClass":  "Unassigned",
+                          "color":  "Xl7N",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  172186,
+                          "name":  "Analytical Spaces",
+                          "materialClass":  "Unassigned",
+                          "color":  "AMjI",
+                          "transparency":  85,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  172188,
+                          "name":  "Analytical Surface - Exterior Walls",
+                          "materialClass":  "Unassigned",
+                          "color":  "hbIs",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  172190,
+                          "name":  "Analytical Surface - Roofs",
+                          "materialClass":  "Unassigned",
+                          "color":  "Jg+Z",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  172192,
+                          "name":  "Analytical Surface - Slabs on Grade",
+                          "materialClass":  "Unassigned",
+                          "color":  "ZVHM",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  172194,
+                          "name":  "Analytical Surface - Interior Walls",
+                          "materialClass":  "Unassigned",
+                          "color":  "w+V+",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  172196,
+                          "name":  "Analytical Surface - Interior Floors",
+                          "materialClass":  "Unassigned",
+                          "color":  "ZVHM",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  172198,
+                          "name":  "Analytical Surface - Ceilings",
+                          "materialClass":  "Unassigned",
+                          "color":  "v7L/",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  172200,
+                          "name":  "Analytical Surface - Air Surfaces",
+                          "materialClass":  "Unassigned",
+                          "color":  "vtLc",
+                          "transparency":  90,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  172202,
+                          "name":  "Analytical Surface - Underground Walls",
+                          "materialClass":  "Unassigned",
+                          "color":  "sm8s",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  172204,
+                          "name":  "Analytical Surface - Operable Windows",
+                          "materialClass":  "Unassigned",
+                          "color":  "suX/",
+                          "transparency":  75,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  172206,
+                          "name":  "Analytical Surface - Operable Skylights",
+                          "materialClass":  "Unassigned",
+                          "color":  "suX/",
+                          "transparency":  75,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  172208,
+                          "name":  "Analytical Surface - Sliding Doors",
+                          "materialClass":  "Unassigned",
+                          "color":  "/7Ky",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  172210,
+                          "name":  "Analytical Surface - Air Openings",
+                          "materialClass":  "Unassigned",
+                          "color":  "////",
+                          "transparency":  100,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  172212,
+                          "name":  "Analytical Surface - Shades",
+                          "materialClass":  "Unassigned",
+                          "color":  "kJKK",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  172358,
+                          "name":  "Analytical Panels",
+                          "materialClass":  "Unassigned",
+                          "color":  "+8WZ",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  172440,
+                          "name":  "Electrical Analytical Loads",
+                          "materialClass":  "Unassigned",
+                          "color":  "Xl7N",
+                          "transparency":  50,
+                          "shininess":  64
+                      }
+                  ],
+    "windows":  [
+
+                ],
+    "electricalFixtures":  [
+
+                           ],
+    "warnings":  [
+
+                 ]
+}

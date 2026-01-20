@@ -1,0 +1,345 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-01-20T08:38:14.434305",
+  "source": {
+    "daemon_version": "2.0.0",
+    "hostname": "DESKTOP-01CMLA9",
+    "pid": 13072
+  },
+  "timestamp": "2026-01-20T08:38:08.601038",
+  "active_window": "Welcome - Visual Studio Code",
+  "monitors": {
+    "screens": [
+      {
+        "y": 0,
+        "working_height": 1400,
+        "width": 2560,
+        "primary": true,
+        "name": "\\\\.\\DISPLAY1",
+        "height": 1440,
+        "x": 0,
+        "working_width": 2560
+      },
+      {
+        "y": 0,
+        "working_height": 1400,
+        "width": 2560,
+        "primary": false,
+        "name": "\\\\.\\DISPLAY2",
+        "height": 1440,
+        "x": -2560,
+        "working_width": 2560
+      },
+      {
+        "y": 0,
+        "working_height": 1400,
+        "width": 2560,
+        "primary": false,
+        "name": "\\\\.\\DISPLAY3",
+        "height": 1440,
+        "x": -5120,
+        "working_width": 2560
+      }
+    ],
+    "primary": {
+      "y": 0,
+      "working_height": 1400,
+      "width": 2560,
+      "primary": true,
+      "name": "\\\\.\\DISPLAY1",
+      "height": 1440,
+      "x": 0,
+      "working_width": 2560
+    },
+    "count": 3
+  },
+  "system": {
+    "cpu_percent": 0,
+    "memory_percent": 45,
+    "memory_total_gb": 64,
+    "memory_used_gb": 29
+  },
+  "clipboard_preview": "",
+  "recent_files": [
+    "Revit (4)",
+    "AVENTURA ECO OFFICES - OPTION-2",
+    "The Internet (2)",
+    "msteamssystem-initiated (137)",
+    "Parking",
+    "Parking Space - TYP",
+    "03 Drawings (2)",
+    "R25 BHN CATH SUITES - PHASE2 - ARCH",
+    "EDIT - R25 MSMC Histology",
+    "EDIT - R25 SMH ELEV 1 AND 2_ARCH",
+    "04 SD - DD",
+    "R25 BHN CATH SUITES_PHASE2_clean_ARCH - 1-12-26",
+    "SMH ELEV 1 & 2 FIV PLAN",
+    "R25 SMH ELEV 1 AND 2_ARCH - 12-16-25",
+    "20 NW 76 ST - 4-STORY - Revised"
+  ],
+  "applications": [
+    {
+      "Id": 45236,
+      "ProcessName": "ApplicationFrameHost",
+      "MonitorIndex": 0,
+      "Monitor": "right",
+      "MainWindowTitle": "Settings",
+      "Position": {
+        "Left": -7,
+        "Bottom": 1408,
+        "Top": -7,
+        "Right": 2568,
+        "Height": 1415,
+        "Width": 2575
+      }
+    },
+    {
+      "Id": 32452,
+      "ProcessName": "CalculatorApp",
+      "MonitorIndex": 0,
+      "Monitor": "right",
+      "MainWindowTitle": "Calculator",
+      "Position": {
+        "Left": 0,
+        "Bottom": 533,
+        "Top": 33,
+        "Right": 320,
+        "Height": 500,
+        "Width": 320
+      }
+    },
+    {
+      "Id": 12356,
+      "ProcessName": "chrome",
+      "MonitorIndex": 0,
+      "Monitor": "right",
+      "MainWindowTitle": "YouTube - Google Chrome",
+      "Position": {
+        "Left": -7,
+        "Bottom": 1408,
+        "Top": -7,
+        "Right": 2568,
+        "Height": 1415,
+        "Width": 2575
+      }
+    },
+    {
+      "Id": 28028,
+      "ProcessName": "Code",
+      "MonitorIndex": 2,
+      "Monitor": "left",
+      "MainWindowTitle": "Welcome - Visual Studio Code",
+      "Position": {
+        "Left": -5127,
+        "Bottom": 1408,
+        "Top": -7,
+        "Right": -2552,
+        "Height": 1415,
+        "Width": 2575
+      }
+    },
+    {
+      "Id": 44924,
+      "ProcessName": "ms-teams",
+      "MonitorIndex": -1,
+      "Monitor": "unknown",
+      "MainWindowTitle": "Chat | Paola Gomez | BD Architect llc | weber@bdarchitect.net | Microsoft Teams",
+      "Position": {
+        "Left": -21333,
+        "Bottom": -21307,
+        "Top": -21333,
+        "Right": -21175,
+        "Height": 26,
+        "Width": 158
+      }
+    },
+    {
+      "Id": 31640,
+      "ProcessName": "notepad",
+      "MonitorIndex": -1,
+      "Monitor": "unknown",
+      "MainWindowTitle": "*Untitled - Notepad",
+      "Position": {
+        "Left": -21333,
+        "Bottom": -21307,
+        "Top": -21333,
+        "Right": -21175,
+        "Height": 26,
+        "Width": 158
+      }
+    },
+    {
+      "Id": 41624,
+      "ProcessName": "Revit",
+      "MonitorIndex": 1,
+      "Monitor": "center",
+      "MainWindowTitle": "Autodesk Revit 2026.2 - [AVENTURA ECO OFFICES - OPTION-2 - Floor Plan: LEVEL 1- FLOOR PLAN Copy 1]",
+      "Position": {
+        "Left": -2567,
+        "Bottom": 1408,
+        "Top": -7,
+        "Right": 8,
+        "Height": 1415,
+        "Width": 2575
+      }
+    },
+    {
+      "Id": 46136,
+      "ProcessName": "SystemSettings",
+      "MonitorIndex": 0,
+      "Monitor": "right",
+      "MainWindowTitle": "Settings",
+      "Position": {
+        "Left": 0,
+        "Bottom": 1407,
+        "Top": 7,
+        "Right": 2560,
+        "Height": 1400,
+        "Width": 2560
+      }
+    },
+    {
+      "Id": 54828,
+      "ProcessName": "TextInputHost",
+      "MonitorIndex": 0,
+      "Monitor": "right",
+      "MainWindowTitle": "Microsoft Text Input Application",
+      "Position": {
+        "Left": 0,
+        "Bottom": 1440,
+        "Top": 0,
+        "Right": 2560,
+        "Height": 1440,
+        "Width": 2560
+      }
+    },
+    {
+      "Id": 28668,
+      "ProcessName": "Wispr Flow",
+      "MonitorIndex": -1,
+      "Monitor": "unknown",
+      "MainWindowTitle": "Hub",
+      "Position": {
+        "Left": -21333,
+        "Bottom": -21307,
+        "Top": -21333,
+        "Right": -21175,
+        "Height": 26,
+        "Width": 158
+      }
+    }
+  ],
+  "revit": {},
+  "bluebeam": {
+    "running": false
+  },
+  "recent_events": [
+    {
+      "timestamp": "2026-01-20T08:38:10.237858",
+      "type": "app_opened",
+      "details": "Revit: Autodesk Revit 2026.2 - [AVENTURA ECO OFFICES - OPTION-2 - Floor Plan: LEVEL 1- FLOOR PLAN Copy 1]"
+    },
+    {
+      "timestamp": "2026-01-20T08:38:10.238855",
+      "type": "app_opened",
+      "details": "ApplicationFrameHost: Settings"
+    },
+    {
+      "timestamp": "2026-01-20T08:38:10.240862",
+      "type": "app_opened",
+      "details": "ms-teams: Chat | Paola Gomez | BD Architect llc | [email] | Microsoft Teams"
+    },
+    {
+      "timestamp": "2026-01-20T08:38:10.241856",
+      "type": "app_opened",
+      "details": "notepad: *Untitled - Notepad"
+    },
+    {
+      "timestamp": "2026-01-20T08:38:10.242855",
+      "type": "app_closed",
+      "details": "Photos: ChatGPT Image Nov 25, 2025, 10_59_32 AM.png"
+    },
+    {
+      "timestamp": "2026-01-20T08:38:10.243855",
+      "type": "app_closed",
+      "details": "msedge: Wayward Pines | Disney+ and 5 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-01-20T08:38:10.244861",
+      "type": "app_closed",
+      "details": "Photos: revit_auto_20251129_191249_render_20251129_191623.png"
+    },
+    {
+      "timestamp": "2026-01-20T08:38:10.246855",
+      "type": "app_closed",
+      "details": "Revit: Autodesk Revit 2026.2 - [20 NW 76 ST - 4-STORY - Revised - Sheet: A-1.2 - 4TH FLOOR PLAN]"
+    },
+    {
+      "timestamp": "2026-01-20T08:38:10.247852",
+      "type": "app_closed",
+      "details": "Photos: render_florida_modern_controlnet_20251130_061539.png"
+    },
+    {
+      "timestamp": "2026-01-20T08:38:10.248986",
+      "type": "app_closed",
+      "details": "SnippingTool: Snipping Tool"
+    },
+    {
+      "timestamp": "2026-01-20T08:38:10.250545",
+      "type": "app_closed",
+      "details": "chrome: Inbox (45) - [email] - Gmail - Google Chrome"
+    },
+    {
+      "timestamp": "2026-01-20T08:38:10.251541",
+      "type": "app_closed",
+      "details": "ms-teams: Chat | M Isa Fantal | Personal | [email] | Microsoft Teams"
+    },
+    {
+      "timestamp": "2026-01-20T08:38:10.252546",
+      "type": "app_closed",
+      "details": "Revu: 130_NE_78th_Street_OPTION_B_Urban_Industrial - Bluebeam Revu x64"
+    },
+    {
+      "timestamp": "2026-01-20T08:38:10.254550",
+      "type": "app_closed",
+      "details": "explorer: Client"
+    },
+    {
+      "timestamp": "2026-01-20T08:38:10.255548",
+      "type": "app_closed",
+      "details": "WinStore.App: Microsoft Store"
+    },
+    {
+      "timestamp": "2026-01-20T08:38:10.256545",
+      "type": "app_closed",
+      "details": "ApplicationFrameHost: Microsoft Store"
+    },
+    {
+      "timestamp": "2026-01-20T08:38:10.258540",
+      "type": "app_closed",
+      "details": "msedge: Welcome and 4 more pages - Personal - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-01-20T08:38:10.259239",
+      "type": "app_closed",
+      "details": "OUTLOOK: Inbox - [email] - Outlook"
+    },
+    {
+      "timestamp": "2026-01-20T08:38:10.261219",
+      "type": "app_closed",
+      "details": "WINWORD: Let_Go_Let_God_Lead_Sermon_Revised - Word"
+    },
+    {
+      "timestamp": "2026-01-20T08:38:11.053685",
+      "type": "focus_changed",
+      "details": "Welcome - Visual Studio Code"
+    }
+  ],
+  "daemon_stats": {
+    "started_at": "2025-12-04T10:13:59.664371",
+    "updates": 6811,
+    "errors": 0,
+    "restarts": 3
+  },
+  "hash": "524c62b897689728"
+}

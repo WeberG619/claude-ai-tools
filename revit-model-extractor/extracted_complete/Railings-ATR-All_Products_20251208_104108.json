@@ -1,0 +1,2619 @@
+﻿{
+    "lightingFixtures":  [
+
+                         ],
+    "ceilings":  [
+
+                 ],
+    "wallTypes":  [
+                      {
+                          "wallTypeId":  221,
+                          "name":  "Exterior - Brick on Mtl. Stud",
+                          "kind":  "Basic",
+                          "width":  1.15625,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  21854,
+                          "name":  "Curtain Wall 1",
+                          "kind":  "Curtain",
+                          "width":  0.08333333333333333,
+                          "familyName":  "Curtain Wall"
+                      },
+                      {
+                          "wallTypeId":  76677,
+                          "name":  "Exterior - Brick Over CMU w Metal Stud",
+                          "kind":  "Stacked",
+                          "width":  1.4895833333333333,
+                          "familyName":  "Stacked Wall"
+                      },
+                      {
+                          "wallTypeId":  83171,
+                          "name":  "Exterior - CMU on Mtl. Stud",
+                          "kind":  "Basic",
+                          "width":  1.4895833333333333,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  175092,
+                          "name":  "4\" Brick",
+                          "kind":  "Basic",
+                          "width":  0.30208333333333337,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  175137,
+                          "name":  "5\" Interior",
+                          "kind":  "Basic",
+                          "width":  0.3749999999999997,
+                          "familyName":  "Basic Wall"
+                      }
+                  ],
+    "structuralBeams":  [
+
+                        ],
+    "familyTypes":  [
+
+                    ],
+    "roofs":  [
+
+              ],
+    "railings":  [
+                     {
+                         "railingId":  159877,
+                         "typeName":  "Glass Panel Rail - ATR - 6D Style - 2M Handrail - Embedded",
+                         "typeId":  175053,
+                         "level":  "Level 1",
+                         "length":  16.125000000000007
+                     },
+                     {
+                         "railingId":  159883,
+                         "typeName":  "Glass Panel Rail - ATR - 6D Style - Embedded",
+                         "typeId":  175056,
+                         "level":  "Level 1",
+                         "length":  16.125000000000007
+                     },
+                     {
+                         "railingId":  159889,
+                         "typeName":  "Glass Panel Rail - ATR - 6E Style - Embedded",
+                         "typeId":  175058,
+                         "level":  "Level 1",
+                         "length":  16.125000000000007
+                     },
+                     {
+                         "railingId":  159895,
+                         "typeName":  "Glass Panel Rail - ATR - 6E Style - 2L Handrail - Embedded",
+                         "typeId":  175057,
+                         "level":  "Level 1",
+                         "length":  16.125000000000007
+                     },
+                     {
+                         "railingId":  159901,
+                         "typeName":  "Glass Panel Rail - ATR - 6E Style - 2M Handrail - Embedded",
+                         "typeId":  175059,
+                         "level":  "Level 1",
+                         "length":  16.125000000000007
+                     },
+                     {
+                         "railingId":  159907,
+                         "typeName":  "Picket Rail - ATR - 6A - Embedded Stair Sample",
+                         "typeId":  175060,
+                         "level":  "Level 1",
+                         "length":  16.125
+                     },
+                     {
+                         "railingId":  159913,
+                         "typeName":  "Picket Rail - ATR - 6A - 2L Handrail - Embedded",
+                         "typeId":  175062,
+                         "level":  "Level 1",
+                         "length":  16.125
+                     },
+                     {
+                         "railingId":  159919,
+                         "typeName":  "Picket Rail - ATR - 6A - 2M Handrail - Embedded",
+                         "typeId":  175063,
+                         "level":  "Level 1",
+                         "length":  16.125
+                     },
+                     {
+                         "railingId":  159925,
+                         "typeName":  "Picket Rail - ATR - 6B - Embedded",
+                         "typeId":  175064,
+                         "level":  "Level 1",
+                         "length":  16.125
+                     },
+                     {
+                         "railingId":  159931,
+                         "typeName":  "Picket Rail - ATR - 6B - 2L Handrail - Embedded",
+                         "typeId":  175065,
+                         "level":  "Level 1",
+                         "length":  16.125
+                     },
+                     {
+                         "railingId":  159937,
+                         "typeName":  "Picket Rail - ATR - 6B - 2M Handrail - Embedded",
+                         "typeId":  175066,
+                         "level":  "Level 1",
+                         "length":  16.125
+                     },
+                     {
+                         "railingId":  159943,
+                         "typeName":  "Picket Rail - ATR - 6B1 - Embedded",
+                         "typeId":  175067,
+                         "level":  "Level 1",
+                         "length":  16.125
+                     },
+                     {
+                         "railingId":  159949,
+                         "typeName":  "Picket Rail - ATR - 6B1 - 2L Handrail - Embedded",
+                         "typeId":  175068,
+                         "level":  "Level 1",
+                         "length":  16.125
+                     },
+                     {
+                         "railingId":  159955,
+                         "typeName":  "Picket Rail - ATR - 6B1 - 2M Handrail - Embedded",
+                         "typeId":  175069,
+                         "level":  "Level 1",
+                         "length":  16.125
+                     },
+                     {
+                         "railingId":  159962,
+                         "typeName":  "Glass Panel Rail - ATR - 6D Style - Side Mount",
+                         "typeId":  175071,
+                         "level":  "Level 1",
+                         "length":  16.125000000000007
+                     },
+                     {
+                         "railingId":  159968,
+                         "typeName":  "Glass Panel Rail - ATR - 6E Style - 2M Handrail - Side Mount",
+                         "typeId":  175072,
+                         "level":  "Level 1",
+                         "length":  16.125000000000007
+                     },
+                     {
+                         "railingId":  159974,
+                         "typeName":  "Glass Panel Rail - ATR - 6D Style - 2L Handrail - Embedded",
+                         "typeId":  175073,
+                         "level":  "Level 1",
+                         "length":  16.125000000000007
+                     },
+                     {
+                         "railingId":  159980,
+                         "typeName":  "Glass Panel Rail - ATR - 6D Style - Baseplate",
+                         "typeId":  175074,
+                         "level":  "Level 1",
+                         "length":  16.125000000000007
+                     },
+                     {
+                         "railingId":  159986,
+                         "typeName":  "Glass Panel Rail - ATR - 6D Style - 2L Handrail - Baseplate",
+                         "typeId":  175076,
+                         "level":  "Level 1",
+                         "length":  16.125000000000007
+                     },
+                     {
+                         "railingId":  159992,
+                         "typeName":  "Glass Panel Rail - ATR - 6D Style - 2M Handrail - Baseplate",
+                         "typeId":  175078,
+                         "level":  "Level 1",
+                         "length":  16.125000000000007
+                     },
+                     {
+                         "railingId":  159998,
+                         "typeName":  "Glass Panel Rail - ATR - 6E Style - Baseplate",
+                         "typeId":  175080,
+                         "level":  "Level 1",
+                         "length":  16.125000000000007
+                     },
+                     {
+                         "railingId":  160004,
+                         "typeName":  "Glass Panel Rail - ATR - 6E Style - 2L Handrail - Baseplate",
+                         "typeId":  175081,
+                         "level":  "Level 1",
+                         "length":  16.125000000000007
+                     },
+                     {
+                         "railingId":  160010,
+                         "typeName":  "Glass Panel Rail - ATR - 6E Style - 2M Handrail - Baseplate",
+                         "typeId":  175082,
+                         "level":  "Level 1",
+                         "length":  16.125000000000007
+                     },
+                     {
+                         "railingId":  160016,
+                         "typeName":  "Picket Rail - ATR - 6A - Baseplate",
+                         "typeId":  175083,
+                         "level":  "Level 1",
+                         "length":  16.125
+                     },
+                     {
+                         "railingId":  160022,
+                         "typeName":  "Picket Rail - ATR - 6A - 2L Handrail - Baseplate",
+                         "typeId":  175084,
+                         "level":  "Level 1",
+                         "length":  16.125
+                     },
+                     {
+                         "railingId":  160028,
+                         "typeName":  "Picket Rail - ATR - 6A - 2M Handrail - Baseplate",
+                         "typeId":  175085,
+                         "level":  "Level 1",
+                         "length":  16.125
+                     },
+                     {
+                         "railingId":  160034,
+                         "typeName":  "Picket Rail - ATR - 6A - 2L Handrail - Side Mount",
+                         "typeId":  175088,
+                         "level":  "Level 1",
+                         "length":  16.125
+                     },
+                     {
+                         "railingId":  160040,
+                         "typeName":  "Picket Rail - ATR - 6B - Baseplate",
+                         "typeId":  175089,
+                         "level":  "Level 1",
+                         "length":  16.125
+                     },
+                     {
+                         "railingId":  160046,
+                         "typeName":  "Picket Rail - ATR - 6B - 2L Handrail - Baseplate",
+                         "typeId":  175090,
+                         "level":  "Level 1",
+                         "length":  16.125
+                     },
+                     {
+                         "railingId":  160052,
+                         "typeName":  "Picket Rail - ATR - 6B - 2M Handrail - Baseplate",
+                         "typeId":  175091,
+                         "level":  "Level 1",
+                         "length":  16.125
+                     },
+                     {
+                         "railingId":  160059,
+                         "typeName":  "Picket Rail - ATR - 6B - Side Mount",
+                         "typeId":  175093,
+                         "level":  "Level 1",
+                         "length":  16.125
+                     },
+                     {
+                         "railingId":  160072,
+                         "typeName":  "Picket Rail - ATR - 6B1 - Baseplate",
+                         "typeId":  175094,
+                         "level":  "Level 1",
+                         "length":  16.125
+                     },
+                     {
+                         "railingId":  160078,
+                         "typeName":  "Picket Rail - ATR - 6B1 - 2L Handrail - Baseplate",
+                         "typeId":  175095,
+                         "level":  "Level 1",
+                         "length":  16.125
+                     },
+                     {
+                         "railingId":  160084,
+                         "typeName":  "Picket Rail - ATR - 6B1 - 2M Handrail - Baseplate",
+                         "typeId":  175096,
+                         "level":  "Level 1",
+                         "length":  16.125
+                     },
+                     {
+                         "railingId":  160090,
+                         "typeName":  "Picket Rail - ATR - 6B1 - 2M Handrail - Side Mount",
+                         "typeId":  175097,
+                         "level":  "Level 1",
+                         "length":  16.125
+                     },
+                     {
+                         "railingId":  160096,
+                         "typeName":  "Picket Rail - ATR - 6C - Embedded",
+                         "typeId":  175098,
+                         "level":  "Level 1",
+                         "length":  16.125
+                     },
+                     {
+                         "railingId":  160102,
+                         "typeName":  "Picket Rail - ATR - 6C - 2L Handrail - Embedded",
+                         "typeId":  175099,
+                         "level":  "Level 1",
+                         "length":  16.125
+                     },
+                     {
+                         "railingId":  160108,
+                         "typeName":  "Picket Rail - ATR - 6C - 2M Handrail - Embedded",
+                         "typeId":  175100,
+                         "level":  "Level 1",
+                         "length":  16.125
+                     },
+                     {
+                         "railingId":  160114,
+                         "typeName":  "Picket Rail - ATR - 6C - Baseplate",
+                         "typeId":  175101,
+                         "level":  "Level 1",
+                         "length":  16.125
+                     },
+                     {
+                         "railingId":  160120,
+                         "typeName":  "Picket Rail - ATR - 6C - 2L Handrail - Baseplate",
+                         "typeId":  175102,
+                         "level":  "Level 1",
+                         "length":  16.125
+                     },
+                     {
+                         "railingId":  160126,
+                         "typeName":  "Picket Rail - ATR - 6C - 2M Handrail - Baseplate",
+                         "typeId":  175103,
+                         "level":  "Level 1",
+                         "length":  16.25
+                     },
+                     {
+                         "railingId":  160131,
+                         "typeName":  "Picket Rail - ATR - 6C - 2L Handrail - Side Mount",
+                         "typeId":  175104,
+                         "level":  "Level 1",
+                         "length":  16.125
+                     },
+                     {
+                         "railingId":  160137,
+                         "typeName":  "Multi_Line - ATR - 6M - 3 Rail - Embedded",
+                         "typeId":  175105,
+                         "level":  "Level 1",
+                         "length":  16.125
+                     },
+                     {
+                         "railingId":  160144,
+                         "typeName":  "Multi_Line - ATR - 6K - Parapet",
+                         "typeId":  175108,
+                         "level":  "Level 1",
+                         "length":  15.833333333333329
+                     },
+                     {
+                         "railingId":  160149,
+                         "typeName":  "Multi_Line - ATR - 6S - 2L Handrail -  7 Rail - Embedded",
+                         "typeId":  175112,
+                         "level":  "Level 1",
+                         "length":  16.73632812500002
+                     },
+                     {
+                         "railingId":  160154,
+                         "typeName":  "Multi_Line - ATR - 6S - 2L Handrail -  8 Rail - Embedded",
+                         "typeId":  175115,
+                         "level":  "Level 1",
+                         "length":  16.73632812500002
+                     },
+                     {
+                         "railingId":  160160,
+                         "typeName":  "Cable Rail - ATR - Custom 12 Cable - Embedded",
+                         "typeId":  175118,
+                         "level":  "Level 1",
+                         "length":  16.73632812500002
+                     },
+                     {
+                         "railingId":  160166,
+                         "typeName":  "Multi_Line - ATR - 6M - 2L Handrail - 3 Rail - Embedded",
+                         "typeId":  175121,
+                         "level":  "Level 1",
+                         "length":  16.125
+                     },
+                     {
+                         "railingId":  160172,
+                         "typeName":  "Multi_Line - ATR - 6M - 2M Handrail - 3 Rail - Embedded",
+                         "typeId":  175122,
+                         "level":  "Level 1",
+                         "length":  16.125
+                     },
+                     {
+                         "railingId":  160178,
+                         "typeName":  "Multi_Line - ATR - 6M - 3 Rail -Baseplate",
+                         "typeId":  175125,
+                         "level":  "Level 1",
+                         "length":  16.125
+                     },
+                     {
+                         "railingId":  160184,
+                         "typeName":  "Multi_Line - ATR - 6M - 2L Handrail - 3 Rail - Baseplate",
+                         "typeId":  175128,
+                         "level":  "Level 1",
+                         "length":  16.125
+                     },
+                     {
+                         "railingId":  160190,
+                         "typeName":  "Multi_Line - ATR - 6M - 2M Handrail - 3 Rail - Base Plate",
+                         "typeId":  175131,
+                         "level":  "Level 1",
+                         "length":  16.125
+                     },
+                     {
+                         "railingId":  160196,
+                         "typeName":  "Multi_Line - ATR - 6M - 2L Handrail - 3 Rail - Side Mount",
+                         "typeId":  175134,
+                         "level":  "Level 1",
+                         "length":  16.125
+                     },
+                     {
+                         "railingId":  160203,
+                         "typeName":  "Single_Line - ATR - 6W Wall Mount",
+                         "typeId":  175138,
+                         "level":  "Level 1",
+                         "length":  32.0
+                     },
+                     {
+                         "railingId":  160211,
+                         "typeName":  "Multi_Line - ATR - 6S - 2L Handrail -  7 Rail - Baseplate",
+                         "typeId":  175140,
+                         "level":  "Level 1",
+                         "length":  16.73632812500002
+                     },
+                     {
+                         "railingId":  160217,
+                         "typeName":  "Multi_Line - ATR - 6S - 2L Handrail -  7 Rail - Side Mount",
+                         "typeId":  175144,
+                         "level":  "Level 1",
+                         "length":  16.73632812500002
+                     },
+                     {
+                         "railingId":  160223,
+                         "typeName":  "Multi_Line - ATR - 6S -  8 Rail - Embedded 2",
+                         "typeId":  175152,
+                         "level":  "Level 1",
+                         "length":  16.73632812500002
+                     },
+                     {
+                         "railingId":  160229,
+                         "typeName":  "Multi_Line - ATR - 6S - 7 Rail - Baseplate",
+                         "typeId":  175154,
+                         "level":  "Level 1",
+                         "length":  16.73632812500002
+                     },
+                     {
+                         "railingId":  160235,
+                         "typeName":  "Multi_Line - ATR - 6S - 2M Handrail -  7 Rail - Baseplate",
+                         "typeId":  175156,
+                         "level":  "Level 1",
+                         "length":  16.73632812500002
+                     },
+                     {
+                         "railingId":  160241,
+                         "typeName":  "Sample Picket - ATR - 3A",
+                         "typeId":  175157,
+                         "level":  "Level 1",
+                         "length":  4.0
+                     },
+                     {
+                         "railingId":  160247,
+                         "typeName":  "Sample Picket - ATR - 3B",
+                         "typeId":  175163,
+                         "level":  "Level 1",
+                         "length":  4.0
+                     },
+                     {
+                         "railingId":  160253,
+                         "typeName":  "Sample Picket - ATR - 3C",
+                         "typeId":  175164,
+                         "level":  "Level 1",
+                         "length":  4.0
+                     },
+                     {
+                         "railingId":  160259,
+                         "typeName":  "Sample Picket - ATR - 3D",
+                         "typeId":  175166,
+                         "level":  "Level 1",
+                         "length":  4.0
+                     },
+                     {
+                         "railingId":  160265,
+                         "typeName":  "Sample Picket - ATR - 3H",
+                         "typeId":  175165,
+                         "level":  "Level 1",
+                         "length":  4.0
+                     },
+                     {
+                         "railingId":  160271,
+                         "typeName":  "Sample Picket - ATR - 3E",
+                         "typeId":  175167,
+                         "level":  "Level 1",
+                         "length":  4.0
+                     },
+                     {
+                         "railingId":  160277,
+                         "typeName":  "Sample Picket - ATR - 3F",
+                         "typeId":  175168,
+                         "level":  "Level 1",
+                         "length":  4.0
+                     },
+                     {
+                         "railingId":  160283,
+                         "typeName":  "Sample Picket - ATR - 74",
+                         "typeId":  175169,
+                         "level":  "Level 1",
+                         "length":  4.0
+                     },
+                     {
+                         "railingId":  160289,
+                         "typeName":  "Sample Top Rail - ATR - 1B",
+                         "typeId":  175170,
+                         "level":  "Level 1",
+                         "length":  4.0
+                     },
+                     {
+                         "railingId":  160295,
+                         "typeName":  "Sample Top Rail - ATR - 1D",
+                         "typeId":  175171,
+                         "level":  "Level 1",
+                         "length":  4.0
+                     },
+                     {
+                         "railingId":  160301,
+                         "typeName":  "Sample Top Rail - ATR - 1P",
+                         "typeId":  175172,
+                         "level":  "Level 1",
+                         "length":  4.0
+                     },
+                     {
+                         "railingId":  160307,
+                         "typeName":  "Sample Top Rail - ATR - 307",
+                         "typeId":  175173,
+                         "level":  "Level 1",
+                         "length":  4.0
+                     },
+                     {
+                         "railingId":  160313,
+                         "typeName":  "Sample Top Rail - ATR - 308",
+                         "typeId":  175174,
+                         "level":  "Level 1",
+                         "length":  4.0
+                     },
+                     {
+                         "railingId":  160319,
+                         "typeName":  "Sample Top Rail - ATR - 1K Flat",
+                         "typeId":  175175,
+                         "level":  "Level 1",
+                         "length":  4.0
+                     },
+                     {
+                         "railingId":  160325,
+                         "typeName":  "Sample Top Rail - ATR - 1K Round",
+                         "typeId":  175176,
+                         "level":  "Level 1",
+                         "length":  4.0
+                     },
+                     {
+                         "railingId":  160331,
+                         "typeName":  "Sample Top Rail - ATR - 1L Flat",
+                         "typeId":  175177,
+                         "level":  "Level 1",
+                         "length":  4.0
+                     },
+                     {
+                         "railingId":  160337,
+                         "typeName":  "Sample Top Rail - ATR - 1L Round",
+                         "typeId":  175178,
+                         "level":  "Level 1",
+                         "length":  4.0
+                     },
+                     {
+                         "railingId":  160343,
+                         "typeName":  "Sample Top Rail - ATR - 1M Flat",
+                         "typeId":  175179,
+                         "level":  "Level 1",
+                         "length":  4.0
+                     },
+                     {
+                         "railingId":  160349,
+                         "typeName":  "Sample Top Rail - ATR - 1M Round",
+                         "typeId":  175180,
+                         "level":  "Level 1",
+                         "length":  4.0
+                     },
+                     {
+                         "railingId":  160355,
+                         "typeName":  "Sample Top Rail - ATR - 206",
+                         "typeId":  175183,
+                         "level":  "Level 1",
+                         "length":  4.0
+                     },
+                     {
+                         "railingId":  160361,
+                         "typeName":  "Sample Top Rail - ATR - 1J Flat",
+                         "typeId":  175181,
+                         "level":  "Level 1",
+                         "length":  4.0
+                     },
+                     {
+                         "railingId":  160367,
+                         "typeName":  "Sample Top Rail - ATR - 1J Round",
+                         "typeId":  175182,
+                         "level":  "Level 1",
+                         "length":  4.0
+                     },
+                     {
+                         "railingId":  160373,
+                         "typeName":  "Sample Top Rail - ATR - 207",
+                         "typeId":  175184,
+                         "level":  "Level 1",
+                         "length":  4.0
+                     },
+                     {
+                         "railingId":  160379,
+                         "typeName":  "Sample Top Rail - ATR - 304",
+                         "typeId":  175185,
+                         "level":  "Level 1",
+                         "length":  4.0
+                     },
+                     {
+                         "railingId":  160385,
+                         "typeName":  "Sample Top Rail - ATR - 1S",
+                         "typeId":  175186,
+                         "level":  "Level 1",
+                         "length":  4.0
+                     },
+                     {
+                         "railingId":  160391,
+                         "typeName":  "Sample Top Rail - ATR - 1Y",
+                         "typeId":  175187,
+                         "level":  "Level 1",
+                         "length":  4.0
+                     },
+                     {
+                         "railingId":  160397,
+                         "typeName":  "Sample Top Rail - ATR - 213",
+                         "typeId":  175188,
+                         "level":  "Level 1",
+                         "length":  4.0
+                     },
+                     {
+                         "railingId":  160403,
+                         "typeName":  "Sample Top Rail - ATR - 1G",
+                         "typeId":  175189,
+                         "level":  "Level 1",
+                         "length":  4.0
+                     },
+                     {
+                         "railingId":  160409,
+                         "typeName":  "Sample Top Rail - ATR - 1X",
+                         "typeId":  175190,
+                         "level":  "Level 1",
+                         "length":  4.0
+                     },
+                     {
+                         "railingId":  160415,
+                         "typeName":  "Sample Top Rail - ATR - 1T",
+                         "typeId":  175191,
+                         "level":  "Level 1",
+                         "length":  4.0
+                     },
+                     {
+                         "railingId":  160421,
+                         "typeName":  "Sample Top Rail - ATR - 148",
+                         "typeId":  175192,
+                         "level":  "Level 1",
+                         "length":  4.0
+                     },
+                     {
+                         "railingId":  160427,
+                         "typeName":  "Sample Top Rail - ATR - 1H",
+                         "typeId":  175193,
+                         "level":  "Level 1",
+                         "length":  4.0
+                     },
+                     {
+                         "railingId":  160433,
+                         "typeName":  "Sample Top Rail - ATR - 335",
+                         "typeId":  175194,
+                         "level":  "Level 1",
+                         "length":  4.0
+                     },
+                     {
+                         "railingId":  160439,
+                         "typeName":  "Sample Top Rail - ATR - 1E",
+                         "typeId":  175195,
+                         "level":  "Level 1",
+                         "length":  4.0
+                     },
+                     {
+                         "railingId":  160445,
+                         "typeName":  "Sample Top Rail - ATR - 1R",
+                         "typeId":  175196,
+                         "level":  "Level 1",
+                         "length":  4.0
+                     },
+                     {
+                         "railingId":  160451,
+                         "typeName":  "Sample Top Rail - ATR - 1W",
+                         "typeId":  175197,
+                         "level":  "Level 1",
+                         "length":  4.0
+                     },
+                     {
+                         "railingId":  160457,
+                         "typeName":  "Sample Top Rail - ATR - 1F",
+                         "typeId":  175198,
+                         "level":  "Level 1",
+                         "length":  4.0
+                     },
+                     {
+                         "railingId":  160463,
+                         "typeName":  "Sample Top Rail - ATR - 1U",
+                         "typeId":  175199,
+                         "level":  "Level 1",
+                         "length":  4.0
+                     },
+                     {
+                         "railingId":  160469,
+                         "typeName":  "Sample Top Rail - ATR - 1N",
+                         "typeId":  175200,
+                         "level":  "Level 1",
+                         "length":  4.0
+                     },
+                     {
+                         "railingId":  160475,
+                         "typeName":  "Sample Top Rail - ATR - 1V",
+                         "typeId":  175201,
+                         "level":  "Level 1",
+                         "length":  4.0
+                     },
+                     {
+                         "railingId":  160481,
+                         "typeName":  "Picket Rail - ATR - 6A - Angled1 - Baseplate",
+                         "typeId":  175203,
+                         "level":  "Level 1",
+                         "length":  8.99999999999999
+                     },
+                     {
+                         "railingId":  160486,
+                         "typeName":  "Picket Rail - ATR - 6A - Angled2 - Baseplate",
+                         "typeId":  175204,
+                         "level":  "Level 1",
+                         "length":  8.999999999999993
+                     },
+                     {
+                         "railingId":  160495,
+                         "typeName":  "Picket Rail - ATR - 6A - Angled1 - Embedded",
+                         "typeId":  175210,
+                         "level":  "Level 1",
+                         "length":  8.99999999999999
+                     },
+                     {
+                         "railingId":  160500,
+                         "typeName":  "Picket Rail - ATR - 6A - Angled2 - Embedded",
+                         "typeId":  175211,
+                         "level":  "Level 1",
+                         "length":  8.999999999999993
+                     },
+                     {
+                         "railingId":  160528,
+                         "typeName":  "Picket Rail - ATR - 6A - Embedded Stair Sample",
+                         "typeId":  175060,
+                         "level":  null,
+                         "length":  15.529870991416722
+                     },
+                     {
+                         "railingId":  160553,
+                         "typeName":  "Picket Rail - ATR - 6A - Embedded Stair Sample",
+                         "typeId":  175060,
+                         "level":  null,
+                         "length":  15.529870991416722
+                     },
+                     {
+                         "railingId":  160596,
+                         "typeName":  "Single_Line - ATR - 6W Wall Mount",
+                         "typeId":  175138,
+                         "level":  null,
+                         "length":  31.7589010721761
+                     },
+                     {
+                         "railingId":  160670,
+                         "typeName":  "Picket Rail - ATR - 6A - 2L Handrail - Angled1 - Embedded",
+                         "typeId":  175212,
+                         "level":  "Level 1",
+                         "length":  8.99999999999999
+                     },
+                     {
+                         "railingId":  160675,
+                         "typeName":  "Picket Rail - ATR - 6A - 2L Handrail - Angled2 - Embedded",
+                         "typeId":  175213,
+                         "level":  "Level 1",
+                         "length":  8.999999999999993
+                     },
+                     {
+                         "railingId":  160686,
+                         "typeName":  "Picket Rail - ATR - 6A - 2M Handrail - Angled1 - Embedded",
+                         "typeId":  175214,
+                         "level":  "Level 1",
+                         "length":  8.99999999999999
+                     },
+                     {
+                         "railingId":  160691,
+                         "typeName":  "Picket Rail - ATR - 6A - 2M Handrail - Angled2 - Embedded",
+                         "typeId":  175215,
+                         "level":  "Level 1",
+                         "length":  8.999999999999993
+                     },
+                     {
+                         "railingId":  160704,
+                         "typeName":  "Picket Rail - ATR - 4A - Angled Corner 1",
+                         "typeId":  175220,
+                         "level":  "Level 1",
+                         "length":  12.930964406271201
+                     },
+                     {
+                         "railingId":  160710,
+                         "typeName":  "Cable Rail - ATR - 2L Handrail - Custom 12 Cable - Embedded",
+                         "typeId":  175221,
+                         "level":  "Level 1",
+                         "length":  16.73632812500002
+                     },
+                     {
+                         "railingId":  160716,
+                         "typeName":  "Cable Rail - ATR - Custom 12 Cable - Baseplate",
+                         "typeId":  175224,
+                         "level":  "Level 1",
+                         "length":  16.73632812500002
+                     },
+                     {
+                         "railingId":  160722,
+                         "typeName":  "Cable Rail - ATR - 2L Handrail - Custom 12 Cable - Baseplate",
+                         "typeId":  175227,
+                         "level":  "Level 1",
+                         "length":  16.73632812500002
+                     },
+                     {
+                         "railingId":  160728,
+                         "typeName":  "Cable Rail - ATR - 2M Handrail - Custom 12 Cable - Baseplate",
+                         "typeId":  175230,
+                         "level":  "Level 1",
+                         "length":  16.73632812500002
+                     },
+                     {
+                         "railingId":  160739,
+                         "typeName":  "Picket Rail - ATR - 4A - Angled Corner 2",
+                         "typeId":  175233,
+                         "level":  "Level 1",
+                         "length":  13.069035593728909
+                     },
+                     {
+                         "railingId":  160749,
+                         "typeName":  "Cable Rail - ATR - 2L Handrail - Custom 12 Cable - Side Mount",
+                         "typeId":  175234,
+                         "level":  "Level 1",
+                         "length":  16.73632812500002
+                     },
+                     {
+                         "railingId":  160755,
+                         "typeName":  "Glass Panel Rail - ATR - 6D Style - Curved",
+                         "typeId":  175237,
+                         "level":  "Level 1",
+                         "length":  16.128646526866294
+                     },
+                     {
+                         "railingId":  160777,
+                         "typeName":  "Glass Panel Rail - ATR - 6E Style - Curved",
+                         "typeId":  175240,
+                         "level":  "Level 1",
+                         "length":  16.128646526866294
+                     },
+                     {
+                         "railingId":  160786,
+                         "typeName":  "Picket Rail - ATR - 6A - Baseplate",
+                         "typeId":  175083,
+                         "level":  "Level 1",
+                         "length":  16.65418697155316
+                     },
+                     {
+                         "railingId":  160794,
+                         "typeName":  "Picket Rail - ATR - 6B - Baseplate",
+                         "typeId":  175089,
+                         "level":  "Level 1",
+                         "length":  16.782570073752023
+                     },
+                     {
+                         "railingId":  160802,
+                         "typeName":  "Picket Rail - ATR - 6B1 - 2M Handrail - Baseplate",
+                         "typeId":  175096,
+                         "level":  "Level 1",
+                         "length":  16.87539660739645
+                     },
+                     {
+                         "railingId":  160810,
+                         "typeName":  "Picket Rail - ATR - 6C - 2M Handrail - Baseplate",
+                         "typeId":  175103,
+                         "level":  "Level 1",
+                         "length":  16.993050863664816
+                     },
+                     {
+                         "railingId":  160818,
+                         "typeName":  "Multi_Line - ATR - 6M - 2L Handrail - 3 Rail - Baseplate",
+                         "typeId":  175128,
+                         "level":  "Level 1",
+                         "length":  17.128289855659638
+                     },
+                     {
+                         "railingId":  160826,
+                         "typeName":  "Multi_Line - ATR - 6S - 2M Handrail -  7 Rail - Baseplate",
+                         "typeId":  175156,
+                         "level":  "Level 1",
+                         "length":  17.611887837758697
+                     },
+                     {
+                         "railingId":  161085,
+                         "typeName":  "Cable Rail - ATR - 2M Handrail - Custom 12 Cable - Embedded",
+                         "typeId":  175307,
+                         "level":  "Level 1",
+                         "length":  16.73632812500002
+                     },
+                     {
+                         "railingId":  161094,
+                         "typeName":  "Glass Panel Rail - ATR - 6F Style - Embedded",
+                         "typeId":  175312,
+                         "level":  "Level 1",
+                         "length":  16.125000000000007
+                     },
+                     {
+                         "railingId":  161103,
+                         "typeName":  "Glass Panel Rail - ATR - 6F Style - 2L Handrail - Embedded",
+                         "typeId":  175313,
+                         "level":  "Level 1",
+                         "length":  16.125000000000007
+                     },
+                     {
+                         "railingId":  161111,
+                         "typeName":  "Glass Panel Rail - ATR - 6F Style - 2M Handrail - Embedded",
+                         "typeId":  175314,
+                         "level":  "Level 1",
+                         "length":  16.125000000000007
+                     },
+                     {
+                         "railingId":  161119,
+                         "typeName":  "Glass Panel Rail - ATR - 6F Style - Baseplate",
+                         "typeId":  175315,
+                         "level":  "Level 1",
+                         "length":  16.125000000000007
+                     },
+                     {
+                         "railingId":  161127,
+                         "typeName":  "Glass Panel Rail - ATR - 6F Style - 2L Handrail - Baseplate",
+                         "typeId":  175316,
+                         "level":  "Level 1",
+                         "length":  16.125000000000007
+                     },
+                     {
+                         "railingId":  161135,
+                         "typeName":  "Glass Panel Rail - ATR - 6F Style - 2M Handrail - Baseplate",
+                         "typeId":  175317,
+                         "level":  "Level 1",
+                         "length":  16.125000000000007
+                     },
+                     {
+                         "railingId":  161143,
+                         "typeName":  "Glass Panel Rail - ATR - 6F Style - Curved",
+                         "typeId":  175318,
+                         "level":  "Level 1",
+                         "length":  16.128646526866294
+                     },
+                     {
+                         "railingId":  161152,
+                         "typeName":  "Glass Panel Rail - ATR - 6F Style - 2M Handrail - Side Mount",
+                         "typeId":  175319,
+                         "level":  "Level 1",
+                         "length":  16.125000000000007
+                     },
+                     {
+                         "railingId":  161163,
+                         "typeName":  "Cable Rail - ATR - 6VC -  12 Cable - Embedded",
+                         "typeId":  175320,
+                         "level":  "Level 1",
+                         "length":  16.73632812500002
+                     },
+                     {
+                         "railingId":  161170,
+                         "typeName":  "Cable Rail - ATR - 6VC - 2L Handrail - 12 Cables - Embedded",
+                         "typeId":  175321,
+                         "level":  "Level 1",
+                         "length":  16.73632812500002
+                     },
+                     {
+                         "railingId":  161177,
+                         "typeName":  "Cable Rail - ATR - 6VC - 2M Handrail -  12 Cable - Embedded",
+                         "typeId":  175322,
+                         "level":  "Level 1",
+                         "length":  16.73632812500002
+                     },
+                     {
+                         "railingId":  161184,
+                         "typeName":  "Cable Rail - ATR - 6VC - 12 Cable - Baseplate",
+                         "typeId":  175323,
+                         "level":  "Level 1",
+                         "length":  16.73632812500002
+                     },
+                     {
+                         "railingId":  161191,
+                         "typeName":  "Cable Rail - ATR - 6VC - 2L Handrail -  12 Cable - Baseplate",
+                         "typeId":  175324,
+                         "level":  "Level 1",
+                         "length":  16.73632812500002
+                     },
+                     {
+                         "railingId":  161198,
+                         "typeName":  "Cable Rail - ATR - 6VC - 2M Handrail -  12 Cable - Baseplate",
+                         "typeId":  175325,
+                         "level":  "Level 1",
+                         "length":  16.73632812500002
+                     },
+                     {
+                         "railingId":  161205,
+                         "typeName":  "Cable Rail - ATR - 6VC - 2M Handrail -  12 Cable - Side Mount",
+                         "typeId":  175326,
+                         "level":  "Level 1",
+                         "length":  16.73632812500002
+                     },
+                     {
+                         "railingId":  161212,
+                         "typeName":  "Cable Rail - ATR - 6QC -  5 Cable - Embedded",
+                         "typeId":  175328,
+                         "level":  "Level 1",
+                         "length":  16.73632812500002
+                     },
+                     {
+                         "railingId":  161233,
+                         "typeName":  "Cable Rail - ATR - 6QC - 2L Handrail - 5 Cables - Embedded",
+                         "typeId":  175329,
+                         "level":  "Level 1",
+                         "length":  16.73632812500002
+                     },
+                     {
+                         "railingId":  161246,
+                         "typeName":  "Cable Rail - ATR - 6QC - 2M Handrail -  5 Cable - Embedded",
+                         "typeId":  175330,
+                         "level":  "Level 1",
+                         "length":  16.73632812500002
+                     },
+                     {
+                         "railingId":  161260,
+                         "typeName":  "Cable Rail - ATR - 6QC - 5 Cable - Baseplate",
+                         "typeId":  175331,
+                         "level":  "Level 1",
+                         "length":  16.73632812500002
+                     },
+                     {
+                         "railingId":  161274,
+                         "typeName":  "Cable Rail - ATR - 6QC - 2L Handrail -  5 Cable - Baseplate",
+                         "typeId":  175332,
+                         "level":  "Level 1",
+                         "length":  16.73632812500002
+                     },
+                     {
+                         "railingId":  161288,
+                         "typeName":  "Cable Rail - ATR - 6QC - 2M Handrail -  5 Cable - Baseplate",
+                         "typeId":  175333,
+                         "level":  "Level 1",
+                         "length":  16.73632812500002
+                     },
+                     {
+                         "railingId":  161303,
+                         "typeName":  "Cable Rail - ATR - 6QC - 2L Handrail - 5 Cables - Embedded",
+                         "typeId":  175329,
+                         "level":  "Level 1",
+                         "length":  16.73632812500002
+                     },
+                     {
+                         "railingId":  161311,
+                         "typeName":  "Single_Line - ATR - 6K - Embedded",
+                         "typeId":  175337,
+                         "level":  "Level 1",
+                         "length":  16.666666666666664
+                     },
+                     {
+                         "railingId":  161327,
+                         "typeName":  "Single_Line - ATR -  6K Ramp - Embedded",
+                         "typeId":  175341,
+                         "level":  null,
+                         "length":  16.696639715157584
+                     },
+                     {
+                         "railingId":  161331,
+                         "typeName":  "Single_Line - ATR -  6K Ramp - Embedded",
+                         "typeId":  175341,
+                         "level":  null,
+                         "length":  16.696639715157584
+                     },
+                     {
+                         "railingId":  161352,
+                         "typeName":  "Single_Line - ATR - 6K - 2L Handrail - Embedded",
+                         "typeId":  175342,
+                         "level":  "Level 1",
+                         "length":  16.73632812500002
+                     },
+                     {
+                         "railingId":  161359,
+                         "typeName":  "Single_Line - ATR - 6K - 2M Handrail - Embedded",
+                         "typeId":  175345,
+                         "level":  "Level 1",
+                         "length":  16.73632812500002
+                     },
+                     {
+                         "railingId":  161368,
+                         "typeName":  "Single_Line - ATR - 6K - Baseplate",
+                         "typeId":  175348,
+                         "level":  "Level 1",
+                         "length":  16.666666666666664
+                     },
+                     {
+                         "railingId":  161377,
+                         "typeName":  "Single_Line - ATR - 6K - 2L Handrail - Baseplate",
+                         "typeId":  175357,
+                         "level":  "Level 1",
+                         "length":  16.73632812500002
+                     },
+                     {
+                         "railingId":  161387,
+                         "typeName":  "Single_Line - ATR - 6K - 2M Handrail - Baseplate",
+                         "typeId":  175358,
+                         "level":  "Level 1",
+                         "length":  16.73632812500002
+                     }
+                 ],
+    "curtainWalls":  [
+
+                     ],
+    "phases":  [
+                   {
+                       "phaseId":  32440,
+                       "phaseName":  "Existing",
+                       "sequenceNumber":  1
+                   },
+                   {
+                       "phaseId":  118390,
+                       "phaseName":  "New Construction",
+                       "sequenceNumber":  2
+                   }
+               ],
+    "projectInfo":  {
+                        "success":  true,
+                        "result":  {
+                                       "name":  "Project Name",
+                                       "number":  "Project Number",
+                                       "author":  "",
+                                       "status":  "Project Status",
+                                       "address":  "Enter address here",
+                                       "clientName":  "Owner",
+                                       "buildingName":  "",
+                                       "organizationName":  "",
+                                       "organizationDescription":  "",
+                                       "isPinned":  false,
+                                       "isWorkshared":  false,
+                                       "title":  "Railings-ATR-All_Products",
+                                       "pathname":  "D:\\006 - OLD PROJECTS ARCHIVE\\Spina Orourke + Partners\\REVIT FAMILY\\OneDrive_2021-08-31\\Revit Fam\\FAMILIES\\BL-BALUSTERS\\Railings-ATR-All_Products.rvt"
+                                   }
+                    },
+    "schedules":  [
+                      {
+                          "scheduleId":  189605,
+                          "scheduleName":  "Railing Schedule",
+                          "category":  "Railings",
+                          "fieldCount":  14,
+                          "filterCount":  0,
+                          "isKeySchedule":  false,
+                          "isMaterialTakeoff":  false
+                      }
+                  ],
+    "columns":  [
+
+                ],
+    "furniture":  [
+
+                  ],
+    "pipes":  [
+
+              ],
+    "extractedAt":  "2025-12-08 10:41:07",
+    "fileName":  "Railings-ATR-All_Products.rvt",
+    "views":  [
+                  {
+                      "viewId":  32,
+                      "viewName":  "Level 1",
+                      "viewType":  "FloorPlan",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  3651,
+                      "viewName":  "Project View",
+                      "viewType":  "ProjectBrowser",
+                      "isTemplate":  false,
+                      "scale":  24
+                  },
+                  {
+                      "viewId":  9948,
+                      "viewName":  "Level 2",
+                      "viewType":  "FloorPlan",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  29154,
+                      "viewName":  "East",
+                      "viewType":  "Elevation",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  29181,
+                      "viewName":  "North",
+                      "viewType":  "Elevation",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  29191,
+                      "viewName":  "West",
+                      "viewType":  "Elevation",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  29201,
+                      "viewName":  "South",
+                      "viewType":  "Elevation",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  101014,
+                      "viewName":  "System Browser",
+                      "viewType":  "SystemBrowser",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  189425,
+                      "viewName":  "Preview",
+                      "viewType":  "ThreeD",
+                      "isTemplate":  false,
+                      "scale":  8
+                  },
+                  {
+                      "viewId":  189605,
+                      "viewName":  "Railing Schedule",
+                      "viewType":  "Schedule",
+                      "isTemplate":  false,
+                      "scale":  1
+                  },
+                  {
+                      "viewId":  189613,
+                      "viewName":  "Samples",
+                      "viewType":  "ThreeD",
+                      "isTemplate":  false,
+                      "scale":  8
+                  },
+                  {
+                      "viewId":  189643,
+                      "viewName":  "Picket Railing 6-C",
+                      "viewType":  "ThreeD",
+                      "isTemplate":  false,
+                      "scale":  8
+                  },
+                  {
+                      "viewId":  189793,
+                      "viewName":  "Picket Railing 6-B1",
+                      "viewType":  "ThreeD",
+                      "isTemplate":  false,
+                      "scale":  8
+                  },
+                  {
+                      "viewId":  189852,
+                      "viewName":  "Picket Railing 6-B",
+                      "viewType":  "ThreeD",
+                      "isTemplate":  false,
+                      "scale":  8
+                  },
+                  {
+                      "viewId":  189922,
+                      "viewName":  "Picket Railing 6-A",
+                      "viewType":  "ThreeD",
+                      "isTemplate":  false,
+                      "scale":  8
+                  },
+                  {
+                      "viewId":  189979,
+                      "viewName":  "Cable Rail 6-QC",
+                      "viewType":  "ThreeD",
+                      "isTemplate":  false,
+                      "scale":  8
+                  },
+                  {
+                      "viewId":  190040,
+                      "viewName":  "Cable Rail 6-VC",
+                      "viewType":  "ThreeD",
+                      "isTemplate":  false,
+                      "scale":  8
+                  },
+                  {
+                      "viewId":  190085,
+                      "viewName":  "Glass Panel Railing 6-D",
+                      "viewType":  "ThreeD",
+                      "isTemplate":  false,
+                      "scale":  8
+                  },
+                  {
+                      "viewId":  190137,
+                      "viewName":  "Glass Panel Railing 6-E",
+                      "viewType":  "ThreeD",
+                      "isTemplate":  false,
+                      "scale":  8
+                  },
+                  {
+                      "viewId":  190195,
+                      "viewName":  "Glass Panel Railing 6-F",
+                      "viewType":  "ThreeD",
+                      "isTemplate":  false,
+                      "scale":  8
+                  },
+                  {
+                      "viewId":  190255,
+                      "viewName":  "Single-Line 6-K",
+                      "viewType":  "ThreeD",
+                      "isTemplate":  false,
+                      "scale":  8
+                  },
+                  {
+                      "viewId":  190342,
+                      "viewName":  "Single-Line 6-K Parapet",
+                      "viewType":  "ThreeD",
+                      "isTemplate":  false,
+                      "scale":  8
+                  },
+                  {
+                      "viewId":  190408,
+                      "viewName":  "Single-Line 6-W",
+                      "viewType":  "ThreeD",
+                      "isTemplate":  false,
+                      "scale":  8
+                  },
+                  {
+                      "viewId":  190460,
+                      "viewName":  "Multi-Line 6-M",
+                      "viewType":  "ThreeD",
+                      "isTemplate":  false,
+                      "scale":  8
+                  },
+                  {
+                      "viewId":  190532,
+                      "viewName":  "Multi-Line 6-S",
+                      "viewType":  "ThreeD",
+                      "isTemplate":  false,
+                      "scale":  8
+                  }
+              ],
+    "plumbingFixtures":  [
+
+                         ],
+    "doors":  [
+
+              ],
+    "floorTypes":  [
+                       {
+                           "floorTypeId":  226,
+                           "name":  "Generic - 12\"",
+                           "familyName":  "Floor",
+                           "isFoundation":  false
+                       },
+                       {
+                           "floorTypeId":  117725,
+                           "name":  "6\" Foundation Slab",
+                           "familyName":  "Foundation Slab",
+                           "isFoundation":  true
+                       },
+                       {
+                           "floorTypeId":  175207,
+                           "name":  "Generic - 36\"",
+                           "familyName":  "Floor",
+                           "isFoundation":  false
+                       },
+                       {
+                           "floorTypeId":  175327,
+                           "name":  "Generic - 21\"",
+                           "familyName":  "Floor",
+                           "isFoundation":  false
+                       },
+                       {
+                           "floorTypeId":  175363,
+                           "name":  "Generic - 12\" (Transparent)",
+                           "familyName":  "Floor",
+                           "isFoundation":  false
+                       }
+                   ],
+    "sheets":  [
+
+               ],
+    "structuralColumns":  [
+
+                          ],
+    "filePath":  "D:\\006 - OLD PROJECTS ARCHIVE\\Spina Orourke + Partners\\REVIT FAMILY\\OneDrive_2021-08-31\\Revit Fam\\FAMILIES\\BL-BALUSTERS\\Railings-ATR-All_Products.rvt",
+    "stairs":  [
+                   {
+                       "stairId":  160517,
+                       "typeName":  "7\" max riser 11\" tread",
+                       "typeId":  54873,
+                       "baseLevel":  "Level 1",
+                       "topLevel":  "Level 1",
+                       "desiredRisers":  6,
+                       "actualRisers":  6,
+                       "actualTreadDepth":  0.9166666666666666
+                   },
+                   {
+                       "stairId":  160563,
+                       "typeName":  "7\" max riser 11\" tread",
+                       "typeId":  54873,
+                       "baseLevel":  "Level 1",
+                       "topLevel":  "Level 2",
+                       "desiredRisers":  18,
+                       "actualRisers":  18,
+                       "actualTreadDepth":  0.9166666666666666
+                   }
+               ],
+    "ceilingTypes":  [
+                         {
+                             "ceilingTypeId":  227,
+                             "name":  "Generic",
+                             "familyName":  "Basic Ceiling"
+                         },
+                         {
+                             "ceilingTypeId":  44748,
+                             "name":  "GWB on Mtl. Stud",
+                             "familyName":  "Compound Ceiling"
+                         },
+                         {
+                             "ceilingTypeId":  44798,
+                             "name":  "Generic - 4\"",
+                             "familyName":  "Roof Soffit"
+                         }
+                     ],
+    "walls":  [
+                  {
+                      "wallId":  160056,
+                      "wallType":  "4\" Brick",
+                      "wallTypeId":  175092,
+                      "length":  16.73632812500003,
+                      "height":  1.0,
+                      "width":  0.30208333333333337,
+                      "structural":  false,
+                      "startPoint":  {
+                                         "x":  325.3749431109378,
+                                         "y":  31.01637472980705,
+                                         "z":  0.0
+                                     },
+                      "endPoint":  {
+                                       "x":  342.1112712359378,
+                                       "y":  31.016374729806994,
+                                       "z":  0.0
+                                   },
+                      "baseLevel":  "Level 1",
+                      "topLevel":  null,
+                      "baseOffset":  0.0,
+                      "topOffset":  0.0
+                  },
+                  {
+                      "wallId":  160200,
+                      "wallType":  "5\" Interior",
+                      "wallTypeId":  175137,
+                      "length":  40.0,
+                      "height":  9.999999999998435,
+                      "width":  0.3749999999999997,
+                      "structural":  false,
+                      "startPoint":  {
+                                         "x":  282.2217673063589,
+                                         "y":  31.05283306314054,
+                                         "z":  0.0
+                                     },
+                      "endPoint":  {
+                                       "x":  322.2217673063589,
+                                       "y":  31.05283306314041,
+                                       "z":  0.0
+                                   },
+                      "baseLevel":  "Level 1",
+                      "topLevel":  "Level 2",
+                      "baseOffset":  0.0,
+                      "topOffset":  0.0
+                  }
+              ],
+    "foundations":  [
+
+                    ],
+    "rooms":  [
+
+              ],
+    "worksets":  [
+
+                 ],
+    "floors":  [
+                   {
+                       "floorId":  159870,
+                       "typeName":  "Generic - 12\" (Transparent)",
+                       "typeId":  175363,
+                       "level":  "Level 1",
+                       "area":  23100.000000000004,
+                       "thickness":  1.0,
+                       "structural":  false
+                   },
+                   {
+                       "floorId":  160065,
+                       "typeName":  "Generic - 12\"",
+                       "typeId":  226,
+                       "level":  "Level 1",
+                       "area":  697.5,
+                       "thickness":  1.0,
+                       "structural":  false
+                   },
+                   {
+                       "floorId":  160509,
+                       "typeName":  "Generic - 36\"",
+                       "typeId":  175207,
+                       "level":  "Level 1",
+                       "area":  98.00000000000462,
+                       "thickness":  3.0,
+                       "structural":  false
+                   },
+                   {
+                       "floorId":  161218,
+                       "typeName":  "Generic - 21\"",
+                       "typeId":  175327,
+                       "level":  "Level 1",
+                       "area":  11.499999999999996,
+                       "thickness":  1.75,
+                       "structural":  false
+                   },
+                   {
+                       "floorId":  161226,
+                       "typeName":  "Generic - 21\"",
+                       "typeId":  175327,
+                       "level":  "Level 1",
+                       "area":  11.499999999999993,
+                       "thickness":  1.75,
+                       "structural":  false
+                   },
+                   {
+                       "floorId":  161239,
+                       "typeName":  "Generic - 21\"",
+                       "typeId":  175327,
+                       "level":  "Level 1",
+                       "area":  11.499999999999961,
+                       "thickness":  1.75,
+                       "structural":  false
+                   },
+                   {
+                       "floorId":  161253,
+                       "typeName":  "Generic - 21\"",
+                       "typeId":  175327,
+                       "level":  "Level 1",
+                       "area":  11.499999999999957,
+                       "thickness":  1.75,
+                       "structural":  false
+                   },
+                   {
+                       "floorId":  161267,
+                       "typeName":  "Generic - 21\"",
+                       "typeId":  175327,
+                       "level":  "Level 1",
+                       "area":  11.499999999999957,
+                       "thickness":  1.75,
+                       "structural":  false
+                   },
+                   {
+                       "floorId":  161281,
+                       "typeName":  "Generic - 21\"",
+                       "typeId":  175327,
+                       "level":  "Level 1",
+                       "area":  11.499999999999957,
+                       "thickness":  1.75,
+                       "structural":  false
+                   },
+                   {
+                       "floorId":  161296,
+                       "typeName":  "Generic - 21\"",
+                       "typeId":  175327,
+                       "level":  "Level 1",
+                       "area":  8.625,
+                       "thickness":  1.75,
+                       "structural":  false
+                   }
+               ],
+    "grids":  [
+
+              ],
+    "ducts":  [
+
+              ],
+    "windowTypes":  [
+
+                    ],
+    "loadedFamilies":  [
+                           {
+                               "familyId":  161581,
+                               "name":  "Baluster_Panel-ATR-Glass",
+                               "category":  "Balusters",
+                               "typeCount":  2,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  162035,
+                               "name":  "Baluster-ATR-3A",
+                               "category":  "Balusters",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  162619,
+                               "name":  "Baluster-ATR-3B",
+                               "category":  "Balusters",
+                               "typeCount":  2,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  172081,
+                               "name":  "Baluster-ATR-3C",
+                               "category":  "Balusters",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  163216,
+                               "name":  "Baluster-ATR-3D",
+                               "category":  "Balusters",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  164125,
+                               "name":  "Baluster-ATR-3E",
+                               "category":  "Balusters",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  164709,
+                               "name":  "Baluster-ATR-3F",
+                               "category":  "Balusters",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  165293,
+                               "name":  "Baluster-ATR-3H",
+                               "category":  "Balusters",
+                               "typeCount":  2,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  166209,
+                               "name":  "Baluster-ATR-74",
+                               "category":  "Balusters",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  193651,
+                               "name":  "Handrail_Return-ATR",
+                               "category":  "Balusters",
+                               "typeCount":  3,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  168385,
+                               "name":  "Post-ATR-4A",
+                               "category":  "Balusters",
+                               "typeCount":  9,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  169099,
+                               "name":  "Post-ATR-4G",
+                               "category":  "Balusters",
+                               "typeCount":  7,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  169802,
+                               "name":  "Post-ATR-4Q-45A",
+                               "category":  "Balusters",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  170429,
+                               "name":  "Post-ATR-4Q-45B",
+                               "category":  "Balusters",
+                               "typeCount":  2,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  174224,
+                               "name":  "Post-ATR-6K-Single_Line",
+                               "category":  "Balusters",
+                               "typeCount":  12,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  172979,
+                               "name":  "Post-ATR-6M-Multi_Line",
+                               "category":  "Balusters",
+                               "typeCount":  28,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  171058,
+                               "name":  "Post-ATR-Multi_Rail",
+                               "category":  "Balusters",
+                               "typeCount":  6,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  118596,
+                               "name":  "Callout Head",
+                               "category":  "Callout Heads",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  21943,
+                               "name":  "Empty System Panel",
+                               "category":  "Curtain Panels",
+                               "typeCount":  0,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  20915,
+                               "name":  "System Panel",
+                               "category":  "Curtain Panels",
+                               "typeCount":  1,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  28596,
+                               "name":  "Circular Mullion",
+                               "category":  "Curtain Wall Mullions",
+                               "typeCount":  0,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  43497,
+                               "name":  "L Corner Mullion",
+                               "category":  "Curtain Wall Mullions",
+                               "typeCount":  0,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  43509,
+                               "name":  "Quad Corner Mullion",
+                               "category":  "Curtain Wall Mullions",
+                               "typeCount":  0,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  28595,
+                               "name":  "Rectangular Mullion",
+                               "category":  "Curtain Wall Mullions",
+                               "typeCount":  0,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  43505,
+                               "name":  "Trapezoid Corner Mullion",
+                               "category":  "Curtain Wall Mullions",
+                               "typeCount":  0,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  43501,
+                               "name":  "V Corner Mullion",
+                               "category":  "Curtain Wall Mullions",
+                               "typeCount":  0,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  157137,
+                               "name":  "Elevation Mark Body_Square",
+                               "category":  "Elevation Marks",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  151380,
+                               "name":  "Elevation Mark Pointer_Square",
+                               "category":  "Elevation Marks",
+                               "typeCount":  4,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  190942,
+                               "name":  "Handrail_Bracket-ATR",
+                               "category":  "Generic Models",
+                               "typeCount":  2,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  119524,
+                               "name":  "Grid Head - Circle",
+                               "category":  "Grid Heads",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  119914,
+                               "name":  "Level Head - Circle",
+                               "category":  "Level Heads",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  175472,
+                               "name":  "Bottom_Rail-ATR-2A-2D",
+                               "category":  "Profiles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  175765,
+                               "name":  "Bottom_Rail-ATR-2D-2D",
+                               "category":  "Profiles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  176058,
+                               "name":  "Bottom_Rail-ATR-2J_Rounded-2D",
+                               "category":  "Profiles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  176349,
+                               "name":  "Bottom_Rail-ATR-2Q-2D",
+                               "category":  "Profiles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  192458,
+                               "name":  "Cable-Rail_Style-ATR-0.125_Diameter-Profile",
+                               "category":  "Profiles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  176646,
+                               "name":  "Handrail-ATR-2L-2D",
+                               "category":  "Profiles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  176937,
+                               "name":  "Handrail-ATR-2M-2D",
+                               "category":  "Profiles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  177833,
+                               "name":  "Midrail-ATR-14-2D",
+                               "category":  "Profiles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  177540,
+                               "name":  "Midrail-ATR-1B-2D",
+                               "category":  "Profiles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  126131,
+                               "name":  "Stair Nosing - Pan",
+                               "category":  "Profiles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  182308,
+                               "name":  "Top_Rail-ATR-148-2D",
+                               "category":  "Profiles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  185392,
+                               "name":  "Top_Rail-ATR-1B-2D",
+                               "category":  "Profiles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  185685,
+                               "name":  "Top_Rail-ATR-1D-2D",
+                               "category":  "Profiles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  185978,
+                               "name":  "Top_Rail-ATR-1E-2D",
+                               "category":  "Profiles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  186271,
+                               "name":  "Top_Rail-ATR-1F-2D",
+                               "category":  "Profiles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  186564,
+                               "name":  "Top_Rail-ATR-1G-2D",
+                               "category":  "Profiles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  186857,
+                               "name":  "Top_Rail-ATR-1H-2D",
+                               "category":  "Profiles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  187169,
+                               "name":  "Top_Rail-ATR-1J_Flat-2D",
+                               "category":  "Profiles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  187461,
+                               "name":  "Top_Rail-ATR-1J_Round-2D",
+                               "category":  "Profiles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  187752,
+                               "name":  "Top_Rail-ATR-1K_Flat-2D",
+                               "category":  "Profiles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  178126,
+                               "name":  "Top_Rail-ATR-1K_Round-2D",
+                               "category":  "Profiles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  178418,
+                               "name":  "Top_Rail-ATR-1L_Flat-2D",
+                               "category":  "Profiles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  178710,
+                               "name":  "Top_Rail-ATR-1L_Round-2D",
+                               "category":  "Profiles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  179001,
+                               "name":  "Top_Rail-ATR-1M_Flat-2D",
+                               "category":  "Profiles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  179293,
+                               "name":  "Top_Rail-ATR-1N-2D",
+                               "category":  "Profiles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  179586,
+                               "name":  "Top_Rail-ATR-1P-2D",
+                               "category":  "Profiles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  179879,
+                               "name":  "Top_Rail-ATR-1R-2D",
+                               "category":  "Profiles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  180172,
+                               "name":  "Top_Rail-ATR-1S-2D",
+                               "category":  "Profiles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  180488,
+                               "name":  "Top_Rail-ATR-1T-2D",
+                               "category":  "Profiles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  180803,
+                               "name":  "Top_Rail-ATR-1U-2D",
+                               "category":  "Profiles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  181096,
+                               "name":  "Top_Rail-ATR-1V-2D",
+                               "category":  "Profiles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  181389,
+                               "name":  "Top_Rail-ATR-1W-2D",
+                               "category":  "Profiles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  181682,
+                               "name":  "Top_Rail-ATR-1X-2D",
+                               "category":  "Profiles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  181998,
+                               "name":  "Top_Rail-ATR-1Y-2D",
+                               "category":  "Profiles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  182635,
+                               "name":  "Top_Rail-ATR-206-2D",
+                               "category":  "Profiles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  182944,
+                               "name":  "Top_Rail-ATR-207-2D",
+                               "category":  "Profiles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  183257,
+                               "name":  "Top_Rail-ATR-213-2D",
+                               "category":  "Profiles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  183581,
+                               "name":  "Top_Rail-ATR-304-2D",
+                               "category":  "Profiles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  183890,
+                               "name":  "Top_Rail-ATR-307-2D",
+                               "category":  "Profiles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  184183,
+                               "name":  "Top_Rail-ATR-308-2D",
+                               "category":  "Profiles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  184476,
+                               "name":  "Top_Rail-ATR-335-2D",
+                               "category":  "Profiles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  184792,
+                               "name":  "Top_Rail-ATR-Wood-2D",
+                               "category":  "Profiles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  185085,
+                               "name":  "Top_Rail-ATR-Wood-Angled-2D",
+                               "category":  "Profiles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  120736,
+                               "name":  "Section Head - Filled",
+                               "category":  "Section Marks",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  120962,
+                               "name":  "Section Head - no arrow",
+                               "category":  "Section Marks",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  121362,
+                               "name":  "Section Tail - Filled",
+                               "category":  "Section Marks",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  121576,
+                               "name":  "Section Tail - Filled Horizontal",
+                               "category":  "Section Marks",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  121790,
+                               "name":  "Spot Elevation - Crosshair",
+                               "category":  "Spot Elevation Symbols",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  121980,
+                               "name":  "Spot Elevation - Target Filled",
+                               "category":  "Spot Elevation Symbols",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  131764,
+                               "name":  "View Reference",
+                               "category":  "View Reference",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  122183,
+                               "name":  "View Title",
+                               "category":  "View Titles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           }
+                       ],
+    "doorTypes":  [
+
+                  ],
+    "electricalCircuits":  [
+
+                           ],
+    "mepSystems":  [
+
+                   ],
+    "roofTypes":  [
+                      {
+                          "roofTypeId":  223,
+                          "name":  "Generic - 12\"",
+                          "familyName":  "Basic Roof"
+                      },
+                      {
+                          "roofTypeId":  18448,
+                          "name":  "Sloped Glazing",
+                          "familyName":  "Sloped Glazing"
+                      }
+                  ],
+    "levels":  [
+                   {
+                       "levelId":  30,
+                       "name":  "Level 1",
+                       "elevation":  0.0
+                   },
+                   {
+                       "levelId":  9946,
+                       "name":  "Level 2",
+                       "elevation":  9.999999999998435
+                   }
+               ],
+    "materials":  [
+                      {
+                          "materialId":  159844,
+                          "name":  "Concrete - Cast-in-Place Concrete",
+                          "materialClass":  "Concrete",
+                          "color":  "wMDA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  159845,
+                          "name":  "Aluminum - ATR - Anodized Clear",
+                          "materialClass":  "Metal",
+                          "color":  "jIyM",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  159846,
+                          "name":  "Aluminum - ATR - Anodized Gold",
+                          "materialClass":  "Metal",
+                          "color":  "/9YA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  159847,
+                          "name":  "Aluminum - ATR - Anodized Light Bronze",
+                          "materialClass":  "Metal",
+                          "color":  "uJuD",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  159849,
+                          "name":  "Aluminum - ATR - Anodized Dark Bronze",
+                          "materialClass":  "Metal",
+                          "color":  "rJWD",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  159850,
+                          "name":  "Aluminum - ATR - Anodized Black",
+                          "materialClass":  "Metal",
+                          "color":  "CgoK",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  159851,
+                          "name":  "Aluminum - ATR - Anodized Hard Coat",
+                          "materialClass":  "Metal",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  159853,
+                          "name":  "Aluminum - ATR - Powder Coat Black",
+                          "materialClass":  "Metal",
+                          "color":  "Ly8v",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  159854,
+                          "name":  "Wood - ATR - Teak",
+                          "materialClass":  "Wood",
+                          "color":  "Vy0Z",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  159855,
+                          "name":  "Wood - ATR - Ipe",
+                          "materialClass":  "Wood",
+                          "color":  "XDkj",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  159856,
+                          "name":  "Wood - ATR - Redwood",
+                          "materialClass":  "Wood",
+                          "color":  "aEhI",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  159857,
+                          "name":  "Concrete - Cast-in-Place Concrete (Transparent)",
+                          "materialClass":  "Concrete",
+                          "color":  "wMDA",
+                          "transparency":  20,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  159863,
+                          "name":  "Masonry - Brick",
+                          "materialClass":  "Brick",
+                          "color":  "qmJo",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  159865,
+                          "name":  "Glass - ATR - 1/4\" Tempered",
+                          "materialClass":  "Miscellaneous",
+                          "color":  "2uPg",
+                          "transparency":  85,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  194445,
+                          "name":  "Carbon Steel",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  194446,
+                          "name":  "Copper",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  194447,
+                          "name":  "Ductile Iron",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  194448,
+                          "name":  "Plastic",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  194449,
+                          "name":  "Stainless Steel",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  226546,
+                          "name":  "System-Zones",
+                          "materialClass":  "Unassigned",
+                          "color":  "Xl7N",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  227949,
+                          "name":  "Analytical Spaces",
+                          "materialClass":  "Unassigned",
+                          "color":  "AMjI",
+                          "transparency":  85,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  227951,
+                          "name":  "Analytical Surface - Exterior Walls",
+                          "materialClass":  "Unassigned",
+                          "color":  "hbIs",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  227953,
+                          "name":  "Analytical Surface - Roofs",
+                          "materialClass":  "Unassigned",
+                          "color":  "Jg+Z",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  227955,
+                          "name":  "Analytical Surface - Slabs on Grade",
+                          "materialClass":  "Unassigned",
+                          "color":  "ZVHM",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  227957,
+                          "name":  "Analytical Surface - Interior Walls",
+                          "materialClass":  "Unassigned",
+                          "color":  "w+V+",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  227959,
+                          "name":  "Analytical Surface - Interior Floors",
+                          "materialClass":  "Unassigned",
+                          "color":  "ZVHM",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  227961,
+                          "name":  "Analytical Surface - Ceilings",
+                          "materialClass":  "Unassigned",
+                          "color":  "v7L/",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  227963,
+                          "name":  "Analytical Surface - Air Surfaces",
+                          "materialClass":  "Unassigned",
+                          "color":  "vtLc",
+                          "transparency":  90,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  227965,
+                          "name":  "Analytical Surface - Underground Walls",
+                          "materialClass":  "Unassigned",
+                          "color":  "sm8s",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  227967,
+                          "name":  "Analytical Surface - Operable Windows",
+                          "materialClass":  "Unassigned",
+                          "color":  "suX/",
+                          "transparency":  75,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  227969,
+                          "name":  "Analytical Surface - Operable Skylights",
+                          "materialClass":  "Unassigned",
+                          "color":  "suX/",
+                          "transparency":  75,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  227971,
+                          "name":  "Analytical Surface - Sliding Doors",
+                          "materialClass":  "Unassigned",
+                          "color":  "/7Ky",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  227973,
+                          "name":  "Analytical Surface - Air Openings",
+                          "materialClass":  "Unassigned",
+                          "color":  "////",
+                          "transparency":  100,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  227975,
+                          "name":  "Analytical Surface - Shades",
+                          "materialClass":  "Unassigned",
+                          "color":  "kJKK",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  228120,
+                          "name":  "Analytical Panels",
+                          "materialClass":  "Unassigned",
+                          "color":  "+8WZ",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  228202,
+                          "name":  "Electrical Analytical Loads",
+                          "materialClass":  "Unassigned",
+                          "color":  "Xl7N",
+                          "transparency":  50,
+                          "shininess":  64
+                      }
+                  ],
+    "windows":  [
+
+                ],
+    "electricalFixtures":  [
+
+                           ],
+    "warnings":  [
+
+                 ]
+}

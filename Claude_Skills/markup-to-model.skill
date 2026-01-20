@@ -1,0 +1,275 @@
+# Markup to Model Pipeline
+
+## Overview
+Convert PDF floor plans (from Bluebeam or other sources) into Revit model elements. Handles the complete workflow from PDF analysis through wall/door/window placement and validation.
+
+## When to Use
+- Converting architect's PDF drawings to BIM
+- Tracing existing building floor plans
+- Converting CAD imports to native Revit elements
+- Processing redline markups into model changes
+
+## Prerequisites
+- PDF floor plan (vector-based preferred)
+- Revit project open with appropriate template
+- RevitMCPBridge connected
+- Bluebeam MCP available (for PDF operations)
+
+---
+
+## PIPELINE: PDF Floor Plan to Revit
+
+### PHASE 1: PDF Analysis
+**Checkpoint: Confirm correct PDF and page before proceeding**
+
+```
+Step 1.1: Open PDF in Bluebeam
+  Tool: mcp__bluebeam__open_document(file_path)
+  Verify: Correct document opened
+
+Step 1.2: Navigate to floor plan page
+  Tool: mcp__bluebeam__go_to_page(page)
+  Take screenshot for reference
+
+Step 1.3: Determine drawing scale
+  Methods:
+  - Look for scale text in title block
+  - Measure known element (door = 3'-0" typical)
+  - Check dimension strings
+  Common scales:
+  - 1/8" = 1'-0" (1:96) - overall plans
+  - 1/4" = 1'-0" (1:48) - floor plans
+  - 1/2" = 1'-0" (1:24) - enlarged plans
+
+Step 1.4: Identify drawing origin
+  Look for: Grid intersection, building corner
+  Note: PDF origin is bottom-left
+```
+
+### PHASE 2: CAD Import (if not already in Revit)
+**Checkpoint: Verify CAD visibility and position**
+
+```
+Step 2.1: Check for existing CAD imports
+  Tool: RevitMCP.getImportedCADInstances()
+  If exists: Use existing, skip to Phase 3
+
+Step 2.2: Import CAD/PDF to Revit
+  Manual: Insert > Import CAD or Link CAD
+  Place on correct level
+
+Step 2.3: Position CAD import
+  Tool: RevitMCP.moveElement()
+  Align with Revit project coordinates
+
+Step 2.4: Set CAD visibility
+  Ensure relevant layers visible
+  Tool: RevitMCP.getImportedCADLayers()
+```
+
+### PHASE 3: Geometry Extraction
+**Checkpoint: Review extracted geometry before wall creation**
+
+```
+Step 3.1: Extract CAD lines
+  Tool: RevitMCP.getImportedLines(importId)
+  Parameters: includeLayerInfo=true
+  Output: All line segments with layer names
+
+Step 3.2: Filter wall-relevant layers
+  Common wall layers:
+  - A-WALL, WALL, A-WALL-FULL
+  - A-WALL-PRHT (partial height)
+  - Exclude: A-DOOR, A-GLAZ, A-FURN, A-DIMS
+
+Step 3.3: Identify wall line pairs
+  CRITICAL: Walls are TWO parallel lines (inner/outer face)
+  Algorithm:
+  - Find parallel line pairs 4"-12" apart
+  - Calculate centerline between them
+  - Wall thickness = distance between lines
+
+Step 3.4: Build wall segments
+  Output: List of {start, end, thickness, height} per wall
+```
+
+### PHASE 4: Wall Creation
+**Checkpoint: Place test wall first, verify position before batch**
+
+```
+Step 4.1: Query available wall types
+  Tool: RevitMCP.getWallTypes()
+  Match detected thickness to available types
+
+Step 4.2: Place single test wall
+  Tool: RevitMCP.createWall()
+  Parameters:
+  - startPoint: [x, y, z]
+  - endPoint: [x, y, z]
+  - wallTypeId: matched type
+  - levelId: target level
+  - height: level height or specified
+
+Step 4.3: Validate test wall
+  Tool: RevitMCP.getWallById() or screenshot
+  VERIFY: Position matches CAD exactly
+  If wrong: STOP, adjust coordinate transform
+
+Step 4.4: Batch wall creation
+  Only after test wall confirmed correct
+  Tool: RevitMCP.createWall() for each segment
+  Track created wall IDs
+
+Step 4.5: Validate all walls
+  Agent: bim-validator
+  Check: No overlaps, gaps at corners joined
+```
+
+### PHASE 5: Opening Detection & Placement
+**Checkpoint: Review detected openings before placement**
+
+```
+Step 5.1: Detect door locations
+  Method: Gaps in wall lines (swing arcs indicate doors)
+  Typical: 2'-8" to 3'-6" gaps = doors
+
+Step 5.2: Detect window locations
+  Method: Parallel lines within wall thickness
+  Or: Gaps in exterior walls at consistent heights
+
+Step 5.3: Query available door/window types
+  Tool: RevitMCP.getDoorTypes(), getWindowTypes()
+
+Step 5.4: Place doors
+  Tool: RevitMCP.placeDoor()
+  Parameters: wallId, location, doorTypeId
+  Doors insert INTO walls (wall must exist first)
+
+Step 5.5: Place windows
+  Tool: RevitMCP.placeWindow()
+  Parameters: wallId, location, windowTypeId, sillHeight
+```
+
+### PHASE 6: Room & Space Definition
+**Checkpoint: Verify room boundaries closed**
+
+```
+Step 6.1: Create rooms
+  Tool: RevitMCP.createRoom()
+  Place in enclosed areas
+
+Step 6.2: Name rooms
+  Tool: RevitMCP.setRoomParameter()
+  Use text labels from PDF if available
+
+Step 6.3: Verify room boundaries
+  Tool: RevitMCP.getRoomBoundaries()
+  All rooms should have closed boundaries
+```
+
+### PHASE 7: Validation & Comparison
+**Checkpoint: Visual comparison PDF vs Model**
+
+```
+Step 7.1: Capture model view
+  Tool: RevitMCP.captureViewport()
+  Export floor plan view
+
+Step 7.2: Compare to source PDF
+  Visual overlay comparison
+  Check: Wall positions, door locations, room sizes
+
+Step 7.3: Generate validation report
+  - Wall count: expected vs actual
+  - Door count: expected vs actual
+  - Area: calculated vs PDF dimensions
+  - Issues found: list with locations
+
+Step 7.4: Fix discrepancies
+  If walls missing: trace manually
+  If walls wrong position: delete and recreate
+  Tool: RevitMCP.deleteElements()
+```
+
+---
+
+## Critical Corrections (from memory)
+
+### Wall Placement
+1. **Use parallel line pairs** - Walls are TWO lines, not one
+2. **Test single wall first** - Verify coordinates before batch
+3. **Don't invent walls** - Only place where CAD lines exist
+4. **Stop at actual endpoints** - Don't extend to distant features
+5. **Raw coordinates work** - Don't divide by 12 unless unit conversion needed
+
+### Coordinate Handling
+- PDF: Points (72 per inch), origin bottom-left
+- DXF/CAD: Varies, often inches or feet
+- Revit: Internal units are feet
+- Always test with known point before batch operations
+
+---
+
+## Validation Criteria
+
+### Per Wall
+- [ ] Position matches CAD within 1"
+- [ ] Correct wall type (thickness matches)
+- [ ] Endpoints at intersections/corners
+- [ ] Height correct for level
+
+### Per Door/Window
+- [ ] Hosted on correct wall
+- [ ] Position matches CAD opening
+- [ ] Correct type/size
+- [ ] Swing direction correct (doors)
+
+### Overall Model
+- [ ] All walls from CAD represented
+- [ ] No duplicate/overlapping walls
+- [ ] Rooms can be placed (boundaries closed)
+- [ ] Total area matches PDF
+
+---
+
+## Error Recovery
+
+| Error | Cause | Recovery |
+|-------|-------|----------|
+| Walls at wrong location | Coordinate transform error | Delete walls, recalculate transform, test again |
+| Missing walls | Lines filtered out | Check layer filters, add missing layers |
+| Overlapping walls | Duplicate detection | Delete duplicates with RevitMCP.deleteElements() |
+| Doors not hosting | Wall missing at location | Create wall first, then place door |
+| Gaps at corners | Wall endpoints not meeting | Use RevitMCP.joinWalls() or manual adjustment |
+
+---
+
+## Checkpoint Gates
+
+1. **GATE 1**: PDF/CAD confirmed (correct file, correct page)
+2. **GATE 2**: Geometry extraction reviewed (wall lines identified)
+3. **GATE 3**: Test wall validated (coordinates correct)
+4. **GATE 4**: All walls placed (before openings)
+5. **GATE 5**: Visual comparison approved (PDF vs model match)
+
+At each gate, STOP and get user confirmation before proceeding.
+
+---
+
+## Quick Commands
+
+```bash
+# Start markup-to-model pipeline
+/pdf-to-revit
+
+# Check CAD import status
+RevitMCP.getImportedCADInstances()
+
+# Validate wall placement
+/verify-bim
+```
+
+---
+
+*Last Updated: 2026-01-06*
+*Version: 1.0*

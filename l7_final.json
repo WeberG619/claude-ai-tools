@@ -1,0 +1,46 @@
+﻿[
+    {
+        "roomId":  1314020,
+        "number":  "01"
+    },
+    {
+        "roomId":  1314024,
+        "number":  "05"
+    },
+    {
+        "roomId":  1314028,
+        "number":  "09"
+    },
+    {
+        "roomId":  1314032,
+        "number":  "13"
+    },
+    {
+        "roomId":  1314036,
+        "number":  "17"
+    },
+    {
+        "roomId":  1314040,
+        "number":  "21"
+    },
+    {
+        "roomId":  1314044,
+        "number":  "25"
+    },
+    {
+        "roomId":  1314048,
+        "number":  "29"
+    },
+    {
+        "roomId":  1314052,
+        "number":  "33"
+    },
+    {
+        "roomId":  1314056,
+        "number":  "37"
+    },
+    {
+        "roomId":  1314060,
+        "number":  "42"
+    }
+]

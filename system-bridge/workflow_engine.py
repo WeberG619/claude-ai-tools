@@ -1,0 +1,513 @@
+#!/usr/bin/env python3
+"""
+Workflow Learning Engine
+Tracks user actions, learns patterns, and predicts/suggests next steps.
+
+This transforms Claude from reactive to truly proactive by:
+1. Recording action sequences (what user does after what)
+2. Learning common workflows per project type
+3. Predicting next likely actions
+4. Suggesting optimizations and shortcuts
+5. Detecting anomalies (user doing something unusual)
+"""
+
+import json
+import sqlite3
+from datetime import datetime, timedelta
+from pathlib import Path
+from typing import Dict, List, Optional, Tuple
+from collections import defaultdict, Counter
+from dataclasses import dataclass, asdict
+import re
+
+# Paths
+BASE_DIR = Path(r"D:\_CLAUDE-TOOLS\system-bridge")
+WORKFLOWS_DB = BASE_DIR / "workflows.db"
+PATTERNS_FILE = BASE_DIR / "learned_patterns.json"
+
+@dataclass
+class Action:
+    """Represents a user action."""
+    timestamp: str
+    action_type: str  # app_switch, revit_command, file_open, view_change, etc.
+    details: Dict
+    project: Optional[str] = None
+    context: Optional[str] = None  # What was happening when this occurred
+
+@dataclass
+class WorkflowPattern:
+    """A learned workflow pattern."""
+    name: str
+    trigger: str
+    sequence: List[str]
+    frequency: int
+    avg_duration_seconds: float
+    project_types: List[str]
+    success_rate: float
+
+class WorkflowDatabase:
+    """SQLite database for workflow storage."""
+
+    def __init__(self):
+        self.db_path = WORKFLOWS_DB
+        self._init_db()
+
+    def _init_db(self):
+        """Initialize database schema."""
+        conn = sqlite3.connect(self.db_path)
+        cursor = conn.cursor()
+
+        # Actions table
+        cursor.execute("""
+            CREATE TABLE IF NOT EXISTS actions (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                timestamp TEXT NOT NULL,
+                action_type TEXT NOT NULL,
+                details TEXT,
+                project TEXT,
+                context TEXT,
+                session_id TEXT
+            )
+        """)
+
+        # Sequences table (learned patterns)
+        cursor.execute("""
+            CREATE TABLE IF NOT EXISTS sequences (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                trigger_action TEXT NOT NULL,
+                next_action TEXT NOT NULL,
+                count INTEGER DEFAULT 1,
+                avg_gap_seconds REAL,
+                project TEXT,
+                last_seen TEXT
+            )
+        """)
+
+        # Workflows table (named multi-step patterns)
+        cursor.execute("""
+            CREATE TABLE IF NOT EXISTS workflows (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                name TEXT UNIQUE,
+                steps TEXT,
+                frequency INTEGER DEFAULT 1,
+                avg_duration_seconds REAL,
+                project_types TEXT,
+                success_count INTEGER DEFAULT 0,
+                failure_count INTEGER DEFAULT 0
+            )
+        """)
+
+        # Sessions table
+        cursor.execute("""
+            CREATE TABLE IF NOT EXISTS sessions (
+                id TEXT PRIMARY KEY,
+                started_at TEXT,
+                ended_at TEXT,
+                project TEXT,
+                actions_count INTEGER DEFAULT 0,
+                summary TEXT
+            )
+        """)
+
+        cursor.execute("CREATE INDEX IF NOT EXISTS idx_actions_type ON actions(action_type)")
+        cursor.execute("CREATE INDEX IF NOT EXISTS idx_actions_project ON actions(project)")
+        cursor.execute("CREATE INDEX IF NOT EXISTS idx_sequences_trigger ON sequences(trigger_action)")
+
+        conn.commit()
+        conn.close()
+
+    def record_action(self, action: Action, session_id: str = None):
+        """Record a user action."""
+        conn = sqlite3.connect(self.db_path)
+        cursor = conn.cursor()
+
+        cursor.execute("""
+            INSERT INTO actions (timestamp, action_type, details, project, context, session_id)
+            VALUES (?, ?, ?, ?, ?, ?)
+        """, (
+            action.timestamp,
+            action.action_type,
+            json.dumps(action.details),
+            action.project,
+            action.context,
+            session_id
+        ))
+
+        conn.commit()
+        conn.close()
+
+    def learn_sequence(self, trigger: str, next_action: str, gap_seconds: float, project: str = None):
+        """Learn or update a sequence pattern."""
+        conn = sqlite3.connect(self.db_path)
+        cursor = conn.cursor()
+
+        # Check if exists
+        cursor.execute("""
+            SELECT id, count, avg_gap_seconds FROM sequences
+            WHERE trigger_action = ? AND next_action = ? AND (project = ? OR project IS NULL)
+        """, (trigger, next_action, project))
+
+        row = cursor.fetchone()
+        if row:
+            # Update existing
+            new_count = row[1] + 1
+            new_avg = ((row[2] * row[1]) + gap_seconds) / new_count
+            cursor.execute("""
+                UPDATE sequences
+                SET count = ?, avg_gap_seconds = ?, last_seen = ?
+                WHERE id = ?
+            """, (new_count, new_avg, datetime.now().isoformat(), row[0]))
+        else:
+            # Insert new
+            cursor.execute("""
+                INSERT INTO sequences (trigger_action, next_action, count, avg_gap_seconds, project, last_seen)
+                VALUES (?, ?, 1, ?, ?, ?)
+            """, (trigger, next_action, gap_seconds, project, datetime.now().isoformat()))
+
+        conn.commit()
+        conn.close()
+
+    def get_likely_next_actions(self, current_action: str, project: str = None, limit: int = 5) -> List[Tuple[str, float]]:
+        """Get most likely next actions based on history."""
+        conn = sqlite3.connect(self.db_path)
+        cursor = conn.cursor()
+
+        # Get sequences sorted by frequency
+        cursor.execute("""
+            SELECT next_action, count, avg_gap_seconds
+            FROM sequences
+            WHERE trigger_action = ?
+            AND (project = ? OR project IS NULL)
+            ORDER BY count DESC
+            LIMIT ?
+        """, (current_action, project, limit))
+
+        results = []
+        total = sum(row[1] for row in cursor.fetchall())
+
+        cursor.execute("""
+            SELECT next_action, count, avg_gap_seconds
+            FROM sequences
+            WHERE trigger_action = ?
+            AND (project = ? OR project IS NULL)
+            ORDER BY count DESC
+            LIMIT ?
+        """, (current_action, project, limit))
+
+        for row in cursor.fetchall():
+            probability = row[1] / total if total > 0 else 0
+            results.append((row[0], probability, row[2]))
+
+        conn.close()
+        return results
+
+    def get_recent_actions(self, limit: int = 20) -> List[Dict]:
+        """Get recent actions."""
+        conn = sqlite3.connect(self.db_path)
+        conn.row_factory = sqlite3.Row
+        cursor = conn.cursor()
+
+        cursor.execute("""
+            SELECT * FROM actions
+            ORDER BY timestamp DESC
+            LIMIT ?
+        """, (limit,))
+
+        results = [dict(row) for row in cursor.fetchall()]
+        conn.close()
+        return results
+
+
+class WorkflowLearner:
+    """Learns workflow patterns from action history."""
+
+    def __init__(self):
+        self.db = WorkflowDatabase()
+        self.current_session_id = datetime.now().strftime("%Y%m%d_%H%M%S")
+        self.last_action: Optional[Action] = None
+        self.last_action_time: Optional[datetime] = None
+
+    def record(self, action_type: str, details: Dict, project: str = None, context: str = None):
+        """Record an action and learn from it."""
+        now = datetime.now()
+
+        action = Action(
+            timestamp=now.isoformat(),
+            action_type=action_type,
+            details=details,
+            project=project,
+            context=context
+        )
+
+        # Record to database
+        self.db.record_action(action, self.current_session_id)
+
+        # Learn sequence if we have a previous action
+        if self.last_action and self.last_action_time:
+            gap = (now - self.last_action_time).total_seconds()
+
+            # Only learn if gap is reasonable (< 5 minutes)
+            if gap < 300:
+                trigger = f"{self.last_action.action_type}:{self.last_action.details.get('name', '')}"
+                next_act = f"{action_type}:{details.get('name', '')}"
+                self.db.learn_sequence(trigger, next_act, gap, project)
+
+        self.last_action = action
+        self.last_action_time = now
+
+    def predict_next(self, current_action: str = None, project: str = None) -> List[Dict]:
+        """Predict likely next actions."""
+        if current_action is None and self.last_action:
+            current_action = f"{self.last_action.action_type}:{self.last_action.details.get('name', '')}"
+
+        if not current_action:
+            return []
+
+        predictions = self.db.get_likely_next_actions(current_action, project)
+
+        return [
+            {
+                "action": pred[0],
+                "probability": f"{pred[1]:.0%}",
+                "typical_delay": f"{pred[2]:.1f}s" if len(pred) > 2 else "unknown"
+            }
+            for pred in predictions
+        ]
+
+    def detect_anomaly(self, action_type: str, details: Dict, project: str = None) -> Optional[str]:
+        """Detect if current action is unusual."""
+        if not self.last_action:
+            return None
+
+        trigger = f"{self.last_action.action_type}:{self.last_action.details.get('name', '')}"
+        current = f"{action_type}:{details.get('name', '')}"
+
+        predictions = self.db.get_likely_next_actions(trigger, project, limit=10)
+
+        # Check if current action is in predictions
+        expected_actions = [p[0] for p in predictions]
+
+        if predictions and current not in expected_actions:
+            return f"Unusual: After '{trigger}', you usually do one of: {expected_actions[:3]}. You're doing '{current}' instead."
+
+        return None
+
+
+class ActionRecorder:
+    """Records actions from various sources."""
+
+    def __init__(self):
+        self.learner = WorkflowLearner()
+        self.action_parsers = {
+            "revit": self._parse_revit_action,
+            "bluebeam": self._parse_bluebeam_action,
+            "app_switch": self._parse_app_switch,
+            "file_open": self._parse_file_open,
+        }
+
+    def _parse_revit_action(self, data: Dict) -> Tuple[str, Dict]:
+        """Parse Revit MCP command into action."""
+        method = data.get("method", "unknown")
+        params = data.get("params", {})
+
+        # Categorize Revit actions
+        if method.startswith("create"):
+            action_type = "revit_create"
+        elif method.startswith("get"):
+            action_type = "revit_query"
+        elif method.startswith("set"):
+            action_type = "revit_modify"
+        elif method == "deleteElements":
+            action_type = "revit_delete"
+        else:
+            action_type = "revit_other"
+
+        return action_type, {"name": method, "params": params}
+
+    def _parse_bluebeam_action(self, data: Dict) -> Tuple[str, Dict]:
+        """Parse Bluebeam action."""
+        action = data.get("action", "unknown")
+        return f"bluebeam_{action}", {"name": action, "details": data}
+
+    def _parse_app_switch(self, data: Dict) -> Tuple[str, Dict]:
+        """Parse application switch."""
+        app = data.get("app", "unknown")
+        return "app_switch", {"name": app, "from": data.get("from"), "to": data.get("to")}
+
+    def _parse_file_open(self, data: Dict) -> Tuple[str, Dict]:
+        """Parse file open action."""
+        path = data.get("path", "")
+        ext = Path(path).suffix.lower()
+        return f"file_open_{ext}", {"name": Path(path).name, "path": path}
+
+    def record(self, source: str, data: Dict, project: str = None):
+        """Record action from a source."""
+        if source in self.action_parsers:
+            action_type, details = self.action_parsers[source](data)
+        else:
+            action_type = source
+            details = data
+
+        # Check for anomaly
+        anomaly = self.learner.detect_anomaly(action_type, details, project)
+
+        # Record
+        self.learner.record(action_type, details, project)
+
+        return {
+            "recorded": True,
+            "action_type": action_type,
+            "anomaly": anomaly,
+            "predictions": self.learner.predict_next(project=project)
+        }
+
+
+class AutoFixer:
+    """Suggests and executes fixes for detected issues."""
+
+    def __init__(self):
+        self.fixes = {
+            "project_mismatch": self._fix_project_mismatch,
+            "missing_tags": self._fix_missing_tags,
+            "unclosed_dimensions": self._fix_unclosed_dimensions,
+        }
+
+    def _fix_project_mismatch(self, context: Dict) -> Dict:
+        """Generate fix for project mismatch."""
+        revit_project = context.get("revit_project")
+        bluebeam_project = context.get("bluebeam_project")
+
+        return {
+            "issue": f"Revit has '{revit_project}' but Bluebeam has '{bluebeam_project}'",
+            "options": [
+                {
+                    "label": f"Open {bluebeam_project} in Revit",
+                    "action": "revit_open",
+                    "params": {"project": bluebeam_project}
+                },
+                {
+                    "label": f"Open {revit_project} in Bluebeam",
+                    "action": "bluebeam_open",
+                    "params": {"project": revit_project}
+                },
+                {
+                    "label": "Keep working (ignore mismatch)",
+                    "action": "ignore"
+                }
+            ]
+        }
+
+    def _fix_missing_tags(self, context: Dict) -> Dict:
+        """Generate fix for missing element tags."""
+        missing = context.get("missing_tags", [])
+        category = context.get("category", "elements")
+
+        return {
+            "issue": f"{len(missing)} {category} are missing tags",
+            "options": [
+                {
+                    "label": f"Tag all {len(missing)} {category}",
+                    "action": "revit_tag_all",
+                    "params": {"element_ids": missing, "category": category}
+                },
+                {
+                    "label": "Tag individually (show list)",
+                    "action": "show_list",
+                    "params": {"elements": missing}
+                }
+            ]
+        }
+
+    def _fix_unclosed_dimensions(self, context: Dict) -> Dict:
+        """Generate fix for unclosed dimension strings."""
+        return {
+            "issue": "Dimension strings are not closed",
+            "options": [
+                {
+                    "label": "Highlight unclosed dimensions",
+                    "action": "highlight_elements"
+                },
+                {
+                    "label": "Auto-close dimension strings",
+                    "action": "revit_close_dimensions"
+                }
+            ]
+        }
+
+    def suggest_fix(self, issue_type: str, context: Dict) -> Optional[Dict]:
+        """Get fix suggestion for an issue."""
+        if issue_type in self.fixes:
+            return self.fixes[issue_type](context)
+        return None
+
+    def execute_fix(self, action: str, params: Dict) -> Dict:
+        """Execute a fix action."""
+        # This would integrate with Revit MCP and Bluebeam bridge
+        # For now, return what would be done
+        return {
+            "action": action,
+            "params": params,
+            "status": "ready_to_execute",
+            "command": self._generate_command(action, params)
+        }
+
+    def _generate_command(self, action: str, params: Dict) -> str:
+        """Generate the actual command to execute."""
+        if action == "revit_tag_all":
+            return f"tagAllElements(category='{params.get('category')}', elementIds={params.get('element_ids')})"
+        elif action == "revit_open":
+            return f"openDocument(project='{params.get('project')}')"
+        elif action == "bluebeam_open":
+            return f"bluebeam_bridge.open_document('{params.get('project')}')"
+        return f"# Action: {action}"
+
+
+def main():
+    """CLI interface."""
+    import sys
+
+    recorder = ActionRecorder()
+    fixer = AutoFixer()
+
+    if len(sys.argv) < 2:
+        print(json.dumps({
+            "commands": [
+                "record <source> <json_data>",
+                "predict [action]",
+                "history [limit]",
+                "fix <issue_type> <context_json>",
+            ]
+        }, indent=2))
+        return
+
+    cmd = sys.argv[1]
+
+    if cmd == "record" and len(sys.argv) >= 4:
+        source = sys.argv[2]
+        data = json.loads(sys.argv[3])
+        project = sys.argv[4] if len(sys.argv) > 4 else None
+        result = recorder.record(source, data, project)
+        print(json.dumps(result, indent=2))
+
+    elif cmd == "predict":
+        action = sys.argv[2] if len(sys.argv) > 2 else None
+        predictions = recorder.learner.predict_next(action)
+        print(json.dumps({"predictions": predictions}, indent=2))
+
+    elif cmd == "history":
+        limit = int(sys.argv[2]) if len(sys.argv) > 2 else 20
+        actions = recorder.learner.db.get_recent_actions(limit)
+        print(json.dumps({"actions": actions}, indent=2))
+
+    elif cmd == "fix" and len(sys.argv) >= 4:
+        issue_type = sys.argv[2]
+        context = json.loads(sys.argv[3])
+        suggestion = fixer.suggest_fix(issue_type, context)
+        print(json.dumps(suggestion, indent=2))
+
+    else:
+        print(f'{{"error": "Unknown command: {cmd}"}}')
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,22 @@
+DAILY TOOL: One-Click Dimension Everything
+
+MOST USED TOOL - Dimension active view instantly
+
+WHAT IT DIMENSIONS:
+- All walls to grids
+- Doors/windows to walls
+- Overall building dimensions
+- Interior partitions
+
+SMART FEATURES:
+- Skip already dimensioned
+- Align dimension strings
+- Standard 4' offset
+- Clean up overlaps
+
+MODES:
+1. Quick mode (basic dims)
+2. Detailed mode (everything)
+3. Presentation (clean/minimal)
+
+SAVES: 2-3 hours per floor plan

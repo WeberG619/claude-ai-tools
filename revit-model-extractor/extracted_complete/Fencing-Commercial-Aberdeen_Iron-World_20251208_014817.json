@@ -1,0 +1,1278 @@
+﻿{
+    "lightingFixtures":  [
+
+                         ],
+    "ceilings":  [
+
+                 ],
+    "wallTypes":  [
+                      {
+                          "wallTypeId":  221,
+                          "name":  "Exterior - Brick on Mtl. Stud",
+                          "kind":  "Basic",
+                          "width":  1.15625,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  21854,
+                          "name":  "Curtain Wall 1",
+                          "kind":  "Curtain",
+                          "width":  0.08333333333333333,
+                          "familyName":  "Curtain Wall"
+                      },
+                      {
+                          "wallTypeId":  76677,
+                          "name":  "Exterior - Brick Over CMU w Metal Stud",
+                          "kind":  "Stacked",
+                          "width":  1.4895833333333333,
+                          "familyName":  "Stacked Wall"
+                      },
+                      {
+                          "wallTypeId":  83171,
+                          "name":  "Exterior - CMU on Mtl. Stud",
+                          "kind":  "Basic",
+                          "width":  1.4895833333333333,
+                          "familyName":  "Basic Wall"
+                      }
+                  ],
+    "structuralBeams":  [
+
+                        ],
+    "familyTypes":  [
+
+                    ],
+    "roofs":  [
+
+              ],
+    "railings":  [
+                     {
+                         "railingId":  644200,
+                         "typeName":  "IWM_36\"-Maverick-C-Series-w/Aberdeen-2-Rail-Panel-w/Swivel-Brackets",
+                         "typeId":  663245,
+                         "level":  "Maverick Commercial Iron - Aberdeen Series",
+                         "length":  10.333333333333336
+                     },
+                     {
+                         "railingId":  644205,
+                         "typeName":  "IWM_42\"-Maverick-C-Series-w/Aberdeen-2-Rail-Panel-w/Swivel-Brackets",
+                         "typeId":  663246,
+                         "level":  "Maverick Commercial Iron - Aberdeen Series",
+                         "length":  10.333333333333336
+                     },
+                     {
+                         "railingId":  644211,
+                         "typeName":  "IWM_48\"-Maverick-C-Series-w/Aberdeen-2-Rail-Panel-w/Swivel-Brackets",
+                         "typeId":  663247,
+                         "level":  "Maverick Commercial Iron - Aberdeen Series",
+                         "length":  10.333333333333336
+                     },
+                     {
+                         "railingId":  644217,
+                         "typeName":  "IWM_60\"-Maverick-C-Series-w/Aberdeen-2-Rail-Panel-w/Swivel-Brackets",
+                         "typeId":  663248,
+                         "level":  "Maverick Commercial Iron - Aberdeen Series",
+                         "length":  10.333333333333336
+                     },
+                     {
+                         "railingId":  644223,
+                         "typeName":  "IWM_84\"-Maverick-C-Series-w/Aberdeen-2-Rail-Panel-w/Swivel-Brackets",
+                         "typeId":  663249,
+                         "level":  "Maverick Commercial Iron - Aberdeen Series",
+                         "length":  10.333333333333336
+                     },
+                     {
+                         "railingId":  644229,
+                         "typeName":  "IWM_96\"-Maverick-C-Series-w/Aberdeen-2-Rail-Panel-w/Swivel-Brackets",
+                         "typeId":  663250,
+                         "level":  "Maverick Commercial Iron - Aberdeen Series",
+                         "length":  10.333333333333336
+                     },
+                     {
+                         "railingId":  644237,
+                         "typeName":  "IWM_36\"-Maverick-C-Series-w/Aberdeen-2-Rail-Panel-w/Straight-Brackets",
+                         "typeId":  663297,
+                         "level":  "Maverick Commercial Iron - Aberdeen Series",
+                         "length":  10.333333333333336
+                     },
+                     {
+                         "railingId":  644242,
+                         "typeName":  "IWM_42\"-Maverick-C-Series-w/Aberdeen-2-Rail-Panel-w/Straight-Brackets",
+                         "typeId":  663298,
+                         "level":  "Maverick Commercial Iron - Aberdeen Series",
+                         "length":  10.333333333333336
+                     },
+                     {
+                         "railingId":  644248,
+                         "typeName":  "IWM_48\"-Maverick-C-Series-w/Aberdeen-2-Rail-Panel-w/Straight-Brackets",
+                         "typeId":  663299,
+                         "level":  "Maverick Commercial Iron - Aberdeen Series",
+                         "length":  10.333333333333336
+                     },
+                     {
+                         "railingId":  644254,
+                         "typeName":  "IWM_60\"-Maverick-C-Series-w/Aberdeen-2-Rail-Panel-w/Straight-Brackets",
+                         "typeId":  663300,
+                         "level":  "Maverick Commercial Iron - Aberdeen Series",
+                         "length":  10.333333333333336
+                     },
+                     {
+                         "railingId":  644260,
+                         "typeName":  "IWM_84\"-Maverick-C-Series-w/Aberdeen-2-Rail-Panel-w/Straight-Brackets",
+                         "typeId":  663302,
+                         "level":  "Maverick Commercial Iron - Aberdeen Series",
+                         "length":  10.333333333333336
+                     },
+                     {
+                         "railingId":  644266,
+                         "typeName":  "IWM_96\"-Maverick-C-Series-w/Aberdeen-2-Rail-Panel-w/Straight-Brackets",
+                         "typeId":  663303,
+                         "level":  "Maverick Commercial Iron - Aberdeen Series",
+                         "length":  10.333333333333336
+                     },
+                     {
+                         "railingId":  644273,
+                         "typeName":  "IWM_36\"-Maverick-C-Series-w/Aberdeen-3-Rail-Panel-w/Swivel-Brackets",
+                         "typeId":  663253,
+                         "level":  "Maverick Commercial Iron - Aberdeen Series",
+                         "length":  10.333333333333336
+                     },
+                     {
+                         "railingId":  644278,
+                         "typeName":  "IWM_42\"-Maverick-C-Series-w/Aberdeen-3-Rail-Panel-w/Swivel-Brackets",
+                         "typeId":  663254,
+                         "level":  "Maverick Commercial Iron - Aberdeen Series",
+                         "length":  10.333333333333336
+                     },
+                     {
+                         "railingId":  644284,
+                         "typeName":  "IWM_48\"-Maverick-C-Series-w/Aberdeen-3-Rail-Panel-w/Swivel-Brackets",
+                         "typeId":  663255,
+                         "level":  "Maverick Commercial Iron - Aberdeen Series",
+                         "length":  10.333333333333336
+                     },
+                     {
+                         "railingId":  644290,
+                         "typeName":  "IWM_60\"-Maverick-C-Series-w/Aberdeen-3-Rail-Panel-w/Swivel-Brackets",
+                         "typeId":  663256,
+                         "level":  "Maverick Commercial Iron - Aberdeen Series",
+                         "length":  10.333333333333336
+                     },
+                     {
+                         "railingId":  644296,
+                         "typeName":  "IWM_84\"-Maverick-C-Series-w/Aberdeen-3-Rail-Panel-w/Swivel-Brackets",
+                         "typeId":  663257,
+                         "level":  "Maverick Commercial Iron - Aberdeen Series",
+                         "length":  10.333333333333336
+                     },
+                     {
+                         "railingId":  644302,
+                         "typeName":  "IWM_96\"-Maverick-C-Series-w/Aberdeen-3-Rail-Panel-w/Swivel-Brackets",
+                         "typeId":  663258,
+                         "level":  "Maverick Commercial Iron - Aberdeen Series",
+                         "length":  10.333333333333336
+                     },
+                     {
+                         "railingId":  644309,
+                         "typeName":  "IWM_36\"-Maverick-C-Series-w/Aberdeen-3-Rail-Panel-w/Straight-Brackets",
+                         "typeId":  663304,
+                         "level":  "Maverick Commercial Iron - Aberdeen Series",
+                         "length":  10.333333333333336
+                     },
+                     {
+                         "railingId":  644314,
+                         "typeName":  "IWM_42\"-Maverick-C-Series-w/Aberdeen-3-Rail-Panel-w/Straight-Brackets",
+                         "typeId":  663305,
+                         "level":  "Maverick Commercial Iron - Aberdeen Series",
+                         "length":  10.333333333333336
+                     },
+                     {
+                         "railingId":  644320,
+                         "typeName":  "IWM_48\"-Maverick-C-Series-w/Aberdeen-3-Rail-Panel-w/Straight-Brackets",
+                         "typeId":  663306,
+                         "level":  "Maverick Commercial Iron - Aberdeen Series",
+                         "length":  10.333333333333336
+                     },
+                     {
+                         "railingId":  644326,
+                         "typeName":  "IWM_60\"-Maverick-C-Series-w/Aberdeen-3-Rail-Panel-w/Straight-Brackets",
+                         "typeId":  663307,
+                         "level":  "Maverick Commercial Iron - Aberdeen Series",
+                         "length":  10.333333333333336
+                     },
+                     {
+                         "railingId":  644332,
+                         "typeName":  "IWM_84\"-Maverick-C-Series-w/Aberdeen-3-Rail-Panel-w/Straight-Brackets",
+                         "typeId":  663309,
+                         "level":  "Maverick Commercial Iron - Aberdeen Series",
+                         "length":  10.333333333333336
+                     },
+                     {
+                         "railingId":  644338,
+                         "typeName":  "IWM_96\"-Maverick-C-Series-w/Aberdeen-3-Rail-Panel-w/Straight-Brackets",
+                         "typeId":  663310,
+                         "level":  "Maverick Commercial Iron - Aberdeen Series",
+                         "length":  10.333333333333336
+                     },
+                     {
+                         "railingId":  644346,
+                         "typeName":  "IWM_36\"-Maverick-C-Series-w/Aberdeen-4-Rail-Panel-w/Swivel-Brackets",
+                         "typeId":  663259,
+                         "level":  "Maverick Commercial Iron - Aberdeen Series",
+                         "length":  10.333333333333336
+                     },
+                     {
+                         "railingId":  644351,
+                         "typeName":  "IWM_42\"-Maverick-C-Series-w/Aberdeen-4-Rail-Panel-w/Swivel-Brackets",
+                         "typeId":  663260,
+                         "level":  "Maverick Commercial Iron - Aberdeen Series",
+                         "length":  10.333333333333336
+                     },
+                     {
+                         "railingId":  644357,
+                         "typeName":  "IWM_48\"-Maverick-C-Series-w/Aberdeen-4-Rail-Panel-w/Swivel-Brackets",
+                         "typeId":  663261,
+                         "level":  "Maverick Commercial Iron - Aberdeen Series",
+                         "length":  10.333333333333336
+                     },
+                     {
+                         "railingId":  644363,
+                         "typeName":  "IWM_60\"-Maverick-C-Series-w/Aberdeen-4-Rail-Panel-w/Swivel-Brackets",
+                         "typeId":  663262,
+                         "level":  "Maverick Commercial Iron - Aberdeen Series",
+                         "length":  10.333333333333336
+                     },
+                     {
+                         "railingId":  644369,
+                         "typeName":  "IWM_84\"-Maverick-C-Series-w/Aberdeen-4-Rail-Panel-w/Swivel-Brackets",
+                         "typeId":  663263,
+                         "level":  "Maverick Commercial Iron - Aberdeen Series",
+                         "length":  10.333333333333336
+                     },
+                     {
+                         "railingId":  644375,
+                         "typeName":  "IWM_96\"-Maverick-C-Series-w/Aberdeen-4-Rail-Panel-w/Swivel-Brackets",
+                         "typeId":  663264,
+                         "level":  "Maverick Commercial Iron - Aberdeen Series",
+                         "length":  10.333333333333336
+                     },
+                     {
+                         "railingId":  644382,
+                         "typeName":  "IWM_36\"-Maverick-C-Series-w/Aberdeen-4-Rail-Panel-w/Straight-Brackets",
+                         "typeId":  663311,
+                         "level":  "Maverick Commercial Iron - Aberdeen Series",
+                         "length":  10.333333333333336
+                     },
+                     {
+                         "railingId":  644387,
+                         "typeName":  "IWM_42\"-Maverick-C-Series-w/Aberdeen-4-Rail-Panel-w/Straight-Brackets",
+                         "typeId":  663312,
+                         "level":  "Maverick Commercial Iron - Aberdeen Series",
+                         "length":  10.333333333333336
+                     },
+                     {
+                         "railingId":  644393,
+                         "typeName":  "IWM_48\"-Maverick-C-Series-w/Aberdeen-4-Rail-Panel-w/Straight-Brackets",
+                         "typeId":  663313,
+                         "level":  "Maverick Commercial Iron - Aberdeen Series",
+                         "length":  10.333333333333336
+                     },
+                     {
+                         "railingId":  644399,
+                         "typeName":  "IWM_60\"-Maverick-C-Series-w/Aberdeen-4-Rail-Panel-w/Straight-Brackets",
+                         "typeId":  663314,
+                         "level":  "Maverick Commercial Iron - Aberdeen Series",
+                         "length":  10.333333333333336
+                     },
+                     {
+                         "railingId":  644405,
+                         "typeName":  "IWM_84\"-Maverick-C-Series-w/Aberdeen-4-Rail-Panel-w/Straight-Brackets",
+                         "typeId":  663316,
+                         "level":  "Maverick Commercial Iron - Aberdeen Series",
+                         "length":  10.333333333333336
+                     },
+                     {
+                         "railingId":  644411,
+                         "typeName":  "IWM_96\"-Maverick-C-Series-w/Aberdeen-4-Rail-Panel-w/Straight-Brackets",
+                         "typeId":  663317,
+                         "level":  "Maverick Commercial Iron - Aberdeen Series",
+                         "length":  10.333333333333336
+                     },
+                     {
+                         "railingId":  644418,
+                         "typeName":  "IWM_72\"-Maverick-C-Series-w/Aberdeen-4-Rail-Panel-w/Swivel-Brackets",
+                         "typeId":  663265,
+                         "level":  "Maverick Commercial Iron - Aberdeen Series",
+                         "length":  10.333333333333336
+                     },
+                     {
+                         "railingId":  644424,
+                         "typeName":  "IWM_72\"-Maverick-C-Series-w/Aberdeen-4-Rail-Panel-w/Straight-Brackets",
+                         "typeId":  663315,
+                         "level":  "Maverick Commercial Iron - Aberdeen Series",
+                         "length":  10.333333333333336
+                     },
+                     {
+                         "railingId":  644430,
+                         "typeName":  "IWM_72\"-Maverick-C-Series-w/Aberdeen-2-Rail-Panel-w/Swivel-Brackets",
+                         "typeId":  663266,
+                         "level":  "Maverick Commercial Iron - Aberdeen Series",
+                         "length":  10.333333333333336
+                     },
+                     {
+                         "railingId":  644436,
+                         "typeName":  "IWM_72\"-Maverick-C-Series-w/Aberdeen-2-Rail-Panel-w/Straight-Brackets",
+                         "typeId":  663301,
+                         "level":  "Maverick Commercial Iron - Aberdeen Series",
+                         "length":  10.333333333333336
+                     },
+                     {
+                         "railingId":  644442,
+                         "typeName":  "IWM_72\"-Maverick-C-Series-w/Aberdeen-3-Rail-Panel-w/Swivel-Brackets",
+                         "typeId":  663267,
+                         "level":  "Maverick Commercial Iron - Aberdeen Series",
+                         "length":  10.333333333333336
+                     },
+                     {
+                         "railingId":  644448,
+                         "typeName":  "IWM_72\"-Maverick-C-Series-w/Aberdeen-3-Rail-Panel-w/Straight-Brackets",
+                         "typeId":  663308,
+                         "level":  "Maverick Commercial Iron - Aberdeen Series",
+                         "length":  10.333333333333336
+                     },
+                     {
+                         "railingId":  668533,
+                         "typeName":  "IWM_36\"-Maverick-C-Series-w/Aberdeen-2-Rail-Panel-w/Swivel-Brackets",
+                         "typeId":  663245,
+                         "level":  "Detail - All Series",
+                         "length":  10.333333333333336
+                     },
+                     {
+                         "railingId":  668538,
+                         "typeName":  "IWM_36\"-Maverick-C-Series-w/Aberdeen-3-Rail-Panel-w/Swivel-Brackets",
+                         "typeId":  663253,
+                         "level":  "Detail - All Series",
+                         "length":  10.333333333333336
+                     },
+                     {
+                         "railingId":  668543,
+                         "typeName":  "IWM_36\"-Maverick-C-Series-w/Aberdeen-4-Rail-Panel-w/Swivel-Brackets",
+                         "typeId":  663259,
+                         "level":  "Detail - All Series",
+                         "length":  10.333333333333336
+                     }
+                 ],
+    "curtainWalls":  [
+
+                     ],
+    "phases":  [
+                   {
+                       "phaseId":  32440,
+                       "phaseName":  "Existing",
+                       "sequenceNumber":  1
+                   },
+                   {
+                       "phaseId":  118390,
+                       "phaseName":  "New Construction",
+                       "sequenceNumber":  2
+                   }
+               ],
+    "projectInfo":  {
+                        "success":  true,
+                        "result":  {
+                                       "name":  "",
+                                       "number":  "Project Number",
+                                       "author":  "",
+                                       "status":  "Project Status",
+                                       "address":  "Enter address here",
+                                       "clientName":  "Iron World Manufacturing, LLC",
+                                       "buildingName":  "",
+                                       "organizationName":  "",
+                                       "organizationDescription":  "",
+                                       "isPinned":  false,
+                                       "isWorkshared":  false,
+                                       "title":  "Fencing-Commercial-Aberdeen_Iron-World",
+                                       "pathname":  "D:\\003 - RESOURCES\\01 - REVIT LIBRARY\\REVIT LIBRARY - Custom\\Sheets\\Fencing-Commercial-Aberdeen_Iron-World.rvt"
+                                   }
+                    },
+    "schedules":  [
+                      {
+                          "scheduleId":  155760,
+                          "scheduleName":  "Overall Fencing Schedule",
+                          "category":  "Railings",
+                          "fieldCount":  37,
+                          "filterCount":  0,
+                          "isKeySchedule":  false,
+                          "isMaterialTakeoff":  false
+                      },
+                      {
+                          "scheduleId":  199931,
+                          "scheduleName":  "Iron World Ornamental Fencing - Aberdeen Series",
+                          "category":  "Railings",
+                          "fieldCount":  1,
+                          "filterCount":  1,
+                          "isKeySchedule":  false,
+                          "isMaterialTakeoff":  false
+                      },
+                      {
+                          "scheduleId":  721461,
+                          "scheduleName":  "\u003cRevision Schedule\u003e",
+                          "category":  "Unknown",
+                          "fieldCount":  4,
+                          "filterCount":  0,
+                          "isKeySchedule":  false,
+                          "isMaterialTakeoff":  false
+                      }
+                  ],
+    "columns":  [
+
+                ],
+    "furniture":  [
+
+                  ],
+    "pipes":  [
+
+              ],
+    "extractedAt":  "2025-12-08 01:48:17",
+    "fileName":  "Fencing-Commercial-Aberdeen_Iron-World.rvt",
+    "views":  [
+                  {
+                      "viewId":  32,
+                      "viewName":  "Maverick Commercial Iron - Aberdeen Series",
+                      "viewType":  "FloorPlan",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  36,
+                      "viewName":  "Maverick Commercial Iron - Aberdeen Series",
+                      "viewType":  "CeilingPlan",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  3651,
+                      "viewName":  "Project View",
+                      "viewType":  "ProjectBrowser",
+                      "isTemplate":  false,
+                      "scale":  24
+                  },
+                  {
+                      "viewId":  29154,
+                      "viewName":  "East",
+                      "viewType":  "Elevation",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  29181,
+                      "viewName":  "North",
+                      "viewType":  "Elevation",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  29191,
+                      "viewName":  "West",
+                      "viewType":  "Elevation",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  29201,
+                      "viewName":  "South",
+                      "viewType":  "Elevation",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  29237,
+                      "viewName":  "Site",
+                      "viewType":  "FloorPlan",
+                      "isTemplate":  false,
+                      "scale":  240
+                  },
+                  {
+                      "viewId":  101014,
+                      "viewName":  "System Browser",
+                      "viewType":  "SystemBrowser",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  138006,
+                      "viewName":  "Aberdeen Series",
+                      "viewType":  "DrawingSheet",
+                      "isTemplate":  false,
+                      "scale":  1
+                  },
+                  {
+                      "viewId":  145183,
+                      "viewName":  "{3D}",
+                      "viewType":  "ThreeD",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  155684,
+                      "viewName":  "Typical Aberdeen Series With 2 Rails",
+                      "viewType":  "Section",
+                      "isTemplate":  false,
+                      "scale":  48
+                  },
+                  {
+                      "viewId":  155760,
+                      "viewName":  "Overall Fencing Schedule",
+                      "viewType":  "Schedule",
+                      "isTemplate":  false,
+                      "scale":  1
+                  },
+                  {
+                      "viewId":  161922,
+                      "viewName":  "Detail - All Series",
+                      "viewType":  "FloorPlan",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  161930,
+                      "viewName":  "Detail - All Series",
+                      "viewType":  "CeilingPlan",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  199931,
+                      "viewName":  "Iron World Ornamental Fencing - Aberdeen Series",
+                      "viewType":  "Schedule",
+                      "isTemplate":  false,
+                      "scale":  1
+                  },
+                  {
+                      "viewId":  622967,
+                      "viewName":  "Typical Aberdeen Series With 2 Rails",
+                      "viewType":  "ThreeD",
+                      "isTemplate":  false,
+                      "scale":  0
+                  },
+                  {
+                      "viewId":  643814,
+                      "viewName":  "Typical Aberdeen Series With 3 Rails",
+                      "viewType":  "ThreeD",
+                      "isTemplate":  false,
+                      "scale":  0
+                  },
+                  {
+                      "viewId":  643828,
+                      "viewName":  "Typical Aberdeen Series With 4 Rails",
+                      "viewType":  "ThreeD",
+                      "isTemplate":  false,
+                      "scale":  0
+                  },
+                  {
+                      "viewId":  714936,
+                      "viewName":  "Typical Aberdeen Series With 3 Rails",
+                      "viewType":  "Section",
+                      "isTemplate":  false,
+                      "scale":  48
+                  },
+                  {
+                      "viewId":  714950,
+                      "viewName":  "Typical Aberdeen Series With 4 Rails",
+                      "viewType":  "Section",
+                      "isTemplate":  false,
+                      "scale":  48
+                  },
+                  {
+                      "viewId":  721461,
+                      "viewName":  "\u003cRevision Schedule\u003e",
+                      "viewType":  "Schedule",
+                      "isTemplate":  false,
+                      "scale":  1
+                  }
+              ],
+    "plumbingFixtures":  [
+
+                         ],
+    "doors":  [
+
+              ],
+    "floorTypes":  [
+                       {
+                           "floorTypeId":  226,
+                           "name":  "Generic - 12\"",
+                           "familyName":  "Floor",
+                           "isFoundation":  false
+                       },
+                       {
+                           "floorTypeId":  117725,
+                           "name":  "6\" Foundation Slab",
+                           "familyName":  "Foundation Slab",
+                           "isFoundation":  true
+                       }
+                   ],
+    "sheets":  [
+
+               ],
+    "structuralColumns":  [
+
+                          ],
+    "filePath":  "D:\\003 - RESOURCES\\01 - REVIT LIBRARY\\REVIT LIBRARY - Custom\\Sheets\\Fencing-Commercial-Aberdeen_Iron-World.rvt",
+    "stairs":  [
+
+               ],
+    "ceilingTypes":  [
+                         {
+                             "ceilingTypeId":  227,
+                             "name":  "Generic",
+                             "familyName":  "Basic Ceiling"
+                         },
+                         {
+                             "ceilingTypeId":  44748,
+                             "name":  "GWB on Mtl. Stud",
+                             "familyName":  "Compound Ceiling"
+                         },
+                         {
+                             "ceilingTypeId":  44798,
+                             "name":  "Generic - 4\"",
+                             "familyName":  "Roof Soffit"
+                         }
+                     ],
+    "walls":  [
+
+              ],
+    "foundations":  [
+
+                    ],
+    "rooms":  [
+
+              ],
+    "worksets":  [
+
+                 ],
+    "floors":  [
+                   {
+                       "floorId":  161976,
+                       "typeName":  "Generic - 12\"",
+                       "typeId":  226,
+                       "level":  "Detail - All Series",
+                       "area":  3100.0,
+                       "thickness":  1.0,
+                       "structural":  false
+                   }
+               ],
+    "grids":  [
+
+              ],
+    "ducts":  [
+
+              ],
+    "windowTypes":  [
+
+                    ],
+    "loadedFamilies":  [
+                           {
+                               "familyId":  670329,
+                               "name":  "Baluster-Panel_Iron-World-Commercial-Aberdeen",
+                               "category":  "Balusters",
+                               "typeCount":  10,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  669526,
+                               "name":  "Baluster-Post_Iron-World",
+                               "category":  "Balusters",
+                               "typeCount":  5,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  118596,
+                               "name":  "Callout Head",
+                               "category":  "Callout Heads",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  21943,
+                               "name":  "Empty System Panel",
+                               "category":  "Curtain Panels",
+                               "typeCount":  0,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  20915,
+                               "name":  "System Panel",
+                               "category":  "Curtain Panels",
+                               "typeCount":  1,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  28596,
+                               "name":  "Circular Mullion",
+                               "category":  "Curtain Wall Mullions",
+                               "typeCount":  0,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  43497,
+                               "name":  "L Corner Mullion",
+                               "category":  "Curtain Wall Mullions",
+                               "typeCount":  0,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  43509,
+                               "name":  "Quad Corner Mullion",
+                               "category":  "Curtain Wall Mullions",
+                               "typeCount":  0,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  28595,
+                               "name":  "Rectangular Mullion",
+                               "category":  "Curtain Wall Mullions",
+                               "typeCount":  0,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  43505,
+                               "name":  "Trapezoid Corner Mullion",
+                               "category":  "Curtain Wall Mullions",
+                               "typeCount":  0,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  43501,
+                               "name":  "V Corner Mullion",
+                               "category":  "Curtain Wall Mullions",
+                               "typeCount":  0,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  110386,
+                               "name":  "Brick Standard",
+                               "category":  "Detail Items",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  717697,
+                               "name":  "Elevation Mark Circle - Upgrade",
+                               "category":  "Elevation Marks",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  717926,
+                               "name":  "Elevation Mark Pointer_Circle",
+                               "category":  "Elevation Marks",
+                               "typeCount":  3,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  717417,
+                               "name":  "Elevation Mark Pointer_Square",
+                               "category":  "Elevation Marks",
+                               "typeCount":  2,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  717190,
+                               "name":  "Elevation Mark Square - Upgrade",
+                               "category":  "Elevation Marks",
+                               "typeCount":  2,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  119524,
+                               "name":  "Grid Head - Circle",
+                               "category":  "Grid Heads",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  119914,
+                               "name":  "Level Head - Circle",
+                               "category":  "Level Heads",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  126344,
+                               "name":  "Fascia-Flat",
+                               "category":  "Profiles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  126570,
+                               "name":  "Gutter Profile-Bevel",
+                               "category":  "Profiles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  393353,
+                               "name":  "Rail_Iron-World-U-Channel",
+                               "category":  "Profiles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  127510,
+                               "name":  "Slab Edge-Thickened",
+                               "category":  "Profiles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  126131,
+                               "name":  "Stair Nosing - Pan",
+                               "category":  "Profiles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  145354,
+                               "name":  "Sumex Railing Tag",
+                               "category":  "Railing Tags",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  120736,
+                               "name":  "Section Head - Filled",
+                               "category":  "Section Marks",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  120962,
+                               "name":  "Section Head - no arrow",
+                               "category":  "Section Marks",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  121362,
+                               "name":  "Section Tail - Filled",
+                               "category":  "Section Marks",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  121576,
+                               "name":  "Section Tail - Filled Horizontal",
+                               "category":  "Section Marks",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  121790,
+                               "name":  "Spot Elevation - Crosshair",
+                               "category":  "Spot Elevation Symbols",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  392921,
+                               "name":  "E1 30 x 42 Horizontal ARCAT",
+                               "category":  "Title Blocks",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  131764,
+                               "name":  "View Reference",
+                               "category":  "View Reference",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  122183,
+                               "name":  "View Title",
+                               "category":  "View Titles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           }
+                       ],
+    "doorTypes":  [
+
+                  ],
+    "electricalCircuits":  [
+
+                           ],
+    "mepSystems":  [
+
+                   ],
+    "roofTypes":  [
+                      {
+                          "roofTypeId":  223,
+                          "name":  "Generic - 12\"",
+                          "familyName":  "Basic Roof"
+                      },
+                      {
+                          "roofTypeId":  18448,
+                          "name":  "Sloped Glazing",
+                          "familyName":  "Sloped Glazing"
+                      }
+                  ],
+    "levels":  [
+                   {
+                       "levelId":  30,
+                       "name":  "Maverick Commercial Iron - Aberdeen Series",
+                       "elevation":  0.0
+                   },
+                   {
+                       "levelId":  161921,
+                       "name":  "Detail - All Series",
+                       "elevation":  39.99999999999801
+                   }
+               ],
+    "materials":  [
+                      {
+                          "materialId":  393858,
+                          "name":  "Iron World - Powder Coating Finish - White Color",
+                          "materialClass":  "Paint",
+                          "color":  "8vL/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  394237,
+                          "name":  "Iron World - Powder Coating Finish - Black Color",
+                          "materialClass":  "Paint",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  394238,
+                          "name":  "Iron World - Powder Coating Finish - Brown Color",
+                          "materialClass":  "Paint",
+                          "color":  "XDYP",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  394239,
+                          "name":  "Iron World - Powder Coating Finish - Ensor Green Color",
+                          "materialClass":  "Paint",
+                          "color":  "A2k3",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  394240,
+                          "name":  "Iron World - Powder Coating Finish - Woodland Green",
+                          "materialClass":  "Paint",
+                          "color":  "gJFK",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  394241,
+                          "name":  "Iron World - Powder Coating Finish - Bronze",
+                          "materialClass":  "Paint",
+                          "color":  "iGIv",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  394242,
+                          "name":  "Iron World - Powder Coating Finish - Custom Color as Specified",
+                          "materialClass":  "Miscellaneous",
+                          "color":  "mZmZ",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  716043,
+                          "name":  "Carbon Steel",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  716044,
+                          "name":  "Copper",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  716045,
+                          "name":  "Ductile Iron",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  716046,
+                          "name":  "Plastic",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  716047,
+                          "name":  "Stainless Steel",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  716761,
+                          "name":  "System-Zones",
+                          "materialClass":  "Unassigned",
+                          "color":  "Xl7N",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  716767,
+                          "name":  "Analytical Spaces",
+                          "materialClass":  "Unassigned",
+                          "color":  "AMjI",
+                          "transparency":  85,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  716769,
+                          "name":  "Analytical Surface - Exterior Walls",
+                          "materialClass":  "Unassigned",
+                          "color":  "hbIs",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  716771,
+                          "name":  "Analytical Surface - Roofs",
+                          "materialClass":  "Unassigned",
+                          "color":  "Jg+Z",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  716773,
+                          "name":  "Analytical Surface - Slabs on Grade",
+                          "materialClass":  "Unassigned",
+                          "color":  "ZVHM",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  716775,
+                          "name":  "Analytical Surface - Interior Walls",
+                          "materialClass":  "Unassigned",
+                          "color":  "w+V+",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  716777,
+                          "name":  "Analytical Surface - Interior Floors",
+                          "materialClass":  "Unassigned",
+                          "color":  "ZVHM",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  716779,
+                          "name":  "Analytical Surface - Ceilings",
+                          "materialClass":  "Unassigned",
+                          "color":  "v7L/",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  716781,
+                          "name":  "Analytical Surface - Air Surfaces",
+                          "materialClass":  "Unassigned",
+                          "color":  "vtLc",
+                          "transparency":  90,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  716783,
+                          "name":  "Analytical Surface - Underground Walls",
+                          "materialClass":  "Unassigned",
+                          "color":  "sm8s",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  716785,
+                          "name":  "Analytical Surface - Operable Windows",
+                          "materialClass":  "Unassigned",
+                          "color":  "suX/",
+                          "transparency":  75,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  716787,
+                          "name":  "Analytical Surface - Operable Skylights",
+                          "materialClass":  "Unassigned",
+                          "color":  "suX/",
+                          "transparency":  75,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  716789,
+                          "name":  "Analytical Surface - Sliding Doors",
+                          "materialClass":  "Unassigned",
+                          "color":  "/7Ky",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  716791,
+                          "name":  "Analytical Surface - Air Openings",
+                          "materialClass":  "Unassigned",
+                          "color":  "////",
+                          "transparency":  100,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  716793,
+                          "name":  "Analytical Surface - Shades",
+                          "materialClass":  "Unassigned",
+                          "color":  "kJKK",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  716939,
+                          "name":  "Analytical Panels",
+                          "materialClass":  "Unassigned",
+                          "color":  "+8WZ",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  717021,
+                          "name":  "Electrical Analytical Loads",
+                          "materialClass":  "Unassigned",
+                          "color":  "Xl7N",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  717192,
+                          "name":  "Default",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  717193,
+                          "name":  "Default Wall",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  717194,
+                          "name":  "Default Roof",
+                          "materialClass":  "Unassigned",
+                          "color":  "AH8A",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  717195,
+                          "name":  "Glass",
+                          "materialClass":  "Unassigned",
+                          "color":  "AAD/",
+                          "transparency":  75,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  717196,
+                          "name":  "Phase-Demo",
+                          "materialClass":  "Unassigned",
+                          "color":  "/wAA",
+                          "transparency":  40,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  717197,
+                          "name":  "Phase-Exist",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  717198,
+                          "name":  "Phase-Temp",
+                          "materialClass":  "Unassigned",
+                          "color":  "AAD/",
+                          "transparency":  40,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  717199,
+                          "name":  "Poche",
+                          "materialClass":  "System",
+                          "color":  "AAD/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  717200,
+                          "name":  "Default Light Source",
+                          "materialClass":  "Unassigned",
+                          "color":  "//8A",
+                          "transparency":  75,
+                          "shininess":  64
+                      }
+                  ],
+    "windows":  [
+
+                ],
+    "electricalFixtures":  [
+
+                           ],
+    "warnings":  [
+
+                 ]
+}

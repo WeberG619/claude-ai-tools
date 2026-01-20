@@ -1,0 +1,25 @@
+Revit Add-in Request: Smart Sheet Creator
+
+Purpose: Automate sheet creation from Excel template
+
+Requirements:
+1. Read Excel file with sheet list
+2. Create sheets with proper numbering
+3. Place views on sheets automatically
+4. Apply view templates
+5. Set sheet parameters from Excel data
+
+Features:
+- Ribbon button in "Sheet Tools" panel
+- Progress dialog for large sets
+- Error handling for missing views
+- Dry run mode to preview
+- Logging of all actions
+
+Technical specs:
+- Target Revit 2024
+- Use EPPlus for Excel reading
+- Implement IExternalCommand
+- Add configuration dialog
+
+Please generate complete, production-ready code with proper error handling.

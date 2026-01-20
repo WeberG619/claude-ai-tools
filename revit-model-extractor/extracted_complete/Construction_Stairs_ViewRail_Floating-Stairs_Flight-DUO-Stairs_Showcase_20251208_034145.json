@@ -1,0 +1,1378 @@
+﻿{
+    "lightingFixtures":  [
+
+                         ],
+    "ceilings":  [
+
+                 ],
+    "wallTypes":  [
+                      {
+                          "wallTypeId":  382,
+                          "name":  "Curtain Wall",
+                          "kind":  "Curtain",
+                          "width":  0.08333333333333333,
+                          "familyName":  "Curtain Wall"
+                      },
+                      {
+                          "wallTypeId":  9754,
+                          "name":  "Exterior - Brick on Mtl. Stud",
+                          "kind":  "Basic",
+                          "width":  1.15625,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  36660,
+                          "name":  "Exterior - Brick Over CMU w Metal Stud",
+                          "kind":  "Stacked",
+                          "width":  1.4895833333333333,
+                          "familyName":  "Stacked Wall"
+                      },
+                      {
+                          "wallTypeId":  41083,
+                          "name":  "Exterior - CMU on Mtl. Stud",
+                          "kind":  "Basic",
+                          "width":  1.4895833333333333,
+                          "familyName":  "Basic Wall"
+                      }
+                  ],
+    "structuralBeams":  [
+
+                        ],
+    "familyTypes":  [
+
+                    ],
+    "roofs":  [
+
+              ],
+    "railings":  [
+
+                 ],
+    "curtainWalls":  [
+
+                     ],
+    "phases":  [
+                   {
+                       "phaseId":  2,
+                       "phaseName":  "01 - Existing",
+                       "sequenceNumber":  1
+                   },
+                   {
+                       "phaseId":  8399,
+                       "phaseName":  "02 - Demo",
+                       "sequenceNumber":  2
+                   },
+                   {
+                       "phaseId":  0,
+                       "phaseName":  "A10 - Substructure",
+                       "sequenceNumber":  3
+                   },
+                   {
+                       "phaseId":  68646,
+                       "phaseName":  "B10 - Superstructure",
+                       "sequenceNumber":  4
+                   },
+                   {
+                       "phaseId":  8401,
+                       "phaseName":  "B20 - Exterior Enclosure",
+                       "sequenceNumber":  5
+                   },
+                   {
+                       "phaseId":  8406,
+                       "phaseName":  "C10 - Interior Construction",
+                       "sequenceNumber":  6
+                   },
+                   {
+                       "phaseId":  8407,
+                       "phaseName":  "C20 - Interior Finishes",
+                       "sequenceNumber":  7
+                   },
+                   {
+                       "phaseId":  8408,
+                       "phaseName":  "E20 - Furnishings",
+                       "sequenceNumber":  8
+                   },
+                   {
+                       "phaseId":  9521,
+                       "phaseName":  "Project Completion",
+                       "sequenceNumber":  9
+                   }
+               ],
+    "projectInfo":  {
+                        "success":  true,
+                        "result":  {
+                                       "name":  "Project Name",
+                                       "number":  "Project Number",
+                                       "author":  "",
+                                       "status":  "Project Status",
+                                       "address":  "Enter address here",
+                                       "clientName":  "Owner",
+                                       "buildingName":  "",
+                                       "organizationName":  "",
+                                       "organizationDescription":  "",
+                                       "isPinned":  false,
+                                       "isWorkshared":  false,
+                                       "title":  "Construction_Stairs_ViewRail_Floating-Stairs_Flight-DUO-Stairs_Showcase",
+                                       "pathname":  "D:\\006 - OLD PROJECTS ARCHIVE\\CATALYST DESIGN GROUP\\1148 NW 59 STREET MIAMI FL\\Revit\\Family\\Construction_Stairs_ViewRail_Floating-Stairs_Flight-DUO-Stairs_Showcase.rvt"
+                                   }
+                    },
+    "schedules":  [
+                      {
+                          "scheduleId":  60917,
+                          "scheduleName":  "qa-Casework Quantities",
+                          "category":  "Casework",
+                          "fieldCount":  12,
+                          "filterCount":  0,
+                          "isKeySchedule":  false,
+                          "isMaterialTakeoff":  false
+                      },
+                      {
+                          "scheduleId":  60921,
+                          "scheduleName":  "qa-Door Quantities",
+                          "category":  "Doors",
+                          "fieldCount":  16,
+                          "filterCount":  0,
+                          "isKeySchedule":  false,
+                          "isMaterialTakeoff":  false
+                      },
+                      {
+                          "scheduleId":  60925,
+                          "scheduleName":  "qs-Floor Quantities by Assembly",
+                          "category":  "Floors",
+                          "fieldCount":  6,
+                          "filterCount":  0,
+                          "isKeySchedule":  false,
+                          "isMaterialTakeoff":  false
+                      },
+                      {
+                          "scheduleId":  60929,
+                          "scheduleName":  "qs-Roof Quantities by Assembly",
+                          "category":  "Roofs",
+                          "fieldCount":  6,
+                          "filterCount":  0,
+                          "isKeySchedule":  false,
+                          "isMaterialTakeoff":  false
+                      },
+                      {
+                          "scheduleId":  60933,
+                          "scheduleName":  "qs-Structural Beams \u0026 Bracing Quantities",
+                          "category":  "Structural Framing",
+                          "fieldCount":  10,
+                          "filterCount":  0,
+                          "isKeySchedule":  false,
+                          "isMaterialTakeoff":  false
+                      },
+                      {
+                          "scheduleId":  60937,
+                          "scheduleName":  "qs-Wall Quantities by Assembly",
+                          "category":  "Walls",
+                          "fieldCount":  10,
+                          "filterCount":  0,
+                          "isKeySchedule":  false,
+                          "isMaterialTakeoff":  false
+                      },
+                      {
+                          "scheduleId":  60941,
+                          "scheduleName":  "qe-Electrical Equipment Quantities",
+                          "category":  "Electrical Equipment",
+                          "fieldCount":  12,
+                          "filterCount":  0,
+                          "isKeySchedule":  false,
+                          "isMaterialTakeoff":  false
+                      },
+                      {
+                          "scheduleId":  60945,
+                          "scheduleName":  "qe-Electrical Fixture Quantities",
+                          "category":  "Electrical Fixtures",
+                          "fieldCount":  10,
+                          "filterCount":  0,
+                          "isKeySchedule":  false,
+                          "isMaterialTakeoff":  false
+                      },
+                      {
+                          "scheduleId":  60949,
+                          "scheduleName":  "qa-Furniture Quantities",
+                          "category":  "Furniture",
+                          "fieldCount":  10,
+                          "filterCount":  0,
+                          "isKeySchedule":  false,
+                          "isMaterialTakeoff":  false
+                      },
+                      {
+                          "scheduleId":  60953,
+                          "scheduleName":  "qa-Furniture System Quantities",
+                          "category":  "Furniture Systems",
+                          "fieldCount":  10,
+                          "filterCount":  0,
+                          "isKeySchedule":  false,
+                          "isMaterialTakeoff":  false
+                      },
+                      {
+                          "scheduleId":  60957,
+                          "scheduleName":  "qe-Lighting Fixture Quantities",
+                          "category":  "Lighting Fixtures",
+                          "fieldCount":  13,
+                          "filterCount":  0,
+                          "isKeySchedule":  false,
+                          "isMaterialTakeoff":  false
+                      },
+                      {
+                          "scheduleId":  60961,
+                          "scheduleName":  "qm-Mechanical Equipment Quantities",
+                          "category":  "Mechanical Equipment",
+                          "fieldCount":  10,
+                          "filterCount":  0,
+                          "isKeySchedule":  false,
+                          "isMaterialTakeoff":  false
+                      },
+                      {
+                          "scheduleId":  60965,
+                          "scheduleName":  "qc-Parking Quantities",
+                          "category":  "Parking",
+                          "fieldCount":  7,
+                          "filterCount":  0,
+                          "isKeySchedule":  false,
+                          "isMaterialTakeoff":  false
+                      },
+                      {
+                          "scheduleId":  60969,
+                          "scheduleName":  "qc-Planting Quantities",
+                          "category":  "Planting",
+                          "fieldCount":  8,
+                          "filterCount":  0,
+                          "isKeySchedule":  false,
+                          "isMaterialTakeoff":  false
+                      },
+                      {
+                          "scheduleId":  60973,
+                          "scheduleName":  "qp-Plumbing Fixture Quantities",
+                          "category":  "Plumbing Fixtures",
+                          "fieldCount":  14,
+                          "filterCount":  0,
+                          "isKeySchedule":  false,
+                          "isMaterialTakeoff":  false
+                      },
+                      {
+                          "scheduleId":  60977,
+                          "scheduleName":  "qm-Specialty Equipment Quantities",
+                          "category":  "Specialty Equipment",
+                          "fieldCount":  10,
+                          "filterCount":  0,
+                          "isKeySchedule":  false,
+                          "isMaterialTakeoff":  false
+                      },
+                      {
+                          "scheduleId":  60981,
+                          "scheduleName":  "qa-Window Quantities",
+                          "category":  "Windows",
+                          "fieldCount":  14,
+                          "filterCount":  0,
+                          "isKeySchedule":  false,
+                          "isMaterialTakeoff":  false
+                      },
+                      {
+                          "scheduleId":  60985,
+                          "scheduleName":  "qa-Ceiling Quantities by Type",
+                          "category":  "Ceilings",
+                          "fieldCount":  11,
+                          "filterCount":  0,
+                          "isKeySchedule":  false,
+                          "isMaterialTakeoff":  false
+                      },
+                      {
+                          "scheduleId":  60989,
+                          "scheduleName":  "qa-Room Wall Finishes",
+                          "category":  "Rooms",
+                          "fieldCount":  9,
+                          "filterCount":  0,
+                          "isKeySchedule":  false,
+                          "isMaterialTakeoff":  false
+                      },
+                      {
+                          "scheduleId":  60993,
+                          "scheduleName":  "qa-Area Schedule (Gross Building)",
+                          "category":  "Areas",
+                          "fieldCount":  4,
+                          "filterCount":  0,
+                          "isKeySchedule":  false,
+                          "isMaterialTakeoff":  false
+                      },
+                      {
+                          "scheduleId":  60997,
+                          "scheduleName":  "qa-Floor Finishes",
+                          "category":  "Rooms",
+                          "fieldCount":  9,
+                          "filterCount":  0,
+                          "isKeySchedule":  false,
+                          "isMaterialTakeoff":  false
+                      },
+                      {
+                          "scheduleId":  61001,
+                          "scheduleName":  "qs-Structural Framing Schedule",
+                          "category":  "Structural Framing",
+                          "fieldCount":  10,
+                          "filterCount":  0,
+                          "isKeySchedule":  false,
+                          "isMaterialTakeoff":  false
+                      },
+                      {
+                          "scheduleId":  61005,
+                          "scheduleName":  "qs-Structural Column Schedule",
+                          "category":  "Structural Columns",
+                          "fieldCount":  8,
+                          "filterCount":  0,
+                          "isKeySchedule":  false,
+                          "isMaterialTakeoff":  false
+                      },
+                      {
+                          "scheduleId":  61009,
+                          "scheduleName":  "qc-SiteCutFill",
+                          "category":  "Topography",
+                          "fieldCount":  10,
+                          "filterCount":  0,
+                          "isKeySchedule":  false,
+                          "isMaterialTakeoff":  false
+                      },
+                      {
+                          "scheduleId":  61339,
+                          "scheduleName":  "Room Area by Department",
+                          "category":  "Rooms",
+                          "fieldCount":  8,
+                          "filterCount":  0,
+                          "isKeySchedule":  false,
+                          "isMaterialTakeoff":  false
+                      },
+                      {
+                          "scheduleId":  61356,
+                          "scheduleName":  "qa-Curtain Wall System Quantities",
+                          "category":  "Curtain Systems",
+                          "fieldCount":  10,
+                          "filterCount":  0,
+                          "isKeySchedule":  false,
+                          "isMaterialTakeoff":  false
+                      },
+                      {
+                          "scheduleId":  61360,
+                          "scheduleName":  "qa-Curtain Wall Panel Quantities",
+                          "category":  "Curtain Panels",
+                          "fieldCount":  13,
+                          "filterCount":  0,
+                          "isKeySchedule":  false,
+                          "isMaterialTakeoff":  false
+                      },
+                      {
+                          "scheduleId":  61364,
+                          "scheduleName":  "qa-Curtain Wall Mullion Quantities",
+                          "category":  "Curtain Wall Mullions",
+                          "fieldCount":  11,
+                          "filterCount":  0,
+                          "isKeySchedule":  false,
+                          "isMaterialTakeoff":  false
+                      },
+                      {
+                          "scheduleId":  61368,
+                          "scheduleName":  "qa-Stair Quantities",
+                          "category":  "Stairs",
+                          "fieldCount":  14,
+                          "filterCount":  0,
+                          "isKeySchedule":  false,
+                          "isMaterialTakeoff":  false
+                      },
+                      {
+                          "scheduleId":  61372,
+                          "scheduleName":  "qa-Railing Quantities",
+                          "category":  "Railings",
+                          "fieldCount":  10,
+                          "filterCount":  0,
+                          "isKeySchedule":  false,
+                          "isMaterialTakeoff":  false
+                      },
+                      {
+                          "scheduleId":  61376,
+                          "scheduleName":  "qa-Ramp Quantities",
+                          "category":  "Ramps",
+                          "fieldCount":  9,
+                          "filterCount":  0,
+                          "isKeySchedule":  false,
+                          "isMaterialTakeoff":  false
+                      },
+                      {
+                          "scheduleId":  865041,
+                          "scheduleName":  "\u003cRevision Schedule\u003e",
+                          "category":  "Unknown",
+                          "fieldCount":  4,
+                          "filterCount":  0,
+                          "isKeySchedule":  false,
+                          "isMaterialTakeoff":  false
+                      },
+                      {
+                          "scheduleId":  865046,
+                          "scheduleName":  "\u003cRevision Schedule\u003e 2",
+                          "category":  "Unknown",
+                          "fieldCount":  4,
+                          "filterCount":  0,
+                          "isKeySchedule":  false,
+                          "isMaterialTakeoff":  false
+                      }
+                  ],
+    "columns":  [
+
+                ],
+    "furniture":  [
+
+                  ],
+    "pipes":  [
+
+              ],
+    "extractedAt":  "2025-12-08 03:41:44",
+    "fileName":  "Construction_Stairs_ViewRail_Floating-Stairs_Flight-DUO-Stairs_Showcase.rvt",
+    "views":  [
+                  {
+                      "viewId":  265,
+                      "viewName":  "Project View",
+                      "viewType":  "ProjectBrowser",
+                      "isTemplate":  false,
+                      "scale":  24
+                  },
+                  {
+                      "viewId":  356,
+                      "viewName":  "Level 1",
+                      "viewType":  "FloorPlan",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  362,
+                      "viewName":  "Level 1",
+                      "viewType":  "CeilingPlan",
+                      "isTemplate":  false,
+                      "scale":  24
+                  },
+                  {
+                      "viewId":  2235,
+                      "viewName":  "East",
+                      "viewType":  "Elevation",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  2256,
+                      "viewName":  "West",
+                      "viewType":  "Elevation",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  2268,
+                      "viewName":  "North",
+                      "viewType":  "Elevation",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  2282,
+                      "viewName":  "South",
+                      "viewType":  "Elevation",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  2795,
+                      "viewName":  "Level 2",
+                      "viewType":  "FloorPlan",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  2801,
+                      "viewName":  "Level 2",
+                      "viewType":  "CeilingPlan",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  3174,
+                      "viewName":  "Site",
+                      "viewType":  "FloorPlan",
+                      "isTemplate":  false,
+                      "scale":  240
+                  },
+                  {
+                      "viewId":  5563,
+                      "viewName":  "Level 04 - T.O. Fnd. Wall",
+                      "viewType":  "FloorPlan",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  5609,
+                      "viewName":  "Level 03 - T.O. Basement Slab",
+                      "viewType":  "FloorPlan",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  5632,
+                      "viewName":  "Level 02 - T.O. Footing",
+                      "viewType":  "FloorPlan",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  8713,
+                      "viewName":  "01 - Existing",
+                      "viewType":  "ThreeD",
+                      "isTemplate":  false,
+                      "scale":  192
+                  },
+                  {
+                      "viewId":  8728,
+                      "viewName":  "02 - Demo",
+                      "viewType":  "ThreeD",
+                      "isTemplate":  false,
+                      "scale":  192
+                  },
+                  {
+                      "viewId":  8733,
+                      "viewName":  "B10 - Superstructure",
+                      "viewType":  "ThreeD",
+                      "isTemplate":  false,
+                      "scale":  192
+                  },
+                  {
+                      "viewId":  8738,
+                      "viewName":  "B20 - Exterior Enclosure",
+                      "viewType":  "ThreeD",
+                      "isTemplate":  false,
+                      "scale":  192
+                  },
+                  {
+                      "viewId":  8743,
+                      "viewName":  "C10 - Interior Construction",
+                      "viewType":  "ThreeD",
+                      "isTemplate":  false,
+                      "scale":  192
+                  },
+                  {
+                      "viewId":  8748,
+                      "viewName":  "C20 - Interior Finish",
+                      "viewType":  "ThreeD",
+                      "isTemplate":  false,
+                      "scale":  192
+                  },
+                  {
+                      "viewId":  8753,
+                      "viewName":  "E20 - Furnishings",
+                      "viewType":  "ThreeD",
+                      "isTemplate":  false,
+                      "scale":  192
+                  },
+                  {
+                      "viewId":  8758,
+                      "viewName":  "A10 - Substructure",
+                      "viewType":  "ThreeD",
+                      "isTemplate":  false,
+                      "scale":  192
+                  },
+                  {
+                      "viewId":  8763,
+                      "viewName":  "Perspective 3D",
+                      "viewType":  "ThreeD",
+                      "isTemplate":  false,
+                      "scale":  1
+                  },
+                  {
+                      "viewId":  8809,
+                      "viewName":  "Roof",
+                      "viewType":  "FloorPlan",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  9177,
+                      "viewName":  "Substructure",
+                      "viewType":  "DrawingSheet",
+                      "isTemplate":  false,
+                      "scale":  1
+                  },
+                  {
+                      "viewId":  9212,
+                      "viewName":  "Superstructure",
+                      "viewType":  "DrawingSheet",
+                      "isTemplate":  false,
+                      "scale":  1
+                  },
+                  {
+                      "viewId":  58996,
+                      "viewName":  "System Browser",
+                      "viewType":  "SystemBrowser",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  60881,
+                      "viewName":  "Temporary Schedule Sheet",
+                      "viewType":  "DrawingSheet",
+                      "isTemplate":  false,
+                      "scale":  1
+                  },
+                  {
+                      "viewId":  60917,
+                      "viewName":  "qa-Casework Quantities",
+                      "viewType":  "Schedule",
+                      "isTemplate":  false,
+                      "scale":  1
+                  },
+                  {
+                      "viewId":  60921,
+                      "viewName":  "qa-Door Quantities",
+                      "viewType":  "Schedule",
+                      "isTemplate":  false,
+                      "scale":  1
+                  },
+                  {
+                      "viewId":  60925,
+                      "viewName":  "qs-Floor Quantities by Assembly",
+                      "viewType":  "Schedule",
+                      "isTemplate":  false,
+                      "scale":  1
+                  },
+                  {
+                      "viewId":  60929,
+                      "viewName":  "qs-Roof Quantities by Assembly",
+                      "viewType":  "Schedule",
+                      "isTemplate":  false,
+                      "scale":  1
+                  },
+                  {
+                      "viewId":  60933,
+                      "viewName":  "qs-Structural Beams \u0026 Bracing Quantities",
+                      "viewType":  "Schedule",
+                      "isTemplate":  false,
+                      "scale":  1
+                  },
+                  {
+                      "viewId":  60937,
+                      "viewName":  "qs-Wall Quantities by Assembly",
+                      "viewType":  "Schedule",
+                      "isTemplate":  false,
+                      "scale":  1
+                  },
+                  {
+                      "viewId":  60941,
+                      "viewName":  "qe-Electrical Equipment Quantities",
+                      "viewType":  "Schedule",
+                      "isTemplate":  false,
+                      "scale":  1
+                  },
+                  {
+                      "viewId":  60945,
+                      "viewName":  "qe-Electrical Fixture Quantities",
+                      "viewType":  "Schedule",
+                      "isTemplate":  false,
+                      "scale":  1
+                  },
+                  {
+                      "viewId":  60949,
+                      "viewName":  "qa-Furniture Quantities",
+                      "viewType":  "Schedule",
+                      "isTemplate":  false,
+                      "scale":  1
+                  },
+                  {
+                      "viewId":  60953,
+                      "viewName":  "qa-Furniture System Quantities",
+                      "viewType":  "Schedule",
+                      "isTemplate":  false,
+                      "scale":  1
+                  },
+                  {
+                      "viewId":  60957,
+                      "viewName":  "qe-Lighting Fixture Quantities",
+                      "viewType":  "Schedule",
+                      "isTemplate":  false,
+                      "scale":  1
+                  },
+                  {
+                      "viewId":  60961,
+                      "viewName":  "qm-Mechanical Equipment Quantities",
+                      "viewType":  "Schedule",
+                      "isTemplate":  false,
+                      "scale":  1
+                  },
+                  {
+                      "viewId":  60965,
+                      "viewName":  "qc-Parking Quantities",
+                      "viewType":  "Schedule",
+                      "isTemplate":  false,
+                      "scale":  1
+                  },
+                  {
+                      "viewId":  60969,
+                      "viewName":  "qc-Planting Quantities",
+                      "viewType":  "Schedule",
+                      "isTemplate":  false,
+                      "scale":  1
+                  },
+                  {
+                      "viewId":  60973,
+                      "viewName":  "qp-Plumbing Fixture Quantities",
+                      "viewType":  "Schedule",
+                      "isTemplate":  false,
+                      "scale":  1
+                  },
+                  {
+                      "viewId":  60977,
+                      "viewName":  "qm-Specialty Equipment Quantities",
+                      "viewType":  "Schedule",
+                      "isTemplate":  false,
+                      "scale":  1
+                  },
+                  {
+                      "viewId":  60981,
+                      "viewName":  "qa-Window Quantities",
+                      "viewType":  "Schedule",
+                      "isTemplate":  false,
+                      "scale":  1
+                  },
+                  {
+                      "viewId":  60985,
+                      "viewName":  "qa-Ceiling Quantities by Type",
+                      "viewType":  "Schedule",
+                      "isTemplate":  false,
+                      "scale":  1
+                  },
+                  {
+                      "viewId":  60989,
+                      "viewName":  "qa-Room Wall Finishes",
+                      "viewType":  "Schedule",
+                      "isTemplate":  false,
+                      "scale":  1
+                  },
+                  {
+                      "viewId":  60993,
+                      "viewName":  "qa-Area Schedule (Gross Building)",
+                      "viewType":  "Schedule",
+                      "isTemplate":  false,
+                      "scale":  1
+                  },
+                  {
+                      "viewId":  60997,
+                      "viewName":  "qa-Floor Finishes",
+                      "viewType":  "Schedule",
+                      "isTemplate":  false,
+                      "scale":  1
+                  },
+                  {
+                      "viewId":  61001,
+                      "viewName":  "qs-Structural Framing Schedule",
+                      "viewType":  "Schedule",
+                      "isTemplate":  false,
+                      "scale":  1
+                  },
+                  {
+                      "viewId":  61005,
+                      "viewName":  "qs-Structural Column Schedule",
+                      "viewType":  "Schedule",
+                      "isTemplate":  false,
+                      "scale":  1
+                  },
+                  {
+                      "viewId":  61009,
+                      "viewName":  "qc-SiteCutFill",
+                      "viewType":  "Schedule",
+                      "isTemplate":  false,
+                      "scale":  1
+                  },
+                  {
+                      "viewId":  61339,
+                      "viewName":  "Room Area by Department",
+                      "viewType":  "Schedule",
+                      "isTemplate":  false,
+                      "scale":  1
+                  },
+                  {
+                      "viewId":  61356,
+                      "viewName":  "qa-Curtain Wall System Quantities",
+                      "viewType":  "Schedule",
+                      "isTemplate":  false,
+                      "scale":  1
+                  },
+                  {
+                      "viewId":  61360,
+                      "viewName":  "qa-Curtain Wall Panel Quantities",
+                      "viewType":  "Schedule",
+                      "isTemplate":  false,
+                      "scale":  1
+                  },
+                  {
+                      "viewId":  61364,
+                      "viewName":  "qa-Curtain Wall Mullion Quantities",
+                      "viewType":  "Schedule",
+                      "isTemplate":  false,
+                      "scale":  1
+                  },
+                  {
+                      "viewId":  61368,
+                      "viewName":  "qa-Stair Quantities",
+                      "viewType":  "Schedule",
+                      "isTemplate":  false,
+                      "scale":  1
+                  },
+                  {
+                      "viewId":  61372,
+                      "viewName":  "qa-Railing Quantities",
+                      "viewType":  "Schedule",
+                      "isTemplate":  false,
+                      "scale":  1
+                  },
+                  {
+                      "viewId":  61376,
+                      "viewName":  "qa-Ramp Quantities",
+                      "viewType":  "Schedule",
+                      "isTemplate":  false,
+                      "scale":  1
+                  },
+                  {
+                      "viewId":  96822,
+                      "viewName":  "{3D}",
+                      "viewType":  "ThreeD",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  762815,
+                      "viewName":  "ViewRail - 90° Turn Staircase",
+                      "viewType":  "ThreeD",
+                      "isTemplate":  false,
+                      "scale":  32
+                  },
+                  {
+                      "viewId":  762826,
+                      "viewName":  "ViewRail - Straight Staircase",
+                      "viewType":  "ThreeD",
+                      "isTemplate":  false,
+                      "scale":  32
+                  },
+                  {
+                      "viewId":  762837,
+                      "viewName":  "ViewRail - Switchback Staircase",
+                      "viewType":  "ThreeD",
+                      "isTemplate":  false,
+                      "scale":  32
+                  },
+                  {
+                      "viewId":  762848,
+                      "viewName":  "ViewRail - U-turn Staircase",
+                      "viewType":  "ThreeD",
+                      "isTemplate":  false,
+                      "scale":  32
+                  },
+                  {
+                      "viewId":  762857,
+                      "viewName":  "Floating Stairs - Open Riser Design - Dual Stringer Structure",
+                      "viewType":  "DrawingSheet",
+                      "isTemplate":  false,
+                      "scale":  1
+                  },
+                  {
+                      "viewId":  865041,
+                      "viewName":  "\u003cRevision Schedule\u003e",
+                      "viewType":  "Schedule",
+                      "isTemplate":  false,
+                      "scale":  1
+                  },
+                  {
+                      "viewId":  865046,
+                      "viewName":  "\u003cRevision Schedule\u003e 2",
+                      "viewType":  "Schedule",
+                      "isTemplate":  false,
+                      "scale":  1
+                  }
+              ],
+    "plumbingFixtures":  [
+
+                         ],
+    "doors":  [
+
+              ],
+    "floorTypes":  [
+                       {
+                           "floorTypeId":  1121,
+                           "name":  "Generic - 12\"",
+                           "familyName":  "Floor",
+                           "isFoundation":  false
+                       },
+                       {
+                           "floorTypeId":  67960,
+                           "name":  "6\" Foundation Slab",
+                           "familyName":  "Foundation Slab",
+                           "isFoundation":  true
+                       }
+                   ],
+    "sheets":  [
+
+               ],
+    "structuralColumns":  [
+
+                          ],
+    "filePath":  "D:\\006 - OLD PROJECTS ARCHIVE\\CATALYST DESIGN GROUP\\1148 NW 59 STREET MIAMI FL\\Revit\\Family\\Construction_Stairs_ViewRail_Floating-Stairs_Flight-DUO-Stairs_Showcase.rvt",
+    "stairs":  [
+
+               ],
+    "ceilingTypes":  [
+                         {
+                             "ceilingTypeId":  590,
+                             "name":  "Generic",
+                             "familyName":  "Basic Ceiling"
+                         },
+                         {
+                             "ceilingTypeId":  9802,
+                             "name":  "GWB on Mtl Stud",
+                             "familyName":  "Compound Ceiling"
+                         },
+                         {
+                             "ceilingTypeId":  9852,
+                             "name":  "Generic - 4\"",
+                             "familyName":  "Roof Soffit"
+                         }
+                     ],
+    "walls":  [
+
+              ],
+    "foundations":  [
+
+                    ],
+    "rooms":  [
+
+              ],
+    "worksets":  [
+
+                 ],
+    "floors":  [
+
+               ],
+    "grids":  [
+
+              ],
+    "ducts":  [
+
+              ],
+    "windowTypes":  [
+
+                    ],
+    "loadedFamilies":  [
+                           {
+                               "familyId":  84529,
+                               "name":  "Baluster - Round",
+                               "category":  "Balusters",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  68862,
+                               "name":  "Callout Head",
+                               "category":  "Callout Heads",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  5140,
+                               "name":  "Empty System Panel",
+                               "category":  "Curtain Panels",
+                               "typeCount":  0,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  5136,
+                               "name":  "System Panel",
+                               "category":  "Curtain Panels",
+                               "typeCount":  1,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  409,
+                               "name":  "Circular Mullion",
+                               "category":  "Curtain Wall Mullions",
+                               "typeCount":  0,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  413,
+                               "name":  "L Corner Mullion",
+                               "category":  "Curtain Wall Mullions",
+                               "typeCount":  0,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  425,
+                               "name":  "Quad Corner Mullion",
+                               "category":  "Curtain Wall Mullions",
+                               "typeCount":  0,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  405,
+                               "name":  "Rectangular Mullion",
+                               "category":  "Curtain Wall Mullions",
+                               "typeCount":  0,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  421,
+                               "name":  "Trapezoid Corner Mullion",
+                               "category":  "Curtain Wall Mullions",
+                               "typeCount":  0,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  417,
+                               "name":  "V Corner Mullion",
+                               "category":  "Curtain Wall Mullions",
+                               "typeCount":  0,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  48297,
+                               "name":  "Brick Standard",
+                               "category":  "Detail Items",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  100947,
+                               "name":  "Elevation Mark Body_Square",
+                               "category":  "Elevation Marks",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  94640,
+                               "name":  "Elevation Mark Pointer_Square",
+                               "category":  "Elevation Marks",
+                               "typeCount":  4,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  69800,
+                               "name":  "Grid Head - Circle",
+                               "category":  "Grid Heads",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  70190,
+                               "name":  "Level Head - Circle",
+                               "category":  "Level Heads",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  73599,
+                               "name":  "Circular Handrail",
+                               "category":  "Profiles",
+                               "typeCount":  2,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  74249,
+                               "name":  "Fascia-Flat",
+                               "category":  "Profiles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  74475,
+                               "name":  "Gutter Profile-Bevel",
+                               "category":  "Profiles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  75415,
+                               "name":  "Slab Edge-Thickened",
+                               "category":  "Profiles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  74036,
+                               "name":  "Stair Nosing - Pan",
+                               "category":  "Profiles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  75641,
+                               "name":  "Wall Sweep-Brick Soldier Course",
+                               "category":  "Profiles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  70810,
+                               "name":  "Section Head - Filled",
+                               "category":  "Section Marks",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  71036,
+                               "name":  "Section Head - no arrow",
+                               "category":  "Section Marks",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  71436,
+                               "name":  "Section Tail - Filled",
+                               "category":  "Section Marks",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  840013,
+                               "name":  "Construction_Stairs_ViewRail_FLIGHT-DUO-Floating-Stairs-90-Turn",
+                               "category":  "Specialty Equipment",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  846316,
+                               "name":  "Construction_Stairs_ViewRail_FLIGHT-DUO-Floating-Stairs-Straight",
+                               "category":  "Specialty Equipment",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  850431,
+                               "name":  "Construction_Stairs_ViewRail_FLIGHT-DUO-Floating-Stairs-Switchback",
+                               "category":  "Specialty Equipment",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  856886,
+                               "name":  "Construction_Stairs_ViewRail_FLIGHT-DUO-Floating-Stairs-U-Turn",
+                               "category":  "Specialty Equipment",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  71864,
+                               "name":  "Spot Elevation - Crosshair",
+                               "category":  "Spot Elevation Symbols",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  72054,
+                               "name":  "Spot Elevation - Target Filled",
+                               "category":  "Spot Elevation Symbols",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  125928,
+                               "name":  "E1 30 x 42 Horizontal",
+                               "category":  "Title Blocks",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  764116,
+                               "name":  "ViewRail Title",
+                               "category":  "Title Blocks",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  79993,
+                               "name":  "View Reference",
+                               "category":  "View Reference",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  763870,
+                               "name":  "View Title",
+                               "category":  "View Titles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           }
+                       ],
+    "doorTypes":  [
+
+                  ],
+    "electricalCircuits":  [
+
+                           ],
+    "mepSystems":  [
+
+                   ],
+    "roofTypes":  [
+                      {
+                          "roofTypeId":  386,
+                          "name":  "Sloped Glazing",
+                          "familyName":  "Sloped Glazing"
+                      },
+                      {
+                          "roofTypeId":  1366,
+                          "name":  "Generic - 12\"",
+                          "familyName":  "Basic Roof"
+                      }
+                  ],
+    "levels":  [
+                   {
+                       "levelId":  5661,
+                       "name":  "Level 01 - B.O. Footing",
+                       "elevation":  -10.0
+                   },
+                   {
+                       "levelId":  5631,
+                       "name":  "Level 02 - T.O. Footing",
+                       "elevation":  -9.0
+                   },
+                   {
+                       "levelId":  5608,
+                       "name":  "Level 03 - T.O. Basement Slab",
+                       "elevation":  -8.0
+                   },
+                   {
+                       "levelId":  5562,
+                       "name":  "Level 04 - T.O. Fnd. Wall",
+                       "elevation":  -1.0
+                   },
+                   {
+                       "levelId":  355,
+                       "name":  "Level 1",
+                       "elevation":  0.0
+                   },
+                   {
+                       "levelId":  2794,
+                       "name":  "Level 2",
+                       "elevation":  10.229166666666668
+                   },
+                   {
+                       "levelId":  8808,
+                       "name":  "Roof",
+                       "elevation":  20.0
+                   }
+               ],
+    "materials":  [
+                      {
+                          "materialId":  281406,
+                          "name":  "ViewRail - Metal - Steel",
+                          "materialClass":  "Metal",
+                          "color":  "wMDA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  281410,
+                          "name":  "ViewRail - Glass - Clear",
+                          "materialClass":  "Glass",
+                          "color":  "7PDv",
+                          "transparency":  85,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  281412,
+                          "name":  "ViewRail - Wood - Birch",
+                          "materialClass":  "Wood",
+                          "color":  "46qA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  281416,
+                          "name":  "Warning",
+                          "materialClass":  "Generic",
+                          "color":  "/wAA",
+                          "transparency":  75,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  281425,
+                          "name":  "ViewRail - Metal - Brushed Stainless Steel",
+                          "materialClass":  "Generic",
+                          "color":  "y8vL",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  292508,
+                          "name":  "ViewRail - Metal - Cable",
+                          "materialClass":  "Metal",
+                          "color":  "wMDA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  766045,
+                          "name":  "ViewRail - Wood - Birch (Wire Brushed)",
+                          "materialClass":  "Wood",
+                          "color":  "46qA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  863966,
+                          "name":  "Analytical Panels",
+                          "materialClass":  "Unassigned",
+                          "color":  "+8WZ",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  864049,
+                          "name":  "Electrical Analytical Loads",
+                          "materialClass":  "Unassigned",
+                          "color":  "Xl7N",
+                          "transparency":  50,
+                          "shininess":  64
+                      }
+                  ],
+    "windows":  [
+
+                ],
+    "electricalFixtures":  [
+
+                           ],
+    "warnings":  [
+
+                 ]
+}

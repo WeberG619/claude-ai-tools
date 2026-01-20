@@ -1,0 +1,111 @@
+{
+  "name": "BridgeAI",
+  "version": "1.0.0",
+  "description": "Personal AI assistant that controls your computer",
+  "author": "BIM Ops Studio",
+
+  "capabilities": {
+    "voice": {
+      "enabled": true,
+      "description": "Voice input and output",
+      "mcp_server": "voice-mcp",
+      "features": ["speak", "listen", "text-to-speech"]
+    },
+
+    "memory": {
+      "enabled": true,
+      "description": "Persistent memory across sessions",
+      "mcp_server": "claude-memory",
+      "features": ["store", "recall", "search", "corrections", "sessions"]
+    },
+
+    "browser": {
+      "enabled": true,
+      "description": "Web browser control",
+      "mcp_server": "windows-browser",
+      "features": ["navigate", "search", "screenshot", "click", "type"]
+    },
+
+    "files": {
+      "enabled": true,
+      "description": "File system operations",
+      "mcp_server": "built-in",
+      "features": ["read", "write", "edit", "glob", "grep"]
+    },
+
+    "system": {
+      "enabled": true,
+      "description": "System diagnostics and control",
+      "mcp_server": "system-bridge",
+      "features": ["processes", "memory", "cpu", "disk", "network"]
+    },
+
+    "database": {
+      "enabled": true,
+      "description": "Local data storage",
+      "mcp_server": "sqlite-server",
+      "features": ["query", "store", "tables"]
+    },
+
+    "printing": {
+      "enabled": true,
+      "description": "Print documents",
+      "mcp_server": "scripts/print.ps1",
+      "features": ["list_printers", "print_file", "print_queue"]
+    }
+  },
+
+  "system_tools": {
+    "diagnostics": [
+      "check_cpu_usage",
+      "check_memory_usage",
+      "check_disk_space",
+      "check_network_status",
+      "list_running_processes",
+      "check_startup_programs"
+    ],
+
+    "repair": [
+      "clear_temp_files",
+      "kill_process",
+      "restart_service",
+      "flush_dns",
+      "reset_network",
+      "disable_startup_item",
+      "empty_recycle_bin"
+    ],
+
+    "maintenance": [
+      "disk_cleanup",
+      "find_large_files",
+      "check_for_updates",
+      "defragment_drive",
+      "check_disk_health"
+    ]
+  },
+
+  "safety": {
+    "confirm_before": [
+      "delete_files",
+      "modify_system_settings",
+      "end_processes",
+      "install_software",
+      "network_changes"
+    ],
+
+    "never_touch": [
+      "C:\\Windows\\System32",
+      "C:\\Windows\\SysWOW64",
+      "registry_without_permission",
+      "security_software",
+      "boot_configuration"
+    ]
+  },
+
+  "target_users": [
+    "everyday computer users",
+    "non-technical family members",
+    "small business owners",
+    "anyone frustrated with technology"
+  ]
+}

@@ -1,0 +1,30 @@
+DAILY TOOL: Morning Model Sync and Health Check
+
+RUN THIS: Every morning at 7 AM (or when you arrive)
+
+AUTOMATED WORKFLOW:
+1. Sync all local files with central
+2. Create backup with date stamp
+3. Check and log all warnings
+4. Verify all links are loaded
+5. Check file size and performance
+6. Generate morning report
+
+HEALTH CHECKS:
+- Count warnings by category
+- List critical warnings (errors)
+- Check for missing elements
+- Verify worksets are correct
+- Test model performance metrics
+
+OUTPUT:
+- Email report to team
+- Excel log of issues
+- Task list for fixes needed
+- Performance trending graph
+
+FEATURES:
+- One-click morning routine
+- Automatic email to PM
+- Historical tracking
+- Red flags for urgent issues

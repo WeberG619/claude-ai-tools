@@ -1,0 +1,917 @@
+﻿{
+    "lightingFixtures":  [
+
+                         ],
+    "ceilings":  [
+
+                 ],
+    "wallTypes":  [
+                      {
+                          "wallTypeId":  1557,
+                          "name":  "Wall 1",
+                          "kind":  "Basic",
+                          "width":  0.6666666666666666,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  1558,
+                          "name":  "Curtain Wall 1",
+                          "kind":  "Curtain",
+                          "width":  0.08333333333333333,
+                          "familyName":  "Curtain Wall"
+                      },
+                      {
+                          "wallTypeId":  1559,
+                          "name":  "Stacked Wall 1",
+                          "kind":  "Stacked",
+                          "width":  0.6666666666666666,
+                          "familyName":  "Stacked Wall"
+                      }
+                  ],
+    "structuralBeams":  [
+
+                        ],
+    "familyTypes":  [
+
+                    ],
+    "roofs":  [
+
+              ],
+    "railings":  [
+
+                 ],
+    "curtainWalls":  [
+
+                     ],
+    "phases":  [
+                   {
+                       "phaseId":  1,
+                       "phaseName":  "Existing",
+                       "sequenceNumber":  1
+                   },
+                   {
+                       "phaseId":  3,
+                       "phaseName":  "New Construction",
+                       "sequenceNumber":  2
+                   }
+               ],
+    "projectInfo":  {
+                        "success":  true,
+                        "result":  {
+                                       "name":  "",
+                                       "number":  "",
+                                       "author":  "",
+                                       "status":  "",
+                                       "address":  "",
+                                       "clientName":  "",
+                                       "buildingName":  "",
+                                       "organizationName":  "",
+                                       "organizationDescription":  "",
+                                       "isPinned":  false,
+                                       "isWorkshared":  false,
+                                       "title":  "King Acc Furniture",
+                                       "pathname":  "D:\\003 - RESOURCES\\04 - TEMPLATES\\Temp files\\Temp Files\\neudesign\\Group\\King Acc Furniture.rvt"
+                                   }
+                    },
+    "schedules":  [
+
+                  ],
+    "columns":  [
+
+                ],
+    "furniture":  [
+                      {
+                          "furnitureId":  2351,
+                          "familyName":  "Bed-Standard",
+                          "typeName":  "King 78\" x 80\"",
+                          "typeId":  2718,
+                          "level":  "L5-Floor",
+                          "location":  {
+                                           "x":  -47.00456694539018,
+                                           "y":  19.219715494878795,
+                                           "z":  46.791666666672896
+                                       },
+                          "rotation":  3.141592653589778
+                      },
+                      {
+                          "furnitureId":  2352,
+                          "familyName":  "Headboard",
+                          "typeName":  "GF-301 King",
+                          "typeId":  2728,
+                          "level":  "L5-Floor",
+                          "location":  {
+                                           "x":  -47.00456694539023,
+                                           "y":  15.719715494878773,
+                                           "z":  46.79166666667284
+                                       },
+                          "rotation":  3.141592653589778
+                      },
+                      {
+                          "furnitureId":  2353,
+                          "familyName":  "Nightstand",
+                          "typeName":  "GF-304 18\"",
+                          "typeId":  2731,
+                          "level":  "L5-Floor",
+                          "location":  {
+                                           "x":  -51.29403755540421,
+                                           "y":  15.647202345107788,
+                                           "z":  46.79166666667284
+                                       },
+                          "rotation":  3.141592653589778
+                      },
+                      {
+                          "furnitureId":  2354,
+                          "familyName":  "Nightstand",
+                          "typeName":  "GF-305 18\"",
+                          "typeId":  2733,
+                          "level":  "L5-Floor",
+                          "location":  {
+                                           "x":  -42.71281830808978,
+                                           "y":  15.719715494878782,
+                                           "z":  46.79166666667284
+                                       },
+                          "rotation":  3.141592653589778
+                      },
+                      {
+                          "furnitureId":  2357,
+                          "familyName":  "GF-300 Entertainment Center",
+                          "typeName":  "Standard",
+                          "typeId":  2659,
+                          "level":  "L5-Floor",
+                          "location":  {
+                                           "x":  -45.31387985113881,
+                                           "y":  28.907611153436623,
+                                           "z":  46.791666666672896
+                                       },
+                          "rotation":  6.283185307179575
+                      },
+                      {
+                          "furnitureId":  2358,
+                          "familyName":  "GF-100 Activity Chair",
+                          "typeName":  "GF-100 Activity Chair",
+                          "typeId":  2721,
+                          "level":  "L5-Floor",
+                          "location":  {
+                                           "x":  -40.89981735113791,
+                                           "y":  27.76177782010326,
+                                           "z":  46.79166666667284
+                                       },
+                          "rotation":  6.283185307179566
+                      },
+                      {
+                          "furnitureId":  2359,
+                          "familyName":  "Ottoman",
+                          "typeName":  "Ottoman",
+                          "typeId":  2720,
+                          "level":  "L5-Floor",
+                          "location":  {
+                                           "x":  -49.00137985113919,
+                                           "y":  28.423236153436726,
+                                           "z":  46.79166666667284
+                                       },
+                          "rotation":  3.1415926535897847
+                      },
+                      {
+                          "furnitureId":  2360,
+                          "familyName":  "Ottoman",
+                          "typeName":  "Ottoman",
+                          "typeId":  2720,
+                          "level":  "L5-Floor",
+                          "location":  {
+                                           "x":  -50.75919235113919,
+                                           "y":  28.423236153436733,
+                                           "z":  46.79166666667284
+                                       },
+                          "rotation":  3.1415926535897847
+                      },
+                      {
+                          "furnitureId":  2362,
+                          "familyName":  "GF-105 Lounge Chair",
+                          "typeName":  "GF-105 Lounge Chair",
+                          "typeId":  2729,
+                          "level":  "L5-Floor",
+                          "location":  {
+                                           "x":  -40.14504232677319,
+                                           "y":  17.24429382344845,
+                                           "z":  46.79166666667284
+                                       },
+                          "rotation":  0.6108652381980153
+                      }
+                  ],
+    "pipes":  [
+
+              ],
+    "extractedAt":  "2025-12-08 11:00:27",
+    "fileName":  "King Acc Furniture.rvt",
+    "views":  [
+                  {
+                      "viewId":  1140,
+                      "viewName":  "Project View",
+                      "viewType":  "ProjectBrowser",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  1921,
+                      "viewName":  "System Browser",
+                      "viewType":  "SystemBrowser",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  11730,
+                      "viewName":  "L5-Floor",
+                      "viewType":  "EngineeringPlan",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  11740,
+                      "viewName":  "L5-Floor",
+                      "viewType":  "FloorPlan",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  11752,
+                      "viewName":  "{3D}",
+                      "viewType":  "ThreeD",
+                      "isTemplate":  false,
+                      "scale":  96
+                  }
+              ],
+    "plumbingFixtures":  [
+
+                         ],
+    "doors":  [
+
+              ],
+    "floorTypes":  [
+                       {
+                           "floorTypeId":  1567,
+                           "name":  "Floor 1",
+                           "familyName":  "Floor",
+                           "isFoundation":  false
+                       },
+                       {
+                           "floorTypeId":  1568,
+                           "name":  "Foundation Slab 1",
+                           "familyName":  "Foundation Slab",
+                           "isFoundation":  true
+                       }
+                   ],
+    "sheets":  [
+
+               ],
+    "structuralColumns":  [
+
+                          ],
+    "filePath":  "D:\\003 - RESOURCES\\04 - TEMPLATES\\Temp files\\Temp Files\\neudesign\\Group\\King Acc Furniture.rvt",
+    "stairs":  [
+
+               ],
+    "ceilingTypes":  [
+                         {
+                             "ceilingTypeId":  1570,
+                             "name":  "Roof Soffit 1",
+                             "familyName":  "Roof Soffit"
+                         },
+                         {
+                             "ceilingTypeId":  1571,
+                             "name":  "Ceiling 1",
+                             "familyName":  "Basic Ceiling"
+                         },
+                         {
+                             "ceilingTypeId":  1572,
+                             "name":  "Ceiling 2",
+                             "familyName":  "Compound Ceiling"
+                         }
+                     ],
+    "walls":  [
+
+              ],
+    "foundations":  [
+
+                    ],
+    "rooms":  [
+
+              ],
+    "worksets":  [
+
+                 ],
+    "floors":  [
+
+               ],
+    "grids":  [
+
+              ],
+    "ducts":  [
+
+              ],
+    "windowTypes":  [
+
+                    ],
+    "loadedFamilies":  [
+                           {
+                               "familyId":  1560,
+                               "name":  "System Panel",
+                               "category":  "Curtain Panels",
+                               "typeCount":  1,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  1599,
+                               "name":  "Circular Mullion",
+                               "category":  "Curtain Wall Mullions",
+                               "typeCount":  1,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  1603,
+                               "name":  "L Corner Mullion",
+                               "category":  "Curtain Wall Mullions",
+                               "typeCount":  1,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  1615,
+                               "name":  "Quad Corner Mullion",
+                               "category":  "Curtain Wall Mullions",
+                               "typeCount":  1,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  1595,
+                               "name":  "Rectangular Mullion",
+                               "category":  "Curtain Wall Mullions",
+                               "typeCount":  1,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  1611,
+                               "name":  "Trapezoid Corner Mullion",
+                               "category":  "Curtain Wall Mullions",
+                               "typeCount":  1,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  1607,
+                               "name":  "V Corner Mullion",
+                               "category":  "Curtain Wall Mullions",
+                               "typeCount":  1,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  2368,
+                               "name":  "Bed-Standard",
+                               "category":  "Furniture",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  2571,
+                               "name":  "GF-100 Activity Chair",
+                               "category":  "Furniture",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  2495,
+                               "name":  "GF-105 Lounge Chair",
+                               "category":  "Furniture",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  2462,
+                               "name":  "GF-300 Entertainment Center",
+                               "category":  "Furniture",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  2552,
+                               "name":  "Headboard",
+                               "category":  "Furniture",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  2513,
+                               "name":  "Nightstand",
+                               "category":  "Furniture",
+                               "typeCount":  2,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  2591,
+                               "name":  "Ottoman",
+                               "category":  "Furniture",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  2668,
+                               "name":  "Level Head - Circle",
+                               "category":  "Level Heads",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  2436,
+                               "name":  "GF-202 Table_Lamp",
+                               "category":  "Lighting Fixtures",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  2532,
+                               "name":  "GF-203 Single Wall Sconce",
+                               "category":  "Lighting Fixtures",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  2400,
+                               "name":  "GF-205 Lamp",
+                               "category":  "Lighting Fixtures",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  2418,
+                               "name":  "GF-206 Floor Lamp",
+                               "category":  "Lighting Fixtures",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           }
+                       ],
+    "doorTypes":  [
+
+                  ],
+    "electricalCircuits":  [
+
+                           ],
+    "mepSystems":  [
+
+                   ],
+    "roofTypes":  [
+                      {
+                          "roofTypeId":  1563,
+                          "name":  "Roof 1",
+                          "familyName":  "Basic Roof"
+                      },
+                      {
+                          "roofTypeId":  1564,
+                          "name":  "Roof 2",
+                          "familyName":  "Basic Roof"
+                      },
+                      {
+                          "roofTypeId":  1565,
+                          "name":  "18\" Roof",
+                          "familyName":  "Basic Roof"
+                      },
+                      {
+                          "roofTypeId":  1566,
+                          "name":  "Sloped Glazing",
+                          "familyName":  "Sloped Glazing"
+                      }
+                  ],
+    "levels":  [
+                   {
+                       "levelId":  2350,
+                       "name":  "L5-Floor",
+                       "elevation":  46.791666666672924
+                   }
+               ],
+    "materials":  [
+                      {
+                          "materialId":  39,
+                          "name":  "Default",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  40,
+                          "name":  "Default Wall",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  41,
+                          "name":  "Default Roof",
+                          "materialClass":  "Unassigned",
+                          "color":  "AH8A",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  42,
+                          "name":  "Glass",
+                          "materialClass":  "Unassigned",
+                          "color":  "AAD/",
+                          "transparency":  75,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  43,
+                          "name":  "Phase-Demo",
+                          "materialClass":  "Unassigned",
+                          "color":  "/wAA",
+                          "transparency":  40,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  44,
+                          "name":  "Phase-Exist",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  45,
+                          "name":  "Phase-Temp",
+                          "materialClass":  "Unassigned",
+                          "color":  "AAD/",
+                          "transparency":  40,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  46,
+                          "name":  "Poche",
+                          "materialClass":  "System",
+                          "color":  "AAD/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  47,
+                          "name":  "Default Light Source",
+                          "materialClass":  "Unassigned",
+                          "color":  "//8A",
+                          "transparency":  75,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  48,
+                          "name":  "Analytical Floor Surface",
+                          "materialClass":  "Unassigned",
+                          "color":  "gEAA",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  49,
+                          "name":  "Analytical Slab Surface",
+                          "materialClass":  "Unassigned",
+                          "color":  "m7tZ",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  50,
+                          "name":  "Analytical Wall Surface",
+                          "materialClass":  "Unassigned",
+                          "color":  "AMjI",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  1916,
+                          "name":  "Copper",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  1917,
+                          "name":  "Iron, Ductile",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  1918,
+                          "name":  "Polyvinyl Chloride, Rigid",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  1919,
+                          "name":  "Stainless Steel",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  1920,
+                          "name":  "Steel, Carbon",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  2364,
+                          "name":  "Furniture - HIGH TOWER - Scoop - Base",
+                          "materialClass":  "Metal",
+                          "color":  "8vLy",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  2365,
+                          "name":  "Furniture - HIGH TOWER - Scoop - Upholstery",
+                          "materialClass":  "Fabric",
+                          "color":  "////",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  2626,
+                          "name":  "Render Material 0-0-0",
+                          "materialClass":  "Unassigned",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  2627,
+                          "name":  "Steel, Chrome Plated",
+                          "materialClass":  "Metal",
+                          "color":  "ERER",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  2628,
+                          "name":  "Linen, White",
+                          "materialClass":  "Textile",
+                          "color":  "9/fv",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  2629,
+                          "name":  "Render Material 255-127-0",
+                          "materialClass":  "Unassigned",
+                          "color":  "/38A",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  2630,
+                          "name":  "Base",
+                          "materialClass":  "Generic",
+                          "color":  "SDEm",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  2631,
+                          "name":  "Body",
+                          "materialClass":  "Generic",
+                          "color":  "UUM8",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  2632,
+                          "name":  "Shade",
+                          "materialClass":  "Generic",
+                          "color":  "dXNr",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  2633,
+                          "name":  "Steel, Polished",
+                          "materialClass":  "Metal",
+                          "color":  "eHh4",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  2634,
+                          "name":  "TRANSLUCENT WOOD LAMINATE",
+                          "materialClass":  "Generic",
+                          "color":  "YVRH",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  2635,
+                          "name":  "Birch",
+                          "materialClass":  "Wood",
+                          "color":  "4LJ+",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  2636,
+                          "name":  "Cabinets",
+                          "materialClass":  "Miscellaneous",
+                          "color":  "+fn5",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  2637,
+                          "name":  "Cabinets - Handles",
+                          "materialClass":  "Metal",
+                          "color":  "OTk5",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  2710,
+                          "name":  "Render Material 128-128-128",
+                          "materialClass":  "Unassigned",
+                          "color":  "gICA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  2711,
+                          "name":  "Render Material 124-0-165",
+                          "materialClass":  "Unassigned",
+                          "color":  "fACl",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  12121,
+                          "name":  "System-Zones",
+                          "materialClass":  "Unassigned",
+                          "color":  "Xl7N",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  12632,
+                          "name":  "Analytical Spaces",
+                          "materialClass":  "Unassigned",
+                          "color":  "AMjI",
+                          "transparency":  85,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  12634,
+                          "name":  "Analytical Surface - Exterior Walls",
+                          "materialClass":  "Unassigned",
+                          "color":  "hbIs",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  12636,
+                          "name":  "Analytical Surface - Roofs",
+                          "materialClass":  "Unassigned",
+                          "color":  "Jg+Z",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  12638,
+                          "name":  "Analytical Surface - Slabs on Grade",
+                          "materialClass":  "Unassigned",
+                          "color":  "ZVHM",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  12640,
+                          "name":  "Analytical Surface - Interior Walls",
+                          "materialClass":  "Unassigned",
+                          "color":  "w+V+",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  12642,
+                          "name":  "Analytical Surface - Interior Floors",
+                          "materialClass":  "Unassigned",
+                          "color":  "ZVHM",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  12644,
+                          "name":  "Analytical Surface - Ceilings",
+                          "materialClass":  "Unassigned",
+                          "color":  "v7L/",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  12646,
+                          "name":  "Analytical Surface - Air Surfaces",
+                          "materialClass":  "Unassigned",
+                          "color":  "vtLc",
+                          "transparency":  90,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  12648,
+                          "name":  "Analytical Surface - Underground Walls",
+                          "materialClass":  "Unassigned",
+                          "color":  "sm8s",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  12650,
+                          "name":  "Analytical Surface - Operable Windows",
+                          "materialClass":  "Unassigned",
+                          "color":  "suX/",
+                          "transparency":  75,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  12652,
+                          "name":  "Analytical Surface - Operable Skylights",
+                          "materialClass":  "Unassigned",
+                          "color":  "suX/",
+                          "transparency":  75,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  12654,
+                          "name":  "Analytical Surface - Sliding Doors",
+                          "materialClass":  "Unassigned",
+                          "color":  "/7Ky",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  12656,
+                          "name":  "Analytical Surface - Air Openings",
+                          "materialClass":  "Unassigned",
+                          "color":  "////",
+                          "transparency":  100,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  12658,
+                          "name":  "Analytical Surface - Shades",
+                          "materialClass":  "Unassigned",
+                          "color":  "kJKK",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  12803,
+                          "name":  "Analytical Panels",
+                          "materialClass":  "Unassigned",
+                          "color":  "+8WZ",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  12885,
+                          "name":  "Electrical Analytical Loads",
+                          "materialClass":  "Unassigned",
+                          "color":  "Xl7N",
+                          "transparency":  50,
+                          "shininess":  64
+                      }
+                  ],
+    "windows":  [
+
+                ],
+    "electricalFixtures":  [
+
+                           ],
+    "warnings":  [
+
+                 ]
+}

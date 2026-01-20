@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "project": {
+    "name": "R25 RM TENANT IMPROVEMENT",
+    "number": "2-150",
+    "path": "C:/Users/rick/OneDrive - BD Architect llc/Documents - BDA Production/2-150 RM Tenant Improvement/03 Drawings/R25 RM TENANT IMPROVEMENT.rvt",
+    "created_at": "2026-01-06T20:12:28.464635",
+    "last_accessed": "2026-01-06T20:12:54.864028"
+  },
+  "workflow": {
+    "current_pipeline": "cd-set-assembly",
+    "current_phase": "Phase 2 - View Organization",
+    "phase_number": 2,
+    "started_at": "2026-01-06T20:12:45.106460",
+    "status": "paused"
+  },
+  "checkpoints": {
+    "passed": [
+      {
+        "name": "GATE 1: Sheet list approval",
+        "passed_at": "2026-01-06T20:12:54.864793",
+        "notes": "User approved 12 sheets - no new sheets needed"
+      }
+    ],
+    "current": {
+      "name": "GATE 2: Views ready for placement",
+      "waiting_since": "2026-01-06T20:12:54.895433"
+    },
+    "failed": []
+  },
+  "last_session": {
+    "date": null,
+    "duration_minutes": 0,
+    "actions_completed": [
+      {
+        "action": "Reviewed existing sheets: A101, A304, A501, etc.",
+        "completed_at": "2026-01-06T20:12:54.869236"
+      }
+    ],
+    "summary": null
+  },
+  "next_actions": [
+    "Query all views in project",
+    "Check view scales match requirements",
+    "Verify crop regions set",
+    "Confirm views ready"
+  ],
+  "context": {
+    "active_sheet": "A302",
+    "active_view": "TYPICAL DETAILS",
+    "elements_created": [],
+    "elements_modified": [],
+    "pending_validation": []
+  },
+  "notes": [],
+  "history": [
+    {
+      "timestamp": "2026-01-06T20:12:45.106470",
+      "event": "pipeline_started",
+      "details": "Started cd-set-assembly"
+    },
+    {
+      "timestamp": "2026-01-06T20:12:54.864801",
+      "event": "checkpoint_passed",
+      "details": "GATE 1: Sheet list approval"
+    },
+    {
+      "timestamp": "2026-01-06T20:12:54.884022",
+      "event": "phase_advanced",
+      "details": "Phase 1 - Sheet Setup -> Phase 2 - View Organization"
+    }
+  ]
+}

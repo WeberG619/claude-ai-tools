@@ -1,0 +1,52 @@
+{
+  "_comment": "BridgeAI Settings Template - Copy to ~/.claude/settings.local.json",
+
+  "permissions": {
+    "allow": [
+      "Bash(powershell.exe:*)",
+      "Bash(python:*)",
+      "Bash(node:*)"
+    ]
+  },
+
+  "tools": {
+    "always-allow": [
+      "Read",
+      "Write",
+      "Edit",
+      "Glob",
+      "Grep",
+      "Bash"
+    ]
+  },
+
+  "mcpServers": {
+    "voice-mcp": {
+      "command": "python",
+      "args": ["[BRIDGEAI_PATH]/mcp-servers/voice/server.py"],
+      "disabled": false,
+      "_comment": "Text-to-speech and voice output"
+    },
+
+    "sqlite-server": {
+      "command": "npx",
+      "args": ["-y", "@anthropic-ai/sqlite-mcp", "[BRIDGEAI_PATH]/data/bridgeai.db"],
+      "disabled": false,
+      "_comment": "Local database for storing user data"
+    },
+
+    "browser-control": {
+      "command": "python",
+      "args": ["[BRIDGEAI_PATH]/mcp-servers/browser/server.py"],
+      "disabled": false,
+      "_comment": "Web browser automation"
+    },
+
+    "memory": {
+      "command": "python",
+      "args": ["[BRIDGEAI_PATH]/mcp-servers/memory/server.py"],
+      "disabled": false,
+      "_comment": "Persistent memory across sessions"
+    }
+  }
+}

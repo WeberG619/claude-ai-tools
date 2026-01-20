@@ -1,0 +1,686 @@
+﻿{
+    "levels":  [
+                   {
+                       "levelId":  311,
+                       "name":  "Ground",
+                       "elevation":  0.0
+                   },
+                   {
+                       "levelId":  694,
+                       "name":  "Level 1",
+                       "elevation":  13.123359580052494
+                   }
+               ],
+    "rooms":  [
+                  {
+                      "roomId":  300845,
+                      "name":  "Room 1",
+                      "number":  "1",
+                      "area":  119.3547578544102,
+                      "perimeter":  44.27856510225271,
+                      "volume":  0.0,
+                      "level":  "Ground",
+                      "levelId":  311,
+                      "department":  null
+                  },
+                  {
+                      "roomId":  300847,
+                      "name":  "Room 2",
+                      "number":  "2",
+                      "area":  84.38905766700418,
+                      "perimeter":  36.74540682414697,
+                      "volume":  0.0,
+                      "level":  "Ground",
+                      "levelId":  311,
+                      "department":  null
+                  },
+                  {
+                      "roomId":  300849,
+                      "name":  "Room 3",
+                      "number":  "3",
+                      "area":  84.38905766700422,
+                      "perimeter":  36.74540682414698,
+                      "volume":  0.0,
+                      "level":  "Ground",
+                      "levelId":  311,
+                      "department":  null
+                  },
+                  {
+                      "roomId":  302564,
+                      "name":  "Room 6",
+                      "number":  "6",
+                      "area":  237.77478110511694,
+                      "perimeter":  61.679790026246614,
+                      "volume":  0.0,
+                      "level":  "Ground",
+                      "levelId":  311,
+                      "department":  null
+                  },
+                  {
+                      "roomId":  302668,
+                      "name":  "Room 7",
+                      "number":  "7",
+                      "area":  131.10442887552395,
+                      "perimeter":  77.42782152230964,
+                      "volume":  0.0,
+                      "level":  "Ground",
+                      "levelId":  311,
+                      "department":  null
+                  },
+                  {
+                      "roomId":  303878,
+                      "name":  "Room 4",
+                      "number":  "4",
+                      "area":  42.19452883350215,
+                      "perimeter":  27.559055118110244,
+                      "volume":  0.0,
+                      "level":  "Ground",
+                      "levelId":  311,
+                      "department":  null
+                  },
+                  {
+                      "roomId":  303880,
+                      "name":  "Room 5",
+                      "number":  "5",
+                      "area":  294.2821899893176,
+                      "perimeter":  60.811668819487416,
+                      "volume":  0.0,
+                      "level":  "Ground",
+                      "levelId":  311,
+                      "department":  null
+                  },
+                  {
+                      "roomId":  303882,
+                      "name":  "Room 8",
+                      "number":  "8",
+                      "area":  17.76045218757104,
+                      "perimeter":  17.06036745406823,
+                      "volume":  0.0,
+                      "level":  "Ground",
+                      "levelId":  311,
+                      "department":  null
+                  }
+              ],
+    "fileName":  "crop_view_to_room_createviaoffset.rvt",
+    "walls":  [
+                  {
+                      "wallId":  300613,
+                      "wallType":  "Concept - Ext 300mm",
+                      "wallTypeId":  285734,
+                      "length":  15.937168921337918,
+                      "height":  13.123359580052494,
+                      "width":  0.984251968503937,
+                      "structural":  false,
+                      "startPoint":  {
+                                         "x":  4.239996432992779,
+                                         "y":  -0.492125984251979,
+                                         "z":  0.0
+                                     },
+                      "endPoint":  {
+                                       "x":  20.177165354330697,
+                                       "y":  -0.4921259842520311,
+                                       "z":  0.0
+                                   },
+                      "baseLevel":  "Ground",
+                      "topLevel":  "Level 1",
+                      "baseOffset":  0.0,
+                      "topOffset":  0.0
+                  },
+                  {
+                      "wallId":  300622,
+                      "wallType":  "Concept - Ext 300mm",
+                      "wallTypeId":  285734,
+                      "length":  19.68503937007874,
+                      "height":  13.123359580052494,
+                      "width":  0.984251968503937,
+                      "structural":  false,
+                      "startPoint":  {
+                                         "x":  20.17716535433069,
+                                         "y":  -0.4921259842520307,
+                                         "z":  0.0
+                                     },
+                      "endPoint":  {
+                                       "x":  20.17716535433069,
+                                       "y":  -20.17716535433077,
+                                       "z":  0.0
+                                   },
+                      "baseLevel":  "Ground",
+                      "topLevel":  "Level 1",
+                      "baseOffset":  0.0,
+                      "topOffset":  0.0
+                  },
+                  {
+                      "wallId":  300638,
+                      "wallType":  "Concept - Ext 300mm",
+                      "wallTypeId":  285734,
+                      "length":  19.68503937007874,
+                      "height":  13.123359580052494,
+                      "width":  0.984251968503937,
+                      "structural":  false,
+                      "startPoint":  {
+                                         "x":  20.17716535433069,
+                                         "y":  -20.17716535433077,
+                                         "z":  0.0
+                                     },
+                      "endPoint":  {
+                                       "x":  0.492125984251949,
+                                       "y":  -20.177165354330707,
+                                       "z":  0.0
+                                   },
+                      "baseLevel":  "Ground",
+                      "topLevel":  "Level 1",
+                      "baseOffset":  0.0,
+                      "topOffset":  0.0
+                  },
+                  {
+                      "wallId":  300690,
+                      "wallType":  "Concept - Ext 300mm",
+                      "wallTypeId":  285734,
+                      "length":  14.69540657773633,
+                      "height":  13.123359580052494,
+                      "width":  0.984251968503937,
+                      "structural":  false,
+                      "startPoint":  {
+                                         "x":  0.492125984251949,
+                                         "y":  -20.177165354330707,
+                                         "z":  0.0
+                                     },
+                      "endPoint":  {
+                                       "x":  0.49212598425197285,
+                                       "y":  -5.481758776594377,
+                                       "z":  0.0
+                                   },
+                      "baseLevel":  "Ground",
+                      "topLevel":  "Level 1",
+                      "baseOffset":  0.0,
+                      "topOffset":  0.0
+                  },
+                  {
+                      "wallId":  300764,
+                      "wallType":  "Concept - Int 100mm",
+                      "wallTypeId":  285513,
+                      "length":  19.685039370078727,
+                      "height":  13.123359580052494,
+                      "width":  0.32808398950131235,
+                      "structural":  false,
+                      "startPoint":  {
+                                         "x":  0.4921259842519632,
+                                         "y":  -10.334645669291337,
+                                         "z":  0.0
+                                     },
+                      "endPoint":  {
+                                       "x":  20.17716535433069,
+                                       "y":  -10.334645669291401,
+                                       "z":  0.0
+                                   },
+                      "baseLevel":  "Ground",
+                      "topLevel":  "Level 1",
+                      "baseOffset":  0.0,
+                      "topOffset":  0.0
+                  },
+                  {
+                      "wallId":  300809,
+                      "wallType":  "Concept - Int 100mm",
+                      "wallTypeId":  285513,
+                      "length":  9.84251968503937,
+                      "height":  13.123359580052494,
+                      "width":  0.32808398950131235,
+                      "structural":  false,
+                      "startPoint":  {
+                                         "x":  10.334645669291326,
+                                         "y":  -10.334645669291369,
+                                         "z":  0.0
+                                     },
+                      "endPoint":  {
+                                       "x":  10.33464566929131,
+                                       "y":  -20.17716535433074,
+                                       "z":  0.0
+                                   },
+                      "baseLevel":  "Ground",
+                      "topLevel":  "Level 1",
+                      "baseOffset":  0.0,
+                      "topOffset":  0.0
+                  },
+                  {
+                      "wallId":  302610,
+                      "wallType":  "Concept - Ext 300mm",
+                      "wallTypeId":  285734,
+                      "length":  31.95189378651034,
+                      "height":  13.123359580052492,
+                      "width":  0.984251968503937,
+                      "structural":  false,
+                      "startPoint":  {
+                                         "x":  4.796745183977093,
+                                         "y":  2.8267552449262183,
+                                         "z":  0.0
+                                     },
+                      "endPoint":  {
+                                       "x":  -15.544462165104276,
+                                       "y":  2.826755244926251,
+                                       "z":  0.0
+                                   },
+                      "baseLevel":  "Ground",
+                      "topLevel":  null,
+                      "baseOffset":  0.0,
+                      "topOffset":  0.0
+                  },
+                  {
+                      "wallId":  302611,
+                      "wallType":  "Concept - Ext 300mm",
+                      "wallTypeId":  285734,
+                      "length":  31.95189378651034,
+                      "height":  13.123359580052492,
+                      "width":  0.984251968503937,
+                      "structural":  false,
+                      "startPoint":  {
+                                         "x":  -15.544462165104276,
+                                         "y":  2.826755244926251,
+                                         "z":  0.0
+                                     },
+                      "endPoint":  {
+                                       "x":  4.796745183977093,
+                                       "y":  2.8267552449261526,
+                                       "z":  0.0
+                                   },
+                      "baseLevel":  "Ground",
+                      "topLevel":  null,
+                      "baseOffset":  0.0,
+                      "topOffset":  0.0
+                  },
+                  {
+                      "wallId":  302686,
+                      "wallType":  "Concept - Ext 300mm",
+                      "wallTypeId":  285734,
+                      "length":  16.404199475065617,
+                      "height":  13.123359580052494,
+                      "width":  0.984251968503937,
+                      "structural":  false,
+                      "startPoint":  {
+                                         "x":  -41.76535196422445,
+                                         "y":  33.8589833484815,
+                                         "z":  0.0
+                                     },
+                      "endPoint":  {
+                                       "x":  -25.361152489158833,
+                                       "y":  33.85898334848145,
+                                       "z":  0.0
+                                   },
+                      "baseLevel":  "Ground",
+                      "topLevel":  null,
+                      "baseOffset":  0.0,
+                      "topOffset":  0.0
+                  },
+                  {
+                      "wallId":  302719,
+                      "wallType":  "Concept - Ext 300mm",
+                      "wallTypeId":  285734,
+                      "length":  16.404199475065617,
+                      "height":  13.123359580052494,
+                      "width":  0.984251968503937,
+                      "structural":  false,
+                      "startPoint":  {
+                                         "x":  -25.361152489158833,
+                                         "y":  33.85898334848145,
+                                         "z":  0.0
+                                     },
+                      "endPoint":  {
+                                       "x":  -25.361152489158894,
+                                       "y":  17.454783873415835,
+                                       "z":  0.0
+                                   },
+                      "baseLevel":  "Ground",
+                      "topLevel":  null,
+                      "baseOffset":  0.0,
+                      "topOffset":  0.0
+                  },
+                  {
+                      "wallId":  302758,
+                      "wallType":  "Concept - Ext 300mm",
+                      "wallTypeId":  285734,
+                      "length":  16.404199475065557,
+                      "height":  13.123359580052494,
+                      "width":  0.984251968503937,
+                      "structural":  false,
+                      "startPoint":  {
+                                         "x":  -25.361152489158894,
+                                         "y":  17.454783873415835,
+                                         "z":  0.0
+                                     },
+                      "endPoint":  {
+                                       "x":  -41.76535196422445,
+                                       "y":  17.454783873415888,
+                                       "z":  0.0
+                                   },
+                      "baseLevel":  "Ground",
+                      "topLevel":  null,
+                      "baseOffset":  0.0,
+                      "topOffset":  0.0
+                  },
+                  {
+                      "wallId":  302815,
+                      "wallType":  "Concept - Ext 300mm",
+                      "wallTypeId":  285734,
+                      "length":  16.404199475065614,
+                      "height":  13.123359580052494,
+                      "width":  0.984251968503937,
+                      "structural":  false,
+                      "startPoint":  {
+                                         "x":  -41.76535196422445,
+                                         "y":  17.454783873415888,
+                                         "z":  0.0
+                                     },
+                      "endPoint":  {
+                                       "x":  -41.76535196422442,
+                                       "y":  33.8589833484815,
+                                       "z":  0.0
+                                   },
+                      "baseLevel":  "Ground",
+                      "topLevel":  null,
+                      "baseOffset":  0.0,
+                      "topOffset":  0.0
+                  },
+                  {
+                      "wallId":  302886,
+                      "wallType":  "Concept - Ext 300mm",
+                      "wallTypeId":  285734,
+                      "length":  15.748031496062993,
+                      "height":  13.123359580052494,
+                      "width":  0.984251968503937,
+                      "structural":  false,
+                      "startPoint":  {
+                                         "x":  -44.36757695854659,
+                                         "y":  -12.780949675191017,
+                                         "z":  13.123359580052494
+                                     },
+                      "endPoint":  {
+                                       "x":  -28.6195454624836,
+                                       "y":  -12.780949675191067,
+                                       "z":  13.123359580052494
+                                   },
+                      "baseLevel":  "Level 1",
+                      "topLevel":  null,
+                      "baseOffset":  -13.123359580052494,
+                      "topOffset":  0.0
+                  },
+                  {
+                      "wallId":  302918,
+                      "wallType":  "Concept - Ext 300mm",
+                      "wallTypeId":  285734,
+                      "length":  12.46719160104987,
+                      "height":  13.123359580052494,
+                      "width":  0.984251968503937,
+                      "structural":  false,
+                      "startPoint":  {
+                                         "x":  -28.6195454624836,
+                                         "y":  -12.780949675191067,
+                                         "z":  13.123359580052494
+                                     },
+                      "endPoint":  {
+                                       "x":  -28.619545462483647,
+                                       "y":  -25.248141276240936,
+                                       "z":  13.123359580052494
+                                   },
+                      "baseLevel":  "Level 1",
+                      "topLevel":  null,
+                      "baseOffset":  -13.123359580052494,
+                      "topOffset":  0.0
+                  },
+                  {
+                      "wallId":  302934,
+                      "wallType":  "Concept - Ext 300mm",
+                      "wallTypeId":  285734,
+                      "length":  15.748031496062946,
+                      "height":  13.123359580052494,
+                      "width":  0.984251968503937,
+                      "structural":  false,
+                      "startPoint":  {
+                                         "x":  -28.619545462483647,
+                                         "y":  -25.248141276240936,
+                                         "z":  13.123359580052494
+                                     },
+                      "endPoint":  {
+                                       "x":  -44.36757695854659,
+                                       "y":  -25.248141276240887,
+                                       "z":  13.123359580052494
+                                   },
+                      "baseLevel":  "Level 1",
+                      "topLevel":  null,
+                      "baseOffset":  -13.123359580052494,
+                      "topOffset":  0.0
+                  },
+                  {
+                      "wallId":  302974,
+                      "wallType":  "Concept - Ext 300mm",
+                      "wallTypeId":  285734,
+                      "length":  12.46719160104987,
+                      "height":  13.123359580052494,
+                      "width":  0.984251968503937,
+                      "structural":  false,
+                      "startPoint":  {
+                                         "x":  -44.36757695854659,
+                                         "y":  -25.248141276240887,
+                                         "z":  13.123359580052494
+                                     },
+                      "endPoint":  {
+                                       "x":  -44.36757695854657,
+                                       "y":  -12.780949675191017,
+                                       "z":  13.123359580052494
+                                   },
+                      "baseLevel":  "Level 1",
+                      "topLevel":  null,
+                      "baseOffset":  -13.123359580052494,
+                      "topOffset":  0.0
+                  },
+                  {
+                      "wallId":  303592,
+                      "wallType":  "Concept - Ext 300mm",
+                      "wallTypeId":  285734,
+                      "length":  5.905511811023619,
+                      "height":  13.123359580052494,
+                      "width":  0.984251968503937,
+                      "structural":  false,
+                      "startPoint":  {
+                                         "x":  -39.6041569515971,
+                                         "y":  -16.897858066654592,
+                                         "z":  0.0
+                                     },
+                      "endPoint":  {
+                                       "x":  -33.698645140573475,
+                                       "y":  -16.897858066654614,
+                                       "z":  0.0
+                                   },
+                      "baseLevel":  "Ground",
+                      "topLevel":  null,
+                      "baseOffset":  0.0,
+                      "topOffset":  0.0
+                  },
+                  {
+                      "wallId":  303620,
+                      "wallType":  "Concept - Ext 300mm",
+                      "wallTypeId":  285734,
+                      "length":  4.593175853018373,
+                      "height":  13.123359580052494,
+                      "width":  0.984251968503937,
+                      "structural":  false,
+                      "startPoint":  {
+                                         "x":  -33.698645140573475,
+                                         "y":  -16.897858066654614,
+                                         "z":  0.0
+                                     },
+                      "endPoint":  {
+                                       "x":  -33.69864514057348,
+                                       "y":  -21.491033919672986,
+                                       "z":  0.0
+                                   },
+                      "baseLevel":  "Ground",
+                      "topLevel":  null,
+                      "baseOffset":  0.0,
+                      "topOffset":  0.0
+                  },
+                  {
+                      "wallId":  303648,
+                      "wallType":  "Concept - Ext 300mm",
+                      "wallTypeId":  285734,
+                      "length":  5.905511811023622,
+                      "height":  13.123359580052494,
+                      "width":  0.984251968503937,
+                      "structural":  false,
+                      "startPoint":  {
+                                         "x":  -33.69864514057348,
+                                         "y":  -21.491033919672986,
+                                         "z":  0.0
+                                     },
+                      "endPoint":  {
+                                       "x":  -39.604156951597105,
+                                       "y":  -21.49103391967297,
+                                       "z":  0.0
+                                   },
+                      "baseLevel":  "Ground",
+                      "topLevel":  null,
+                      "baseOffset":  0.0,
+                      "topOffset":  0.0
+                  },
+                  {
+                      "wallId":  303684,
+                      "wallType":  "Concept - Ext 300mm",
+                      "wallTypeId":  285734,
+                      "length":  4.593175853018376,
+                      "height":  13.123359580052494,
+                      "width":  0.984251968503937,
+                      "structural":  false,
+                      "startPoint":  {
+                                         "x":  -39.604156951597105,
+                                         "y":  -21.49103391967297,
+                                         "z":  0.0
+                                     },
+                      "endPoint":  {
+                                       "x":  -39.6041569515971,
+                                       "y":  -16.897858066654592,
+                                       "z":  0.0
+                                   },
+                      "baseLevel":  "Ground",
+                      "topLevel":  null,
+                      "baseOffset":  0.0,
+                      "topOffset":  0.0
+                  }
+              ],
+    "projectInfo":  {
+                        "success":  true,
+                        "result":  {
+                                       "name":  "Project Name",
+                                       "number":  "Project Number",
+                                       "author":  "",
+                                       "status":  "Project Status",
+                                       "address":  "Enter address here",
+                                       "clientName":  "Owner",
+                                       "buildingName":  "",
+                                       "organizationName":  "",
+                                       "organizationDescription":  "",
+                                       "isPinned":  false,
+                                       "isWorkshared":  false,
+                                       "title":  "crop_view_to_room_createviaoffset",
+                                       "pathname":  "D:\\_REVIT-PROJECTS\\revitgpt-project\\data\\raw\\code_examples\\building-coder-blog\\a\\zip\\crop_view_to_room_createviaoffset.rvt"
+                                   }
+                    },
+    "doors":  [
+
+              ],
+    "extractedAt":  "2025-12-08 00:26:09",
+    "windows":  [
+
+                ],
+    "filePath":  "D:\\_REVIT-PROJECTS\\revitgpt-project\\data\\raw\\code_examples\\building-coder-blog\\a\\zip\\crop_view_to_room_createviaoffset.rvt",
+    "wallTypes":  [
+                      {
+                          "wallTypeId":  334,
+                          "name":  "Curtain_Wall-Empty",
+                          "kind":  "Curtain",
+                          "width":  0.08202099737532807,
+                          "familyName":  "Curtain Wall"
+                      },
+                      {
+                          "wallTypeId":  45397,
+                          "name":  "Wall-Partn_12P-70MStd-12P",
+                          "kind":  "Basic",
+                          "width":  0.3116797900262467,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  87239,
+                          "name":  "Stacked_Wall-Partn_12P-70MStd-12P",
+                          "kind":  "Stacked",
+                          "width":  0.3116797900262467,
+                          "familyName":  "Stacked Wall"
+                      },
+                      {
+                          "wallTypeId":  285428,
+                          "name":  "Concept Plain",
+                          "kind":  "Curtain",
+                          "width":  0.08202099737532807,
+                          "familyName":  "Curtain Wall"
+                      },
+                      {
+                          "wallTypeId":  285513,
+                          "name":  "Concept - Int 100mm",
+                          "kind":  "Basic",
+                          "width":  0.32808398950131235,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  285730,
+                          "name":  "Concept - Int 150mm",
+                          "kind":  "Basic",
+                          "width":  0.4921259842519685,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  285731,
+                          "name":  "Concept - Int 200mm",
+                          "kind":  "Basic",
+                          "width":  0.6561679790026247,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  285732,
+                          "name":  "Concept - Ext 100mm",
+                          "kind":  "Basic",
+                          "width":  0.32808398950131235,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  285733,
+                          "name":  "Concept - Ext 200mm",
+                          "kind":  "Basic",
+                          "width":  0.6561679790026247,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  285734,
+                          "name":  "Concept - Ext 300mm",
+                          "kind":  "Basic",
+                          "width":  0.984251968503937,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  285735,
+                          "name":  "Concept 1200x2000mm",
+                          "kind":  "Curtain",
+                          "width":  0.08202099737532807,
+                          "familyName":  "Curtain Wall"
+                      },
+                      {
+                          "wallTypeId":  286071,
+                          "name":  "Concept Ribbon Window",
+                          "kind":  "Curtain",
+                          "width":  0.08202099737532807,
+                          "familyName":  "Curtain Wall"
+                      },
+                      {
+                          "wallTypeId":  286133,
+                          "name":  "Stacked Wall 1",
+                          "kind":  "Stacked",
+                          "width":  0.984251968503937,
+                          "familyName":  "Stacked Wall"
+                      }
+                  ]
+}

@@ -1,0 +1,87 @@
+{
+  "drop_zones": {
+    "revit_code_generator": {
+      "path": "D:\\claude-code-revit\\revit_zones\\code_generator",
+      "watch_extensions": [
+        ".txt",
+        ".md",
+        ".json"
+      ],
+      "processor": "generate_revit_code",
+      "output_extension": ".cs",
+      "keep_original": true,
+      "notification": true,
+      "description": "Generate Revit add-in code from descriptions"
+    },
+    "revit_error_debugger": {
+      "path": "D:\\claude-code-revit\\revit_zones\\error_debugger",
+      "watch_extensions": [
+        ".txt",
+        ".log",
+        ".err"
+      ],
+      "processor": "debug_revit_error",
+      "output_extension": "_fixed.cs",
+      "keep_original": true,
+      "notification": true,
+      "description": "Debug and fix Revit API errors"
+    },
+    "test_generator": {
+      "path": "D:\\claude-code-revit\\dev_zones\\test_generator",
+      "watch_extensions": [
+        ".cs"
+      ],
+      "processor": "generate_tests",
+      "output_extension": "_Tests.cs",
+      "keep_original": true,
+      "notification": true,
+      "description": "Generate unit tests for Revit code"
+    },
+    "doc_builder": {
+      "path": "D:\\claude-code-revit\\dev_zones\\doc_builder",
+      "watch_extensions": [
+        ".cs",
+        ".txt"
+      ],
+      "processor": "build_documentation",
+      "output_extension": "_Documentation.md",
+      "keep_original": true,
+      "notification": true,
+      "description": "Generate documentation for Revit add-ins"
+    },
+    "api_explorer": {
+      "path": "D:\\claude-code-revit\\revit_zones\\api_explorer",
+      "watch_extensions": [
+        ".txt",
+        ".md"
+      ],
+      "processor": "explore_api",
+      "output_extension": "_solution.md",
+      "keep_original": true,
+      "notification": true,
+      "description": "Get Revit API examples and best practices"
+    },
+    "plugin_builder": {
+      "path": "D:\\claude-code-revit\\project_zones\\plugin_builder",
+      "watch_extensions": [
+        ".json",
+        ".yaml",
+        ".txt"
+      ],
+      "processor": "build_plugin",
+      "output_extension": "_Plugin",
+      "output_type": "folder",
+      "keep_original": true,
+      "notification": true,
+      "description": "Build complete Revit plugin from specification"
+    }
+  },
+  "global_settings": {
+    "watch_interval": 3,
+    "processed_folder": "processed",
+    "log_file": "dropzone_activity.log",
+    "enable_sound": true,
+    "claude_api_key_env": "CLAUDE_API_KEY",
+    "default_model": "claude-3-opus-20240229"
+  }
+}

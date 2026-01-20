@@ -1,0 +1,8 @@
+{
+    "replicate_api_token": "YOUR_TOKEN_HERE",
+    "output_dir": "D:\\temp\\ai_renders",
+    "revit_http_url": "http://localhost:8765",
+    "default_preset": "exterior_day",
+    "default_width": 1920,
+    "default_height": 1080
+}

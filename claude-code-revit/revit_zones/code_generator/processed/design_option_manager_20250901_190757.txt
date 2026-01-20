@@ -1,0 +1,23 @@
+COORDINATION TOOL: Design Option Controller
+
+MANAGE: Multiple design schemes in one model
+
+AUTOMATION:
+1. Create option sets
+2. Duplicate elements to options
+3. Switch visibility quickly
+4. Compare options
+5. Accept final design
+
+FEATURES:
+- Batch create options
+- Copy between options
+- Area/cost comparison
+- Visualization tools
+- Clean acceptance
+
+USE CASES:
+- Facade studies
+- Layout options
+- Material alternates
+- Phasing scenarios

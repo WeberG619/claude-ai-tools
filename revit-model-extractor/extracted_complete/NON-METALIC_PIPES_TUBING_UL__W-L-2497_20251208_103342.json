@@ -1,0 +1,610 @@
+﻿{
+    "lightingFixtures":  [
+
+                         ],
+    "ceilings":  [
+
+                 ],
+    "wallTypes":  [
+                      {
+                          "wallTypeId":  1003,
+                          "name":  "Wall 1",
+                          "kind":  "Basic",
+                          "width":  0.6666666666666666,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  1004,
+                          "name":  "Curtain Wall 1",
+                          "kind":  "Curtain",
+                          "width":  0.08333333333333333,
+                          "familyName":  "Curtain Wall"
+                      },
+                      {
+                          "wallTypeId":  1005,
+                          "name":  "Stacked Wall 1",
+                          "kind":  "Stacked",
+                          "width":  0.6666666666666666,
+                          "familyName":  "Stacked Wall"
+                      }
+                  ],
+    "structuralBeams":  [
+
+                        ],
+    "familyTypes":  [
+
+                    ],
+    "roofs":  [
+
+              ],
+    "railings":  [
+
+                 ],
+    "curtainWalls":  [
+
+                     ],
+    "phases":  [
+                   {
+                       "phaseId":  3,
+                       "phaseName":  "Existing",
+                       "sequenceNumber":  1
+                   },
+                   {
+                       "phaseId":  0,
+                       "phaseName":  "New Construction",
+                       "sequenceNumber":  2
+                   }
+               ],
+    "projectInfo":  {
+                        "success":  true,
+                        "result":  {
+                                       "name":  "",
+                                       "number":  "",
+                                       "author":  "",
+                                       "status":  "",
+                                       "address":  "",
+                                       "clientName":  "",
+                                       "buildingName":  "",
+                                       "organizationName":  "",
+                                       "organizationDescription":  "",
+                                       "isPinned":  false,
+                                       "isWorkshared":  false,
+                                       "title":  "NON-METALIC PIPES_TUBING UL# W-L-2497",
+                                       "pathname":  "D:\\003 - RESOURCES\\01 - REVIT LIBRARY\\MISC REVIT LIBRARY\\SKLAR REVIT 2D DETAILS\\STI FIRESTOP DETAILS\\NON-METALIC PIPES_TUBING UL# W-L-2497.rvt"
+                                   }
+                    },
+    "schedules":  [
+
+                  ],
+    "columns":  [
+
+                ],
+    "furniture":  [
+
+                  ],
+    "pipes":  [
+
+              ],
+    "extractedAt":  "2025-12-08 10:33:42",
+    "fileName":  "NON-METALIC PIPES_TUBING UL# W-L-2497.rvt",
+    "views":  [
+                  {
+                      "viewId":  800,
+                      "viewName":  "Project View",
+                      "viewType":  "ProjectBrowser",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  1218,
+                      "viewName":  "System Browser",
+                      "viewType":  "SystemBrowser",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  1247,
+                      "viewName":  "NON-METALIC PIPES/TUBING UL# W-L-2497",
+                      "viewType":  "DraftingView",
+                      "isTemplate":  false,
+                      "scale":  4
+                  },
+                  {
+                      "viewId":  2153,
+                      "viewName":  "{3D}",
+                      "viewType":  "ThreeD",
+                      "isTemplate":  false,
+                      "scale":  4
+                  }
+              ],
+    "plumbingFixtures":  [
+
+                         ],
+    "doors":  [
+
+              ],
+    "floorTypes":  [
+                       {
+                           "floorTypeId":  1013,
+                           "name":  "Floor 1",
+                           "familyName":  "Floor",
+                           "isFoundation":  false
+                       },
+                       {
+                           "floorTypeId":  1014,
+                           "name":  "Foundation Slab 1",
+                           "familyName":  "Foundation Slab",
+                           "isFoundation":  true
+                       }
+                   ],
+    "sheets":  [
+
+               ],
+    "structuralColumns":  [
+
+                          ],
+    "filePath":  "D:\\003 - RESOURCES\\01 - REVIT LIBRARY\\MISC REVIT LIBRARY\\SKLAR REVIT 2D DETAILS\\STI FIRESTOP DETAILS\\NON-METALIC PIPES_TUBING UL# W-L-2497.rvt",
+    "stairs":  [
+
+               ],
+    "ceilingTypes":  [
+                         {
+                             "ceilingTypeId":  1016,
+                             "name":  "Roof Soffit 1",
+                             "familyName":  "Roof Soffit"
+                         },
+                         {
+                             "ceilingTypeId":  1017,
+                             "name":  "Ceiling 1",
+                             "familyName":  "Basic Ceiling"
+                         },
+                         {
+                             "ceilingTypeId":  1018,
+                             "name":  "Ceiling 1",
+                             "familyName":  "Compound Ceiling"
+                         }
+                     ],
+    "walls":  [
+
+              ],
+    "foundations":  [
+
+                    ],
+    "rooms":  [
+
+              ],
+    "worksets":  [
+
+                 ],
+    "floors":  [
+
+               ],
+    "grids":  [
+
+              ],
+    "ducts":  [
+
+              ],
+    "windowTypes":  [
+
+                    ],
+    "loadedFamilies":  [
+                           {
+                               "familyId":  1715,
+                               "name":  "SKLAR Callout Head",
+                               "category":  "Callout Heads",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  1006,
+                               "name":  "System Panel",
+                               "category":  "Curtain Panels",
+                               "typeCount":  1,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  1046,
+                               "name":  "Circular Mullion",
+                               "category":  "Curtain Wall Mullions",
+                               "typeCount":  1,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  1050,
+                               "name":  "L Corner Mullion",
+                               "category":  "Curtain Wall Mullions",
+                               "typeCount":  1,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  1062,
+                               "name":  "Quad Corner Mullion",
+                               "category":  "Curtain Wall Mullions",
+                               "typeCount":  1,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  1042,
+                               "name":  "Rectangular Mullion",
+                               "category":  "Curtain Wall Mullions",
+                               "typeCount":  1,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  1058,
+                               "name":  "Trapezoid Corner Mullion",
+                               "category":  "Curtain Wall Mullions",
+                               "typeCount":  1,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  1054,
+                               "name":  "V Corner Mullion",
+                               "category":  "Curtain Wall Mullions",
+                               "typeCount":  1,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  4101,
+                               "name":  "Elevation Mark Circle - Upgrade",
+                               "category":  "Elevation Marks",
+                               "typeCount":  2,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  4330,
+                               "name":  "Elevation Mark Pointer_Circle",
+                               "category":  "Elevation Marks",
+                               "typeCount":  4,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  3831,
+                               "name":  "Elevation Mark Pointer_Square",
+                               "category":  "Elevation Marks",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  3612,
+                               "name":  "Elevation Mark Square - Upgrade",
+                               "category":  "Elevation Marks",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  1504,
+                               "name":  "Section Tail - Filled Horizontal",
+                               "category":  "Section Marks",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  1933,
+                               "name":  "SKLAR Section Head - no arrow",
+                               "category":  "Section Marks",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  1266,
+                               "name":  "SKLAR View Title",
+                               "category":  "View Titles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           }
+                       ],
+    "doorTypes":  [
+
+                  ],
+    "electricalCircuits":  [
+
+                           ],
+    "mepSystems":  [
+
+                   ],
+    "roofTypes":  [
+                      {
+                          "roofTypeId":  1009,
+                          "name":  "Roof 1",
+                          "familyName":  "Basic Roof"
+                      },
+                      {
+                          "roofTypeId":  1010,
+                          "name":  "Roof 2",
+                          "familyName":  "Basic Roof"
+                      },
+                      {
+                          "roofTypeId":  1011,
+                          "name":  "18\" Roof",
+                          "familyName":  "Basic Roof"
+                      },
+                      {
+                          "roofTypeId":  1012,
+                          "name":  "Sloped Glazing",
+                          "familyName":  "Sloped Glazing"
+                      }
+                  ],
+    "levels":  [
+                   {
+                       "levelId":  986,
+                       "name":  "Base Level",
+                       "elevation":  0.0
+                   }
+               ],
+    "materials":  [
+                      {
+                          "materialId":  34,
+                          "name":  "Default",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  35,
+                          "name":  "Default Wall",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  36,
+                          "name":  "Default Roof",
+                          "materialClass":  "Unassigned",
+                          "color":  "AH8A",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  37,
+                          "name":  "Glass",
+                          "materialClass":  "Unassigned",
+                          "color":  "AAD/",
+                          "transparency":  75,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  38,
+                          "name":  "Phase-Demo",
+                          "materialClass":  "Unassigned",
+                          "color":  "/wAA",
+                          "transparency":  40,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  39,
+                          "name":  "Phase-Exist",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  40,
+                          "name":  "Phase-Temp",
+                          "materialClass":  "Unassigned",
+                          "color":  "AAD/",
+                          "transparency":  40,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  41,
+                          "name":  "Poche",
+                          "materialClass":  "Unassigned",
+                          "color":  "AAD/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  42,
+                          "name":  "Default Light Source",
+                          "materialClass":  "Unassigned",
+                          "color":  "//8A",
+                          "transparency":  75,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  2841,
+                          "name":  "Carbon Steel",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  2842,
+                          "name":  "Copper",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  2843,
+                          "name":  "Ductile Iron",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  2844,
+                          "name":  "Plastic",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  2845,
+                          "name":  "Stainless Steel",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  3216,
+                          "name":  "System-Zones",
+                          "materialClass":  "Unassigned",
+                          "color":  "Xl7N",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  3222,
+                          "name":  "Analytical Spaces",
+                          "materialClass":  "Unassigned",
+                          "color":  "AMjI",
+                          "transparency":  85,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  3224,
+                          "name":  "Analytical Surface - Exterior Walls",
+                          "materialClass":  "Unassigned",
+                          "color":  "hbIs",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  3226,
+                          "name":  "Analytical Surface - Roofs",
+                          "materialClass":  "Unassigned",
+                          "color":  "Jg+Z",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  3228,
+                          "name":  "Analytical Surface - Slabs on Grade",
+                          "materialClass":  "Unassigned",
+                          "color":  "ZVHM",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  3230,
+                          "name":  "Analytical Surface - Interior Walls",
+                          "materialClass":  "Unassigned",
+                          "color":  "w+V+",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  3232,
+                          "name":  "Analytical Surface - Interior Floors",
+                          "materialClass":  "Unassigned",
+                          "color":  "ZVHM",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  3234,
+                          "name":  "Analytical Surface - Ceilings",
+                          "materialClass":  "Unassigned",
+                          "color":  "v7L/",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  3236,
+                          "name":  "Analytical Surface - Air Surfaces",
+                          "materialClass":  "Unassigned",
+                          "color":  "vtLc",
+                          "transparency":  90,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  3238,
+                          "name":  "Analytical Surface - Underground Walls",
+                          "materialClass":  "Unassigned",
+                          "color":  "sm8s",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  3240,
+                          "name":  "Analytical Surface - Operable Windows",
+                          "materialClass":  "Unassigned",
+                          "color":  "suX/",
+                          "transparency":  75,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  3242,
+                          "name":  "Analytical Surface - Operable Skylights",
+                          "materialClass":  "Unassigned",
+                          "color":  "suX/",
+                          "transparency":  75,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  3244,
+                          "name":  "Analytical Surface - Sliding Doors",
+                          "materialClass":  "Unassigned",
+                          "color":  "/7Ky",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  3246,
+                          "name":  "Analytical Surface - Air Openings",
+                          "materialClass":  "Unassigned",
+                          "color":  "////",
+                          "transparency":  100,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  3248,
+                          "name":  "Analytical Surface - Shades",
+                          "materialClass":  "Unassigned",
+                          "color":  "kJKK",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  3393,
+                          "name":  "Analytical Panels",
+                          "materialClass":  "Unassigned",
+                          "color":  "+8WZ",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  3475,
+                          "name":  "Electrical Analytical Loads",
+                          "materialClass":  "Unassigned",
+                          "color":  "Xl7N",
+                          "transparency":  50,
+                          "shininess":  64
+                      }
+                  ],
+    "windows":  [
+
+                ],
+    "electricalFixtures":  [
+
+                           ],
+    "warnings":  [
+
+                 ]
+}

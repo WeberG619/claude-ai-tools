@@ -1,0 +1,41 @@
+{
+  "plugin_info": {
+    "name": "RevitToolsPro",
+    "version": "1.0.0",
+    "author": "Your Name",
+    "description": "Professional tools for Revit",
+    "min_revit_version": "2021",
+    "max_revit_version": "2025"
+  },
+  "ribbon_tabs": [
+    {
+      "name": "Tools Pro",
+      "panels": [
+        {
+          "name": "Modeling Tools",
+          "buttons": [
+            {
+              "name": "Smart Walls",
+              "description": "Intelligent wall creation",
+              "command": "SmartWallCommand",
+              "icon": "wall_icon.png",
+              "tooltip": "Create walls with automatic joins"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "commands": [
+    {
+      "class_name": "SmartWallCommand",
+      "transaction_mode": "Manual",
+      "regeneration_option": "Manual",
+      "journaling": true
+    }
+  ],
+  "dependencies": [
+    "Newtonsoft.Json",
+    "EPPlus"
+  ]
+}

@@ -1,0 +1,15 @@
+API Method Request: Find Elements
+
+I need to:
+1. Find all elements of a specific category
+2. Filter by parameter value
+3. Get elements only from active view
+4. Sort by element ID
+
+Show me:
+- Different approaches
+- Performance considerations
+- Best practices
+- Example code
+
+Revit Version: 2024

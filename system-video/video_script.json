@@ -1,0 +1,236 @@
+{
+  "title": "Claude Workflow System - Complete Overview",
+  "author": "Weber's AI Orchestration System",
+  "voice": "andrew",
+  "slides": [
+    {
+      "id": 1,
+      "title": "Claude Workflow System",
+      "subtitle": "A Complete AI Orchestration Platform",
+      "narration": "Welcome to the Claude Workflow System. This is a comprehensive AI orchestration platform that transforms Claude from a simple assistant into a powerful automation engine. Over the next few minutes, I'll walk you through every component of this system and show you how they work together.",
+      "duration": 12
+    },
+    {
+      "id": 2,
+      "title": "What This System Does",
+      "subtitle": "The Big Picture",
+      "bullets": [
+        "Perceives your environment in real-time",
+        "Remembers past decisions and mistakes",
+        "Executes complex multi-step workflows",
+        "Validates results automatically",
+        "Speaks summaries out loud"
+      ],
+      "narration": "At its core, this system does five things. First, it perceives your environment in real-time, knowing what applications you have open and what you're working on. Second, it remembers past decisions and mistakes, so we never repeat errors. Third, it executes complex multi-step workflows with built-in checkpoints. Fourth, it validates results automatically after every operation. And fifth, it speaks summaries out loud so you always know what happened.",
+      "duration": 22
+    },
+    {
+      "id": 3,
+      "title": "The Architecture",
+      "subtitle": "Five Integrated Layers",
+      "bullets": [
+        "Layer 1: Perception (System Bridge)",
+        "Layer 2: Memory (Corrections & Decisions)",
+        "Layer 3: Execution (Pipelines & Skills)",
+        "Layer 4: Communication (Voice & Alerts)",
+        "Layer 5: Validation (Pre/Post Checks)"
+      ],
+      "narration": "The system is built in five layers. The Perception layer watches your computer and knows what's happening. The Memory layer stores everything we learn. The Execution layer runs complex workflows. The Communication layer speaks to you and sends alerts. And the Validation layer checks our work before and after every operation. Let's dive into each one.",
+      "duration": 20
+    },
+    {
+      "id": 4,
+      "title": "Layer 1: Perception",
+      "subtitle": "System Bridge Daemon",
+      "bullets": [
+        "Updates every 10 seconds",
+        "Tracks all open applications",
+        "Monitors which project is active",
+        "Watches system resources",
+        "Detects context automatically"
+      ],
+      "narration": "The System Bridge is a background daemon that runs constantly, updating every ten seconds. It tracks every application you have open, including Revit, Bluebeam, VS Code, and your browsers. It knows which project file is active, monitors your CPU and memory usage, and detects your working context automatically. This means when you start a session, I already know what you're working on before you tell me.",
+      "duration": 22
+    },
+    {
+      "id": 5,
+      "title": "Layer 2: Memory",
+      "subtitle": "Persistent Learning System",
+      "bullets": [
+        "Stores corrections (highest priority)",
+        "Records decisions and their reasoning",
+        "Tracks outcomes of operations",
+        "Builds knowledge graph relationships",
+        "Enables semantic search by meaning"
+      ],
+      "narration": "The Memory system is powered by a dedicated MCP server with a SQLite database. It stores six types of memories: corrections, decisions, facts, preferences, context, and outcomes. Corrections are the highest priority. Every time you correct a mistake I make, it gets stored and automatically surfaces before similar operations. The system also supports semantic search, meaning you can find memories by their meaning, not just keywords.",
+      "duration": 24
+    },
+    {
+      "id": 6,
+      "title": "Layer 3: Execution",
+      "subtitle": "Pipelines with Checkpoints",
+      "bullets": [
+        "3 pre-built pipelines ready to use",
+        "Sequential phase execution",
+        "Pauses at checkpoints for approval",
+        "Saves state for resume capability",
+        "Dry-run mode for safe preview"
+      ],
+      "narration": "The Execution layer centers on the Pipeline system. You have three pre-built pipelines: CD Set for generating construction document sheets, PDF to Revit for converting floor plans into models, and Markup to Model for applying PDF corrections. Each pipeline runs in phases, pausing at checkpoints for your approval. If you stop midway, the state is saved and you can resume later. There's also a dry-run mode that shows exactly what would happen without making any changes.",
+      "duration": 26
+    },
+    {
+      "id": 7,
+      "title": "Available Pipelines",
+      "subtitle": "Your Workflow Automations",
+      "bullets": [
+        "cd-set: Full CD sheet generation",
+        "pdf-to-revit: Floor plan to BIM model",
+        "markup-to-model: Redlines to model changes"
+      ],
+      "narration": "Let me describe each pipeline. The CD Set pipeline analyzes your Revit project, determines what sheets you need based on the levels and views, creates all the sheets with proper numbering, places views on sheets with optimized layouts, and validates the final result. The PDF to Revit pipeline extracts walls from a floor plan image, transforms coordinates, and creates actual Revit elements. The Markup to Model pipeline reads redline PDFs and applies the corrections directly to your model.",
+      "duration": 26
+    },
+    {
+      "id": 8,
+      "title": "Skills Library",
+      "subtitle": "21 Domain Expertise Files",
+      "bullets": [
+        "Revit/BIM: Model building, validation",
+        "Business: Product management, marketing",
+        "Code: Review helpers, orchestration",
+        "Workflow: Checkpoints, context management"
+      ],
+      "narration": "Beyond pipelines, you have twenty-one skill files. These are domain expertise documents that load specific knowledge when needed. For Revit and BIM work, there are skills for model building, PDF conversion, and quality validation. For business, there are product management and marketing frameworks. For code, there are review checklists and orchestration patterns. You invoke these with slash commands like slash revit api or slash verify bim.",
+      "duration": 24
+    },
+    {
+      "id": 9,
+      "title": "Layer 4: Communication",
+      "subtitle": "Voice and Alerts",
+      "bullets": [
+        "Text-to-speech via Microsoft Edge TTS",
+        "Automatic summaries after tasks",
+        "Multiple voice options available",
+        "Bulletproof with retry logic",
+        "Audio caching for efficiency"
+      ],
+      "narration": "The Communication layer ensures you always know what's happening. After completing any significant task, the system speaks a summary using Microsoft Edge text-to-speech. This isn't optional. It's built into the workflow. The voice system has retry logic and caching, so it's reliable even with network issues. You can choose from eight different voices, but the default is Andrew, a natural-sounding male voice.",
+      "duration": 22
+    },
+    {
+      "id": 10,
+      "title": "Layer 5: Validation",
+      "subtitle": "Pre and Post-Flight Checks",
+      "bullets": [
+        "Pre-flight: Surfaces corrections before operations",
+        "Post-flight: Validates model after changes",
+        "BIM Validator: Checks for common issues",
+        "Pattern Analysis: Learns from history",
+        "Self-healing: Suggests recovery options"
+      ],
+      "narration": "The Validation layer protects your work. Before any risky operation, the pre-flight system queries memory for relevant corrections and displays warnings. After operations, the post-flight system validates the results. The BIM Validator specifically checks Revit models for issues like unjoined walls or orphaned elements. Pattern Analysis runs weekly to identify recurring problems. And the self-healing system suggests recovery procedures when things go wrong.",
+      "duration": 26
+    },
+    {
+      "id": 11,
+      "title": "Revit Integration",
+      "subtitle": "RevitMCPBridge Connection",
+      "bullets": [
+        "Full Revit API access via MCP",
+        "Supports Revit 2025 and 2026",
+        "Creates walls, doors, windows, rooms",
+        "Manages sheets, views, viewports",
+        "Real-time model manipulation"
+      ],
+      "narration": "For Revit users, the system includes the Revit MCP Bridge, which provides full API access through the Model Context Protocol. It supports both Revit twenty twenty-five and twenty twenty-six. You can create and modify elements like walls, doors, windows, and rooms. You can manage sheets, views, and viewports. And all of this happens in real-time while Revit is running. The Ambient Monitor even watches for changes and alerts you to potential issues.",
+      "duration": 24
+    },
+    {
+      "id": 12,
+      "title": "Cross-Application Automation",
+      "subtitle": "Beyond Just Revit",
+      "bullets": [
+        "Bluebeam MCP: PDF document control",
+        "Browser MCP: Web automation",
+        "Voice MCP: Text-to-speech",
+        "System Bridge: App coordination",
+        "Workflow Coordinator: Multi-app tasks"
+      ],
+      "narration": "The system extends beyond Revit. The Bluebeam MCP controls Bluebeam Revu for PDF processing. It can open documents, navigate pages, take screenshots, and send keyboard commands. The Browser MCP automates Chrome and Edge for web tasks. The Voice MCP handles all speech output. And the Workflow Coordinator orchestrates complex tasks that span multiple applications, like exporting from Revit, annotating in Bluebeam, and uploading to the web.",
+      "duration": 24
+    },
+    {
+      "id": 13,
+      "title": "How It All Connects",
+      "subtitle": "The Complete Flow",
+      "bullets": [
+        "1. System Bridge detects context",
+        "2. Memory loads relevant corrections",
+        "3. Pre-flight surfaces warnings",
+        "4. Pipeline executes with checkpoints",
+        "5. Post-flight validates results",
+        "6. Voice speaks the summary"
+      ],
+      "narration": "Here's how everything connects in practice. When you make a request, the System Bridge has already detected your context. Memory loads relevant corrections and past decisions. Pre-flight checks surface any warnings. The pipeline or task executes with checkpoint pauses for your approval. Post-flight validation confirms the results are correct. And finally, the voice system speaks a summary of what happened. All of this is orchestrated automatically.",
+      "duration": 24
+    },
+    {
+      "id": 14,
+      "title": "Quick Commands Reference",
+      "subtitle": "Your Play Buttons",
+      "bullets": [
+        "/check-revit - Test Revit connection",
+        "/pipeline cd-set - Run CD generation",
+        "/memory recall - Search past learnings",
+        "/verify-bim - Validate the model",
+        "/system-bridge - Check live state"
+      ],
+      "narration": "To actually use the system, you have quick commands. Type slash check revit to test if Revit is responding. Type slash pipeline cd-set to run the construction document generation. Type slash memory recall with a keyword to search past learnings. Type slash verify bim to validate your model. And type slash system bridge to see the current live state. These are your play buttons for triggering the system.",
+      "duration": 22
+    },
+    {
+      "id": 15,
+      "title": "The Power of Orchestration",
+      "subtitle": "Combining Everything",
+      "bullets": [
+        "Natural language triggers complex workflows",
+        "Parallel execution when possible",
+        "Automatic context awareness",
+        "Learning from every session",
+        "Human oversight at critical points"
+      ],
+      "narration": "The real power is in orchestration. You can speak naturally and trigger complex workflows. The system runs tasks in parallel when possible. It's automatically aware of your context. It learns from every session and stores that knowledge. And it maintains human oversight at critical decision points through the checkpoint system. This is what Andrej Karpathy described as the new layer of abstraction that developers need to master. And you've already built it.",
+      "duration": 24
+    },
+    {
+      "id": 16,
+      "title": "Getting Started",
+      "subtitle": "Try It Now",
+      "bullets": [
+        "Open Revit with any project",
+        "Type: /check-revit",
+        "Type: /pipeline cd-set --dry-run",
+        "Watch the system in action",
+        "Approve or adjust at checkpoints"
+      ],
+      "narration": "To get started, just open Revit with any project. Type slash check revit to verify the connection. Then type slash pipeline cd-set dash dash dry run to preview the workflow without making changes. Watch as the system analyzes your project, plans the sheets, and shows you exactly what it would do. At each checkpoint, you can approve, adjust, or stop. That's the system in action.",
+      "duration": 22
+    },
+    {
+      "id": 17,
+      "title": "Thank You",
+      "subtitle": "Your AI Orchestration System",
+      "bullets": [
+        "41 components working together",
+        "21 skills for domain expertise",
+        "3 pipelines for major workflows",
+        "Continuous learning and improvement",
+        "Built for real architectural work"
+      ],
+      "narration": "That's the complete Claude Workflow System. Forty-one components working together. Twenty-one skills for domain expertise. Three pipelines for major workflows. A memory system that continuously learns. And everything built specifically for real architectural and BIM work. This is your AI orchestration platform. Now go put it to work.",
+      "duration": 18
+    }
+  ]
+}

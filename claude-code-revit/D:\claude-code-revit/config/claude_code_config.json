@@ -1,0 +1,31 @@
+{
+  "claude_code_settings": {
+    "model": "claude-3-opus",
+    "temperature": 0.2,
+    "max_tokens": 4000,
+    "context_window": "full"
+  },
+  "revit_settings": {
+    "default_revit_version": "2024",
+    "api_version": "2024.1",
+    "target_framework": "net48",
+    "default_references": [
+      "RevitAPI.dll",
+      "RevitAPIUI.dll",
+      "AdWindows.dll"
+    ]
+  },
+  "drop_zone_settings": {
+    "watch_interval": 3,
+    "auto_process": true,
+    "keep_processed": true,
+    "notification_sound": true
+  },
+  "development_preferences": {
+    "code_style": "microsoft",
+    "use_regions": true,
+    "generate_comments": true,
+    "include_error_handling": true,
+    "unit_test_framework": "NUnit"
+  }
+}

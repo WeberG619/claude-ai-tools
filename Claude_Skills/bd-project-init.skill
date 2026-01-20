@@ -1,0 +1,286 @@
+# BD Architect Project Initialization
+
+## Overview
+Complete workflow for initializing a new project with BD Architect standards. Automates project setup including levels, views, sheets, and keynote linking.
+
+## When to Use
+- Starting a new project
+- User says "start new project", "initialize project", "new BD project"
+- Setting up a project from template
+- Need to apply BD Architect standards to a new model
+
+## Prerequisites
+- Revit open with new document (from BD Architect template)
+- RevitMCPBridge connected
+- Project type determined (healthcare, residential, commercial)
+
+---
+
+## PIPELINE: BD Project Initialization
+
+### PHASE 1: Gather Project Information
+**Checkpoint: User confirms project details**
+
+```
+Step 1.1: Determine project type
+  Options:
+  - healthcare: AHCA compliant, multi-level, demo/new phases
+  - residential: Single/multi-family, hurricane code compliance
+  - commercial: Tenant improvement, landlord coordination
+
+Step 1.2: Get project details
+  Required:
+  - projectNumber: e.g., "2-151" (healthcare) or "1-234" (residential)
+  - projectName: e.g., "BHN CATH SUITES PHASE 2"
+  Optional:
+  - clientName: e.g., "Baptist Health Network"
+  - address: e.g., "123 Main Street, Miami, FL"
+  - customLevels: Override default levels
+
+Step 1.3: Confirm with user
+  Display: Project type, number, name, default level config
+  Allow: User to modify before proceeding
+```
+
+### PHASE 2: Execute Project Initialization
+**Checkpoint: Confirm Revit is ready**
+
+```
+Step 2.1: Initialize project
+  Tool: RevitMCP.initializeBDAProject({
+    projectType: "<selected>",
+    projectNumber: "<number>",
+    projectName: "<name>",
+    clientName: "<client>",
+    address: "<address>",
+    createViews: true,
+    createSheets: true,
+    linkKeynotes: true
+  })
+
+  This performs:
+  1. Set project information
+  2. Create standard levels (if not present)
+  3. Create standard views for each level
+  4. Create standard sheet set
+  5. Link BD Architect keynote file
+
+Step 2.2: Verify results
+  Output will contain:
+  - levels: Array of created/existing levels
+  - views: Array of created views
+  - sheets: Array of created sheets
+  - keynotes: Link status
+  - codeRequirements: Applicable codes
+  - specialConsiderations: Project-specific notes
+```
+
+### PHASE 3: Post-Setup Verification
+**Checkpoint: User reviews created elements**
+
+```
+Step 3.1: Run initial checklist
+  Tool: RevitMCP.runProjectChecklist({
+    checklistType: "SD"
+  })
+
+  Checks:
+  - Levels exist
+  - Floor plans created
+  - Project info complete
+
+Step 3.2: Report to user
+  Display:
+  - Number of levels created
+  - Number of views created
+  - Number of sheets created
+  - Keynote link status
+  - Checklist results
+  - Any items requiring manual attention
+
+Step 3.3: Suggest next steps
+  Based on project type:
+  - Healthcare: Set up ICRA notes, phase views
+  - Residential: Import site survey, set up roof levels
+  - Commercial: Coordinate with landlord specs
+```
+
+---
+
+## Default Level Configurations
+
+### Healthcare
+| Level | Elevation |
+|-------|-----------|
+| Level 1 | 0'-0" |
+| Level 2 | 14'-0" |
+
+### Residential
+| Level | Elevation |
+|-------|-----------|
+| First Floor | 0'-0" |
+| Second Floor | 10'-0" |
+| Roof | 20'-0" |
+
+### Commercial
+| Level | Elevation |
+|-------|-----------|
+| Level 1 | 0'-0" |
+
+---
+
+## Standard Sheet Sets
+
+### Healthcare
+- A-000: Cover Sheet
+- A-001: General Notes & Abbreviations
+- A-002: Code Analysis
+- A-003: Life Safety Plan
+- A-100: Demolition Plan
+- A-101: Floor Plan - Level 1
+- A-102: Floor Plan - Level 2
+- A-200: Reflected Ceiling Plan - Level 1
+- A-201: Reflected Ceiling Plan - Level 2
+- A-300: Interior Elevations
+- A-400: Enlarged Plans
+- A-500: Wall Sections
+- A-501: Building Sections
+- A-600: Details
+- A-700: Door Schedule
+- A-701: Finish Schedule
+
+### Residential
+- A-001: Site Plan
+- A-002: General Notes
+- A-101: First Floor Plan
+- A-102: Second Floor Plan
+- A-103: Roof Plan
+- A-201: Exterior Elevations
+- A-301: Building Section
+- A-401: Wall Sections
+- A-501: Details
+- A-601: Door & Window Schedules
+
+### Commercial
+- A-001: General Notes & Abbreviations
+- A-100: Existing Conditions
+- A-101: Demolition Plan
+- A-102: Floor Plan
+- A-200: Reflected Ceiling Plan
+- A-300: Interior Elevations
+- A-400: Details
+- A-500: Schedules
+
+---
+
+## Individual MCP Methods Available
+
+### initializeBDAProject
+Full project initialization with all standards.
+
+### createStandardViews
+Create views only (if project already has levels).
+```json
+{
+  "projectType": "healthcare"
+}
+```
+
+### createStandardSheetSet
+Create sheet set only.
+```json
+{
+  "projectType": "healthcare",
+  "includeEmpty": true
+}
+```
+
+### linkKeynoteFile
+Link BD Architect keynotes.
+```json
+{
+  "keynoteFilePath": "D:\\BDArchitect-DetailLibrary-2025\\templates\\KEYNOTES - ALL.txt"
+}
+```
+
+### runProjectChecklist
+Run phase checklist for quality verification.
+```json
+{
+  "checklistType": "SD" | "DD" | "CD" | "QC"
+}
+```
+
+---
+
+## Code Requirements by Project Type
+
+### Healthcare
+- Authority: AHCA (Agency for Health Care Administration)
+- Building Code: Florida Building Code
+- Fire Code: NFPA 101 Life Safety Code
+- Accessibility: ADA / ANSI A117.1
+- Healthcare Specific: AHCA 59A-3, FGI Guidelines
+
+### Residential
+- Authority: Local Building Department
+- Building Code: Florida Building Code - Residential
+- Accessibility: Fair Housing Act (multi-family)
+- Energy Code: Florida Energy Code
+
+### Commercial
+- Authority: Local Building Department
+- Building Code: Florida Building Code
+- Fire Code: NFPA 101 Life Safety Code
+- Accessibility: ADA / ANSI A117.1
+
+---
+
+## Special Considerations
+
+### Healthcare Projects
+- ICRA (Infection Control Risk Assessment)
+- Medical Gas Systems
+- Nurse Call Systems
+- Fire/Smoke Compartments (22,500 SF max)
+- Clean/Soiled Workflow
+- Patient Privacy (HIPAA)
+
+### Residential Projects
+- Hurricane Protection (Miami-Dade NOA)
+- Wind Load Requirements
+- Flood Zone Compliance
+- HOA Requirements (if applicable)
+- Setback Requirements
+
+### Commercial Projects
+- Landlord Requirements
+- Base Building Coordination
+- Existing Conditions Verification
+- After-Hours Work Requirements
+- Tenant Signage Requirements
+
+---
+
+## Example Usage
+
+```
+User: "Start a new healthcare project"
+
+Claude:
+1. Ask for project number and name
+2. Confirm project type is healthcare
+3. Show default level configuration
+4. Execute initializeBDAProject
+5. Report results
+6. Run SD checklist
+7. Suggest next steps (set up demo views, ICRA notes)
+```
+
+---
+
+## Related Resources
+- D:\BDArchitect-DetailLibrary-2025\project_configs\ - Project type configurations
+- D:\BDArchitect-DetailLibrary-2025\checklists\ - Phase checklists
+- D:\BDArchitect-DetailLibrary-2025\templates\ - Revit templates
+- D:\BDArchitect-DetailLibrary-2025\PROJECT_STARTER_KIT\ - Folder template

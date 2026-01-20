@@ -1,0 +1,39 @@
+[
+  {"desc": "West Exterior Wall", "start": [0, 0], "end": [0, 42]},
+  {"desc": "North Exterior - Bedroom 3 to Family", "start": [0, 42], "end": [36, 42]},
+  {"desc": "North Exterior - Family to Patio", "start": [36, 42], "end": [44, 42]},
+  {"desc": "East Wall - Main Building Upper", "start": [44, 42], "end": [44, 32]},
+  {"desc": "North Wall - Garage/Utility", "start": [44, 32], "end": [56, 32]},
+  {"desc": "East Exterior - Garage", "start": [56, 32], "end": [56, 8]},
+  {"desc": "South Exterior - Porch North", "start": [56, 8], "end": [48, 8]},
+  {"desc": "Porch West Wall", "start": [48, 8], "end": [48, 0]},
+  {"desc": "South Exterior - Garage", "start": [48, 0], "end": [56, 0]},
+  {"desc": "South Exterior - Main Building", "start": [0, 0], "end": [38, 0]},
+  {"desc": "Living/Garage Fire Wall", "start": [38, 0], "end": [38, 18]},
+  
+  {"desc": "Interior - Bedroom 3 South Wall", "start": [0, 28], "end": [14, 28]},
+  {"desc": "Interior - Bedroom 3 East Wall", "start": [14, 28], "end": [14, 42]},
+  {"desc": "Interior - Bedroom 2 South Wall", "start": [0, 14], "end": [14, 14]},
+  {"desc": "Interior - Bedroom 2/Hall East Wall", "start": [14, 14], "end": [14, 28]},
+  
+  {"desc": "Interior - Master Area North", "start": [0, 14], "end": [8, 14]},
+  {"desc": "Interior - Master Bath East", "start": [8, 0], "end": [8, 14]},
+  {"desc": "Interior - Bath 2/3 Partition", "start": [8, 14], "end": [14, 14]},
+  
+  {"desc": "Interior - Hall South Wall", "start": [14, 10], "end": [28, 10]},
+  {"desc": "Interior - Hall North Wall", "start": [14, 14], "end": [28, 14]},
+  {"desc": "Interior - Hall East Wall", "start": [28, 10], "end": [28, 18]},
+  
+  {"desc": "Interior - Living/Kitchen Wall", "start": [28, 18], "end": [44, 18]},
+  {"desc": "Interior - Kitchen East Wall", "start": [44, 18], "end": [44, 32]},
+  
+  {"desc": "Interior - Utility Wall", "start": [38, 18], "end": [38, 32]},
+  {"desc": "Interior - Laundry Partition", "start": [38, 24], "end": [44, 24]},
+  
+  {"desc": "Interior - Master Bedroom East", "start": [22, 0], "end": [22, 10]},
+  {"desc": "Interior - Living West Wall", "start": [28, 0], "end": [28, 10]},
+  
+  {"desc": "Interior - Closet Wall BR3", "start": [10, 28], "end": [10, 35]},
+  {"desc": "Interior - Closet Wall BR2", "start": [10, 20], "end": [10, 28]},
+  {"desc": "Interior - Family/BR3 Wall", "start": [14, 35], "end": [28, 35]}
+]

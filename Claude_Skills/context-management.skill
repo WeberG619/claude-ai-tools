@@ -1,0 +1,235 @@
+# Context Management Skill
+
+## Overview
+This skill implements the context window optimization strategies from the Anthropic platform talk. It covers when and how to prune context, use memory effectively, and maintain optimal context for Claude Code performance.
+
+## The 39% Rule
+Anthropic found that combining memory + context editing = **39% performance improvement**. This skill implements those patterns.
+
+## Context Pruning Strategy
+
+### When to Prune
+
+#### Trigger Conditions
+1. **After large tool results** - File reads > 500 lines, search results > 50 matches
+2. **After completing a task batch** - When moving to unrelated work
+3. **After 10+ tool calls** - Accumulated results bloating context
+4. **When changing topics** - User moves to different subject
+5. **After error resolution** - Error details no longer needed
+
+#### What to Keep
+- Current task requirements
+- Recent corrections (last 5)
+- Active project context
+- Unfinished work items
+- Key decisions made this session
+
+#### What to Prune
+- Old tool results (especially large ones)
+- Intermediate search results
+- Resolved error messages
+- Completed task details
+- Redundant information
+
+### Memory-First Pattern
+
+Instead of keeping everything in context:
+
+```
+1. BEFORE pruning context, store important info:
+   mcp__claude-memory__memory_store(
+     content="What was learned/decided",
+     project="project-name",
+     importance=7,  // 1-10
+     memory_type="decision|fact|outcome"
+   )
+
+2. THEN summarize for context:
+   "Completed X. Results stored in memory ID #123.
+    Key outcome: [one sentence summary]"
+
+3. PRUNE the detailed results
+```
+
+### Practical Examples
+
+#### Large File Read
+```
+# BAD - keeps entire file in context
+Read file → 2000 lines in context
+
+# GOOD - extract, store, summarize
+Read file → Extract key info → Store important parts in memory →
+Keep only: "Read config.py. Found 3 endpoints: /api/users, /api/auth, /api/data"
+```
+
+#### Search Results
+```
+# BAD - keeps all matches
+Grep for "error" → 150 matches in context
+
+# GOOD - filter and summarize
+Grep → Filter to relevant 5 → Store full list in memory if needed →
+Keep only: "Found error handling in 5 key files: [list]"
+```
+
+#### After Element Placement
+```
+# BAD - keeps all placement results
+Create 50 walls → 50 JSON responses in context
+
+# GOOD - summarize batch
+Create 50 walls → Verify success →
+Store in memory: "Session: Created 50 walls, IDs 1234-1284"
+Keep only: "Created 50 exterior walls successfully.
+            All validated. Details in memory #456."
+```
+
+## Memory Storage Patterns
+
+### What to Store in Memory
+
+| Type | Importance | Memory Type | Example |
+|------|------------|-------------|---------|
+| Corrections | 9-10 | error | "Grid 1 is at x=0, not x=50" |
+| Decisions | 7-8 | decision | "Using CMU for exterior walls" |
+| Outcomes | 6-7 | outcome | "Built 24 walls in 3 batches" |
+| Facts | 5-6 | fact | "Project uses 1/4\" scale" |
+| Context | 4-5 | context | "Working on ground floor" |
+| Preferences | 7-8 | preference | "User wants voice summaries" |
+
+### Session Summarization
+
+At natural breakpoints or session end:
+
+```python
+mcp__claude-memory__memory_summarize_session(
+    project="RevitMCPBridge2026",
+    summary="Built floor plan from PDF extraction",
+    key_outcomes=[
+        "Created 24 exterior walls",
+        "Placed 8 doors and 12 windows",
+        "Validated against source PDF"
+    ],
+    decisions_made=[
+        "Used Generic 8\" for exterior walls",
+        "Mapped apartment doors to Single Flush 3'-0\""
+    ],
+    problems_solved=[
+        "Scale detection failed - manually set to 1/4\"=1'-0\"",
+        "Door placement offset - adjusted by -2 feet"
+    ],
+    open_questions=[
+        "Should windows be centered or aligned to grid?"
+    ],
+    next_steps=[
+        "Add interior partition walls",
+        "Place plumbing fixtures"
+    ]
+)
+```
+
+## Context Window Awareness
+
+### Estimating Context Usage
+- Average token per character: ~0.25
+- 1000 lines of code ≈ 15-20K tokens
+- Large JSON response ≈ 5-10K tokens
+- Tool call overhead ≈ 500 tokens each
+
+### Warning Signs
+- Responses getting slower
+- Missing information from earlier in session
+- Repeated questions about established context
+- Inconsistent behavior
+
+### Response to Full Context
+1. Summarize current state
+2. Store critical info in memory
+3. Complete current task
+4. Suggest starting fresh context with key info
+
+## MCP Integration
+
+### Recall Before Acting
+```python
+# At session start
+mcp__claude-memory__memory_smart_context(
+    current_directory="/mnt/d/RevitMCPBridge2026"
+)
+
+# When topic changes
+mcp__claude-memory__memory_recall(
+    query="relevant topic keywords",
+    project="project-name",
+    limit=5
+)
+
+# For related concepts
+mcp__claude-memory__memory_semantic_search(
+    query="what I need to know about X"
+)
+```
+
+### Store as You Go
+```python
+# After corrections
+mcp__claude-memory__memory_store_correction(
+    what_claude_said="...",
+    what_was_wrong="...",
+    correct_approach="..."
+)
+
+# After completing something
+mcp__claude-memory__memory_store(
+    content="...",
+    project="...",
+    importance=7,
+    memory_type="outcome"
+)
+```
+
+## Practical Workflow
+
+### Starting a Session
+```
+1. Load smart context (corrections, recent work, open items)
+2. Read system state (what apps are open)
+3. Identify current project from context
+4. Check for unfinished work
+5. Report ready state to user
+```
+
+### During Work
+```
+1. Before large operations → note current state
+2. After large operations → summarize, store key info
+3. After completing batch → prune intermediate results
+4. After errors → store correction, clear error details
+5. Periodically → check if context getting large
+```
+
+### Ending a Session
+```
+1. Summarize session in memory
+2. Note any open questions
+3. List next steps
+4. Clear completed todos
+5. Voice summary to user
+```
+
+## Anti-Patterns to Avoid
+
+### Don't Do This
+- Keep all search results "just in case"
+- Accumulate full file contents
+- Store every tool response verbatim
+- Forget to summarize before pruning
+- Skip storing corrections
+
+### Do This Instead
+- Extract needed info, discard rest
+- Summarize file contents
+- Store key outcomes, prune details
+- Always summarize then prune
+- Always store corrections (highest priority)

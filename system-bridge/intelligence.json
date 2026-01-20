@@ -1,0 +1,110 @@
+{
+  "project_name": "ap_builder",
+  "confidence": 0.8,
+  "sources": [
+    "TextInputHost:Microsoft Text Input Application"
+  ],
+  "related_files": [],
+  "last_memories": [
+    {
+      "content": "Project Registry System created for AEC Drafting AI:\n\nLocation: /mnt/d/_CLAUDE-TOOLS/aec-drafting-ai/\nFiles:\n- project_registry.json - Maps friendly names to Revit file paths\n- resolve_project.py - Python script to resolve project names\n\nRegistered Projects (15):\n1. \"20 NW 76\" \u2192 4-story multi-family",
+      "type": "outcome",
+      "importance": 9,
+      "created": "2025-12-14 04:01:03"
+    },
+    {
+      "content": "PROJECT INTELLIGENCE ENGINE COMPLETE: Built proactive intelligence layer that: (1) Correlates open apps to known projects using pattern matching, (2) DETECTS PROJECT MISMATCHES - e.g., caught that Revit has AP Builder but Bluebeam has South Golf Cove, (3) Loads relevant corrections and unfinished wo",
+      "type": "context",
+      "importance": 5,
+      "created": "2025-12-04 06:42:27"
+    },
+    {
+      "content": "## South Golf Cove Residence - Complete Type Library\n\n### Project Overview\n- **Name**: SOUTH GOLF COVE RESIDENCE\n- **Number**: FC231106\n- **Type**: New Single-Family Residence (Two-Story with Parapet)\n- **Address**: 9254 Rosebud Circle, Port Charlotte, FL 33981\n- **File**: AP Builder Residence.rvt\n\n",
+      "type": "fact",
+      "importance": 8,
+      "created": "2025-11-23 04:44:04"
+    },
+    {
+      "content": "## 512 Clematis Portability Test - PASS (2025-12-14)\n\n### Cross-Project Portability PROVEN\nSpine v0.2 ran successfully on 512 Clematis (5-story multifamily, 181 doors, 131 windows) vs TEST-4 (2-story SFH).\n\n### Key Differences Handled Automatically:\n- Levels: 15 vs 2\n- Model size: 1584' x 143' vs 56",
+      "type": "outcome",
+      "importance": 9,
+      "created": "2025-12-15 08:07:16"
+    },
+    {
+      "content": "## Spine v0.2 Portability Test Results (2025-12-14)\n\n### Priority #1 COMPLETE: Accounting-Perfect Cleanup\n- Updated cleanup_artifacts() with full accounting: created/deleted/cascade/leftover\n- 3/3 consecutive PASS runs with SFH standards\n- Zero leftovers, perfect accounting\n\n### Priority #2 COMPLETE",
+      "type": "outcome",
+      "importance": 8,
+      "created": "2025-12-15 07:50:41"
+    },
+    {
+      "content": "Spine v0.2 Adaptive Workflow - Complete Implementation\n\n## Architecture (as designed by user)\n\n```\nStandards Pack + Profile \u2192 resolve() \u2192 Resolved Config\n                                            \u2193\n                          build_plan() \u2192 Task List\n                                            \u2193\n   ",
+      "type": "outcome",
+      "importance": 9,
+      "created": "2025-12-15 07:15:08"
+    },
+    {
+      "content": "Config-Driven Workflow System - Architecture Implemented\n\n## File Structure\n```\nsmoke_tests/\n\u251c\u2500\u2500 standards/\n\u2502   \u251c\u2500\u2500 ARKY_SFH_v1.json        # Single-family residential\n\u2502   \u251c\u2500\u2500 ARKY_Duplex_v1.json     # Duplex/townhouse\n\u2502   \u2514\u2500\u2500 ARKY_Multifamily_v1.json # 3+ story multifamily\n\u251c\u2500\u2500 profiles/\n\u2502   \u2514\u2500\u2500 TES",
+      "type": "decision",
+      "importance": 9,
+      "created": "2025-12-15 06:52:21"
+    },
+    {
+      "content": "Spine v0.1 Golden Workflow - Refined Configuration:\n\n1. **Title Block**: Uses ARKY - Title Block (ID: 1246190), detected dynamically by looking for non-Autodesk title blocks\n2. **View Scale**: 1/4\" = 1'-0\" (scale value 48)\n3. **Crop Region**: Automatically calculated from wall extents + 5' margin\n  ",
+      "type": "decision",
+      "importance": 8,
+      "created": "2025-12-15 06:46:42"
+    },
+    {
+      "content": "**GOLDEN WORKFLOW: Spine v0.1 - Permit Set Skeleton**\n\nSTATUS: LOCKED (WARN)\nDATE: 2025-12-15\n\nMANDATORY OUTCOMES (stable across runs):\n- 6 sheets created (A0.01, A0.02, A1.01, A1.02, A2.01, A5.01)\n- 2 floor plan viewports placed\n- sheet_list.csv exported with sha256\n- door_schedule.csv exported wit",
+      "type": "decision",
+      "importance": 10,
+      "created": "2025-12-15 06:23:25"
+    },
+    {
+      "content": "**Revit 2026 API Quirk: ViewDrafting/Legend Viewport Placement**\n\nDISCOVERY: In Revit 2026, `Viewport.CanAddViewToSheet()` returns TRUE for ViewDrafting views, but `Viewport.Create()` returns NULL (no exception thrown).\n\nIMPACT: Autonomous workflows that rely on legend/drafting view placement will f",
+      "type": "fact",
+      "importance": 9,
+      "created": "2025-12-15 06:02:31"
+    },
+    {
+      "content": "## CRITICAL REFRAME: Platform Complete \u2260 Product Proven\n\n### The False Metric\nMeasuring completion by feature coverage (437 methods, 449 endpoints) is vanity. The metric that matters is **Golden Workflow Success Rate**.\n\n### What Actually Determines Autonomy\nFor each workflow, track:\n1. **Pass rate*",
+      "type": "decision",
+      "importance": 10,
+      "created": "2025-12-15 03:44:42"
+    },
+    {
+      "content": "Far Clip Offset Issue on Elevation Views:\n\nPROBLEM: Elevation views had excessive far clip depths (FRONT: 438', others 142-170') which caused Zoom Extent on sheets to zoom out extremely far. The elevation markers in plan views extend to the far clip distance, and when those views are placed on sheet",
+      "type": "decision",
+      "importance": 8,
+      "created": "2025-12-15 02:29:17"
+    },
+    {
+      "content": "## Session Summary\nSuccessfully set up TEST-4 project to match 1700 Sheffield structure - all 19 sheets now have views placed.\n\n### Key Outcomes\n- All 19 sheets populated with views (was 6 empty)\n- Created: ROOF PLAN, COLUMN PLAN, LANDSCAPE PLAN, IRRIGATION PLAN, ENLARGED BATHROOM PLAN, ENLARGED KIT",
+      "type": "context",
+      "importance": 9,
+      "created": "2025-12-14 23:33:42"
+    }
+  ],
+  "unfinished_tasks": [
+    "- Manually adjust crop boxes in Revit for enlarged views to show specific rooms",
+    "- Delete or rename 'SECOND FLOOR' views since this is a one-story building",
+    "- Consider deleting unused L2 level views",
+    "- Add WarningSwallower to remaining files: ProjectSetupMethods, MEPMethods, StructuralMethods, DetailMethods, FamilyMethods, TextTagMethods, DoorWindowMethods, RoomMethods, MaterialMethods, PhaseMethods, WorksetMethods",
+    "- Approximately 80+ more transactions to cover",
+    "- Apply WarningSwallower to other element creation methods systematically",
+    "- Test batch operations",
+    "- Continue testing orchestration/validation methods"
+  ],
+  "corrections": [
+    "1. Study the ORIGINAL completed project thoroughly first - document exact structure, naming, organization. 2. Create a fail-safe comparison system - after each step, compare to original. 3. If it does",
+    "Always read the grid_definition section in the spec file first. Grid 1 = x:0.0, Grid 2 = x:12.083, Grid 3 = x:27.083, Grid 4 = x:35.083, Grid 5 = x:50.083. The origin is at Grid 1/A (southwest corner)",
+    "Before attempting wall creation (or any model modification), verify that: (1) Revit has a project open, (2) The project is the active window, (3) No modal dialogs are open. The error happens at line 2",
+    "Level 3 infrastructure = knowledge files with workflows + memory for patterns + MCP methods. No separate orchestrator code needed. Claude reads knowledge, uses memory, executes methods."
+  ],
+  "suggested_actions": [
+    "CONTINUE: - Manually adjust crop boxes in Revit for enlarged views to show specific rooms",
+    "REMEMBER: 1. Study the ORIGINAL completed project thoroughly first - document exact structure, naming, organiz..."
+  ],
+  "mismatches": [],
+  "generated_at": "2025-12-15T08:40:00.800376"
+}

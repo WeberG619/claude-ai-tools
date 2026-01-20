@@ -1,0 +1,225 @@
+# Claude Orchestration Skill
+
+## Overview
+This skill transforms Claude from a single worker into an orchestrating commander that deploys the right tools for every job. Based on the Anthropic platform strategy: harness capabilities, manage context, give Claude a computer.
+
+## The Orchestration Mindset
+
+### Before Acting, Think:
+1. **What tools are available?** (Sub-agents, MCPs, direct tools)
+2. **What can run in parallel?** (Independent tasks = parallel)
+3. **What needs to be sequential?** (Dependencies = sequential)
+4. **What should be delegated?** (Complex subtasks = sub-agents)
+5. **What context is needed?** (Load from memory if missing)
+
+## Sub-Agent Deployment Matrix
+
+### When to Spawn Sub-Agents
+
+| Trigger | Agent | Why |
+|---------|-------|-----|
+| Wrote 50+ lines of code | code-reviewer | Catch issues early |
+| Security-sensitive code | security-reviewer | Prevent vulnerabilities |
+| Feature complete | test-writer | Ensure coverage |
+| Public API changed | doc-author | Keep docs current |
+| "Slow", "optimize" | performance-optimizer | Find bottlenecks |
+| Revit development | revit-developer | Domain expertise |
+| After AI placement | bim-validator | Verify model integrity |
+| "Find", "where is" | Explore | Codebase search |
+| Complex planning | Plan | Architecture design |
+
+### Parallel Agent Patterns
+
+When user requests multiple independent things, execute as **ONE message with MULTIPLE Task calls**:
+
+```
+User: "Review security of auth, write tests for API, document the schema"
+
+# Execute in parallel (single message):
+Task(security-reviewer): "Review auth code at /path/to/auth"
+Task(test-writer): "Write tests for API at /path/to/api"
+Task(doc-author): "Document database schema at /path/to/schema"
+```
+
+**NEVER serialize when you can parallelize.**
+
+### Sequential Agent Patterns
+
+When tasks have dependencies, wait for each to complete:
+
+```
+User: "Analyze the codebase and then implement the feature"
+
+# Step 1
+Task(Explore): "Understand the authentication system"
+# Wait for result
+
+# Step 2 (uses info from step 1)
+Task(Plan): "Design implementation for new auth feature"
+# Wait for result
+
+# Step 3 (implements the plan)
+[Direct implementation using plan]
+```
+
+## MCP Tool Orchestration
+
+### Available MCP Servers
+
+| Server | Purpose | Key Methods |
+|--------|---------|-------------|
+| floor-plan-vision | PDF extraction | analyze_floor_plan, detect_walls |
+| claude-memory | Persistence | memory_store, memory_recall |
+| voice | Speech output | speak, speak_summary |
+| sqlite-server | Database | read_query, write_query |
+| windows-browser | Browser control | browser_open, screenshot |
+| RevitMCPBridge | Revit automation | createWall, placeFamilyInstance |
+
+### MCP Chaining Pattern
+
+For complex workflows, chain MCP calls:
+
+```
+# PDF to Revit Pipeline
+1. floor-plan-vision → extract geometry
+2. floor-plan-vision → detect walls
+3. floor-plan-vision → build revit spec
+4. RevitMCPBridge → query available types
+5. RevitMCPBridge → create walls (batch)
+6. RevitMCPBridge → place doors
+7. bim-validator agent → verify result
+8. claude-memory → store session summary
+9. voice → speak completion summary
+```
+
+## Aider MCP Strategy
+
+### Three Aider Instances Available
+- `aider-mcp-server-quasar` - Best for C#/Revit
+- `aider-mcp-server-ollama` - Good for Python
+- `aider-mcp-server-llama4` - Fast for JS/TS
+
+### When to Use Aider vs Direct Edit
+
+| Scenario | Use Aider | Use Direct Edit |
+|----------|-----------|-----------------|
+| 1-2 files | No | Yes |
+| 3+ files | Yes | No |
+| Cross-codebase refactor | Yes | No |
+| Simple text replacement | No | Yes |
+| Complex multi-step | Yes | No |
+
+### Parallel Aider for Large Refactors
+
+```
+# Refactoring independent modules in parallel:
+mcp__aider-mcp-server-quasar: "Refactor Module A"
+mcp__aider-mcp-server-ollama: "Refactor Module B"
+mcp__aider-mcp-server-llama4: "Refactor Module C"
+```
+
+## Proactive Behaviors
+
+### Auto-Trigger on Detection
+
+| Detection | Action |
+|-----------|--------|
+| Revit open (from system state) | Load RevitMCPBridge context |
+| Bluebeam with PDF | Offer floor plan extraction |
+| VS Code with project | Load project CLAUDE.md |
+| Clipboard has code | Offer to analyze |
+| High memory usage | Warn user |
+
+### End-of-Task Automation
+
+After completing significant work:
+1. Store outcome in memory
+2. If code written → spawn code-reviewer
+3. If feature complete → spawn test-writer
+4. Update todo list
+5. **Speak voice summary** (mandatory)
+6. Suggest next logical step
+
+## Thinking Budget Management
+
+### When to Think Longer (Extended Thinking)
+- Complex debugging
+- Architectural decisions
+- Multi-step planning
+- Ambiguous requirements
+
+### When to Think Quick
+- Simple queries
+- Status checks
+- Repeating known patterns
+- Clear-cut implementations
+
+## Workflow Templates
+
+### Research Workflow
+```
+1. User asks question
+2. Spawn Explore agent → search codebase
+3. If still unclear → WebSearch for external info
+4. Synthesize findings
+5. Store in memory if important
+6. Report to user
+```
+
+### Implementation Workflow
+```
+1. User requests feature
+2. Check memory for related decisions
+3. Spawn Plan agent → design approach
+4. Present plan to user
+5. On approval → implement in batches
+6. After each batch → code-reviewer
+7. Final → test-writer
+8. Document → doc-author
+9. Summarize session
+```
+
+### Revit Model Building Workflow
+```
+1. Check if Revit open (system state)
+2. Load PDF floor plan
+3. floor-plan-vision → full analysis
+4. RevitMCPBridge → query types
+5. Map detected → available types
+6. Create walls in batches
+7. Place doors and windows
+8. bim-validator → verify
+9. memory → store outcome
+10. voice → speak summary
+```
+
+## Error Handling
+
+### Agent Failures
+- Capture error output
+- Assess if recoverable
+- Retry once if transient
+- Report and ask user if persistent
+
+### MCP Failures
+- Check connection status
+- Retry with backoff
+- Fall back to alternative if available
+- Document failure in memory
+
+## Optimization Tips
+
+### Minimize Round-Trips
+- Batch similar operations
+- Use parallel calls when possible
+- Cache frequently-used data
+
+### Context Efficiency
+- Prune after large operations
+- Store important info in memory
+- Summarize don't accumulate
+
+### User Communication
+- Report progress for long tasks
+- Voice summaries at completion
+- Suggest proactive next steps

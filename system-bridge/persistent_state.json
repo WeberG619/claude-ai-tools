@@ -1,0 +1,593 @@
+{
+  "timestamp": "2025-12-05T13:43:29.043167",
+  "events": [
+    {
+      "timestamp": "2025-12-05T11:52:13.943949",
+      "type": "app_opened",
+      "details": "msedge: Residential Building | 5-storey :: Behance and 3 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2025-12-05T11:52:13.943949",
+      "type": "app_closed",
+      "details": "msedge: behance.net/gallery/191929221/Residential-Building-5-storey and 3 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2025-12-05T11:52:14.725522",
+      "type": "focus_changed",
+      "details": "Residential Building | 5-storey :: Behance and 3 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2025-12-05T11:52:53.483417",
+      "type": "app_opened",
+      "details": "msedge: New tab and 3 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2025-12-05T11:52:53.484730",
+      "type": "app_closed",
+      "details": "msedge: Residential Building | 5-storey :: Behance and 3 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2025-12-05T11:52:54.283260",
+      "type": "focus_changed",
+      "details": "New tab and 3 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2025-12-05T11:53:10.402146",
+      "type": "app_opened",
+      "details": "msedge: Claude and 3 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2025-12-05T11:53:10.403141",
+      "type": "app_closed",
+      "details": "explorer: 004 - MISCELLANEOUS"
+    },
+    {
+      "timestamp": "2025-12-05T11:53:10.403141",
+      "type": "app_closed",
+      "details": "msedge: New tab and 3 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2025-12-05T11:53:11.191368",
+      "type": "focus_changed",
+      "details": "Working FIles (D:)"
+    },
+    {
+      "timestamp": "2025-12-05T11:53:23.289591",
+      "type": "app_opened",
+      "details": "explorer: 11 - ARNOLD VINCENT"
+    },
+    {
+      "timestamp": "2025-12-05T11:53:24.056126",
+      "type": "focus_changed",
+      "details": "11 - ARNOLD VINCENT"
+    },
+    {
+      "timestamp": "2025-12-05T11:53:36.051961",
+      "type": "app_opened",
+      "details": "explorer: Client"
+    },
+    {
+      "timestamp": "2025-12-05T11:53:36.052961",
+      "type": "app_closed",
+      "details": "explorer: 11 - ARNOLD VINCENT"
+    },
+    {
+      "timestamp": "2025-12-05T11:53:36.859553",
+      "type": "focus_changed",
+      "details": "Claude and 3 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2025-12-05T11:54:57.591790",
+      "type": "app_opened",
+      "details": "msedge: Finding reference images for modern building exterior design - Claude and 3 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2025-12-05T11:54:57.592787",
+      "type": "app_closed",
+      "details": "msedge: Claude and 3 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2025-12-05T11:54:58.344649",
+      "type": "focus_changed",
+      "details": "Welcome - Visual Studio Code"
+    },
+    {
+      "timestamp": "2025-12-05T11:56:06.505868",
+      "type": "app_closed",
+      "details": "explorer: Client"
+    },
+    {
+      "timestamp": "2025-12-05T11:56:19.444414",
+      "type": "app_opened",
+      "details": "explorer: Client"
+    },
+    {
+      "timestamp": "2025-12-05T11:56:45.848187",
+      "type": "app_opened",
+      "details": "Revit: Autodesk Revit 2026.2"
+    },
+    {
+      "timestamp": "2025-12-05T11:57:15.737200",
+      "type": "app_closed",
+      "details": "Revit: Autodesk Revit 2026.2"
+    },
+    {
+      "timestamp": "2025-12-05T11:57:42.665938",
+      "type": "focus_changed",
+      "details": "External Tools - No AddInId Node for Add-in"
+    },
+    {
+      "timestamp": "2025-12-05T11:57:56.031380",
+      "type": "focus_changed",
+      "details": "External Tools - Duplicated AddInId"
+    },
+    {
+      "timestamp": "2025-12-05T12:00:40.088486",
+      "type": "info",
+      "details": "Revit MCP connected"
+    },
+    {
+      "timestamp": "2025-12-05T12:00:52.295218",
+      "type": "app_opened",
+      "details": "Revit: Autodesk Revit 2026.2 - [Home]"
+    },
+    {
+      "timestamp": "2025-12-05T12:00:53.091328",
+      "type": "focus_changed",
+      "details": "Welcome - Visual Studio Code"
+    },
+    {
+      "timestamp": "2025-12-05T12:01:18.192506",
+      "type": "app_opened",
+      "details": "msedge: 250 Microunits Proposed for Miami's Little River Neighborhood at 279 NE 79th Street, Miami, Florida, 33138 - Florida YIMBY and 4 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2025-12-05T12:01:18.193513",
+      "type": "app_closed",
+      "details": "msedge: Finding reference images for modern building exterior design - Claude and 3 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2025-12-05T12:01:18.970931",
+      "type": "focus_changed",
+      "details": "250 Microunits Proposed for Miami's Little River Neighborhood at 279 NE 79th Street, Miami, Florida, 33138 - Florida YIMBY and 4 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2025-12-05T12:01:32.146138",
+      "type": "app_opened",
+      "details": "msedge: Finding reference images for modern building exterior design - Claude and 3 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2025-12-05T12:01:32.148143",
+      "type": "app_closed",
+      "details": "msedge: 250 Microunits Proposed for Miami's Little River Neighborhood at 279 NE 79th Street, Miami, Florida, 33138 - Florida YIMBY and 4 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2025-12-05T12:01:32.946320",
+      "type": "focus_changed",
+      "details": "Finding reference images for modern building exterior design - Claude and 3 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2025-12-05T12:01:45.097285",
+      "type": "app_opened",
+      "details": "msedge: LITTLE RIVER PLAZA - Glavovic Studio and 4 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2025-12-05T12:01:45.097285",
+      "type": "app_closed",
+      "details": "msedge: Finding reference images for modern building exterior design - Claude and 3 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2025-12-05T12:01:58.294598",
+      "type": "app_opened",
+      "details": "msedge: Jahu Apartment Building / RAAM Architecture | ArchDaily and 4 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2025-12-05T12:01:58.294598",
+      "type": "app_closed",
+      "details": "msedge: LITTLE RIVER PLAZA - Glavovic Studio and 4 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2025-12-05T12:01:59.211263",
+      "type": "focus_changed",
+      "details": "Jahu Apartment Building / RAAM Architecture | ArchDaily and 4 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2025-12-05T12:02:15.696034",
+      "type": "app_opened",
+      "details": "msedge: Discover 260 Mid Rise Buildings and Residential Building Design Ideas | facade architecture design, apartments exterior, skyscraper architecture and more and 4 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2025-12-05T12:02:15.697033",
+      "type": "app_closed",
+      "details": "msedge: Jahu Apartment Building / RAAM Architecture | ArchDaily and 4 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2025-12-05T12:02:16.610479",
+      "type": "focus_changed",
+      "details": "Discover 260 Mid Rise Buildings and Residential Building Design Ideas | facade architecture design, apartments exterior, skyscraper architecture and more and 4 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2025-12-05T12:02:28.849149",
+      "type": "app_opened",
+      "details": "msedge: Finding reference images for modern building exterior design - Claude and 3 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2025-12-05T12:02:28.850147",
+      "type": "app_closed",
+      "details": "msedge: Discover 260 Mid Rise Buildings and Residential Building Design Ideas | facade architecture design, apartments exterior, skyscraper architecture and more and 4 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2025-12-05T12:02:29.630540",
+      "type": "focus_changed",
+      "details": "Finding reference images for modern building exterior design - Claude and 3 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2025-12-05T12:02:41.954366",
+      "type": "app_opened",
+      "details": "msedge: stringio.jpg (1232x1600) and 4 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2025-12-05T12:02:41.955366",
+      "type": "app_closed",
+      "details": "msedge: Finding reference images for modern building exterior design - Claude and 3 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2025-12-05T12:02:42.747257",
+      "type": "focus_changed",
+      "details": "stringio.jpg (1232x1600) and 4 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2025-12-05T12:02:55.420507",
+      "type": "app_opened",
+      "details": "msedge: Finding reference images for modern building exterior design - Claude and 3 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2025-12-05T12:02:55.421640",
+      "type": "app_closed",
+      "details": "msedge: stringio.jpg (1232x1600) and 4 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2025-12-05T12:02:56.199659",
+      "type": "focus_changed",
+      "details": "Finding reference images for modern building exterior design - Claude and 3 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2025-12-05T12:03:21.387062",
+      "type": "app_closed",
+      "details": "msedge: Finding reference images for modern building exterior design - Claude and 3 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2025-12-05T12:03:38.453340",
+      "type": "app_opened",
+      "details": "msedge: Finding reference images for modern building exterior design - Claude and 3 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2025-12-05T12:03:51.663128",
+      "type": "app_opened",
+      "details": "msedge: stringio.jpg (1600x1600) and 4 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2025-12-05T12:03:51.664129",
+      "type": "app_closed",
+      "details": "msedge: Finding reference images for modern building exterior design - Claude and 3 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2025-12-05T12:03:52.431678",
+      "type": "focus_changed",
+      "details": "stringio.jpg (1600x1600) and 4 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2025-12-05T12:04:04.487226",
+      "type": "app_opened",
+      "details": "msedge: 500+ Apartment Building Pictures [HD] | Download Free Images on Unsplash and 4 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2025-12-05T12:04:04.488230",
+      "type": "app_closed",
+      "details": "msedge: stringio.jpg (1600x1600) and 4 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2025-12-05T12:04:05.240819",
+      "type": "focus_changed",
+      "details": "500+ Apartment Building Pictures [HD] | Download Free Images on Unsplash and 4 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2025-12-05T12:04:18.976028",
+      "type": "focus_changed",
+      "details": "Finding reference images for modern building exterior design - Claude and 3 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2025-12-05T12:04:31.122180",
+      "type": "app_opened",
+      "details": "msedge: Finding reference images for modern building exterior design - Claude and 3 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2025-12-05T12:04:31.123180",
+      "type": "app_closed",
+      "details": "msedge: 500+ Apartment Building Pictures [HD] | Download Free Images on Unsplash and 4 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2025-12-05T12:04:44.900525",
+      "type": "focus_changed",
+      "details": "Welcome - Visual Studio Code"
+    },
+    {
+      "timestamp": "2025-12-05T12:20:50.934355",
+      "type": "focus_changed",
+      "details": "New Tab - Google Chrome"
+    },
+    {
+      "timestamp": "2025-12-05T12:21:02.967408",
+      "type": "app_opened",
+      "details": "chrome: Inbox (578) - [email] - Gmail - Google Chrome"
+    },
+    {
+      "timestamp": "2025-12-05T12:21:02.968411",
+      "type": "app_closed",
+      "details": "chrome: New Tab - Google Chrome"
+    },
+    {
+      "timestamp": "2025-12-05T12:21:03.719339",
+      "type": "focus_changed",
+      "details": "Inbox (578) - [email] - Gmail - Google Chrome"
+    },
+    {
+      "timestamp": "2025-12-05T12:21:33.402177",
+      "type": "focus_changed",
+      "details": "Client"
+    },
+    {
+      "timestamp": "2025-12-05T12:21:45.521743",
+      "type": "app_opened",
+      "details": "chrome: New Tab - Google Chrome"
+    },
+    {
+      "timestamp": "2025-12-05T12:21:45.522938",
+      "type": "app_closed",
+      "details": "chrome: Inbox (578) - [email] - Gmail - Google Chrome"
+    },
+    {
+      "timestamp": "2025-12-05T12:21:46.314191",
+      "type": "focus_changed",
+      "details": "New Tab - Google Chrome"
+    },
+    {
+      "timestamp": "2025-12-05T12:21:59.098167",
+      "type": "app_opened",
+      "details": "chrome: Gmail - Google Chrome"
+    },
+    {
+      "timestamp": "2025-12-05T12:21:59.099171",
+      "type": "app_closed",
+      "details": "chrome: New Tab - Google Chrome"
+    },
+    {
+      "timestamp": "2025-12-05T12:21:59.901753",
+      "type": "focus_changed",
+      "details": "Inbox (45) - [email] - Gmail - Google Chrome"
+    },
+    {
+      "timestamp": "2025-12-05T12:22:12.035667",
+      "type": "app_opened",
+      "details": "chrome: Inbox (45) - [email] - Gmail - Google Chrome"
+    },
+    {
+      "timestamp": "2025-12-05T12:22:12.036662",
+      "type": "app_closed",
+      "details": "chrome: Gmail - Google Chrome"
+    },
+    {
+      "timestamp": "2025-12-05T12:23:22.093225",
+      "type": "app_opened",
+      "details": "msedge: disneyplus - Search and 4 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2025-12-05T12:23:22.094226",
+      "type": "app_closed",
+      "details": "msedge: Finding reference images for modern building exterior design - Claude and 3 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2025-12-05T12:23:22.925280",
+      "type": "focus_changed",
+      "details": "bing.com/aclk?ld=e8s2ndv_27NnHH8VHmSeXcfTVUCUzVc6VeA1LjWP1MEA_CTmzptVc4T5-6JD7VlleeTTucUkXmJ3hJQRVMF0F8E0ioYivkGNmnIKy6YOeY6i6sgZyrQPOGRPbdwYAoONvZfR8pkFzWWmhcWT8X_bvAMp0QG9Yfyukj2-rXGdGRuUkyHX5tWRB4wXgAldDl7HmpUGYPSgHlKwR12j7gWx8EXvxB3PY&u=aHR0cHMlM2ElMm"
+    },
+    {
+      "timestamp": "2025-12-05T12:23:35.337845",
+      "type": "app_opened",
+      "details": "msedge: Disney+ | Movies and Shows and 5 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2025-12-05T12:23:35.338845",
+      "type": "app_closed",
+      "details": "msedge: disneyplus - Search and 4 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2025-12-05T12:23:36.138735",
+      "type": "focus_changed",
+      "details": "Disney+ | Movies and Shows and 5 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2025-12-05T12:23:48.366821",
+      "type": "app_opened",
+      "details": "msedge: For You | Disney+ and 5 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2025-12-05T12:23:48.367594",
+      "type": "app_closed",
+      "details": "msedge: Disney+ | Movies and Shows and 5 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2025-12-05T12:23:49.174498",
+      "type": "focus_changed",
+      "details": "For You | Disney+ and 5 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2025-12-05T12:24:05.570965",
+      "type": "app_opened",
+      "details": "msedge: Wayward Pines | Disney+ and 5 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2025-12-05T12:24:05.571987",
+      "type": "app_closed",
+      "details": "msedge: For You | Disney+ and 5 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2025-12-05T12:24:06.373692",
+      "type": "focus_changed",
+      "details": "Wayward Pines | Disney+ and 5 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2025-12-05T12:36:07.080740",
+      "type": "app_closed",
+      "details": "explorer: Client"
+    },
+    {
+      "timestamp": "2025-12-05T12:36:24.132998",
+      "type": "app_opened",
+      "details": "explorer: Client"
+    },
+    {
+      "timestamp": "2025-12-05T13:28:45.250240",
+      "type": "focus_changed",
+      "details": "Inbox (45) - [email] - Gmail - Google Chrome"
+    },
+    {
+      "timestamp": "2025-12-05T13:33:03.911921",
+      "type": "focus_changed",
+      "details": "Sign in required"
+    },
+    {
+      "timestamp": "2025-12-05T13:33:28.525722",
+      "type": "focus_changed",
+      "details": "Inbox (45) - [email] - Gmail - Google Chrome"
+    },
+    {
+      "timestamp": "2025-12-05T13:33:57.960999",
+      "type": "focus_changed",
+      "details": "Welcome - Visual Studio Code"
+    },
+    {
+      "timestamp": "2025-12-05T13:35:59.499513",
+      "type": "focus_changed",
+      "details": "Inbox (45) - [email] - Gmail - Google Chrome"
+    },
+    {
+      "timestamp": "2025-12-05T13:36:12.663715",
+      "type": "focus_changed",
+      "details": "Autodesk Revit 2026.2 - [Home]"
+    },
+    {
+      "timestamp": "2025-12-05T13:36:56.538759",
+      "type": "app_opened",
+      "details": "Revit: Autodesk Revit 2026.2 - [20 NW 76 ST - 4-STORY - Revised - Sheet: A-1.2 - 4TH FLOOR PLAN]"
+    },
+    {
+      "timestamp": "2025-12-05T13:36:56.539758",
+      "type": "app_closed",
+      "details": "Revit: Autodesk Revit 2026.2 - [Home]"
+    },
+    {
+      "timestamp": "2025-12-05T13:36:57.320331",
+      "type": "focus_changed",
+      "details": "Welcome - Visual Studio Code"
+    },
+    {
+      "timestamp": "2025-12-05T13:39:12.324347",
+      "type": "focus_changed",
+      "details": "Inbox (45) - [email] - Gmail - Google Chrome"
+    },
+    {
+      "timestamp": "2025-12-05T13:39:25.325008",
+      "type": "focus_changed",
+      "details": "Wayward Pines | Disney+ and 5 more pages - Profile 1 - Microsoft? Edge"
+    }
+  ],
+  "stats": {
+    "started_at": "2025-12-04T10:13:59.664371",
+    "updates": 6810,
+    "errors": 0,
+    "restarts": 2
+  },
+  "previous_apps": [
+    [
+      "OUTLOOK",
+      "Inbox - weber@bdarchitect.net - Outlook"
+    ],
+    [
+      "Photos",
+      "render_florida_modern_controlnet_20251130_061539.png"
+    ],
+    [
+      "SystemSettings",
+      "Settings"
+    ],
+    [
+      "WINWORD",
+      "Let_Go_Let_God_Lead_Sermon_Revised - Word"
+    ],
+    [
+      "explorer",
+      "Client"
+    ],
+    [
+      "msedge",
+      "Welcome and 4 more pages - Personal - Microsoft? Edge"
+    ],
+    [
+      "ms-teams",
+      "Chat | M Isa Fantal | Personal | weber@wgdesigndrafting.com | Microsoft Teams"
+    ],
+    [
+      "Revu",
+      "130_NE_78th_Street_OPTION_B_Urban_Industrial - Bluebeam Revu x64"
+    ],
+    [
+      "Revit",
+      "Autodesk Revit 2026.2 - [20 NW 76 ST - 4-STORY - Revised - Sheet: A-1.2 - 4TH FLOOR PLAN]"
+    ],
+    [
+      "Photos",
+      "ChatGPT Image Nov 25, 2025, 10_59_32 AM.png"
+    ],
+    [
+      "Wispr Flow",
+      "Hub"
+    ],
+    [
+      "CalculatorApp",
+      "Calculator"
+    ],
+    [
+      "msedge",
+      "Wayward Pines | Disney+ and 5 more pages - Profile 1 - Microsoft? Edge"
+    ],
+    [
+      "chrome",
+      "Inbox (45) - zestflowai619@gmail.com - Gmail - Google Chrome"
+    ],
+    [
+      "ApplicationFrameHost",
+      "Microsoft Store"
+    ],
+    [
+      "Photos",
+      "revit_auto_20251129_191249_render_20251129_191623.png"
+    ],
+    [
+      "SnippingTool",
+      "Snipping Tool"
+    ],
+    [
+      "WinStore.App",
+      "Microsoft Store"
+    ],
+    [
+      "Code",
+      "Welcome - Visual Studio Code"
+    ],
+    [
+      "TextInputHost",
+      "Microsoft Text Input Application"
+    ]
+  ]
+}

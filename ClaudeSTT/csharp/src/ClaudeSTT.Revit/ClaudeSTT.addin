@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>Claude STT</Name>
+    <Assembly>ClaudeSTT.Revit.dll</Assembly>
+    <FullClassName>ClaudeSTT.Revit.ClaudeSTTApplication</FullClassName>
+    <ClientId>3d7b8c6e-8f1a-4b2c-9e5d-1a3f7c9b8e2d</ClientId>
+    <VendorId>com.yourcompany</VendorId>
+    <VendorDescription>Your Company Name</VendorDescription>
+  </AddIn>
+</RevitAddIns>

@@ -1,0 +1,228 @@
+{
+  "id": "pdf-to-revit",
+  "name": "PDF Floor Plan to Revit Model",
+  "version": "1.0.0",
+  "description": "Complete pipeline to convert PDF/PNG floor plans into Revit wall geometry",
+
+  "triggers": {
+    "manual": "/pipeline pdf-to-revit",
+    "auto": {
+      "condition": "user_provides_pdf_floor_plan",
+      "patterns": ["floor plan", "trace walls", "pdf to revit", "create model from"]
+    }
+  },
+
+  "prerequisites": {
+    "revit_running": true,
+    "revit_version": ["2025", "2026"],
+    "required_tools": ["floor-plan-vision-mcp", "RevitMCPBridge"],
+    "document_state": "new_or_existing"
+  },
+
+  "phases": [
+    {
+      "id": "P1",
+      "name": "Setup",
+      "description": "Verify environment and load source file",
+      "steps": [
+        {
+          "id": "P1.1",
+          "action": "check_revit_connection",
+          "method": "ping",
+          "on_fail": "abort",
+          "error_message": "Revit not connected. Start Revit and load a project."
+        },
+        {
+          "id": "P1.2",
+          "action": "verify_source_file",
+          "accepts": [".pdf", ".png", ".jpg"],
+          "on_fail": "ask_user",
+          "prompt": "Please provide the floor plan file path."
+        },
+        {
+          "id": "P1.3",
+          "action": "get_or_create_project",
+          "method": "getProjectInfo",
+          "fallback": "createNewProject",
+          "params": {"name": "AI_Generated_Floor_Plan", "template": "default"}
+        }
+      ],
+      "checkpoint": {
+        "name": "Environment Ready",
+        "auto_pass": true,
+        "validation": ["revit_connected", "source_file_exists", "project_active"]
+      }
+    },
+    {
+      "id": "P2",
+      "name": "Extraction",
+      "description": "Extract geometry from floor plan image",
+      "steps": [
+        {
+          "id": "P2.1",
+          "action": "analyze_floor_plan",
+          "method": "mcp__floor-plan-vision__analyze_floor_plan",
+          "params": {"file_path": "$source_file", "page_num": 0},
+          "store_result": "geometry_analysis"
+        },
+        {
+          "id": "P2.2",
+          "action": "detect_scale",
+          "method": "mcp__floor-plan-vision__detect_scale",
+          "params": {"file_path": "$source_file", "page_num": 0},
+          "fallback": {
+            "action": "ask_user",
+            "prompt": "Could not auto-detect scale. What scale is the drawing? (e.g., 1/4\" = 1'-0\")",
+            "common_values": ["1/4\" = 1'-0\" (0.020833 ft/px)", "1/8\" = 1'-0\" (0.010417 ft/px)"]
+          },
+          "store_result": "scale_factor"
+        },
+        {
+          "id": "P2.3",
+          "action": "detect_walls",
+          "method": "mcp__floor-plan-vision__detect_walls",
+          "params": {"file_path": "$source_file", "scale_ft_per_px": "$scale_factor", "output_format": "revit"},
+          "store_result": "detected_walls"
+        }
+      ],
+      "checkpoint": {
+        "name": "Geometry Extracted",
+        "requires_approval": true,
+        "display": "Show detected walls count and preview",
+        "validation": ["walls_detected", "scale_determined"],
+        "user_prompt": "Detected {wall_count} walls at scale {scale}. Proceed with Revit creation?"
+      }
+    },
+    {
+      "id": "P3",
+      "name": "Coordinate Transform",
+      "description": "Convert pixel coordinates to Revit feet",
+      "steps": [
+        {
+          "id": "P3.1",
+          "action": "transform_coordinates",
+          "apply_to": "$detected_walls",
+          "transform": {
+            "scale": "$scale_factor",
+            "offset": [10, 10],
+            "flip_y": true
+          },
+          "store_result": "revit_walls"
+        },
+        {
+          "id": "P3.2",
+          "action": "get_level",
+          "method": "getLevels",
+          "select": "first",
+          "store_result": "target_level"
+        },
+        {
+          "id": "P3.3",
+          "action": "get_wall_type",
+          "method": "getWallTypes",
+          "select": "generic_6_inch",
+          "fallback": "first",
+          "store_result": "wall_type"
+        }
+      ],
+      "checkpoint": {
+        "name": "Ready to Build",
+        "auto_pass": true,
+        "validation": ["coordinates_valid", "level_exists", "wall_type_exists"]
+      }
+    },
+    {
+      "id": "P4",
+      "name": "Wall Creation",
+      "description": "Create walls in Revit",
+      "steps": [
+        {
+          "id": "P4.1",
+          "action": "batch_create_walls",
+          "method": "createWall",
+          "iterate": "$revit_walls",
+          "params": {
+            "startPoint": "$item.start",
+            "endPoint": "$item.end",
+            "levelId": "$target_level.id",
+            "wallTypeId": "$wall_type.id",
+            "height": 10
+          },
+          "batch_size": 10,
+          "delay_between_batches_ms": 500,
+          "store_result": "created_wall_ids"
+        }
+      ],
+      "checkpoint": {
+        "name": "Walls Created",
+        "requires_approval": false,
+        "validation": ["walls_exist_in_model"]
+      }
+    },
+    {
+      "id": "P5",
+      "name": "Verification",
+      "description": "Verify and validate created geometry",
+      "steps": [
+        {
+          "id": "P5.1",
+          "action": "verify_walls",
+          "method": "getWalls",
+          "compare_to": "$created_wall_ids",
+          "store_result": "verification"
+        },
+        {
+          "id": "P5.2",
+          "action": "capture_screenshot",
+          "method": "captureActiveView",
+          "store_result": "result_screenshot"
+        },
+        {
+          "id": "P5.3",
+          "action": "run_bim_validator",
+          "agent": "bim-validator",
+          "checks": ["wall_connectivity", "no_overlaps", "valid_joins"]
+        }
+      ],
+      "checkpoint": {
+        "name": "Model Verified",
+        "requires_approval": true,
+        "display": "Show screenshot and validation results",
+        "user_prompt": "Model created with {wall_count} walls. Review and approve?"
+      }
+    }
+  ],
+
+  "on_success": {
+    "memory": {
+      "action": "store",
+      "type": "outcome",
+      "importance": 8,
+      "summary": "Created Revit model from floor plan with {wall_count} walls"
+    },
+    "voice": {
+      "action": "speak",
+      "message": "Floor plan conversion complete. Created {wall_count} walls in Revit. Please review the model for accuracy."
+    }
+  },
+
+  "on_failure": {
+    "memory": {
+      "action": "store",
+      "type": "error",
+      "importance": 9,
+      "include_error_details": true
+    },
+    "rollback": {
+      "action": "delete_created_elements",
+      "elements": "$created_wall_ids"
+    }
+  },
+
+  "corrections_to_apply": [
+    {"id": 447, "rule": "Only use coordinates from confirmed working areas"},
+    {"id": 448, "rule": "Detect wall pairs from parallel CAD lines"},
+    {"id": 449, "rule": "Never invent walls where no CAD lines exist"},
+    {"id": 490, "rule": "Call setActiveDocument after openDocument"}
+  ]
+}

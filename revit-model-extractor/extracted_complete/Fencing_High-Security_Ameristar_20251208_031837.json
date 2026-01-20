@@ -1,0 +1,1494 @@
+﻿{
+    "lightingFixtures":  [
+
+                         ],
+    "ceilings":  [
+
+                 ],
+    "wallTypes":  [
+                      {
+                          "wallTypeId":  221,
+                          "name":  "Exterior - Brick on Mtl. Stud",
+                          "kind":  "Basic",
+                          "width":  1.15625,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  21854,
+                          "name":  "Curtain Wall 1",
+                          "kind":  "Curtain",
+                          "width":  0.08333333333333333,
+                          "familyName":  "Curtain Wall"
+                      },
+                      {
+                          "wallTypeId":  76677,
+                          "name":  "Exterior - Brick Over CMU w Metal Stud",
+                          "kind":  "Stacked",
+                          "width":  1.4895833333333333,
+                          "familyName":  "Stacked Wall"
+                      },
+                      {
+                          "wallTypeId":  83171,
+                          "name":  "Exterior - CMU on Mtl. Stud",
+                          "kind":  "Basic",
+                          "width":  1.4895833333333333,
+                          "familyName":  "Basic Wall"
+                      }
+                  ],
+    "structuralBeams":  [
+
+                        ],
+    "familyTypes":  [
+
+                    ],
+    "roofs":  [
+
+              ],
+    "railings":  [
+                     {
+                         "railingId":  412667,
+                         "typeName":  "AFP_72”-Impasse-Trident-Series-High-Security-Grade-Fence-With-Two-Rails",
+                         "typeId":  412712,
+                         "level":  "AFP - Impasse Series",
+                         "length":  16.333333333333336
+                     },
+                     {
+                         "railingId":  418209,
+                         "typeName":  "AFP_84”-Impasse-Trident-Series-High-Security-Grade-Fence-With-Two-Rails",
+                         "typeId":  423166,
+                         "level":  "AFP - Impasse Series",
+                         "length":  16.333333333333336
+                     },
+                     {
+                         "railingId":  418228,
+                         "typeName":  "AFP_96”-Impasse-Trident-Series-High-Security-Grade-Fence-With-Two-Rails",
+                         "typeId":  423171,
+                         "level":  "AFP - Impasse Series",
+                         "length":  16.333333333333336
+                     },
+                     {
+                         "railingId":  418247,
+                         "typeName":  "AFP_108”-Impasse-Trident-Series-High-Security-Grade-Fence-With-Two-Rails",
+                         "typeId":  423176,
+                         "level":  "AFP - Impasse Series",
+                         "length":  16.333333333333336
+                     },
+                     {
+                         "railingId":  418266,
+                         "typeName":  "AFP_120”-Impasse-Trident-Series-High-Security-Grade-Fence-With-Two-Rails",
+                         "typeId":  423183,
+                         "level":  "AFP - Impasse Series",
+                         "length":  16.333333333333336
+                     },
+                     {
+                         "railingId":  418304,
+                         "typeName":  "AFP_72”-Impasse-Trident-Series-High-Security-Grade-Fence-With-Three-Rails",
+                         "typeId":  418321,
+                         "level":  "AFP - Impasse Series",
+                         "length":  16.333333333333336
+                     },
+                     {
+                         "railingId":  418342,
+                         "typeName":  "AFP_84”-Impasse-Trident-Series-High-Security-Grade-Fence-With-Three-Rails",
+                         "typeId":  423204,
+                         "level":  "AFP - Impasse Series",
+                         "length":  16.333333333333336
+                     },
+                     {
+                         "railingId":  418361,
+                         "typeName":  "AFP_96”-Impasse-Trident-Series-High-Security-Grade-Fence-With-Three-Rails",
+                         "typeId":  423210,
+                         "level":  "AFP - Impasse Series",
+                         "length":  16.333333333333336
+                     },
+                     {
+                         "railingId":  418380,
+                         "typeName":  "AFP_108”-Impasse-Trident-Series-High-Security-Grade-Fence-With-Three-Rails",
+                         "typeId":  423218,
+                         "level":  "AFP - Impasse Series",
+                         "length":  16.333333333333336
+                     },
+                     {
+                         "railingId":  418399,
+                         "typeName":  "AFP_120”-Impasse-Trident-Series-High-Security-Grade-Fence-With-Three-Rails",
+                         "typeId":  423221,
+                         "level":  "AFP - Impasse Series",
+                         "length":  16.333333333333336
+                     },
+                     {
+                         "railingId":  418446,
+                         "typeName":  "AFP_72”-Impasse-Trident-Series-High-Security-Grade-Fence-With-Four-Rails",
+                         "typeId":  418462,
+                         "level":  "AFP - Impasse Series",
+                         "length":  16.333333333333336
+                     },
+                     {
+                         "railingId":  418485,
+                         "typeName":  "AFP_84”-Impasse-Trident-Series-High-Security-Grade-Fence-With-Four-Rails",
+                         "typeId":  423288,
+                         "level":  "AFP - Impasse Series",
+                         "length":  16.333333333333336
+                     },
+                     {
+                         "railingId":  418506,
+                         "typeName":  "AFP_96”-Impasse-Trident-Series-High-Security-Grade-Fence-With-Four-Rails",
+                         "typeId":  423292,
+                         "level":  "AFP - Impasse Series",
+                         "length":  16.333333333333336
+                     },
+                     {
+                         "railingId":  418525,
+                         "typeName":  "AFP_108”-Impasse-Trident-Series-High-Security-Grade-Fence-With-Four-Rails",
+                         "typeId":  423295,
+                         "level":  "AFP - Impasse Series",
+                         "length":  16.333333333333336
+                     },
+                     {
+                         "railingId":  418544,
+                         "typeName":  "AFP_120”-Impasse-Trident-Series-High-Security-Grade-Fence-With-Four-Rails",
+                         "typeId":  423298,
+                         "level":  "AFP - Impasse Series",
+                         "length":  16.333333333333336
+                     },
+                     {
+                         "railingId":  418591,
+                         "typeName":  "AFP_72”-Impasse-Trident-Series-High-Security-Grade-Fence-With-Five-Rails",
+                         "typeId":  418607,
+                         "level":  "AFP - Impasse Series",
+                         "length":  16.333333333333336
+                     },
+                     {
+                         "railingId":  418615,
+                         "typeName":  "AFP_84”-Impasse-Trident-Series-High-Security-Grade-Fence-With-Five-Rails",
+                         "typeId":  425804,
+                         "level":  "AFP - Impasse Series",
+                         "length":  16.333333333333336
+                     },
+                     {
+                         "railingId":  418636,
+                         "typeName":  "AFP_96”-Impasse-Trident-Series-High-Security-Grade-Fence-With-Five-Rails",
+                         "typeId":  425843,
+                         "level":  "AFP - Impasse Series",
+                         "length":  16.333333333333336
+                     },
+                     {
+                         "railingId":  418655,
+                         "typeName":  "AFP_108”-Impasse-Trident-Series-High-Security-Grade-Fence-With-Five-Rails",
+                         "typeId":  425872,
+                         "level":  "AFP - Impasse Series",
+                         "length":  16.333333333333336
+                     },
+                     {
+                         "railingId":  418676,
+                         "typeName":  "AFP_120”-Impasse-Trident-Series-High-Security-Grade-Fence-With-Five-Rails",
+                         "typeId":  425901,
+                         "level":  "AFP - Impasse Series",
+                         "length":  16.333333333333336
+                     },
+                     {
+                         "railingId":  418797,
+                         "typeName":  "AFP_72”-Impasse-Stronghold-Series-High-Security-Grade-Fence-With-Two-Rails",
+                         "typeId":  419569,
+                         "level":  "AFP - Impasse Series",
+                         "length":  16.333333333333336
+                     },
+                     {
+                         "railingId":  418811,
+                         "typeName":  "AFP_72”-Impasse-Stronghold-Series-High-Security-Grade-Fence-With-Three-Rails",
+                         "typeId":  420339,
+                         "level":  "AFP - Impasse Series",
+                         "length":  16.333333333333336
+                     },
+                     {
+                         "railingId":  418824,
+                         "typeName":  "AFP_72”-Impasse-Stronghold-Series-High-Security-Grade-Fence-With-Four-Rails",
+                         "typeId":  420341,
+                         "level":  "AFP - Impasse Series",
+                         "length":  16.333333333333336
+                     },
+                     {
+                         "railingId":  418834,
+                         "typeName":  "AFP_72”-Impasse-Stronghold-Series-High-Security-Grade-Fence-With-Five-Rails",
+                         "typeId":  420343,
+                         "level":  "AFP - Impasse Series",
+                         "length":  16.333333333333336
+                     },
+                     {
+                         "railingId":  420266,
+                         "typeName":  "AFP_84”-Impasse-Stronghold-Series-High-Security-Grade-Fence-With-Two-Rails",
+                         "typeId":  425817,
+                         "level":  "AFP - Impasse Series",
+                         "length":  16.333333333333336
+                     },
+                     {
+                         "railingId":  420285,
+                         "typeName":  "AFP_96”-Impasse-Stronghold-Series-High-Security-Grade-Fence-With-Two-Rails",
+                         "typeId":  425846,
+                         "level":  "AFP - Impasse Series",
+                         "length":  16.333333333333336
+                     },
+                     {
+                         "railingId":  420306,
+                         "typeName":  "AFP_108”-Impasse-Stronghold-Series-High-Security-Grade-Fence-With-Two-Rails",
+                         "typeId":  425875,
+                         "level":  "AFP - Impasse Series",
+                         "length":  16.333333333333336
+                     },
+                     {
+                         "railingId":  420325,
+                         "typeName":  "AFP_120”-Impasse-Stronghold-Series-High-Security-Grade-Fence-With-Two-Rails",
+                         "typeId":  425904,
+                         "level":  "AFP - Impasse Series",
+                         "length":  16.333333333333336
+                     },
+                     {
+                         "railingId":  420354,
+                         "typeName":  "AFP_84”-Impasse-Stronghold-Series-High-Security-Grade-Fence-With-Three-Rails",
+                         "typeId":  425821,
+                         "level":  "AFP - Impasse Series",
+                         "length":  16.333333333333336
+                     },
+                     {
+                         "railingId":  420360,
+                         "typeName":  "AFP_84”-Impasse-Stronghold-Series-High-Security-Grade-Fence-With-Four-Rails",
+                         "typeId":  425824,
+                         "level":  "AFP - Impasse Series",
+                         "length":  16.333333333333336
+                     },
+                     {
+                         "railingId":  420366,
+                         "typeName":  "AFP_84”-Impasse-Stronghold-Series-High-Security-Grade-Fence-With-Five-Rails",
+                         "typeId":  425827,
+                         "level":  "AFP - Impasse Series",
+                         "length":  16.333333333333336
+                     },
+                     {
+                         "railingId":  420399,
+                         "typeName":  "AFP_96”-Impasse-Stronghold-Series-High-Security-Grade-Fence-With-Three-Rails",
+                         "typeId":  425850,
+                         "level":  "AFP - Impasse Series",
+                         "length":  16.333333333333336
+                     },
+                     {
+                         "railingId":  420405,
+                         "typeName":  "AFP_96”-Impasse-Stronghold-Series-High-Security-Grade-Fence-With-Four-Rails",
+                         "typeId":  425853,
+                         "level":  "AFP - Impasse Series",
+                         "length":  16.333333333333336
+                     },
+                     {
+                         "railingId":  420411,
+                         "typeName":  "AFP_96”-Impasse-Stronghold-Series-High-Security-Grade-Fence-With-Five-Rails",
+                         "typeId":  425856,
+                         "level":  "AFP - Impasse Series",
+                         "length":  16.333333333333336
+                     },
+                     {
+                         "railingId":  420442,
+                         "typeName":  "AFP_108”-Impasse-Stronghold-Series-High-Security-Grade-Fence-With-Three-Rails",
+                         "typeId":  425879,
+                         "level":  "AFP - Impasse Series",
+                         "length":  16.333333333333336
+                     },
+                     {
+                         "railingId":  420448,
+                         "typeName":  "AFP_108”-Impasse-Stronghold-Series-High-Security-Grade-Fence-With-Four-Rails",
+                         "typeId":  425882,
+                         "level":  "AFP - Impasse Series",
+                         "length":  16.333333333333336
+                     },
+                     {
+                         "railingId":  420454,
+                         "typeName":  "AFP_108”-Impasse-Stronghold-Series-High-Security-Grade-Fence-With-Five-Rails",
+                         "typeId":  425885,
+                         "level":  "AFP - Impasse Series",
+                         "length":  16.333333333333336
+                     },
+                     {
+                         "railingId":  420485,
+                         "typeName":  "AFP_120”-Impasse-Stronghold-Series-High-Security-Grade-Fence-With-Three-Rails",
+                         "typeId":  425908,
+                         "level":  "AFP - Impasse Series",
+                         "length":  16.333333333333336
+                     },
+                     {
+                         "railingId":  420491,
+                         "typeName":  "AFP_120”-Impasse-Stronghold-Series-High-Security-Grade-Fence-With-Four-Rails",
+                         "typeId":  425911,
+                         "level":  "AFP - Impasse Series",
+                         "length":  16.333333333333336
+                     },
+                     {
+                         "railingId":  420497,
+                         "typeName":  "AFP_120”-Impasse-Stronghold-Series-High-Security-Grade-Fence-With-Five-Rails",
+                         "typeId":  425914,
+                         "level":  "AFP - Impasse Series",
+                         "length":  16.333333333333336
+                     },
+                     {
+                         "railingId":  421298,
+                         "typeName":  "AFP_72”-Impasse-Gauntlet-Series-High-Security-Grade-Fence-With-Two-Rails",
+                         "typeId":  421357,
+                         "level":  "AFP - Impasse Series",
+                         "length":  16.333333333333336
+                     },
+                     {
+                         "railingId":  421305,
+                         "typeName":  "AFP_72”-Impasse-Gauntlet-Series-High-Security-Grade-Fence-With-Three-Rails",
+                         "typeId":  421360,
+                         "level":  "AFP - Impasse Series",
+                         "length":  16.333333333333336
+                     },
+                     {
+                         "railingId":  421315,
+                         "typeName":  "AFP_72”-Impasse-Gauntlet-Series-High-Security-Grade-Fence-With-Four-Rails",
+                         "typeId":  421362,
+                         "level":  "AFP - Impasse Series",
+                         "length":  16.333333333333336
+                     },
+                     {
+                         "railingId":  421322,
+                         "typeName":  "AFP_72”-Impasse-Gauntlet-Series-High-Security-Grade-Fence-With-Five-Rails",
+                         "typeId":  421364,
+                         "level":  "AFP - Impasse Series",
+                         "length":  16.333333333333336
+                     },
+                     {
+                         "railingId":  421420,
+                         "typeName":  "AFP_84”-Impasse-Gauntlet-Series-High-Security-Grade-Fence-With-Two-Rails",
+                         "typeId":  425830,
+                         "level":  "AFP - Impasse Series",
+                         "length":  16.333333333333336
+                     },
+                     {
+                         "railingId":  421426,
+                         "typeName":  "AFP_84”-Impasse-Gauntlet-Series-High-Security-Grade-Fence-With-Three-Rails",
+                         "typeId":  425834,
+                         "level":  "AFP - Impasse Series",
+                         "length":  16.333333333333336
+                     },
+                     {
+                         "railingId":  421432,
+                         "typeName":  "AFP_84”-Impasse-Gauntlet-Series-High-Security-Grade-Fence-With-Four-Rails",
+                         "typeId":  425837,
+                         "level":  "AFP - Impasse Series",
+                         "length":  16.333333333333336
+                     },
+                     {
+                         "railingId":  421438,
+                         "typeName":  "AFP_84”-Impasse-Gauntlet-Series-High-Security-Grade-Fence-With-Five-Rails",
+                         "typeId":  425840,
+                         "level":  "AFP - Impasse Series",
+                         "length":  16.333333333333336
+                     },
+                     {
+                         "railingId":  421475,
+                         "typeName":  "AFP_96”-Impasse-Gauntlet-Series-High-Security-Grade-Fence-With-Two-Rails",
+                         "typeId":  425859,
+                         "level":  "AFP - Impasse Series",
+                         "length":  16.333333333333336
+                     },
+                     {
+                         "railingId":  421481,
+                         "typeName":  "AFP_96”-Impasse-Gauntlet-Series-High-Security-Grade-Fence-With-Three-Rails",
+                         "typeId":  425863,
+                         "level":  "AFP - Impasse Series",
+                         "length":  16.333333333333336
+                     },
+                     {
+                         "railingId":  421487,
+                         "typeName":  "AFP_96”-Impasse-Gauntlet-Series-High-Security-Grade-Fence-With-Four-Rails",
+                         "typeId":  425866,
+                         "level":  "AFP - Impasse Series",
+                         "length":  16.333333333333336
+                     },
+                     {
+                         "railingId":  421493,
+                         "typeName":  "AFP_96”-Impasse-Gauntlet-Series-High-Security-Grade-Fence-With-Five-Rails",
+                         "typeId":  425869,
+                         "level":  "AFP - Impasse Series",
+                         "length":  16.333333333333336
+                     },
+                     {
+                         "railingId":  421530,
+                         "typeName":  "AFP_108”-Impasse-Gauntlet-Series-High-Security-Grade-Fence-With-Two-Rails",
+                         "typeId":  425888,
+                         "level":  "AFP - Impasse Series",
+                         "length":  16.333333333333336
+                     },
+                     {
+                         "railingId":  421536,
+                         "typeName":  "AFP_108”-Impasse-Gauntlet-Series-High-Security-Grade-Fence-With-Three-Rails",
+                         "typeId":  425892,
+                         "level":  "AFP - Impasse Series",
+                         "length":  16.333333333333336
+                     },
+                     {
+                         "railingId":  421542,
+                         "typeName":  "AFP_108”-Impasse-Gauntlet-Series-High-Security-Grade-Fence-With-Four-Rails",
+                         "typeId":  425895,
+                         "level":  "AFP - Impasse Series",
+                         "length":  16.333333333333336
+                     },
+                     {
+                         "railingId":  421548,
+                         "typeName":  "AFP_108”-Impasse-Gauntlet-Series-High-Security-Grade-Fence-With-Five-Rails",
+                         "typeId":  425898,
+                         "level":  "AFP - Impasse Series",
+                         "length":  16.333333333333336
+                     },
+                     {
+                         "railingId":  421585,
+                         "typeName":  "AFP_120”-Impasse-Gauntlet-Series-High-Security-Grade-Fence-With-Two-Rails",
+                         "typeId":  425917,
+                         "level":  "AFP - Impasse Series",
+                         "length":  16.333333333333336
+                     },
+                     {
+                         "railingId":  421591,
+                         "typeName":  "AFP_120”-Impasse-Gauntlet-Series-High-Security-Grade-Fence-With-Three-Rails",
+                         "typeId":  425921,
+                         "level":  "AFP - Impasse Series",
+                         "length":  16.333333333333336
+                     },
+                     {
+                         "railingId":  421597,
+                         "typeName":  "AFP_120”-Impasse-Gauntlet-Series-High-Security-Grade-Fence-With-Four-Rails",
+                         "typeId":  425924,
+                         "level":  "AFP - Impasse Series",
+                         "length":  16.333333333333336
+                     },
+                     {
+                         "railingId":  421603,
+                         "typeName":  "AFP_120”-Impasse-Gauntlet-Series-High-Security-Grade-Fence-With-Five-Rails",
+                         "typeId":  425927,
+                         "level":  "AFP - Impasse Series",
+                         "length":  16.333333333333336
+                     },
+                     {
+                         "railingId":  428845,
+                         "typeName":  "AFP_72”-Impasse-Trident-Series-High-Security-Grade-Fence-With-Two-Rails",
+                         "typeId":  412712,
+                         "level":  "Detail - All Series",
+                         "length":  16.333333333333336
+                     },
+                     {
+                         "railingId":  428853,
+                         "typeName":  "AFP_72”-Impasse-Stronghold-Series-High-Security-Grade-Fence-With-Two-Rails",
+                         "typeId":  419569,
+                         "level":  "Detail - All Series",
+                         "length":  16.333333333333336
+                     },
+                     {
+                         "railingId":  428861,
+                         "typeName":  "AFP_72”-Impasse-Gauntlet-Series-High-Security-Grade-Fence-With-Two-Rails",
+                         "typeId":  421357,
+                         "level":  "Detail - All Series",
+                         "length":  16.333333333333336
+                     }
+                 ],
+    "curtainWalls":  [
+
+                     ],
+    "phases":  [
+                   {
+                       "phaseId":  32440,
+                       "phaseName":  "Existing",
+                       "sequenceNumber":  1
+                   },
+                   {
+                       "phaseId":  118390,
+                       "phaseName":  "New Construction",
+                       "sequenceNumber":  2
+                   }
+               ],
+    "projectInfo":  {
+                        "success":  true,
+                        "result":  {
+                                       "name":  "",
+                                       "number":  "Project Number",
+                                       "author":  "",
+                                       "status":  "Project Status",
+                                       "address":  "Enter address here",
+                                       "clientName":  "Ameristar Fence Products",
+                                       "buildingName":  "",
+                                       "organizationName":  "",
+                                       "organizationDescription":  "",
+                                       "isPinned":  false,
+                                       "isWorkshared":  false,
+                                       "title":  "Fencing_High-Security_Ameristar",
+                                       "pathname":  "D:\\003 - RESOURCES\\01 - REVIT LIBRARY\\REVIT LIBRARY - Custom\\Sheets\\Fencing_High-Security_Ameristar.rvt"
+                                   }
+                    },
+    "schedules":  [
+                      {
+                          "scheduleId":  430705,
+                          "scheduleName":  "Security Fences",
+                          "category":  "Railings",
+                          "fieldCount":  37,
+                          "filterCount":  1,
+                          "isKeySchedule":  false,
+                          "isMaterialTakeoff":  false
+                      },
+                      {
+                          "scheduleId":  434051,
+                          "scheduleName":  "\u003cRevision Schedule\u003e",
+                          "category":  "Unknown",
+                          "fieldCount":  4,
+                          "filterCount":  0,
+                          "isKeySchedule":  false,
+                          "isMaterialTakeoff":  false
+                      }
+                  ],
+    "columns":  [
+
+                ],
+    "furniture":  [
+
+                  ],
+    "pipes":  [
+
+              ],
+    "extractedAt":  "2025-12-08 03:18:37",
+    "fileName":  "Fencing_High-Security_Ameristar.rvt",
+    "views":  [
+                  {
+                      "viewId":  36,
+                      "viewName":  "AFP - Montage II Series",
+                      "viewType":  "CeilingPlan",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  3651,
+                      "viewName":  "Project View",
+                      "viewType":  "ProjectBrowser",
+                      "isTemplate":  false,
+                      "scale":  24
+                  },
+                  {
+                      "viewId":  29154,
+                      "viewName":  "East",
+                      "viewType":  "Elevation",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  29181,
+                      "viewName":  "North",
+                      "viewType":  "Elevation",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  29191,
+                      "viewName":  "West",
+                      "viewType":  "Elevation",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  29201,
+                      "viewName":  "South",
+                      "viewType":  "Elevation",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  29237,
+                      "viewName":  "Site",
+                      "viewType":  "FloorPlan",
+                      "isTemplate":  false,
+                      "scale":  240
+                  },
+                  {
+                      "viewId":  101014,
+                      "viewName":  "System Browser",
+                      "viewType":  "SystemBrowser",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  145183,
+                      "viewName":  "{3D}",
+                      "viewType":  "ThreeD",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  161930,
+                      "viewName":  "Detail - All Series",
+                      "viewType":  "CeilingPlan",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  401259,
+                      "viewName":  "AFP - Aegis II Series",
+                      "viewType":  "CeilingPlan",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  402592,
+                      "viewName":  "AFP - Echelon II Series",
+                      "viewType":  "CeilingPlan",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  404585,
+                      "viewName":  "AFP - Montage Plus Series",
+                      "viewType":  "CeilingPlan",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  404607,
+                      "viewName":  "Level 13",
+                      "viewType":  "CeilingPlan",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  404629,
+                      "viewName":  "AFP - Pool Pet and Play Series",
+                      "viewType":  "CeilingPlan",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  409156,
+                      "viewName":  "AFP - Aegis Plus Series",
+                      "viewType":  "CeilingPlan",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  410825,
+                      "viewName":  "AFP - Impasse Series",
+                      "viewType":  "FloorPlan",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  410833,
+                      "viewName":  "AFP - Impasse Series",
+                      "viewType":  "CeilingPlan",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  426822,
+                      "viewName":  "Impasse Series",
+                      "viewType":  "DrawingSheet",
+                      "isTemplate":  false,
+                      "scale":  1
+                  },
+                  {
+                      "viewId":  427715,
+                      "viewName":  "Impasse - Typical Trident Style",
+                      "viewType":  "Section",
+                      "isTemplate":  false,
+                      "scale":  48
+                  },
+                  {
+                      "viewId":  427721,
+                      "viewName":  "Impasse - Typical Stronghold Style",
+                      "viewType":  "Section",
+                      "isTemplate":  false,
+                      "scale":  48
+                  },
+                  {
+                      "viewId":  427727,
+                      "viewName":  "Impasse - Typical Gauntlet Style",
+                      "viewType":  "Section",
+                      "isTemplate":  false,
+                      "scale":  48
+                  },
+                  {
+                      "viewId":  428919,
+                      "viewName":  "Impasse - Typical Trident Style",
+                      "viewType":  "ThreeD",
+                      "isTemplate":  false,
+                      "scale":  0
+                  },
+                  {
+                      "viewId":  428945,
+                      "viewName":  "Impasse - Typical Stronghold Style",
+                      "viewType":  "ThreeD",
+                      "isTemplate":  false,
+                      "scale":  0
+                  },
+                  {
+                      "viewId":  428957,
+                      "viewName":  "Impasse - Typical Gauntlet Style",
+                      "viewType":  "ThreeD",
+                      "isTemplate":  false,
+                      "scale":  0
+                  },
+                  {
+                      "viewId":  430705,
+                      "viewName":  "Security Fences",
+                      "viewType":  "Schedule",
+                      "isTemplate":  false,
+                      "scale":  1
+                  },
+                  {
+                      "viewId":  434051,
+                      "viewName":  "\u003cRevision Schedule\u003e",
+                      "viewType":  "Schedule",
+                      "isTemplate":  false,
+                      "scale":  1
+                  }
+              ],
+    "plumbingFixtures":  [
+
+                         ],
+    "doors":  [
+
+              ],
+    "floorTypes":  [
+                       {
+                           "floorTypeId":  226,
+                           "name":  "Generic - 12\"",
+                           "familyName":  "Floor",
+                           "isFoundation":  false
+                       },
+                       {
+                           "floorTypeId":  117725,
+                           "name":  "6\" Foundation Slab",
+                           "familyName":  "Foundation Slab",
+                           "isFoundation":  true
+                       }
+                   ],
+    "sheets":  [
+
+               ],
+    "structuralColumns":  [
+
+                          ],
+    "filePath":  "D:\\003 - RESOURCES\\01 - REVIT LIBRARY\\REVIT LIBRARY - Custom\\Sheets\\Fencing_High-Security_Ameristar.rvt",
+    "stairs":  [
+
+               ],
+    "ceilingTypes":  [
+                         {
+                             "ceilingTypeId":  227,
+                             "name":  "Generic",
+                             "familyName":  "Basic Ceiling"
+                         },
+                         {
+                             "ceilingTypeId":  44748,
+                             "name":  "GWB on Mtl. Stud",
+                             "familyName":  "Compound Ceiling"
+                         },
+                         {
+                             "ceilingTypeId":  44798,
+                             "name":  "Generic - 4\"",
+                             "familyName":  "Roof Soffit"
+                         }
+                     ],
+    "walls":  [
+
+              ],
+    "foundations":  [
+
+                    ],
+    "rooms":  [
+
+              ],
+    "worksets":  [
+
+                 ],
+    "floors":  [
+                   {
+                       "floorId":  161976,
+                       "typeName":  "Generic - 12\"",
+                       "typeId":  226,
+                       "level":  "Detail - All Series",
+                       "area":  8149.348582020619,
+                       "thickness":  1.0,
+                       "structural":  false
+                   }
+               ],
+    "grids":  [
+
+              ],
+    "ducts":  [
+
+              ],
+    "windowTypes":  [
+
+                    ],
+    "loadedFamilies":  [
+                           {
+                               "familyId":  127959,
+                               "name":  "Baluster - Round",
+                               "category":  "Balusters",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  394001,
+                               "name":  "Baluster-Classic-Picket_Ameristar",
+                               "category":  "Balusters",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  394658,
+                               "name":  "Baluster-Genesis-Picket_Ameristar",
+                               "category":  "Balusters",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  395280,
+                               "name":  "Baluster-Invisible-Picket_Ameristar",
+                               "category":  "Balusters",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  420523,
+                               "name":  "Baluster-Picket-Impasse-Gauntlet-Pale",
+                               "category":  "Balusters",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  417492,
+                               "name":  "Baluster-Picket-Impasse-Pale",
+                               "category":  "Balusters",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  419574,
+                               "name":  "Baluster-Picket-Impasse-Stronghold-Pale",
+                               "category":  "Balusters",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  396257,
+                               "name":  "Baluster-Post_Ameristar",
+                               "category":  "Balusters",
+                               "typeCount":  3,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  416701,
+                               "name":  "Baluster-Post-Impasse",
+                               "category":  "Balusters",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  118596,
+                               "name":  "Callout Head",
+                               "category":  "Callout Heads",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  21943,
+                               "name":  "Empty System Panel",
+                               "category":  "Curtain Panels",
+                               "typeCount":  0,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  20915,
+                               "name":  "System Panel",
+                               "category":  "Curtain Panels",
+                               "typeCount":  1,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  28596,
+                               "name":  "Circular Mullion",
+                               "category":  "Curtain Wall Mullions",
+                               "typeCount":  0,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  43497,
+                               "name":  "L Corner Mullion",
+                               "category":  "Curtain Wall Mullions",
+                               "typeCount":  0,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  43509,
+                               "name":  "Quad Corner Mullion",
+                               "category":  "Curtain Wall Mullions",
+                               "typeCount":  0,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  28595,
+                               "name":  "Rectangular Mullion",
+                               "category":  "Curtain Wall Mullions",
+                               "typeCount":  0,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  43505,
+                               "name":  "Trapezoid Corner Mullion",
+                               "category":  "Curtain Wall Mullions",
+                               "typeCount":  0,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  43501,
+                               "name":  "V Corner Mullion",
+                               "category":  "Curtain Wall Mullions",
+                               "typeCount":  0,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  110386,
+                               "name":  "Brick Standard",
+                               "category":  "Detail Items",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  433200,
+                               "name":  "Elevation Mark Circle - Upgrade",
+                               "category":  "Elevation Marks",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  433429,
+                               "name":  "Elevation Mark Pointer_Circle",
+                               "category":  "Elevation Marks",
+                               "typeCount":  3,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  432920,
+                               "name":  "Elevation Mark Pointer_Square",
+                               "category":  "Elevation Marks",
+                               "typeCount":  2,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  432693,
+                               "name":  "Elevation Mark Square - Upgrade",
+                               "category":  "Elevation Marks",
+                               "typeCount":  2,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  119524,
+                               "name":  "Grid Head - Circle",
+                               "category":  "Grid Heads",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  119914,
+                               "name":  "Level Head - Circle",
+                               "category":  "Level Heads",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  126344,
+                               "name":  "Fascia-Flat",
+                               "category":  "Profiles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  126570,
+                               "name":  "Gutter Profile-Bevel",
+                               "category":  "Profiles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  410896,
+                               "name":  "Rail - Impasse",
+                               "category":  "Profiles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  395912,
+                               "name":  "Rail - Montange II",
+                               "category":  "Profiles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  127510,
+                               "name":  "Slab Edge-Thickened",
+                               "category":  "Profiles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  126131,
+                               "name":  "Stair Nosing - Pan",
+                               "category":  "Profiles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  145354,
+                               "name":  "Sumex Railing Tag",
+                               "category":  "Railing Tags",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  120736,
+                               "name":  "Section Head - Filled",
+                               "category":  "Section Marks",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  120962,
+                               "name":  "Section Head - no arrow",
+                               "category":  "Section Marks",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  121362,
+                               "name":  "Section Tail - Filled",
+                               "category":  "Section Marks",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  121576,
+                               "name":  "Section Tail - Filled Horizontal",
+                               "category":  "Section Marks",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  121790,
+                               "name":  "Spot Elevation - Crosshair",
+                               "category":  "Spot Elevation Symbols",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  392921,
+                               "name":  "E1 30 x 42 Horizontal ARCAT",
+                               "category":  "Title Blocks",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  131764,
+                               "name":  "View Reference",
+                               "category":  "View Reference",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  122183,
+                               "name":  "View Title",
+                               "category":  "View Titles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           }
+                       ],
+    "doorTypes":  [
+
+                  ],
+    "electricalCircuits":  [
+
+                           ],
+    "mepSystems":  [
+
+                   ],
+    "roofTypes":  [
+                      {
+                          "roofTypeId":  223,
+                          "name":  "Generic - 12\"",
+                          "familyName":  "Basic Roof"
+                      },
+                      {
+                          "roofTypeId":  18448,
+                          "name":  "Sloped Glazing",
+                          "familyName":  "Sloped Glazing"
+                      }
+                  ],
+    "levels":  [
+                   {
+                       "levelId":  30,
+                       "name":  "AFP - Montage II Series",
+                       "elevation":  0.0
+                   },
+                   {
+                       "levelId":  401250,
+                       "name":  "AFP - Aegis II Series",
+                       "elevation":  15.0
+                   },
+                   {
+                       "levelId":  401300,
+                       "name":  "Level 10",
+                       "elevation":  15.0
+                   },
+                   {
+                       "levelId":  402583,
+                       "name":  "AFP - Echelon II Series",
+                       "elevation":  30.0
+                   },
+                   {
+                       "levelId":  404576,
+                       "name":  "AFP - Montage Plus Series",
+                       "elevation":  45.0
+                   },
+                   {
+                       "levelId":  404598,
+                       "name":  "Level 13",
+                       "elevation":  60.0
+                   },
+                   {
+                       "levelId":  404620,
+                       "name":  "AFP - Pool Pet and Play Series",
+                       "elevation":  60.0
+                   },
+                   {
+                       "levelId":  409147,
+                       "name":  "AFP - Aegis Plus Series",
+                       "elevation":  75.0
+                   },
+                   {
+                       "levelId":  410824,
+                       "name":  "AFP - Impasse Series",
+                       "elevation":  90.0
+                   },
+                   {
+                       "levelId":  161921,
+                       "name":  "Detail - All Series",
+                       "elevation":  109.99999999999801
+                   }
+               ],
+    "materials":  [
+                      {
+                          "materialId":  393338,
+                          "name":  "Ameristar -  PermaCoat Finish - Black Color",
+                          "materialClass":  "Ameristar Materials",
+                          "color":  "Jycn",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  393973,
+                          "name":  "Ameristar -  PermaCoat Finish - Bronze Color",
+                          "materialClass":  "Ameristar Materials",
+                          "color":  "Qh4K",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  431487,
+                          "name":  "Carbon Steel",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  431488,
+                          "name":  "Copper",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  431489,
+                          "name":  "Ductile Iron",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  431490,
+                          "name":  "Plastic",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  431491,
+                          "name":  "Stainless Steel",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  432265,
+                          "name":  "System-Zones",
+                          "materialClass":  "Unassigned",
+                          "color":  "Xl7N",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  432271,
+                          "name":  "Analytical Spaces",
+                          "materialClass":  "Unassigned",
+                          "color":  "AMjI",
+                          "transparency":  85,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  432273,
+                          "name":  "Analytical Surface - Exterior Walls",
+                          "materialClass":  "Unassigned",
+                          "color":  "hbIs",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  432275,
+                          "name":  "Analytical Surface - Roofs",
+                          "materialClass":  "Unassigned",
+                          "color":  "Jg+Z",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  432277,
+                          "name":  "Analytical Surface - Slabs on Grade",
+                          "materialClass":  "Unassigned",
+                          "color":  "ZVHM",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  432279,
+                          "name":  "Analytical Surface - Interior Walls",
+                          "materialClass":  "Unassigned",
+                          "color":  "w+V+",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  432281,
+                          "name":  "Analytical Surface - Interior Floors",
+                          "materialClass":  "Unassigned",
+                          "color":  "ZVHM",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  432283,
+                          "name":  "Analytical Surface - Ceilings",
+                          "materialClass":  "Unassigned",
+                          "color":  "v7L/",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  432285,
+                          "name":  "Analytical Surface - Air Surfaces",
+                          "materialClass":  "Unassigned",
+                          "color":  "vtLc",
+                          "transparency":  90,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  432287,
+                          "name":  "Analytical Surface - Underground Walls",
+                          "materialClass":  "Unassigned",
+                          "color":  "sm8s",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  432289,
+                          "name":  "Analytical Surface - Operable Windows",
+                          "materialClass":  "Unassigned",
+                          "color":  "suX/",
+                          "transparency":  75,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  432291,
+                          "name":  "Analytical Surface - Operable Skylights",
+                          "materialClass":  "Unassigned",
+                          "color":  "suX/",
+                          "transparency":  75,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  432293,
+                          "name":  "Analytical Surface - Sliding Doors",
+                          "materialClass":  "Unassigned",
+                          "color":  "/7Ky",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  432295,
+                          "name":  "Analytical Surface - Air Openings",
+                          "materialClass":  "Unassigned",
+                          "color":  "////",
+                          "transparency":  100,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  432297,
+                          "name":  "Analytical Surface - Shades",
+                          "materialClass":  "Unassigned",
+                          "color":  "kJKK",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  432442,
+                          "name":  "Analytical Panels",
+                          "materialClass":  "Unassigned",
+                          "color":  "+8WZ",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  432524,
+                          "name":  "Electrical Analytical Loads",
+                          "materialClass":  "Unassigned",
+                          "color":  "Xl7N",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  432695,
+                          "name":  "Default",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  432696,
+                          "name":  "Default Wall",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  432697,
+                          "name":  "Default Roof",
+                          "materialClass":  "Unassigned",
+                          "color":  "AH8A",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  432698,
+                          "name":  "Glass",
+                          "materialClass":  "Unassigned",
+                          "color":  "AAD/",
+                          "transparency":  75,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  432699,
+                          "name":  "Phase-Demo",
+                          "materialClass":  "Unassigned",
+                          "color":  "/wAA",
+                          "transparency":  40,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  432700,
+                          "name":  "Phase-Exist",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  432701,
+                          "name":  "Phase-Temp",
+                          "materialClass":  "Unassigned",
+                          "color":  "AAD/",
+                          "transparency":  40,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  432702,
+                          "name":  "Poche",
+                          "materialClass":  "System",
+                          "color":  "AAD/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  432703,
+                          "name":  "Default Light Source",
+                          "materialClass":  "Unassigned",
+                          "color":  "//8A",
+                          "transparency":  75,
+                          "shininess":  64
+                      }
+                  ],
+    "windows":  [
+
+                ],
+    "electricalFixtures":  [
+
+                           ],
+    "warnings":  [
+
+                 ]
+}

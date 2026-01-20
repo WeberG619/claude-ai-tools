@@ -1,0 +1,65 @@
+{
+  "pipeline_id": "cd-set",
+  "pipeline_name": "Construction Document Set Generation",
+  "started_at": "2026-01-12T08:27:35.976646",
+  "current_phase": "P5",
+  "current_step": "P5.3",
+  "phase_results": {
+    "P1": {
+      "status": "completed",
+      "completed_at": "2026-01-12T08:27:36.130418"
+    },
+    "P2": {
+      "status": "completed",
+      "completed_at": "2026-01-12T08:27:36.195412"
+    },
+    "P3": {
+      "status": "completed",
+      "completed_at": "2026-01-12T08:27:36.236908"
+    },
+    "P4": {
+      "status": "completed",
+      "completed_at": "2026-01-12T08:27:36.307342"
+    },
+    "P5": {
+      "status": "completed",
+      "completed_at": "2026-01-12T08:27:36.379460"
+    }
+  },
+  "step_results": {},
+  "checkpoints_passed": [
+    {
+      "name": "Project Analyzed",
+      "phase": "P1",
+      "auto_approved": true,
+      "timestamp": "2026-01-12T08:27:36.130401"
+    },
+    {
+      "name": "Plan Complete",
+      "phase": "P2",
+      "auto_approved": true,
+      "timestamp": "2026-01-12T08:27:36.195395"
+    },
+    {
+      "name": "Sheets Created",
+      "phase": "P3",
+      "auto": true,
+      "timestamp": "2026-01-12T08:27:36.236891"
+    },
+    {
+      "name": "Views Placed",
+      "phase": "P4",
+      "auto_approved": true,
+      "timestamp": "2026-01-12T08:27:36.307326"
+    },
+    {
+      "name": "CD Set Complete",
+      "phase": "P5",
+      "auto_approved": true,
+      "timestamp": "2026-01-12T08:27:36.379444"
+    }
+  ],
+  "errors": [],
+  "completed": true,
+  "completed_at": "2026-01-12T08:27:36.394789"
+}

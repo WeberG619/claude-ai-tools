@@ -1,0 +1,8141 @@
+{
+  "address": "Southwest 216th Street, Goulds, Miami-Dade County, Florida, 33170, United States",
+  "latitude": 25.5661572,
+  "longitude": -80.388347,
+  "elevation_ft": 26.2,
+  "flood_zone": {
+    "zone": "X",
+    "full_zone": "X - AREA OF MINIMAL FLOOD HAZARD",
+    "description": "Moderate to Low Risk - Outside 100-year floodplain",
+    "sfha": false
+  },
+  "weather": {
+    "current": {
+      "temperature_f": 57.5,
+      "humidity_pct": 72,
+      "precipitation_in": 0.0,
+      "condition": "Overcast",
+      "wind_speed_mph": 7.5,
+      "wind_direction": 333
+    },
+    "forecast": [
+      {
+        "date": "2026-01-19",
+        "high_f": 66.5,
+        "low_f": 48.4,
+        "precipitation_in": 0.0,
+        "precip_chance_pct": 0,
+        "condition": "Overcast",
+        "wind_max_mph": 12.5
+      },
+      {
+        "date": "2026-01-20",
+        "high_f": 71.9,
+        "low_f": 50.9,
+        "precipitation_in": 0.0,
+        "precip_chance_pct": 2,
+        "condition": "Overcast",
+        "wind_max_mph": 19.0
+      },
+      {
+        "date": "2026-01-21",
+        "high_f": 72.3,
+        "low_f": 67.4,
+        "precipitation_in": 0.047,
+        "precip_chance_pct": 22,
+        "condition": "Light drizzle",
+        "wind_max_mph": 18.1
+      },
+      {
+        "date": "2026-01-22",
+        "high_f": 79.3,
+        "low_f": 68.8,
+        "precipitation_in": 0.028,
+        "precip_chance_pct": 42,
+        "condition": "Light drizzle",
+        "wind_max_mph": 14.5
+      },
+      {
+        "date": "2026-01-23",
+        "high_f": 79.8,
+        "low_f": 70.5,
+        "precipitation_in": 0.008,
+        "precip_chance_pct": 18,
+        "condition": "Light drizzle",
+        "wind_max_mph": 11.2
+      },
+      {
+        "date": "2026-01-24",
+        "high_f": 81.0,
+        "low_f": 69.2,
+        "precipitation_in": 0.0,
+        "precip_chance_pct": 6,
+        "condition": "Partly cloudy",
+        "wind_max_mph": 10.3
+      },
+      {
+        "date": "2026-01-25",
+        "high_f": 84.2,
+        "low_f": 66.1,
+        "precipitation_in": 0.0,
+        "precip_chance_pct": 5,
+        "condition": "Partly cloudy",
+        "wind_max_mph": 13.6
+      }
+    ]
+  },
+  "soil": {
+    "soil_name": "Krome very gravelly marly loam-Urban land complex, 0 to 2 percent slopes",
+    "component_name": "Krome",
+    "component_percent": "45",
+    "drainage_class": "Moderately well drained",
+    "drainage_description": "Water removed somewhat slowly; may need drainage",
+    "hydrologic_group": "D",
+    "hydrologic_description": "High runoff potential - Clay, high water table, shallow to bedrock",
+    "slope_percent": "1",
+    "taxonomic_class": "Loamy-skeletal, carbonatic, isohyperthermic Lithic Haprendolls",
+    "soil_order": "Mollisols",
+    "engineering_notes": "Generally suitable for standard foundation systems; High runoff potential - stormwater management critical; Consider retention/detention requirements; FL: Verify depth to limestone/water table with geotechnical report",
+    "source": "USDA NRCS Soil Data Access"
+  },
+  "sun_path": {
+    "current_position": {
+      "azimuth": 272.3,
+      "altitude": -49.6,
+      "direction": "W",
+      "timestamp": "2026-01-18T21:36:10.750526"
+    },
+    "today": {
+      "sunrise": "07:08",
+      "sunset": "17:53",
+      "solar_noon": "12:31",
+      "day_length_hours": 10.74,
+      "date": "2026-01-18"
+    },
+    "hourly_positions": [
+      {
+        "time": "08:00",
+        "azimuth": 61.4,
+        "altitude": 9.6,
+        "direction": "ENE"
+      },
+      {
+        "time": "09:00",
+        "azimuth": 52.9,
+        "altitude": 20.9,
+        "direction": "NE"
+      },
+      {
+        "time": "10:00",
+        "azimuth": 41.9,
+        "altitude": 30.9,
+        "direction": "NE"
+      },
+      {
+        "time": "11:00",
+        "azimuth": 27.7,
+        "altitude": 38.7,
+        "direction": "NNE"
+      },
+      {
+        "time": "12:00",
+        "azimuth": 10.0,
+        "altitude": 43.1,
+        "direction": "N"
+      },
+      {
+        "time": "13:00",
+        "azimuth": 350.8,
+        "altitude": 43.2,
+        "direction": "N"
+      },
+      {
+        "time": "14:00",
+        "azimuth": 333.0,
+        "altitude": 39.0,
+        "direction": "NNW"
+      },
+      {
+        "time": "15:00",
+        "azimuth": 318.6,
+        "altitude": 31.3,
+        "direction": "NW"
+      },
+      {
+        "time": "16:00",
+        "azimuth": 307.4,
+        "altitude": 21.4,
+        "direction": "NW"
+      },
+      {
+        "time": "17:00",
+        "azimuth": 298.8,
+        "altitude": 10.1,
+        "direction": "WNW"
+      }
+    ],
+    "summer_solstice": {
+      "sunrise": "05:30",
+      "sunset": "19:14",
+      "solar_noon": "12:22",
+      "day_length_hours": 13.73,
+      "date": "2026-06-21"
+    },
+    "winter_solstice": {
+      "sunrise": "07:03",
+      "sunset": "17:35",
+      "solar_noon": "12:19",
+      "day_length_hours": 10.54,
+      "date": "2026-12-21"
+    },
+    "orientation_recommendation": {
+      "optimal_long_axis": "East-West",
+      "reason": "Minimizes east/west sun exposure, maximizes south-facing windows for passive solar",
+      "south_facade": "Ideal for windows - winter sun gain, summer overhang shading",
+      "north_facade": "Minimal direct sun - good for even daylight, minimal heat gain",
+      "east_facade": "Morning sun - good for bedrooms, kitchens",
+      "west_facade": "Afternoon sun - needs shading, avoid large glass areas",
+      "roof_solar_optimal": "South-facing at angle equal to latitude",
+      "roof_solar_angle": "26\u00b0 from horizontal, facing south"
+    },
+    "latitude": 25.5661572,
+    "longitude": -80.388347
+  },
+  "parcel": {
+    "found": false,
+    "note": "FL DOT parcel API now requires authentication",
+    "manual_lookup": "https://www.miamidade.gov/pa/",
+    "all_county_links": {
+      "MIAMI-DADE": "https://www.miamidade.gov/pa/",
+      "BROWARD": "https://www.bcpa.net/",
+      "PALM BEACH": "https://www.pbcgov.org/papa/",
+      "MONROE": "https://www.mcpafl.org/",
+      "COLLIER": "https://www.collierappraiser.com/",
+      "LEE": "https://www.leepa.org/",
+      "HILLSBOROUGH": "https://www.hcpafl.org/",
+      "ORANGE": "https://www.ocpafl.org/",
+      "DUVAL": "https://www.coj.net/departments/property-appraiser"
+    },
+    "coordinates": {
+      "latitude": 25.5661572,
+      "longitude": -80.388347
+    },
+    "likely_county": "MIAMI-DADE",
+    "tip": "Visit https://www.miamidade.gov/pa/ and search by address or coordinates"
+  },
+  "storm_wind": {
+    "wind_design": {
+      "design_wind_speed_mph": 180,
+      "exposure_category": "C",
+      "risk_category": "II",
+      "hvhz": true,
+      "hvhz_note": "HIGH-VELOCITY HURRICANE ZONE - Enhanced construction requirements per FBC",
+      "code_reference": "ASCE 7-22, FBC 2023",
+      "source": "Estimated from coordinates",
+      "zone_name": "miami_dade_inland",
+      "reference_pressure_psf": 59.9
+    },
+    "storm_history": {
+      "major_hurricanes": [
+        {
+          "name": "Hurricane Irma",
+          "year": 2017,
+          "category": 4,
+          "max_wind": 130,
+          "affected_area": "All Florida"
+        },
+        {
+          "name": "Hurricane Dorian",
+          "year": 2019,
+          "category": 5,
+          "max_wind": 185,
+          "affected_area": "Near miss - Bahamas"
+        },
+        {
+          "name": "Hurricane Wilma",
+          "year": 2005,
+          "category": 3,
+          "max_wind": 120,
+          "affected_area": "South Florida"
+        },
+        {
+          "name": "Hurricane Andrew",
+          "year": 1992,
+          "category": 5,
+          "max_wind": 165,
+          "affected_area": "Miami-Dade"
+        }
+      ],
+      "recent_events": [],
+      "hurricane_risk": {
+        "level": "MODERATE-HIGH",
+        "annual_probability": "12-18%",
+        "factors": [
+          "South Florida - historically higher hurricane frequency",
+          "Peak season: August - October",
+          "Building code compliance critical for wind resistance",
+          "Flood insurance strongly recommended"
+        ]
+      },
+      "historical_note": "South Florida averages a major hurricane every 7-10 years",
+      "source": "NOAA Storm Events Database + Historical Records"
+    },
+    "flood_insurance": {
+      "nfip_community": true,
+      "insurance_required": "RECOMMENDED",
+      "estimated_premium_range": "$500 - $3,000/year",
+      "notes": [
+        "Near-coastal - flood risk varies by specific elevation",
+        "Verify with FEMA flood map for exact zone determination",
+        "Risk Rating 2.0 may affect actual premiums"
+      ]
+    },
+    "coordinates": {
+      "latitude": 25.5661572,
+      "longitude": -80.388347
+    },
+    "timestamp": "2026-01-18T21:36:11.983385",
+    "source": "NOAA + ASCE 7-22 + FBC 2023"
+  },
+  "environmental": {
+    "screening": {
+      "superfund_sites": [],
+      "brownfields": [
+        {
+          "note": "Brownfield data best accessed through Florida DEP",
+          "url": "https://floridadep.gov/waste/waste-cleanup/content/brownfields",
+          "tip": "Search by address on FL DEP site for specific brownfield status"
+        }
+      ],
+      "tri_facilities": [],
+      "air_facilities": [],
+      "water_permits": [],
+      "hazwaste_handlers": [],
+      "summary": {
+        "risk_level": "LOW",
+        "concerns": [
+          "No significant environmental concerns identified within search radius"
+        ],
+        "recommendation": "Standard due diligence appropriate. Phase I ESA recommended for commercial transactions.",
+        "phase1_recommended": false
+      },
+      "coordinates": {
+        "latitude": 25.5661572,
+        "longitude": -80.388347
+      },
+      "search_radius_miles": 1.0,
+      "timestamp": "2026-01-18T21:36:11.983404",
+      "source": "EPA ECHO, Envirofacts, EJScreen"
+    },
+    "air_quality": {
+      "aqi_category": "Good to Moderate",
+      "primary_pollutant": null,
+      "attainment_status": {
+        "ozone": "Attainment",
+        "pm2.5": "Attainment",
+        "pm10": "Attainment",
+        "co": "Attainment",
+        "no2": "Attainment",
+        "so2": "Attainment",
+        "lead": "Attainment"
+      },
+      "nearby_monitors": [],
+      "source": "EPA AirNow",
+      "notes": [
+        "South Florida generally has good air quality",
+        "Occasional elevated ozone in summer months",
+        "Miami-Dade is in attainment for all NAAQS pollutants"
+      ]
+    },
+    "wetlands": {
+      "wetlands_nearby": "LIKELY",
+      "wetland_types": [
+        "Potential: Mangrove, Saltmarsh, Tidal"
+      ],
+      "notes": [
+        "Florida has extensive wetland areas",
+        "Wetland delineation study recommended before development",
+        "Check with SFWMD (South Florida) or relevant WMD",
+        "Coastal location - high probability of jurisdictional wetlands"
+      ],
+      "source": "USFWS National Wetlands Inventory",
+      "regulatory_note": "Section 404 permit may be required for wetland impacts",
+      "lookup_url": "https://fwsprimary.wim.usgs.gov/wetlands/apps/wetlands-mapper/"
+    },
+    "summary": {
+      "risk_level": "LOW",
+      "concerns": [
+        "No significant environmental concerns identified within search radius"
+      ],
+      "recommendation": "Standard due diligence appropriate. Phase I ESA recommended for commercial transactions.",
+      "phase1_recommended": false
+    },
+    "coordinates": {
+      "latitude": 25.5661572,
+      "longitude": -80.388347
+    },
+    "timestamp": "2026-01-18T21:36:12.674068",
+    "source": "EPA ECHO, Envirofacts, USFWS NWI"
+  },
+  "demographics": {
+    "geography": {
+      "state_fips": "12",
+      "county_fips": "086",
+      "tract": "010400",
+      "block_group": "1",
+      "block": "1003",
+      "county_name": "Miami-Dade County",
+      "state_name": "Florida",
+      "found": true,
+      "geoid": "12086010400"
+    },
+    "tract_data": {
+      "population": {
+        "total": 5568,
+        "median_age": 39.5
+      },
+      "housing": {
+        "total_units": 1786,
+        "occupied": 1699,
+        "vacant": 87,
+        "median_value": 453400,
+        "median_rent": 1492,
+        "median_year_built": 2004,
+        "vacancy_rate_pct": 4.9
+      },
+      "income": {
+        "median_household": 77542,
+        "per_capita": 31962
+      },
+      "employment": {
+        "labor_force": 3075,
+        "unemployed": 69,
+        "unemployment_rate_pct": 2.2
+      },
+      "education": {
+        "bachelors_degree": 644,
+        "masters_degree": 221,
+        "doctorate_degree": 42,
+        "college_educated": 907
+      },
+      "found": true,
+      "geography_level": "tract",
+      "raw": {
+        "NAME": "Census Tract 104; Miami-Dade County; Florida",
+        "B01003_001E": "5568",
+        "B01002_001E": "39.5",
+        "B25001_001E": "1786",
+        "B25002_002E": "1699",
+        "B25002_003E": "87",
+        "B25077_001E": "453400",
+        "B25064_001E": "1492",
+        "B25035_001E": "2004",
+        "B19013_001E": "77542",
+        "B19301_001E": "31962",
+        "B23025_002E": "3075",
+        "B23025_005E": "69",
+        "B15003_022E": "644",
+        "B15003_023E": "221",
+        "B15003_025E": "42",
+        "B08301_001E": "2959",
+        "B08303_001E": "2800",
+        "state": "12",
+        "county": "086",
+        "tract": "010400"
+      },
+      "geography_name": "Census Tract 104; Miami-Dade County; Florida",
+      "year": 2022,
+      "source": "ACS 5-Year Estimates 2022"
+    },
+    "county_data": {
+      "population": {
+        "total": 2688237,
+        "median_age": 40.6
+      },
+      "housing": {
+        "total_units": 1075278,
+        "occupied": 952680,
+        "vacant": 122598,
+        "median_value": 387000,
+        "median_rent": 1623,
+        "median_year_built": 1979,
+        "vacancy_rate_pct": 11.4
+      },
+      "income": {
+        "median_household": 64215,
+        "per_capita": 35563
+      },
+      "employment": {
+        "labor_force": 1410119,
+        "unemployed": 64439,
+        "unemployment_rate_pct": 4.6
+      },
+      "education": {
+        "bachelors_degree": 388029,
+        "masters_degree": 148779,
+        "doctorate_degree": 24268,
+        "college_educated": 561076
+      },
+      "found": true,
+      "geography_level": "county",
+      "raw": {
+        "NAME": "Miami-Dade County, Florida",
+        "B01003_001E": "2688237",
+        "B01002_001E": "40.6",
+        "B25001_001E": "1075278",
+        "B25002_002E": "952680",
+        "B25002_003E": "122598",
+        "B25077_001E": "387000",
+        "B25064_001E": "1623",
+        "B25035_001E": "1979",
+        "B19013_001E": "64215",
+        "B19301_001E": "35563",
+        "B23025_002E": "1410119",
+        "B23025_005E": "64439",
+        "B15003_022E": "388029",
+        "B15003_023E": "148779",
+        "B15003_025E": "24268",
+        "B08301_001E": "1319578",
+        "B08303_001E": "1182271",
+        "state": "12",
+        "county": "086"
+      },
+      "geography_name": "Miami-Dade County, Florida",
+      "year": 2022,
+      "source": "ACS 5-Year Estimates 2022"
+    },
+    "market_indicators": {
+      "market_strength": "Strong",
+      "affordability": "Expensive",
+      "development_potential": "Lower",
+      "factors": [
+        "Low vacancy - tight market, strong demand",
+        "Price-to-income ratio 5.8 - expensive market",
+        "Newer housing stock (median built 2004)",
+        "Middle-income area - broad market appeal"
+      ],
+      "price_to_income_ratio": 5.8
+    },
+    "coordinates": {
+      "latitude": 25.5661572,
+      "longitude": -80.388347
+    },
+    "timestamp": "2026-01-18T21:36:15.645212",
+    "source": "US Census Bureau ACS 5-Year Estimates"
+  },
+  "site_context": {
+    "buildings": [
+      {
+        "id": 435237561,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 6.3,
+        "height_ft": 20.7
+      },
+      {
+        "id": 435538296,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 7.0,
+        "height_ft": 23.0
+      },
+      {
+        "id": 435538961,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 7.0,
+        "height_ft": 23.0
+      },
+      {
+        "id": 435564178,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 10.0,
+        "height_ft": 32.8
+      },
+      {
+        "id": 435564547,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 8.6,
+        "height_ft": 28.2
+      },
+      {
+        "id": 435577976,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 6.0,
+        "height_ft": 19.7
+      },
+      {
+        "id": 435584592,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 6.9,
+        "height_ft": 22.6
+      },
+      {
+        "id": 435730037,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 6.9,
+        "height_ft": 22.6
+      },
+      {
+        "id": 435732242,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 9.3,
+        "height_ft": 30.5
+      },
+      {
+        "id": 435736337,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 5.7,
+        "height_ft": 18.7
+      },
+      {
+        "id": 435881925,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 9.2,
+        "height_ft": 30.2
+      },
+      {
+        "id": 436034972,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 6.3,
+        "height_ft": 20.7
+      },
+      {
+        "id": 436038219,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 7.8,
+        "height_ft": 25.6
+      },
+      {
+        "id": 436038220,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 8.1,
+        "height_ft": 26.6
+      },
+      {
+        "id": 436038439,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 7.6,
+        "height_ft": 24.9
+      },
+      {
+        "id": 436038440,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 7.5,
+        "height_ft": 24.6
+      },
+      {
+        "id": 436038441,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 7.6,
+        "height_ft": 24.9
+      },
+      {
+        "id": 436038530,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 7.8,
+        "height_ft": 25.6
+      },
+      {
+        "id": 436038531,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 7.8,
+        "height_ft": 25.6
+      },
+      {
+        "id": 436038532,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 7.8,
+        "height_ft": 25.6
+      },
+      {
+        "id": 436038534,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 7.9,
+        "height_ft": 25.9
+      },
+      {
+        "id": 436038535,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 7.8,
+        "height_ft": 25.6
+      },
+      {
+        "id": 436038537,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 7.8,
+        "height_ft": 25.6
+      },
+      {
+        "id": 436038538,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 8.1,
+        "height_ft": 26.6
+      },
+      {
+        "id": 436038539,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 8.2,
+        "height_ft": 26.9
+      },
+      {
+        "id": 436038540,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 8.3,
+        "height_ft": 27.2
+      },
+      {
+        "id": 436038541,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 8.2,
+        "height_ft": 26.9
+      },
+      {
+        "id": 436038823,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 7.6,
+        "height_ft": 24.9
+      },
+      {
+        "id": 436040568,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 7.1,
+        "height_ft": 23.3
+      },
+      {
+        "id": 436124942,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 5.4,
+        "height_ft": 17.7
+      },
+      {
+        "id": 436125525,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 8.0,
+        "height_ft": 26.2
+      },
+      {
+        "id": 436126849,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 6.5,
+        "height_ft": 21.3
+      },
+      {
+        "id": 522607291,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522640217,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 8.1,
+        "height_ft": 26.6
+      },
+      {
+        "id": 522640219,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522640220,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522640223,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522640225,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522640226,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522640227,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522640228,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522640229,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522640230,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522640231,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522640233,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522640234,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522640235,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522640237,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522640238,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522640239,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522640240,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522640241,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522640242,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522640243,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522640244,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522640245,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522640246,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522640247,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522640248,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522640249,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522640250,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522640251,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522640252,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522640253,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522640254,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522640255,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522640256,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522640257,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522640258,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522640259,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522640260,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522640261,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522640262,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522640263,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522640264,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522640265,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522640266,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522640271,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522640272,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522640273,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522640274,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522640275,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522640276,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522640277,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522640278,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522640279,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522640280,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522640281,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522640282,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522640283,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522640284,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522640285,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522640287,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522640290,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522640291,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522640292,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522646260,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522646276,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522650979,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522650980,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522650982,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522650983,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522650985,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522650986,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522650989,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522650990,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522650992,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522674581,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522674582,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522674583,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522674584,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522674585,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522674586,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522674587,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522682074,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522682075,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522682084,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522682085,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522682087,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522682088,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522682090,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522682091,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522682092,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522682094,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522695729,
+        "type": "house",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": "residential"
+      },
+      {
+        "id": 522695730,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522695731,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522695766,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522695767,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522695768,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522695769,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522695770,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522695771,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522695772,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522695773,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522695774,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522695775,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522695776,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522695777,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522695778,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522695779,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522695780,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522695781,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522695782,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522695783,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522695784,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522695785,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522695786,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522695787,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522695788,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522695789,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522695790,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522695791,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522695792,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522695793,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522695794,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522695795,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522695796,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522695797,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522695798,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522695799,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522695800,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522695801,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522695802,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522695803,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522695804,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522695805,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522695806,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522695807,
+        "type": "church",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522695808,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522695809,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522695810,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522695811,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522695812,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522695813,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522695814,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522695815,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522695816,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522695817,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522695818,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522695819,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522695820,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522695821,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 522695822,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 638901359,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 5.1,
+        "height_ft": 16.7
+      },
+      {
+        "id": 638901447,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.9,
+        "height_ft": 12.8
+      },
+      {
+        "id": 638901451,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.4,
+        "height_ft": 11.2
+      },
+      {
+        "id": 638901533,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.5,
+        "height_ft": 14.8
+      },
+      {
+        "id": 638901534,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.6,
+        "height_ft": 15.1
+      },
+      {
+        "id": 638901535,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.6,
+        "height_ft": 11.8
+      },
+      {
+        "id": 638901536,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.6,
+        "height_ft": 11.8
+      },
+      {
+        "id": 638901537,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.9,
+        "height_ft": 12.8
+      },
+      {
+        "id": 638901538,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 2.5,
+        "height_ft": 8.2
+      },
+      {
+        "id": 638901987,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 2.4,
+        "height_ft": 7.9
+      },
+      {
+        "id": 638901992,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 5.0,
+        "height_ft": 16.4
+      },
+      {
+        "id": 638902025,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 5.0,
+        "height_ft": 16.4
+      },
+      {
+        "id": 638902030,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.9,
+        "height_ft": 16.1
+      },
+      {
+        "id": 638902069,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.7,
+        "height_ft": 15.4
+      },
+      {
+        "id": 638902083,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 5.2,
+        "height_ft": 17.1
+      },
+      {
+        "id": 638902092,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 5.0,
+        "height_ft": 16.4
+      },
+      {
+        "id": 638902097,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.4,
+        "height_ft": 14.4
+      },
+      {
+        "id": 638902154,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.5,
+        "height_ft": 14.8
+      },
+      {
+        "id": 638902162,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 7.2,
+        "height_ft": 23.6
+      },
+      {
+        "id": 638902187,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.3,
+        "height_ft": 14.1
+      },
+      {
+        "id": 638902226,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.9,
+        "height_ft": 12.8
+      },
+      {
+        "id": 638902230,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.9,
+        "height_ft": 16.1
+      },
+      {
+        "id": 638902235,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 5.0,
+        "height_ft": 16.4
+      },
+      {
+        "id": 638902309,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.7,
+        "height_ft": 12.1
+      },
+      {
+        "id": 638902356,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.4,
+        "height_ft": 14.4
+      },
+      {
+        "id": 638902406,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.9,
+        "height_ft": 16.1
+      },
+      {
+        "id": 638902410,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.4,
+        "height_ft": 11.2
+      },
+      {
+        "id": 638902460,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.0,
+        "height_ft": 13.1
+      },
+      {
+        "id": 638902470,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 6.7,
+        "height_ft": 22.0
+      },
+      {
+        "id": 638902484,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.8,
+        "height_ft": 12.5
+      },
+      {
+        "id": 638902489,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.9,
+        "height_ft": 16.1
+      },
+      {
+        "id": 638902512,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.1,
+        "height_ft": 13.5
+      },
+      {
+        "id": 638902580,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.3,
+        "height_ft": 10.8
+      },
+      {
+        "id": 638902590,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 5.1,
+        "height_ft": 16.7
+      },
+      {
+        "id": 638902617,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.5,
+        "height_ft": 11.5
+      },
+      {
+        "id": 638902626,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.1,
+        "height_ft": 13.5
+      },
+      {
+        "id": 638902646,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 7.3,
+        "height_ft": 24.0
+      },
+      {
+        "id": 638902658,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.1,
+        "height_ft": 13.5
+      },
+      {
+        "id": 638902662,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.1,
+        "height_ft": 13.5
+      },
+      {
+        "id": 638902672,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 5.0,
+        "height_ft": 16.4
+      },
+      {
+        "id": 638902689,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 5.0,
+        "height_ft": 16.4
+      },
+      {
+        "id": 638902706,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.7,
+        "height_ft": 12.1
+      },
+      {
+        "id": 638902757,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.2,
+        "height_ft": 10.5
+      },
+      {
+        "id": 638902829,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.4,
+        "height_ft": 14.4
+      },
+      {
+        "id": 638902876,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 5.0,
+        "height_ft": 16.4
+      },
+      {
+        "id": 638902877,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.9,
+        "height_ft": 16.1
+      },
+      {
+        "id": 638902878,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.0,
+        "height_ft": 9.8
+      },
+      {
+        "id": 638902879,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.2,
+        "height_ft": 10.5
+      },
+      {
+        "id": 638902880,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 2.4,
+        "height_ft": 7.9
+      },
+      {
+        "id": 638902881,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 2.6,
+        "height_ft": 8.5
+      },
+      {
+        "id": 638902882,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 2.7,
+        "height_ft": 8.9
+      },
+      {
+        "id": 638902883,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 2.6,
+        "height_ft": 8.5
+      },
+      {
+        "id": 638902884,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 7.7,
+        "height_ft": 25.3
+      },
+      {
+        "id": 638902885,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.7,
+        "height_ft": 12.1
+      },
+      {
+        "id": 638902886,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.7,
+        "height_ft": 12.1
+      },
+      {
+        "id": 638902887,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 2.6,
+        "height_ft": 8.5
+      },
+      {
+        "id": 638902891,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.7,
+        "height_ft": 12.1
+      },
+      {
+        "id": 638902892,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 5.1,
+        "height_ft": 16.7
+      },
+      {
+        "id": 638902893,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.2,
+        "height_ft": 10.5
+      },
+      {
+        "id": 638902894,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.0,
+        "height_ft": 13.1
+      },
+      {
+        "id": 638902898,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 2.5,
+        "height_ft": 8.2
+      },
+      {
+        "id": 638902899,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 2.0,
+        "height_ft": 6.6
+      },
+      {
+        "id": 638902942,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 5.1,
+        "height_ft": 16.7
+      },
+      {
+        "id": 638902953,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.4,
+        "height_ft": 14.4
+      },
+      {
+        "id": 638902955,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 5.0,
+        "height_ft": 16.4
+      },
+      {
+        "id": 638902963,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.9,
+        "height_ft": 16.1
+      },
+      {
+        "id": 638902968,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.2,
+        "height_ft": 13.8
+      },
+      {
+        "id": 638902974,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.0,
+        "height_ft": 13.1
+      },
+      {
+        "id": 638902976,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 5.0,
+        "height_ft": 16.4
+      },
+      {
+        "id": 638902978,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 5.0,
+        "height_ft": 16.4
+      },
+      {
+        "id": 638902980,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 5.8,
+        "height_ft": 19.0
+      },
+      {
+        "id": 638902988,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.6,
+        "height_ft": 11.8
+      },
+      {
+        "id": 638902995,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.6,
+        "height_ft": 15.1
+      },
+      {
+        "id": 638902996,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.3,
+        "height_ft": 14.1
+      },
+      {
+        "id": 638902999,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.7,
+        "height_ft": 15.4
+      },
+      {
+        "id": 638903000,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.1,
+        "height_ft": 13.5
+      },
+      {
+        "id": 638903001,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.2,
+        "height_ft": 13.8
+      },
+      {
+        "id": 638903006,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.2,
+        "height_ft": 13.8
+      },
+      {
+        "id": 638903017,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.3,
+        "height_ft": 10.8
+      },
+      {
+        "id": 638903044,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.7,
+        "height_ft": 15.4
+      },
+      {
+        "id": 638903061,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 2.9,
+        "height_ft": 9.5
+      },
+      {
+        "id": 638903067,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.9,
+        "height_ft": 16.1
+      },
+      {
+        "id": 638903071,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 5.4,
+        "height_ft": 17.7
+      },
+      {
+        "id": 638903072,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 5.2,
+        "height_ft": 17.1
+      },
+      {
+        "id": 638903105,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.5,
+        "height_ft": 14.8
+      },
+      {
+        "id": 638903114,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 5.1,
+        "height_ft": 16.7
+      },
+      {
+        "id": 638903121,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.6,
+        "height_ft": 15.1
+      },
+      {
+        "id": 638903124,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.7,
+        "height_ft": 15.4
+      },
+      {
+        "id": 638903132,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.1,
+        "height_ft": 13.5
+      },
+      {
+        "id": 638903157,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.5,
+        "height_ft": 14.8
+      },
+      {
+        "id": 638903210,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.3,
+        "height_ft": 14.1
+      },
+      {
+        "id": 638903212,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 5.2,
+        "height_ft": 17.1
+      },
+      {
+        "id": 638903218,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 5.0,
+        "height_ft": 16.4
+      },
+      {
+        "id": 638903230,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 5.0,
+        "height_ft": 16.4
+      },
+      {
+        "id": 638903231,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.8,
+        "height_ft": 12.5
+      },
+      {
+        "id": 638903236,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.8,
+        "height_ft": 15.7
+      },
+      {
+        "id": 638903238,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.3,
+        "height_ft": 10.8
+      },
+      {
+        "id": 638903239,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 5.0,
+        "height_ft": 16.4
+      },
+      {
+        "id": 638903241,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.6,
+        "height_ft": 15.1
+      },
+      {
+        "id": 638903242,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.0,
+        "height_ft": 13.1
+      },
+      {
+        "id": 638903243,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.3,
+        "height_ft": 14.1
+      },
+      {
+        "id": 638903245,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.9,
+        "height_ft": 16.1
+      },
+      {
+        "id": 638903252,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.7,
+        "height_ft": 12.1
+      },
+      {
+        "id": 638903255,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.5,
+        "height_ft": 14.8
+      },
+      {
+        "id": 638903265,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.7,
+        "height_ft": 15.4
+      },
+      {
+        "id": 638903273,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.0,
+        "height_ft": 13.1
+      },
+      {
+        "id": 638903278,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.4,
+        "height_ft": 14.4
+      },
+      {
+        "id": 638903280,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.1,
+        "height_ft": 13.5
+      },
+      {
+        "id": 638903286,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.7,
+        "height_ft": 12.1
+      },
+      {
+        "id": 638903290,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 5.0,
+        "height_ft": 16.4
+      },
+      {
+        "id": 638903292,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.3,
+        "height_ft": 10.8
+      },
+      {
+        "id": 638903293,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.6,
+        "height_ft": 11.8
+      },
+      {
+        "id": 638903294,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.3,
+        "height_ft": 10.8
+      },
+      {
+        "id": 638903295,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.3,
+        "height_ft": 14.1
+      },
+      {
+        "id": 638903298,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.9,
+        "height_ft": 12.8
+      },
+      {
+        "id": 638903303,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.5,
+        "height_ft": 11.5
+      },
+      {
+        "id": 638903305,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 5.1,
+        "height_ft": 16.7
+      },
+      {
+        "id": 638903306,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 5.2,
+        "height_ft": 17.1
+      },
+      {
+        "id": 638903307,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 5.2,
+        "height_ft": 17.1
+      },
+      {
+        "id": 638903311,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.3,
+        "height_ft": 14.1
+      },
+      {
+        "id": 638903317,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.8,
+        "height_ft": 12.5
+      },
+      {
+        "id": 638903320,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.2,
+        "height_ft": 13.8
+      },
+      {
+        "id": 638903324,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.9,
+        "height_ft": 12.8
+      },
+      {
+        "id": 638903330,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.1,
+        "height_ft": 10.2
+      },
+      {
+        "id": 638903332,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.6,
+        "height_ft": 11.8
+      },
+      {
+        "id": 638903333,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.2,
+        "height_ft": 10.5
+      },
+      {
+        "id": 638903337,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.3,
+        "height_ft": 10.8
+      },
+      {
+        "id": 638903346,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.7,
+        "height_ft": 12.1
+      },
+      {
+        "id": 638903352,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.8,
+        "height_ft": 12.5
+      },
+      {
+        "id": 638903360,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 2.5,
+        "height_ft": 8.2
+      },
+      {
+        "id": 638903362,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.5,
+        "height_ft": 14.8
+      },
+      {
+        "id": 638903368,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.3,
+        "height_ft": 14.1
+      },
+      {
+        "id": 638903374,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 7.4,
+        "height_ft": 24.3
+      },
+      {
+        "id": 638903376,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.6,
+        "height_ft": 15.1
+      },
+      {
+        "id": 638903378,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 5.4,
+        "height_ft": 17.7
+      },
+      {
+        "id": 638903380,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.5,
+        "height_ft": 14.8
+      },
+      {
+        "id": 638903382,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.8,
+        "height_ft": 15.7
+      },
+      {
+        "id": 638903385,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.0,
+        "height_ft": 13.1
+      },
+      {
+        "id": 638903388,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 5.0,
+        "height_ft": 16.4
+      },
+      {
+        "id": 638903390,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.5,
+        "height_ft": 14.8
+      },
+      {
+        "id": 638903459,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.7,
+        "height_ft": 12.1
+      },
+      {
+        "id": 638903460,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.9,
+        "height_ft": 16.1
+      },
+      {
+        "id": 638903467,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 5.1,
+        "height_ft": 16.7
+      },
+      {
+        "id": 638903471,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.6,
+        "height_ft": 11.8
+      },
+      {
+        "id": 638903473,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.4,
+        "height_ft": 14.4
+      },
+      {
+        "id": 638903476,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.3,
+        "height_ft": 14.1
+      },
+      {
+        "id": 638903477,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 6.0,
+        "height_ft": 19.7
+      },
+      {
+        "id": 638903478,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.3,
+        "height_ft": 14.1
+      },
+      {
+        "id": 638903479,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 5.1,
+        "height_ft": 16.7
+      },
+      {
+        "id": 638903480,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 5.1,
+        "height_ft": 16.7
+      },
+      {
+        "id": 638903481,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 5.1,
+        "height_ft": 16.7
+      },
+      {
+        "id": 638903483,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 5.1,
+        "height_ft": 16.7
+      },
+      {
+        "id": 638903485,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.5,
+        "height_ft": 14.8
+      },
+      {
+        "id": 638903486,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.2,
+        "height_ft": 13.8
+      },
+      {
+        "id": 638903487,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.5,
+        "height_ft": 14.8
+      },
+      {
+        "id": 638903491,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 5.0,
+        "height_ft": 16.4
+      },
+      {
+        "id": 638903494,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 5.1,
+        "height_ft": 16.7
+      },
+      {
+        "id": 638903511,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.5,
+        "height_ft": 11.5
+      },
+      {
+        "id": 638903512,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.6,
+        "height_ft": 11.8
+      },
+      {
+        "id": 638903513,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 7.2,
+        "height_ft": 23.6
+      },
+      {
+        "id": 638903514,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 5.2,
+        "height_ft": 17.1
+      },
+      {
+        "id": 638903515,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 6.5,
+        "height_ft": 21.3
+      },
+      {
+        "id": 638903528,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.2,
+        "height_ft": 13.8
+      },
+      {
+        "id": 638903542,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 5.3,
+        "height_ft": 17.4
+      },
+      {
+        "id": 638903547,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 5.3,
+        "height_ft": 17.4
+      },
+      {
+        "id": 638903553,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.8,
+        "height_ft": 12.5
+      },
+      {
+        "id": 638903563,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.8,
+        "height_ft": 12.5
+      },
+      {
+        "id": 638903571,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 5.0,
+        "height_ft": 16.4
+      },
+      {
+        "id": 638903574,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.9,
+        "height_ft": 12.8
+      },
+      {
+        "id": 638903579,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.8,
+        "height_ft": 15.7
+      },
+      {
+        "id": 639045661,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 2.4,
+        "height_ft": 7.9
+      },
+      {
+        "id": 639045662,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.4,
+        "height_ft": 11.2
+      },
+      {
+        "id": 639045730,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.5,
+        "height_ft": 11.5
+      },
+      {
+        "id": 639045981,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.7,
+        "height_ft": 12.1
+      },
+      {
+        "id": 639046002,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.5,
+        "height_ft": 14.8
+      },
+      {
+        "id": 639046261,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 5.1,
+        "height_ft": 16.7
+      },
+      {
+        "id": 639046262,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.8,
+        "height_ft": 15.7
+      },
+      {
+        "id": 639046263,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 5.1,
+        "height_ft": 16.7
+      },
+      {
+        "id": 639397517,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.1,
+        "height_ft": 10.2
+      },
+      {
+        "id": 639397536,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.5,
+        "height_ft": 11.5
+      },
+      {
+        "id": 639397541,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 2.7,
+        "height_ft": 8.9
+      },
+      {
+        "id": 639397542,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 2.5,
+        "height_ft": 8.2
+      },
+      {
+        "id": 639397543,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.5,
+        "height_ft": 14.8
+      },
+      {
+        "id": 639397544,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 2.3,
+        "height_ft": 7.5
+      },
+      {
+        "id": 639397545,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.2,
+        "height_ft": 10.5
+      },
+      {
+        "id": 639397546,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.3,
+        "height_ft": 10.8
+      },
+      {
+        "id": 639397586,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 2.6,
+        "height_ft": 8.5
+      },
+      {
+        "id": 639397587,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 2.4,
+        "height_ft": 7.9
+      },
+      {
+        "id": 639397588,
+        "type": "shed",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 2.5,
+        "height_ft": 8.2
+      },
+      {
+        "id": 639397589,
+        "type": "shed",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.3,
+        "height_ft": 10.8
+      },
+      {
+        "id": 639397590,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 2.4,
+        "height_ft": 7.9
+      },
+      {
+        "id": 639397652,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.9,
+        "height_ft": 12.8
+      },
+      {
+        "id": 639397699,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.9,
+        "height_ft": 12.8
+      },
+      {
+        "id": 639397722,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.8,
+        "height_ft": 15.7
+      },
+      {
+        "id": 639397762,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.8,
+        "height_ft": 12.5
+      },
+      {
+        "id": 639397987,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.3,
+        "height_ft": 10.8
+      },
+      {
+        "id": 639398205,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.1,
+        "height_ft": 10.2
+      },
+      {
+        "id": 639398260,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.2,
+        "height_ft": 10.5
+      },
+      {
+        "id": 639398300,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.9,
+        "height_ft": 12.8
+      },
+      {
+        "id": 639398364,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.7,
+        "height_ft": 15.4
+      },
+      {
+        "id": 639398728,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.1,
+        "height_ft": 10.2
+      },
+      {
+        "id": 639398751,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 6.6,
+        "height_ft": 21.7
+      },
+      {
+        "id": 639398753,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.9,
+        "height_ft": 12.8
+      },
+      {
+        "id": 639398759,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.5,
+        "height_ft": 11.5
+      },
+      {
+        "id": 639398765,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 2.0,
+        "height_ft": 6.6
+      },
+      {
+        "id": 639398766,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.5,
+        "height_ft": 11.5
+      },
+      {
+        "id": 639398767,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 1.9,
+        "height_ft": 6.2
+      },
+      {
+        "id": 639398768,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 2.6,
+        "height_ft": 8.5
+      },
+      {
+        "id": 639398769,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 1.7,
+        "height_ft": 5.6
+      },
+      {
+        "id": 639398770,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.2,
+        "height_ft": 10.5
+      },
+      {
+        "id": 639398893,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 6.9,
+        "height_ft": 22.6
+      },
+      {
+        "id": 639398895,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.1,
+        "height_ft": 10.2
+      },
+      {
+        "id": 639398942,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.9,
+        "height_ft": 16.1
+      },
+      {
+        "id": 639399010,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.1,
+        "height_ft": 10.2
+      },
+      {
+        "id": 639399013,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.5,
+        "height_ft": 14.8
+      },
+      {
+        "id": 639399040,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.5,
+        "height_ft": 11.5
+      },
+      {
+        "id": 639399274,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.7,
+        "height_ft": 12.1
+      },
+      {
+        "id": 639399338,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.9,
+        "height_ft": 12.8
+      },
+      {
+        "id": 639399395,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.1,
+        "height_ft": 13.5
+      },
+      {
+        "id": 639399498,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.8,
+        "height_ft": 12.5
+      },
+      {
+        "id": 639399558,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.1,
+        "height_ft": 13.5
+      },
+      {
+        "id": 639399566,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.5,
+        "height_ft": 11.5
+      },
+      {
+        "id": 639399603,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.3,
+        "height_ft": 10.8
+      },
+      {
+        "id": 639399637,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 2.5,
+        "height_ft": 8.2
+      },
+      {
+        "id": 639399666,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.1,
+        "height_ft": 13.5
+      },
+      {
+        "id": 639399699,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.6,
+        "height_ft": 11.8
+      },
+      {
+        "id": 639399706,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.6,
+        "height_ft": 11.8
+      },
+      {
+        "id": 639399813,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 4.8,
+        "height_ft": 15.7
+      },
+      {
+        "id": 639399904,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.3,
+        "height_ft": 10.8
+      },
+      {
+        "id": 639399982,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 5.1,
+        "height_ft": 16.7
+      },
+      {
+        "id": 639400047,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 2.4,
+        "height_ft": 7.9
+      },
+      {
+        "id": 639400194,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.7,
+        "height_ft": 12.1
+      },
+      {
+        "id": 639400265,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.4,
+        "height_ft": 11.2
+      },
+      {
+        "id": 639400361,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.9,
+        "height_ft": 12.8
+      },
+      {
+        "id": 639400455,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 6.9,
+        "height_ft": 22.6
+      },
+      {
+        "id": 639400507,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 3.9,
+        "height_ft": 12.8
+      },
+      {
+        "id": 640678499,
+        "type": "shed",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 640678500,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 640678501,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 640678502,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 640678503,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 640678504,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 640678505,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 830167459,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 830167460,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 830167461,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 830167472,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 830167473,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 830167474,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 830167475,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 830167476,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 830167478,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 830167479,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 830167480,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 830167481,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 830167482,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 830167483,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 830167484,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 830167485,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 830167486,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 830167487,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 830167488,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 830167489,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 830167490,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 830167491,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 830167492,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 830167493,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 830167494,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 830167495,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 830167496,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 830167497,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 830167498,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 830167499,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 830167500,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 830167501,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 830167502,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 830167503,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 830167504,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 830167505,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 830167506,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 830167507,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 830167508,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 830167509,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 830167510,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 830167511,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 830167512,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 830167513,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 830167514,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 830167515,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 830167516,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 972037692,
+        "type": "apartments",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": "residential"
+      },
+      {
+        "id": 1086120068,
+        "type": "apartments",
+        "name": "Silver Creek",
+        "height": null,
+        "levels": null,
+        "use": "residential"
+      },
+      {
+        "id": 1311400846,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 1311400847,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 1314280387,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 1314280388,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 1314280389,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 1314280396,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 1314280397,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 1314280401,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 1314280402,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 1314280403,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 1314280421,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 1314280445,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 1314280456,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 1314282544,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 1314282545,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 1314282546,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 1314282547,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 1314282548,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 1314282549,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 1314282550,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 1314282568,
+        "type": "construction",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 1314282597,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 1314282601,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 1314282602,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 1314282603,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 1314282604,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 1314287745,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 1314287746,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 1314287747,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 1314287797,
+        "type": "construction",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 1314291996,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null
+      },
+      {
+        "id": 1344490246,
+        "type": "house",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": "residential"
+      },
+      {
+        "id": 6462106,
+        "type": "yes",
+        "name": null,
+        "height": null,
+        "levels": null,
+        "use": null,
+        "height_m": 7.8,
+        "height_ft": 25.6
+      }
+    ],
+    "roads": [
+      {
+        "id": 11121391,
+        "type": "tertiary",
+        "name": "Southwest 124th Avenue",
+        "lanes": 2,
+        "speed_limit": "30 mph",
+        "surface": "asphalt",
+        "noise_level": "low"
+      },
+      {
+        "id": 11124045,
+        "type": "residential",
+        "name": "Southwest 215th Street",
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "low"
+      },
+      {
+        "id": 11124047,
+        "type": "residential",
+        "name": "Southwest 215th Street",
+        "lanes": 2,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "low"
+      },
+      {
+        "id": 11133199,
+        "type": "residential",
+        "name": "Southwest 221st Street",
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "low"
+      },
+      {
+        "id": 11134254,
+        "type": "residential",
+        "name": "Southwest 121st Avenue",
+        "lanes": 2,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "low"
+      },
+      {
+        "id": 11141019,
+        "type": "residential",
+        "name": "Southwest 212th Terrace",
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "low"
+      },
+      {
+        "id": 11141976,
+        "type": "residential",
+        "name": "Southwest 219th Street",
+        "lanes": 2,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "low"
+      },
+      {
+        "id": 11149193,
+        "type": "residential",
+        "name": "Southwest 122nd Avenue",
+        "lanes": null,
+        "speed_limit": "30 mph",
+        "surface": null,
+        "noise_level": "low"
+      },
+      {
+        "id": 11152390,
+        "type": "residential",
+        "name": "Southwest 122nd Court",
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "low"
+      },
+      {
+        "id": 11156296,
+        "type": "residential",
+        "name": "Southwest 119th Avenue",
+        "lanes": 2,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "low"
+      },
+      {
+        "id": 11157842,
+        "type": "residential",
+        "name": "Southwest 214th Terrace",
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "low"
+      },
+      {
+        "id": 11159738,
+        "type": "residential",
+        "name": "Southwest 217th Street",
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "low"
+      },
+      {
+        "id": 11160892,
+        "type": "tertiary",
+        "name": "Southwest 220th Street",
+        "lanes": 2,
+        "speed_limit": "30 mph",
+        "surface": "asphalt",
+        "noise_level": "low"
+      },
+      {
+        "id": 11160960,
+        "type": "residential",
+        "name": "Southwest 214th Street",
+        "lanes": 2,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "low"
+      },
+      {
+        "id": 11160962,
+        "type": "residential",
+        "name": "Southwest 214th Street",
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "low"
+      },
+      {
+        "id": 11162883,
+        "type": "residential",
+        "name": "Southwest 213th Terrace",
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "low"
+      },
+      {
+        "id": 11165177,
+        "type": "residential",
+        "name": "Southwest 120th Avenue",
+        "lanes": 2,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "low"
+      },
+      {
+        "id": 11166321,
+        "type": "residential",
+        "name": "Southwest 123rd Avenue",
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "low"
+      },
+      {
+        "id": 11167638,
+        "type": "tertiary",
+        "name": "Old Dixie Highway",
+        "lanes": 2,
+        "speed_limit": "30 mph",
+        "surface": "asphalt",
+        "noise_level": "low"
+      },
+      {
+        "id": 11167640,
+        "type": "residential",
+        "name": "Old Dixie Highway",
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "low"
+      },
+      {
+        "id": 11168501,
+        "type": "residential",
+        "name": "Southwest 213th Street",
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "low"
+      },
+      {
+        "id": 42091140,
+        "type": "residential",
+        "name": "Southwest 221st Street",
+        "lanes": 2,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "low"
+      },
+      {
+        "id": 42506272,
+        "type": "busway",
+        "name": "South Miami-Dade Busway",
+        "lanes": 2,
+        "speed_limit": "45 mph",
+        "surface": "asphalt",
+        "noise_level": "unknown"
+      },
+      {
+        "id": 83070607,
+        "type": "tertiary",
+        "name": "Southwest 220th Street",
+        "lanes": 2,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "low"
+      },
+      {
+        "id": 83206246,
+        "type": "residential",
+        "name": "Southwest 212th Street",
+        "lanes": 2,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "low"
+      },
+      {
+        "id": 84270392,
+        "type": "tertiary",
+        "name": "Southwest 216th Street",
+        "lanes": 1,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "low"
+      },
+      {
+        "id": 132683352,
+        "type": "cycleway",
+        "name": "Black Creek Trail",
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 169408713,
+        "type": "residential",
+        "name": "Southwest 123rd Avenue",
+        "lanes": 2,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "low"
+      },
+      {
+        "id": 169408714,
+        "type": "residential",
+        "name": "Southwest 123rd Avenue",
+        "lanes": 2,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "low"
+      },
+      {
+        "id": 169408718,
+        "type": "residential",
+        "name": "Southwest 218th Street",
+        "lanes": 2,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "low"
+      },
+      {
+        "id": 190545351,
+        "type": "tertiary",
+        "name": "Southwest 216th Street",
+        "lanes": 2,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "low"
+      },
+      {
+        "id": 190557270,
+        "type": "tertiary",
+        "name": "Southwest 122nd Avenue",
+        "lanes": 2,
+        "speed_limit": "30 mph",
+        "surface": "asphalt",
+        "noise_level": "low"
+      },
+      {
+        "id": 199283169,
+        "type": "trunk_link",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "unknown"
+      },
+      {
+        "id": 205118323,
+        "type": "residential",
+        "name": "Southwest 215th Street",
+        "lanes": 2,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "low"
+      },
+      {
+        "id": 205118344,
+        "type": "residential",
+        "name": "Southwest 215th Lane",
+        "lanes": 2,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "low"
+      },
+      {
+        "id": 205118348,
+        "type": "residential",
+        "name": "Southwest 214th Terrace",
+        "lanes": 2,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "low"
+      },
+      {
+        "id": 205118386,
+        "type": "residential",
+        "name": "Southwest 214 Lane",
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "low"
+      },
+      {
+        "id": 205118461,
+        "type": "residential",
+        "name": "Southwest 213th Terrace",
+        "lanes": 2,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "low"
+      },
+      {
+        "id": 205118470,
+        "type": "residential",
+        "name": "Southwest 215th Terrace",
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "low"
+      },
+      {
+        "id": 205118518,
+        "type": "residential",
+        "name": "Southwest 124th Avenue",
+        "lanes": 2,
+        "speed_limit": "30 mph",
+        "surface": "asphalt",
+        "noise_level": "low"
+      },
+      {
+        "id": 205118519,
+        "type": "residential",
+        "name": "Southwest 212th Terrace",
+        "lanes": 2,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "low"
+      },
+      {
+        "id": 357820640,
+        "type": "residential",
+        "name": "Southwest 217th Street",
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "low"
+      },
+      {
+        "id": 386855348,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 386855360,
+        "type": "trunk_link",
+        "name": null,
+        "lanes": 1,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "unknown"
+      },
+      {
+        "id": 386855361,
+        "type": "trunk",
+        "name": "South Dixie Highway",
+        "lanes": 2,
+        "speed_limit": "45 mph",
+        "surface": "asphalt",
+        "noise_level": "high"
+      },
+      {
+        "id": 386855363,
+        "type": "tertiary",
+        "name": "Southwest 220th Street",
+        "lanes": 2,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "low"
+      },
+      {
+        "id": 386855365,
+        "type": "trunk_link",
+        "name": null,
+        "lanes": 1,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "unknown"
+      },
+      {
+        "id": 386855373,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 417694540,
+        "type": "tertiary",
+        "name": "Southwest 220th Street",
+        "lanes": 2,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "low"
+      },
+      {
+        "id": 418257374,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 522290984,
+        "type": "service",
+        "name": null,
+        "lanes": 1,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "unknown"
+      },
+      {
+        "id": 522290985,
+        "type": "residential",
+        "name": "Southwest 219th Street",
+        "lanes": 2,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "low"
+      },
+      {
+        "id": 571079415,
+        "type": "service",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "unknown"
+      },
+      {
+        "id": 571079416,
+        "type": "service",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "unknown"
+      },
+      {
+        "id": 571079417,
+        "type": "service",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "unknown"
+      },
+      {
+        "id": 571079418,
+        "type": "service",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "unknown"
+      },
+      {
+        "id": 571079419,
+        "type": "service",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "unknown"
+      },
+      {
+        "id": 585077615,
+        "type": "residential",
+        "name": "Southwest 123rd Avenue",
+        "lanes": 2,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "low"
+      },
+      {
+        "id": 608492686,
+        "type": "residential",
+        "name": "Southwest 212th Street",
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "low"
+      },
+      {
+        "id": 682357941,
+        "type": "residential",
+        "name": "Southwest 123rd Place",
+        "lanes": 2,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "low"
+      },
+      {
+        "id": 682357942,
+        "type": "residential",
+        "name": "Southwest 123rd Court",
+        "lanes": 2,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "low"
+      },
+      {
+        "id": 683406963,
+        "type": "trunk",
+        "name": "South Dixie Highway",
+        "lanes": 2,
+        "speed_limit": "45 mph",
+        "surface": "asphalt",
+        "noise_level": "high"
+      },
+      {
+        "id": 733210115,
+        "type": "residential",
+        "name": null,
+        "lanes": 2,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "low"
+      },
+      {
+        "id": 733210116,
+        "type": "residential",
+        "name": null,
+        "lanes": 2,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "low"
+      },
+      {
+        "id": 738238323,
+        "type": "service",
+        "name": null,
+        "lanes": 2,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "unknown"
+      },
+      {
+        "id": 766131181,
+        "type": "service",
+        "name": null,
+        "lanes": 2,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "unknown"
+      },
+      {
+        "id": 806940829,
+        "type": "platform",
+        "name": "Southwest 220th Street",
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "unknown"
+      },
+      {
+        "id": 806940831,
+        "type": "platform",
+        "name": "Southwest 220th Street",
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "unknown"
+      },
+      {
+        "id": 806942782,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 806942783,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 807023740,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 923790638,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 999764505,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1041275973,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1041275978,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1041275992,
+        "type": "cycleway",
+        "name": "South Dade Trail",
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1041275994,
+        "type": "cycleway",
+        "name": "South Dade Trail",
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1041275995,
+        "type": "cycleway",
+        "name": "South Dade Trail",
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1086120061,
+        "type": "residential",
+        "name": null,
+        "lanes": 2,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "low"
+      },
+      {
+        "id": 1086120062,
+        "type": "service",
+        "name": null,
+        "lanes": 2,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "unknown"
+      },
+      {
+        "id": 1086120063,
+        "type": "service",
+        "name": null,
+        "lanes": 1,
+        "speed_limit": null,
+        "surface": "paving_stones",
+        "noise_level": "unknown"
+      },
+      {
+        "id": 1086120064,
+        "type": "service",
+        "name": null,
+        "lanes": 1,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "unknown"
+      },
+      {
+        "id": 1086120065,
+        "type": "service",
+        "name": null,
+        "lanes": 2,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "unknown"
+      },
+      {
+        "id": 1086120067,
+        "type": "service",
+        "name": null,
+        "lanes": 2,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "unknown"
+      },
+      {
+        "id": 1086120070,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1086120072,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1086120073,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1086120077,
+        "type": "service",
+        "name": null,
+        "lanes": 1,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "unknown"
+      },
+      {
+        "id": 1086122246,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1086122247,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1086122248,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1086122249,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1086122250,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1086122251,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1086122252,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1086123750,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1086123751,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1086123752,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1086123753,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1086123755,
+        "type": "cycleway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1092836208,
+        "type": "residential",
+        "name": "Southwest 122nd Avenue",
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "low"
+      },
+      {
+        "id": 1092836209,
+        "type": "tertiary",
+        "name": "Southwest 216th Street",
+        "lanes": 1,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "low"
+      },
+      {
+        "id": 1092836211,
+        "type": "tertiary",
+        "name": "Southwest 216th Street",
+        "lanes": 2,
+        "speed_limit": "40 mph",
+        "surface": "asphalt",
+        "noise_level": "low"
+      },
+      {
+        "id": 1092836213,
+        "type": "tertiary_link",
+        "name": null,
+        "lanes": 1,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "unknown"
+      },
+      {
+        "id": 1092836214,
+        "type": "tertiary",
+        "name": "Southwest 216th Street",
+        "lanes": 1,
+        "speed_limit": "40 mph",
+        "surface": "asphalt",
+        "noise_level": "low"
+      },
+      {
+        "id": 1092836215,
+        "type": "residential",
+        "name": "Southwest 119th Avenue",
+        "lanes": 2,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "low"
+      },
+      {
+        "id": 1092836216,
+        "type": "tertiary",
+        "name": "Southwest 216th Street",
+        "lanes": 1,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "low"
+      },
+      {
+        "id": 1092836217,
+        "type": "residential",
+        "name": "Southwest 120th Avenue",
+        "lanes": 2,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "low"
+      },
+      {
+        "id": 1092836218,
+        "type": "tertiary",
+        "name": "Southwest 216th Street",
+        "lanes": 1,
+        "speed_limit": "40 mph",
+        "surface": "asphalt",
+        "noise_level": "low"
+      },
+      {
+        "id": 1092836219,
+        "type": "residential",
+        "name": "Southwest 122nd Avenue",
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "low"
+      },
+      {
+        "id": 1092836220,
+        "type": "residential",
+        "name": "Southwest 217th Street",
+        "lanes": 2,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "low"
+      },
+      {
+        "id": 1092836221,
+        "type": "residential",
+        "name": "Southwest 122nd Avenue",
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "low"
+      },
+      {
+        "id": 1092836222,
+        "type": "residential",
+        "name": "Southwest 122nd Avenue",
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "low"
+      },
+      {
+        "id": 1092836223,
+        "type": "residential",
+        "name": "Southwest 122nd Avenue",
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "low"
+      },
+      {
+        "id": 1092836224,
+        "type": "residential",
+        "name": "Southwest 122nd Avenue",
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "low"
+      },
+      {
+        "id": 1092836225,
+        "type": "tertiary",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "low"
+      },
+      {
+        "id": 1092836226,
+        "type": "residential",
+        "name": "Southwest 122nd Avenue",
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "low"
+      },
+      {
+        "id": 1092836227,
+        "type": "tertiary",
+        "name": "Southwest 216th Street",
+        "lanes": 2,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "low"
+      },
+      {
+        "id": 1092836229,
+        "type": "tertiary",
+        "name": "Southwest 216th Street",
+        "lanes": 2,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "low"
+      },
+      {
+        "id": 1092836232,
+        "type": "tertiary",
+        "name": "Southwest 216th Street",
+        "lanes": 1,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "low"
+      },
+      {
+        "id": 1092836233,
+        "type": "residential",
+        "name": "Southwest 119th Avenue",
+        "lanes": 2,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "low"
+      },
+      {
+        "id": 1092836234,
+        "type": "tertiary",
+        "name": "Southwest 216th Street",
+        "lanes": 2,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "low"
+      },
+      {
+        "id": 1092836235,
+        "type": "tertiary",
+        "name": "Southwest 216th Street",
+        "lanes": 3,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "low"
+      },
+      {
+        "id": 1092836236,
+        "type": "residential",
+        "name": "Southwest 120th Avenue",
+        "lanes": 2,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "low"
+      },
+      {
+        "id": 1092836237,
+        "type": "tertiary",
+        "name": "Southwest 216th Street",
+        "lanes": 1,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "low"
+      },
+      {
+        "id": 1092836238,
+        "type": "tertiary",
+        "name": "Southwest 216th Street",
+        "lanes": 2,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "low"
+      },
+      {
+        "id": 1092836239,
+        "type": "tertiary",
+        "name": "Southwest 216th Street",
+        "lanes": 1,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "low"
+      },
+      {
+        "id": 1092836240,
+        "type": "tertiary",
+        "name": "Southwest 124th Avenue",
+        "lanes": 2,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "low"
+      },
+      {
+        "id": 1092836241,
+        "type": "tertiary",
+        "name": "Southwest 216th Street",
+        "lanes": 2,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "low"
+      },
+      {
+        "id": 1092836243,
+        "type": "tertiary",
+        "name": "Southwest 216th Street",
+        "lanes": 1,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "low"
+      },
+      {
+        "id": 1301167020,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1301167022,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1301167023,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314280390,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314280391,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314280392,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314280393,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314280400,
+        "type": "service",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "unknown"
+      },
+      {
+        "id": 1314280404,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314280405,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314280406,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314280408,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314280409,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314280410,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314280412,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314280413,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314280415,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314280416,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314280417,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314280418,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314280419,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314280420,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314280423,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314280424,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314280425,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314280426,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314280427,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314280428,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314280429,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314280430,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314280431,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314280432,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314280433,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314280434,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314280435,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314280436,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314280437,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314280438,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314280439,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314280440,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314280441,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314280442,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314280444,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314280447,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314280455,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314280457,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314280459,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314280460,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314280461,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314280462,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314280463,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314282551,
+        "type": "cycleway",
+        "name": "South Dade Trail",
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314282552,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314282553,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314282554,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314282555,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314282557,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314282558,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314282559,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314282560,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314282562,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314282563,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314282564,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314282565,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314282566,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314282567,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314282571,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314282572,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314282573,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314282574,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314282576,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314282577,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314282578,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314282579,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314282580,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314282581,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314282582,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314282585,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314282586,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314282587,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314282588,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314282589,
+        "type": "service",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "unknown"
+      },
+      {
+        "id": 1314282590,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314282591,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314282592,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314282593,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314282594,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314282595,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314282596,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314282599,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314282605,
+        "type": "service",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "unknown"
+      },
+      {
+        "id": 1314282606,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314287739,
+        "type": "tertiary",
+        "name": "Southwest 216th Street",
+        "lanes": 1,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "low"
+      },
+      {
+        "id": 1314287740,
+        "type": "tertiary",
+        "name": "Southwest 216th Street",
+        "lanes": 1,
+        "speed_limit": "40 mph",
+        "surface": "asphalt",
+        "noise_level": "low"
+      },
+      {
+        "id": 1314287742,
+        "type": "tertiary",
+        "name": "Southwest 216th Street",
+        "lanes": 1,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "low"
+      },
+      {
+        "id": 1314287743,
+        "type": "tertiary",
+        "name": "Southwest 216th Street",
+        "lanes": 1,
+        "speed_limit": "40 mph",
+        "surface": "asphalt",
+        "noise_level": "low"
+      },
+      {
+        "id": 1314287748,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314287749,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314287750,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314287751,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314287752,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314287753,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314287790,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314287792,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314287793,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314287796,
+        "type": "service",
+        "name": null,
+        "lanes": 4,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "unknown"
+      },
+      {
+        "id": 1314287798,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314287799,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314287802,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314287803,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314287804,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314291978,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314291979,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314291983,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314522546,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314522547,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314522548,
+        "type": "path",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314522550,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314522551,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314522554,
+        "type": "path",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314522555,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314522558,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314522559,
+        "type": "path",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314522560,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314522561,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1314522563,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1318363766,
+        "type": "trunk",
+        "name": "South Dixie Highway",
+        "lanes": 3,
+        "speed_limit": "45 mph",
+        "surface": "asphalt",
+        "noise_level": "high"
+      },
+      {
+        "id": 1344404985,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1344404986,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1344404987,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1344404988,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1344404989,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1344404990,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1344404991,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1344404992,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1344404993,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1344406267,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1344490169,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1344490170,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1344490171,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1344490196,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1344490197,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1344490198,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1344490199,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1344490200,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1344490201,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1344490202,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1344490203,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1344490204,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1344490205,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1344490206,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1344490207,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1344490208,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1344490209,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1344490210,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1344490211,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1344490212,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1344490213,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1344490214,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1344490216,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1344490245,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1344490247,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1344490248,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1344490249,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1344490250,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1344490251,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1344490252,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1344490253,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1357714795,
+        "type": "service",
+        "name": "Southwest 118 Place",
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "unknown"
+      },
+      {
+        "id": 1357714796,
+        "type": "service",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "unknown"
+      },
+      {
+        "id": 1357714797,
+        "type": "service",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "unknown"
+      },
+      {
+        "id": 1425901023,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1434442981,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1434442982,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1434482128,
+        "type": "service",
+        "name": null,
+        "lanes": 1,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "unknown"
+      },
+      {
+        "id": 1434482129,
+        "type": "service",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "unknown"
+      },
+      {
+        "id": 1434482130,
+        "type": "service",
+        "name": null,
+        "lanes": 3,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "unknown"
+      },
+      {
+        "id": 1434482131,
+        "type": "service",
+        "name": null,
+        "lanes": 2,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "unknown"
+      },
+      {
+        "id": 1434482132,
+        "type": "service",
+        "name": null,
+        "lanes": 1,
+        "speed_limit": null,
+        "surface": "asphalt",
+        "noise_level": "unknown"
+      },
+      {
+        "id": 1434482135,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1434482140,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1434482141,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": "concrete",
+        "noise_level": "minimal"
+      },
+      {
+        "id": 1434482142,
+        "type": "footway",
+        "name": null,
+        "lanes": null,
+        "speed_limit": null,
+        "surface": null,
+        "noise_level": "minimal"
+      }
+    ],
+    "transit": [
+      {
+        "id": 1039656679,
+        "type": "bus",
+        "name": "Busway @ Southwest 220th Street",
+        "operator": "Miami-Dade Transit",
+        "routes": "34;38",
+        "lat": 25.5628363,
+        "lon": -80.3859507
+      },
+      {
+        "id": 1039656689,
+        "type": "bus",
+        "name": "Busway @ Southwest 220th Street",
+        "operator": "Miami-Dade Transit",
+        "routes": "34;38",
+        "lat": 25.5622468,
+        "lon": -80.3862709
+      },
+      {
+        "id": 7546022331,
+        "type": "bus",
+        "name": "Southwest 220th Street",
+        "operator": "Miami-Dade Transit",
+        "routes": null,
+        "lat": 25.5623129,
+        "lon": -80.3863366
+      },
+      {
+        "id": 7546022332,
+        "type": "bus",
+        "name": "Southwest 220th Street",
+        "operator": "Miami-Dade Transit",
+        "routes": null,
+        "lat": 25.5627758,
+        "lon": -80.3858838
+      }
+    ],
+    "amenities": {
+      "school": [
+        {
+          "id": 358709981,
+          "type": "school",
+          "name": "Goulds School",
+          "cuisine": null,
+          "healthcare": null,
+          "lat": 25.5684405,
+          "lon": -80.3892211
+        },
+        {
+          "id": 358728701,
+          "type": "school",
+          "name": "Silver Palm School",
+          "cuisine": null,
+          "healthcare": null,
+          "lat": 25.5656627,
+          "lon": -80.3858877
+        },
+        {
+          "id": 358742420,
+          "type": "school",
+          "name": "Isaac Withers Head Start",
+          "cuisine": null,
+          "healthcare": null,
+          "lat": 25.5686111,
+          "lon": -80.3888889
+        }
+      ],
+      "kindergarten": [
+        {
+          "id": 367822598,
+          "type": "kindergarten",
+          "name": "Project Thrive South Day Care Center",
+          "cuisine": null,
+          "healthcare": null,
+          "lat": 25.568585,
+          "lon": -80.3889018
+        }
+      ],
+      "waste_disposal": [
+        {
+          "id": 13184943178,
+          "type": "waste_disposal",
+          "name": null,
+          "cuisine": null,
+          "healthcare": null,
+          "lat": 25.5651113,
+          "lon": -80.3929979
+        }
+      ],
+      "shelter": [
+        {
+          "id": 806940828,
+          "type": "shelter",
+          "name": null,
+          "cuisine": null,
+          "healthcare": null
+        },
+        {
+          "id": 806940830,
+          "type": "shelter",
+          "name": null,
+          "cuisine": null,
+          "healthcare": null
+        }
+      ]
+    },
+    "water": [
+      {
+        "id": 83204221,
+        "type": "canal",
+        "name": "Black Creek Canal"
+      },
+      {
+        "id": 14985375,
+        "type": "water",
+        "name": "Black Creek Canal"
+      }
+    ],
+    "infrastructure": [],
+    "parks": [
+      {
+        "id": 522290987,
+        "type": "park",
+        "name": "Sharman Park",
+        "access": "public"
+      },
+      {
+        "id": 1314280458,
+        "type": "playground",
+        "name": null,
+        "access": "public"
+      }
+    ],
+    "summary": {
+      "building_count": 509,
+      "building_types": {
+        "yes": 499,
+        "residential": 4,
+        "church": 1,
+        "shed": 3,
+        "construction": 2
+      },
+      "transit_access": "good",
+      "transit_stops": 4,
+      "road_noise_risk": "high",
+      "major_roads_nearby": 3,
+      "amenity_count": 7,
+      "water_features": 2,
+      "parks_nearby": 2,
+      "infrastructure_concerns": [
+        "Major highway nearby - noise mitigation may be needed"
+      ],
+      "walkability_indicators": [
+        "4 bus stops nearby",
+        "3 schools",
+        "2 parks/green spaces"
+      ],
+      "walkability": "Excellent"
+    },
+    "coordinates": {
+      "latitude": 25.5661572,
+      "longitude": -80.388347
+    },
+    "radius_meters": 500,
+    "timestamp": "2026-01-18T21:36:15.645267",
+    "source": "OpenStreetMap via Overpass API"
+  },
+  "timestamp": "2026-01-18T21:36:19.666839",
+  "apis_used": [
+    "Nominatim/OpenStreetMap",
+    "Open-Elevation",
+    "FEMA NFHL",
+    "Open-Meteo",
+    "Sun Path Calculator (offline)",
+    "USDA Soil Data Access",
+    "NOAA Storm Data + ASCE 7",
+    "EPA ECHO/Envirofacts",
+    "US Census ACS",
+    "Overpass/OpenStreetMap"
+  ]
+}

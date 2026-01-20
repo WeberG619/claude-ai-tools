@@ -1,0 +1,7255 @@
+{
+  "version": "1.0",
+  "generated_from": "/mnt/d/RevitMCPBridge2026/src/MCPServer.cs",
+  "total_methods": 768,
+  "task_descriptions": {
+    "wall_creation": "Creating walls and wall-related geometry",
+    "wall_query": "Querying wall information",
+    "element_deletion": "Deleting elements from the model",
+    "room_operations": "Room and area creation, tagging, and queries",
+    "door_window": "Door and window placement and queries",
+    "view_creation": "Creating new views",
+    "view_management": "Managing and querying views",
+    "sheet_creation": "Creating sheets",
+    "viewport_placement": "Placing views on sheets",
+    "sheet_management": "Sheet queries and title block operations",
+    "annotation": "Annotations, tags, text, and dimensions",
+    "scheduling": "Creating and managing schedules",
+    "family_operations": "Family loading, editing, and instance placement",
+    "parameter_operations": "Parameter creation and value manipulation",
+    "mep_operations": "MEP system creation and management",
+    "structural": "Structural elements and analysis",
+    "floor_ceiling_roof": "Floor, ceiling, and roof creation/editing",
+    "document_management": "Document operations, saving, exporting",
+    "revision_tracking": "Revisions and revision clouds",
+    "selection": "Element selection and picking",
+    "verification": "Element and model verification",
+    "system_health": "System health, stats, and configuration",
+    "transaction_control": "Transaction management and undo operations",
+    "link_management": "Linked models and CAD imports",
+    "workset_phase": "Workset and phase management",
+    "grid_level": "Grids and levels",
+    "material_operations": "Material assignment and queries",
+    "filter_operations": "View filters and element filtering",
+    "group_operations": "Element grouping operations",
+    "site_operations": "Site and topography operations",
+    "stair_railing": "Stair and railing creation",
+    "render_capture": "Rendering and image capture",
+    "intelligence": "AI intelligence and workflow automation",
+    "compliance": "Code compliance and standards checking"
+  },
+  "tasks": {
+    "wall_creation": [
+      "createWallByPoints",
+      "createWallsFromPolyline",
+      "batchCreateWalls",
+      "tagWall",
+      "getCADWallCandidates",
+      "checkWallFireRatings"
+    ],
+    "general": [
+      "getWalls",
+      "zoomToFit",
+      "zoomToElement",
+      "setDialogAutoHandle",
+      "getDialogSettings",
+      "getDialogHistory",
+      "clearDialogHistory",
+      "highlightElements",
+      "zoomToElements",
+      "executeRevitCommand",
+      "listRevitCommands",
+      "showTaskDialog",
+      "showInputDialog",
+      "getUIState",
+      "sendKeySequence",
+      "getRibbonState",
+      "canExecuteCommand",
+      "getPropertiesPaletteState",
+      "getProjectBrowserState",
+      "addReferencePlane",
+      "createExtrusion",
+      "listProjectTemplates",
+      "setProjectInfo",
+      "enableWorksharing",
+      "getPrintSettings",
+      "getScopeBoxes",
+      "createScopeBox",
+      "getLegends",
+      "getLegendComponents",
+      "createAssembly",
+      "getAssemblies",
+      "setElementVisibility",
+      "setCategoryVisibility",
+      "getVisibleElements",
+      "setGraphicsOverride",
+      "isolateElements",
+      "set3DSectionBox",
+      "batchExecute",
+      "safeExecute",
+      "placeLightFixture",
+      "addSlopeArrow",
+      "createSheetList",
+      "getAvailableSchedulableFields",
+      "setConditionalFormatting",
+      "setFieldAlignment",
+      "addCalculatedField",
+      "modifyCalculatedField",
+      "getConnectionInfo",
+      "getAnalyticalModel",
+      "setAnalyticalProperties",
+      "getAnalysisResults",
+      "placeMechanicalEquipment",
+      "placePlumbingFixture",
+      "getEquipmentInfo",
+      "getSystemInfo",
+      "modifySystemElements",
+      "getSpaceInfo",
+      "createZone",
+      "getConnectors",
+      "connectElements",
+      "getAppearanceAssets",
+      "createAppearanceAsset",
+      "duplicateAppearanceAsset",
+      "getElementPhasing",
+      "setBulkElementPhasing",
+      "analyzePhasing",
+      "findPhasingConflicts",
+      "setupDemolitionPlan",
+      "isElementBorrowed",
+      "relinquishOwnership",
+      "isWorkshared",
+      "getWorksharingOptions",
+      "reloadLatest",
+      "createDetailLine",
+      "createDetailArc",
+      "createDetailPolyline",
+      "getDetailLineInfo",
+      "modifyDetailLine",
+      "createFilledRegion",
+      "getFilledRegionInfo",
+      "modifyFilledRegionBoundary",
+      "getFilledRegionTypes",
+      "placeDetailComponent",
+      "placeDetailComponentByName",
+      "placeRepeatingDetailComponent",
+      "getDetailComponentInfo",
+      "getDetailComponentTypes",
+      "addInsulation",
+      "getInsulationInfo",
+      "removeInsulation",
+      "createBreakLine",
+      "placeMarkerSymbol",
+      "getLineStyles",
+      "createLineStyle",
+      "modifyLineStyle",
+      "createMaskingRegion",
+      "overrideElementGraphics",
+      "getElementGraphicsOverrides",
+      "clearElementGraphicsOverrides",
+      "copyDetailElements",
+      "createDetailComponentLibrary",
+      "extractAndReplaceFilledRegions",
+      "getBreakLineTypes",
+      "placeBreakLineAuto",
+      "placeInsulationPattern",
+      "getDetailComponentFamilies",
+      "searchLocalDetailFamilies",
+      "activateDetailComponentType",
+      "placeDetailComponentAdvanced",
+      "getDetailLibrary",
+      "getDetailsInCategory",
+      "searchDetailLibrary",
+      "placeAnnotationSymbol",
+      "getAnnotationSymbolTypes",
+      "createCallout",
+      "placeSpotElevation",
+      "placeSpotCoordinate",
+      "placeSpotSlope",
+      "createReferencePlane",
+      "createMatchline",
+      "placeLegendComponent",
+      "addAnnotationLeader",
+      "setLeaderEndpoint",
+      "getAnnotationLeaderInfo",
+      "placeAnnotationWithLeader",
+      "getElementLocation",
+      "getBoundingBox",
+      "moveElement",
+      "moveElements",
+      "copyElements",
+      "getLibraryPaths",
+      "getImportedInstances",
+      "getImportedGeometry",
+      "getImportedLines",
+      "getModelState",
+      "detectClashes",
+      "generateLegendFromTypes",
+      "optimizeFurnitureLayout",
+      "getPropertyLines",
+      "createPropertyLine",
+      "getDetailComponentTypesVA",
+      "placeDetailComponentVA",
+      "moveDetailComponent",
+      "rotateDetailComponent",
+      "createDetailLineVA",
+      "getLineStylesVA",
+      "createDetailArcVA",
+      "getFilledRegionTypesVA",
+      "createFilledRegionVA",
+      "getWallTypeLayers",
+      "createFilledRegionFromPoints",
+      "createDetailLinesFromPoints",
+      "getSectionCutGeometry",
+      "alignElements",
+      "distributeElements",
+      "findDuplicateElements",
+      "offsetDetailCurves",
+      "batchUpdateTitleblocks",
+      "batchSwapTypes",
+      "matchElementProperties",
+      "detectElementClashes",
+      "getSuggestions",
+      "getAssistanceSummary",
+      "getTaskAssistance",
+      "respondToSuggestion",
+      "getActionFrequencies",
+      "startTaskTracking",
+      "endTaskTracking",
+      "getLearnedPreferences",
+      "getPreferredScale",
+      "getRecommendedScale",
+      "getSessionSummaryForMemory",
+      "importPreferencesFromMemory",
+      "runProactiveAnalysis",
+      "getMonitorSuggestions",
+      "executeSuggestion",
+      "takeModelSnapshot",
+      "dismissSuggestion",
+      "cancelTask",
+      "getActiveTasks",
+      "getTaskResult",
+      "getSupportedGoals",
+      "analyzeProjectState",
+      "detectNamingPatterns",
+      "analyzeProjectGaps",
+      "extractProjectDataMatrix",
+      "analyzeCirculationPatterns",
+      "extractAcousticProperties",
+      "extractDaylightingAnalysis",
+      "classifyFailure",
+      "proposeToolSpec",
+      "approveToolSpec",
+      "listToolSpecs",
+      "getToolSpec",
+      "getMethodRegistry",
+      "rebuildMethodRegistry",
+      "createTestArtifact",
+      "runTest",
+      "listTests",
+      "getCapabilityStatus",
+      "processDetailFile",
+      "getDetailLibraryFiles",
+      "getNextFileToProcess",
+      "markFileProcessed"
+    ],
+    "wall_query": [
+      "getWallTypes"
+    ],
+    "element_deletion": [
+      "deleteWall",
+      "deleteSchedule",
+      "deleteProjectParameter",
+      "deleteGlobalParameter",
+      "deleteStructuralElement",
+      "deleteMEPElement",
+      "deleteViewFilter",
+      "deleteMaterial",
+      "deletePhase",
+      "deletePhaseFilter",
+      "deleteWorkset",
+      "deleteDetailElement",
+      "deleteRevisionCloud",
+      "deleteAnnotation",
+      "deleteLevel",
+      "deleteGrid",
+      "deleteElements",
+      "deleteElement",
+      "deleteGroupType",
+      "deleteTag",
+      "deleteRevitLink",
+      "deleteCADLink",
+      "deleteRevision",
+      "deleteRevisionCloudById",
+      "deleteTopography",
+      "deleteCorrection"
+    ],
+    "room_operations": [
+      "createRoom",
+      "getRooms",
+      "getSheetPrintableArea",
+      "createRoomFinishSchedule",
+      "getRoomFinishes",
+      "updateRoomFinishes",
+      "createAreaPlan",
+      "createAreaBoundary",
+      "getAreas",
+      "placeArea",
+      "createAreaLoad",
+      "placeAreaTag",
+      "getAreaTagsInView",
+      "tagRoom",
+      "batchTagRooms",
+      "checkRoomAreas",
+      "createViewsFromRooms",
+      "getUntaggedRooms"
+    ],
+    "view_creation": [
+      "createFloorPlan",
+      "createCeilingPlan",
+      "createSection",
+      "createElevation",
+      "createDraftingView",
+      "createLegend",
+      "createAreaPlan",
+      "create3DView"
+    ],
+    "view_management": [
+      "duplicateView",
+      "renameView",
+      "setActiveView",
+      "getActiveView",
+      "placeViewOnSheet",
+      "placeViewOnSheetSmart",
+      "placeViewOnSheetForced",
+      "placeMultipleViewsOnSheet",
+      "switchToView",
+      "getActiveViewInfo",
+      "activateView",
+      "refreshActiveView",
+      "closeView",
+      "setViewZoom",
+      "exportViewsToDWG",
+      "getViewTemplates",
+      "applyViewTemplate",
+      "createViewTemplate",
+      "duplicateViewTemplate",
+      "getKeynotesInView",
+      "applyScopeBoxToView",
+      "removeScopeBoxFromView",
+      "createAssemblyViews",
+      "insertViewsFromFile",
+      "exportViewImage",
+      "getViewExtents",
+      "getViewRange",
+      "setViewRange",
+      "getStructuralFramingInView",
+      "getDuctsInView",
+      "getPipesInView",
+      "createViewFilter",
+      "getAllViewFilters",
+      "getViewFilterInfo",
+      "modifyViewFilter",
+      "deleteViewFilter",
+      "applyFilterToView",
+      "removeFilterFromView",
+      "getFiltersInView",
+      "findViewsUsingFilter",
+      "setViewPhase",
+      "setViewPhaseFilter",
+      "getViewPhaseSettings",
+      "getWorksetVisibilityInView",
+      "getDetailLinesInView",
+      "getFilledRegionsInView",
+      "getDetailComponentsInView",
+      "createDetailLineInDraftingView",
+      "getDraftingViewBounds",
+      "convertDetailToDraftingView",
+      "batchConvertDetailsToDraftingViews",
+      "traceDetailToDraftingView",
+      "intelligentTraceDetailToDraftingView",
+      "getRevisionCloudsInView",
+      "getCalloutsInView",
+      "getAreaTagsInView",
+      "getReferencePlanesInView",
+      "getMatchlinesInView",
+      "getAllAnnotationsInView",
+      "getTagsInView",
+      "getViewSnapshot",
+      "compareViewState",
+      "getViewCropRegion",
+      "expandViewCropRegion",
+      "getDetailComponentsInViewVA",
+      "getElementBoundingBoxInView",
+      "getFilledRegionsInViewVA",
+      "getDetailLinesInViewVA",
+      "analyzeDetailView",
+      "scaleDetailViewElements",
+      "mirrorDetailViewElements",
+      "rotateDetailViewElements",
+      "createViewsFromRooms",
+      "getUnplacedViews",
+      "getSheetViewMatrix",
+      "getViewPlacementStatus",
+      "getLevelViewCoverage",
+      "setViewStyle",
+      "listViews"
+    ],
+    "sheet_creation": [
+      "createSheet"
+    ],
+    "sheet_management": [
+      "getAllSheets",
+      "getSheets",
+      "placeMultipleViewsOnSheet",
+      "switchToSheet",
+      "getSheetPrintableArea",
+      "exportSheetsToDWG",
+      "addRevisionToSheets",
+      "removeRevisionFromSheets",
+      "exportSheetsToPDF",
+      "getTitleBlockInfo",
+      "updateTitleBlockParameters",
+      "batchUpdateTitleBlocks",
+      "getSheetRevisions",
+      "addRevisionsToSheet",
+      "removeRevisionsFromSheet",
+      "getSheetLayoutRecommendation",
+      "getSheetViewMatrix"
+    ],
+    "viewport_placement": [
+      "placeViewOnSheet",
+      "placeViewOnSheetSmart",
+      "placeViewOnSheetForced",
+      "suggestViewportPosition",
+      "captureViewport",
+      "captureViewportToBase64"
+    ],
+    "door_window": [
+      "placeDoor",
+      "placeWindow",
+      "getDoors",
+      "getWindows",
+      "batchDimensionWindows",
+      "tagDoor",
+      "batchTagDoors",
+      "checkDoorWidths",
+      "checkDoorSwing"
+    ],
+    "system_health": [
+      "getVersion",
+      "getConfiguration",
+      "healthCheck",
+      "getStats",
+      "reloadConfiguration",
+      "getMethods",
+      "getMaterialUsageStats",
+      "validateModelHealth",
+      "getCorrectionStats",
+      "configureAutonomy",
+      "getAutonomyStats"
+    ],
+    "verification": [
+      "healthCheck",
+      "addCheckpoint",
+      "verifyAndRollback",
+      "validateFilterRules",
+      "getCheckoutStatus",
+      "verifyElement",
+      "verifyTextContent",
+      "verifyBatch",
+      "verifyOperation",
+      "verifyElementCount",
+      "preFlightCheck",
+      "validateModelHealth",
+      "validateElementSpacingAndAlignment",
+      "runComplianceCheck",
+      "checkCorridorWidths",
+      "checkDoorWidths",
+      "checkRoomAreas",
+      "checkToiletClearances",
+      "checkDoorSwing",
+      "checkStairDimensions",
+      "checkCeilingHeights",
+      "checkWallFireRatings",
+      "runCDChecklist",
+      "verifyOperationResult",
+      "validateSpaceEfficiency"
+    ],
+    "selection": [
+      "getSelection",
+      "waitForSelection",
+      "selectElements",
+      "clearSelection",
+      "pickPoint",
+      "pickEdge",
+      "pickFace",
+      "getSelectionInfo",
+      "setSelection",
+      "zoomToSelected",
+      "selectElementsByFilter"
+    ],
+    "document_management": [
+      "getOpenDocuments",
+      "openFamilyForEditing",
+      "getFamilyDocumentInfo",
+      "saveFamily",
+      "createNewDocument",
+      "openDocument",
+      "saveDocument",
+      "saveAsTemplate",
+      "closeDocument",
+      "syncWithCentral",
+      "getDocumentInfo",
+      "purgeUnused",
+      "exportToIFC",
+      "switchDocument",
+      "exportViewsToDWG",
+      "exportSheetsToDWG",
+      "batchExportDWG",
+      "exportSheetsToPDF",
+      "batchExportPDF",
+      "exportViewImage",
+      "exportScheduleToCSV",
+      "exportMaterial",
+      "synchronizeWithCentral",
+      "getSyncHistory",
+      "importDetailToDocument",
+      "openLoadAutodeskFamilyDialog",
+      "exportConstructionData",
+      "exportPreferencesForMemory",
+      "exportWorkflowData",
+      "exportAllIntelligence",
+      "standardizeDocumentText"
+    ],
+    "family_operations": [
+      "openFamilyForEditing",
+      "getFamilyDocumentInfo",
+      "addFamilyParameter",
+      "addFamilyType",
+      "setFamilyParameterValue",
+      "loadFamilyIntoProject",
+      "saveFamily",
+      "closeFamily",
+      "getFamilyCategories",
+      "createNewFamily",
+      "loadDetailComponentFamily",
+      "loadAutodeskFamilyAutomated",
+      "placeFamilyInstance",
+      "getFamilyInstanceTypes",
+      "loadFamily",
+      "listFamilyFiles",
+      "openLoadAutodeskFamilyDialog"
+    ],
+    "parameter_operations": [
+      "addFamilyParameter",
+      "setFamilyParameterValue",
+      "updateTitleBlockParameters",
+      "createProjectParameter",
+      "getProjectParameters",
+      "modifyProjectParameter",
+      "deleteProjectParameter",
+      "createSharedParameter",
+      "loadSharedParameterFile",
+      "getSharedParameters",
+      "getSharedParameterDefinitions",
+      "bindSharedParameter",
+      "getParameterValue",
+      "setParameterValue",
+      "getElementParameters",
+      "setMultipleParameterValues",
+      "getParameterGroups",
+      "createParameterGroup",
+      "findElementsByParameterValue",
+      "searchParameters",
+      "getParameterDefinition",
+      "getParameterTypes",
+      "createGlobalParameter",
+      "getGlobalParameters",
+      "modifyGlobalParameter",
+      "deleteGlobalParameter",
+      "setParameterFormula",
+      "getParameterFormula",
+      "copyParameterValues",
+      "setParameterForMultipleElements",
+      "parameterExists",
+      "getParameterStorageType",
+      "bulkSetParameterConditional",
+      "getFilterableParameters",
+      "conditionalParameterUpdate",
+      "propagateParameterValues"
+    ],
+    "link_management": [
+      "reloadLinks",
+      "exportToIFC",
+      "exportViewsToDWG",
+      "exportSheetsToDWG",
+      "batchExportDWG",
+      "getLinkedModels",
+      "setLinkVisibility",
+      "getLinkWorksets",
+      "getRevitLinks",
+      "getRevitLinkTypes",
+      "loadRevitLink",
+      "reloadRevitLink",
+      "unloadRevitLink",
+      "deleteRevitLink",
+      "getCADLinks",
+      "importCAD",
+      "deleteCADLink",
+      "getLinkTransform",
+      "moveLinkInstance",
+      "getCADGeometry",
+      "getCADWallCandidates",
+      "analyzeCADFloorPlan",
+      "queryLinkedElementCoordinates"
+    ],
+    "scheduling": [
+      "createRoomFinishSchedule",
+      "createSchedule",
+      "createKeySchedule",
+      "addScheduleField",
+      "removeScheduleField",
+      "reorderScheduleFields",
+      "getScheduleFields",
+      "modifyScheduleField",
+      "addScheduleFilter",
+      "removeScheduleFilter",
+      "getScheduleFilters",
+      "filterScheduleByLevel",
+      "modifyScheduleFilter",
+      "addScheduleSorting",
+      "addScheduleGrouping",
+      "getScheduleSortGrouping",
+      "removeScheduleSorting",
+      "formatScheduleAppearance",
+      "getScheduleData",
+      "exportScheduleToCSV",
+      "getScheduleCellValue",
+      "getScheduleTotals",
+      "modifyScheduleProperties",
+      "duplicateSchedule",
+      "getAllSchedules",
+      "getScheduleInfo",
+      "deleteSchedule",
+      "refreshSchedule"
+    ],
+    "revision_tracking": [
+      "createRevision",
+      "getRevisions",
+      "addRevisionToSheets",
+      "removeRevisionFromSheets",
+      "placeRevisionCloud",
+      "getRevisionClouds",
+      "tagRevisionCloud",
+      "createRevisionCloud",
+      "getRevisionCloudsInView",
+      "modifyRevisionCloud",
+      "deleteRevisionCloud",
+      "modifyRevision",
+      "setRevisionIssued",
+      "createNewRevision",
+      "updateRevision",
+      "issueRevision",
+      "deleteRevision",
+      "getRevisionCloudsList",
+      "createNewRevisionCloud",
+      "deleteRevisionCloudById",
+      "getSheetRevisions",
+      "addRevisionsToSheet",
+      "removeRevisionsFromSheet",
+      "setRevisionVisibility",
+      "reorderRevisions"
+    ],
+    "annotation": [
+      "tagRevisionCloud",
+      "placeKeynote",
+      "getKeynotesInView",
+      "tagCeilingHeight",
+      "batchDimensionWindows",
+      "autoAlignDimensions",
+      "createEqualityDimension",
+      "tagSpace",
+      "setMaterialTexture",
+      "dimensionDetailLines",
+      "loadKeynoteFile",
+      "getKeynoteEntries",
+      "placeAngularDimension",
+      "placeRadialDimension",
+      "placeDiameterDimension",
+      "placeArcLengthDimension",
+      "placeAreaTag",
+      "getAreaTagsInView",
+      "batchPlaceKeynotesWithLeaders",
+      "tagDoor",
+      "tagRoom",
+      "tagWall",
+      "tagElement",
+      "batchTagDoors",
+      "batchTagRooms",
+      "getTagsInView",
+      "deleteTag",
+      "getTagInfo",
+      "verifyTextContent",
+      "autoPlaceKeynotes",
+      "checkStairDimensions",
+      "getTextNoteLocation",
+      "createTextNoteInCrop",
+      "createLinearDimension",
+      "createTextNoteWithLeader",
+      "moveTextNote",
+      "getTextNoteTypes",
+      "addLeaderToTextNote",
+      "setTextNoteLeaderEndpoint",
+      "resetTextNoteLeaders",
+      "getTextNotePositions",
+      "alignTextNotes",
+      "createTextNoteAlignedWith",
+      "autoTagUntagged",
+      "setProjectContext",
+      "getProjectContext",
+      "getUntaggedRooms",
+      "getTextTypes",
+      "createStandardTextType",
+      "getTextNotes",
+      "standardizeDocumentText",
+      "standardizeDimensionText",
+      "renameDimensionTypes",
+      "standardizeTextNoteTypes"
+    ],
+    "workset_phase": [
+      "getLinkWorksets",
+      "createPhase",
+      "getAllPhases",
+      "getPhaseInfo",
+      "renamePhase",
+      "deletePhase",
+      "reorderPhases",
+      "setElementPhaseCreated",
+      "setElementPhaseDemolished",
+      "getElementsInPhase",
+      "createPhaseFilter",
+      "getPhaseFilters",
+      "getPhaseFilterInfo",
+      "modifyPhaseFilter",
+      "deletePhaseFilter",
+      "setViewPhase",
+      "setViewPhaseFilter",
+      "getViewPhaseSettings",
+      "getPhaseTransitionReport",
+      "getCurrentPhase",
+      "copyElementsToPhase",
+      "createWorkset",
+      "getAllWorksets",
+      "getWorksetInfo",
+      "renameWorkset",
+      "deleteWorkset",
+      "setElementWorkset",
+      "getElementWorkset",
+      "getElementsInWorkset",
+      "moveElementsToWorkset",
+      "setWorksetVisibility",
+      "getWorksetVisibilityInView",
+      "setGlobalWorksetVisibility",
+      "isWorksetEditable",
+      "getWorksetsByCategory",
+      "createWorksetNamingScheme",
+      "getActiveWorkset",
+      "setActiveWorkset",
+      "bulkSetWorksetsByCategory"
+    ],
+    "render_capture": [
+      "exportViewImage",
+      "setRenderAppearance",
+      "captureDialogState",
+      "submitRender",
+      "getRenderStatus",
+      "getRenderResult",
+      "listRenderJobs",
+      "cancelRender",
+      "getRenderPresets",
+      "captureAndRender",
+      "captureViewport",
+      "captureViewportToBase64",
+      "setCamera",
+      "getCamera"
+    ],
+    "transaction_control": [
+      "startTransactionGroup",
+      "commitTransactionGroup",
+      "rollbackTransactionGroup",
+      "getTransactionStatus",
+      "getUndoHistory",
+      "executeWithUndo",
+      "verifyAndRollback"
+    ],
+    "group_operations": [
+      "startTransactionGroup",
+      "commitTransactionGroup",
+      "rollbackTransactionGroup",
+      "addScheduleGrouping",
+      "getScheduleSortGrouping",
+      "getParameterGroups",
+      "createParameterGroup",
+      "createDetailGroup",
+      "placeDetailGroup",
+      "getDetailGroupTypes",
+      "getGroups",
+      "getGroupTypes",
+      "getGroupMembers",
+      "createGroup",
+      "placeGroup",
+      "ungroupGroup",
+      "deleteGroupType",
+      "renameGroupType",
+      "duplicateGroupType",
+      "getModelGroups",
+      "getDetailGroups",
+      "createGroupAndReplicatePattern"
+    ],
+    "stair_railing": [
+      "createStairBySketch",
+      "createStairByComponent",
+      "modifyStair",
+      "checkStairDimensions"
+    ],
+    "floor_ceiling_roof": [
+      "createCeilingGrid",
+      "tagCeilingHeight",
+      "createRoofByExtrusion",
+      "modifyRoofSlope",
+      "editFloorBoundary",
+      "editCeilingBoundary",
+      "editRoofBoundary",
+      "getFloorBoundary",
+      "getCeilingBoundary",
+      "getRoofBoundary",
+      "checkCeilingHeights",
+      "getRoofTypeLayers",
+      "getFloorTypeLayers"
+    ],
+    "grid_level": [
+      "createCeilingGrid",
+      "filterScheduleByLevel",
+      "createLevel",
+      "getLevels",
+      "getLevel",
+      "renameLevel",
+      "setLevelElevation",
+      "deleteLevel",
+      "createLevelArray",
+      "getLevelByElevation",
+      "getElementsOnLevel",
+      "copyElementsToLevel",
+      "createGrid",
+      "createArcGrid",
+      "getGrids",
+      "getGrid",
+      "renameGrid",
+      "deleteGrid",
+      "createGridArray",
+      "setGridExtents",
+      "getGridIntersection",
+      "getLevelViewCoverage"
+    ],
+    "material_operations": [
+      "createMaterialTakeoff",
+      "createMaterial",
+      "getAllMaterials",
+      "getMaterialInfo",
+      "modifyMaterial",
+      "duplicateMaterial",
+      "deleteMaterial",
+      "setMaterialAppearance",
+      "getMaterialAppearance",
+      "setMaterialTexture",
+      "setMaterialSurfacePattern",
+      "getMaterialSurfacePattern",
+      "setMaterialPhysicalProperties",
+      "getMaterialPhysicalProperties",
+      "getMaterialClasses",
+      "setMaterialClass",
+      "findElementsWithMaterial",
+      "replaceMaterial",
+      "getMaterialUsageStats",
+      "loadMaterialFromLibrary",
+      "exportMaterial",
+      "searchMaterials",
+      "getMaterialByName",
+      "isMaterialInUse"
+    ],
+    "filter_operations": [
+      "addScheduleFilter",
+      "removeScheduleFilter",
+      "getScheduleFilters",
+      "filterScheduleByLevel",
+      "modifyScheduleFilter",
+      "createViewFilter",
+      "getAllViewFilters",
+      "getViewFilterInfo",
+      "modifyViewFilter",
+      "deleteViewFilter",
+      "createFilterRule",
+      "addRuleToFilter",
+      "getFilterRules",
+      "removeRuleFromFilter",
+      "applyFilterToView",
+      "removeFilterFromView",
+      "getFiltersInView",
+      "setFilterOverrides",
+      "getFilterOverrides",
+      "selectElementsByFilter",
+      "countElementsByFilter",
+      "createCategoryFilter",
+      "getFilterCategories",
+      "addCategoriesToFilter",
+      "removeCategoriesFromFilter",
+      "createFilterFromTemplate",
+      "duplicateFilter",
+      "findViewsUsingFilter",
+      "testFilter",
+      "analyzeFilter",
+      "getFilterableParameters",
+      "validateFilterRules",
+      "createPhaseFilter",
+      "getPhaseFilters",
+      "getPhaseFilterInfo",
+      "modifyPhaseFilter",
+      "deletePhaseFilter",
+      "setViewPhaseFilter"
+    ],
+    "structural": [
+      "setColumnWidth",
+      "placeStructuralColumn",
+      "getStructuralColumnInfo",
+      "modifyStructuralColumn",
+      "getStructuralColumnTypes",
+      "createStructuralBeam",
+      "getStructuralBeamInfo",
+      "modifyStructuralBeam",
+      "getStructuralBeamTypes",
+      "createFoundation",
+      "getFoundationInfo",
+      "getFoundationTypes",
+      "placeStructuralFraming",
+      "getStructuralFramingInView",
+      "createStructuralConnection",
+      "createRebar",
+      "getRebarInfo",
+      "createPointLoad",
+      "createLineLoad",
+      "createAreaLoad",
+      "getElementLoads",
+      "getAllStructuralElements",
+      "deleteStructuralElement",
+      "calculateLoads",
+      "getLoadedFamilies",
+      "openLoadAutodeskFamilyDialog"
+    ],
+    "mep_operations": [
+      "createDuct",
+      "getDuctInfo",
+      "createDuctFitting",
+      "createDuctAccessory",
+      "getDuctsInView",
+      "createPipe",
+      "getPipeInfo",
+      "createPipeFitting",
+      "createPipeAccessory",
+      "getPipesInView",
+      "createCableTray",
+      "createConduit",
+      "getElectricalPathInfo",
+      "placeElectricalFixture",
+      "placeElectricalEquipment",
+      "getElectricalCircuits",
+      "createElectricalCircuit",
+      "createMEPSystem",
+      "getMEPSystems",
+      "createMEPSpace",
+      "calculateDuctSizing",
+      "calculatePipeSizing",
+      "getMEPTypes",
+      "deleteMEPElement"
+    ],
+    "site_operations": [
+      "getTopographySurfaces",
+      "createTopography",
+      "getTopographyPoints",
+      "addTopographyPoints",
+      "deleteTopography",
+      "getBuildingPads",
+      "createBuildingPad",
+      "getSiteInfo",
+      "setSiteLocation",
+      "extractBuildingEnvelopeMetrics"
+    ],
+    "compliance": [
+      "runComplianceCheck",
+      "generateComplianceReport"
+    ],
+    "intelligence": [
+      "getWorkflowStatistics",
+      "getWorkflowPatterns",
+      "getLearningReport",
+      "exportWorkflowData",
+      "storeCorrection",
+      "getRelevantCorrections",
+      "getMethodCorrections",
+      "getCorrectionStats",
+      "getCorrectionsAsKnowledge",
+      "markCorrectionApplied",
+      "deleteCorrection",
+      "analyzeWorkflowRequest",
+      "getWorkflowTemplates",
+      "exportAllIntelligence",
+      "getAutoCorrections"
+    ]
+  },
+  "methods": {
+    "createWallByPoints": {
+      "categories": [
+        "wall_creation"
+      ],
+      "handler_class": "WallMethods",
+      "verifiable": true,
+      "correction_check": true
+    },
+    "createWallsFromPolyline": {
+      "categories": [
+        "wall_creation"
+      ],
+      "handler_class": "WallMethods",
+      "verifiable": true,
+      "correction_check": false
+    },
+    "batchCreateWalls": {
+      "categories": [
+        "wall_creation"
+      ],
+      "handler_class": "WallMethods",
+      "verifiable": true,
+      "correction_check": false
+    },
+    "getWalls": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "WallMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getWallTypes": {
+      "categories": [
+        "wall_query"
+      ],
+      "handler_class": "WallMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "deleteWall": {
+      "categories": [
+        "element_deletion"
+      ],
+      "handler_class": "WallMethods",
+      "verifiable": true,
+      "correction_check": false
+    },
+    "createRoom": {
+      "categories": [
+        "room_operations"
+      ],
+      "handler_class": "RoomMethods",
+      "verifiable": true,
+      "correction_check": true
+    },
+    "getRooms": {
+      "categories": [
+        "room_operations"
+      ],
+      "handler_class": "RoomMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createFloorPlan": {
+      "categories": [
+        "view_creation"
+      ],
+      "handler_class": "ViewMethods",
+      "verifiable": true,
+      "correction_check": false
+    },
+    "createCeilingPlan": {
+      "categories": [
+        "view_creation"
+      ],
+      "handler_class": "ViewMethods",
+      "verifiable": true,
+      "correction_check": false
+    },
+    "createSection": {
+      "categories": [
+        "view_creation"
+      ],
+      "handler_class": "ViewMethods",
+      "verifiable": true,
+      "correction_check": false
+    },
+    "createElevation": {
+      "categories": [
+        "view_creation"
+      ],
+      "handler_class": "ViewMethods",
+      "verifiable": true,
+      "correction_check": false
+    },
+    "createDraftingView": {
+      "categories": [
+        "view_creation"
+      ],
+      "handler_class": "ViewMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "duplicateView": {
+      "categories": [
+        "view_management"
+      ],
+      "handler_class": "ViewMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "renameView": {
+      "categories": [
+        "view_management"
+      ],
+      "handler_class": "ViewMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "setActiveView": {
+      "categories": [
+        "view_management"
+      ],
+      "handler_class": "ViewMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getActiveView": {
+      "categories": [
+        "view_management"
+      ],
+      "handler_class": "ViewMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "zoomToFit": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "ViewMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "zoomToElement": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "ViewMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createSheet": {
+      "categories": [
+        "sheet_creation"
+      ],
+      "handler_class": "SheetMethods",
+      "verifiable": true,
+      "correction_check": true
+    },
+    "getAllSheets": {
+      "categories": [
+        "sheet_management"
+      ],
+      "handler_class": "SheetMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getSheets": {
+      "categories": [
+        "sheet_management"
+      ],
+      "handler_class": "SheetMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "placeViewOnSheet": {
+      "categories": [
+        "view_management",
+        "viewport_placement"
+      ],
+      "handler_class": "SheetMethods",
+      "verifiable": true,
+      "correction_check": true
+    },
+    "placeViewOnSheetSmart": {
+      "categories": [
+        "view_management",
+        "viewport_placement"
+      ],
+      "handler_class": "SheetMethods",
+      "verifiable": true,
+      "correction_check": false
+    },
+    "placeViewOnSheetForced": {
+      "categories": [
+        "view_management",
+        "viewport_placement"
+      ],
+      "handler_class": "SheetMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "placeMultipleViewsOnSheet": {
+      "categories": [
+        "view_management",
+        "sheet_management"
+      ],
+      "handler_class": "SheetMethods",
+      "verifiable": true,
+      "correction_check": false
+    },
+    "switchToView": {
+      "categories": [
+        "view_management"
+      ],
+      "handler_class": "SheetMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "switchToSheet": {
+      "categories": [
+        "sheet_management"
+      ],
+      "handler_class": "SheetMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getSheetPrintableArea": {
+      "categories": [
+        "room_operations",
+        "sheet_management"
+      ],
+      "handler_class": "SheetMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "placeDoor": {
+      "categories": [
+        "door_window"
+      ],
+      "handler_class": "DoorWindowMethods",
+      "verifiable": true,
+      "correction_check": true
+    },
+    "placeWindow": {
+      "categories": [
+        "door_window"
+      ],
+      "handler_class": "DoorWindowMethods",
+      "verifiable": true,
+      "correction_check": true
+    },
+    "getDoors": {
+      "categories": [
+        "door_window"
+      ],
+      "handler_class": "DoorWindowMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getWindows": {
+      "categories": [
+        "door_window"
+      ],
+      "handler_class": "DoorWindowMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getVersion": {
+      "categories": [
+        "system_health"
+      ],
+      "handler_class": "SystemMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getConfiguration": {
+      "categories": [
+        "system_health"
+      ],
+      "handler_class": "SystemMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "healthCheck": {
+      "categories": [
+        "verification",
+        "system_health"
+      ],
+      "handler_class": "SystemMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getStats": {
+      "categories": [
+        "system_health"
+      ],
+      "handler_class": "SystemMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "reloadConfiguration": {
+      "categories": [
+        "system_health"
+      ],
+      "handler_class": "SystemMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getMethods": {
+      "categories": [
+        "system_health"
+      ],
+      "handler_class": "SystemMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "setDialogAutoHandle": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "SystemMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getDialogSettings": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "SystemMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getDialogHistory": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "SystemMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "clearDialogHistory": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "SystemMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getSelection": {
+      "categories": [
+        "selection"
+      ],
+      "handler_class": "SelectionMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "waitForSelection": {
+      "categories": [
+        "selection"
+      ],
+      "handler_class": "SelectionMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "selectElements": {
+      "categories": [
+        "selection"
+      ],
+      "handler_class": "SelectionMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "highlightElements": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "SelectionMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "clearSelection": {
+      "categories": [
+        "selection"
+      ],
+      "handler_class": "UIAutomationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "pickPoint": {
+      "categories": [
+        "selection"
+      ],
+      "handler_class": "SelectionMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "pickEdge": {
+      "categories": [
+        "selection"
+      ],
+      "handler_class": "SelectionMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "pickFace": {
+      "categories": [
+        "selection"
+      ],
+      "handler_class": "SelectionMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "zoomToElements": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "SelectionMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "executeRevitCommand": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "UIAutomationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "listRevitCommands": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "UIAutomationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "showTaskDialog": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "UIAutomationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "showInputDialog": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "UIAutomationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getActiveViewInfo": {
+      "categories": [
+        "view_management"
+      ],
+      "handler_class": "UIAutomationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "activateView": {
+      "categories": [
+        "view_management"
+      ],
+      "handler_class": "UIAutomationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getOpenDocuments": {
+      "categories": [
+        "document_management"
+      ],
+      "handler_class": "UIAutomationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "refreshActiveView": {
+      "categories": [
+        "view_management"
+      ],
+      "handler_class": "UIAutomationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getUIState": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "UIAutomationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "closeView": {
+      "categories": [
+        "view_management"
+      ],
+      "handler_class": "UIAutomationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "setViewZoom": {
+      "categories": [
+        "view_management"
+      ],
+      "handler_class": "UIAutomationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getSelectionInfo": {
+      "categories": [
+        "selection"
+      ],
+      "handler_class": "UIAutomationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "sendKeySequence": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "UIAutomationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getRibbonState": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "UIAutomationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "canExecuteCommand": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "UIAutomationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "setSelection": {
+      "categories": [
+        "selection"
+      ],
+      "handler_class": "UIAutomationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getPropertiesPaletteState": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "UIAutomationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getProjectBrowserState": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "UIAutomationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "zoomToSelected": {
+      "categories": [
+        "selection"
+      ],
+      "handler_class": "UIAutomationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "openFamilyForEditing": {
+      "categories": [
+        "family_operations",
+        "document_management"
+      ],
+      "handler_class": "FamilyEditorMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getFamilyDocumentInfo": {
+      "categories": [
+        "family_operations",
+        "document_management"
+      ],
+      "handler_class": "FamilyEditorMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "addFamilyParameter": {
+      "categories": [
+        "family_operations",
+        "parameter_operations"
+      ],
+      "handler_class": "FamilyEditorMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "addFamilyType": {
+      "categories": [
+        "family_operations"
+      ],
+      "handler_class": "FamilyEditorMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "setFamilyParameterValue": {
+      "categories": [
+        "family_operations",
+        "parameter_operations"
+      ],
+      "handler_class": "FamilyEditorMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "addReferencePlane": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "FamilyEditorMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createExtrusion": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "FamilyEditorMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "loadFamilyIntoProject": {
+      "categories": [
+        "family_operations"
+      ],
+      "handler_class": "FamilyEditorMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "saveFamily": {
+      "categories": [
+        "family_operations",
+        "document_management"
+      ],
+      "handler_class": "FamilyEditorMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "closeFamily": {
+      "categories": [
+        "family_operations"
+      ],
+      "handler_class": "FamilyEditorMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getFamilyCategories": {
+      "categories": [
+        "family_operations"
+      ],
+      "handler_class": "FamilyEditorMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createNewFamily": {
+      "categories": [
+        "family_operations"
+      ],
+      "handler_class": "FamilyEditorMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createNewDocument": {
+      "categories": [
+        "document_management"
+      ],
+      "handler_class": "DocumentMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "listProjectTemplates": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "DocumentMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "openDocument": {
+      "categories": [
+        "document_management"
+      ],
+      "handler_class": "DocumentMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "saveDocument": {
+      "categories": [
+        "document_management"
+      ],
+      "handler_class": "DocumentMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "saveAsTemplate": {
+      "categories": [
+        "document_management"
+      ],
+      "handler_class": "DocumentMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "closeDocument": {
+      "categories": [
+        "document_management"
+      ],
+      "handler_class": "DocumentMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "syncWithCentral": {
+      "categories": [
+        "document_management"
+      ],
+      "handler_class": "DocumentMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getDocumentInfo": {
+      "categories": [
+        "document_management"
+      ],
+      "handler_class": "DocumentMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "purgeUnused": {
+      "categories": [
+        "document_management"
+      ],
+      "handler_class": "DocumentMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "reloadLinks": {
+      "categories": [
+        "link_management"
+      ],
+      "handler_class": "DocumentMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "setProjectInfo": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "DocumentMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "enableWorksharing": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "DocumentMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "exportToIFC": {
+      "categories": [
+        "document_management",
+        "link_management"
+      ],
+      "handler_class": "DocumentMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "switchDocument": {
+      "categories": [
+        "document_management"
+      ],
+      "handler_class": "DocumentMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "exportViewsToDWG": {
+      "categories": [
+        "view_management",
+        "document_management",
+        "link_management"
+      ],
+      "handler_class": "DocumentMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "exportSheetsToDWG": {
+      "categories": [
+        "sheet_management",
+        "document_management",
+        "link_management"
+      ],
+      "handler_class": "DocumentMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "batchExportDWG": {
+      "categories": [
+        "document_management",
+        "link_management"
+      ],
+      "handler_class": "DocumentMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createRoomFinishSchedule": {
+      "categories": [
+        "room_operations",
+        "scheduling"
+      ],
+      "handler_class": "RoomMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getRoomFinishes": {
+      "categories": [
+        "room_operations"
+      ],
+      "handler_class": "RoomMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "updateRoomFinishes": {
+      "categories": [
+        "room_operations"
+      ],
+      "handler_class": "RoomMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createRevision": {
+      "categories": [
+        "revision_tracking"
+      ],
+      "handler_class": "DocumentMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getRevisions": {
+      "categories": [
+        "revision_tracking"
+      ],
+      "handler_class": "RevisionMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "addRevisionToSheets": {
+      "categories": [
+        "sheet_management",
+        "revision_tracking"
+      ],
+      "handler_class": "DocumentMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "removeRevisionFromSheets": {
+      "categories": [
+        "sheet_management",
+        "revision_tracking"
+      ],
+      "handler_class": "DocumentMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "placeRevisionCloud": {
+      "categories": [
+        "revision_tracking"
+      ],
+      "handler_class": "DocumentMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getRevisionClouds": {
+      "categories": [
+        "revision_tracking"
+      ],
+      "handler_class": "DocumentMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "tagRevisionCloud": {
+      "categories": [
+        "annotation",
+        "revision_tracking"
+      ],
+      "handler_class": "DocumentMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "exportSheetsToPDF": {
+      "categories": [
+        "sheet_management",
+        "document_management"
+      ],
+      "handler_class": "DocumentMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "batchExportPDF": {
+      "categories": [
+        "document_management"
+      ],
+      "handler_class": "DocumentMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getPrintSettings": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "DocumentMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getViewTemplates": {
+      "categories": [
+        "view_management"
+      ],
+      "handler_class": "ViewMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "applyViewTemplate": {
+      "categories": [
+        "view_management"
+      ],
+      "handler_class": "ViewMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createViewTemplate": {
+      "categories": [
+        "view_management"
+      ],
+      "handler_class": "ViewMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "duplicateViewTemplate": {
+      "categories": [
+        "view_management"
+      ],
+      "handler_class": "ViewMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "placeKeynote": {
+      "categories": [
+        "annotation"
+      ],
+      "handler_class": "AnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getKeynotesInView": {
+      "categories": [
+        "view_management",
+        "annotation"
+      ],
+      "handler_class": "AnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getTitleBlockInfo": {
+      "categories": [
+        "sheet_management"
+      ],
+      "handler_class": "SheetMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "updateTitleBlockParameters": {
+      "categories": [
+        "sheet_management",
+        "parameter_operations"
+      ],
+      "handler_class": "SheetMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "batchUpdateTitleBlocks": {
+      "categories": [
+        "sheet_management"
+      ],
+      "handler_class": "SheetMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getLinkedModels": {
+      "categories": [
+        "link_management"
+      ],
+      "handler_class": "DocumentMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "setLinkVisibility": {
+      "categories": [
+        "link_management"
+      ],
+      "handler_class": "DocumentMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getLinkWorksets": {
+      "categories": [
+        "link_management",
+        "workset_phase"
+      ],
+      "handler_class": "DocumentMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getScopeBoxes": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "ViewMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createScopeBox": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "ViewMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "applyScopeBoxToView": {
+      "categories": [
+        "view_management"
+      ],
+      "handler_class": "ViewMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "removeScopeBoxFromView": {
+      "categories": [
+        "view_management"
+      ],
+      "handler_class": "ViewMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getLegends": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "ViewMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createLegend": {
+      "categories": [
+        "view_creation"
+      ],
+      "handler_class": "ViewMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getLegendComponents": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "ViewMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createAssembly": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "ViewMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createAssemblyViews": {
+      "categories": [
+        "view_management"
+      ],
+      "handler_class": "ViewMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getAssemblies": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "ViewMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "insertViewsFromFile": {
+      "categories": [
+        "view_management"
+      ],
+      "handler_class": "ViewMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "exportViewImage": {
+      "categories": [
+        "view_management",
+        "document_management",
+        "render_capture"
+      ],
+      "handler_class": "VisionMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getViewExtents": {
+      "categories": [
+        "view_management"
+      ],
+      "handler_class": "VisionMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "setElementVisibility": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "VisionMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "setCategoryVisibility": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "VisionMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getVisibleElements": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "VisionMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "setGraphicsOverride": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "VisionMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getViewRange": {
+      "categories": [
+        "view_management"
+      ],
+      "handler_class": "VisionMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "setViewRange": {
+      "categories": [
+        "view_management"
+      ],
+      "handler_class": "VisionMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "isolateElements": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "VisionMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "set3DSectionBox": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "VisionMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "startTransactionGroup": {
+      "categories": [
+        "transaction_control",
+        "group_operations"
+      ],
+      "handler_class": "TransactionMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "commitTransactionGroup": {
+      "categories": [
+        "transaction_control",
+        "group_operations"
+      ],
+      "handler_class": "TransactionMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "rollbackTransactionGroup": {
+      "categories": [
+        "transaction_control",
+        "group_operations"
+      ],
+      "handler_class": "TransactionMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "addCheckpoint": {
+      "categories": [
+        "verification"
+      ],
+      "handler_class": "TransactionMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getTransactionStatus": {
+      "categories": [
+        "transaction_control"
+      ],
+      "handler_class": "TransactionMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getUndoHistory": {
+      "categories": [
+        "transaction_control"
+      ],
+      "handler_class": "TransactionMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "executeWithUndo": {
+      "categories": [
+        "transaction_control"
+      ],
+      "handler_class": "TransactionMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "batchExecute": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "TransactionMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "safeExecute": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "TransactionMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "verifyAndRollback": {
+      "categories": [
+        "verification",
+        "transaction_control"
+      ],
+      "handler_class": "TransactionMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createStairBySketch": {
+      "categories": [
+        "stair_railing"
+      ],
+      "handler_class": "StairRailingMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createStairByComponent": {
+      "categories": [
+        "stair_railing"
+      ],
+      "handler_class": "StairRailingMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "modifyStair": {
+      "categories": [
+        "stair_railing"
+      ],
+      "handler_class": "StairRailingMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createAreaPlan": {
+      "categories": [
+        "room_operations",
+        "view_creation"
+      ],
+      "handler_class": "RoomMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createAreaBoundary": {
+      "categories": [
+        "room_operations"
+      ],
+      "handler_class": "RoomMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getAreas": {
+      "categories": [
+        "room_operations"
+      ],
+      "handler_class": "RoomMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "placeArea": {
+      "categories": [
+        "room_operations"
+      ],
+      "handler_class": "RoomMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createCeilingGrid": {
+      "categories": [
+        "floor_ceiling_roof",
+        "grid_level"
+      ],
+      "handler_class": "FloorCeilingRoofMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "placeLightFixture": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "FloorCeilingRoofMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "tagCeilingHeight": {
+      "categories": [
+        "annotation",
+        "floor_ceiling_roof"
+      ],
+      "handler_class": "FloorCeilingRoofMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createRoofByExtrusion": {
+      "categories": [
+        "floor_ceiling_roof"
+      ],
+      "handler_class": "FloorCeilingRoofMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "addSlopeArrow": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "FloorCeilingRoofMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "modifyRoofSlope": {
+      "categories": [
+        "floor_ceiling_roof"
+      ],
+      "handler_class": "FloorCeilingRoofMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "editFloorBoundary": {
+      "categories": [
+        "floor_ceiling_roof"
+      ],
+      "handler_class": "FloorCeilingRoofMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "editCeilingBoundary": {
+      "categories": [
+        "floor_ceiling_roof"
+      ],
+      "handler_class": "FloorCeilingRoofMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "editRoofBoundary": {
+      "categories": [
+        "floor_ceiling_roof"
+      ],
+      "handler_class": "FloorCeilingRoofMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getFloorBoundary": {
+      "categories": [
+        "floor_ceiling_roof"
+      ],
+      "handler_class": "FloorCeilingRoofMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getCeilingBoundary": {
+      "categories": [
+        "floor_ceiling_roof"
+      ],
+      "handler_class": "FloorCeilingRoofMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getRoofBoundary": {
+      "categories": [
+        "floor_ceiling_roof"
+      ],
+      "handler_class": "FloorCeilingRoofMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "batchDimensionWindows": {
+      "categories": [
+        "door_window",
+        "annotation"
+      ],
+      "handler_class": "DimensioningMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "autoAlignDimensions": {
+      "categories": [
+        "annotation"
+      ],
+      "handler_class": "DimensioningMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createEqualityDimension": {
+      "categories": [
+        "annotation"
+      ],
+      "handler_class": "DimensioningMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createSchedule": {
+      "categories": [
+        "scheduling"
+      ],
+      "handler_class": "ScheduleMethods",
+      "verifiable": true,
+      "correction_check": true
+    },
+    "createKeySchedule": {
+      "categories": [
+        "scheduling"
+      ],
+      "handler_class": "ScheduleMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createMaterialTakeoff": {
+      "categories": [
+        "material_operations"
+      ],
+      "handler_class": "ScheduleMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createSheetList": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "ScheduleMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "addScheduleField": {
+      "categories": [
+        "scheduling"
+      ],
+      "handler_class": "ScheduleMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "removeScheduleField": {
+      "categories": [
+        "scheduling"
+      ],
+      "handler_class": "ScheduleMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "reorderScheduleFields": {
+      "categories": [
+        "scheduling"
+      ],
+      "handler_class": "ScheduleMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getScheduleFields": {
+      "categories": [
+        "scheduling"
+      ],
+      "handler_class": "ScheduleMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "modifyScheduleField": {
+      "categories": [
+        "scheduling"
+      ],
+      "handler_class": "ScheduleMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getAvailableSchedulableFields": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "ScheduleMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "addScheduleFilter": {
+      "categories": [
+        "scheduling",
+        "filter_operations"
+      ],
+      "handler_class": "ScheduleMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "removeScheduleFilter": {
+      "categories": [
+        "scheduling",
+        "filter_operations"
+      ],
+      "handler_class": "ScheduleMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getScheduleFilters": {
+      "categories": [
+        "scheduling",
+        "filter_operations"
+      ],
+      "handler_class": "ScheduleMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "filterScheduleByLevel": {
+      "categories": [
+        "scheduling",
+        "grid_level",
+        "filter_operations"
+      ],
+      "handler_class": "ScheduleMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "modifyScheduleFilter": {
+      "categories": [
+        "scheduling",
+        "filter_operations"
+      ],
+      "handler_class": "ScheduleMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "addScheduleSorting": {
+      "categories": [
+        "scheduling"
+      ],
+      "handler_class": "ScheduleMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "addScheduleGrouping": {
+      "categories": [
+        "scheduling",
+        "group_operations"
+      ],
+      "handler_class": "ScheduleMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getScheduleSortGrouping": {
+      "categories": [
+        "scheduling",
+        "group_operations"
+      ],
+      "handler_class": "ScheduleMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "removeScheduleSorting": {
+      "categories": [
+        "scheduling"
+      ],
+      "handler_class": "ScheduleMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "formatScheduleAppearance": {
+      "categories": [
+        "scheduling"
+      ],
+      "handler_class": "ScheduleMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "setConditionalFormatting": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "ScheduleMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "setColumnWidth": {
+      "categories": [
+        "structural"
+      ],
+      "handler_class": "ScheduleMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "setFieldAlignment": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "ScheduleMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getScheduleData": {
+      "categories": [
+        "scheduling"
+      ],
+      "handler_class": "ScheduleMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "exportScheduleToCSV": {
+      "categories": [
+        "scheduling",
+        "document_management"
+      ],
+      "handler_class": "ScheduleMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getScheduleCellValue": {
+      "categories": [
+        "scheduling"
+      ],
+      "handler_class": "ScheduleMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getScheduleTotals": {
+      "categories": [
+        "scheduling"
+      ],
+      "handler_class": "ScheduleMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "modifyScheduleProperties": {
+      "categories": [
+        "scheduling"
+      ],
+      "handler_class": "ScheduleMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "duplicateSchedule": {
+      "categories": [
+        "scheduling"
+      ],
+      "handler_class": "ScheduleMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "addCalculatedField": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "ScheduleMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "modifyCalculatedField": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "ScheduleMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getAllSchedules": {
+      "categories": [
+        "scheduling"
+      ],
+      "handler_class": "ScheduleMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getScheduleInfo": {
+      "categories": [
+        "scheduling"
+      ],
+      "handler_class": "ScheduleMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "deleteSchedule": {
+      "categories": [
+        "element_deletion",
+        "scheduling"
+      ],
+      "handler_class": "ScheduleMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "refreshSchedule": {
+      "categories": [
+        "scheduling"
+      ],
+      "handler_class": "ScheduleMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createProjectParameter": {
+      "categories": [
+        "parameter_operations"
+      ],
+      "handler_class": "ParameterMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getProjectParameters": {
+      "categories": [
+        "parameter_operations"
+      ],
+      "handler_class": "ParameterMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "modifyProjectParameter": {
+      "categories": [
+        "parameter_operations"
+      ],
+      "handler_class": "ParameterMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "deleteProjectParameter": {
+      "categories": [
+        "element_deletion",
+        "parameter_operations"
+      ],
+      "handler_class": "ParameterMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createSharedParameter": {
+      "categories": [
+        "parameter_operations"
+      ],
+      "handler_class": "ParameterMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "loadSharedParameterFile": {
+      "categories": [
+        "parameter_operations"
+      ],
+      "handler_class": "ParameterMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getSharedParameters": {
+      "categories": [
+        "parameter_operations"
+      ],
+      "handler_class": "ParameterMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getSharedParameterDefinitions": {
+      "categories": [
+        "parameter_operations"
+      ],
+      "handler_class": "ParameterMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "bindSharedParameter": {
+      "categories": [
+        "parameter_operations"
+      ],
+      "handler_class": "ParameterMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getParameterValue": {
+      "categories": [
+        "parameter_operations"
+      ],
+      "handler_class": "ParameterMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "setParameterValue": {
+      "categories": [
+        "parameter_operations"
+      ],
+      "handler_class": "ParameterMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getElementParameters": {
+      "categories": [
+        "parameter_operations"
+      ],
+      "handler_class": "ParameterMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "setMultipleParameterValues": {
+      "categories": [
+        "parameter_operations"
+      ],
+      "handler_class": "ParameterMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getParameterGroups": {
+      "categories": [
+        "parameter_operations",
+        "group_operations"
+      ],
+      "handler_class": "ParameterMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createParameterGroup": {
+      "categories": [
+        "parameter_operations",
+        "group_operations"
+      ],
+      "handler_class": "ParameterMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "findElementsByParameterValue": {
+      "categories": [
+        "parameter_operations"
+      ],
+      "handler_class": "ParameterMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "searchParameters": {
+      "categories": [
+        "parameter_operations"
+      ],
+      "handler_class": "ParameterMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getParameterDefinition": {
+      "categories": [
+        "parameter_operations"
+      ],
+      "handler_class": "ParameterMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getParameterTypes": {
+      "categories": [
+        "parameter_operations"
+      ],
+      "handler_class": "ParameterMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createGlobalParameter": {
+      "categories": [
+        "parameter_operations"
+      ],
+      "handler_class": "ParameterMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getGlobalParameters": {
+      "categories": [
+        "parameter_operations"
+      ],
+      "handler_class": "ParameterMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "modifyGlobalParameter": {
+      "categories": [
+        "parameter_operations"
+      ],
+      "handler_class": "ParameterMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "deleteGlobalParameter": {
+      "categories": [
+        "element_deletion",
+        "parameter_operations"
+      ],
+      "handler_class": "ParameterMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "setParameterFormula": {
+      "categories": [
+        "parameter_operations"
+      ],
+      "handler_class": "ParameterMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getParameterFormula": {
+      "categories": [
+        "parameter_operations"
+      ],
+      "handler_class": "ParameterMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "copyParameterValues": {
+      "categories": [
+        "parameter_operations"
+      ],
+      "handler_class": "ParameterMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "setParameterForMultipleElements": {
+      "categories": [
+        "parameter_operations"
+      ],
+      "handler_class": "ParameterMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "parameterExists": {
+      "categories": [
+        "parameter_operations"
+      ],
+      "handler_class": "ParameterMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getParameterStorageType": {
+      "categories": [
+        "parameter_operations"
+      ],
+      "handler_class": "ParameterMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "bulkSetParameterConditional": {
+      "categories": [
+        "parameter_operations"
+      ],
+      "handler_class": "ParameterMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "placeStructuralColumn": {
+      "categories": [
+        "structural"
+      ],
+      "handler_class": "StructuralMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getStructuralColumnInfo": {
+      "categories": [
+        "structural"
+      ],
+      "handler_class": "StructuralMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "modifyStructuralColumn": {
+      "categories": [
+        "structural"
+      ],
+      "handler_class": "StructuralMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getStructuralColumnTypes": {
+      "categories": [
+        "structural"
+      ],
+      "handler_class": "StructuralMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createStructuralBeam": {
+      "categories": [
+        "structural"
+      ],
+      "handler_class": "StructuralMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getStructuralBeamInfo": {
+      "categories": [
+        "structural"
+      ],
+      "handler_class": "StructuralMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "modifyStructuralBeam": {
+      "categories": [
+        "structural"
+      ],
+      "handler_class": "StructuralMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getStructuralBeamTypes": {
+      "categories": [
+        "structural"
+      ],
+      "handler_class": "StructuralMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createFoundation": {
+      "categories": [
+        "structural"
+      ],
+      "handler_class": "StructuralMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getFoundationInfo": {
+      "categories": [
+        "structural"
+      ],
+      "handler_class": "StructuralMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getFoundationTypes": {
+      "categories": [
+        "structural"
+      ],
+      "handler_class": "StructuralMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "placeStructuralFraming": {
+      "categories": [
+        "structural"
+      ],
+      "handler_class": "StructuralMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getStructuralFramingInView": {
+      "categories": [
+        "view_management",
+        "structural"
+      ],
+      "handler_class": "StructuralMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createStructuralConnection": {
+      "categories": [
+        "structural"
+      ],
+      "handler_class": "StructuralMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getConnectionInfo": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "StructuralMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getAnalyticalModel": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "StructuralMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "setAnalyticalProperties": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "StructuralMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createRebar": {
+      "categories": [
+        "structural"
+      ],
+      "handler_class": "StructuralMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getRebarInfo": {
+      "categories": [
+        "structural"
+      ],
+      "handler_class": "StructuralMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createPointLoad": {
+      "categories": [
+        "structural"
+      ],
+      "handler_class": "StructuralMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createLineLoad": {
+      "categories": [
+        "structural"
+      ],
+      "handler_class": "StructuralMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createAreaLoad": {
+      "categories": [
+        "room_operations",
+        "structural"
+      ],
+      "handler_class": "StructuralMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getElementLoads": {
+      "categories": [
+        "structural"
+      ],
+      "handler_class": "StructuralMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getAnalysisResults": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "StructuralMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getAllStructuralElements": {
+      "categories": [
+        "structural"
+      ],
+      "handler_class": "StructuralMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "deleteStructuralElement": {
+      "categories": [
+        "element_deletion",
+        "structural"
+      ],
+      "handler_class": "StructuralMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createDuct": {
+      "categories": [
+        "mep_operations"
+      ],
+      "handler_class": "MEPMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getDuctInfo": {
+      "categories": [
+        "mep_operations"
+      ],
+      "handler_class": "MEPMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createDuctFitting": {
+      "categories": [
+        "mep_operations"
+      ],
+      "handler_class": "MEPMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createDuctAccessory": {
+      "categories": [
+        "mep_operations"
+      ],
+      "handler_class": "MEPMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getDuctsInView": {
+      "categories": [
+        "view_management",
+        "mep_operations"
+      ],
+      "handler_class": "MEPMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createPipe": {
+      "categories": [
+        "mep_operations"
+      ],
+      "handler_class": "MEPMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getPipeInfo": {
+      "categories": [
+        "mep_operations"
+      ],
+      "handler_class": "MEPMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createPipeFitting": {
+      "categories": [
+        "mep_operations"
+      ],
+      "handler_class": "MEPMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createPipeAccessory": {
+      "categories": [
+        "mep_operations"
+      ],
+      "handler_class": "MEPMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getPipesInView": {
+      "categories": [
+        "view_management",
+        "mep_operations"
+      ],
+      "handler_class": "MEPMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createCableTray": {
+      "categories": [
+        "mep_operations"
+      ],
+      "handler_class": "MEPMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createConduit": {
+      "categories": [
+        "mep_operations"
+      ],
+      "handler_class": "MEPMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getElectricalPathInfo": {
+      "categories": [
+        "mep_operations"
+      ],
+      "handler_class": "MEPMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "placeElectricalFixture": {
+      "categories": [
+        "mep_operations"
+      ],
+      "handler_class": "MEPMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "placeElectricalEquipment": {
+      "categories": [
+        "mep_operations"
+      ],
+      "handler_class": "MEPMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getElectricalCircuits": {
+      "categories": [
+        "mep_operations"
+      ],
+      "handler_class": "MEPMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createElectricalCircuit": {
+      "categories": [
+        "mep_operations"
+      ],
+      "handler_class": "MEPMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "placeMechanicalEquipment": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "MEPMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "placePlumbingFixture": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "MEPMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getEquipmentInfo": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "MEPMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createMEPSystem": {
+      "categories": [
+        "mep_operations"
+      ],
+      "handler_class": "MEPMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getMEPSystems": {
+      "categories": [
+        "mep_operations"
+      ],
+      "handler_class": "MEPMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getSystemInfo": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "MEPMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "modifySystemElements": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "MEPMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createMEPSpace": {
+      "categories": [
+        "mep_operations"
+      ],
+      "handler_class": "MEPMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getSpaceInfo": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "MEPMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createZone": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "MEPMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "tagSpace": {
+      "categories": [
+        "annotation"
+      ],
+      "handler_class": "MEPMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getConnectors": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "MEPMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "connectElements": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "MEPMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "calculateDuctSizing": {
+      "categories": [
+        "mep_operations"
+      ],
+      "handler_class": "MEPMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "calculatePipeSizing": {
+      "categories": [
+        "mep_operations"
+      ],
+      "handler_class": "MEPMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "calculateLoads": {
+      "categories": [
+        "structural"
+      ],
+      "handler_class": "MEPMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getMEPTypes": {
+      "categories": [
+        "mep_operations"
+      ],
+      "handler_class": "MEPMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "deleteMEPElement": {
+      "categories": [
+        "element_deletion",
+        "mep_operations"
+      ],
+      "handler_class": "MEPMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createViewFilter": {
+      "categories": [
+        "view_management",
+        "filter_operations"
+      ],
+      "handler_class": "FilterMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getAllViewFilters": {
+      "categories": [
+        "view_management",
+        "filter_operations"
+      ],
+      "handler_class": "FilterMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getViewFilterInfo": {
+      "categories": [
+        "view_management",
+        "filter_operations"
+      ],
+      "handler_class": "FilterMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "modifyViewFilter": {
+      "categories": [
+        "view_management",
+        "filter_operations"
+      ],
+      "handler_class": "FilterMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "deleteViewFilter": {
+      "categories": [
+        "element_deletion",
+        "view_management",
+        "filter_operations"
+      ],
+      "handler_class": "FilterMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createFilterRule": {
+      "categories": [
+        "filter_operations"
+      ],
+      "handler_class": "FilterMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "addRuleToFilter": {
+      "categories": [
+        "filter_operations"
+      ],
+      "handler_class": "FilterMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getFilterRules": {
+      "categories": [
+        "filter_operations"
+      ],
+      "handler_class": "FilterMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "removeRuleFromFilter": {
+      "categories": [
+        "filter_operations"
+      ],
+      "handler_class": "FilterMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "applyFilterToView": {
+      "categories": [
+        "view_management",
+        "filter_operations"
+      ],
+      "handler_class": "FilterMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "removeFilterFromView": {
+      "categories": [
+        "view_management",
+        "filter_operations"
+      ],
+      "handler_class": "FilterMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getFiltersInView": {
+      "categories": [
+        "view_management",
+        "filter_operations"
+      ],
+      "handler_class": "FilterMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "setFilterOverrides": {
+      "categories": [
+        "filter_operations"
+      ],
+      "handler_class": "FilterMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getFilterOverrides": {
+      "categories": [
+        "filter_operations"
+      ],
+      "handler_class": "FilterMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "selectElementsByFilter": {
+      "categories": [
+        "selection",
+        "filter_operations"
+      ],
+      "handler_class": "FilterMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "countElementsByFilter": {
+      "categories": [
+        "filter_operations"
+      ],
+      "handler_class": "FilterMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createCategoryFilter": {
+      "categories": [
+        "filter_operations"
+      ],
+      "handler_class": "FilterMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getFilterCategories": {
+      "categories": [
+        "filter_operations"
+      ],
+      "handler_class": "FilterMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "addCategoriesToFilter": {
+      "categories": [
+        "filter_operations"
+      ],
+      "handler_class": "FilterMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "removeCategoriesFromFilter": {
+      "categories": [
+        "filter_operations"
+      ],
+      "handler_class": "FilterMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createFilterFromTemplate": {
+      "categories": [
+        "filter_operations"
+      ],
+      "handler_class": "FilterMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "duplicateFilter": {
+      "categories": [
+        "filter_operations"
+      ],
+      "handler_class": "FilterMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "findViewsUsingFilter": {
+      "categories": [
+        "view_management",
+        "filter_operations"
+      ],
+      "handler_class": "FilterMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "testFilter": {
+      "categories": [
+        "filter_operations"
+      ],
+      "handler_class": "FilterMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "analyzeFilter": {
+      "categories": [
+        "filter_operations"
+      ],
+      "handler_class": "FilterMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getFilterableParameters": {
+      "categories": [
+        "parameter_operations",
+        "filter_operations"
+      ],
+      "handler_class": "FilterMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "validateFilterRules": {
+      "categories": [
+        "verification",
+        "filter_operations"
+      ],
+      "handler_class": "FilterMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createMaterial": {
+      "categories": [
+        "material_operations"
+      ],
+      "handler_class": "MaterialMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getAllMaterials": {
+      "categories": [
+        "material_operations"
+      ],
+      "handler_class": "MaterialMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getMaterialInfo": {
+      "categories": [
+        "material_operations"
+      ],
+      "handler_class": "MaterialMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "modifyMaterial": {
+      "categories": [
+        "material_operations"
+      ],
+      "handler_class": "MaterialMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "duplicateMaterial": {
+      "categories": [
+        "material_operations"
+      ],
+      "handler_class": "MaterialMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "deleteMaterial": {
+      "categories": [
+        "element_deletion",
+        "material_operations"
+      ],
+      "handler_class": "MaterialMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "setMaterialAppearance": {
+      "categories": [
+        "material_operations"
+      ],
+      "handler_class": "MaterialMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getMaterialAppearance": {
+      "categories": [
+        "material_operations"
+      ],
+      "handler_class": "MaterialMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "setMaterialTexture": {
+      "categories": [
+        "annotation",
+        "material_operations"
+      ],
+      "handler_class": "MaterialMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "setRenderAppearance": {
+      "categories": [
+        "render_capture"
+      ],
+      "handler_class": "MaterialMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "setMaterialSurfacePattern": {
+      "categories": [
+        "material_operations"
+      ],
+      "handler_class": "MaterialMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getMaterialSurfacePattern": {
+      "categories": [
+        "material_operations"
+      ],
+      "handler_class": "MaterialMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "setMaterialPhysicalProperties": {
+      "categories": [
+        "material_operations"
+      ],
+      "handler_class": "MaterialMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getMaterialPhysicalProperties": {
+      "categories": [
+        "material_operations"
+      ],
+      "handler_class": "MaterialMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getMaterialClasses": {
+      "categories": [
+        "material_operations"
+      ],
+      "handler_class": "MaterialMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "setMaterialClass": {
+      "categories": [
+        "material_operations"
+      ],
+      "handler_class": "MaterialMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "findElementsWithMaterial": {
+      "categories": [
+        "material_operations"
+      ],
+      "handler_class": "MaterialMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "replaceMaterial": {
+      "categories": [
+        "material_operations"
+      ],
+      "handler_class": "MaterialMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getMaterialUsageStats": {
+      "categories": [
+        "system_health",
+        "material_operations"
+      ],
+      "handler_class": "MaterialMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "loadMaterialFromLibrary": {
+      "categories": [
+        "material_operations"
+      ],
+      "handler_class": "MaterialMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "exportMaterial": {
+      "categories": [
+        "document_management",
+        "material_operations"
+      ],
+      "handler_class": "MaterialMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "searchMaterials": {
+      "categories": [
+        "material_operations"
+      ],
+      "handler_class": "MaterialMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getAppearanceAssets": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "MaterialMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createAppearanceAsset": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "MaterialMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "duplicateAppearanceAsset": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "MaterialMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getMaterialByName": {
+      "categories": [
+        "material_operations"
+      ],
+      "handler_class": "MaterialMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "isMaterialInUse": {
+      "categories": [
+        "material_operations"
+      ],
+      "handler_class": "MaterialMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createPhase": {
+      "categories": [
+        "workset_phase"
+      ],
+      "handler_class": "PhaseMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getAllPhases": {
+      "categories": [
+        "workset_phase"
+      ],
+      "handler_class": "PhaseMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getPhaseInfo": {
+      "categories": [
+        "workset_phase"
+      ],
+      "handler_class": "PhaseMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "renamePhase": {
+      "categories": [
+        "workset_phase"
+      ],
+      "handler_class": "PhaseMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "deletePhase": {
+      "categories": [
+        "element_deletion",
+        "workset_phase"
+      ],
+      "handler_class": "PhaseMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "reorderPhases": {
+      "categories": [
+        "workset_phase"
+      ],
+      "handler_class": "PhaseMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "setElementPhaseCreated": {
+      "categories": [
+        "workset_phase"
+      ],
+      "handler_class": "PhaseMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "setElementPhaseDemolished": {
+      "categories": [
+        "workset_phase"
+      ],
+      "handler_class": "PhaseMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getElementPhasing": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "PhaseMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getElementsInPhase": {
+      "categories": [
+        "workset_phase"
+      ],
+      "handler_class": "PhaseMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "setBulkElementPhasing": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "PhaseMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createPhaseFilter": {
+      "categories": [
+        "workset_phase",
+        "filter_operations"
+      ],
+      "handler_class": "PhaseMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getPhaseFilters": {
+      "categories": [
+        "workset_phase",
+        "filter_operations"
+      ],
+      "handler_class": "PhaseMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getPhaseFilterInfo": {
+      "categories": [
+        "workset_phase",
+        "filter_operations"
+      ],
+      "handler_class": "PhaseMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "modifyPhaseFilter": {
+      "categories": [
+        "workset_phase",
+        "filter_operations"
+      ],
+      "handler_class": "PhaseMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "deletePhaseFilter": {
+      "categories": [
+        "element_deletion",
+        "workset_phase",
+        "filter_operations"
+      ],
+      "handler_class": "PhaseMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "setViewPhase": {
+      "categories": [
+        "view_management",
+        "workset_phase"
+      ],
+      "handler_class": "PhaseMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "setViewPhaseFilter": {
+      "categories": [
+        "view_management",
+        "workset_phase",
+        "filter_operations"
+      ],
+      "handler_class": "PhaseMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getViewPhaseSettings": {
+      "categories": [
+        "view_management",
+        "workset_phase"
+      ],
+      "handler_class": "PhaseMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "analyzePhasing": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "PhaseMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "findPhasingConflicts": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "PhaseMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getPhaseTransitionReport": {
+      "categories": [
+        "workset_phase"
+      ],
+      "handler_class": "PhaseMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getCurrentPhase": {
+      "categories": [
+        "workset_phase"
+      ],
+      "handler_class": "PhaseMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "copyElementsToPhase": {
+      "categories": [
+        "workset_phase"
+      ],
+      "handler_class": "PhaseMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "setupDemolitionPlan": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "PhaseMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createWorkset": {
+      "categories": [
+        "workset_phase"
+      ],
+      "handler_class": "WorksetMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getAllWorksets": {
+      "categories": [
+        "workset_phase"
+      ],
+      "handler_class": "WorksetMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getWorksetInfo": {
+      "categories": [
+        "workset_phase"
+      ],
+      "handler_class": "WorksetMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "renameWorkset": {
+      "categories": [
+        "workset_phase"
+      ],
+      "handler_class": "WorksetMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "deleteWorkset": {
+      "categories": [
+        "element_deletion",
+        "workset_phase"
+      ],
+      "handler_class": "WorksetMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "setElementWorkset": {
+      "categories": [
+        "workset_phase"
+      ],
+      "handler_class": "WorksetMethods",
+      "verifiable": true,
+      "correction_check": false
+    },
+    "getElementWorkset": {
+      "categories": [
+        "workset_phase"
+      ],
+      "handler_class": "WorksetMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getElementsInWorkset": {
+      "categories": [
+        "workset_phase"
+      ],
+      "handler_class": "WorksetMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "moveElementsToWorkset": {
+      "categories": [
+        "workset_phase"
+      ],
+      "handler_class": "WorksetMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "setWorksetVisibility": {
+      "categories": [
+        "workset_phase"
+      ],
+      "handler_class": "WorksetMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getWorksetVisibilityInView": {
+      "categories": [
+        "view_management",
+        "workset_phase"
+      ],
+      "handler_class": "WorksetMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "setGlobalWorksetVisibility": {
+      "categories": [
+        "workset_phase"
+      ],
+      "handler_class": "WorksetMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "isWorksetEditable": {
+      "categories": [
+        "workset_phase"
+      ],
+      "handler_class": "WorksetMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "isElementBorrowed": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "WorksetMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "relinquishOwnership": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "WorksetMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getCheckoutStatus": {
+      "categories": [
+        "verification"
+      ],
+      "handler_class": "WorksetMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "isWorkshared": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "WorksetMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getWorksharingOptions": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "WorksetMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "synchronizeWithCentral": {
+      "categories": [
+        "document_management"
+      ],
+      "handler_class": "WorksetMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "reloadLatest": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "WorksetMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getSyncHistory": {
+      "categories": [
+        "document_management"
+      ],
+      "handler_class": "WorksetMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getWorksetsByCategory": {
+      "categories": [
+        "workset_phase"
+      ],
+      "handler_class": "WorksetMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createWorksetNamingScheme": {
+      "categories": [
+        "workset_phase"
+      ],
+      "handler_class": "WorksetMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getActiveWorkset": {
+      "categories": [
+        "workset_phase"
+      ],
+      "handler_class": "WorksetMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "setActiveWorkset": {
+      "categories": [
+        "workset_phase"
+      ],
+      "handler_class": "WorksetMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "bulkSetWorksetsByCategory": {
+      "categories": [
+        "workset_phase"
+      ],
+      "handler_class": "WorksetMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createDetailLine": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "DetailMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createDetailArc": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "DetailMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createDetailPolyline": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "DetailMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getDetailLineInfo": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "DetailMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "modifyDetailLine": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "DetailMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getDetailLinesInView": {
+      "categories": [
+        "view_management"
+      ],
+      "handler_class": "DetailMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createFilledRegion": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "DetailMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getFilledRegionInfo": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "DetailMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "modifyFilledRegionBoundary": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "DetailMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getFilledRegionTypes": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "DetailMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getFilledRegionsInView": {
+      "categories": [
+        "view_management"
+      ],
+      "handler_class": "DetailMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "placeDetailComponent": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "DetailMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "placeDetailComponentByName": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "DetailMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "placeRepeatingDetailComponent": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "DetailMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getDetailComponentInfo": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "DetailMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getDetailComponentTypes": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "DetailMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getDetailComponentsInView": {
+      "categories": [
+        "view_management"
+      ],
+      "handler_class": "DetailMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "addInsulation": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "DetailMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getInsulationInfo": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "DetailMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "removeInsulation": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "DetailMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createBreakLine": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "DetailMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "placeMarkerSymbol": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "DetailMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getLineStyles": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "DetailMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createLineStyle": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "DetailMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "modifyLineStyle": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "DetailMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createDetailGroup": {
+      "categories": [
+        "group_operations"
+      ],
+      "handler_class": "DetailMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "placeDetailGroup": {
+      "categories": [
+        "group_operations"
+      ],
+      "handler_class": "DetailMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getDetailGroupTypes": {
+      "categories": [
+        "group_operations"
+      ],
+      "handler_class": "DetailMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createMaskingRegion": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "DetailMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "overrideElementGraphics": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "DetailMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getElementGraphicsOverrides": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "DetailMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "clearElementGraphicsOverrides": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "DetailMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "deleteDetailElement": {
+      "categories": [
+        "element_deletion"
+      ],
+      "handler_class": "DetailMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "copyDetailElements": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "DetailMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createDetailComponentLibrary": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "DetailMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "extractAndReplaceFilledRegions": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "DetailMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getBreakLineTypes": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "DetailMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "placeBreakLineAuto": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "DetailMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createDetailLineInDraftingView": {
+      "categories": [
+        "view_management"
+      ],
+      "handler_class": "DetailMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "dimensionDetailLines": {
+      "categories": [
+        "annotation"
+      ],
+      "handler_class": "DetailMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getDraftingViewBounds": {
+      "categories": [
+        "view_management"
+      ],
+      "handler_class": "DetailMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "placeInsulationPattern": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "DetailMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "convertDetailToDraftingView": {
+      "categories": [
+        "view_management"
+      ],
+      "handler_class": "DetailMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "batchConvertDetailsToDraftingViews": {
+      "categories": [
+        "view_management"
+      ],
+      "handler_class": "DetailMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "traceDetailToDraftingView": {
+      "categories": [
+        "view_management"
+      ],
+      "handler_class": "DetailMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "intelligentTraceDetailToDraftingView": {
+      "categories": [
+        "view_management"
+      ],
+      "handler_class": "DetailMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getDetailComponentFamilies": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "ViewAnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "loadDetailComponentFamily": {
+      "categories": [
+        "family_operations"
+      ],
+      "handler_class": "DetailMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "searchLocalDetailFamilies": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "DetailMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "activateDetailComponentType": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "DetailMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "placeDetailComponentAdvanced": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "DetailMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "loadAutodeskFamilyAutomated": {
+      "categories": [
+        "family_operations"
+      ],
+      "handler_class": "DetailMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "captureDialogState": {
+      "categories": [
+        "render_capture"
+      ],
+      "handler_class": "DetailMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getDetailLibrary": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "DetailMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getDetailsInCategory": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "DetailMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "importDetailToDocument": {
+      "categories": [
+        "document_management"
+      ],
+      "handler_class": "DetailMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "searchDetailLibrary": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "DetailMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "loadKeynoteFile": {
+      "categories": [
+        "annotation"
+      ],
+      "handler_class": "AnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getKeynoteEntries": {
+      "categories": [
+        "annotation"
+      ],
+      "handler_class": "AnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "placeAnnotationSymbol": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "AnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getAnnotationSymbolTypes": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "AnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createRevisionCloud": {
+      "categories": [
+        "revision_tracking"
+      ],
+      "handler_class": "AnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getRevisionCloudsInView": {
+      "categories": [
+        "view_management",
+        "revision_tracking"
+      ],
+      "handler_class": "AnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "modifyRevisionCloud": {
+      "categories": [
+        "revision_tracking"
+      ],
+      "handler_class": "AnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "deleteRevisionCloud": {
+      "categories": [
+        "element_deletion",
+        "revision_tracking"
+      ],
+      "handler_class": "AnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "modifyRevision": {
+      "categories": [
+        "revision_tracking"
+      ],
+      "handler_class": "AnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "setRevisionIssued": {
+      "categories": [
+        "revision_tracking"
+      ],
+      "handler_class": "AnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "placeAngularDimension": {
+      "categories": [
+        "annotation"
+      ],
+      "handler_class": "AnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "placeRadialDimension": {
+      "categories": [
+        "annotation"
+      ],
+      "handler_class": "AnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "placeDiameterDimension": {
+      "categories": [
+        "annotation"
+      ],
+      "handler_class": "AnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "placeArcLengthDimension": {
+      "categories": [
+        "annotation"
+      ],
+      "handler_class": "AnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createCallout": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "AnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getCalloutsInView": {
+      "categories": [
+        "view_management"
+      ],
+      "handler_class": "AnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "placeAreaTag": {
+      "categories": [
+        "room_operations",
+        "annotation"
+      ],
+      "handler_class": "AnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getAreaTagsInView": {
+      "categories": [
+        "room_operations",
+        "view_management",
+        "annotation"
+      ],
+      "handler_class": "AnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "placeSpotElevation": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "AnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "placeSpotCoordinate": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "AnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "placeSpotSlope": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "AnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createReferencePlane": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "AnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getReferencePlanesInView": {
+      "categories": [
+        "view_management"
+      ],
+      "handler_class": "AnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createMatchline": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "AnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getMatchlinesInView": {
+      "categories": [
+        "view_management"
+      ],
+      "handler_class": "AnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "placeLegendComponent": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "AnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getAllAnnotationsInView": {
+      "categories": [
+        "view_management"
+      ],
+      "handler_class": "AnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "deleteAnnotation": {
+      "categories": [
+        "element_deletion"
+      ],
+      "handler_class": "AnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "addAnnotationLeader": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "AnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "setLeaderEndpoint": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "AnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getAnnotationLeaderInfo": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "AnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "placeAnnotationWithLeader": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "AnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "batchPlaceKeynotesWithLeaders": {
+      "categories": [
+        "annotation"
+      ],
+      "handler_class": "AnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createLevel": {
+      "categories": [
+        "grid_level"
+      ],
+      "handler_class": "LevelMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getLevels": {
+      "categories": [
+        "grid_level"
+      ],
+      "handler_class": "LevelMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getLevel": {
+      "categories": [
+        "grid_level"
+      ],
+      "handler_class": "LevelMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "renameLevel": {
+      "categories": [
+        "grid_level"
+      ],
+      "handler_class": "LevelMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "setLevelElevation": {
+      "categories": [
+        "grid_level"
+      ],
+      "handler_class": "LevelMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "deleteLevel": {
+      "categories": [
+        "element_deletion",
+        "grid_level"
+      ],
+      "handler_class": "LevelMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createLevelArray": {
+      "categories": [
+        "grid_level"
+      ],
+      "handler_class": "LevelMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getLevelByElevation": {
+      "categories": [
+        "grid_level"
+      ],
+      "handler_class": "LevelMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getElementsOnLevel": {
+      "categories": [
+        "grid_level"
+      ],
+      "handler_class": "LevelMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "copyElementsToLevel": {
+      "categories": [
+        "grid_level"
+      ],
+      "handler_class": "LevelMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createGrid": {
+      "categories": [
+        "grid_level"
+      ],
+      "handler_class": "GridMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createArcGrid": {
+      "categories": [
+        "grid_level"
+      ],
+      "handler_class": "GridMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getGrids": {
+      "categories": [
+        "grid_level"
+      ],
+      "handler_class": "GridMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getGrid": {
+      "categories": [
+        "grid_level"
+      ],
+      "handler_class": "GridMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "renameGrid": {
+      "categories": [
+        "grid_level"
+      ],
+      "handler_class": "GridMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "deleteGrid": {
+      "categories": [
+        "element_deletion",
+        "grid_level"
+      ],
+      "handler_class": "GridMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createGridArray": {
+      "categories": [
+        "grid_level"
+      ],
+      "handler_class": "GridMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "setGridExtents": {
+      "categories": [
+        "grid_level"
+      ],
+      "handler_class": "GridMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getGridIntersection": {
+      "categories": [
+        "grid_level"
+      ],
+      "handler_class": "GridMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getElementLocation": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "ElementMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getBoundingBox": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "ElementMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "moveElement": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "ElementMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "moveElements": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "ElementMethods",
+      "verifiable": true,
+      "correction_check": false
+    },
+    "placeFamilyInstance": {
+      "categories": [
+        "family_operations"
+      ],
+      "handler_class": "ElementMethods",
+      "verifiable": true,
+      "correction_check": true
+    },
+    "getFamilyInstanceTypes": {
+      "categories": [
+        "family_operations"
+      ],
+      "handler_class": "ElementMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "copyElements": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "ElementMethods",
+      "verifiable": true,
+      "correction_check": false
+    },
+    "deleteElements": {
+      "categories": [
+        "element_deletion"
+      ],
+      "handler_class": "ElementMethods",
+      "verifiable": true,
+      "correction_check": false
+    },
+    "deleteElement": {
+      "categories": [
+        "element_deletion"
+      ],
+      "handler_class": "ElementMethods",
+      "verifiable": true,
+      "correction_check": false
+    },
+    "loadFamily": {
+      "categories": [
+        "family_operations"
+      ],
+      "handler_class": "ElementMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "listFamilyFiles": {
+      "categories": [
+        "family_operations"
+      ],
+      "handler_class": "ElementMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getLibraryPaths": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "ElementMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getLoadedFamilies": {
+      "categories": [
+        "structural"
+      ],
+      "handler_class": "ElementMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "openLoadAutodeskFamilyDialog": {
+      "categories": [
+        "family_operations",
+        "structural",
+        "document_management"
+      ],
+      "handler_class": "ElementMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getImportedInstances": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "ElementMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getImportedGeometry": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "ElementMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getImportedLines": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "ElementMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getGroups": {
+      "categories": [
+        "group_operations"
+      ],
+      "handler_class": "GroupMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getGroupTypes": {
+      "categories": [
+        "group_operations"
+      ],
+      "handler_class": "GroupMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getGroupMembers": {
+      "categories": [
+        "group_operations"
+      ],
+      "handler_class": "GroupMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createGroup": {
+      "categories": [
+        "group_operations"
+      ],
+      "handler_class": "GroupMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "placeGroup": {
+      "categories": [
+        "group_operations"
+      ],
+      "handler_class": "GroupMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "ungroupGroup": {
+      "categories": [
+        "group_operations"
+      ],
+      "handler_class": "GroupMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "deleteGroupType": {
+      "categories": [
+        "element_deletion",
+        "group_operations"
+      ],
+      "handler_class": "GroupMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "renameGroupType": {
+      "categories": [
+        "group_operations"
+      ],
+      "handler_class": "GroupMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "duplicateGroupType": {
+      "categories": [
+        "group_operations"
+      ],
+      "handler_class": "GroupMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getModelGroups": {
+      "categories": [
+        "group_operations"
+      ],
+      "handler_class": "GroupMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getDetailGroups": {
+      "categories": [
+        "group_operations"
+      ],
+      "handler_class": "GroupMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createGroupAndReplicatePattern": {
+      "categories": [
+        "group_operations"
+      ],
+      "handler_class": "GroupMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "tagDoor": {
+      "categories": [
+        "door_window",
+        "annotation"
+      ],
+      "handler_class": "TaggingMethods",
+      "verifiable": true,
+      "correction_check": true
+    },
+    "tagRoom": {
+      "categories": [
+        "room_operations",
+        "annotation"
+      ],
+      "handler_class": "TaggingMethods",
+      "verifiable": true,
+      "correction_check": true
+    },
+    "tagWall": {
+      "categories": [
+        "wall_creation",
+        "annotation"
+      ],
+      "handler_class": "TaggingMethods",
+      "verifiable": true,
+      "correction_check": false
+    },
+    "tagElement": {
+      "categories": [
+        "annotation"
+      ],
+      "handler_class": "TaggingMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "batchTagDoors": {
+      "categories": [
+        "door_window",
+        "annotation"
+      ],
+      "handler_class": "TaggingMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "batchTagRooms": {
+      "categories": [
+        "room_operations",
+        "annotation"
+      ],
+      "handler_class": "TaggingMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getTagsInView": {
+      "categories": [
+        "view_management",
+        "annotation"
+      ],
+      "handler_class": "TaggingMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "deleteTag": {
+      "categories": [
+        "element_deletion",
+        "annotation"
+      ],
+      "handler_class": "TaggingMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getTagInfo": {
+      "categories": [
+        "annotation"
+      ],
+      "handler_class": "TaggingMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getRevitLinks": {
+      "categories": [
+        "link_management"
+      ],
+      "handler_class": "LinkMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getRevitLinkTypes": {
+      "categories": [
+        "link_management"
+      ],
+      "handler_class": "LinkMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "loadRevitLink": {
+      "categories": [
+        "link_management"
+      ],
+      "handler_class": "LinkMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "reloadRevitLink": {
+      "categories": [
+        "link_management"
+      ],
+      "handler_class": "LinkMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "unloadRevitLink": {
+      "categories": [
+        "link_management"
+      ],
+      "handler_class": "LinkMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "deleteRevitLink": {
+      "categories": [
+        "element_deletion",
+        "link_management"
+      ],
+      "handler_class": "LinkMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getCADLinks": {
+      "categories": [
+        "link_management"
+      ],
+      "handler_class": "LinkMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "importCAD": {
+      "categories": [
+        "link_management"
+      ],
+      "handler_class": "LinkMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "deleteCADLink": {
+      "categories": [
+        "element_deletion",
+        "link_management"
+      ],
+      "handler_class": "LinkMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getLinkTransform": {
+      "categories": [
+        "link_management"
+      ],
+      "handler_class": "LinkMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "moveLinkInstance": {
+      "categories": [
+        "link_management"
+      ],
+      "handler_class": "LinkMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getCADGeometry": {
+      "categories": [
+        "link_management"
+      ],
+      "handler_class": "LinkMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getCADWallCandidates": {
+      "categories": [
+        "wall_creation",
+        "link_management"
+      ],
+      "handler_class": "LinkMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "analyzeCADFloorPlan": {
+      "categories": [
+        "link_management"
+      ],
+      "handler_class": "LinkMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "queryLinkedElementCoordinates": {
+      "categories": [
+        "link_management"
+      ],
+      "handler_class": "LinkMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createNewRevision": {
+      "categories": [
+        "revision_tracking"
+      ],
+      "handler_class": "RevisionMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "updateRevision": {
+      "categories": [
+        "revision_tracking"
+      ],
+      "handler_class": "RevisionMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "issueRevision": {
+      "categories": [
+        "revision_tracking"
+      ],
+      "handler_class": "RevisionMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "deleteRevision": {
+      "categories": [
+        "element_deletion",
+        "revision_tracking"
+      ],
+      "handler_class": "RevisionMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getRevisionCloudsList": {
+      "categories": [
+        "revision_tracking"
+      ],
+      "handler_class": "RevisionMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createNewRevisionCloud": {
+      "categories": [
+        "revision_tracking"
+      ],
+      "handler_class": "RevisionMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "deleteRevisionCloudById": {
+      "categories": [
+        "element_deletion",
+        "revision_tracking"
+      ],
+      "handler_class": "RevisionMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getSheetRevisions": {
+      "categories": [
+        "sheet_management",
+        "revision_tracking"
+      ],
+      "handler_class": "RevisionMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "addRevisionsToSheet": {
+      "categories": [
+        "sheet_management",
+        "revision_tracking"
+      ],
+      "handler_class": "RevisionMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "removeRevisionsFromSheet": {
+      "categories": [
+        "sheet_management",
+        "revision_tracking"
+      ],
+      "handler_class": "RevisionMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "setRevisionVisibility": {
+      "categories": [
+        "revision_tracking"
+      ],
+      "handler_class": "RevisionMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "reorderRevisions": {
+      "categories": [
+        "revision_tracking"
+      ],
+      "handler_class": "RevisionMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "verifyElement": {
+      "categories": [
+        "verification"
+      ],
+      "handler_class": "ValidationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "verifyTextContent": {
+      "categories": [
+        "annotation",
+        "verification"
+      ],
+      "handler_class": "ValidationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getViewSnapshot": {
+      "categories": [
+        "view_management"
+      ],
+      "handler_class": "ValidationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "compareViewState": {
+      "categories": [
+        "view_management"
+      ],
+      "handler_class": "ValidationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "verifyBatch": {
+      "categories": [
+        "verification"
+      ],
+      "handler_class": "ValidationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "verifyOperation": {
+      "categories": [
+        "verification"
+      ],
+      "handler_class": "ValidationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "verifyElementCount": {
+      "categories": [
+        "verification"
+      ],
+      "handler_class": "ValidationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getModelState": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "ValidationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "preFlightCheck": {
+      "categories": [
+        "verification"
+      ],
+      "handler_class": "ValidationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "detectClashes": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "ValidationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "validateModelHealth": {
+      "categories": [
+        "verification",
+        "system_health"
+      ],
+      "handler_class": "ValidationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "autoPlaceKeynotes": {
+      "categories": [
+        "annotation"
+      ],
+      "handler_class": "ValidationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "generateLegendFromTypes": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "ValidationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "exportConstructionData": {
+      "categories": [
+        "document_management"
+      ],
+      "handler_class": "ValidationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "optimizeFurnitureLayout": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "ValidationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "validateElementSpacingAndAlignment": {
+      "categories": [
+        "verification"
+      ],
+      "handler_class": "ValidationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getTopographySurfaces": {
+      "categories": [
+        "site_operations"
+      ],
+      "handler_class": "SiteMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createTopography": {
+      "categories": [
+        "site_operations"
+      ],
+      "handler_class": "SiteMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getTopographyPoints": {
+      "categories": [
+        "site_operations"
+      ],
+      "handler_class": "SiteMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "addTopographyPoints": {
+      "categories": [
+        "site_operations"
+      ],
+      "handler_class": "SiteMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "deleteTopography": {
+      "categories": [
+        "element_deletion",
+        "site_operations"
+      ],
+      "handler_class": "SiteMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getBuildingPads": {
+      "categories": [
+        "site_operations"
+      ],
+      "handler_class": "SiteMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createBuildingPad": {
+      "categories": [
+        "site_operations"
+      ],
+      "handler_class": "SiteMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getPropertyLines": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "SiteMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createPropertyLine": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "SiteMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getSiteInfo": {
+      "categories": [
+        "site_operations"
+      ],
+      "handler_class": "SiteMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "setSiteLocation": {
+      "categories": [
+        "site_operations"
+      ],
+      "handler_class": "SiteMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "runComplianceCheck": {
+      "categories": [
+        "verification",
+        "compliance"
+      ],
+      "handler_class": "ComplianceMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "checkCorridorWidths": {
+      "categories": [
+        "verification"
+      ],
+      "handler_class": "ComplianceMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "checkDoorWidths": {
+      "categories": [
+        "door_window",
+        "verification"
+      ],
+      "handler_class": "ComplianceMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "checkRoomAreas": {
+      "categories": [
+        "room_operations",
+        "verification"
+      ],
+      "handler_class": "ComplianceMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "checkToiletClearances": {
+      "categories": [
+        "verification"
+      ],
+      "handler_class": "ComplianceMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "checkDoorSwing": {
+      "categories": [
+        "door_window",
+        "verification"
+      ],
+      "handler_class": "ComplianceMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "checkStairDimensions": {
+      "categories": [
+        "annotation",
+        "verification",
+        "stair_railing"
+      ],
+      "handler_class": "ComplianceMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "checkCeilingHeights": {
+      "categories": [
+        "floor_ceiling_roof",
+        "verification"
+      ],
+      "handler_class": "ComplianceMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "checkWallFireRatings": {
+      "categories": [
+        "wall_creation",
+        "verification"
+      ],
+      "handler_class": "ComplianceMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "generateComplianceReport": {
+      "categories": [
+        "compliance"
+      ],
+      "handler_class": "ComplianceMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "runCDChecklist": {
+      "categories": [
+        "verification"
+      ],
+      "handler_class": "CDChecklistMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getViewCropRegion": {
+      "categories": [
+        "view_management"
+      ],
+      "handler_class": "ViewAnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "expandViewCropRegion": {
+      "categories": [
+        "view_management"
+      ],
+      "handler_class": "ViewAnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getTextNoteLocation": {
+      "categories": [
+        "annotation"
+      ],
+      "handler_class": "ViewAnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createTextNoteInCrop": {
+      "categories": [
+        "annotation"
+      ],
+      "handler_class": "ViewAnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createLinearDimension": {
+      "categories": [
+        "annotation"
+      ],
+      "handler_class": "ViewAnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createTextNoteWithLeader": {
+      "categories": [
+        "annotation"
+      ],
+      "handler_class": "ViewAnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "moveTextNote": {
+      "categories": [
+        "annotation"
+      ],
+      "handler_class": "ViewAnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getTextNoteTypes": {
+      "categories": [
+        "annotation"
+      ],
+      "handler_class": "ViewAnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "addLeaderToTextNote": {
+      "categories": [
+        "annotation"
+      ],
+      "handler_class": "ViewAnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "setTextNoteLeaderEndpoint": {
+      "categories": [
+        "annotation"
+      ],
+      "handler_class": "ViewAnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "resetTextNoteLeaders": {
+      "categories": [
+        "annotation"
+      ],
+      "handler_class": "ViewAnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getTextNotePositions": {
+      "categories": [
+        "annotation"
+      ],
+      "handler_class": "ViewAnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "alignTextNotes": {
+      "categories": [
+        "annotation"
+      ],
+      "handler_class": "ViewAnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createTextNoteAlignedWith": {
+      "categories": [
+        "annotation"
+      ],
+      "handler_class": "ViewAnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getDetailComponentTypesVA": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "ViewAnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "placeDetailComponentVA": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "ViewAnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getDetailComponentsInViewVA": {
+      "categories": [
+        "view_management"
+      ],
+      "handler_class": "ViewAnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "moveDetailComponent": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "ViewAnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "rotateDetailComponent": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "ViewAnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createDetailLineVA": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "ViewAnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getLineStylesVA": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "ViewAnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createDetailArcVA": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "ViewAnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getFilledRegionTypesVA": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "ViewAnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createFilledRegionVA": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "ViewAnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getWallTypeLayers": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "ViewAnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getRoofTypeLayers": {
+      "categories": [
+        "floor_ceiling_roof"
+      ],
+      "handler_class": "ViewAnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getFloorTypeLayers": {
+      "categories": [
+        "floor_ceiling_roof"
+      ],
+      "handler_class": "ViewAnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getElementBoundingBoxInView": {
+      "categories": [
+        "view_management"
+      ],
+      "handler_class": "ViewAnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createFilledRegionFromPoints": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "ViewAnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getFilledRegionsInViewVA": {
+      "categories": [
+        "view_management"
+      ],
+      "handler_class": "ViewAnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getDetailLinesInViewVA": {
+      "categories": [
+        "view_management"
+      ],
+      "handler_class": "ViewAnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createDetailLinesFromPoints": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "ViewAnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "analyzeDetailView": {
+      "categories": [
+        "view_management"
+      ],
+      "handler_class": "ViewAnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getSectionCutGeometry": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "ViewAnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "scaleDetailViewElements": {
+      "categories": [
+        "view_management"
+      ],
+      "handler_class": "ViewAnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "mirrorDetailViewElements": {
+      "categories": [
+        "view_management"
+      ],
+      "handler_class": "ViewAnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "rotateDetailViewElements": {
+      "categories": [
+        "view_management"
+      ],
+      "handler_class": "ViewAnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "alignElements": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "ViewAnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "distributeElements": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "ViewAnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "findDuplicateElements": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "ViewAnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "autoTagUntagged": {
+      "categories": [
+        "annotation"
+      ],
+      "handler_class": "ViewAnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "offsetDetailCurves": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "ViewAnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "conditionalParameterUpdate": {
+      "categories": [
+        "parameter_operations"
+      ],
+      "handler_class": "ViewAnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "batchUpdateTitleblocks": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "ViewAnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "batchSwapTypes": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "ViewAnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "matchElementProperties": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "ViewAnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "detectElementClashes": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "ViewAnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createViewsFromRooms": {
+      "categories": [
+        "room_operations",
+        "view_management"
+      ],
+      "handler_class": "ViewAnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "propagateParameterValues": {
+      "categories": [
+        "parameter_operations"
+      ],
+      "handler_class": "ViewAnnotationMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getSuggestions": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "IntelligenceMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getAssistanceSummary": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "IntelligenceMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getTaskAssistance": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "IntelligenceMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "respondToSuggestion": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "IntelligenceMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getWorkflowStatistics": {
+      "categories": [
+        "intelligence"
+      ],
+      "handler_class": "IntelligenceMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getWorkflowPatterns": {
+      "categories": [
+        "intelligence"
+      ],
+      "handler_class": "IntelligenceMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getActionFrequencies": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "IntelligenceMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "startTaskTracking": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "IntelligenceMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "endTaskTracking": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "IntelligenceMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getLearnedPreferences": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "IntelligenceMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getPreferredScale": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "IntelligenceMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "exportPreferencesForMemory": {
+      "categories": [
+        "document_management"
+      ],
+      "handler_class": "IntelligenceMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getSheetLayoutRecommendation": {
+      "categories": [
+        "sheet_management"
+      ],
+      "handler_class": "IntelligenceMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getRecommendedScale": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "IntelligenceMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "suggestViewportPosition": {
+      "categories": [
+        "viewport_placement"
+      ],
+      "handler_class": "IntelligenceMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getLearningReport": {
+      "categories": [
+        "intelligence"
+      ],
+      "handler_class": "IntelligenceMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "exportWorkflowData": {
+      "categories": [
+        "document_management",
+        "intelligence"
+      ],
+      "handler_class": "IntelligenceMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "storeCorrection": {
+      "categories": [
+        "intelligence"
+      ],
+      "handler_class": "IntelligenceMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getRelevantCorrections": {
+      "categories": [
+        "intelligence"
+      ],
+      "handler_class": "IntelligenceMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getMethodCorrections": {
+      "categories": [
+        "intelligence"
+      ],
+      "handler_class": "IntelligenceMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getCorrectionStats": {
+      "categories": [
+        "system_health",
+        "intelligence"
+      ],
+      "handler_class": "IntelligenceMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getCorrectionsAsKnowledge": {
+      "categories": [
+        "intelligence"
+      ],
+      "handler_class": "IntelligenceMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "markCorrectionApplied": {
+      "categories": [
+        "intelligence"
+      ],
+      "handler_class": "IntelligenceMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "deleteCorrection": {
+      "categories": [
+        "element_deletion",
+        "intelligence"
+      ],
+      "handler_class": "IntelligenceMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "verifyOperationResult": {
+      "categories": [
+        "verification"
+      ],
+      "handler_class": "IntelligenceMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "analyzeWorkflowRequest": {
+      "categories": [
+        "intelligence"
+      ],
+      "handler_class": "IntelligenceMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getWorkflowTemplates": {
+      "categories": [
+        "intelligence"
+      ],
+      "handler_class": "IntelligenceMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "setProjectContext": {
+      "categories": [
+        "annotation"
+      ],
+      "handler_class": "IntelligenceMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getProjectContext": {
+      "categories": [
+        "annotation"
+      ],
+      "handler_class": "IntelligenceMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "exportAllIntelligence": {
+      "categories": [
+        "document_management",
+        "intelligence"
+      ],
+      "handler_class": "IntelligenceMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getSessionSummaryForMemory": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "IntelligenceMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "importPreferencesFromMemory": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "IntelligenceMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "runProactiveAnalysis": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "IntelligenceMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getMonitorSuggestions": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "IntelligenceMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "executeSuggestion": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "IntelligenceMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "takeModelSnapshot": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "IntelligenceMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getUnplacedViews": {
+      "categories": [
+        "view_management"
+      ],
+      "handler_class": "IntelligenceMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getUntaggedRooms": {
+      "categories": [
+        "room_operations",
+        "annotation"
+      ],
+      "handler_class": "IntelligenceMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getAutoCorrections": {
+      "categories": [
+        "intelligence"
+      ],
+      "handler_class": "IntelligenceMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "dismissSuggestion": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "IntelligenceMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "cancelTask": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "IntelligenceMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getActiveTasks": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "IntelligenceMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getTaskResult": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "IntelligenceMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "configureAutonomy": {
+      "categories": [
+        "system_health"
+      ],
+      "handler_class": "IntelligenceMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getAutonomyStats": {
+      "categories": [
+        "system_health"
+      ],
+      "handler_class": "IntelligenceMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getSupportedGoals": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "IntelligenceMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "analyzeProjectState": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "ProjectAnalysisMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getSheetViewMatrix": {
+      "categories": [
+        "view_management",
+        "sheet_management"
+      ],
+      "handler_class": "ProjectAnalysisMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getViewPlacementStatus": {
+      "categories": [
+        "view_management"
+      ],
+      "handler_class": "ProjectAnalysisMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getLevelViewCoverage": {
+      "categories": [
+        "view_management",
+        "grid_level"
+      ],
+      "handler_class": "ProjectAnalysisMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "detectNamingPatterns": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "ProjectAnalysisMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "analyzeProjectGaps": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "ProjectAnalysisMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "extractProjectDataMatrix": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "ProjectAnalysisMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "analyzeCirculationPatterns": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "ProjectAnalysisMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "validateSpaceEfficiency": {
+      "categories": [
+        "verification"
+      ],
+      "handler_class": "ProjectAnalysisMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "extractBuildingEnvelopeMetrics": {
+      "categories": [
+        "site_operations"
+      ],
+      "handler_class": "ProjectAnalysisMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "extractAcousticProperties": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "ProjectAnalysisMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "extractDaylightingAnalysis": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "ProjectAnalysisMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "submitRender": {
+      "categories": [
+        "render_capture"
+      ],
+      "handler_class": "RenderMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getRenderStatus": {
+      "categories": [
+        "render_capture"
+      ],
+      "handler_class": "RenderMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getRenderResult": {
+      "categories": [
+        "render_capture"
+      ],
+      "handler_class": "RenderMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "listRenderJobs": {
+      "categories": [
+        "render_capture"
+      ],
+      "handler_class": "RenderMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "cancelRender": {
+      "categories": [
+        "render_capture"
+      ],
+      "handler_class": "RenderMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getRenderPresets": {
+      "categories": [
+        "render_capture"
+      ],
+      "handler_class": "RenderMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "captureAndRender": {
+      "categories": [
+        "render_capture"
+      ],
+      "handler_class": "RenderMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "captureViewport": {
+      "categories": [
+        "viewport_placement",
+        "render_capture"
+      ],
+      "handler_class": "ViewportCaptureMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "captureViewportToBase64": {
+      "categories": [
+        "viewport_placement",
+        "render_capture"
+      ],
+      "handler_class": "ViewportCaptureMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "setCamera": {
+      "categories": [
+        "render_capture"
+      ],
+      "handler_class": "ViewportCaptureMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getCamera": {
+      "categories": [
+        "render_capture"
+      ],
+      "handler_class": "ViewportCaptureMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "setViewStyle": {
+      "categories": [
+        "view_management"
+      ],
+      "handler_class": "ViewportCaptureMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "listViews": {
+      "categories": [
+        "view_management"
+      ],
+      "handler_class": "ViewportCaptureMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "create3DView": {
+      "categories": [
+        "view_creation"
+      ],
+      "handler_class": "ViewportCaptureMethods",
+      "verifiable": true,
+      "correction_check": false
+    },
+    "classifyFailure": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "CapabilityMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "proposeToolSpec": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "CapabilityMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "approveToolSpec": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "CapabilityMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "listToolSpecs": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "CapabilityMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getToolSpec": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "CapabilityMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getMethodRegistry": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "CapabilityMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "rebuildMethodRegistry": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "CapabilityMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createTestArtifact": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "CapabilityMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "runTest": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "CapabilityMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "listTests": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "CapabilityMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getCapabilityStatus": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "CapabilityMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getTextTypes": {
+      "categories": [
+        "annotation"
+      ],
+      "handler_class": "BatchTextMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "createStandardTextType": {
+      "categories": [
+        "annotation"
+      ],
+      "handler_class": "BatchTextMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getTextNotes": {
+      "categories": [
+        "annotation"
+      ],
+      "handler_class": "BatchTextMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "standardizeDocumentText": {
+      "categories": [
+        "annotation",
+        "document_management"
+      ],
+      "handler_class": "BatchTextMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "standardizeDimensionText": {
+      "categories": [
+        "annotation"
+      ],
+      "handler_class": "BatchTextMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "renameDimensionTypes": {
+      "categories": [
+        "annotation"
+      ],
+      "handler_class": "BatchTextMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "standardizeTextNoteTypes": {
+      "categories": [
+        "annotation"
+      ],
+      "handler_class": "BatchTextMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "processDetailFile": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "BatchTextMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getDetailLibraryFiles": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "BatchTextMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "getNextFileToProcess": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "BatchTextMethods",
+      "verifiable": false,
+      "correction_check": false
+    },
+    "markFileProcessed": {
+      "categories": [
+        "general"
+      ],
+      "handler_class": "BatchTextMethods",
+      "verifiable": false,
+      "correction_check": false
+    }
+  }
+}

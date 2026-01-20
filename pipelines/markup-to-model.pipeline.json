@@ -1,0 +1,197 @@
+{
+  "id": "markup-to-model",
+  "name": "PDF Markup to Revit Model Changes",
+  "version": "1.0.0",
+  "description": "Process correction markups from PDF and apply changes to Revit model",
+
+  "triggers": {
+    "manual": "/pipeline markup-to-model",
+    "auto": {
+      "condition": "user_provides_markup_pdf",
+      "patterns": ["corrections", "markups", "redlines", "review comments", "apply changes from"]
+    }
+  },
+
+  "prerequisites": {
+    "revit_running": true,
+    "revit_version": ["2025", "2026"],
+    "required_tools": ["bluebeam-mcp OR vision", "RevitMCPBridge"],
+    "document_state": "existing_project"
+  },
+
+  "phases": [
+    {
+      "id": "P1",
+      "name": "Setup",
+      "description": "Load markup PDF and verify target Revit model",
+      "steps": [
+        {
+          "id": "P1.1",
+          "action": "check_revit_connection",
+          "method": "ping",
+          "on_fail": "abort"
+        },
+        {
+          "id": "P1.2",
+          "action": "get_active_project",
+          "method": "getProjectInfo",
+          "store_result": "target_project"
+        },
+        {
+          "id": "P1.3",
+          "action": "load_markup_pdf",
+          "accepts": [".pdf"],
+          "tool": "bluebeam-mcp OR Read",
+          "store_result": "markup_file"
+        }
+      ],
+      "checkpoint": {
+        "name": "Sources Loaded",
+        "auto_pass": true,
+        "validation": ["revit_connected", "project_loaded", "markup_accessible"]
+      }
+    },
+    {
+      "id": "P2",
+      "name": "Markup Analysis",
+      "description": "Extract and categorize all markups from PDF",
+      "steps": [
+        {
+          "id": "P2.1",
+          "action": "extract_markups",
+          "tool": "vision OR bluebeam",
+          "detect": ["text_changes", "dimension_changes", "additions", "deletions", "clouds"],
+          "store_result": "raw_markups"
+        },
+        {
+          "id": "P2.2",
+          "action": "categorize_markups",
+          "categories": {
+            "text_edit": "Strikethrough with replacement = EDIT IN PLACE",
+            "add_element": "Plus sign or 'ADD' note",
+            "delete_element": "X mark or 'DELETE' note",
+            "move_element": "Arrow indicating relocation",
+            "dimension_change": "Crossed out number with new number"
+          },
+          "store_result": "categorized_markups"
+        },
+        {
+          "id": "P2.3",
+          "action": "locate_in_model",
+          "description": "Map markup locations to Revit element IDs",
+          "method": "Find nearest element by coordinates and type",
+          "store_result": "mapped_changes"
+        }
+      ],
+      "checkpoint": {
+        "name": "Changes Identified",
+        "requires_approval": true,
+        "display": "Table of changes: Type | Location | Current | New",
+        "user_prompt": "Found {change_count} markups. Review and approve changes to apply?"
+      }
+    },
+    {
+      "id": "P3",
+      "name": "Apply Changes",
+      "description": "Execute each change in Revit",
+      "steps": [
+        {
+          "id": "P3.1",
+          "action": "apply_text_edits",
+          "filter": "category == 'text_edit'",
+          "method": "modifyTextNote",
+          "critical_rule": "EDIT IN PLACE - do NOT create new, modify existing",
+          "store_result": "text_changes_applied"
+        },
+        {
+          "id": "P3.2",
+          "action": "apply_element_additions",
+          "filter": "category == 'add_element'",
+          "methods": ["createWall", "createDoor", "createWindow", "placeComponent"],
+          "store_result": "elements_added"
+        },
+        {
+          "id": "P3.3",
+          "action": "apply_element_deletions",
+          "filter": "category == 'delete_element'",
+          "method": "deleteElement",
+          "store_result": "elements_deleted"
+        },
+        {
+          "id": "P3.4",
+          "action": "apply_element_moves",
+          "filter": "category == 'move_element'",
+          "method": "moveElement",
+          "store_result": "elements_moved"
+        },
+        {
+          "id": "P3.5",
+          "action": "apply_dimension_changes",
+          "filter": "category == 'dimension_change'",
+          "method": "modifyDimension OR moveElement",
+          "store_result": "dimensions_changed"
+        }
+      ],
+      "checkpoint": {
+        "name": "Changes Applied",
+        "auto_pass": false,
+        "validation": ["all_changes_successful"]
+      }
+    },
+    {
+      "id": "P4",
+      "name": "Verification",
+      "description": "Verify all changes were applied correctly",
+      "steps": [
+        {
+          "id": "P4.1",
+          "action": "capture_before_after",
+          "method": "captureActiveView",
+          "compare": "side_by_side"
+        },
+        {
+          "id": "P4.2",
+          "action": "run_bim_validator",
+          "agent": "bim-validator",
+          "checks": ["no_duplicate_elements", "valid_connections", "annotation_accuracy"]
+        },
+        {
+          "id": "P4.3",
+          "action": "generate_change_report",
+          "format": "markdown",
+          "include": ["changed_count", "details_per_change", "any_failures"]
+        }
+      ],
+      "checkpoint": {
+        "name": "Changes Verified",
+        "requires_approval": true,
+        "user_prompt": "Applied {success_count}/{total_count} changes. {failure_count} failed. Review results?"
+      }
+    }
+  ],
+
+  "on_success": {
+    "memory": {
+      "action": "store",
+      "type": "outcome",
+      "importance": 8,
+      "summary": "Applied {change_count} markup corrections to {project_name}"
+    },
+    "voice": {
+      "action": "speak",
+      "message": "Markup processing complete. Applied {success_count} changes with {failure_count} requiring manual review."
+    }
+  },
+
+  "on_failure": {
+    "memory": {
+      "action": "store",
+      "type": "error",
+      "importance": 9
+    }
+  },
+
+  "corrections_to_apply": [
+    {"id": 458, "rule": "Strikethrough = EDIT IN PLACE, not add new"}
+  ]
+}

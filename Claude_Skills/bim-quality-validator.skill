@@ -1,0 +1,278 @@
+# BIM Quality Validator Skill
+
+## Overview
+This skill provides validation checklists and procedures for ensuring Revit model quality after AI-driven operations.
+
+## When to Use
+- After batch element placement
+- Before issuing construction documents
+- When verifying PDF-to-Revit conversions
+- Quality assurance reviews
+
+## Validation Levels
+
+### Level 1: Quick Check (After Each Operation)
+Fast validation during active work:
+- [ ] Element count changed as expected
+- [ ] No error messages returned
+- [ ] Elements visible in correct location
+
+### Level 2: Batch Validation (After Major Operations)
+After completing a set of related elements:
+- [ ] All elements placed successfully
+- [ ] No overlapping/duplicate elements
+- [ ] Elements hosted correctly (doors in walls)
+- [ ] Geometry is valid (no zero-length walls)
+
+### Level 3: Model Validation (End of Session)
+Comprehensive model quality check:
+- [ ] Revit warnings resolved
+- [ ] All rooms enclosed and tagged
+- [ ] Schedules populate correctly
+- [ ] Views display as expected
+
+### Level 4: QC Review (Before Issue)
+Full quality control before deliverable:
+- [ ] Code compliance verified
+- [ ] Coordination complete
+- [ ] All annotations placed
+- [ ] Print preview checked
+
+## Validation Checklists
+
+### Wall Validation
+```
+GEOMETRY
+- [ ] All walls have non-zero length
+- [ ] No duplicate/overlapping walls
+- [ ] Walls properly joined at corners
+- [ ] Wall heights consistent per level
+- [ ] Base and top constraints correct
+
+PROPERTIES
+- [ ] Correct wall type assigned
+- [ ] Structural parameter set correctly
+- [ ] Location line consistent (finish face, centerline)
+- [ ] Fire rating if required
+
+CONNECTIVITY
+- [ ] Exterior walls form closed perimeter
+- [ ] Interior walls connect to exterior
+- [ ] Room-bounding enabled where needed
+```
+
+### Door Validation
+```
+PLACEMENT
+- [ ] All doors hosted in walls
+- [ ] Door not at wall end (min 4" from corner)
+- [ ] Door orientation correct (swing direction)
+- [ ] Sill height appropriate
+
+PROPERTIES
+- [ ] Correct door type/size
+- [ ] Mark (door number) assigned
+- [ ] Fire rating if required
+- [ ] Hardware group if needed
+
+CLEARANCES
+- [ ] Door swing doesn't hit other doors
+- [ ] ADA clearances met (if applicable)
+- [ ] Door opens into larger space (typically)
+```
+
+### Window Validation
+```
+PLACEMENT
+- [ ] All windows hosted in walls
+- [ ] Sill height consistent per type
+- [ ] Head height clears ceiling
+- [ ] Centered or properly aligned
+
+PROPERTIES
+- [ ] Correct window type/size
+- [ ] Mark assigned
+- [ ] Frame material correct
+- [ ] Operation type (fixed, casement, etc.)
+```
+
+### Room Validation
+```
+ENCLOSURE
+- [ ] All rooms fully enclosed by walls
+- [ ] Room boundaries detected correctly
+- [ ] Room areas calculating
+- [ ] No "Not Enclosed" warnings
+
+PROPERTIES
+- [ ] Room names assigned
+- [ ] Room numbers unique
+- [ ] Department/function if needed
+- [ ] Finish parameters populated
+```
+
+### Floor Validation
+```
+GEOMETRY
+- [ ] Floor boundaries closed
+- [ ] Floor at correct level
+- [ ] Slopes defined if needed
+- [ ] Openings cut for stairs/shafts
+
+PROPERTIES
+- [ ] Correct floor type
+- [ ] Structural parameter correct
+- [ ] Function parameter set
+```
+
+## Automated Validation Methods
+
+### Using RevitMCPBridge
+```
+# Count elements by category
+getElementsByCategory(category="Walls")
+getElementsByCategory(category="Doors")
+getElementsByCategory(category="Windows")
+getElementsByCategory(category="Rooms")
+
+# Get Revit warnings
+getDocumentWarnings()  # If available
+
+# Verify locations
+getElementLocation(elementId=12345)
+
+# Visual verification
+captureActiveView()
+```
+
+### Comparison Workflow
+```
+1. Before placement:
+   - Count existing elements
+   - Note baseline state
+
+2. After placement:
+   - Count elements again
+   - Expected: old_count + placed_count
+
+3. Spot check:
+   - Sample 3-5 elements
+   - Verify locations match intent
+
+4. Visual:
+   - Screenshot active view
+   - Compare to source data
+```
+
+## Common Issues & Solutions
+
+### Geometry Issues
+| Issue | Detection | Solution |
+|-------|-----------|----------|
+| Overlapping walls | Visual check | Delete duplicate, use wall joins |
+| Gap in wall chain | Room not enclosed | Extend/connect walls |
+| Zero-length wall | Build error | Delete, check input data |
+| Misaligned walls | Visual check | Use align tool or edit endpoints |
+
+### Hosting Issues
+| Issue | Detection | Solution |
+|-------|-----------|----------|
+| Unhosted door | Warning or visual | Delete and replace in wall |
+| Door at wall end | Visual check | Move door inward |
+| Window above wall | Visual check | Lower sill or raise wall |
+
+### Property Issues
+| Issue | Detection | Solution |
+|-------|-----------|----------|
+| Wrong type | Schedule/properties | Change type parameter |
+| Missing mark | Schedule empty | Assign marks manually/batch |
+| Wrong level | Properties/visual | Move to correct level |
+
+## Quality Metrics
+
+### Acceptable Thresholds
+```
+Element placement success rate: > 95%
+Location accuracy: within 0.1 feet (1.2 inches)
+Type matching accuracy: > 90%
+Manual corrections needed: < 5% of elements
+```
+
+### Warning Categories
+```
+CRITICAL (fix immediately)
+- Elements not placed
+- Wrong level/location
+- Invalid geometry
+
+IMPORTANT (fix before issue)
+- Wrong types
+- Missing properties
+- Hosting issues
+
+MINOR (fix if time permits)
+- Suboptimal joins
+- Inconsistent parameters
+```
+
+## Validation Report Template
+
+```markdown
+# BIM Validation Report
+
+## Summary
+- Date: [DATE]
+- Model: [MODEL_NAME]
+- Operation: [WHAT_WAS_DONE]
+- Status: [PASS/FAIL/NEEDS_REVIEW]
+
+## Element Counts
+| Category | Before | After | Expected | Status |
+|----------|--------|-------|----------|--------|
+| Walls    | 0      | 24    | 24       | ✓      |
+| Doors    | 0      | 8     | 8        | ✓      |
+| Windows  | 0      | 12    | 12       | ✓      |
+| Rooms    | 0      | 6     | 6        | ✓      |
+
+## Issues Found
+- None / [LIST ISSUES]
+
+## Spot Check Results
+- Wall #1: Location correct ✓
+- Door #1: Hosted correctly ✓
+- Window #1: Type correct ✓
+
+## Recommendations
+- [NEXT STEPS]
+
+## Attachments
+- Screenshot of floor plan view
+- Before/after comparison
+```
+
+## Integration with Workflows
+
+### After PDF Extraction
+```
+1. Compare detected element count to visual inspection
+2. Verify scale by checking known dimensions
+3. Validate wall continuity
+4. Check door/window sizes are reasonable
+```
+
+### After Revit Placement
+```
+1. Run element count comparison
+2. Take screenshot of floor plan
+3. Compare to source PDF
+4. Document any discrepancies
+5. Note elements needing manual adjustment
+```
+
+### Before Session End
+```
+1. Run full validation checklist
+2. Store session summary in memory
+3. Note open issues for next session
+4. Save model if validation passes
+```

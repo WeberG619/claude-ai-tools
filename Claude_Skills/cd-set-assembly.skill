@@ -1,0 +1,245 @@
+# Construction Document Set Assembly Pipeline
+
+## Overview
+Complete workflow for assembling construction document sets in Revit, from sheet creation through final QC.
+
+## When to Use
+- Starting CD phase on a project
+- Organizing sheets for permit submission
+- Setting up detail sheets
+- Final document assembly before issue
+
+## Prerequisites
+- Revit project with model content
+- Standard sheet families loaded
+- Detail library available (BDArchitect-DetailLibrary-2025)
+- RevitMCPBridge connected
+
+---
+
+## PIPELINE: CD Set Assembly
+
+### PHASE 1: Sheet Setup
+**Checkpoint: User approval of sheet list before creation**
+
+```
+Step 1.1: Query existing sheets
+  Tool: RevitMCP.getSheets()
+  Output: Current sheet inventory
+
+Step 1.2: Determine required sheets
+  Reference: knowledge/cd-standards.md
+  Reference: knowledge/architectural-standards.md
+  Typical set:
+  - A0.0 Cover Sheet
+  - A0.1 Drawing Index / Abbreviations
+  - A1.x Site Plans
+  - A2.x Floor Plans
+  - A3.x Elevations
+  - A4.x Building Sections
+  - A5.x Wall Sections / Details
+  - A6.x Interior Elevations
+  - A7.x Door/Window Schedules
+  - A8.x Ceiling Plans
+  - A9.x Typical Details
+
+Step 1.3: Create missing sheets
+  Tool: RevitMCP.createSheet()
+  Validation: Verify titleblock populated
+```
+
+### PHASE 2: View Organization
+**Checkpoint: Confirm views ready for placement**
+
+```
+Step 2.1: Inventory existing views
+  Tool: RevitMCP.getViews()
+  Output: Views by category (plans, sections, elevations, drafting)
+
+Step 2.2: Check view scales
+  Standard scales:
+  - Floor Plans: 1/4" = 1'-0" (1:48)
+  - Details: 1" = 1'-0" (1:12) or 1-1/2" = 1'-0" (1:8)
+  - Site Plans: 1" = 20'-0" or as required
+  Tool: RevitMCP.getViewScale() per view
+
+Step 2.3: Verify crop regions
+  Tool: RevitMCP.getViewCropRegion()
+  All views should have appropriate crop
+
+Step 2.4: Create missing views
+  Tool: RevitMCP.duplicateView() or createDraftingView()
+```
+
+### PHASE 3: Detail Sheet Layout
+**Checkpoint: Review sample layout before batch**
+
+```
+Step 3.1: Get detail views for sheet
+  Tool: RevitMCP.getViewsByType("DraftingView")
+  Filter: Match sheet discipline
+
+Step 3.2: Calculate layout grid
+  Reference: knowledge/detail-library.md
+  Algorithm:
+  - Get sheet drawable area (inside titleblock)
+  - Calculate grid based on view sizes
+  - Account for viewport titles
+  - Use row-first layout (fill horizontally, then vertically)
+
+Step 3.3: Place viewports
+  Tool: RevitMCP.placeViewOnSheet()
+  Parameters: sheetId, viewId, x, y
+
+Step 3.4: Validate placement
+  Tool: RevitMCP.getViewportBoundingBoxes()
+  Check: No overlaps, within sheet bounds
+
+Step 3.5: Adjust viewport titles
+  Tool: RevitMCP.setViewportTitleVisibility()
+  Standard: Show title below viewport
+```
+
+### PHASE 4: Annotation Review
+**Checkpoint: Spot-check annotations before continuing**
+
+```
+Step 4.1: Check dimensions
+  Tool: RevitMCP.getElementsByCategory("Dimensions")
+  Per view: Verify key dimensions present
+
+Step 4.2: Check tags
+  Tool: RevitMCP.getElementsByCategory("*Tags")
+  Verify: Doors, windows, rooms tagged
+
+Step 4.3: Check keynotes
+  Tool: RevitMCP.getKeynotes()
+  Verify: Keynote legend on relevant sheets
+
+Step 4.4: Add missing annotations
+  Tool: RevitMCP.createDimension(), tagElements(), placeKeynote()
+```
+
+### PHASE 5: Schedule Placement
+**Checkpoint: Verify schedule data before placement**
+
+```
+Step 5.1: Query schedules
+  Tool: RevitMCP.getSchedules()
+  Required: Door, Window, Room Finish, possibly others
+
+Step 5.2: Verify schedule content
+  Tool: RevitMCP.getScheduleData()
+  Check: All elements included, no empty rows
+
+Step 5.3: Place on sheets
+  Tool: RevitMCP.placeScheduleOnSheet()
+  Typical: A7.x for door/window schedules
+
+Step 5.4: Adjust column widths
+  Tool: RevitMCP.setScheduleColumnWidth()
+```
+
+### PHASE 6: Cover Sheet & Index
+**Checkpoint: Final review before completing**
+
+```
+Step 6.1: Update drawing index
+  Tool: RevitMCP.updateDrawingIndex()
+  Auto-populate from sheet list
+
+Step 6.2: Verify cover sheet
+  Check: Project name, address, client, architect info
+  Tool: RevitMCP.getProjectInfo()
+
+Step 6.3: Update revision schedule
+  Tool: RevitMCP.getRevisions()
+  Ensure current revision shown
+```
+
+### PHASE 7: QC & Validation
+**Checkpoint: User final review**
+
+```
+Step 7.1: Run BIM validator
+  Agent: bim-validator
+  Check: Model integrity, element placement
+
+Step 7.2: Sheet-by-sheet review
+  Tool: RevitMCP.captureViewport() for each sheet
+  Output: Screenshots for visual verification
+
+Step 7.3: Generate QC report
+  Reference: knowledge/qc-checklists.md
+  Output: Checklist with pass/fail per item
+
+Step 7.4: Export PDFs
+  Tool: RevitMCP.exportSheetsToPDF()
+  Or: Manual export from Revit
+```
+
+---
+
+## Validation Criteria
+
+### Per Sheet
+- [ ] Sheet number follows standard (A#.#)
+- [ ] Title block fully populated
+- [ ] Views placed without overlap
+- [ ] Scale noted on all views
+- [ ] North arrow on plans
+
+### Per View
+- [ ] Crop region appropriate
+- [ ] Scale correct for content
+- [ ] Annotations complete
+- [ ] Line weights appropriate
+
+### Overall Set
+- [ ] Drawing index matches actual sheets
+- [ ] Sheet numbers sequential
+- [ ] Cover sheet complete
+- [ ] Revision information current
+
+---
+
+## Error Recovery
+
+| Error | Cause | Recovery |
+|-------|-------|----------|
+| Viewport overlap | Auto-layout collision | Re-run layout with smaller views or multiple sheets |
+| Missing view | View deleted or renamed | Create new view or locate renamed |
+| Schedule empty | Filter too restrictive | Adjust schedule filter settings |
+| Titleblock incomplete | Project info missing | Update project information |
+
+---
+
+## Checkpoint Gates
+
+1. **GATE 1**: Sheet list approval (before creating sheets)
+2. **GATE 2**: View inventory complete (before placement)
+3. **GATE 3**: Sample layout review (before batch placement)
+4. **GATE 4**: Annotation spot-check (before finalizing)
+5. **GATE 5**: Final QC review (before issue)
+
+At each gate, STOP and get user confirmation before proceeding.
+
+---
+
+## Quick Commands
+
+```bash
+# Start CD assembly pipeline
+/cd-assembly
+
+# Check sheet status
+RevitMCP.getSheets() | summarize
+
+# Validate current set
+/verify-bim
+```
+
+---
+
+*Last Updated: 2026-01-06*
+*Version: 1.0*

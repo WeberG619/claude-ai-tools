@@ -1,0 +1,10 @@
+# Spine Passive Learner Dependencies
+# Most functionality uses Python stdlib only
+
+# No external dependencies required - uses:
+# - sqlite3 (stdlib)
+# - json (stdlib)
+# - subprocess (stdlib) for named pipe communication
+# - argparse (stdlib) for CLI
+# - pathlib (stdlib) for paths
+# - logging (stdlib) for logging

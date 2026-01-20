@@ -1,0 +1,1737 @@
+﻿{
+    "lightingFixtures":  [
+
+                         ],
+    "ceilings":  [
+
+                 ],
+    "wallTypes":  [
+                      {
+                          "wallTypeId":  219,
+                          "name":  "Generic - 6\"",
+                          "kind":  "Basic",
+                          "width":  0.5,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  221,
+                          "name":  "Exterior - Brick on Mtl. Stud",
+                          "kind":  "Basic",
+                          "width":  1.15625,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  249,
+                          "name":  "Generic - 8\"",
+                          "kind":  "Basic",
+                          "width":  0.6666666666666666,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  251,
+                          "name":  "Generic - 12\"",
+                          "kind":  "Basic",
+                          "width":  1.0,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  252,
+                          "name":  "Generic - 5\"",
+                          "kind":  "Basic",
+                          "width":  0.4166666666666667,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  56766,
+                          "name":  "Exterior Glazing",
+                          "kind":  "Curtain",
+                          "width":  0.08333333333333333,
+                          "familyName":  "Curtain Wall"
+                      },
+                      {
+                          "wallTypeId":  76677,
+                          "name":  "Exterior - Brick Over CMU w Metal Stud",
+                          "kind":  "Stacked",
+                          "width":  1.4895833333333333,
+                          "familyName":  "Stacked Wall"
+                      },
+                      {
+                          "wallTypeId":  83171,
+                          "name":  "Exterior - CMU on Mtl. Stud",
+                          "kind":  "Basic",
+                          "width":  1.4895833333333333,
+                          "familyName":  "Basic Wall"
+                      }
+                  ],
+    "structuralBeams":  [
+
+                        ],
+    "familyTypes":  [
+
+                    ],
+    "roofs":  [
+
+              ],
+    "railings":  [
+
+                 ],
+    "curtainWalls":  [
+
+                     ],
+    "phases":  [
+                   {
+                       "phaseId":  32440,
+                       "phaseName":  "Existing",
+                       "sequenceNumber":  1
+                   },
+                   {
+                       "phaseId":  21885,
+                       "phaseName":  "New Construction",
+                       "sequenceNumber":  2
+                   }
+               ],
+    "projectInfo":  {
+                        "success":  true,
+                        "result":  {
+                                       "name":  "Project Name",
+                                       "number":  "Project Number",
+                                       "author":  "",
+                                       "status":  "Project Status",
+                                       "address":  "Enter address here",
+                                       "clientName":  "Owner",
+                                       "buildingName":  "",
+                                       "organizationName":  "",
+                                       "organizationDescription":  "",
+                                       "isPinned":  false,
+                                       "isWorkshared":  false,
+                                       "title":  "Distribution",
+                                       "pathname":  "D:\\_ARCHIVE\\misc-files\\dev\\RevitLLMAgent\\Training_Database\\Training\\Revit - MEP - Learning\\Ex_Files_Revit_MEP_Electrical_Certified_Pro_Prep_Upd\\Ex_Files_Revit_MEP_Electrical_Certified_Pro_Prep_Upd\\Exercise Files\\Chapter-3\\Distribution.rvt"
+                                   }
+                    },
+    "schedules":  [
+                      {
+                          "scheduleId":  847722,
+                          "scheduleName":  "\u003cRevision Schedule\u003e",
+                          "category":  "Unknown",
+                          "fieldCount":  4,
+                          "filterCount":  0,
+                          "isKeySchedule":  false,
+                          "isMaterialTakeoff":  false
+                      }
+                  ],
+    "columns":  [
+
+                ],
+    "furniture":  [
+
+                  ],
+    "pipes":  [
+
+              ],
+    "extractedAt":  "2025-12-08 10:57:27",
+    "fileName":  "Distribution.rvt",
+    "views":  [
+                  {
+                      "viewId":  3651,
+                      "viewName":  "Project View",
+                      "viewType":  "ProjectBrowser",
+                      "isTemplate":  false,
+                      "scale":  24
+                  },
+                  {
+                      "viewId":  101014,
+                      "viewName":  "System Browser",
+                      "viewType":  "SystemBrowser",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  161379,
+                      "viewName":  "1 - Lighting",
+                      "viewType":  "FloorPlan",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  161387,
+                      "viewName":  "2 - Lighting",
+                      "viewType":  "FloorPlan",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  161407,
+                      "viewName":  "West - Elec",
+                      "viewType":  "Elevation",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  161433,
+                      "viewName":  "North - Elec",
+                      "viewType":  "Elevation",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  161459,
+                      "viewName":  "East - Elec",
+                      "viewType":  "Elevation",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  161485,
+                      "viewName":  "South - Elec",
+                      "viewType":  "Elevation",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  161499,
+                      "viewName":  "1 - Ceiling Elec",
+                      "viewType":  "CeilingPlan",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  161506,
+                      "viewName":  "2 - Ceiling Elec",
+                      "viewType":  "CeilingPlan",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  163350,
+                      "viewName":  "{3D}",
+                      "viewType":  "ThreeD",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  243532,
+                      "viewName":  "1 - Power",
+                      "viewType":  "FloorPlan",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  243540,
+                      "viewName":  "2 - Power",
+                      "viewType":  "FloorPlan",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  839772,
+                      "viewName":  "Section 1",
+                      "viewType":  "Section",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  839798,
+                      "viewName":  "PP-1",
+                      "viewType":  "PanelSchedule",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  839812,
+                      "viewName":  "Unnamed",
+                      "viewType":  "DrawingSheet",
+                      "isTemplate":  false,
+                      "scale":  1
+                  },
+                  {
+                      "viewId":  841283,
+                      "viewName":  "LP-1",
+                      "viewType":  "PanelSchedule",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  842595,
+                      "viewName":  "Section 2",
+                      "viewType":  "Section",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  847722,
+                      "viewName":  "\u003cRevision Schedule\u003e",
+                      "viewType":  "Schedule",
+                      "isTemplate":  false,
+                      "scale":  1
+                  }
+              ],
+    "plumbingFixtures":  [
+
+                         ],
+    "doors":  [
+
+              ],
+    "floorTypes":  [
+                       {
+                           "floorTypeId":  226,
+                           "name":  "Generic - 12\"",
+                           "familyName":  "Floor",
+                           "isFoundation":  false
+                       },
+                       {
+                           "floorTypeId":  117725,
+                           "name":  "6\" Foundation Slab",
+                           "familyName":  "Foundation Slab",
+                           "isFoundation":  true
+                       }
+                   ],
+    "sheets":  [
+
+               ],
+    "structuralColumns":  [
+
+                          ],
+    "filePath":  "D:\\_ARCHIVE\\misc-files\\dev\\RevitLLMAgent\\Training_Database\\Training\\Revit - MEP - Learning\\Ex_Files_Revit_MEP_Electrical_Certified_Pro_Prep_Upd\\Ex_Files_Revit_MEP_Electrical_Certified_Pro_Prep_Upd\\Exercise Files\\Chapter-3\\Distribution.rvt",
+    "stairs":  [
+
+               ],
+    "ceilingTypes":  [
+                         {
+                             "ceilingTypeId":  227,
+                             "name":  "Generic",
+                             "familyName":  "Basic Ceiling"
+                         },
+                         {
+                             "ceilingTypeId":  44749,
+                             "name":  "2\u0027 x 4\u0027 ACT System",
+                             "familyName":  "Compound Ceiling"
+                         },
+                         {
+                             "ceilingTypeId":  44798,
+                             "name":  "Generic - 4\"",
+                             "familyName":  "Roof Soffit"
+                         }
+                     ],
+    "walls":  [
+
+              ],
+    "foundations":  [
+
+                    ],
+    "rooms":  [
+
+              ],
+    "worksets":  [
+
+                 ],
+    "floors":  [
+
+               ],
+    "grids":  [
+
+              ],
+    "ducts":  [
+
+              ],
+    "windowTypes":  [
+
+                    ],
+    "loadedFamilies":  [
+                           {
+                               "familyId":  470970,
+                               "name":  "Diffuser Tag",
+                               "category":  "Air Terminal Tags",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  114966,
+                               "name":  "Area Tag",
+                               "category":  "Area Tags",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  464285,
+                               "name":  "Baluster - Square",
+                               "category":  "Balusters",
+                               "typeCount":  4,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  535160,
+                               "name":  "Channel Horizontal Bend",
+                               "category":  "Cable Tray Fittings",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  517482,
+                               "name":  "Channel Horizontal Cross",
+                               "category":  "Cable Tray Fittings",
+                               "typeCount":  4,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  518519,
+                               "name":  "Channel Horizontal Tee",
+                               "category":  "Cable Tray Fittings",
+                               "typeCount":  4,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  519465,
+                               "name":  "Channel Reducer",
+                               "category":  "Cable Tray Fittings",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  521073,
+                               "name":  "Channel Union",
+                               "category":  "Cable Tray Fittings",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  521904,
+                               "name":  "Channel Vertical Inside Bend",
+                               "category":  "Cable Tray Fittings",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  523206,
+                               "name":  "Channel Vertical Outside Bend",
+                               "category":  "Cable Tray Fittings",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  524508,
+                               "name":  "Ladder Horizontal Bend",
+                               "category":  "Cable Tray Fittings",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  526092,
+                               "name":  "Ladder Horizontal Cross",
+                               "category":  "Cable Tray Fittings",
+                               "typeCount":  3,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  527267,
+                               "name":  "Ladder Horizontal Tee",
+                               "category":  "Cable Tray Fittings",
+                               "typeCount":  3,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  528330,
+                               "name":  "Ladder Reducer",
+                               "category":  "Cable Tray Fittings",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  530682,
+                               "name":  "Ladder Union",
+                               "category":  "Cable Tray Fittings",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  531950,
+                               "name":  "Ladder Vertical Inside Bend",
+                               "category":  "Cable Tray Fittings",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  533555,
+                               "name":  "Ladder Vertical Outside Bend",
+                               "category":  "Cable Tray Fittings",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  505427,
+                               "name":  "Cable Tray Size Tag",
+                               "category":  "Cable Tray Tags",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  114762,
+                               "name":  "Callout Head",
+                               "category":  "Callout Heads",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  514022,
+                               "name":  "Communication Devices Tag",
+                               "category":  "Communication Device Tags",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  537276,
+                               "name":  "Conduit Coupling - Aluminum",
+                               "category":  "Conduit Fittings",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  538047,
+                               "name":  "Conduit Coupling - PVC",
+                               "category":  "Conduit Fittings",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  538820,
+                               "name":  "Conduit Coupling - Steel",
+                               "category":  "Conduit Fittings",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  539593,
+                               "name":  "Conduit Elbow - Aluminum",
+                               "category":  "Conduit Fittings",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  547534,
+                               "name":  "Conduit Elbow - Plain End - PVC",
+                               "category":  "Conduit Fittings",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  540384,
+                               "name":  "Conduit Elbow - Steel",
+                               "category":  "Conduit Fittings",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  541177,
+                               "name":  "Conduit Elbow - without Fittings - EMT",
+                               "category":  "Conduit Fittings",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  541970,
+                               "name":  "Conduit Elbow - without Fittings - RMC",
+                               "category":  "Conduit Fittings",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  542761,
+                               "name":  "Conduit Elbow - without Fittings - RNC",
+                               "category":  "Conduit Fittings",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  842605,
+                               "name":  "Conduit Elbow EMT to Box - Set Screw - Die Cast Zinc",
+                               "category":  "Conduit Fittings",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  543554,
+                               "name":  "Conduit Junction Box - Cross - Aluminum",
+                               "category":  "Conduit Fittings",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  544346,
+                               "name":  "Conduit Junction Box - Cross - PVC",
+                               "category":  "Conduit Fittings",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  545138,
+                               "name":  "Conduit Junction Box - Tee - Aluminum",
+                               "category":  "Conduit Fittings",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  545927,
+                               "name":  "Conduit Junction Box - Tee - PVC",
+                               "category":  "Conduit Fittings",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  546716,
+                               "name":  "Conduit Junction Box - Transition - Aluminum",
+                               "category":  "Conduit Fittings",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  536461,
+                               "name":  "Conduit Junction Box - Transition - PVC",
+                               "category":  "Conduit Fittings",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  505204,
+                               "name":  "Conduit Size Tag",
+                               "category":  "Conduit Tags",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  20915,
+                               "name":  "System Panel",
+                               "category":  "Curtain Panels",
+                               "typeCount":  2,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  28596,
+                               "name":  "Circular Mullion",
+                               "category":  "Curtain Wall Mullions",
+                               "typeCount":  0,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  43497,
+                               "name":  "L Corner Mullion",
+                               "category":  "Curtain Wall Mullions",
+                               "typeCount":  0,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  43509,
+                               "name":  "Quad Corner Mullion",
+                               "category":  "Curtain Wall Mullions",
+                               "typeCount":  0,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  28595,
+                               "name":  "Rectangular Mullion",
+                               "category":  "Curtain Wall Mullions",
+                               "typeCount":  1,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  43505,
+                               "name":  "Trapezoid Corner Mullion",
+                               "category":  "Curtain Wall Mullions",
+                               "typeCount":  0,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  43501,
+                               "name":  "V Corner Mullion",
+                               "category":  "Curtain Wall Mullions",
+                               "typeCount":  0,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  410784,
+                               "name":  "Data Device Tag",
+                               "category":  "Data Device Tags",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  439511,
+                               "name":  "Data Outlet",
+                               "category":  "Data Devices",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  110386,
+                               "name":  "Brick Standard",
+                               "category":  "Detail Items",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  114376,
+                               "name":  "Door Tag",
+                               "category":  "Door Tags",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  175905,
+                               "name":  "Duct Size Tag",
+                               "category":  "Duct Tags",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  511177,
+                               "name":  "Dry Type Transformer - 480-208Y120 - NEMA Type 2",
+                               "category":  "Electrical Equipment",
+                               "typeCount":  10,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  442300,
+                               "name":  "Ethernet Switch",
+                               "category":  "Electrical Equipment",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  512822,
+                               "name":  "Lighting and Appliance Panelboard - 208V MLO",
+                               "category":  "Electrical Equipment",
+                               "typeCount":  4,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  512051,
+                               "name":  "Lighting and Appliance Panelboard - 480V MLO",
+                               "category":  "Electrical Equipment",
+                               "typeCount":  4,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  835887,
+                               "name":  "Single Phase Panel - 120V MCB - Surface",
+                               "category":  "Electrical Equipment",
+                               "typeCount":  3,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  411372,
+                               "name":  "Electrical Equipment Tag",
+                               "category":  "Electrical Equipment Tags",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  514762,
+                               "name":  "Electrical Equipment Type Mark Tag",
+                               "category":  "Electrical Equipment Tags",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  410980,
+                               "name":  "Electrical Device Circuit Tag",
+                               "category":  "Electrical Fixture Tags",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  833686,
+                               "name":  "Electrical Device Panel Tag",
+                               "category":  "Electrical Fixture Tags",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  833900,
+                               "name":  "Countertop Receptacle",
+                               "category":  "Electrical Fixtures",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  515809,
+                               "name":  "Duplex Receptacle",
+                               "category":  "Electrical Fixtures",
+                               "typeCount":  2,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  473411,
+                               "name":  "Elevation Mark Body_Circle",
+                               "category":  "Elevation Marks",
+                               "typeCount":  4,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  473906,
+                               "name":  "Elevation Mark Body_Square",
+                               "category":  "Elevation Marks",
+                               "typeCount":  4,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  473632,
+                               "name":  "Elevation Mark Pointer_Circle",
+                               "category":  "Elevation Marks",
+                               "typeCount":  4,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  474154,
+                               "name":  "Elevation Mark Pointer_Square",
+                               "category":  "Elevation Marks",
+                               "typeCount":  4,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  411764,
+                               "name":  "Fire Alarm Device Tag",
+                               "category":  "Fire Alarm Device Tags",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  313275,
+                               "name":  "Flex Duct Tag Round",
+                               "category":  "Flex Duct Tags",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  465193,
+                               "name":  "Flex Pipe Size Tag",
+                               "category":  "Flex Pipe Tags",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  114573,
+                               "name":  "Centerline",
+                               "category":  "Generic Annotations",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  113056,
+                               "name":  "North Arrow 2",
+                               "category":  "Generic Annotations",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  113853,
+                               "name":  "Grid Head - Circle",
+                               "category":  "Grid Heads",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  113660,
+                               "name":  "Grid Head - No Bubble",
+                               "category":  "Grid Heads",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  113446,
+                               "name":  "Level Head - Circle",
+                               "category":  "Level Heads",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  113256,
+                               "name":  "Level Head - No Bubble",
+                               "category":  "Level Heads",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  416869,
+                               "name":  "Light Switch Tag",
+                               "category":  "Lighting Device Tags",
+                               "typeCount":  2,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  509949,
+                               "name":  "Lighting Switches",
+                               "category":  "Lighting Devices",
+                               "typeCount":  10,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  840135,
+                               "name":  "Weather Proof Switch",
+                               "category":  "Lighting Devices",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  410000,
+                               "name":  "Lighting Fixture Circuit Tag",
+                               "category":  "Lighting Fixture Tags",
+                               "typeCount":  2,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  836893,
+                               "name":  "Emergency Recessed Lighting Fixture",
+                               "category":  "Lighting Fixtures",
+                               "typeCount":  8,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  549949,
+                               "name":  "Plain Recessed Lighting Fixture",
+                               "category":  "Lighting Fixtures",
+                               "typeCount":  8,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  838141,
+                               "name":  "Sconce Light - Uplight",
+                               "category":  "Lighting Fixtures",
+                               "typeCount":  4,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  514244,
+                               "name":  "Nurse Call Devices Tag",
+                               "category":  "Nurse Call Device Tags",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  313077,
+                               "name":  "Pipe Size Tag",
+                               "category":  "Pipe Tags",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  107137,
+                               "name":  "Fascia-Flat",
+                               "category":  "Profiles",
+                               "typeCount":  5,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  106881,
+                               "name":  "Gutter Profile-Bevel",
+                               "category":  "Profiles",
+                               "typeCount":  7,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  106432,
+                               "name":  "Rectangular Handrail",
+                               "category":  "Profiles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  105764,
+                               "name":  "Slab Edge-Thickened",
+                               "category":  "Profiles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  105553,
+                               "name":  "Stair Nosing - Pan",
+                               "category":  "Profiles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  112850,
+                               "name":  "Room Tag",
+                               "category":  "Room Tags",
+                               "typeCount":  2,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  112626,
+                               "name":  "Section Head - Filled",
+                               "category":  "Section Marks",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  112430,
+                               "name":  "Section Head - no arrow",
+                               "category":  "Section Marks",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  112230,
+                               "name":  "Section Head - Open",
+                               "category":  "Section Marks",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  112018,
+                               "name":  "Section Tail - Filled",
+                               "category":  "Section Marks",
+                               "typeCount":  2,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  96031,
+                               "name":  "Section Tail - Filled Horizontal",
+                               "category":  "Section Marks",
+                               "typeCount":  2,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  514466,
+                               "name":  "Security Devices Tag",
+                               "category":  "Security Device Tags",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  835284,
+                               "name":  "Space Tag",
+                               "category":  "Space Tags",
+                               "typeCount":  3,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  370966,
+                               "name":  "Spot Elevation - Crosshair",
+                               "category":  "Spot Elevation Symbols",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  370759,
+                               "name":  "Spot Elevation - Target Filled",
+                               "category":  "Spot Elevation Symbols",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  410393,
+                               "name":  "Telephone Device Tag",
+                               "category":  "Telephone Device Tags",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  438542,
+                               "name":  "Telephone Outlet",
+                               "category":  "Telephone Devices",
+                               "typeCount":  3,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  445481,
+                               "name":  "Telephone Outlet - Data",
+                               "category":  "Telephone Devices",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  822897,
+                               "name":  "E1 30 x 42 Horizontal",
+                               "category":  "Title Blocks",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  471893,
+                               "name":  "View Reference",
+                               "category":  "View Reference",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  111426,
+                               "name":  "View Title",
+                               "category":  "View Titles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  111224,
+                               "name":  "Wall Tag",
+                               "category":  "Wall Tags",
+                               "typeCount":  2,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  111028,
+                               "name":  "Window Tag",
+                               "category":  "Window Tags",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  410589,
+                               "name":  "Wire Tag",
+                               "category":  "Wire Tags",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  408494,
+                               "name":  "Circle Wire Tick Mark",
+                               "category":  "Wire Tick Marks",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  408696,
+                               "name":  "Hook Wire Tick Mark",
+                               "category":  "Wire Tick Marks",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  408895,
+                               "name":  "Long Wire Tick Mark",
+                               "category":  "Wire Tick Marks",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  409093,
+                               "name":  "Short Wire Tick Mark",
+                               "category":  "Wire Tick Marks",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  409306,
+                               "name":  "Zone Tag",
+                               "category":  "Zone Tags",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           }
+                       ],
+    "doorTypes":  [
+
+                  ],
+    "electricalCircuits":  [
+
+                           ],
+    "mepSystems":  [
+
+                   ],
+    "roofTypes":  [
+                      {
+                          "roofTypeId":  223,
+                          "name":  "Generic - 12\"",
+                          "familyName":  "Basic Roof"
+                      },
+                      {
+                          "roofTypeId":  18448,
+                          "name":  "Sloped Glazing",
+                          "familyName":  "Sloped Glazing"
+                      }
+                  ],
+    "levels":  [
+                   {
+                       "levelId":  30,
+                       "name":  "Level 1",
+                       "elevation":  0.0
+                   },
+                   {
+                       "levelId":  9946,
+                       "name":  "Level 2",
+                       "elevation":  9.999999999998435
+                   }
+               ],
+    "materials":  [
+                      {
+                          "materialId":  18435,
+                          "name":  "Default",
+                          "materialClass":  "Miscellaneous",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  0
+                      },
+                      {
+                          "materialId":  18436,
+                          "name":  "Default Floor",
+                          "materialClass":  "Miscellaneous",
+                          "color":  "gICA",
+                          "transparency":  0,
+                          "shininess":  10
+                      },
+                      {
+                          "materialId":  18437,
+                          "name":  "Default Roof",
+                          "materialClass":  "Miscellaneous",
+                          "color":  "WGVy",
+                          "transparency":  0,
+                          "shininess":  10
+                      },
+                      {
+                          "materialId":  18438,
+                          "name":  "Default Wall",
+                          "materialClass":  "Miscellaneous",
+                          "color":  "gICA",
+                          "transparency":  0,
+                          "shininess":  10
+                      },
+                      {
+                          "materialId":  18439,
+                          "name":  "Glass",
+                          "materialClass":  "Glass",
+                          "color":  "AIDA",
+                          "transparency":  75,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18935,
+                          "name":  "Earth",
+                          "materialClass":  "Generic",
+                          "color":  "YUs+",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  18939,
+                          "name":  "Concrete, Cast-in-Place gray",
+                          "materialClass":  "Concrete",
+                          "color":  "wMDA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18941,
+                          "name":  "Brick, Common",
+                          "materialClass":  "Masonry",
+                          "color":  "qmJo",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  18942,
+                          "name":  "Concrete Masonry Units",
+                          "materialClass":  "Masonry",
+                          "color":  "4+Pj",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  18946,
+                          "name":  "Metal Stud Layer",
+                          "materialClass":  "Metal",
+                          "color":  "x8fH",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18953,
+                          "name":  "Aluminum",
+                          "materialClass":  "Metal",
+                          "color":  "9/f3",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  18957,
+                          "name":  "Plywood, Sheathing",
+                          "materialClass":  "Wood",
+                          "color":  "1LNx",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  18960,
+                          "name":  "Softwood, Lumber",
+                          "materialClass":  "Wood",
+                          "color":  "38CG",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  18974,
+                          "name":  "Air",
+                          "materialClass":  "Gas",
+                          "color":  "////",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18976,
+                          "name":  "Air Infiltration Barrier",
+                          "materialClass":  "Generic",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18982,
+                          "name":  "Vapor Retarder",
+                          "materialClass":  "Generic",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18984,
+                          "name":  "Glass, Clear Glazing",
+                          "materialClass":  "Glass",
+                          "color":  "AIDA",
+                          "transparency":  75,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18986,
+                          "name":  "Gypsum Wall Board",
+                          "materialClass":  "Generic",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  22806,
+                          "name":  "Phase - Demo",
+                          "materialClass":  "System",
+                          "color":  "/wAA",
+                          "transparency":  39,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  22807,
+                          "name":  "Phase - Exist",
+                          "materialClass":  "System",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  22808,
+                          "name":  "Phase - Temporary",
+                          "materialClass":  "System",
+                          "color":  "AAB/",
+                          "transparency":  39,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  24145,
+                          "name":  "Carpet (1)",
+                          "materialClass":  "Carpet",
+                          "color":  "fFBD",
+                          "transparency":  0,
+                          "shininess":  0
+                      },
+                      {
+                          "materialId":  24184,
+                          "name":  "Vinyl Composition Tile",
+                          "materialClass":  "Generic",
+                          "color":  "s6B8",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  24244,
+                          "name":  "Roofing, EPDM Membrane",
+                          "materialClass":  "Generic",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  24245,
+                          "name":  "Asphalt Shingle",
+                          "materialClass":  "Generic",
+                          "color":  "m5ub",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  27489,
+                          "name":  "Acoustic Ceiling Tile 24 x 48",
+                          "materialClass":  "Generic",
+                          "color":  "5eXl",
+                          "transparency":  0,
+                          "shininess":  0
+                      },
+                      {
+                          "materialId":  29224,
+                          "name":  "Phase - New",
+                          "materialClass":  "System",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  56778,
+                          "name":  "Tile, Porcelain, 4in",
+                          "materialClass":  "Generic",
+                          "color":  "WVee",
+                          "transparency":  0,
+                          "shininess":  127
+                      },
+                      {
+                          "materialId":  78544,
+                          "name":  "Poche",
+                          "materialClass":  "System",
+                          "color":  "AAD/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  79117,
+                          "name":  "Default Floor Area Face",
+                          "materialClass":  "System",
+                          "color":  "/wAA",
+                          "transparency":  75,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  379617,
+                          "name":  "Default Light Source",
+                          "materialClass":  "System",
+                          "color":  "//8A",
+                          "transparency":  75,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  470193,
+                          "name":  "Default Form",
+                          "materialClass":  "Generic",
+                          "color":  "ub3E",
+                          "transparency":  50,
+                          "shininess":  0
+                      },
+                      {
+                          "materialId":  517141,
+                          "name":  "Default Mass Floor",
+                          "materialClass":  "Generic",
+                          "color":  "ZVHM",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  517144,
+                          "name":  "Default Mass Opening",
+                          "materialClass":  "Generic",
+                          "color":  "////",
+                          "transparency":  100,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  517145,
+                          "name":  "Default Mass Shade",
+                          "materialClass":  "Generic",
+                          "color":  "kJKK",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  552017,
+                          "name":  "Steel, Carbon",
+                          "materialClass":  "Metal",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  552019,
+                          "name":  "Iron, Ductile",
+                          "materialClass":  "Metal",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  552020,
+                          "name":  "Stainless Steel",
+                          "materialClass":  "Metal",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  552565,
+                          "name":  "Polyvinyl Chloride - Rigid",
+                          "materialClass":  "Plastic",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  552569,
+                          "name":  "Copper",
+                          "materialClass":  "Metal",
+                          "color":  "eHh4",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  838142,
+                          "name":  "Glass, Frosted",
+                          "materialClass":  "Glass",
+                          "color":  "+vTh",
+                          "transparency":  55,
+                          "shininess":  0
+                      },
+                      {
+                          "materialId":  846181,
+                          "name":  "System-Zones",
+                          "materialClass":  "Unassigned",
+                          "color":  "Xl7N",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  847064,
+                          "name":  "Analytical Spaces",
+                          "materialClass":  "Unassigned",
+                          "color":  "AMjI",
+                          "transparency":  85,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  847066,
+                          "name":  "Analytical Surface - Exterior Walls",
+                          "materialClass":  "Unassigned",
+                          "color":  "hbIs",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  847068,
+                          "name":  "Analytical Surface - Roofs",
+                          "materialClass":  "Unassigned",
+                          "color":  "Jg+Z",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  847070,
+                          "name":  "Analytical Surface - Slabs on Grade",
+                          "materialClass":  "Unassigned",
+                          "color":  "ZVHM",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  847072,
+                          "name":  "Analytical Surface - Interior Walls",
+                          "materialClass":  "Unassigned",
+                          "color":  "w+V+",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  847074,
+                          "name":  "Analytical Surface - Interior Floors",
+                          "materialClass":  "Unassigned",
+                          "color":  "ZVHM",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  847076,
+                          "name":  "Analytical Surface - Ceilings",
+                          "materialClass":  "Unassigned",
+                          "color":  "v7L/",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  847078,
+                          "name":  "Analytical Surface - Air Surfaces",
+                          "materialClass":  "Unassigned",
+                          "color":  "vtLc",
+                          "transparency":  90,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  847080,
+                          "name":  "Analytical Surface - Underground Walls",
+                          "materialClass":  "Unassigned",
+                          "color":  "sm8s",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  847082,
+                          "name":  "Analytical Surface - Operable Windows",
+                          "materialClass":  "Unassigned",
+                          "color":  "suX/",
+                          "transparency":  75,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  847084,
+                          "name":  "Analytical Surface - Operable Skylights",
+                          "materialClass":  "Unassigned",
+                          "color":  "suX/",
+                          "transparency":  75,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  847086,
+                          "name":  "Analytical Surface - Sliding Doors",
+                          "materialClass":  "Unassigned",
+                          "color":  "/7Ky",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  847088,
+                          "name":  "Analytical Surface - Air Openings",
+                          "materialClass":  "Unassigned",
+                          "color":  "////",
+                          "transparency":  100,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  847090,
+                          "name":  "Analytical Surface - Shades",
+                          "materialClass":  "Unassigned",
+                          "color":  "kJKK",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  847235,
+                          "name":  "Analytical Panels",
+                          "materialClass":  "Unassigned",
+                          "color":  "+8WZ",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  847317,
+                          "name":  "Electrical Analytical Loads",
+                          "materialClass":  "Unassigned",
+                          "color":  "Xl7N",
+                          "transparency":  50,
+                          "shininess":  64
+                      }
+                  ],
+    "windows":  [
+
+                ],
+    "electricalFixtures":  [
+
+                           ],
+    "warnings":  [
+
+                 ]
+}

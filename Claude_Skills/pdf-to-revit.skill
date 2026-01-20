@@ -1,0 +1,197 @@
+# PDF to Revit Conversion Skill
+
+## Overview
+This skill provides the complete workflow for converting PDF floor plans into Revit models using the floor-plan-vision MCP and RevitMCPBridge.
+
+## When to Use
+- Converting architectural PDF drawings to BIM
+- Extracting wall/door/window data from floor plans
+- Automating model creation from design documents
+
+## Complete Pipeline
+
+### Phase 1: PDF Analysis
+```
+1. mcp__floor-plan-vision__get_pdf_info(pdf_path)
+   → Get page count, dimensions
+
+2. mcp__floor-plan-vision__get_floor_plan_pages(pdf_path)
+   → Identify which pages are floor plans
+
+3. mcp__floor-plan-vision__extract_geometry(pdf_path, page_num)
+   → Get all vector data (lines, arcs, text)
+```
+
+### Phase 2: Element Detection
+```
+4. mcp__floor-plan-vision__detect_walls(geometry)
+   → Find wall segments from geometry
+
+5. mcp__floor-plan-vision__classify_walls(walls)
+   → Exterior vs interior classification
+
+6. mcp__floor-plan-vision__detect_doors(geometry, walls)
+   → Find door locations
+
+7. mcp__floor-plan-vision__detect_windows(geometry, walls)
+   → Find window locations
+
+8. mcp__floor-plan-vision__extract_text(geometry)
+   → Room names, dimensions, labels
+```
+
+### Phase 3: Scale & Coordinate Normalization
+```
+9. mcp__floor-plan-vision__detect_scale(geometry)
+   → Auto-detect drawing scale (1/4"=1'-0", etc.)
+
+10. mcp__floor-plan-vision__normalize_coordinates(geometry)
+    → Set building origin, normalize to feet
+
+11. mcp__floor-plan-vision__get_grid_dimensions(pdf_path)
+    → Extract structural grid spacing
+```
+
+### Phase 4: Validation
+```
+12. mcp__floor-plan-vision__validate_detection(walls, doors, windows)
+    → Confidence scores, completeness check
+
+13. mcp__floor-plan-vision__connect_walls(walls)
+    → Build continuous wall chains
+```
+
+### Phase 5: Revit Spec Generation
+```
+14. mcp__floor-plan-vision__build_revit_spec(walls, doors, windows, text, scale)
+    → Generate JSON spec for Revit placement
+```
+
+### Phase 6: Model Creation (RevitMCPBridge)
+```
+15. Query available types in target Revit project
+16. Map detected elements to available types
+17. Create walls segment by segment
+18. Place doors and windows
+19. Validate placement vs PDF
+```
+
+## Quick Analysis (Single Call)
+```
+mcp__floor-plan-vision__analyze_floor_plan(
+  pdf_path="/path/to/floor-plan.pdf",
+  page_num=0,
+  detect_all=false,  // true for fixtures, furniture
+  scale="auto"       // or specify like "1/4\" = 1'-0\""
+)
+```
+
+## Scale Detection
+
+### Common Scales
+| Scale | 1" on paper = | 1' on paper = |
+|-------|---------------|---------------|
+| 1/8" = 1'-0" | 8 feet | 0.125" |
+| 1/4" = 1'-0" | 4 feet | 0.25" |
+| 3/8" = 1'-0" | 2.67 feet | 0.375" |
+| 1/2" = 1'-0" | 2 feet | 0.5" |
+| 1" = 1'-0" | 1 foot | 1" |
+
+### Scale Detection Methods
+1. Look for scale text in title block
+2. Find dimension strings and compare to drawn length
+3. Use door width (typically 3'-0") as reference
+4. Check grid spacing (often 20', 25', or 30')
+
+## Coordinate Handling
+
+### PDF Coordinates
+- Origin at bottom-left of page
+- Units: points (72 points = 1 inch)
+- Y increases upward
+
+### Revit Coordinates
+- Origin typically at Grid 1/A intersection
+- Units: feet (internal)
+- Y increases northward
+
+### Conversion Formula
+```python
+# PDF points to Revit feet
+revit_x = (pdf_x - origin_x) * scale_factor / 72.0
+revit_y = (pdf_y - origin_y) * scale_factor / 72.0
+
+# scale_factor depends on drawing scale
+# For 1/4" = 1'-0": scale_factor = 48 (4 feet per inch)
+```
+
+## Wall Detection Heuristics
+
+### Identifying Walls
+- Parallel line pairs 4"-12" apart
+- Continuous runs without gaps
+- Thicker line weight than details
+- Form closed or semi-closed shapes
+
+### Exterior vs Interior
+- Exterior: Forms convex hull of building
+- Interior: Everything else
+- Also consider: wall thickness, insulation patterns
+
+## Common Challenges
+
+### Multi-scale Drawings
+- Detail views at different scales on same page
+- Solution: Detect view boundaries, process separately
+
+### Curved Walls
+- Arcs must be converted to polylines
+- Use appropriate segment count for accuracy
+
+### Missing Data
+- Doors shown as breaks in walls
+- Windows may not have swing lines
+- Use room labels to infer door locations
+
+## Quality Checklist
+
+### Before Conversion
+- [ ] PDF is vector-based (not scanned image)
+- [ ] Drawing scale is known or detectable
+- [ ] Target Revit project has needed families
+- [ ] Level heights defined
+
+### After Detection
+- [ ] Wall count seems reasonable
+- [ ] Exterior walls form closed perimeter
+- [ ] Door count matches room count roughly
+- [ ] Dimensions match scale text
+
+### After Revit Placement
+- [ ] Model matches PDF visually
+- [ ] No overlapping walls
+- [ ] All doors/windows hosted
+- [ ] Room boundaries closed
+
+## Error Handling
+
+### PDF Issues
+| Problem | Detection | Solution |
+|---------|-----------|----------|
+| Raster PDF | No geometry extracted | Use OCR/image processing |
+| Wrong page | No walls found | Try different page |
+| Corrupted | Read error | Try PDF repair tool |
+
+### Detection Issues
+| Problem | Cause | Solution |
+|---------|-------|----------|
+| Too many walls | Picking up detail lines | Filter by line weight |
+| Missing walls | Light line weight | Lower detection threshold |
+| Wrong scale | Scale not detected | Specify manually |
+
+### Placement Issues
+| Problem | Cause | Solution |
+|---------|-------|----------|
+| Offset location | Origin mismatch | Adjust coordinate transform |
+| Wrong size | Scale error | Recalculate scale factor |
+| Missing types | Family not loaded | Load or map to available |

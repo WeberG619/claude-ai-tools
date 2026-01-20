@@ -1,0 +1,108 @@
+{
+  "permissions": {
+    "allowed": [
+      "Read",
+      "Write",
+      "Edit",
+      "MultiEdit",
+      "Bash",
+      "TodoRead",
+      "TodoWrite",
+      "Task",
+      "Glob",
+      "Grep",
+      "LS",
+      "NotebookRead",
+      "NotebookEdit",
+      "WebFetch",
+      "WebSearch",
+      "exit_plan_mode",
+      "mcp__*"
+    ],
+    "denied": []
+  },
+  "environment": {
+    "DISABLE_TELEMETRY": "false",
+    "DEFAULT_MODEL": "claude-3-opus-20240229",
+    "EDITOR": "vim"
+  },
+  "interface": {
+    "theme": "auto",
+    "shortcuts": {
+      "multilineInput": "shift+enter",
+      "clearConversation": "ctrl+l",
+      "exitSession": "ctrl+d"
+    },
+    "responseStyle": {
+      "maxLinesWithoutDetail": 4,
+      "preferConcise": true,
+      "useLineNumbers": true
+    }
+  },
+  "autoUpdater": {
+    "enabled": true,
+    "checkInterval": "daily"
+  },
+  "workflow": {
+    "autoLoadMemory": true,
+    "defaultWorkingDirectory": "current",
+    "preferParallelExecution": true,
+    "showProgressIndicators": true,
+    "autoSaveConversations": true,
+    "conversationHistoryLimit": 100
+  },
+  "performance": {
+    "MCP_TIMEOUT": 30000,
+    "MCP_TOOL_TIMEOUT": 120000,
+    "maxConcurrentTools": 10,
+    "cacheToolResults": true
+  },
+  "shortcuts": {
+    "quickBuild": "ctrl+b",
+    "quickTest": "ctrl+t",
+    "toggleMemory": "ctrl+m"
+  },
+  "development": {
+    "defaultPlatform": "x64",
+    "preferredIDEs": ["Visual Studio 2022", "Visual Studio Code"],
+    "defaultFramework": ".NET Framework 4.8"
+  },
+  "notifications": {
+    "enabled": true,
+    "sound": false,
+    "desktop": true
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ~/.claude/hooks/validate-bash.py"
+          }
+        ]
+      },
+      {
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ~/.claude/hooks/validate-file-ops.py"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ~/.claude/hooks/log-tool-usage.sh"
+          }
+        ]
+      }
+    ]
+  }
+}

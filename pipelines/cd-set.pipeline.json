@@ -1,0 +1,258 @@
+{
+  "id": "cd-set",
+  "name": "Construction Document Set Generation",
+  "version": "1.0.0",
+  "description": "Generate complete CD sheet set from Revit model with standard organization",
+
+  "triggers": {
+    "manual": "/pipeline cd-set",
+    "auto": {
+      "condition": "user_requests_sheets",
+      "patterns": ["create sheets", "CD set", "construction documents", "set up sheets", "generate drawings"]
+    }
+  },
+
+  "prerequisites": {
+    "revit_running": true,
+    "revit_version": ["2025", "2026"],
+    "required_tools": ["RevitMCPBridge"],
+    "document_state": "existing_project_with_model"
+  },
+
+  "phases": [
+    {
+      "id": "P1",
+      "name": "Project Analysis",
+      "description": "Analyze existing project to determine CD requirements",
+      "steps": [
+        {
+          "id": "P1.1",
+          "action": "get_project_info",
+          "method": "getProjectInfo",
+          "store_result": "project_info"
+        },
+        {
+          "id": "P1.2",
+          "action": "detect_title_block",
+          "method": "getElements",
+          "params": {"category": "TitleBlocks"},
+          "select": "most_used",
+          "store_result": "title_block",
+          "critical_rule": "Use project's existing title block, NEVER default"
+        },
+        {
+          "id": "P1.3",
+          "action": "analyze_project_scope",
+          "method": "getLevels",
+          "store_result": "levels"
+        },
+        {
+          "id": "P1.4",
+          "action": "get_existing_views",
+          "method": "getViews",
+          "store_result": "available_views"
+        },
+        {
+          "id": "P1.5",
+          "action": "get_existing_sheets",
+          "method": "getSheets",
+          "store_result": "existing_sheets"
+        },
+        {
+          "id": "P1.6",
+          "action": "detect_sheet_pattern",
+          "type": "logic",
+          "store_result": "sheet_pattern"
+        }
+      ],
+      "checkpoint": {
+        "name": "Project Analyzed",
+        "requires_approval": true,
+        "display": "Project: {name}, Levels: {count}, Views: {count}, Title Block: {name}",
+        "user_prompt": "Analyzed project. {level_count} levels, {view_count} views available. Proceed with sheet setup?"
+      }
+    },
+    {
+      "id": "P2",
+      "name": "Sheet Planning",
+      "description": "Plan sheet set based on project scope",
+      "steps": [
+        {
+          "id": "P2.1",
+          "action": "determine_required_sheets",
+          "logic": {
+            "cover": "Always 1",
+            "floor_plans": "1 per level",
+            "roof_plan": "If roof level exists",
+            "ceiling_plans": "1 per level (optional)",
+            "elevations": "4 (N, S, E, W)",
+            "sections": "Minimum 2 (longitudinal, transverse)",
+            "wall_sections": "As needed",
+            "details": "Group by type",
+            "schedules": "Door, window, room finish"
+          },
+          "store_result": "sheet_plan"
+        },
+        {
+          "id": "P2.2",
+          "action": "assign_sheet_numbers",
+          "pattern": "$sheet_pattern",
+          "standard_prefixes": {
+            "G": "General",
+            "A": "Architectural",
+            "S": "Structural",
+            "M": "Mechanical",
+            "E": "Electrical",
+            "P": "Plumbing"
+          },
+          "store_result": "numbered_sheets"
+        },
+        {
+          "id": "P2.3",
+          "action": "map_views_to_sheets",
+          "match_by": ["view_type", "level", "name_pattern"],
+          "store_result": "view_sheet_mapping"
+        }
+      ],
+      "checkpoint": {
+        "name": "Plan Complete",
+        "requires_approval": true,
+        "display": "Sheet plan table",
+        "user_prompt": "Planned {sheet_count} sheets. Review sheet list and approve?"
+      }
+    },
+    {
+      "id": "P3",
+      "name": "Sheet Creation",
+      "description": "Create all planned sheets",
+      "steps": [
+        {
+          "id": "P3.1",
+          "action": "create_sheets",
+          "method": "createSheet",
+          "iterate": "$numbered_sheets",
+          "params": {
+            "sheetNumber": "$item.number",
+            "sheetName": "$item.name",
+            "switchTo": false
+          },
+          "store_result": "created_sheets"
+        }
+      ],
+      "checkpoint": {
+        "name": "Sheets Created",
+        "auto_pass": true,
+        "validation": ["all_sheets_created"]
+      }
+    },
+    {
+      "id": "P4",
+      "name": "View Placement",
+      "description": "Place views on sheets with proper layout",
+      "steps": [
+        {
+          "id": "P4.1",
+          "action": "resolve_sheet_ids",
+          "type": "logic",
+          "store_result": "resolved_placements"
+        },
+        {
+          "id": "P4.2",
+          "action": "place_views",
+          "method": "placeViewOnSheet",
+          "iterate": "$resolved_placements.resolved_placements",
+          "params": {
+            "sheetId": "$item.sheetId",
+            "viewId": "$item.viewId",
+            "switchTo": false
+          },
+          "store_result": "placed_viewports"
+        },
+        {
+          "id": "P4.3",
+          "action": "optimize_layouts",
+          "method": "generateViewportLayout",
+          "iterate": "$created_sheets",
+          "params": {
+            "sheetId": "$item.sheetId"
+          },
+          "store_result": "optimized_layouts"
+        }
+      ],
+      "checkpoint": {
+        "name": "Views Placed",
+        "auto_pass": false,
+        "validation": ["no_overlapping_viewports", "all_views_visible"]
+      }
+    },
+    {
+      "id": "P5",
+      "name": "Verification",
+      "description": "Verify complete sheet set",
+      "steps": [
+        {
+          "id": "P5.1",
+          "action": "run_bim_validator",
+          "agent": "bim-validator",
+          "checks": [
+            "all_sheets_have_titleblock",
+            "no_empty_sheets",
+            "viewport_titles_correct",
+            "no_overlapping_viewports"
+          ]
+        },
+        {
+          "id": "P5.2",
+          "action": "check_cd_completeness",
+          "required": [
+            "floor_plan_per_level",
+            "4_elevations",
+            "minimum_2_sections",
+            "door_schedule",
+            "window_schedule"
+          ],
+          "store_result": "completeness_report"
+        },
+        {
+          "id": "P5.3",
+          "action": "generate_sheet_index",
+          "format": "table",
+          "store_result": "sheet_index"
+        }
+      ],
+      "checkpoint": {
+        "name": "CD Set Complete",
+        "requires_approval": true,
+        "user_prompt": "Created {sheet_count} sheets. CD set is {completeness}% complete. Review?"
+      }
+    }
+  ],
+
+  "on_success": {
+    "memory": {
+      "action": "store",
+      "type": "outcome",
+      "importance": 9,
+      "summary": "Generated CD set with {sheet_count} sheets for {project_name}"
+    },
+    "voice": {
+      "action": "speak",
+      "message": "Construction document set complete. Created {sheet_count} sheets with {view_count} views placed. Ready for review."
+    }
+  },
+
+  "on_failure": {
+    "memory": {
+      "action": "store",
+      "type": "error",
+      "importance": 9
+    }
+  },
+
+  "corrections_to_apply": [
+    {"id": 287, "rule": "Use project's active title block, never default"},
+    {"id": 283, "rule": "Compare against CD requirements, not what exists"},
+    {"id": 233, "rule": "Study original project structure, don't guess"},
+    {"id": 395, "rule": "Validate viewport coordinates against sheet bounds"}
+  ]
+}

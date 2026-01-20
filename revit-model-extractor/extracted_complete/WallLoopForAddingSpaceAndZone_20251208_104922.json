@@ -1,0 +1,2109 @@
+﻿{
+    "lightingFixtures":  [
+
+                         ],
+    "ceilings":  [
+
+                 ],
+    "wallTypes":  [
+                      {
+                          "wallTypeId":  221,
+                          "name":  "Exterior - Brick on Mtl. Stud",
+                          "kind":  "Basic",
+                          "width":  1.15625,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  21854,
+                          "name":  "Curtain Wall 1",
+                          "kind":  "Curtain",
+                          "width":  0.08333333333333333,
+                          "familyName":  "Curtain Wall"
+                      },
+                      {
+                          "wallTypeId":  76677,
+                          "name":  "Exterior - Brick Over CMU w Metal Stud",
+                          "kind":  "Stacked",
+                          "width":  1.4895833333333333,
+                          "familyName":  "Stacked Wall"
+                      },
+                      {
+                          "wallTypeId":  83171,
+                          "name":  "Exterior - CMU on Mtl. Stud",
+                          "kind":  "Basic",
+                          "width":  1.4895833333333333,
+                          "familyName":  "Basic Wall"
+                      }
+                  ],
+    "structuralBeams":  [
+
+                        ],
+    "familyTypes":  [
+
+                    ],
+    "roofs":  [
+
+              ],
+    "railings":  [
+
+                 ],
+    "curtainWalls":  [
+
+                     ],
+    "phases":  [
+                   {
+                       "phaseId":  32440,
+                       "phaseName":  "Existing",
+                       "sequenceNumber":  1
+                   },
+                   {
+                       "phaseId":  118390,
+                       "phaseName":  "New Construction",
+                       "sequenceNumber":  2
+                   }
+               ],
+    "projectInfo":  {
+                        "success":  true,
+                        "result":  {
+                                       "name":  "Project Name",
+                                       "number":  "Project Number",
+                                       "author":  "",
+                                       "status":  "Project Status",
+                                       "address":  "Enter address here",
+                                       "clientName":  "Owner",
+                                       "buildingName":  "",
+                                       "organizationName":  "",
+                                       "organizationDescription":  "",
+                                       "isPinned":  false,
+                                       "isWorkshared":  false,
+                                       "title":  "WallLoopForAddingSpaceAndZone",
+                                       "pathname":  "D:\\BACK-UP-06-25\\Revit 2025.3 SDK\\Samples\\AddSpaceAndZone\\WallLoopForAddingSpaceAndZone.rvt"
+                                   }
+                    },
+    "schedules":  [
+
+                  ],
+    "columns":  [
+
+                ],
+    "furniture":  [
+
+                  ],
+    "pipes":  [
+
+              ],
+    "extractedAt":  "2025-12-08 10:49:22",
+    "fileName":  "WallLoopForAddingSpaceAndZone.rvt",
+    "views":  [
+                  {
+                      "viewId":  32,
+                      "viewName":  "Level 1",
+                      "viewType":  "FloorPlan",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  36,
+                      "viewName":  "Level 1",
+                      "viewType":  "CeilingPlan",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  3651,
+                      "viewName":  "Project View",
+                      "viewType":  "ProjectBrowser",
+                      "isTemplate":  false,
+                      "scale":  24
+                  },
+                  {
+                      "viewId":  9948,
+                      "viewName":  "Level 2",
+                      "viewType":  "FloorPlan",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  9952,
+                      "viewName":  "Level 2",
+                      "viewType":  "CeilingPlan",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  29154,
+                      "viewName":  "East",
+                      "viewType":  "Elevation",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  29181,
+                      "viewName":  "North",
+                      "viewType":  "Elevation",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  29191,
+                      "viewName":  "West",
+                      "viewType":  "Elevation",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  29201,
+                      "viewName":  "South",
+                      "viewType":  "Elevation",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  29237,
+                      "viewName":  "Site",
+                      "viewType":  "FloorPlan",
+                      "isTemplate":  false,
+                      "scale":  240
+                  },
+                  {
+                      "viewId":  101014,
+                      "viewName":  "System Browser",
+                      "viewType":  "SystemBrowser",
+                      "isTemplate":  false,
+                      "scale":  96
+                  }
+              ],
+    "plumbingFixtures":  [
+
+                         ],
+    "doors":  [
+
+              ],
+    "floorTypes":  [
+                       {
+                           "floorTypeId":  226,
+                           "name":  "Generic - 12\"",
+                           "familyName":  "Floor",
+                           "isFoundation":  false
+                       },
+                       {
+                           "floorTypeId":  117725,
+                           "name":  "6\" Foundation Slab",
+                           "familyName":  "Foundation Slab",
+                           "isFoundation":  true
+                       }
+                   ],
+    "sheets":  [
+
+               ],
+    "structuralColumns":  [
+
+                          ],
+    "filePath":  "D:\\BACK-UP-06-25\\Revit 2025.3 SDK\\Samples\\AddSpaceAndZone\\WallLoopForAddingSpaceAndZone.rvt",
+    "stairs":  [
+
+               ],
+    "ceilingTypes":  [
+                         {
+                             "ceilingTypeId":  227,
+                             "name":  "Generic",
+                             "familyName":  "Basic Ceiling"
+                         },
+                         {
+                             "ceilingTypeId":  44748,
+                             "name":  "GWB on Mtl. Stud",
+                             "familyName":  "Compound Ceiling"
+                         },
+                         {
+                             "ceilingTypeId":  44798,
+                             "name":  "Generic - 4\"",
+                             "familyName":  "Roof Soffit"
+                         }
+                     ],
+    "walls":  [
+                  {
+                      "wallId":  135999,
+                      "wallType":  "Exterior - Brick on Mtl. Stud",
+                      "wallTypeId":  221,
+                      "length":  49.5,
+                      "height":  20.0,
+                      "width":  1.15625,
+                      "structural":  false,
+                      "startPoint":  {
+                                         "x":  -38.81595329373276,
+                                         "y":  36.11788730489043,
+                                         "z":  0.0
+                                     },
+                      "endPoint":  {
+                                       "x":  10.684046706267239,
+                                       "y":  36.11788730489043,
+                                       "z":  0.0
+                                   },
+                      "baseLevel":  "Level 1",
+                      "topLevel":  null,
+                      "baseOffset":  0.0,
+                      "topOffset":  0.0
+                  },
+                  {
+                      "wallId":  136000,
+                      "wallType":  "Exterior - Brick on Mtl. Stud",
+                      "wallTypeId":  221,
+                      "length":  23.5,
+                      "height":  20.0,
+                      "width":  1.15625,
+                      "structural":  false,
+                      "startPoint":  {
+                                         "x":  -38.81595329373276,
+                                         "y":  12.61788730489043,
+                                         "z":  0.0
+                                     },
+                      "endPoint":  {
+                                       "x":  -38.81595329373276,
+                                       "y":  36.11788730489043,
+                                       "z":  0.0
+                                   },
+                      "baseLevel":  "Level 1",
+                      "topLevel":  null,
+                      "baseOffset":  0.0,
+                      "topOffset":  0.0
+                  },
+                  {
+                      "wallId":  136001,
+                      "wallType":  "Exterior - Brick on Mtl. Stud",
+                      "wallTypeId":  221,
+                      "length":  49.5,
+                      "height":  20.0,
+                      "width":  1.15625,
+                      "structural":  false,
+                      "startPoint":  {
+                                         "x":  10.684046706267239,
+                                         "y":  12.61788730489043,
+                                         "z":  0.0
+                                     },
+                      "endPoint":  {
+                                       "x":  -38.81595329373276,
+                                       "y":  12.61788730489043,
+                                       "z":  0.0
+                                   },
+                      "baseLevel":  "Level 1",
+                      "topLevel":  null,
+                      "baseOffset":  0.0,
+                      "topOffset":  0.0
+                  },
+                  {
+                      "wallId":  136002,
+                      "wallType":  "Exterior - Brick on Mtl. Stud",
+                      "wallTypeId":  221,
+                      "length":  23.5,
+                      "height":  20.0,
+                      "width":  1.15625,
+                      "structural":  false,
+                      "startPoint":  {
+                                         "x":  10.684046706267239,
+                                         "y":  36.11788730489043,
+                                         "z":  0.0
+                                     },
+                      "endPoint":  {
+                                       "x":  10.684046706267239,
+                                       "y":  12.61788730489043,
+                                       "z":  0.0
+                                   },
+                      "baseLevel":  "Level 1",
+                      "topLevel":  null,
+                      "baseOffset":  0.0,
+                      "topOffset":  0.0
+                  },
+                  {
+                      "wallId":  136027,
+                      "wallType":  "Exterior - Brick on Mtl. Stud",
+                      "wallTypeId":  221,
+                      "length":  29.0,
+                      "height":  20.0,
+                      "width":  1.15625,
+                      "structural":  false,
+                      "startPoint":  {
+                                         "x":  25.397335979217928,
+                                         "y":  36.11788730489043,
+                                         "z":  0.0
+                                     },
+                      "endPoint":  {
+                                       "x":  54.39733597921793,
+                                       "y":  36.11788730489043,
+                                       "z":  0.0
+                                   },
+                      "baseLevel":  "Level 1",
+                      "topLevel":  null,
+                      "baseOffset":  0.0,
+                      "topOffset":  0.0
+                  },
+                  {
+                      "wallId":  136028,
+                      "wallType":  "Exterior - Brick on Mtl. Stud",
+                      "wallTypeId":  221,
+                      "length":  54.0,
+                      "height":  20.0,
+                      "width":  1.15625,
+                      "structural":  false,
+                      "startPoint":  {
+                                         "x":  25.397335979217928,
+                                         "y":  -17.88211269510957,
+                                         "z":  0.0
+                                     },
+                      "endPoint":  {
+                                       "x":  25.397335979217928,
+                                       "y":  36.11788730489043,
+                                       "z":  0.0
+                                   },
+                      "baseLevel":  "Level 1",
+                      "topLevel":  null,
+                      "baseOffset":  0.0,
+                      "topOffset":  0.0
+                  },
+                  {
+                      "wallId":  136029,
+                      "wallType":  "Exterior - Brick on Mtl. Stud",
+                      "wallTypeId":  221,
+                      "length":  29.0,
+                      "height":  20.0,
+                      "width":  1.15625,
+                      "structural":  false,
+                      "startPoint":  {
+                                         "x":  54.39733597921793,
+                                         "y":  -17.88211269510957,
+                                         "z":  0.0
+                                     },
+                      "endPoint":  {
+                                       "x":  25.397335979217928,
+                                       "y":  -17.88211269510957,
+                                       "z":  0.0
+                                   },
+                      "baseLevel":  "Level 1",
+                      "topLevel":  null,
+                      "baseOffset":  0.0,
+                      "topOffset":  0.0
+                  },
+                  {
+                      "wallId":  136030,
+                      "wallType":  "Exterior - Brick on Mtl. Stud",
+                      "wallTypeId":  221,
+                      "length":  54.0,
+                      "height":  20.0,
+                      "width":  1.15625,
+                      "structural":  false,
+                      "startPoint":  {
+                                         "x":  54.39733597921793,
+                                         "y":  36.11788730489043,
+                                         "z":  0.0
+                                     },
+                      "endPoint":  {
+                                       "x":  54.39733597921793,
+                                       "y":  -17.88211269510957,
+                                       "z":  0.0
+                                   },
+                      "baseLevel":  "Level 1",
+                      "topLevel":  null,
+                      "baseOffset":  0.0,
+                      "topOffset":  0.0
+                  },
+                  {
+                      "wallId":  136048,
+                      "wallType":  "Exterior - Brick on Mtl. Stud",
+                      "wallTypeId":  221,
+                      "length":  49.5,
+                      "height":  20.0,
+                      "width":  1.15625,
+                      "structural":  false,
+                      "startPoint":  {
+                                         "x":  -38.81595329373281,
+                                         "y":  5.617887304890434,
+                                         "z":  0.0
+                                     },
+                      "endPoint":  {
+                                       "x":  10.684046706267189,
+                                       "y":  5.617887304890434,
+                                       "z":  0.0
+                                   },
+                      "baseLevel":  "Level 1",
+                      "topLevel":  null,
+                      "baseOffset":  0.0,
+                      "topOffset":  0.0
+                  },
+                  {
+                      "wallId":  136049,
+                      "wallType":  "Exterior - Brick on Mtl. Stud",
+                      "wallTypeId":  221,
+                      "length":  23.5,
+                      "height":  20.0,
+                      "width":  1.15625,
+                      "structural":  false,
+                      "startPoint":  {
+                                         "x":  -38.81595329373281,
+                                         "y":  -17.882112695109566,
+                                         "z":  0.0
+                                     },
+                      "endPoint":  {
+                                       "x":  -38.81595329373281,
+                                       "y":  5.617887304890434,
+                                       "z":  0.0
+                                   },
+                      "baseLevel":  "Level 1",
+                      "topLevel":  null,
+                      "baseOffset":  0.0,
+                      "topOffset":  0.0
+                  },
+                  {
+                      "wallId":  136050,
+                      "wallType":  "Exterior - Brick on Mtl. Stud",
+                      "wallTypeId":  221,
+                      "length":  49.5,
+                      "height":  20.0,
+                      "width":  1.15625,
+                      "structural":  false,
+                      "startPoint":  {
+                                         "x":  10.684046706267189,
+                                         "y":  -17.882112695109566,
+                                         "z":  0.0
+                                     },
+                      "endPoint":  {
+                                       "x":  -38.81595329373281,
+                                       "y":  -17.882112695109566,
+                                       "z":  0.0
+                                   },
+                      "baseLevel":  "Level 1",
+                      "topLevel":  null,
+                      "baseOffset":  0.0,
+                      "topOffset":  0.0
+                  },
+                  {
+                      "wallId":  136051,
+                      "wallType":  "Exterior - Brick on Mtl. Stud",
+                      "wallTypeId":  221,
+                      "length":  23.5,
+                      "height":  20.0,
+                      "width":  1.15625,
+                      "structural":  false,
+                      "startPoint":  {
+                                         "x":  10.684046706267189,
+                                         "y":  5.617887304890434,
+                                         "z":  0.0
+                                     },
+                      "endPoint":  {
+                                       "x":  10.684046706267189,
+                                       "y":  -17.882112695109566,
+                                       "z":  0.0
+                                   },
+                      "baseLevel":  "Level 1",
+                      "topLevel":  null,
+                      "baseOffset":  0.0,
+                      "topOffset":  0.0
+                  },
+                  {
+                      "wallId":  136092,
+                      "wallType":  "Exterior - Brick on Mtl. Stud",
+                      "wallTypeId":  221,
+                      "length":  23.5,
+                      "height":  20.0,
+                      "width":  1.15625,
+                      "structural":  false,
+                      "startPoint":  {
+                                         "x":  -14.065953293732761,
+                                         "y":  36.11788730489043,
+                                         "z":  0.0
+                                     },
+                      "endPoint":  {
+                                       "x":  -14.065953293732798,
+                                       "y":  12.61788730489043,
+                                       "z":  0.0
+                                   },
+                      "baseLevel":  "Level 1",
+                      "topLevel":  null,
+                      "baseOffset":  0.0,
+                      "topOffset":  0.0
+                  },
+                  {
+                      "wallId":  136123,
+                      "wallType":  "Exterior - Brick on Mtl. Stud",
+                      "wallTypeId":  221,
+                      "length":  23.5,
+                      "height":  20.0,
+                      "width":  1.15625,
+                      "structural":  false,
+                      "startPoint":  {
+                                         "x":  -14.065953293732811,
+                                         "y":  5.617887304890434,
+                                         "z":  0.0
+                                     },
+                      "endPoint":  {
+                                       "x":  -14.065953293732848,
+                                       "y":  -17.882112695109566,
+                                       "z":  0.0
+                                   },
+                      "baseLevel":  "Level 1",
+                      "topLevel":  null,
+                      "baseOffset":  0.0,
+                      "topOffset":  0.0
+                  },
+                  {
+                      "wallId":  136164,
+                      "wallType":  "Exterior - Brick on Mtl. Stud",
+                      "wallTypeId":  221,
+                      "length":  29.0,
+                      "height":  20.0,
+                      "width":  1.15625,
+                      "structural":  false,
+                      "startPoint":  {
+                                         "x":  25.397335979217928,
+                                         "y":  9.11788730489043,
+                                         "z":  0.0
+                                     },
+                      "endPoint":  {
+                                       "x":  54.39733597921793,
+                                       "y":  9.117887304890337,
+                                       "z":  0.0
+                                   },
+                      "baseLevel":  "Level 1",
+                      "topLevel":  null,
+                      "baseOffset":  0.0,
+                      "topOffset":  0.0
+                  }
+              ],
+    "foundations":  [
+
+                    ],
+    "rooms":  [
+
+              ],
+    "worksets":  [
+
+                 ],
+    "floors":  [
+
+               ],
+    "grids":  [
+
+              ],
+    "ducts":  [
+
+              ],
+    "windowTypes":  [
+
+                    ],
+    "loadedFamilies":  [
+                           {
+                               "familyId":  127959,
+                               "name":  "Baluster - Round",
+                               "category":  "Balusters",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  21943,
+                               "name":  "Empty System Panel",
+                               "category":  "Curtain Panels",
+                               "typeCount":  0,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  20915,
+                               "name":  "System Panel",
+                               "category":  "Curtain Panels",
+                               "typeCount":  1,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  28596,
+                               "name":  "Circular Mullion",
+                               "category":  "Curtain Wall Mullions",
+                               "typeCount":  0,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  43497,
+                               "name":  "L Corner Mullion",
+                               "category":  "Curtain Wall Mullions",
+                               "typeCount":  0,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  43509,
+                               "name":  "Quad Corner Mullion",
+                               "category":  "Curtain Wall Mullions",
+                               "typeCount":  0,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  28595,
+                               "name":  "Rectangular Mullion",
+                               "category":  "Curtain Wall Mullions",
+                               "typeCount":  0,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  43505,
+                               "name":  "Trapezoid Corner Mullion",
+                               "category":  "Curtain Wall Mullions",
+                               "typeCount":  0,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  43501,
+                               "name":  "V Corner Mullion",
+                               "category":  "Curtain Wall Mullions",
+                               "typeCount":  0,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  110386,
+                               "name":  "Brick Standard",
+                               "category":  "Detail Items",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  138504,
+                               "name":  "Elevation Mark Circle - Upgrade",
+                               "category":  "Elevation Marks",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  138733,
+                               "name":  "Elevation Mark Pointer_Circle",
+                               "category":  "Elevation Marks",
+                               "typeCount":  3,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  138234,
+                               "name":  "Elevation Mark Pointer_Square",
+                               "category":  "Elevation Marks",
+                               "typeCount":  2,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  138016,
+                               "name":  "Elevation Mark Square - Upgrade",
+                               "category":  "Elevation Marks",
+                               "typeCount":  2,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  119524,
+                               "name":  "Grid Head - Circle",
+                               "category":  "Grid Heads",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  119914,
+                               "name":  "Level Head - Circle",
+                               "category":  "Level Heads",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  125693,
+                               "name":  "Circular Handrail",
+                               "category":  "Profiles",
+                               "typeCount":  2,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  126344,
+                               "name":  "Fascia-Flat",
+                               "category":  "Profiles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  126570,
+                               "name":  "Gutter Profile-Bevel",
+                               "category":  "Profiles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  127510,
+                               "name":  "Slab Edge-Thickened",
+                               "category":  "Profiles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  126131,
+                               "name":  "Stair Nosing - Pan",
+                               "category":  "Profiles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  120736,
+                               "name":  "Section Head - Filled",
+                               "category":  "Section Marks",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  120962,
+                               "name":  "Section Head - no arrow",
+                               "category":  "Section Marks",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  121362,
+                               "name":  "Section Tail - Filled",
+                               "category":  "Section Marks",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  121576,
+                               "name":  "Section Tail - Filled Horizontal",
+                               "category":  "Section Marks",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  135787,
+                               "name":  "m_SpaceTag",
+                               "category":  "Space Tags",
+                               "typeCount":  3,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  121790,
+                               "name":  "Spot Elevation - Crosshair",
+                               "category":  "Spot Elevation Symbols",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  131764,
+                               "name":  "View Reference",
+                               "category":  "View Reference",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  122183,
+                               "name":  "View Title",
+                               "category":  "View Titles",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           }
+                       ],
+    "doorTypes":  [
+
+                  ],
+    "electricalCircuits":  [
+
+                           ],
+    "mepSystems":  [
+
+                   ],
+    "roofTypes":  [
+                      {
+                          "roofTypeId":  223,
+                          "name":  "Generic - 12\"",
+                          "familyName":  "Basic Roof"
+                      },
+                      {
+                          "roofTypeId":  18448,
+                          "name":  "Sloped Glazing",
+                          "familyName":  "Sloped Glazing"
+                      }
+                  ],
+    "levels":  [
+                   {
+                       "levelId":  30,
+                       "name":  "Level 1",
+                       "elevation":  0.0
+                   },
+                   {
+                       "levelId":  9946,
+                       "name":  "Level 2",
+                       "elevation":  9.999999999998435
+                   }
+               ],
+    "materials":  [
+                      {
+                          "materialId":  18435,
+                          "name":  "Default",
+                          "materialClass":  "Miscellaneous",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  0
+                      },
+                      {
+                          "materialId":  18436,
+                          "name":  "Default Floor",
+                          "materialClass":  "Miscellaneous",
+                          "color":  "gICA",
+                          "transparency":  0,
+                          "shininess":  10
+                      },
+                      {
+                          "materialId":  18437,
+                          "name":  "Default Roof",
+                          "materialClass":  "Miscellaneous",
+                          "color":  "WGVy",
+                          "transparency":  0,
+                          "shininess":  10
+                      },
+                      {
+                          "materialId":  18438,
+                          "name":  "Default Wall",
+                          "materialClass":  "Miscellaneous",
+                          "color":  "gICA",
+                          "transparency":  0,
+                          "shininess":  10
+                      },
+                      {
+                          "materialId":  18439,
+                          "name":  "Glass",
+                          "materialClass":  "Glass",
+                          "color":  "AIDA",
+                          "transparency":  75,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18935,
+                          "name":  "Site - Earth",
+                          "materialClass":  "Soil",
+                          "color":  "YUs+",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  18936,
+                          "name":  "Site - Grass",
+                          "materialClass":  "Plant",
+                          "color":  "TmRL",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  18937,
+                          "name":  "Site - Asphalt",
+                          "materialClass":  "Asphalt",
+                          "color":  "RkVG",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  18938,
+                          "name":  "Site - Sand",
+                          "materialClass":  "Soil",
+                          "color":  "v7ey",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  18939,
+                          "name":  "Concrete - Cast-in-Place Concrete",
+                          "materialClass":  "Concrete",
+                          "color":  "wMDA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18940,
+                          "name":  "Concrete - Precast Concrete",
+                          "materialClass":  "Concrete",
+                          "color":  "xru7",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18941,
+                          "name":  "Masonry - Brick",
+                          "materialClass":  "Ceramic",
+                          "color":  "qmJo",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  18942,
+                          "name":  "Masonry - Concrete Masonry Units",
+                          "materialClass":  "Concrete",
+                          "color":  "4+Pj",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  18943,
+                          "name":  "Masonry - Glass Block",
+                          "materialClass":  "Glass",
+                          "color":  "9/f3",
+                          "transparency":  68,
+                          "shininess":  25
+                      },
+                      {
+                          "materialId":  18944,
+                          "name":  "Masonry - Stone",
+                          "materialClass":  "Stone",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18945,
+                          "name":  "Masonry - Tile",
+                          "materialClass":  "Ceramic",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18946,
+                          "name":  "Metal - Stud Layer",
+                          "materialClass":  "Metal",
+                          "color":  "x8fH",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18947,
+                          "name":  "Metal - Panel",
+                          "materialClass":  "Metal",
+                          "color":  "9/f3",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  18948,
+                          "name":  "Metal - Trim",
+                          "materialClass":  "Metal",
+                          "color":  "9/f3",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  18949,
+                          "name":  "Metal - Deck",
+                          "materialClass":  "Metal",
+                          "color":  "x8fH",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  18950,
+                          "name":  "Metal - Sheet / Flashing",
+                          "materialClass":  "Metal",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18951,
+                          "name":  "Metal - Roofing",
+                          "materialClass":  "Metal",
+                          "color":  "x8fH",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18952,
+                          "name":  "Metal - Steel",
+                          "materialClass":  "Metal",
+                          "color":  "x8fH",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18953,
+                          "name":  "Metal - Aluminum",
+                          "materialClass":  "Metal",
+                          "color":  "9/f3",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  18954,
+                          "name":  "Metal - Furring",
+                          "materialClass":  "Metal",
+                          "color":  "x8fH",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18955,
+                          "name":  "Wood - Stud Layer",
+                          "materialClass":  "Wood",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18956,
+                          "name":  "Wood - Sheathing - particleboard/ OSB",
+                          "materialClass":  "Wood",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18957,
+                          "name":  "Wood - Sheathing - plywood",
+                          "materialClass":  "Wood",
+                          "color":  "1LNx",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  18958,
+                          "name":  "Wood - Veneers",
+                          "materialClass":  "Wood",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18959,
+                          "name":  "Wood - Flooring",
+                          "materialClass":  "Wood",
+                          "color":  "2Kly",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  18960,
+                          "name":  "Wood - Dimensional Lumber",
+                          "materialClass":  "Wood",
+                          "color":  "38CG",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  18961,
+                          "name":  "Wood - Glue-Laminated",
+                          "materialClass":  "Wood",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18962,
+                          "name":  "Wood - Furring",
+                          "materialClass":  "Wood",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18963,
+                          "name":  "Plastic - GFRP -  Glass Fiber Reinforced Plastic",
+                          "materialClass":  "Plastic",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18964,
+                          "name":  "Plastic - Formed Plastic",
+                          "materialClass":  "Plastic",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18965,
+                          "name":  "Plastic - Vinyl Cove Base",
+                          "materialClass":  "Vinyl",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18966,
+                          "name":  "GFRC -  Glass Fiber Reinforced Concrete",
+                          "materialClass":  "Concrete",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18967,
+                          "name":  "EIFS - Exterior Insulation and Finish System",
+                          "materialClass":  "Miscellaneous",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18968,
+                          "name":  "Siding - Clapboard",
+                          "materialClass":  "Wood",
+                          "color":  "8ufF",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  18969,
+                          "name":  "Precast Concrete Panels",
+                          "materialClass":  "Concrete",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18970,
+                          "name":  "Metal Panel",
+                          "materialClass":  "Metal",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18971,
+                          "name":  "Curtain Wall Mullions",
+                          "materialClass":  "Miscellaneous",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18972,
+                          "name":  "Roofing - Generic",
+                          "materialClass":  "Miscellaneous",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18973,
+                          "name":  "Misc. Air Layers - Air Film - Outside Surface",
+                          "materialClass":  "Miscellaneous",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18974,
+                          "name":  "Misc. Air Layers - Air Space",
+                          "materialClass":  "Miscellaneous",
+                          "color":  "////",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18975,
+                          "name":  "Misc. Air Layers - Air Film - Inside Surface",
+                          "materialClass":  "Miscellaneous",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18976,
+                          "name":  "Air Barrier - Air Infiltration Barrier",
+                          "materialClass":  "Miscellaneous",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18977,
+                          "name":  "Insulation / Thermal Barriers - Rigid insulation",
+                          "materialClass":  "Miscellaneous",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18978,
+                          "name":  "Insulation / Thermal Barriers - Batt insulation",
+                          "materialClass":  "Miscellaneous",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18979,
+                          "name":  "Insulation / Thermal Barriers - Semi-rigid insulation",
+                          "materialClass":  "Miscellaneous",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18980,
+                          "name":  "Insulation / Thermal Barriers - EIFS - Exterior Insulation and Finish System",
+                          "materialClass":  "Miscellaneous",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18981,
+                          "name":  "Insulation / Thermal Barriers - Reflective heat barrier",
+                          "materialClass":  "Miscellaneous",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18982,
+                          "name":  "Vapor / Moisture Barriers - Vapor Retarder",
+                          "materialClass":  "Miscellaneous",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18983,
+                          "name":  "Vapor / Moisture Barriers - Damp-proofing",
+                          "materialClass":  "Miscellaneous",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18984,
+                          "name":  "Glazing - Window Glazing",
+                          "materialClass":  "Miscellaneous",
+                          "color":  "AIDA",
+                          "transparency":  75,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18985,
+                          "name":  "Glazing - Curtain Wall Glazing",
+                          "materialClass":  "Miscellaneous",
+                          "color":  "hnpl",
+                          "transparency":  90,
+                          "shininess":  12
+                      },
+                      {
+                          "materialId":  18986,
+                          "name":  "Gypsum Wall Board",
+                          "materialClass":  "Drywall",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18987,
+                          "name":  "GFRG -  Glass Fiber Reinforced Gypsum",
+                          "materialClass":  "Drywall",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18988,
+                          "name":  "Plaster and Lathe",
+                          "materialClass":  "Plaster",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18989,
+                          "name":  "Tile",
+                          "materialClass":  "Miscellaneous",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18990,
+                          "name":  "Terrazzo",
+                          "materialClass":  "Miscellaneous",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18991,
+                          "name":  "Acoustical Treatment",
+                          "materialClass":  "Miscellaneous",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18992,
+                          "name":  "Sound Attenuation",
+                          "materialClass":  "Miscellaneous",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18993,
+                          "name":  "Paints and Coatings",
+                          "materialClass":  "Paint",
+                          "color":  "+fn5",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  22806,
+                          "name":  "Phase - Demo",
+                          "materialClass":  "System",
+                          "color":  "/wAA",
+                          "transparency":  39,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  22807,
+                          "name":  "Phase - Exist",
+                          "materialClass":  "System",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  22808,
+                          "name":  "Phase - Temporary",
+                          "materialClass":  "System",
+                          "color":  "AAB/",
+                          "transparency":  39,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  24145,
+                          "name":  "Carpet (1)",
+                          "materialClass":  "Carpet",
+                          "color":  "fFBD",
+                          "transparency":  0,
+                          "shininess":  0
+                      },
+                      {
+                          "materialId":  24146,
+                          "name":  "Structure - Wood Joist/Rafter Layer",
+                          "materialClass":  "Wood",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  0
+                      },
+                      {
+                          "materialId":  24184,
+                          "name":  "VCT - Vinyl Composition Tile",
+                          "materialClass":  "Vinyl",
+                          "color":  "s6B8",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  24202,
+                          "name":  "Concrete - Cast-in-Place Lightweight Concrete",
+                          "materialClass":  "Concrete",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  0
+                      },
+                      {
+                          "materialId":  24217,
+                          "name":  "Structure - Steel Bar Joist Layer",
+                          "materialClass":  "Metal",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  24218,
+                          "name":  "Structure - Light Gauge Steel Joist/Rafter Layer",
+                          "materialClass":  "Metal",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  24241,
+                          "name":  "Structure - Wood Truss Joist/Rafter Layer",
+                          "materialClass":  "Wood",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  24243,
+                          "name":  "Structure - Wood Joist/Rafter Layer, Batt Insulation",
+                          "materialClass":  "Miscellaneous",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  24244,
+                          "name":  "Roofing - EPDM Membrane",
+                          "materialClass":  "Miscellaneous",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  24245,
+                          "name":  "Roofing - Asphalt Shingle",
+                          "materialClass":  "Asphalt",
+                          "color":  "m5ub",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  24246,
+                          "name":  "Roofing - Metal Standing Seam",
+                          "materialClass":  "Metal",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  24247,
+                          "name":  "Roofing - Wood Shake",
+                          "materialClass":  "Wood",
+                          "color":  "jnpj",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  27489,
+                          "name":  "Acoustic Ceiling Tile 24\" x 48\"",
+                          "materialClass":  "Miscellaneous",
+                          "color":  "5eXl",
+                          "transparency":  0,
+                          "shininess":  0
+                      },
+                      {
+                          "materialId":  27492,
+                          "name":  "Acoustic Ceiling Tile 24\" x 24\"",
+                          "materialClass":  "Miscellaneous",
+                          "color":  "6Ojo",
+                          "transparency":  0,
+                          "shininess":  0
+                      },
+                      {
+                          "materialId":  29224,
+                          "name":  "Phase - New",
+                          "materialClass":  "System",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  32677,
+                          "name":  "Site - Water",
+                          "materialClass":  "Liquid",
+                          "color":  "db/O",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  34906,
+                          "name":  "Door - Frame",
+                          "materialClass":  "Miscellaneous",
+                          "color":  "dkYz",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  34907,
+                          "name":  "Door - Panel",
+                          "materialClass":  "Wood",
+                          "color":  "0p9f",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  35335,
+                          "name":  "Laminate - Ivory, Matte",
+                          "materialClass":  "Miscellaneous",
+                          "color":  "9/fv",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  35336,
+                          "name":  "Wood - Cherry",
+                          "materialClass":  "Wood",
+                          "color":  "4rGA",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  35341,
+                          "name":  "Metal - Chrome",
+                          "materialClass":  "Metal",
+                          "color":  "ERER",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  36282,
+                          "name":  "Sash",
+                          "materialClass":  "Wood",
+                          "color":  "4LJ+",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  36508,
+                          "name":  "Trim",
+                          "materialClass":  "Wood",
+                          "color":  "4LJ+",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  36879,
+                          "name":  "Parking Stripe",
+                          "materialClass":  "Paint",
+                          "color":  "+vpb",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  43652,
+                          "name":  "Metal - Paint Finish - Dark Gray, Matte",
+                          "materialClass":  "Paint",
+                          "color":  "YmJi",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  46500,
+                          "name":  "Masonry - Brick Soldier Course",
+                          "materialClass":  "Ceramic",
+                          "color":  "qmJo",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  56778,
+                          "name":  "Ceramic Tile - 4\" Blue",
+                          "materialClass":  "Ceramic",
+                          "color":  "WVee",
+                          "transparency":  0,
+                          "shininess":  127
+                      },
+                      {
+                          "materialId":  75736,
+                          "name":  "Default Mass",
+                          "materialClass":  "Miscellaneous",
+                          "color":  "l3jp",
+                          "transparency":  75,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  75737,
+                          "name":  "Default Zoning Envelope",
+                          "materialClass":  "System",
+                          "color":  "mel3",
+                          "transparency":  75,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  78544,
+                          "name":  "Poche",
+                          "materialClass":  "System",
+                          "color":  "AAD/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  79117,
+                          "name":  "Default Floor Area Face",
+                          "materialClass":  "System",
+                          "color":  "/wAA",
+                          "transparency":  75,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  116171,
+                          "name":  "Metal - Steel - ASTM A572 - Grade 50",
+                          "materialClass":  "Metal",
+                          "color":  "9/f3",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  128891,
+                          "name":  "Metal - Steel - ASTM A992",
+                          "materialClass":  "Metal",
+                          "color":  "x8fH",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  134476,
+                          "name":  "Asphalt",
+                          "materialClass":  "Asphalt",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  134477,
+                          "name":  "Carpet (2)",
+                          "materialClass":  "Carpet",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  134478,
+                          "name":  "Concrete",
+                          "materialClass":  "Concrete",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  134479,
+                          "name":  "Fabric",
+                          "materialClass":  "Fabric",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  134480,
+                          "name":  "Generic",
+                          "materialClass":  "Generic",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  134482,
+                          "name":  "Plant",
+                          "materialClass":  "Plant",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  134483,
+                          "name":  "Liquid",
+                          "materialClass":  "Liquid",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  134484,
+                          "name":  "Masonry",
+                          "materialClass":  "Miscellaneous",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  134485,
+                          "name":  "Metal",
+                          "materialClass":  "Metal",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  134486,
+                          "name":  "Paint",
+                          "materialClass":  "Paint",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  134487,
+                          "name":  "Paper",
+                          "materialClass":  "Paper",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  134488,
+                          "name":  "Plastic",
+                          "materialClass":  "Plastic",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  134489,
+                          "name":  "Stone (2)",
+                          "materialClass":  "Stone",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  134490,
+                          "name":  "Tile (4)",
+                          "materialClass":  "Ceramic",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  134491,
+                          "name":  "Vinyl",
+                          "materialClass":  "Vinyl",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  134492,
+                          "name":  "Wood",
+                          "materialClass":  "Wood",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  134513,
+                          "name":  "Asphalt (system)",
+                          "materialClass":  "Asphalt",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  134514,
+                          "name":  "Carpet (system)",
+                          "materialClass":  "Carpet",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  134515,
+                          "name":  "Concrete (system)",
+                          "materialClass":  "Concrete",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  134516,
+                          "name":  "Fabric (system)",
+                          "materialClass":  "Fabric",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  134517,
+                          "name":  "Generic (system)",
+                          "materialClass":  "Generic",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  134518,
+                          "name":  "Glass (system)",
+                          "materialClass":  "Glass",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  134519,
+                          "name":  "Plant (system)",
+                          "materialClass":  "Plant",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  134520,
+                          "name":  "Liquid (system)",
+                          "materialClass":  "Liquid",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  134521,
+                          "name":  "Masonry (system)",
+                          "materialClass":  "Masonry",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  134522,
+                          "name":  "Metal (system)",
+                          "materialClass":  "Metal",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  134523,
+                          "name":  "Paint (system)",
+                          "materialClass":  "Paint",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  134524,
+                          "name":  "Paper (system)",
+                          "materialClass":  "Paper",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  134525,
+                          "name":  "Plastic (system)",
+                          "materialClass":  "Plastic",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  134526,
+                          "name":  "Stone (system)",
+                          "materialClass":  "Stone",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  134527,
+                          "name":  "Tile (system)",
+                          "materialClass":  "Tile",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  134528,
+                          "name":  "Vinyl (system)",
+                          "materialClass":  "Vinyl",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  134529,
+                          "name":  "Wood (system)",
+                          "materialClass":  "Wood",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  135528,
+                          "name":  "Default Light Source",
+                          "materialClass":  "System",
+                          "color":  "//8A",
+                          "transparency":  75,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  135574,
+                          "name":  "Phase-Demo",
+                          "materialClass":  "Unassigned",
+                          "color":  "/wAA",
+                          "transparency":  40,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  135575,
+                          "name":  "Phase-Exist",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  135576,
+                          "name":  "Phase-Temp",
+                          "materialClass":  "Unassigned",
+                          "color":  "AAD/",
+                          "transparency":  40,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  137084,
+                          "name":  "Carbon Steel",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  137636,
+                          "name":  "System-Zones",
+                          "materialClass":  "Unassigned",
+                          "color":  "Xl7N",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  137642,
+                          "name":  "Analytical Spaces",
+                          "materialClass":  "Unassigned",
+                          "color":  "AMjI",
+                          "transparency":  85,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  137644,
+                          "name":  "Analytical Surface - Exterior Walls",
+                          "materialClass":  "Unassigned",
+                          "color":  "hbIs",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  137646,
+                          "name":  "Analytical Surface - Roofs",
+                          "materialClass":  "Unassigned",
+                          "color":  "Jg+Z",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  137648,
+                          "name":  "Analytical Surface - Slabs on Grade",
+                          "materialClass":  "Unassigned",
+                          "color":  "ZVHM",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  137650,
+                          "name":  "Analytical Surface - Interior Walls",
+                          "materialClass":  "Unassigned",
+                          "color":  "w+V+",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  137652,
+                          "name":  "Analytical Surface - Interior Floors",
+                          "materialClass":  "Unassigned",
+                          "color":  "ZVHM",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  137654,
+                          "name":  "Analytical Surface - Ceilings",
+                          "materialClass":  "Unassigned",
+                          "color":  "v7L/",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  137656,
+                          "name":  "Analytical Surface - Air Surfaces",
+                          "materialClass":  "Unassigned",
+                          "color":  "vtLc",
+                          "transparency":  90,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  137658,
+                          "name":  "Analytical Surface - Underground Walls",
+                          "materialClass":  "Unassigned",
+                          "color":  "sm8s",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  137660,
+                          "name":  "Analytical Surface - Operable Windows",
+                          "materialClass":  "Unassigned",
+                          "color":  "suX/",
+                          "transparency":  75,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  137662,
+                          "name":  "Analytical Surface - Operable Skylights",
+                          "materialClass":  "Unassigned",
+                          "color":  "suX/",
+                          "transparency":  75,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  137664,
+                          "name":  "Analytical Surface - Sliding Doors",
+                          "materialClass":  "Unassigned",
+                          "color":  "/7Ky",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  137666,
+                          "name":  "Analytical Surface - Air Openings",
+                          "materialClass":  "Unassigned",
+                          "color":  "////",
+                          "transparency":  100,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  137668,
+                          "name":  "Analytical Surface - Shades",
+                          "materialClass":  "Unassigned",
+                          "color":  "kJKK",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  137813,
+                          "name":  "Analytical Panels",
+                          "materialClass":  "Unassigned",
+                          "color":  "+8WZ",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  137895,
+                          "name":  "Electrical Analytical Loads",
+                          "materialClass":  "Unassigned",
+                          "color":  "Xl7N",
+                          "transparency":  50,
+                          "shininess":  64
+                      }
+                  ],
+    "windows":  [
+
+                ],
+    "electricalFixtures":  [
+
+                           ],
+    "warnings":  [
+
+                 ]
+}

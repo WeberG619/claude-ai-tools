@@ -1,0 +1,5 @@
+# Voice MCP dependencies
+# Pin edge-tts to 7.2.1 - version 7.2.3 has breaking changes
+edge-tts==7.2.1
+gtts>=2.3.0
+aiohttp>=3.8.0

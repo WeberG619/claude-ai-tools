@@ -1,0 +1,41 @@
+{
+  "$schema": "https://claude.ai/settings-schema.json",
+  "permissions": {
+    "allow": [
+      "Bash(python:*)",
+      "Bash(python3:*)",
+      "Bash(pip:*)",
+      "Bash(git:*)",
+      "Bash(ls:*)",
+      "Bash(mkdir:*)",
+      "Bash(cp:*)",
+      "Bash(mv:*)",
+      "Read(*)",
+      "Write(*)",
+      "Edit(*)"
+    ],
+    "deny": []
+  },
+  "env": {
+    "AEC_DRAFTING_AI_ROOT": "${HOME}/.aec-drafting-ai",
+    "REVIT_MCP_PIPE": "\\\\.\\pipe\\RevitMCPBridge2026"
+  },
+  "mcpServers": {
+    "claude-memory": {
+      "command": "python",
+      "args": ["${AEC_DRAFTING_AI_ROOT}/mcp-servers/claude-memory/server.py"],
+      "env": {
+        "MEMORY_DB_PATH": "${AEC_DRAFTING_AI_ROOT}/data/claude_memory.db"
+      }
+    }
+  },
+  "hooks": {
+    "user-prompt-submit": [
+      {
+        "command": "python ${AEC_DRAFTING_AI_ROOT}/scripts/pre_prompt_hook.py",
+        "timeout": 5000,
+        "on_error": "ignore"
+      }
+    ]
+  }
+}

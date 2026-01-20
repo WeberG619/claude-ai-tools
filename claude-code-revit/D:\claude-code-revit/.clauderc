@@ -1,0 +1,27 @@
+# Claude Code Configuration for Revit Development
+
+# Default prompts for Revit development
+defaults:
+  language: csharp
+  framework: revit-api
+  version: 2024
+  
+# Custom commands
+commands:
+  revit-addin: "Create a Revit add-in with ribbon integration"
+  revit-debug: "Debug this Revit API error"
+  revit-test: "Generate unit tests for this Revit code"
+  revit-docs: "Generate API documentation"
+  
+# Templates
+templates:
+  - revit-command
+  - revit-application
+  - revit-dockable-pane
+  - revit-updater
+  
+# Code style
+style:
+  indent: 4
+  braces: next-line
+  regions: true

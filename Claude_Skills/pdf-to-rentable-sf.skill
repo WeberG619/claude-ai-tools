@@ -1,0 +1,224 @@
+# PDF to Rentable Square Footage Workflow
+
+## Purpose
+Automate the extraction of square footage from PDF floor plans and populate Revit room Comments parameters with calculated rentable SF values.
+
+## Prerequisites
+- floor-plan-vision MCP server running
+- RevitMCPBridge2026 connected to Revit
+- PDF floor plan with room labels and dimensions
+- Revit model with rooms already placed
+
+---
+
+## The Golden Workflow
+
+### Phase 1: PDF Analysis
+
+#### Step 1.1: Get PDF Info
+```
+mcp__floor-plan-vision__get_pdf_info(pdf_path="<path>")
+```
+Returns page count and dimensions. Identify which page(s) contain floor plans.
+
+#### Step 1.2: Extract Geometry
+```
+mcp__floor-plan-vision__extract_geometry(pdf_path="<path>", page_num=<n>)
+```
+Extracts all vector lines, arcs, and text from the PDF page.
+
+#### Step 1.3: Extract Dimensions with Confidence
+```
+mcp__floor-plan-vision__extract_dimensions(pdf_path="<path>", page_num=<n>)
+```
+Returns dimensions with:
+- `parsed_feet` / `parsed_inches` - Numeric values
+- `confidence` - 0-1 score (use ≥0.8 for reliable data)
+- `dimension_strings` - Grouped dimension sequences
+
+#### Step 1.4: Extract Room Labels
+```
+mcp__floor-plan-vision__extract_text(geometry=<geometry>)
+```
+Returns rooms with:
+- `name` - Room label text
+- `confidence` - 0-1 score
+- `x`, `y` - Position on page
+
+---
+
+### Phase 2: Data Mapping
+
+#### Step 2.1: Create PDF-to-Revit Mapping CSV
+Create a CSV file with columns:
+```csv
+PDF_Office,PDF_SF,Revit_Room,Display_SF
+101,544,701,653
+102,722,702,866
+```
+
+Where:
+- `PDF_Office` = Office number from PDF
+- `PDF_SF` = Square footage from PDF
+- `Revit_Room` = Room number in Revit (701-741 range)
+- `Display_SF` = Calculated rentable SF (PDF_SF × 1.2)
+
+#### Step 2.2: Apply Rentable Factor
+Common factors:
+- **1.2** (20% load factor) - Standard commercial
+- **1.15** (15% load factor) - Efficient buildings
+- **1.25** (25% load factor) - Older buildings with more common area
+
+Formula: `Display_SF = PDF_SF × Factor`
+
+---
+
+### Phase 3: Revit Population
+
+#### Step 3.1: Get Revit Rooms
+```
+Revit MCP: getRooms(levelId=<level>)
+```
+Returns all rooms with their element IDs.
+
+#### Step 3.2: Match Rooms by Number
+Match `Revit_Room` from CSV to room Number parameter in Revit.
+
+#### Step 3.3: Set Comments Parameter
+For each room:
+```
+Revit MCP: setParameter(
+  elementId=<room_id>,
+  parameterName="Comments",
+  value="<SF> SF"
+)
+```
+
+---
+
+### Phase 4: Verification
+
+#### Step 4.1: Batch Verify
+```
+Revit MCP: verifyRoomValues(
+  viewId=<view>,
+  expectedValues=[
+    {"roomNumber": "701", "expectedComment": "653 SF"},
+    {"roomNumber": "702", "expectedComment": "866 SF"}
+  ]
+)
+```
+Returns mismatches and verification status.
+
+#### Step 4.2: Visual Check
+```
+Revit MCP: exportViewToImage(viewId=<view>)
+```
+Review room tags visually.
+
+#### Step 4.3: Fix Mismatches
+For any failures, use:
+```
+Revit MCP: getParameter(elementId=<id>, parameterName="Comments")
+```
+To check actual value, then fix with setParameter.
+
+---
+
+## PowerShell Script Template
+
+```powershell
+# PDF-to-Revit Room SF Updater
+$pipe = New-Object System.IO.Pipes.NamedPipeClientStream('.', 'RevitMCPBridge2026', [System.IO.Pipes.PipeDirection]::InOut)
+$pipe.Connect(10000)
+$w = New-Object System.IO.StreamWriter($pipe)
+$w.AutoFlush = $true
+$r = New-Object System.IO.StreamReader($pipe)
+
+# Load mapping from CSV
+$mapping = Import-Csv "path/to/mapping.csv"
+
+$updated = 0
+foreach ($row in $mapping) {
+    $roomNum = $row.Revit_Room
+    $displaySF = $row.Display_SF
+
+    # Find room by number (you need room element ID)
+    # setParameter requires elementId
+    $cmd = '{"method":"setParameter","params":{"elementId":' + $elementId + ',"parameterName":"Comments","value":"' + $displaySF + ' SF"}}'
+    $w.WriteLine($cmd)
+    $resp = $r.ReadLine() | ConvertFrom-Json
+
+    if ($resp.success) {
+        $updated++
+        Write-Host "Updated Room $roomNum -> $displaySF SF"
+    }
+}
+
+$pipe.Close()
+Write-Host "Updated $updated rooms"
+```
+
+---
+
+## Confidence Thresholds
+
+| Score | Action |
+|-------|--------|
+| ≥0.9 | Auto-accept |
+| 0.8-0.9 | Accept with log |
+| 0.6-0.8 | Flag for review |
+| <0.6 | Manual entry required |
+
+---
+
+## Common Issues & Solutions
+
+### Issue: Room numbers don't match
+**Cause**: PDF uses 101-141, Revit uses 701-741
+**Solution**: Add offset in mapping (PDF + 600 = Revit)
+
+### Issue: Duplicate room tags showing
+**Cause**: Both Area and Comment displaying
+**Solution**: Use `changeTagType()` to switch to Comment-only tag
+
+### Issue: SF values look wrong
+**Cause**: Wrong scale factor or OCR error
+**Solution**: Check `confidence` score, verify against PDF visually
+
+### Issue: Some rooms not updating
+**Cause**: Room is unplaced or in different phase
+**Solution**: Check room placement, verify phase settings
+
+---
+
+## MCP Tools Used
+
+| Tool | Purpose |
+|------|---------|
+| `extract_dimensions` | Get SF values from PDF |
+| `extract_text` | Get room labels with confidence |
+| `getRooms` | List Revit rooms |
+| `setParameter` | Set Comments value |
+| `getParameter` | Read current value |
+| `verifyRoomValues` | Batch verification |
+| `regenerateView` | Force view refresh |
+| `changeTagType` | Fix tag display issues |
+
+---
+
+## Automation Checklist
+
+- [ ] PDF floor plan identified and accessible
+- [ ] Revit model open with rooms placed
+- [ ] Room numbers mapped (PDF → Revit)
+- [ ] Rentable factor confirmed (1.2 typical)
+- [ ] CSV mapping file created
+- [ ] PowerShell/Python script ready
+- [ ] Verification view identified
+- [ ] Backup taken before batch update
+
+---
+
+*Last Updated: 2025-12-22*
+*Version: 1.0*

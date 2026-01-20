@@ -1,0 +1,238 @@
+# RevitMCPBridge Gotchas & Solutions
+
+## Overview
+This skill documents discovered quirks, bugs, and workarounds when working with RevitMCPBridge2026. Reference this to avoid repeating known issues.
+
+## Critical Gotchas
+
+### 1. captureViewport File Naming
+**Issue**: Revit exports images with a modified filename that includes view info.
+
+```
+Requested: D:\temp_preview.png
+Actual:    D:\temp_preview - Sheet - A-1-2 - FLOOR PLANS AND DETAILS.png
+```
+
+**Pattern**: `{baseName} - {ViewType} - {ViewName}.{ext}`
+
+**Workaround**: Search directory for files starting with base name:
+```csharp
+var dir = Path.GetDirectoryName(outputPath);
+var baseName = Path.GetFileNameWithoutExtension(outputPath);
+var files = Directory.GetFiles(dir, baseName + "*" + Path.GetExtension(outputPath));
+var actualPath = files.FirstOrDefault();
+```
+
+**Status**: Bug in ViewportCaptureMethods.cs - needs fix to search for actual file.
+
+---
+
+### 2. Point/Coordinate Formats
+**Issue**: Different methods expect different formats.
+
+| Method | Format | Example |
+|--------|--------|---------|
+| createWall | Array [x,y,z] | `[10, 20, 0]` |
+| createFloor | Array of [x,y] | `[[0,0], [50,0], [50,40], [0,40]]` |
+| placeFamilyInstance | Array [x,y,z] | `[25, 10, 0]` |
+
+**Rule**: Always check method signature before calling. Don't assume object format `{x:10, y:20}`.
+
+---
+
+### 3. MCP Connection Timeouts
+**Issue**: Commands timeout when Revit has modal dialog open.
+
+**Symptoms**:
+- Request hangs for 30+ seconds
+- Returns timeout error
+- Revit appears frozen
+
+**Solution**:
+1. Check for dialogs in Revit (cloud family, warnings, etc.)
+2. Click in Revit drawing area to ensure focus
+3. Close any open dialogs
+4. Retry command
+
+**Prevention**: Always test with `ping` before complex operations:
+```json
+{"jsonrpc":"2.0","id":"1","method":"ping","params":{}}
+```
+
+---
+
+### 4. Transaction Requirements
+**Issue**: All document modifications require transactions.
+
+**Error**: "Modification is not allowed outside of a transaction"
+
+**Pattern**:
+```csharp
+using (var trans = new Transaction(doc, "Operation Name"))
+{
+    trans.Start();
+    // ... modifications ...
+    trans.Commit();
+}
+```
+
+**Note**: MCP methods handle this internally, but custom scripts need it.
+
+---
+
+### 5. ElementId vs Integer
+**Issue**: Some methods return ElementId objects, others return integers.
+
+**Safe Pattern**:
+```csharp
+// Always convert to int for JSON
+var elementId = element.Id.Value;  // Gets integer
+```
+
+**When Receiving**:
+```csharp
+var id = new ElementId(int.Parse(parameters["elementId"].ToString()));
+```
+
+---
+
+### 6. Family Loading - Cloud vs Local
+**Issue**: Revit 2026+ uses cloud families by default.
+
+**Problem**: `loadFamily` only works with local .rfa files.
+
+**Cloud Family Path**: Opens dialog, cannot automate:
+```csharp
+RevitCommandId.PostableCommand.LoadAutodeskFamily  // ID: 32990
+```
+
+**Solution**: Pre-load required families or use existing types in template.
+
+---
+
+### 7. getRooms Returns Empty
+**Issue**: getRooms may return empty even with rooms present.
+
+**Cause**: Using wrong category filter or SpatialElement base class.
+
+**Fix**: Use Room category specifically:
+```csharp
+new FilteredElementCollector(doc)
+    .OfCategory(BuiltInCategory.OST_Rooms)
+    .WhereElementIsNotElementType()
+    .Cast<Room>()
+```
+
+---
+
+### 8. View Export Resolution
+**Issue**: ImageExportOptions.PixelSize only controls width.
+
+**Behavior**: Height is determined by aspect ratio of view, not PixelSize.
+
+**For Specific Dimensions**: Adjust view crop region to match desired aspect ratio before export.
+
+---
+
+### 9. Named Pipe Buffer Size
+**Issue**: Large responses may be truncated.
+
+**Safe Pattern**: Use StreamReader.ReadLine() which handles buffering:
+```csharp
+using var reader = new StreamReader(pipe, Encoding.UTF8);
+var response = await reader.ReadLineAsync();
+```
+
+**Don't**: Read fixed byte counts.
+
+---
+
+### 10. Revit Process vs MCP Available
+**Issue**: Revit process running doesn't mean MCP is ready.
+
+**Timeline**:
+1. Revit.exe starts (process visible)
+2. Add-ins load (30-60 seconds)
+3. MCP pipe created (after add-in init)
+4. Document opens (additional time)
+
+**Pattern**:
+```csharp
+// Check process first
+var revitRunning = Process.GetProcessesByName("Revit").Length > 0;
+
+// Then check MCP (may need retries)
+for (int i = 0; i < 10; i++)
+{
+    if (await McpClient.PingAsync()) break;
+    await Task.Delay(3000);
+}
+```
+
+---
+
+## Method-Specific Issues
+
+### openDocument
+- `detachFromCentral: true` recommended for preview operations
+- Document may already be open - check first with `getDocumentInfo`
+- Opening triggers additional dialogs (worksets, links) that block MCP
+
+### getElements / getElementsByCategory
+- Category names are case-sensitive
+- Some categories return wrong elements - verify with specific methods (getDoors, getWindows)
+- Large models may timeout - use filters
+
+### placeFamilyInstance
+- Family must be loaded first
+- Type name must match exactly
+- Location is insertion point (varies by family origin)
+- Some families have built-in elevation offsets (upper cabinets = +4.5')
+
+---
+
+## Debugging Checklist
+
+When MCP calls fail:
+
+1. [ ] Is Revit running? (Check Task Manager)
+2. [ ] Is MCP pipe responding? (Test with ping)
+3. [ ] Any modal dialogs open? (Check Revit window)
+4. [ ] Correct parameter format? (Array vs Object)
+5. [ ] Valid element IDs? (Query first, then use)
+6. [ ] Document open? (Check getDocumentInfo)
+7. [ ] Required types loaded? (Query available types)
+
+---
+
+## Quick Reference
+
+### Test MCP Connection
+```powershell
+$pipe = New-Object System.IO.Pipes.NamedPipeClientStream(".", "RevitMCPBridge2026", [System.IO.Pipes.PipeDirection]::InOut)
+$pipe.Connect(5000)
+# If no exception, connected
+```
+
+### Common Method Signatures
+```json
+// Ping
+{"method":"ping","params":{}}
+
+// Get levels (always works if connected)
+{"method":"getLevels","params":{}}
+
+// Capture viewport
+{"method":"captureViewport","params":{"outputPath":"D:\\test.png","width":1920,"height":1080}}
+
+// Create wall
+{"method":"createWall","params":{"startPoint":[0,0,0],"endPoint":[50,0,0],"levelId":30,"height":10}}
+```
+
+---
+
+## Version Info
+- RevitMCPBridge: 1.0.9.0
+- Revit: 2026.2
+- Last Updated: 2024-12-30
+- Discovered By: Claude Code sessions

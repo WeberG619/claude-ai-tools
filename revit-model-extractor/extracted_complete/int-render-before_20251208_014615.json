@@ -1,0 +1,2624 @@
+﻿{
+    "lightingFixtures":  [
+
+                         ],
+    "ceilings":  [
+                     {
+                         "ceilingId":  51445,
+                         "typeName":  "2\u0027 x 2\u0027 ACT System",
+                         "typeId":  44750,
+                         "level":  "Level 1",
+                         "area":  480.9368064005609,
+                         "heightOffset":  9.0
+                     },
+                     {
+                         "ceilingId":  51462,
+                         "typeName":  "Generic - 4\"",
+                         "typeId":  44798,
+                         "level":  "Level 1",
+                         "area":  335.03215586975506,
+                         "heightOffset":  8.0
+                     }
+                 ],
+    "wallTypes":  [
+                      {
+                          "wallTypeId":  219,
+                          "name":  "Generic - 6\"",
+                          "kind":  "Basic",
+                          "width":  0.5,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  220,
+                          "name":  "Interior - 5\" Partition (2-hr)",
+                          "kind":  "Basic",
+                          "width":  0.41666666666666663,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  221,
+                          "name":  "Exterior - Brick on Mtl. Stud",
+                          "kind":  "Basic",
+                          "width":  1.15625,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  249,
+                          "name":  "Generic - 8\"",
+                          "kind":  "Basic",
+                          "width":  0.6666666666666666,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  250,
+                          "name":  "Exterior - Brick on CMU",
+                          "kind":  "Basic",
+                          "width":  1.625,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  251,
+                          "name":  "Generic - 12\"",
+                          "kind":  "Basic",
+                          "width":  1.0,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  252,
+                          "name":  "Generic - 5\"",
+                          "kind":  "Basic",
+                          "width":  0.4166666666666667,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  253,
+                          "name":  "Generic - 12\" Masonry",
+                          "kind":  "Basic",
+                          "width":  0.96875,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  254,
+                          "name":  "Generic - 8\" Masonry",
+                          "kind":  "Basic",
+                          "width":  0.6354166666666666,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  255,
+                          "name":  "Generic - 6\" Masonry",
+                          "kind":  "Basic",
+                          "width":  0.46875,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  256,
+                          "name":  "Exterior - CMU Insulated",
+                          "kind":  "Basic",
+                          "width":  2.208333333333333,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  257,
+                          "name":  "Generic - 4\" Brick",
+                          "kind":  "Basic",
+                          "width":  0.3333333333333333,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  258,
+                          "name":  "Interior - 3 1/8\" Partition (1-hr)",
+                          "kind":  "Basic",
+                          "width":  0.2604166666666667,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  261,
+                          "name":  "Interior - 4 7/8\" Partition (1-hr)",
+                          "kind":  "Basic",
+                          "width":  0.40624999999999994,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  262,
+                          "name":  "Interior - 6 1/8\" Partition (2-hr)",
+                          "kind":  "Basic",
+                          "width":  0.5104166666666666,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  263,
+                          "name":  "Interior - 5 1/2\" Partition (1-hr)",
+                          "kind":  "Basic",
+                          "width":  0.45833333333333326,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  264,
+                          "name":  "Exterior - EIFS on Mtl. Stud",
+                          "kind":  "Basic",
+                          "width":  1.0208333333333333,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  21854,
+                          "name":  "Curtain Wall 1",
+                          "kind":  "Curtain",
+                          "width":  0.08333333333333333,
+                          "familyName":  "Curtain Wall"
+                      },
+                      {
+                          "wallTypeId":  29243,
+                          "name":  "Foundation - 12\" Concrete",
+                          "kind":  "Basic",
+                          "width":  1.0,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  29244,
+                          "name":  "Retaining - 12\" Concrete",
+                          "kind":  "Basic",
+                          "width":  1.0,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  43831,
+                          "name":  "Generic - 8\" - Filled",
+                          "kind":  "Basic",
+                          "width":  0.6666666666666666,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  45098,
+                          "name":  "Soffit - 1/2\" GWB \u0026 Metal Stud",
+                          "kind":  "Basic",
+                          "width":  0.16666666666666666,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  47381,
+                          "name":  "Exterior - Brick and CMU on MTL. Stud",
+                          "kind":  "Basic",
+                          "width":  1.15625,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  58589,
+                          "name":  "Stacked Wall 1",
+                          "kind":  "Stacked",
+                          "width":  0.16666666666666666,
+                          "familyName":  "Stacked Wall"
+                      }
+                  ],
+    "structuralBeams":  [
+
+                        ],
+    "familyTypes":  [
+
+                    ],
+    "roofs":  [
+
+              ],
+    "railings":  [
+
+                 ],
+    "curtainWalls":  [
+                         {
+                             "wallId":  51680,
+                             "wallType":  "Curtain Wall 1",
+                             "typeId":  21854,
+                             "baseLevel":  "Level 1",
+                             "length":  14.666666666666735,
+                             "height":  7.0,
+                             "startPoint":  {
+                                                "x":  -11.34078834594959,
+                                                "y":  23.82289228824967,
+                                                "z":  0.0
+                                            },
+                             "endPoint":  {
+                                              "x":  -11.340788345949594,
+                                              "y":  9.156225621582934,
+                                              "z":  0.0
+                                          }
+                         }
+                     ],
+    "phases":  [
+                   {
+                       "phaseId":  32440,
+                       "phaseName":  "Existing",
+                       "sequenceNumber":  1
+                   },
+                   {
+                       "phaseId":  21885,
+                       "phaseName":  "New Construction",
+                       "sequenceNumber":  2
+                   }
+               ],
+    "projectInfo":  {
+                        "success":  true,
+                        "result":  {
+                                       "name":  "Project Name",
+                                       "number":  "Project Number",
+                                       "author":  "",
+                                       "status":  "Project Status",
+                                       "address":  "Enter address here",
+                                       "clientName":  "Owner",
+                                       "buildingName":  "",
+                                       "organizationName":  "",
+                                       "organizationDescription":  "",
+                                       "isPinned":  false,
+                                       "isWorkshared":  false,
+                                       "title":  "int-render-before",
+                                       "pathname":  "D:\\003 - RESOURCES\\01 - REVIT LIBRARY\\MISC REVIT LIBRARY\\SKLAR REVIT LIBRARY\\DVD REVIT MATERIAL\\MATERIALS FROM AU 2005\\16-Rendering\\int-render-before.rvt"
+                                   }
+                    },
+    "schedules":  [
+
+                  ],
+    "columns":  [
+
+                ],
+    "furniture":  [
+                      {
+                          "furnitureId":  52553,
+                          "familyName":  "Table-Round",
+                          "typeName":  "36\" Diameter",
+                          "typeId":  52547,
+                          "level":  "Level 1",
+                          "location":  {
+                                           "x":  -21.84078834594959,
+                                           "y":  30.322892288249456,
+                                           "z":  0.0
+                                       },
+                          "rotation":  0.0
+                      },
+                      {
+                          "furnitureId":  52644,
+                          "familyName":  "Table-Round",
+                          "typeName":  "36\" Diameter",
+                          "typeId":  52547,
+                          "level":  "Level 1",
+                          "location":  {
+                                           "x":  -16.84078834594959,
+                                           "y":  26.322892288249456,
+                                           "z":  0.0
+                                       },
+                          "rotation":  0.0
+                      },
+                      {
+                          "furnitureId":  52689,
+                          "familyName":  "Table-Round",
+                          "typeName":  "36\" Diameter",
+                          "typeId":  52547,
+                          "level":  "Level 1",
+                          "location":  {
+                                           "x":  -21.84078834594959,
+                                           "y":  21.822892288249456,
+                                           "z":  0.0
+                                       },
+                          "rotation":  0.0
+                      },
+                      {
+                          "furnitureId":  55285,
+                          "familyName":  "Chair-Stacking",
+                          "typeName":  "Chair-Stacking",
+                          "typeId":  55283,
+                          "level":  "Level 1",
+                          "location":  {
+                                           "x":  -21.84078834594959,
+                                           "y":  20.322892288249456,
+                                           "z":  -1.0391003658733343E-16
+                                       },
+                          "rotation":  0.0
+                      },
+                      {
+                          "furnitureId":  55419,
+                          "familyName":  "Chair-Stacking",
+                          "typeName":  "Chair-Stacking",
+                          "typeId":  55283,
+                          "level":  "Level 1",
+                          "location":  {
+                                           "x":  -21.84078834594959,
+                                           "y":  23.322892288249456,
+                                           "z":  -1.0391003658733343E-16
+                                       },
+                          "rotation":  0.0
+                      },
+                      {
+                          "furnitureId":  55453,
+                          "familyName":  "Chair-Stacking",
+                          "typeName":  "Chair-Stacking",
+                          "typeId":  55283,
+                          "level":  "Level 1",
+                          "location":  {
+                                           "x":  -15.400158820825656,
+                                           "y":  24.203423041580905,
+                                           "z":  -1.0391003658733343E-16
+                                       },
+                          "rotation":  0.6457718232378946
+                      },
+                      {
+                          "furnitureId":  55454,
+                          "familyName":  "Chair-Stacking",
+                          "typeName":  "Chair-Stacking",
+                          "typeId":  55283,
+                          "level":  "Level 1",
+                          "location":  {
+                                           "x":  -17.89972489012691,
+                                           "y":  27.520743229053984,
+                                           "z":  -1.0391003658733343E-16
+                                       },
+                          "rotation":  0.6457718232378946
+                      },
+                      {
+                          "furnitureId":  55481,
+                          "familyName":  "Chair-Stacking",
+                          "typeName":  "Chair-Stacking",
+                          "typeId":  55283,
+                          "level":  "Level 1",
+                          "location":  {
+                                           "x":  -21.094279820670785,
+                                           "y":  29.124836698912095,
+                                           "z":  -1.0391003658733343E-16
+                                       },
+                          "rotation":  0.6457718232378946
+                      },
+                      {
+                          "furnitureId":  55482,
+                          "familyName":  "Chair-Stacking",
+                          "typeName":  "Chair-Stacking",
+                          "typeId":  55283,
+                          "level":  "Level 1",
+                          "location":  {
+                                           "x":  -22.89972489012691,
+                                           "y":  31.520743229053984,
+                                           "z":  -1.0391003658733343E-16
+                                       },
+                          "rotation":  0.6457718232378946
+                      },
+                      {
+                          "furnitureId":  55499,
+                          "familyName":  "Chair-Stacking",
+                          "typeName":  "Chair-Stacking",
+                          "typeId":  55283,
+                          "level":  "Level 1",
+                          "location":  {
+                                           "x":  -20.486534032023535,
+                                           "y":  31.17270917099136,
+                                           "z":  -1.0391003658733343E-16
+                                       },
+                          "rotation":  5.194645983398598
+                      }
+                  ],
+    "pipes":  [
+
+              ],
+    "extractedAt":  "2025-12-08 01:46:15",
+    "fileName":  "int-render-before.rvt",
+    "views":  [
+                  {
+                      "viewId":  32,
+                      "viewName":  "Level 1",
+                      "viewType":  "FloorPlan",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  36,
+                      "viewName":  "Level 1",
+                      "viewType":  "CeilingPlan",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  3651,
+                      "viewName":  "Project View",
+                      "viewType":  "ProjectBrowser",
+                      "isTemplate":  false,
+                      "scale":  24
+                  },
+                  {
+                      "viewId":  9948,
+                      "viewName":  "Level 2",
+                      "viewType":  "FloorPlan",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  9952,
+                      "viewName":  "Level 2",
+                      "viewType":  "CeilingPlan",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  29154,
+                      "viewName":  "East",
+                      "viewType":  "Elevation",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  29181,
+                      "viewName":  "North",
+                      "viewType":  "Elevation",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  29191,
+                      "viewName":  "West",
+                      "viewType":  "Elevation",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  29201,
+                      "viewName":  "South",
+                      "viewType":  "Elevation",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  29237,
+                      "viewName":  "Site",
+                      "viewType":  "FloorPlan",
+                      "isTemplate":  false,
+                      "scale":  240
+                  },
+                  {
+                      "viewId":  51174,
+                      "viewName":  "{3D}",
+                      "viewType":  "ThreeD",
+                      "isTemplate":  false,
+                      "scale":  24
+                  },
+                  {
+                      "viewId":  51495,
+                      "viewName":  "Section 1",
+                      "viewType":  "Section",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  51518,
+                      "viewName":  "3D View 1",
+                      "viewType":  "ThreeD",
+                      "isTemplate":  false,
+                      "scale":  0
+                  },
+                  {
+                      "viewId":  52086,
+                      "viewName":  "3D View 2",
+                      "viewType":  "ThreeD",
+                      "isTemplate":  false,
+                      "scale":  0
+                  },
+                  {
+                      "viewId":  55507,
+                      "viewName":  "Section 2",
+                      "viewType":  "Section",
+                      "isTemplate":  false,
+                      "scale":  96
+                  },
+                  {
+                      "viewId":  58819,
+                      "viewName":  "System Browser",
+                      "viewType":  "SystemBrowser",
+                      "isTemplate":  false,
+                      "scale":  96
+                  }
+              ],
+    "plumbingFixtures":  [
+
+                         ],
+    "doors":  [
+
+              ],
+    "floorTypes":  [
+                       {
+                           "floorTypeId":  226,
+                           "name":  "Generic - 12\"",
+                           "familyName":  "Floor",
+                           "isFoundation":  false
+                       },
+                       {
+                           "floorTypeId":  24122,
+                           "name":  "Wood Joist 10\" - Wood Finish",
+                           "familyName":  "Floor",
+                           "isFoundation":  false
+                       },
+                       {
+                           "floorTypeId":  24137,
+                           "name":  "Wood Truss  Joist 12\" - Carpet Finish",
+                           "familyName":  "Floor",
+                           "isFoundation":  false
+                       },
+                       {
+                           "floorTypeId":  24175,
+                           "name":  "Wood Joist 10\" - Ceramic Tile",
+                           "familyName":  "Floor",
+                           "isFoundation":  false
+                       },
+                       {
+                           "floorTypeId":  24183,
+                           "name":  "Steel Bar Joist 14\" - VCT on Concrete",
+                           "familyName":  "Floor",
+                           "isFoundation":  false
+                       },
+                       {
+                           "floorTypeId":  24248,
+                           "name":  "LW Concrete on Metal Deck",
+                           "familyName":  "Floor",
+                           "isFoundation":  false
+                       },
+                       {
+                           "floorTypeId":  43833,
+                           "name":  "Generic - 12\" - Filled",
+                           "familyName":  "Floor",
+                           "isFoundation":  false
+                       },
+                       {
+                           "floorTypeId":  59173,
+                           "name":  "Foundation Slab 1",
+                           "familyName":  "Foundation Slab",
+                           "isFoundation":  true
+                       }
+                   ],
+    "sheets":  [
+
+               ],
+    "structuralColumns":  [
+
+                          ],
+    "filePath":  "D:\\003 - RESOURCES\\01 - REVIT LIBRARY\\MISC REVIT LIBRARY\\SKLAR REVIT LIBRARY\\DVD REVIT MATERIAL\\MATERIALS FROM AU 2005\\16-Rendering\\int-render-before.rvt",
+    "stairs":  [
+
+               ],
+    "ceilingTypes":  [
+                         {
+                             "ceilingTypeId":  227,
+                             "name":  "Generic",
+                             "familyName":  "Basic Ceiling"
+                         },
+                         {
+                             "ceilingTypeId":  44748,
+                             "name":  "GWB on Mtl. Stud",
+                             "familyName":  "Compound Ceiling"
+                         },
+                         {
+                             "ceilingTypeId":  44749,
+                             "name":  "2\u0027 x 4\u0027 ACT System",
+                             "familyName":  "Compound Ceiling"
+                         },
+                         {
+                             "ceilingTypeId":  44750,
+                             "name":  "2\u0027 x 2\u0027 ACT System",
+                             "familyName":  "Compound Ceiling"
+                         },
+                         {
+                             "ceilingTypeId":  44798,
+                             "name":  "Generic - 4\"",
+                             "familyName":  "Roof Soffit"
+                         }
+                     ],
+    "walls":  [
+                  {
+                      "wallId":  51118,
+                      "wallType":  "Generic - 8\"",
+                      "wallTypeId":  249,
+                      "length":  23.49999999999993,
+                      "height":  20.0,
+                      "width":  0.6666666666666666,
+                      "structural":  false,
+                      "startPoint":  {
+                                         "x":  -45.84078834594958,
+                                         "y":  34.822892288249456,
+                                         "z":  0.0
+                                     },
+                      "endPoint":  {
+                                       "x":  -22.340788345949655,
+                                       "y":  34.822892288249456,
+                                       "z":  0.0
+                                   },
+                      "baseLevel":  "Level 1",
+                      "topLevel":  null,
+                      "baseOffset":  0.0,
+                      "topOffset":  0.0
+                  },
+                  {
+                      "wallId":  51119,
+                      "wallType":  "Generic - 8\"",
+                      "wallTypeId":  249,
+                      "length":  26.0,
+                      "height":  20.0,
+                      "width":  0.6666666666666666,
+                      "structural":  false,
+                      "startPoint":  {
+                                         "x":  -45.84078834594958,
+                                         "y":  8.822892288249456,
+                                         "z":  0.0
+                                     },
+                      "endPoint":  {
+                                       "x":  -45.84078834594958,
+                                       "y":  34.822892288249456,
+                                       "z":  0.0
+                                   },
+                      "baseLevel":  "Level 1",
+                      "topLevel":  null,
+                      "baseOffset":  0.0,
+                      "topOffset":  0.0
+                  },
+                  {
+                      "wallId":  51120,
+                      "wallType":  "Generic - 8\"",
+                      "wallTypeId":  249,
+                      "length":  34.499999999999986,
+                      "height":  20.0,
+                      "width":  0.6666666666666666,
+                      "structural":  false,
+                      "startPoint":  {
+                                         "x":  -11.340788345949594,
+                                         "y":  8.822892288249458,
+                                         "z":  0.0
+                                     },
+                      "endPoint":  {
+                                       "x":  -45.84078834594958,
+                                       "y":  8.822892288249456,
+                                       "z":  0.0
+                                   },
+                      "baseLevel":  "Level 1",
+                      "topLevel":  null,
+                      "baseOffset":  0.0,
+                      "topOffset":  0.0
+                  },
+                  {
+                      "wallId":  51277,
+                      "wallType":  "Generic - 8\"",
+                      "wallTypeId":  249,
+                      "length":  17.278759594743793,
+                      "height":  20.0,
+                      "width":  0.6666666666666666,
+                      "structural":  false,
+                      "startPoint":  {
+                                         "x":  -22.340788345949658,
+                                         "y":  34.822892288249456,
+                                         "z":  0.0
+                                     },
+                      "endPoint":  {
+                                       "x":  -11.340788345949587,
+                                       "y":  23.822892288249594,
+                                       "z":  0.0
+                                   },
+                      "baseLevel":  "Level 1",
+                      "topLevel":  null,
+                      "baseOffset":  0.0,
+                      "topOffset":  0.0
+                  },
+                  {
+                      "wallId":  51438,
+                      "wallType":  "Soffit - 1/2\" GWB \u0026 Metal Stud",
+                      "wallTypeId":  45098,
+                      "length":  19.74999999999993,
+                      "height":  1.0,
+                      "width":  0.16666666666666666,
+                      "structural":  false,
+                      "startPoint":  {
+                                         "x":  -42.09078834594958,
+                                         "y":  31.072892288249456,
+                                         "z":  0.0
+                                     },
+                      "endPoint":  {
+                                       "x":  -22.340788345949655,
+                                       "y":  31.072892288249456,
+                                       "z":  0.0
+                                   },
+                      "baseLevel":  "Level 1",
+                      "topLevel":  null,
+                      "baseOffset":  8.0,
+                      "topOffset":  0.0
+                  },
+                  {
+                      "wallId":  51439,
+                      "wallType":  "Soffit - 1/2\" GWB \u0026 Metal Stud",
+                      "wallTypeId":  45098,
+                      "length":  18.5,
+                      "height":  1.0,
+                      "width":  0.16666666666666666,
+                      "structural":  false,
+                      "startPoint":  {
+                                         "x":  -42.09078834594958,
+                                         "y":  12.572892288249456,
+                                         "z":  0.0
+                                     },
+                      "endPoint":  {
+                                       "x":  -42.09078834594958,
+                                       "y":  31.072892288249456,
+                                       "z":  0.0
+                                   },
+                      "baseLevel":  "Level 1",
+                      "topLevel":  null,
+                      "baseOffset":  8.0,
+                      "topOffset":  0.0
+                  },
+                  {
+                      "wallId":  51440,
+                      "wallType":  "Soffit - 1/2\" GWB \u0026 Metal Stud",
+                      "wallTypeId":  45098,
+                      "length":  26.999999999999986,
+                      "height":  1.0,
+                      "width":  0.16666666666666666,
+                      "structural":  false,
+                      "startPoint":  {
+                                         "x":  -15.090788345949596,
+                                         "y":  12.572892288249456,
+                                         "z":  0.0
+                                     },
+                      "endPoint":  {
+                                       "x":  -42.09078834594958,
+                                       "y":  12.572892288249456,
+                                       "z":  0.0
+                                   },
+                      "baseLevel":  "Level 1",
+                      "topLevel":  null,
+                      "baseOffset":  8.0,
+                      "topOffset":  0.0
+                  },
+                  {
+                      "wallId":  51441,
+                      "wallType":  "Soffit - 1/2\" GWB \u0026 Metal Stud",
+                      "wallTypeId":  45098,
+                      "length":  11.250000000000071,
+                      "height":  1.0,
+                      "width":  0.16666666666666666,
+                      "structural":  false,
+                      "startPoint":  {
+                                         "x":  -15.09078834594959,
+                                         "y":  23.822892288249527,
+                                         "z":  0.0
+                                     },
+                      "endPoint":  {
+                                       "x":  -15.090788345949596,
+                                       "y":  12.572892288249456,
+                                       "z":  0.0
+                                   },
+                      "baseLevel":  "Level 1",
+                      "topLevel":  null,
+                      "baseOffset":  8.0,
+                      "topOffset":  0.0
+                  },
+                  {
+                      "wallId":  51442,
+                      "wallType":  "Soffit - 1/2\" GWB \u0026 Metal Stud",
+                      "wallTypeId":  45098,
+                      "length":  11.388273369262954,
+                      "height":  1.0,
+                      "width":  0.16666666666666666,
+                      "structural":  false,
+                      "startPoint":  {
+                                         "x":  -22.340788345949722,
+                                         "y":  31.072892288249456,
+                                         "z":  0.0
+                                     },
+                      "endPoint":  {
+                                       "x":  -15.090788345949587,
+                                       "y":  23.822892288249637,
+                                       "z":  0.0
+                                   },
+                      "baseLevel":  "Level 1",
+                      "topLevel":  null,
+                      "baseOffset":  8.0,
+                      "topOffset":  0.0
+                  },
+                  {
+                      "wallId":  51619,
+                      "wallType":  "Generic - 8\"",
+                      "wallTypeId":  249,
+                      "length":  15.000000000000071,
+                      "height":  13.0,
+                      "width":  0.6666666666666666,
+                      "structural":  false,
+                      "startPoint":  {
+                                         "x":  -11.34078834594959,
+                                         "y":  23.822892288249527,
+                                         "z":  0.0
+                                     },
+                      "endPoint":  {
+                                       "x":  -11.340788345949594,
+                                       "y":  8.822892288249456,
+                                       "z":  0.0
+                                   },
+                      "baseLevel":  "Level 1",
+                      "topLevel":  null,
+                      "baseOffset":  7.0,
+                      "topOffset":  0.0
+                  },
+                  {
+                      "wallId":  51680,
+                      "wallType":  "Curtain Wall 1",
+                      "wallTypeId":  21854,
+                      "length":  14.666666666666735,
+                      "height":  7.0,
+                      "width":  0.08333333333333333,
+                      "structural":  false,
+                      "startPoint":  {
+                                         "x":  -11.34078834594959,
+                                         "y":  23.82289228824967,
+                                         "z":  0.0
+                                     },
+                      "endPoint":  {
+                                       "x":  -11.340788345949594,
+                                       "y":  9.156225621582934,
+                                       "z":  0.0
+                                   },
+                      "baseLevel":  "Level 1",
+                      "topLevel":  null,
+                      "baseOffset":  0.0,
+                      "topOffset":  0.0
+                  }
+              ],
+    "foundations":  [
+
+                    ],
+    "rooms":  [
+
+              ],
+    "worksets":  [
+
+                 ],
+    "floors":  [
+                   {
+                       "floorId":  52135,
+                       "typeName":  "Generic - 12\"",
+                       "typeId":  226,
+                       "level":  "Level 1",
+                       "area":  837.5861312714086,
+                       "thickness":  1.0,
+                       "structural":  false
+                   }
+               ],
+    "grids":  [
+
+              ],
+    "ducts":  [
+
+              ],
+    "windowTypes":  [
+                        {
+                            "typeId":  36524,
+                            "familyName":  "Fixed",
+                            "typeName":  "36\" x 48\"",
+                            "width":  3.0,
+                            "height":  4.0,
+                            "isActive":  false
+                        },
+                        {
+                            "typeId":  36526,
+                            "familyName":  "Fixed",
+                            "typeName":  "24\" x 48\"",
+                            "width":  2.0,
+                            "height":  4.0,
+                            "isActive":  false
+                        },
+                        {
+                            "typeId":  36528,
+                            "familyName":  "Fixed",
+                            "typeName":  "24\" x 24\"",
+                            "width":  2.0,
+                            "height":  2.0,
+                            "isActive":  true
+                        },
+                        {
+                            "typeId":  36530,
+                            "familyName":  "Fixed",
+                            "typeName":  "16\" x 24\"",
+                            "width":  1.3333333333333333,
+                            "height":  2.0,
+                            "isActive":  false
+                        },
+                        {
+                            "typeId":  36532,
+                            "familyName":  "Fixed",
+                            "typeName":  "16\" x 48\"",
+                            "width":  1.3333333333333333,
+                            "height":  4.0,
+                            "isActive":  false
+                        },
+                        {
+                            "typeId":  36534,
+                            "familyName":  "Fixed",
+                            "typeName":  "16\" x 72\"",
+                            "width":  1.3333333333333333,
+                            "height":  6.0,
+                            "isActive":  false
+                        },
+                        {
+                            "typeId":  36536,
+                            "familyName":  "Fixed",
+                            "typeName":  "24\" x 72\"",
+                            "width":  2.0,
+                            "height":  6.0,
+                            "isActive":  false
+                        },
+                        {
+                            "typeId":  36538,
+                            "familyName":  "Fixed",
+                            "typeName":  "36\" x 24\"",
+                            "width":  3.0,
+                            "height":  2.0,
+                            "isActive":  false
+                        },
+                        {
+                            "typeId":  36540,
+                            "familyName":  "Fixed",
+                            "typeName":  "36\" x 72\"",
+                            "width":  3.0,
+                            "height":  6.0,
+                            "isActive":  false
+                        }
+                    ],
+    "loadedFamilies":  [
+                           {
+                               "familyId":  41399,
+                               "name":  "Area Tag",
+                               "category":  "Area Tags",
+                               "typeCount":  1,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  42881,
+                               "name":  "Baluster - Round",
+                               "category":  "Balusters",
+                               "typeCount":  2,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  42715,
+                               "name":  "Baluster - Square",
+                               "category":  "Balusters",
+                               "typeCount":  2,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  23855,
+                               "name":  "callout head",
+                               "category":  "Callout Heads",
+                               "typeCount":  1,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  34200,
+                               "name":  "Rectangular Column",
+                               "category":  "Columns",
+                               "typeCount":  3,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  20391,
+                               "name":  "Empty Panel",
+                               "category":  "Curtain Panels",
+                               "typeCount":  1,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  21943,
+                               "name":  "Empty System Panel",
+                               "category":  "Curtain Panels",
+                               "typeCount":  1,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  45694,
+                               "name":  "Glazed Panel",
+                               "category":  "Curtain Panels",
+                               "typeCount":  1,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  20915,
+                               "name":  "System Panel",
+                               "category":  "Curtain Panels",
+                               "typeCount":  3,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  28596,
+                               "name":  "Circular Mullion",
+                               "category":  "Curtain Wall Mullions",
+                               "typeCount":  1,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  43497,
+                               "name":  "L Corner Mullion",
+                               "category":  "Curtain Wall Mullions",
+                               "typeCount":  1,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  43509,
+                               "name":  "Quad Corner Mullion",
+                               "category":  "Curtain Wall Mullions",
+                               "typeCount":  1,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  28595,
+                               "name":  "Rectangular Mullion",
+                               "category":  "Curtain Wall Mullions",
+                               "typeCount":  3,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  43505,
+                               "name":  "Trapezoid Corner Mullion",
+                               "category":  "Curtain Wall Mullions",
+                               "typeCount":  1,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  43501,
+                               "name":  "V Corner Mullion",
+                               "category":  "Curtain Wall Mullions",
+                               "typeCount":  1,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  28809,
+                               "name":  "W-Wide Flange-Section",
+                               "category":  "Detail Items",
+                               "typeCount":  1,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  41070,
+                               "name":  "Door Tag",
+                               "category":  "Door Tags",
+                               "typeCount":  1,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  46156,
+                               "name":  "Single-Flush",
+                               "category":  "Doors",
+                               "typeCount":  7,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  62363,
+                               "name":  "Elevation Mark Circle - Upgrade",
+                               "category":  "Elevation Marks",
+                               "typeCount":  2,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  62592,
+                               "name":  "Elevation Mark Pointer_Circle",
+                               "category":  "Elevation Marks",
+                               "typeCount":  4,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  62093,
+                               "name":  "Elevation Mark Pointer_Square",
+                               "category":  "Elevation Marks",
+                               "typeCount":  2,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  61875,
+                               "name":  "Elevation Mark Square - Upgrade",
+                               "category":  "Elevation Marks",
+                               "typeCount":  2,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  56929,
+                               "name":  "RPC Female",
+                               "category":  "Entourage",
+                               "typeCount":  4,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  54795,
+                               "name":  "Chair-Stacking",
+                               "category":  "Furniture",
+                               "typeCount":  1,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  48277,
+                               "name":  "Desk",
+                               "category":  "Furniture",
+                               "typeCount":  3,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  52175,
+                               "name":  "Table-Round",
+                               "category":  "Furniture",
+                               "typeCount":  3,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  43049,
+                               "name":  "Centerline",
+                               "category":  "Generic Annotations",
+                               "typeCount":  1,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  43380,
+                               "name":  "North Arrow 2",
+                               "category":  "Generic Annotations",
+                               "typeCount":  1,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  50445,
+                               "name":  "Grid Head - Circle",
+                               "category":  "Grid Heads",
+                               "typeCount":  1,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  50563,
+                               "name":  "Grid Head - No Bubble",
+                               "category":  "Grid Heads",
+                               "typeCount":  1,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  50681,
+                               "name":  "Level Head - Circle",
+                               "category":  "Level Heads",
+                               "typeCount":  1,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  50330,
+                               "name":  "Level Head - No Bubble",
+                               "category":  "Level Heads",
+                               "typeCount":  1,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  55539,
+                               "name":  "Abolite_Bistro_Deep_Bowl_BBD",
+                               "category":  "Lighting Fixtures",
+                               "typeCount":  1,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  52968,
+                               "name":  "Downlight - Recessed Can",
+                               "category":  "Lighting Fixtures",
+                               "typeCount":  2,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  53353,
+                               "name":  "Suspended Linear 2",
+                               "category":  "Lighting Fixtures",
+                               "typeCount":  2,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  47152,
+                               "name":  "Parking Space",
+                               "category":  "Parking",
+                               "typeCount":  4,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  44140,
+                               "name":  "Tree - Deciduous",
+                               "category":  "Planting",
+                               "typeCount":  6,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  52745,
+                               "name":  "Base 2",
+                               "category":  "Profiles",
+                               "typeCount":  4,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  41619,
+                               "name":  "Circular Handrail",
+                               "category":  "Profiles",
+                               "typeCount":  2,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  45481,
+                               "name":  "Fascia-Flat",
+                               "category":  "Profiles",
+                               "typeCount":  5,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  45305,
+                               "name":  "Gutter - Bevel",
+                               "category":  "Profiles",
+                               "typeCount":  7,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  47697,
+                               "name":  "Parapet Cap-Precast",
+                               "category":  "Profiles",
+                               "typeCount":  4,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  41505,
+                               "name":  "Rectangular Handrail",
+                               "category":  "Profiles",
+                               "typeCount":  2,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  49001,
+                               "name":  "Reveal-Brick Course",
+                               "category":  "Profiles",
+                               "typeCount":  3,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  47406,
+                               "name":  "Sill-Precast",
+                               "category":  "Profiles",
+                               "typeCount":  3,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  45167,
+                               "name":  "Slab Edge-Thickened",
+                               "category":  "Profiles",
+                               "typeCount":  3,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  39978,
+                               "name":  "Stair Nosing - Pan",
+                               "category":  "Profiles",
+                               "typeCount":  1,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  49148,
+                               "name":  "Wall Sweep-Brick Soldier Course",
+                               "category":  "Profiles",
+                               "typeCount":  3,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  41186,
+                               "name":  "Room Tag",
+                               "category":  "Room Tags",
+                               "typeCount":  1,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  39569,
+                               "name":  "Section Head - Filled",
+                               "category":  "Section Marks",
+                               "typeCount":  1,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  58846,
+                               "name":  "Section Tail - Upgrade",
+                               "category":  "Section Marks",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  50979,
+                               "name":  "Spot Elevation - Crosshair",
+                               "category":  "Spot Elevation Symbols",
+                               "typeCount":  1,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  49591,
+                               "name":  "Spot Elevation - Target Filled",
+                               "category":  "Spot Elevation Symbols",
+                               "typeCount":  1,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  36546,
+                               "name":  "W-Wide Flange-Column",
+                               "category":  "Structural Columns",
+                               "typeCount":  2,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  35608,
+                               "name":  "W-Wide Flange",
+                               "category":  "Structural Framing",
+                               "typeCount":  1,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  46501,
+                               "name":  "E1 30 x 42 Horizontal",
+                               "category":  "Title Blocks",
+                               "typeCount":  1,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  33937,
+                               "name":  "View Title",
+                               "category":  "View Titles",
+                               "typeCount":  1,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  41297,
+                               "name":  "Wall Tag",
+                               "category":  "Wall Tags",
+                               "typeCount":  1,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  40956,
+                               "name":  "Window Tag",
+                               "category":  "Window Tags",
+                               "typeCount":  1,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  42069,
+                               "name":  "Fixed",
+                               "category":  "Windows",
+                               "typeCount":  9,
+                               "isEditable":  false,
+                               "isInPlace":  false
+                           },
+                           {
+                               "familyId":  61662,
+                               "name":  "LongWireTickMark",
+                               "category":  "Wire Tick Marks",
+                               "typeCount":  1,
+                               "isEditable":  true,
+                               "isInPlace":  false
+                           }
+                       ],
+    "doorTypes":  [
+                      {
+                          "typeId":  45070,
+                          "familyName":  "Single-Flush",
+                          "typeName":  "36\" x 84\"",
+                          "width":  3.0,
+                          "height":  7.0,
+                          "isActive":  false
+                      },
+                      {
+                          "typeId":  45072,
+                          "familyName":  "Single-Flush",
+                          "typeName":  "34\" x 84\"",
+                          "width":  2.833333333333333,
+                          "height":  7.0,
+                          "isActive":  false
+                      },
+                      {
+                          "typeId":  45074,
+                          "familyName":  "Single-Flush",
+                          "typeName":  "32\" x 84\"",
+                          "width":  2.6666666666666665,
+                          "height":  7.0,
+                          "isActive":  false
+                      },
+                      {
+                          "typeId":  45076,
+                          "familyName":  "Single-Flush",
+                          "typeName":  "30\" x 84\"",
+                          "width":  2.5,
+                          "height":  7.0,
+                          "isActive":  false
+                      },
+                      {
+                          "typeId":  45078,
+                          "familyName":  "Single-Flush",
+                          "typeName":  "30\" x 80\"",
+                          "width":  2.5,
+                          "height":  6.666666666666667,
+                          "isActive":  false
+                      },
+                      {
+                          "typeId":  45080,
+                          "familyName":  "Single-Flush",
+                          "typeName":  "36\" x 80\"",
+                          "width":  3.0,
+                          "height":  6.666666666666667,
+                          "isActive":  false
+                      },
+                      {
+                          "typeId":  45082,
+                          "familyName":  "Single-Flush",
+                          "typeName":  "34\" x 80\"",
+                          "width":  2.833333333333333,
+                          "height":  6.666666666666667,
+                          "isActive":  false
+                      }
+                  ],
+    "electricalCircuits":  [
+
+                           ],
+    "mepSystems":  [
+
+                   ],
+    "roofTypes":  [
+                      {
+                          "roofTypeId":  223,
+                          "name":  "Generic - 12\"",
+                          "familyName":  "Basic Roof"
+                      },
+                      {
+                          "roofTypeId":  224,
+                          "name":  "Generic - 9\"",
+                          "familyName":  "Basic Roof"
+                      },
+                      {
+                          "roofTypeId":  225,
+                          "name":  "Generic - 18\"",
+                          "familyName":  "Basic Roof"
+                      },
+                      {
+                          "roofTypeId":  18448,
+                          "name":  "Sloped Glazing",
+                          "familyName":  "Sloped Glazing"
+                      },
+                      {
+                          "roofTypeId":  24298,
+                          "name":  "Wood Rafter 8\" - Asphalt Shingle - Insulated",
+                          "familyName":  "Basic Roof"
+                      },
+                      {
+                          "roofTypeId":  24306,
+                          "name":  "Steel Truss - Insulation on Metal Deck - EPDM",
+                          "familyName":  "Basic Roof"
+                      },
+                      {
+                          "roofTypeId":  43832,
+                          "name":  "Generic - 12\" - Filled",
+                          "familyName":  "Basic Roof"
+                      }
+                  ],
+    "levels":  [
+                   {
+                       "levelId":  30,
+                       "name":  "Level 1",
+                       "elevation":  0.0
+                   },
+                   {
+                       "levelId":  9946,
+                       "name":  "Level 2",
+                       "elevation":  10.0
+                   }
+               ],
+    "materials":  [
+                      {
+                          "materialId":  18435,
+                          "name":  "Default",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  0
+                      },
+                      {
+                          "materialId":  18436,
+                          "name":  "Default Floor",
+                          "materialClass":  "Unassigned",
+                          "color":  "gICA",
+                          "transparency":  0,
+                          "shininess":  10
+                      },
+                      {
+                          "materialId":  18437,
+                          "name":  "Default Roof",
+                          "materialClass":  "Unassigned",
+                          "color":  "WGVy",
+                          "transparency":  0,
+                          "shininess":  10
+                      },
+                      {
+                          "materialId":  18438,
+                          "name":  "Default Wall",
+                          "materialClass":  "Unassigned",
+                          "color":  "gICA",
+                          "transparency":  0,
+                          "shininess":  10
+                      },
+                      {
+                          "materialId":  18439,
+                          "name":  "Glass",
+                          "materialClass":  "Unassigned",
+                          "color":  "AIDA",
+                          "transparency":  75,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18935,
+                          "name":  "Site - Earth",
+                          "materialClass":  "Unassigned",
+                          "color":  "YUs+",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  18936,
+                          "name":  "Site - Grass",
+                          "materialClass":  "Unassigned",
+                          "color":  "TmRL",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  18937,
+                          "name":  "Site - Asphalt",
+                          "materialClass":  "Unassigned",
+                          "color":  "RkVG",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  18938,
+                          "name":  "Site - Sand",
+                          "materialClass":  "Unassigned",
+                          "color":  "v7ey",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  18939,
+                          "name":  "Concrete - Cast-in-Place Concrete",
+                          "materialClass":  "Unassigned",
+                          "color":  "wMDA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18940,
+                          "name":  "Concrete - Precast Concrete",
+                          "materialClass":  "Unassigned",
+                          "color":  "xru7",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18941,
+                          "name":  "Masonry - Brick",
+                          "materialClass":  "Unassigned",
+                          "color":  "qmJo",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  18942,
+                          "name":  "Masonry - Concrete Masonry Units",
+                          "materialClass":  "Unassigned",
+                          "color":  "4+Pj",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  18943,
+                          "name":  "Masonry - Glass Block",
+                          "materialClass":  "Unassigned",
+                          "color":  "9/f3",
+                          "transparency":  68,
+                          "shininess":  25
+                      },
+                      {
+                          "materialId":  18944,
+                          "name":  "Masonry - Stone",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18945,
+                          "name":  "Masonry - Tile",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18946,
+                          "name":  "Metal - Stud Layer",
+                          "materialClass":  "Unassigned",
+                          "color":  "x8fH",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18947,
+                          "name":  "Metal - Panel",
+                          "materialClass":  "Unassigned",
+                          "color":  "9/f3",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  18948,
+                          "name":  "Metal - Trim",
+                          "materialClass":  "Unassigned",
+                          "color":  "9/f3",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  18949,
+                          "name":  "Metal - Deck",
+                          "materialClass":  "Unassigned",
+                          "color":  "x8fH",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  18950,
+                          "name":  "Metal - Sheet / Flashing",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18951,
+                          "name":  "Metal - Roofing",
+                          "materialClass":  "Unassigned",
+                          "color":  "x8fH",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18952,
+                          "name":  "Metal - Steel",
+                          "materialClass":  "Unassigned",
+                          "color":  "x8fH",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18953,
+                          "name":  "Metal - Aluminum",
+                          "materialClass":  "Unassigned",
+                          "color":  "9/f3",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  18954,
+                          "name":  "Metal - Furring",
+                          "materialClass":  "Unassigned",
+                          "color":  "x8fH",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18955,
+                          "name":  "Wood - Stud Layer",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18956,
+                          "name":  "Wood - Sheathing - particleboard/ OSB",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18957,
+                          "name":  "Wood - Sheathing - plywood",
+                          "materialClass":  "Unassigned",
+                          "color":  "1LNx",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  18958,
+                          "name":  "Wood - Veneers",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18959,
+                          "name":  "Wood - Flooring",
+                          "materialClass":  "Unassigned",
+                          "color":  "2Kly",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  18960,
+                          "name":  "Wood - Dimensional lumber",
+                          "materialClass":  "Unassigned",
+                          "color":  "38CG",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  18961,
+                          "name":  "Wood - Glue-laminated",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18962,
+                          "name":  "Wood - Furring",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18963,
+                          "name":  "Plastic - GFRP -  Glass Fiber Reinforced Plastic",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18964,
+                          "name":  "Plastic - Formed Plastic",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18965,
+                          "name":  "Plastic - Vinyl Cove Base",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18966,
+                          "name":  "Finishes - Exterior - GFRC -  Glass Fiber Reinforced Concrete",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18967,
+                          "name":  "Finishes - Exterior - EIFS - Exterior Insulation and Finish System",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18968,
+                          "name":  "Finishes - Exterior - Siding / Clapboard",
+                          "materialClass":  "Unassigned",
+                          "color":  "8ufF",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  18969,
+                          "name":  "Finishes - Exterior - Precast Concrete Panels",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18970,
+                          "name":  "Finishes - Exterior - Metal Panel",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18971,
+                          "name":  "Finishes - Exterior - Curtain Wall Mullions",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18972,
+                          "name":  "Roofing - Generic",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18973,
+                          "name":  "Misc. Air Layers - Air Film - Outside Surface",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18974,
+                          "name":  "Misc. Air Layers - Air Space",
+                          "materialClass":  "Unassigned",
+                          "color":  "////",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18975,
+                          "name":  "Misc. Air Layers - Air Film - Inside Surface",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18976,
+                          "name":  "Air Barrier - Air Infiltration Barrier",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18977,
+                          "name":  "Insulation / Thermal Barriers - Rigid insulation",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18978,
+                          "name":  "Insulation / Thermal Barriers - Batt insulation",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18979,
+                          "name":  "Insulation / Thermal Barriers - Semi-rigid insulation",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18980,
+                          "name":  "Insulation / Thermal Barriers - EIFS - Exterior Insulation and Finish System",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18981,
+                          "name":  "Insulation / Thermal Barriers - Reflective heat barrier",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18982,
+                          "name":  "Vapor / Moisture Barriers - Vapor Retarder",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18983,
+                          "name":  "Vapor / Moisture Barriers - Damp-proofing",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18984,
+                          "name":  "Glazing - Window Glazing",
+                          "materialClass":  "Unassigned",
+                          "color":  "AIDA",
+                          "transparency":  75,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18985,
+                          "name":  "Glazing - Curtain Wall Glazing",
+                          "materialClass":  "Unassigned",
+                          "color":  "hnpl",
+                          "transparency":  90,
+                          "shininess":  12
+                      },
+                      {
+                          "materialId":  18986,
+                          "name":  "Finishes - Interior - Gypsum Wall Board",
+                          "materialClass":  "Unassigned",
+                          "color":  "+vpb",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  18987,
+                          "name":  "Finishes - Interior - GFRG -  Glass Fiber Reinforced Gypsum",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18988,
+                          "name":  "Finishes - Interior - Plaster and Lathe",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18989,
+                          "name":  "Finishes - Interior - Tile",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18990,
+                          "name":  "Finishes - Interior - Terrazzo",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18991,
+                          "name":  "Finishes - Interior - Acoustical Treatment",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18992,
+                          "name":  "Finishes - Interior - Sound Attenuation",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  18993,
+                          "name":  "Finishes - Interior - Paints and Coatings",
+                          "materialClass":  "Unassigned",
+                          "color":  "vDIA",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  22806,
+                          "name":  "Phase-Demo",
+                          "materialClass":  "Unassigned",
+                          "color":  "/wAA",
+                          "transparency":  39,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  22807,
+                          "name":  "Phase-Exist",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  22808,
+                          "name":  "Phase-Temp",
+                          "materialClass":  "Unassigned",
+                          "color":  "AAB/",
+                          "transparency":  39,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  24145,
+                          "name":  "Finishes - Interior - Carpet 1",
+                          "materialClass":  "Unassigned",
+                          "color":  "fFBD",
+                          "transparency":  0,
+                          "shininess":  0
+                      },
+                      {
+                          "materialId":  24146,
+                          "name":  "Structure - Wood Joist/Rafter Layer",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  0
+                      },
+                      {
+                          "materialId":  24184,
+                          "name":  "Finishes - Interior - VCT - Vinyl Composition Tile",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  24202,
+                          "name":  "Concrete - Cast-in-Place Lightweight Concrete",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  0
+                      },
+                      {
+                          "materialId":  24217,
+                          "name":  "Structure - Steel Bar Joist Layer",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  24218,
+                          "name":  "Structure - Light Gauge Steel Joist/Rafter Layer",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  24241,
+                          "name":  "Structure - Wood Truss Joist/Rafter Layer",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  24243,
+                          "name":  "Structure - Wood Joist/Rafter Layer, Batt Insulation",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  24244,
+                          "name":  "Roofing - EPDM Membrane",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  24245,
+                          "name":  "Roofing - Asphalt Shingle",
+                          "materialClass":  "Unassigned",
+                          "color":  "m5ub",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  24246,
+                          "name":  "Roofing - Metal Standing Seam",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  24247,
+                          "name":  "Roofing - Wood Shake",
+                          "materialClass":  "Unassigned",
+                          "color":  "jnpj",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  27489,
+                          "name":  "Finishes - Interior - Acoustic Ceiling Tile 24 x 48",
+                          "materialClass":  "Unassigned",
+                          "color":  "5eXl",
+                          "transparency":  0,
+                          "shininess":  0
+                      },
+                      {
+                          "materialId":  27492,
+                          "name":  "Finishes - Interior - Acoustic Ceiling Tile 24 x 24",
+                          "materialClass":  "Unassigned",
+                          "color":  "6Ojo",
+                          "transparency":  0,
+                          "shininess":  0
+                      },
+                      {
+                          "materialId":  29224,
+                          "name":  "Phase-New",
+                          "materialClass":  "Unassigned",
+                          "color":  "AAAA",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  32677,
+                          "name":  "Site - Water",
+                          "materialClass":  "Unassigned",
+                          "color":  "db/O",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  34906,
+                          "name":  "Door - Frame",
+                          "materialClass":  "Unassigned",
+                          "color":  "dkYz",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  34907,
+                          "name":  "Door - Panel",
+                          "materialClass":  "Unassigned",
+                          "color":  "0p9f",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  35335,
+                          "name":  "Laminate - Ivory,Matte",
+                          "materialClass":  "Unassigned",
+                          "color":  "9/fv",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  35336,
+                          "name":  "Wood - Cherry",
+                          "materialClass":  "Unassigned",
+                          "color":  "4rGA",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  35341,
+                          "name":  "Metal - Chrome",
+                          "materialClass":  "Unassigned",
+                          "color":  "ERER",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  36282,
+                          "name":  "Sash",
+                          "materialClass":  "Unassigned",
+                          "color":  "4LJ+",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  36508,
+                          "name":  "Trim",
+                          "materialClass":  "Unassigned",
+                          "color":  "4LJ+",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  36879,
+                          "name":  "Parking Stripe",
+                          "materialClass":  "Unassigned",
+                          "color":  "+vpb",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  43652,
+                          "name":  "Metal - Paint Finish - Dark Gray, Matte",
+                          "materialClass":  "Unassigned",
+                          "color":  "YmJi",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  46500,
+                          "name":  "Masonry - Brick Soldier Course",
+                          "materialClass":  "Unassigned",
+                          "color":  "qmJo",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  52289,
+                          "name":  "Wood - Birch",
+                          "materialClass":  "Unassigned",
+                          "color":  "4LJ+",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  53536,
+                          "name":  "Metal - Paint Finish - Ivory, Glossy",
+                          "materialClass":  "Unassigned",
+                          "color":  "9/fv",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  53613,
+                          "name":  "Glass - White, High Luminance",
+                          "materialClass":  "Unassigned",
+                          "color":  "+fr5",
+                          "transparency":  79,
+                          "shininess":  25
+                      },
+                      {
+                          "materialId":  56254,
+                          "name":  "Abolite Finish Green (GRN)",
+                          "materialClass":  "Unassigned",
+                          "color":  "G3Ib",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  56271,
+                          "name":  "Bulb",
+                          "materialClass":  "Unassigned",
+                          "color":  "9/f3",
+                          "transparency":  9,
+                          "shininess":  115
+                      },
+                      {
+                          "materialId":  56927,
+                          "name":  "Finishes - Interior - Wood Floor",
+                          "materialClass":  "Unassigned",
+                          "color":  "3bd1",
+                          "transparency":  0,
+                          "shininess":  128
+                      },
+                      {
+                          "materialId":  58624,
+                          "name":  "Poche",
+                          "materialClass":  "Unassigned",
+                          "color":  "AAD/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  58691,
+                          "name":  "Default Mass",
+                          "materialClass":  "Unassigned",
+                          "color":  "AP//",
+                          "transparency":  75,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  58692,
+                          "name":  "Default Floor Area Face",
+                          "materialClass":  "Unassigned",
+                          "color":  "/wAA",
+                          "transparency":  75,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  59523,
+                          "name":  "Default Light Source",
+                          "materialClass":  "Unassigned",
+                          "color":  "//8A",
+                          "transparency":  75,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  60416,
+                          "name":  "Carbon Steel",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  60417,
+                          "name":  "Copper",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  60418,
+                          "name":  "Ductile Iron",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  60419,
+                          "name":  "Plastic",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  60420,
+                          "name":  "Stainless Steel",
+                          "materialClass":  "Unassigned",
+                          "color":  "f39/",
+                          "transparency":  0,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  61270,
+                          "name":  "System-Zones",
+                          "materialClass":  "Unassigned",
+                          "color":  "Xl7N",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  61276,
+                          "name":  "Analytical Spaces",
+                          "materialClass":  "Unassigned",
+                          "color":  "AMjI",
+                          "transparency":  85,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  61278,
+                          "name":  "Analytical Surface - Exterior Walls",
+                          "materialClass":  "Unassigned",
+                          "color":  "hbIs",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  61280,
+                          "name":  "Analytical Surface - Roofs",
+                          "materialClass":  "Unassigned",
+                          "color":  "Jg+Z",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  61282,
+                          "name":  "Analytical Surface - Slabs on Grade",
+                          "materialClass":  "Unassigned",
+                          "color":  "ZVHM",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  61284,
+                          "name":  "Analytical Surface - Interior Walls",
+                          "materialClass":  "Unassigned",
+                          "color":  "w+V+",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  61286,
+                          "name":  "Analytical Surface - Interior Floors",
+                          "materialClass":  "Unassigned",
+                          "color":  "ZVHM",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  61288,
+                          "name":  "Analytical Surface - Ceilings",
+                          "materialClass":  "Unassigned",
+                          "color":  "v7L/",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  61290,
+                          "name":  "Analytical Surface - Air Surfaces",
+                          "materialClass":  "Unassigned",
+                          "color":  "vtLc",
+                          "transparency":  90,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  61292,
+                          "name":  "Analytical Surface - Underground Walls",
+                          "materialClass":  "Unassigned",
+                          "color":  "sm8s",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  61294,
+                          "name":  "Analytical Surface - Operable Windows",
+                          "materialClass":  "Unassigned",
+                          "color":  "suX/",
+                          "transparency":  75,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  61296,
+                          "name":  "Analytical Surface - Operable Skylights",
+                          "materialClass":  "Unassigned",
+                          "color":  "suX/",
+                          "transparency":  75,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  61298,
+                          "name":  "Analytical Surface - Sliding Doors",
+                          "materialClass":  "Unassigned",
+                          "color":  "/7Ky",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  61300,
+                          "name":  "Analytical Surface - Air Openings",
+                          "materialClass":  "Unassigned",
+                          "color":  "////",
+                          "transparency":  100,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  61302,
+                          "name":  "Analytical Surface - Shades",
+                          "materialClass":  "Unassigned",
+                          "color":  "kJKK",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  61447,
+                          "name":  "Analytical Panels",
+                          "materialClass":  "Unassigned",
+                          "color":  "+8WZ",
+                          "transparency":  50,
+                          "shininess":  64
+                      },
+                      {
+                          "materialId":  61529,
+                          "name":  "Electrical Analytical Loads",
+                          "materialClass":  "Unassigned",
+                          "color":  "Xl7N",
+                          "transparency":  50,
+                          "shininess":  64
+                      }
+                  ],
+    "windows":  [
+                    {
+                        "windowId":  52914,
+                        "familyName":  "Fixed",
+                        "typeName":  "24\" x 24\"",
+                        "typeId":  36528,
+                        "mark":  "1",
+                        "width":  0.0,
+                        "height":  0.0,
+                        "sillHeight":  4.0,
+                        "level":  "Level 1",
+                        "hostWallId":  51277,
+                        "location":  {
+                                         "x":  -18.11787905753126,
+                                         "y":  33.92911404387223,
+                                         "z":  4.0
+                                     }
+                    },
+                    {
+                        "windowId":  52921,
+                        "familyName":  "Fixed",
+                        "typeName":  "24\" x 24\"",
+                        "typeId":  36528,
+                        "mark":  "2",
+                        "width":  0.0,
+                        "height":  0.0,
+                        "sillHeight":  4.0,
+                        "level":  "Level 1",
+                        "hostWallId":  51277,
+                        "location":  {
+                                         "x":  -14.553779424814781,
+                                         "y":  31.525565401799057,
+                                         "z":  4.0
+                                     }
+                    },
+                    {
+                        "windowId":  52925,
+                        "familyName":  "Fixed",
+                        "typeName":  "24\" x 24\"",
+                        "typeId":  36528,
+                        "mark":  "3",
+                        "width":  0.0,
+                        "height":  0.0,
+                        "sillHeight":  4.0,
+                        "level":  "Level 1",
+                        "hostWallId":  51277,
+                        "location":  {
+                                         "x":  -12.201152508846857,
+                                         "y":  27.964928758752215,
+                                         "z":  4.0
+                                     }
+                    }
+                ],
+    "electricalFixtures":  [
+
+                           ],
+    "warnings":  [
+
+                 ]
+}

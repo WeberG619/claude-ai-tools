@@ -1,0 +1,84 @@
+#!/bin/bash
+# Claude System Bridge - WSL Wrapper
+# Usage: ./claude [command] [args]
+
+SYSTEM_DIR="D:\\_CLAUDE-TOOLS\\system-bridge"
+
+case "$1" in
+    init|start|"")
+        powershell.exe -Command "cd $SYSTEM_DIR; python claude_init.py"
+        ;;
+    quick)
+        powershell.exe -Command "cd $SYSTEM_DIR; python claude_init.py quick"
+        ;;
+    status)
+        powershell.exe -Command "cd $SYSTEM_DIR; python claude_cmd.py status"
+        ;;
+    think)
+        shift
+        powershell.exe -Command "cd $SYSTEM_DIR; python claude_cmd.py think '$*'"
+        ;;
+    voice)
+        shift
+        powershell.exe -Command "cd $SYSTEM_DIR; python claude_cmd.py voice '$*'"
+        ;;
+    find)
+        shift
+        powershell.exe -Command "cd $SYSTEM_DIR; python file_indexer.py find '$*'"
+        ;;
+    rvt)
+        powershell.exe -Command "cd $SYSTEM_DIR; python file_indexer.py rvt '$2'"
+        ;;
+    revit)
+        shift
+        powershell.exe -Command "cd $SYSTEM_DIR; python claude_cmd.py revit $*"
+        ;;
+    learn)
+        powershell.exe -Command "cd $SYSTEM_DIR; python claude_cmd.py learn"
+        ;;
+    fix)
+        shift
+        powershell.exe -Command "cd $SYSTEM_DIR; python claude_cmd.py fix '$*'"
+        ;;
+    switch)
+        shift
+        powershell.exe -Command "cd $SYSTEM_DIR; python claude_cmd.py switch '$*'"
+        ;;
+    notify)
+        shift
+        powershell.exe -Command "cd $SYSTEM_DIR; python claude_cmd.py notify '$*'"
+        ;;
+    index)
+        powershell.exe -Command "cd $SYSTEM_DIR; python file_indexer.py build"
+        ;;
+    stats)
+        powershell.exe -Command "cd $SYSTEM_DIR; python file_indexer.py stats"
+        ;;
+    help)
+        echo "Claude Intelligent System Bridge"
+        echo "================================"
+        echo ""
+        echo "Usage: claude [command] [args]"
+        echo ""
+        echo "Commands:"
+        echo "  init, start   - Full system initialization (default)"
+        echo "  quick         - Quick status check"
+        echo "  status        - Full brain status"
+        echo "  think <text>  - Process natural language input"
+        echo "  voice <text>  - Parse voice with corrections"
+        echo "  find <query>  - Search file index"
+        echo "  rvt [query]   - Find Revit models"
+        echo "  revit <cmd>   - Execute Revit MCP command"
+        echo "  learn         - Run learning cycle"
+        echo "  fix <issue>   - Get fix suggestions"
+        echo "  switch <proj> - Switch project context"
+        echo "  notify <msg>  - Send notification"
+        echo "  index         - Rebuild file index"
+        echo "  stats         - Show file statistics"
+        echo "  help          - Show this help"
+        ;;
+    *)
+        echo "Unknown command: $1"
+        echo "Use 'claude help' for available commands"
+        ;;
+esac

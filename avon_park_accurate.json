@@ -1,0 +1,65 @@
+{
+  "project": "Avon Park Single Family Residence",
+  "address": "1700 W Sheffield Rd, Avon Park, FL 33825",
+  "total_sf": 1991,
+  "scale": "1/4\" = 1'-0\"",
+  "notes": "Exterior = 8\" CMU with stucco, Interior = 4\" wood stud",
+  
+  "exterior_walls": [
+    {"desc": "South Wall - West Section (Bath-3 to Master Bath)", "start": [0, 0], "end": [13.5, 0]},
+    {"desc": "South Wall - Center (Master Bath to Living)", "start": [13.5, 0], "end": [27, 0]},
+    {"desc": "South Wall - East Section (Living to Garage)", "start": [27, 0], "end": [35.83, 0]},
+    {"desc": "Garage South Wall", "start": [35.83, 0], "end": [47.83, 0]},
+    {"desc": "Porch South Wall", "start": [47.83, 0], "end": [55.83, 0]},
+    
+    {"desc": "East Wall - Porch", "start": [55.83, 0], "end": [55.83, 8]},
+    {"desc": "Porch North Wall", "start": [55.83, 8], "end": [47.83, 8]},
+    {"desc": "East Wall - Garage", "start": [47.83, 8], "end": [47.83, 32]},
+    {"desc": "Garage/Utility North Wall", "start": [47.83, 32], "end": [35.83, 32]},
+    
+    {"desc": "East Wall - Main Building Upper", "start": [35.83, 32], "end": [35.83, 42]},
+    {"desc": "North Wall - Kitchen/Family", "start": [35.83, 42], "end": [14, 42]},
+    {"desc": "North Wall - Bedroom-3", "start": [14, 42], "end": [0, 42]},
+    
+    {"desc": "West Wall - Full Height", "start": [0, 42], "end": [0, 0]}
+  ],
+  
+  "interior_walls": [
+    {"desc": "Bedroom-3 South Wall", "start": [0, 28], "end": [14, 28]},
+    {"desc": "Bedroom-3 East Wall / BR-2 East", "start": [14, 14], "end": [14, 42]},
+    
+    {"desc": "Bedroom-2 South Wall", "start": [0, 14], "end": [14, 14]},
+    
+    {"desc": "Bath-3 East Wall", "start": [5.33, 0], "end": [5.33, 6]},
+    {"desc": "Bath-3 North Wall", "start": [0, 6], "end": [5.33, 6]},
+    
+    {"desc": "Bath-2 South Wall", "start": [5.33, 6], "end": [14, 6]},
+    {"desc": "Bath-2 North Wall", "start": [5.33, 14], "end": [14, 14]},
+    {"desc": "Bath-2 East Wall", "start": [14, 6], "end": [14, 14]},
+    
+    {"desc": "Hall-1 South Wall", "start": [14, 10], "end": [27, 10]},
+    {"desc": "Hall-1 North Wall", "start": [14, 14], "end": [27, 14]},
+    
+    {"desc": "Master Bedroom East Wall", "start": [22, 0], "end": [22, 10]},
+    {"desc": "Master Bath North Wall", "start": [13.5, 7], "end": [22, 7]},
+    {"desc": "Master Bath East Wall (partial)", "start": [13.5, 0], "end": [13.5, 7]},
+    {"desc": "WIC Partition", "start": [17, 7], "end": [17, 10]},
+    
+    {"desc": "Living/Kitchen Divider", "start": [27, 14], "end": [35.83, 14]},
+    {"desc": "Living West Wall", "start": [27, 0], "end": [27, 14]},
+    
+    {"desc": "Kitchen/Family Divider", "start": [27, 28], "end": [35.83, 28]},
+    {"desc": "Kitchen East Wall", "start": [35.83, 14], "end": [35.83, 32]},
+    
+    {"desc": "Closet Wall - BR3", "start": [10, 35], "end": [14, 35]},
+    {"desc": "Closet Wall - BR2", "start": [10, 21], "end": [14, 21]},
+    
+    {"desc": "Laundry North Wall", "start": [35.83, 24], "end": [42, 24]},
+    {"desc": "Laundry East Wall", "start": [42, 18], "end": [42, 24]},
+    {"desc": "Utility Partition", "start": [42, 24], "end": [42, 32]},
+    
+    {"desc": "Garage Fire Wall", "start": [35.83, 0], "end": [35.83, 14]},
+    {"desc": "Garage Interior (to Utility)", "start": [35.83, 14], "end": [35.83, 18]},
+    {"desc": "Garage North Wall", "start": [35.83, 18], "end": [47.83, 18]}
+  ]
+}

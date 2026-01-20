@@ -1,0 +1,26 @@
+EMERGENCY TOOL: Sheet Package Generator - DEADLINE MODE
+
+SITUATION: Need complete sheet package in 2 hours
+
+WHAT IT DOES:
+1. Creates all sheets from list
+2. Places views automatically
+3. Applies title block info
+4. Numbers sheets properly
+5. Creates sheet index
+6. Exports to PDF
+
+INPUT: Excel with columns:
+- Sheet Number
+- Sheet Name  
+- View Names (comma separated)
+- Discipline
+
+EMERGENCY FEATURES:
+- Skip missing views
+- Flag incomplete sheets
+- Continue on errors
+- Generate "TODO" list
+- Partial completion OK
+
+TIME SAVED: 6-8 hours of manual work

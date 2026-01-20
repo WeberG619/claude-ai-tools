@@ -1,0 +1,1625 @@
+﻿{
+    "levels":  [
+                   {
+                       "levelId":  30,
+                       "name":  "Deck",
+                       "elevation":  2.6048603378459045E-12
+                   },
+                   {
+                       "levelId":  522555,
+                       "name":  "T.O.P.",
+                       "elevation":  9.020833333335938
+                   }
+               ],
+    "rooms":  [
+
+              ],
+    "fileName":  "King ADA Room - Courtyard.rvt",
+    "walls":  [
+                  {
+                      "wallId":  619608,
+                      "wallType":  "MW 2x4-5/8\" INT GWB-7/16\" OSB ML",
+                      "wallTypeId":  511877,
+                      "length":  21.028645833333307,
+                      "height":  9.020833333333334,
+                      "width":  0.38020833333333337,
+                      "structural":  false,
+                      "startPoint":  {
+                                         "x":  6.5702817593409915,
+                                         "y":  12.261479865178435,
+                                         "z":  2.6048603378459045E-12
+                                     },
+                      "endPoint":  {
+                                       "x":  6.570281759340958,
+                                       "y":  -8.76716596815487,
+                                       "z":  2.6048603378459045E-12
+                                   },
+                      "baseLevel":  "Deck",
+                      "topLevel":  "T.O.P.",
+                      "baseOffset":  0.0,
+                      "topOffset":  0.0
+                  },
+                  {
+                      "wallId":  619841,
+                      "wallType":  "EXT 2x6 BARE-7/16\" OSB-5/8\" INT GWB",
+                      "wallTypeId":  511900,
+                      "length":  15.625000000000007,
+                      "height":  9.020833333333334,
+                      "width":  0.5468750000000001,
+                      "structural":  false,
+                      "startPoint":  {
+                                         "x":  -8.822947407326321,
+                                         "y":  12.261479865178485,
+                                         "z":  2.6048603378459045E-12
+                                     },
+                      "endPoint":  {
+                                       "x":  6.802052592673687,
+                                       "y":  12.261479865178435,
+                                       "z":  2.6048603378459045E-12
+                                   },
+                      "baseLevel":  "Deck",
+                      "topLevel":  "T.O.P.",
+                      "baseOffset":  0.0,
+                      "topOffset":  0.0
+                  },
+                  {
+                      "wallId":  621992,
+                      "wallType":  "CORRIDOR 2x10 Stagger Stud - (1) 5/8\" GWB INT- 1/2\" Plywd (2) 5/8\" GWB EXT",
+                      "wallTypeId":  757134,
+                      "length":  5.273437500000012,
+                      "height":  9.020833333333334,
+                      "width":  0.96875,
+                      "structural":  false,
+                      "startPoint":  {
+                                         "x":  -8.507843240659048,
+                                         "y":  -8.767165968154844,
+                                         "z":  2.6048603378459045E-12
+                                     },
+                      "endPoint":  {
+                                       "x":  -3.234405740659035,
+                                       "y":  -8.767165968154861,
+                                       "z":  2.6048603378459045E-12
+                                   },
+                      "baseLevel":  "Deck",
+                      "topLevel":  "T.O.P.",
+                      "baseOffset":  0.0,
+                      "topOffset":  0.0
+                  },
+                  {
+                      "wallId":  641598,
+                      "wallType":  "MW 2x6-5/8\" INT GWB-7/16\" OSB ML",
+                      "wallTypeId":  511878,
+                      "length":  9.515625000000009,
+                      "height":  9.020833333333334,
+                      "width":  0.5468750000000001,
+                      "structural":  false,
+                      "startPoint":  {
+                                         "x":  -8.507843240659048,
+                                         "y":  -8.767165968154844,
+                                         "z":  2.6048603378459045E-12
+                                     },
+                      "endPoint":  {
+                                       "x":  -8.507843240659032,
+                                       "y":  0.7484590318451652,
+                                       "z":  2.6048603378459045E-12
+                                   },
+                      "baseLevel":  "Deck",
+                      "topLevel":  "T.O.P.",
+                      "baseOffset":  0.0,
+                      "topOffset":  0.0
+                  },
+                  {
+                      "wallId":  751023,
+                      "wallType":  "CORRIDOR 2x6 Stagger Stud - (1) 1/2\" Plywd (1) 5/8\" GWB INT- (2) 5/8\" GWB EXT",
+                      "wallTypeId":  619938,
+                      "length":  6.083333333333327,
+                      "height":  9.020833333333334,
+                      "width":  0.6562499999999999,
+                      "structural":  false,
+                      "startPoint":  {
+                                         "x":  -3.2344057406590343,
+                                         "y":  -8.610915968154838,
+                                         "z":  2.6048603378459045E-12
+                                     },
+                      "endPoint":  {
+                                       "x":  2.8489275926742925,
+                                       "y":  -8.610915968154858,
+                                       "z":  2.6048603378459045E-12
+                                   },
+                      "baseLevel":  "Deck",
+                      "topLevel":  "T.O.P.",
+                      "baseOffset":  0.0,
+                      "topOffset":  0.0
+                  },
+                  {
+                      "wallId":  756537,
+                      "wallType":  "MW 2x4-5/8\" INT GWB-7/16\" OSB ML",
+                      "wallTypeId":  511877,
+                      "length":  11.513020833333321,
+                      "height":  9.020833333333334,
+                      "width":  0.38020833333333337,
+                      "structural":  false,
+                      "startPoint":  {
+                                         "x":  -8.591176573992366,
+                                         "y":  0.7484590318451652,
+                                         "z":  2.6048603378459045E-12
+                                     },
+                      "endPoint":  {
+                                       "x":  -8.591176573992348,
+                                       "y":  12.261479865178487,
+                                       "z":  2.6048603378459045E-12
+                                   },
+                      "baseLevel":  "Deck",
+                      "topLevel":  "T.O.P.",
+                      "baseOffset":  0.0,
+                      "topOffset":  0.0
+                  },
+                  {
+                      "wallId":  777332,
+                      "wallType":  "INT 2x4 -5/8\" GWB BOTH SIDES",
+                      "wallTypeId":  617444,
+                      "length":  2.4843749999999942,
+                      "height":  9.020833333333334,
+                      "width":  0.39583333333333337,
+                      "structural":  false,
+                      "startPoint":  {
+                                         "x":  2.848927592674292,
+                                         "y":  -8.767165968154858,
+                                         "z":  2.6048603378459045E-12
+                                     },
+                      "endPoint":  {
+                                       "x":  2.8489275926742965,
+                                       "y":  -6.282790968154863,
+                                       "z":  2.6048603378459045E-12
+                                   },
+                      "baseLevel":  "Deck",
+                      "topLevel":  "T.O.P.",
+                      "baseOffset":  0.0,
+                      "topOffset":  0.0
+                  },
+                  {
+                      "wallId":  778026,
+                      "wallType":  "CORRIDOR 2x10 Stagger Stud - (1) 5/8\" GWB INT- 1/2\" Plywd (2) 5/8\" GWB EXT",
+                      "wallTypeId":  757134,
+                      "length":  3.721354166666666,
+                      "height":  9.020833333333334,
+                      "width":  0.96875,
+                      "structural":  false,
+                      "startPoint":  {
+                                         "x":  2.8489275926742916,
+                                         "y":  -8.767165968154858,
+                                         "z":  2.6048603378459045E-12
+                                     },
+                      "endPoint":  {
+                                       "x":  6.570281759340958,
+                                       "y":  -8.76716596815487,
+                                       "z":  2.6048603378459045E-12
+                                   },
+                      "baseLevel":  "Deck",
+                      "topLevel":  "T.O.P.",
+                      "baseOffset":  0.0,
+                      "topOffset":  0.0
+                  },
+                  {
+                      "wallId":  778525,
+                      "wallType":  "INT 2x4 -5/8\" GWB BOTH SIDES",
+                      "wallTypeId":  617444,
+                      "length":  6.10677083333343,
+                      "height":  9.020833333333334,
+                      "width":  0.39583333333333337,
+                      "structural":  false,
+                      "startPoint":  {
+                                         "x":  -8.591176573992367,
+                                         "y":  0.7484590318451658,
+                                         "z":  2.6048603378459045E-12
+                                     },
+                      "endPoint":  {
+                                       "x":  -2.484405740658937,
+                                       "y":  0.7484590318451462,
+                                       "z":  2.6048603378459045E-12
+                                   },
+                      "baseLevel":  "Deck",
+                      "topLevel":  "T.O.P.",
+                      "baseOffset":  0.0,
+                      "topOffset":  0.0
+                  },
+                  {
+                      "wallId":  778526,
+                      "wallType":  "INT 2x4 -5/8\" GWB BOTH SIDES",
+                      "wallTypeId":  617444,
+                      "length":  9.359374999999988,
+                      "height":  9.020833333333334,
+                      "width":  0.39583333333333337,
+                      "structural":  false,
+                      "startPoint":  {
+                                         "x":  -2.484405740658937,
+                                         "y":  0.7484590318451461,
+                                         "z":  2.6048603378459045E-12
+                                     },
+                      "endPoint":  {
+                                       "x":  -2.484405740658952,
+                                       "y":  -8.610915968154842,
+                                       "z":  2.6048603378459045E-12
+                                   },
+                      "baseLevel":  "Deck",
+                      "topLevel":  "T.O.P.",
+                      "baseOffset":  0.0,
+                      "topOffset":  0.0
+                  },
+                  {
+                      "wallId":  778527,
+                      "wallType":  "INT 2x4_ FALSE-5/8\" GWB",
+                      "wallTypeId":  617637,
+                      "length":  0.6536458333334227,
+                      "height":  9.020833333333334,
+                      "width":  0.34375,
+                      "structural":  false,
+                      "startPoint":  {
+                                         "x":  -8.507843240659042,
+                                         "y":  -5.53799930148818,
+                                         "z":  2.6048603378459045E-12
+                                     },
+                      "endPoint":  {
+                                       "x":  -7.8541974073256196,
+                                       "y":  -5.537999301488183,
+                                       "z":  2.6048603378459045E-12
+                                   },
+                      "baseLevel":  "Deck",
+                      "topLevel":  "T.O.P.",
+                      "baseOffset":  0.0,
+                      "topOffset":  0.0
+                  },
+                  {
+                      "wallId":  778528,
+                      "wallType":  "INT 2x4_ FALSE-5/8\" GWB",
+                      "wallTypeId":  617637,
+                      "length":  3.2291666666666634,
+                      "height":  9.020833333333334,
+                      "width":  0.34375,
+                      "structural":  false,
+                      "startPoint":  {
+                                         "x":  -7.8541974073256196,
+                                         "y":  -5.537999301488182,
+                                         "z":  2.6048603378459045E-12
+                                     },
+                      "endPoint":  {
+                                       "x":  -7.854197407325626,
+                                       "y":  -8.767165968154846,
+                                       "z":  2.6048603378459045E-12
+                                   },
+                      "baseLevel":  "Deck",
+                      "topLevel":  "T.O.P.",
+                      "baseOffset":  0.0,
+                      "topOffset":  0.0
+                  },
+                  {
+                      "wallId":  794089,
+                      "wallType":  "INT 2x3 -5/8\" GWB BOTH SIDES",
+                      "wallTypeId":  642422,
+                      "length":  3.0130208333333357,
+                      "height":  9.020833333333334,
+                      "width":  0.3125,
+                      "structural":  false,
+                      "startPoint":  {
+                                         "x":  -5.578155740659017,
+                                         "y":  9.165125698511808,
+                                         "z":  2.6048603378459045E-12
+                                     },
+                      "endPoint":  {
+                                       "x":  -8.591176573992353,
+                                       "y":  9.165125698511817,
+                                       "z":  2.6048603378459045E-12
+                                   },
+                      "baseLevel":  "Deck",
+                      "topLevel":  "T.O.P.",
+                      "baseOffset":  0.0,
+                      "topOffset":  0.0
+                  },
+                  {
+                      "wallId":  794147,
+                      "wallType":  "INT 2x3 -5/8\" GWB BOTH SIDES",
+                      "wallTypeId":  642422,
+                      "length":  3.096354166666666,
+                      "height":  9.020833333333334,
+                      "width":  0.3125,
+                      "structural":  false,
+                      "startPoint":  {
+                                         "x":  -5.578155740659014,
+                                         "y":  12.261479865178474,
+                                         "z":  2.6048603378459045E-12
+                                     },
+                      "endPoint":  {
+                                       "x":  -5.578155740659017,
+                                       "y":  9.165125698511808,
+                                       "z":  2.6048603378459045E-12
+                                   },
+                      "baseLevel":  "Deck",
+                      "topLevel":  "T.O.P.",
+                      "baseOffset":  0.0,
+                      "topOffset":  0.0
+                  }
+              ],
+    "projectInfo":  {
+                        "success":  true,
+                        "result":  {
+                                       "name":  "XXX",
+                                       "number":  "1",
+                                       "author":  "",
+                                       "status":  "PROJECT STATUS",
+                                       "address":  "STREET ADDRESS\r\nCITY, STATE",
+                                       "clientName":  "XXX",
+                                       "buildingName":  "",
+                                       "organizationName":  "",
+                                       "organizationDescription":  "",
+                                       "isPinned":  false,
+                                       "isWorkshared":  true,
+                                       "title":  "King ADA Room - Courtyard",
+                                       "pathname":  "D:\\006 - OLD PROJECTS ARCHIVE\\neUdesign Projects\\AC Santa Rosa\\Outgoing Files\\Revit\\King ADA Room - Courtyard.rvt"
+                                   }
+                    },
+    "doors":  [
+                  {
+                      "doorId":  639321,
+                      "familyName":  "Exterior Door- Timely-Left",
+                      "typeName":  "36\" X 80\"",
+                      "typeId":  639301,
+                      "mark":  "9",
+                      "width":  0.0,
+                      "height":  0.0,
+                      "level":  "Deck",
+                      "hostWallId":  751023,
+                      "location":  {
+                                       "x":  0.8801775926742685,
+                                       "y":  -8.610915968154853,
+                                       "z":  2.6048603378459045E-12
+                                   },
+                      "fromRoom":  null,
+                      "toRoom":  null
+                  },
+                  {
+                      "doorId":  781979,
+                      "familyName":  "Glass Sliding Barn Door",
+                      "typeName":  "32\" Slider",
+                      "typeId":  717981,
+                      "mark":  "12",
+                      "width":  0.0,
+                      "height":  0.0,
+                      "level":  "Deck",
+                      "hostWallId":  778526,
+                      "location":  {
+                                       "x":  -2.4844057406589424,
+                                       "y":  -2.4182076348215924,
+                                       "z":  2.6048603378459045E-12
+                                   },
+                      "fromRoom":  null,
+                      "toRoom":  null
+                  }
+              ],
+    "extractedAt":  "2025-12-08 00:28:37",
+    "windows":  [
+                    {
+                        "windowId":  798640,
+                        "familyName":  "Window Fixed w-HS",
+                        "typeName":  "6-0 x 6-6",
+                        "typeId":  798637,
+                        "mark":  "13",
+                        "width":  0.0,
+                        "height":  0.0,
+                        "sillHeight":  1.5,
+                        "level":  "Deck",
+                        "hostWallId":  619841,
+                        "location":  {
+                                         "x":  -1.0104474073263097,
+                                         "y":  12.26147986517846,
+                                         "z":  1.5000000000026048
+                                     }
+                    }
+                ],
+    "filePath":  "D:\\006 - OLD PROJECTS ARCHIVE\\neUdesign Projects\\AC Santa Rosa\\Outgoing Files\\Revit\\King ADA Room - Courtyard.rvt",
+    "wallTypes":  [
+                      {
+                          "wallTypeId":  21854,
+                          "name":  "Curtain Wall 1",
+                          "kind":  "Curtain",
+                          "width":  0.08333333333333333,
+                          "familyName":  "Curtain Wall"
+                      },
+                      {
+                          "wallTypeId":  511851,
+                          "name":  "EXT 2x4 BARE-7/16\" OSB-1/2\" INT GWB",
+                          "kind":  "Basic",
+                          "width":  0.36979166666666674,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  511852,
+                          "name":  "Exterior Wood Siding over BD\u0026BT - 5 1/2\"",
+                          "kind":  "Stacked",
+                          "width":  0.36979166666666674,
+                          "familyName":  "Stacked Wall"
+                      },
+                      {
+                          "wallTypeId":  511856,
+                          "name":  "FND-8\" CONC",
+                          "kind":  "Basic",
+                          "width":  0.6666666666666666,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  511857,
+                          "name":  "FOOTING 16\"",
+                          "kind":  "Basic",
+                          "width":  1.3333333333333333,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  511865,
+                          "name":  "INT 2x4-BARE BOTH SIDES",
+                          "kind":  "Basic",
+                          "width":  0.2916666666666667,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  511866,
+                          "name":  "INT 2x6-BARE BOTH SIDES",
+                          "kind":  "Basic",
+                          "width":  0.45833333333333337,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  511867,
+                          "name":  "INT 2x8-BARE BOTH SIDES",
+                          "kind":  "Basic",
+                          "width":  0.6041666666666667,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  511868,
+                          "name":  "INT 2x3-BARE BOTH SIDES",
+                          "kind":  "Basic",
+                          "width":  0.20833333333333331,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  511877,
+                          "name":  "MW 2x4-5/8\" INT GWB-7/16\" OSB ML",
+                          "kind":  "Basic",
+                          "width":  0.38020833333333337,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  511878,
+                          "name":  "MW 2x6-5/8\" INT GWB-7/16\" OSB ML",
+                          "kind":  "Basic",
+                          "width":  0.5468750000000001,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  511881,
+                          "name":  "INT 2x_ FLAT-5/8\" GWB ONE SIDE",
+                          "kind":  "Basic",
+                          "width":  0.17708333333333334,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  511884,
+                          "name":  "EXT 2x6 LAP-7/16\" OSB-5/8\" INT GWB",
+                          "kind":  "Basic",
+                          "width":  0.609375,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  511896,
+                          "name":  "EXT 2x8 BARE-7/16\" OSB-5/8\" INT GWB",
+                          "kind":  "Basic",
+                          "width":  0.6927083333333335,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  511898,
+                          "name":  "EXT 2x8 LAP-7/16\" OSB-5/8\" INT GWB",
+                          "kind":  "Basic",
+                          "width":  0.7552083333333335,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  511900,
+                          "name":  "EXT 2x6 BARE-7/16\" OSB-5/8\" INT GWB",
+                          "kind":  "Basic",
+                          "width":  0.5468750000000001,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  511903,
+                          "name":  "INT 2x10-BARE BOTH SIDES",
+                          "kind":  "Basic",
+                          "width":  0.7708333333333334,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  511904,
+                          "name":  "MW 2x8-5/8\" INT GWB-7/16\" OSB ML",
+                          "kind":  "Basic",
+                          "width":  0.6927083333333334,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  511916,
+                          "name":  "Exterior Glazing",
+                          "kind":  "Curtain",
+                          "width":  0.08333333333333333,
+                          "familyName":  "Curtain Wall"
+                      },
+                      {
+                          "wallTypeId":  511917,
+                          "name":  "Storefront",
+                          "kind":  "Curtain",
+                          "width":  0.08333333333333333,
+                          "familyName":  "Curtain Wall"
+                      },
+                      {
+                          "wallTypeId":  617444,
+                          "name":  "INT 2x4 -5/8\" GWB BOTH SIDES",
+                          "kind":  "Basic",
+                          "width":  0.39583333333333337,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  617481,
+                          "name":  "INT 2x6 -5/8\" GWB BOTH SIDES",
+                          "kind":  "Basic",
+                          "width":  0.5625,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  617518,
+                          "name":  "INT 2x8 -5/8\" GWB BOTH SIDES",
+                          "kind":  "Basic",
+                          "width":  0.7083333333333333,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  617555,
+                          "name":  "INT 2x10 -5/8\" GWB BOTH SIDES",
+                          "kind":  "Basic",
+                          "width":  0.875,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  617637,
+                          "name":  "INT 2x4_ FALSE-5/8\" GWB",
+                          "kind":  "Basic",
+                          "width":  0.34375,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  619938,
+                          "name":  "CORRIDOR 2x6 Stagger Stud - (1) 1/2\" Plywd (1) 5/8\" GWB INT- (2) 5/8\" GWB EXT",
+                          "kind":  "Basic",
+                          "width":  0.6562499999999999,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  622024,
+                          "name":  "CORRIDOR 2x12 Stagger Stud -(1) 5/8\" GWB INT- (2) 5/8\" GWB EXT",
+                          "kind":  "Basic",
+                          "width":  1.09375,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  642422,
+                          "name":  "INT 2x3 -5/8\" GWB BOTH SIDES",
+                          "kind":  "Basic",
+                          "width":  0.3125,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  757134,
+                          "name":  "CORRIDOR 2x10 Stagger Stud - (1) 5/8\" GWB INT- 1/2\" Plywd (2) 5/8\" GWB EXT",
+                          "kind":  "Basic",
+                          "width":  0.96875,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795666,
+                          "name":  "Generic - 6\"",
+                          "kind":  "Basic",
+                          "width":  0.5,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795667,
+                          "name":  "Interior - 5\" Partition (2-hr)",
+                          "kind":  "Basic",
+                          "width":  0.41666666666666663,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795668,
+                          "name":  "Exterior - Brick on Mtl. Stud",
+                          "kind":  "Basic",
+                          "width":  1.15625,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795669,
+                          "name":  "Generic - 8\"",
+                          "kind":  "Basic",
+                          "width":  0.6666666666666666,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795670,
+                          "name":  "Exterior - Brick on CMU",
+                          "kind":  "Basic",
+                          "width":  1.625,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795671,
+                          "name":  "Generic - 12\"",
+                          "kind":  "Basic",
+                          "width":  1.0,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795672,
+                          "name":  "Generic - 5\"",
+                          "kind":  "Basic",
+                          "width":  0.4166666666666667,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795673,
+                          "name":  "Generic - 12\" Masonry",
+                          "kind":  "Basic",
+                          "width":  0.96875,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795674,
+                          "name":  "Generic - 8\" Masonry",
+                          "kind":  "Basic",
+                          "width":  0.6354166666666666,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795675,
+                          "name":  "Generic - 6\" Masonry",
+                          "kind":  "Basic",
+                          "width":  0.46875,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795676,
+                          "name":  "Exterior - CMU Insulated",
+                          "kind":  "Basic",
+                          "width":  2.208333333333333,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795677,
+                          "name":  "Generic - 4\" Brick",
+                          "kind":  "Basic",
+                          "width":  0.3333333333333333,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795678,
+                          "name":  "Interior - 3 1/8\" Partition (1-hr)",
+                          "kind":  "Basic",
+                          "width":  0.2604166666666667,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795679,
+                          "name":  "Interior - 4 7/8\" Partition (1-hr)",
+                          "kind":  "Basic",
+                          "width":  0.40624999999999994,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795680,
+                          "name":  "Interior - 6 1/8\" Partition (2-hr)",
+                          "kind":  "Basic",
+                          "width":  0.5104166666666666,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795681,
+                          "name":  "Interior - 5 1/2\" Partition (1-hr)",
+                          "kind":  "Basic",
+                          "width":  0.45833333333333326,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795682,
+                          "name":  "Exterior - EIFS on Mtl. Stud",
+                          "kind":  "Basic",
+                          "width":  1.0208333333333333,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795683,
+                          "name":  "Foundation - 12\" Concrete",
+                          "kind":  "Basic",
+                          "width":  1.0,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795684,
+                          "name":  "Retaining - 12\" Concrete",
+                          "kind":  "Basic",
+                          "width":  1.0,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795685,
+                          "name":  "Generic - 8\" - Filled",
+                          "kind":  "Basic",
+                          "width":  0.6666666666666666,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795686,
+                          "name":  "Soffit - 1/2\" GWB \u0026 Metal Stud",
+                          "kind":  "Basic",
+                          "width":  0.16666666666666666,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795687,
+                          "name":  "Exterior - Brick and CMU on MTL. Stud",
+                          "kind":  "Basic",
+                          "width":  1.15625,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795688,
+                          "name":  "Exterior - Brick Over CMU w Metal Stud",
+                          "kind":  "Stacked",
+                          "width":  1.4895833333333333,
+                          "familyName":  "Stacked Wall"
+                      },
+                      {
+                          "wallTypeId":  795689,
+                          "name":  "Exterior - CMU on Mtl. Stud",
+                          "kind":  "Basic",
+                          "width":  1.4895833333333333,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795691,
+                          "name":  "MW 2x8-1/2\" INT GWB-BARE ML",
+                          "kind":  "Basic",
+                          "width":  0.6458333333333334,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795692,
+                          "name":  "MW 2x8-5/8\" INT GWB-BARE ML",
+                          "kind":  "Basic",
+                          "width":  0.65625,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795693,
+                          "name":  "INT 2x4-1/2\" GWB-1/2\" INT GWB",
+                          "kind":  "Basic",
+                          "width":  0.37500000000000006,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795694,
+                          "name":  "INT 2x3-1/2\" INT GWB",
+                          "kind":  "Basic",
+                          "width":  0.24999999999999997,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795695,
+                          "name":  "EXT 2x6 LAP-7/16\" OSB-1/2\" INT GWB",
+                          "kind":  "Basic",
+                          "width":  0.5989583333333334,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795696,
+                          "name":  "INT 2x6-1/2\" GWB-5/8\" GWB",
+                          "kind":  "Basic",
+                          "width":  0.5520833333333334,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795697,
+                          "name":  "INT 2x6-1/2\" GWB-1/2\" INT GWB",
+                          "kind":  "Basic",
+                          "width":  0.5416666666666666,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795698,
+                          "name":  "MW 2x4-1/2\" INT GWB-BARE ML",
+                          "kind":  "Basic",
+                          "width":  0.33333333333333337,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795699,
+                          "name":  "INT 2x12-1/2\" GWB-1/2\" INT GWB",
+                          "kind":  "Basic",
+                          "width":  1.0208333333333328,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795700,
+                          "name":  "EXT 2x4 LAP-7/16\" OSB-1/2\" INT GWB",
+                          "kind":  "Basic",
+                          "width":  0.43229166666666663,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795701,
+                          "name":  "INT 2x3-1/2\" GWB-1/2\" INT GWB",
+                          "kind":  "Basic",
+                          "width":  0.2916666666666667,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795702,
+                          "name":  "INT 2x8-1/2\" GWB-1/2\" INT GWB",
+                          "kind":  "Basic",
+                          "width":  0.6875,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795703,
+                          "name":  "INT 2x4-5/8\" INT GWB",
+                          "kind":  "Basic",
+                          "width":  0.3437500000000001,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795704,
+                          "name":  "INT 2x6-1/2\" INT GWB",
+                          "kind":  "Basic",
+                          "width":  0.5,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795705,
+                          "name":  "INT 2x8-1/2\" INT GWB",
+                          "kind":  "Basic",
+                          "width":  0.6458333333333335,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795706,
+                          "name":  "MW 2x6-1/2\" INT GWB-BARE ML",
+                          "kind":  "Basic",
+                          "width":  0.5000000000000001,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795707,
+                          "name":  "MW 2x4-5/8\" INT GWB-BARE ML",
+                          "kind":  "Basic",
+                          "width":  0.34375,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795708,
+                          "name":  "MW 2x6-5/8\" INT GWB-BARE ML",
+                          "kind":  "Basic",
+                          "width":  0.5104166666666667,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795709,
+                          "name":  "MW 2x4-1/2\" INT GWB-7/16\" OSB ML",
+                          "kind":  "Basic",
+                          "width":  0.3697916666666667,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795710,
+                          "name":  "MW 2x6-1/2\" INT GWB-7/16\" OSB ML",
+                          "kind":  "Basic",
+                          "width":  0.5364583333333333,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795711,
+                          "name":  "EXT 2x6 BARE-7/16\" OSB-1/2\" INT GWB",
+                          "kind":  "Basic",
+                          "width":  0.5364583333333334,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795712,
+                          "name":  "EXT 2x10 BARE-7/16\" OSB-1/2\" INT GWB",
+                          "kind":  "Basic",
+                          "width":  0.8489583333333334,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795713,
+                          "name":  "EXT 2x10 LAP-7/16\" OSB-1/2\" INT GWB",
+                          "kind":  "Basic",
+                          "width":  0.9114583333333334,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795714,
+                          "name":  "INT 2x6-5/8\" INT GWB",
+                          "kind":  "Basic",
+                          "width":  0.5104166666666666,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795715,
+                          "name":  "EXT 2x8 LAP-7/16\" OSB-1/2\" INT GWB",
+                          "kind":  "Basic",
+                          "width":  0.7447916666666669,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795716,
+                          "name":  "EXT 2x8 BARE-7/16\" OSB-1/2\" INT GWB",
+                          "kind":  "Basic",
+                          "width":  0.6822916666666669,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795717,
+                          "name":  "INT 2x10-5/8\" GWB-5/8\" INT GWB",
+                          "kind":  "Basic",
+                          "width":  0.875,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795718,
+                          "name":  "INT 2x10-1/2\" INT GWB",
+                          "kind":  "Basic",
+                          "width":  0.8125,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795719,
+                          "name":  "MW 2x8-1/2\" INT GWB-7/16\" OSB ML",
+                          "kind":  "Basic",
+                          "width":  0.6822916666666667,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795720,
+                          "name":  "INT 2x_-1/2\" OSB-3/8\" INT VENEERS",
+                          "kind":  "Basic",
+                          "width":  0.19791666666666666,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795721,
+                          "name":  "Corridor- 2x8 Stagger stud (1) 5/8\" GWB INT - (2) 5/8\" GWB EXT 2",
+                          "kind":  "Basic",
+                          "width":  0.7604166666666667,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795722,
+                          "name":  "INT 2x6-5/8\" GWB-5/8\" INT GWB",
+                          "kind":  "Basic",
+                          "width":  0.5625,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795723,
+                          "name":  "INT 2x4-5/8\" GWB-5/8\" INT GWB",
+                          "kind":  "Basic",
+                          "width":  0.39583333333333337,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795724,
+                          "name":  "MW 2x4-5/8\" GWB-7/16\" OSB INT - 7/16\" OSB EXT",
+                          "kind":  "Basic",
+                          "width":  0.41666666666666663,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795725,
+                          "name":  "Corridor- 2x6 Stagger stud (1) 5/8\" GWB INT - (2) 5/8\" GWB EXT",
+                          "kind":  "Basic",
+                          "width":  0.6145833333333335,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795726,
+                          "name":  "MW 2x6-5/8\" GWB-7/16\" OSB INT - 7/16\" OSB EXT 2",
+                          "kind":  "Basic",
+                          "width":  0.5833333333333334,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795727,
+                          "name":  "INT 2x8-5/8\" GWB-5/8\" INT GWB",
+                          "kind":  "Basic",
+                          "width":  0.7083333333333334,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795728,
+                          "name":  "Bath Partition- 1\"",
+                          "kind":  "Basic",
+                          "width":  0.08333333333333331,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795729,
+                          "name":  "EXT 2x6 BARE-7/16\" OSB-5/8\" INT GWB 2",
+                          "kind":  "Basic",
+                          "width":  0.5468750000000001,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795730,
+                          "name":  "Shaft Wall- 2x6 Stagger stud (2) 5/8\" GWB INT - (2) 5/8\" GWB EXT",
+                          "kind":  "Basic",
+                          "width":  0.6666666666666667,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795731,
+                          "name":  "MW- 2HR 2x4-(2) 5/8\" GWB- INT - 7/16\" OSB - (2) 5/8\" GWB EXT",
+                          "kind":  "Basic",
+                          "width":  0.5364583333333333,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795732,
+                          "name":  "INT- 2HR 2x4-(2) 5/8\" GWB- INT - (2) 5/8\" GWB EXT 2",
+                          "kind":  "Basic",
+                          "width":  0.49999999999999994,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795733,
+                          "name":  "INT Party Wall 2x8- (2) 5/8\" GWB INT- (2) 5/8\" GWB EXT",
+                          "kind":  "Basic",
+                          "width":  0.8125000000000001,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795734,
+                          "name":  "EXT- Rigid Foam",
+                          "kind":  "Basic",
+                          "width":  0.12499999999999997,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795735,
+                          "name":  "Shaft Wall- 2x4 (2) 5/8\" GWB INT - (2) 5/8\" GWB EXT 2",
+                          "kind":  "Basic",
+                          "width":  0.5000000000000001,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795736,
+                          "name":  "Vanity Backsplash",
+                          "kind":  "Basic",
+                          "width":  0.041666666666666685,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795737,
+                          "name":  "W10B -FALSE WALL",
+                          "kind":  "Basic",
+                          "width":  0.5104166666666667,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795738,
+                          "name":  "W10A -FALSE WALL",
+                          "kind":  "Basic",
+                          "width":  0.34375,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795739,
+                          "name":  "W10C -FALSE WALL",
+                          "kind":  "Basic",
+                          "width":  0.6562500000000002,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795740,
+                          "name":  "W11A - INTERIOR NON-RATED",
+                          "kind":  "Basic",
+                          "width":  0.39583333333333337,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795741,
+                          "name":  "W11B - INTERIOR NON-RATED",
+                          "kind":  "Basic",
+                          "width":  0.5625,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795742,
+                          "name":  "W11C - INTERIOR NON-RATED",
+                          "kind":  "Basic",
+                          "width":  0.5625,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795743,
+                          "name":  "W20A - INTERIOR RATED",
+                          "kind":  "Basic",
+                          "width":  0.3125,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795744,
+                          "name":  "W20B - INTERIOR RATED",
+                          "kind":  "Basic",
+                          "width":  0.39583333333333337,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795745,
+                          "name":  "W20C - INTERIOR RATED",
+                          "kind":  "Basic",
+                          "width":  0.5625,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795746,
+                          "name":  "W21A - CORRIDOR RATED",
+                          "kind":  "Basic",
+                          "width":  0.6145833333333334,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795747,
+                          "name":  "W21B - CORRIDOR RATED",
+                          "kind":  "Basic",
+                          "width":  0.7604166666666665,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795748,
+                          "name":  "W21C - CORRIDOR RATED",
+                          "kind":  "Basic",
+                          "width":  0.927083333333333,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795749,
+                          "name":  "W22A - 1HR MATEWALL",
+                          "kind":  "Basic",
+                          "width":  0.4166666666666667,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795750,
+                          "name":  "W22B - 1HR MATEWALL",
+                          "kind":  "Basic",
+                          "width":  0.5833333333333335,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795751,
+                          "name":  "W22C - 1HR MATEWALL",
+                          "kind":  "Basic",
+                          "width":  0.7291666666666667,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795752,
+                          "name":  "W50A - EXTERIOR",
+                          "kind":  "Basic",
+                          "width":  0.38020833333333337,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795753,
+                          "name":  "W50B - EXTERIOR",
+                          "kind":  "Basic",
+                          "width":  0.5468750000000001,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795754,
+                          "name":  "W50C - EXTERIOR",
+                          "kind":  "Basic",
+                          "width":  0.6927083333333335,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795755,
+                          "name":  "W23B - 1HR MATEWALL- NO OSB AT MATELINE",
+                          "kind":  "Basic",
+                          "width":  0.38020833333333337,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795756,
+                          "name":  "W23C - 1HR MATEWALL- NO OSB AT MATELINE",
+                          "kind":  "Basic",
+                          "width":  0.5468750000000001,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795757,
+                          "name":  "W23D - 1HR MATEWALL- NO OSB AT MATELINE",
+                          "kind":  "Basic",
+                          "width":  0.6927083333333335,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795758,
+                          "name":  "W51A - EXTERIOR",
+                          "kind":  "Basic",
+                          "width":  0.42187499999999994,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795759,
+                          "name":  "W30A- 2HR INTERIOR RATED",
+                          "kind":  "Basic",
+                          "width":  0.5,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795760,
+                          "name":  "W30B- 2HR INTERIOR RATED",
+                          "kind":  "Basic",
+                          "width":  0.6666666666666666,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795761,
+                          "name":  "W30C- 2HR INTERIOR RATED",
+                          "kind":  "Basic",
+                          "width":  0.8125,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795762,
+                          "name":  "W32A - 2HR MATEWALL- NO OSB",
+                          "kind":  "Basic",
+                          "width":  0.4322916666666667,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795763,
+                          "name":  "W32B - 2HR MATEWALL- NO OSB",
+                          "kind":  "Basic",
+                          "width":  0.5989583333333335,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795764,
+                          "name":  "W26A - SITE BUILT",
+                          "kind":  "Basic",
+                          "width":  0.4479166666666667,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795765,
+                          "name":  "W23A - 1HR MATEWALL- NO OSB AT MATELINE",
+                          "kind":  "Basic",
+                          "width":  0.296875,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795766,
+                          "name":  "W33A - 2HR MATEWALL",
+                          "kind":  "Basic",
+                          "width":  0.46875,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795767,
+                          "name":  "W33B - 2HR MATEWALL",
+                          "kind":  "Basic",
+                          "width":  0.6354166666666667,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795768,
+                          "name":  "W33C - 2HR MATEWALL",
+                          "kind":  "Basic",
+                          "width":  0.7812500000000001,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795769,
+                          "name":  "W31A - 2HR-CORRIDOR RATED",
+                          "kind":  "Basic",
+                          "width":  0.6510416666666667,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795770,
+                          "name":  "W31B - 2HR-CORRIDOR RATED",
+                          "kind":  "Basic",
+                          "width":  0.796875,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795771,
+                          "name":  "W31C - 2HR-CORRIDOR RATED",
+                          "kind":  "Basic",
+                          "width":  0.9635416666666667,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795772,
+                          "name":  "W51B - EXTERIOR",
+                          "kind":  "Basic",
+                          "width":  0.5052083333333333,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795773,
+                          "name":  "W51C - EXTERIOR",
+                          "kind":  "Basic",
+                          "width":  0.671875,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795774,
+                          "name":  "W52A - EXTERIOR",
+                          "kind":  "Basic",
+                          "width":  0.4739583333333333,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795775,
+                          "name":  "W52B - EXTERIOR",
+                          "kind":  "Basic",
+                          "width":  0.5572916666666667,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795776,
+                          "name":  "W52C - EXTERIOR",
+                          "kind":  "Basic",
+                          "width":  0.7239583333333333,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795777,
+                          "name":  "W53A - EXTERIOR AT CHASE",
+                          "kind":  "Basic",
+                          "width":  0.625,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795778,
+                          "name":  "W10D -FALSE WALL",
+                          "kind":  "Basic",
+                          "width":  0.17708333333333337,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795779,
+                          "name":  "W11D - INTERIOR NON-RATED",
+                          "kind":  "Basic",
+                          "width":  0.2291666666666667,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795780,
+                          "name":  "W12A - INTERIOR NON-RATED STAGGERED STUD",
+                          "kind":  "Basic",
+                          "width":  0.4791666666666667,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795781,
+                          "name":  "MW 2x4- 7/16\" OSB 5/8\" GWB INT- 7/16\" OSB ML",
+                          "kind":  "Basic",
+                          "width":  0.4166666666666667,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795782,
+                          "name":  "CORRIDOR 2x6- (1) 5/8\" GWB INT- (2) 5/8\" GWB EXT",
+                          "kind":  "Basic",
+                          "width":  0.6145833333333335,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795783,
+                          "name":  "MW 2x6- 7/16\" OSB 5/8\" GWB INT- 7/16\" OSB ML",
+                          "kind":  "Basic",
+                          "width":  0.5833333333333335,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795784,
+                          "name":  "MW 2x6-7/16\" OSB 5/8\" GWB INT -7/16\" OSB ML",
+                          "kind":  "Basic",
+                          "width":  0.5833333333333334,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795785,
+                          "name":  "MW 2x4-7/16\" OSB 5/8\" GWB INT -7/16\" OSB ML",
+                          "kind":  "Basic",
+                          "width":  0.41666666666666663,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795786,
+                          "name":  "Corridor- 2x6- (1) 5/8\" GWB INT - (2) 5/8\" GWB EXT",
+                          "kind":  "Basic",
+                          "width":  0.6145833333333333,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795787,
+                          "name":  "Party Wall- 2x6- (2) 5/8\" GWB INT - (2) 5/8\" GWB EXT",
+                          "kind":  "Basic",
+                          "width":  0.6666666666666666,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795788,
+                          "name":  "Party Wall- 2x4- (2) 5/8\" GWB INT - (2) 5/8\" GWB EXT",
+                          "kind":  "Basic",
+                          "width":  0.49999999999999994,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795789,
+                          "name":  "Party Wall- 2x4- (2) 5/8\" GWB INT - 7/16\" OSB - (2) 5/8\" GWB EXT",
+                          "kind":  "Basic",
+                          "width":  0.5364583333333333,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795790,
+                          "name":  "EXT 1 1/2\" Rigid Foam overbuild",
+                          "kind":  "Basic",
+                          "width":  0.12499999999999997,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795791,
+                          "name":  "W24A - 2HR CORRIDOR (2) 5/8 GYP 7/16 OSB INT, 5/8 EXT",
+                          "kind":  "Basic",
+                          "width":  0.4843749999999999,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795792,
+                          "name":  "W24B - 2HR CORRIDOR (2) 5/8 GYP 7/16 OSB INT, 5/8 EXT",
+                          "kind":  "Basic",
+                          "width":  0.6510416666666666,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795793,
+                          "name":  "W24C - 2HR CORRIDOR (2) 5/8 GYP 7/16 OSB INT, 5/8 EXT",
+                          "kind":  "Basic",
+                          "width":  0.796875,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795794,
+                          "name":  "Corridor- 2x6 Stagger stud (1) 5/8\" GWB INT - (1) 7/16\" OSB (2) 5/8\" GWB EXT 2",
+                          "kind":  "Basic",
+                          "width":  0.6510416666666667,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795795,
+                          "name":  "MW 2HR 2x4- 7/16\" OSB (5) 5/8\" GWB INT - 7/16 OSB ML",
+                          "kind":  "Basic",
+                          "width":  0.46874999999999994,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795796,
+                          "name":  "EXT 2HR 2x6 BARE-7/16\" OSB- (2) 5/8\" INT GWB",
+                          "kind":  "Basic",
+                          "width":  0.5989583333333335,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795797,
+                          "name":  "Elevator- 2x6 Stagger stud (2) 5/8\" GWB INT - (2) 5/8\" GWB EXT",
+                          "kind":  "Basic",
+                          "width":  0.6666666666666667,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795798,
+                          "name":  "MW 2x4-7/16\" OSB Both Sides",
+                          "kind":  "Basic",
+                          "width":  0.3645833333333333,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795799,
+                          "name":  "MW-Stair 2HR Both Sides 2x4- (2) 5/8\" GWB INT - (1) 7/16\" OSB (2) 5/8\" GWB EXT",
+                          "kind":  "Basic",
+                          "width":  0.5364583333333331,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795800,
+                          "name":  "EXT 2HR Stair 2x6 (2) 5/8\" GWB INT - (1) 7/16\" OSB (2) 5/8\" GWB EXT",
+                          "kind":  "Basic",
+                          "width":  0.7031250000000001,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795801,
+                          "name":  "EXT 2x6 BARE INT - 7/16\" OSB EXT",
+                          "kind":  "Basic",
+                          "width":  0.49479166666666674,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795802,
+                          "name":  "Chase Wall 2x4 -(1) 5/8\" GWB INT - (2) 5/8\" GWB EXT",
+                          "kind":  "Basic",
+                          "width":  0.44791666666666674,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795803,
+                          "name":  "W54A - EXTERIOR 2 hr",
+                          "kind":  "Basic",
+                          "width":  0.59375,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795804,
+                          "name":  "W55C- Exterior (2) GYP INT, OSB EXT",
+                          "kind":  "Basic",
+                          "width":  0.5989583333333335,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795805,
+                          "name":  "W53B - EXTERIOR AT CHASE",
+                          "kind":  "Basic",
+                          "width":  0.7916666666666667,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795806,
+                          "name":  "W54B - EXTERIOR 2 hr",
+                          "kind":  "Basic",
+                          "width":  0.7604166666666667,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795807,
+                          "name":  "W25B - 2HR CORRIDOR (2) 5/8 GYP 7/16 OSB INT, (2)5/8 EXT",
+                          "kind":  "Basic",
+                          "width":  0.703125,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795808,
+                          "name":  "W11E - INTERIOR NON-RATED",
+                          "kind":  "Basic",
+                          "width":  0.3125,
+                          "familyName":  "Basic Wall"
+                      },
+                      {
+                          "wallTypeId":  795809,
+                          "name":  "FF102A- Wall Panel System",
+                          "kind":  "Basic",
+                          "width":  0.08333333333333334,
+                          "familyName":  "Basic Wall"
+                      }
+                  ]
+}

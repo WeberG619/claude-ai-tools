@@ -1,0 +1,262 @@
+# Autonomous Pipeline System
+
+## Overview
+Self-running workflow system with capture-verify-correct loops. The AI orchestrates complete workflows, only stopping at checkpoints for user approval.
+
+## How It Works
+```
+┌─────────────────────────────────────────────────────┐
+│  1. CHECK STATE    → What's open? What phase?       │
+│  2. DECIDE         → What's the next action?        │
+│  3. EXECUTE        → Call the MCP method            │
+│  4. CAPTURE        → Screenshot + element counts    │
+│  5. VERIFY         → Did it work as expected?       │
+│  6. CORRECT/LOOP   → Fix issues or continue         │
+└─────────────────────────────────────────────────────┘
+```
+
+## Available Pipelines
+
+### qc-review
+Quality control review with automated verification.
+- Captures initial state
+- Runs CD quality check
+- Audits coordination
+- Checks rooms, tags, schedules
+- Generates final report
+- **Checkpoint:** Before final report
+
+### cd-assembly
+Construction document set organization.
+- Inventories sheets and views
+- Verifies all views placed
+- Runs quality checks
+- Audits coordination
+- **Checkpoint:** Before quality verification
+
+### new-project
+Initialize new project with BD Architect standards.
+- Verifies project info
+- Creates levels, views, sheets
+- Links keynotes
+- Runs SD checklist
+- **Checkpoint:** Before setup, after verification
+
+---
+
+## MCP Methods
+
+### startPipeline
+Start a new pipeline workflow.
+```json
+{
+  "pipelineId": "qc-review" | "cd-assembly" | "new-project"
+}
+```
+
+### getPipelineState
+Check current pipeline status.
+```json
+{}
+```
+Returns: current phase, step index, issues, next action
+
+### executeNextStep
+Execute the next step with capture-verify-correct.
+```json
+{}
+```
+Returns: step result, verification status, any corrections applied
+
+### runPipelineAuto
+Run autonomously until checkpoint or completion.
+```json
+{
+  "maxSteps": 50,
+  "stopOnIssue": false
+}
+```
+
+### approvePhase
+Approve a checkpoint to continue.
+```json
+{}
+```
+
+### captureCurrentState
+Capture screenshot and element counts.
+```json
+{
+  "label": "my_capture_label"
+}
+```
+
+### compareStates
+Compare current state with previous capture.
+```json
+{
+  "beforeLabel": "previous_capture_label"
+}
+```
+
+### listPipelines
+List available pipelines.
+```json
+{}
+```
+
+### resetPipeline
+Clear current pipeline state.
+```json
+{}
+```
+
+---
+
+## Usage Pattern for Claude
+
+### Starting a Pipeline
+```
+1. User says "run QC" or "check this project"
+2. Claude calls: startPipeline({pipelineId: "qc-review"})
+3. Claude calls: runPipelineAuto({maxSteps: 50})
+4. When checkpoint reached, Claude reports and waits for approval
+5. User approves
+6. Claude calls: approvePhase({})
+7. Claude calls: runPipelineAuto({}) to continue
+8. Repeat until complete
+```
+
+### Reporting Progress
+After each runPipelineAuto call, Claude should:
+1. Report steps executed
+2. Report any issues found
+3. If checkpoint reached, explain what's next
+4. Ask for approval or report completion
+
+### Handling Issues
+When issues are found:
+1. Report the issue clearly
+2. Suggest correction if known
+3. Ask user if they want to:
+   - Continue anyway
+   - Pause and fix manually
+   - Skip this step
+
+---
+
+## Example Session
+
+**User:** "Run QC on this project"
+
+**Claude:**
+```
+Starting QC Review pipeline on BHN Cath Suites...
+
+[Calls startPipeline]
+Pipeline started. Running initial assessment...
+
+[Calls runPipelineAuto]
+Phase 1 complete: Initial Assessment
+- Captured initial state
+- Document verified: BHN CATH SUITES (2-118)
+- Quality score: 72/100
+- 3 issues found
+
+Moving to Phase 2: Element Verification...
+- Rooms: 45 found
+- Room tags: 43 (2 potentially untagged)
+- Coordination audit complete
+
+**CHECKPOINT REACHED**
+Phase 2 complete. Ready for final review phase.
+
+Issues found so far:
+- 2 rooms may need tags
+- Quality score below 80
+
+Approve to continue with final report?
+```
+
+**User:** "Yes, continue"
+
+**Claude:**
+```
+[Calls approvePhase]
+[Calls runPipelineAuto]
+
+Final phase complete.
+
+QC REVIEW SUMMARY:
+✓ 8 steps executed
+✓ 3 phases completed
+! 2 issues to address
+
+Captures saved:
+- D:\BDArchitect-DetailLibrary-2025\captures\capture_qc_start.png
+- D:\BDArchitect-DetailLibrary-2025\captures\capture_qc_complete.png
+
+Recommendations:
+1. Tag the 2 untagged rooms
+2. Review quality score items
+
+Pipeline complete.
+```
+
+---
+
+## File Locations
+
+- **Pipeline State:** `D:\BDArchitect-DetailLibrary-2025\pipeline_state.json`
+- **Captures:** `D:\BDArchitect-DetailLibrary-2025\captures\`
+- **Custom Pipelines:** `D:\BDArchitect-DetailLibrary-2025\pipelines\`
+
+---
+
+## Creating Custom Pipelines
+
+Save a JSON file in `D:\BDArchitect-DetailLibrary-2025\pipelines\`:
+
+```json
+{
+  "Id": "my-pipeline",
+  "Name": "My Custom Pipeline",
+  "Description": "Description of what it does",
+  "Phases": [
+    {
+      "Name": "Phase 1",
+      "Description": "First phase",
+      "RequiresApproval": false,
+      "Steps": [
+        {
+          "Name": "Step 1",
+          "Action": "getDocumentInfo",
+          "Parameters": {},
+          "CaptureAfter": true,
+          "Verification": {
+            "Type": "exists",
+            "Query": "getDocumentInfo",
+            "Property": "projectInfo"
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Phase 2",
+      "RequiresApproval": true,
+      "Steps": [...]
+    }
+  ]
+}
+```
+
+---
+
+## Integration with Other Skills
+
+This pipeline system can call any registered MCP method. Combine with:
+- `bd-project-init` - Use new-project pipeline
+- `cd-set-assembly` - Use cd-assembly pipeline
+- `bim-quality-validator` - Use qc-review pipeline
+
+The autonomous system handles the orchestration - you just approve checkpoints.

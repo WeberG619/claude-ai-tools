@@ -1,0 +1,60 @@
+# Large media files
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.wav
+*.mp3
+video-mcp/videos/
+video-mcp/outputs/
+
+# Node modules
+node_modules/
+.pnpm-store/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+
+# Databases (backup separately)
+*.db
+*.sqlite
+
+# Logs
+*.log
+logs/
+
+# Build outputs
+dist/
+build/
+*.dll
+*.exe
+
+# IDE
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Secrets
+*.secret
+*.env
+.env.local
+
+# Large backups
+backups/hourly/
+backups/daily/
+backups/weekly/
+
+# Temporary
+temp/
+tmp/
+*.tmp

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-12-03T23:03:14.982961",
+  "active_project": "ap_builder",
+  "confidence": 0.9,
+  "current_task": null,
+  "pending_actions": [],
+  "recent_learnings": [],
+  "alerts": [
+    "PROJECT MISMATCH: Revit has ap_builder open, but Bluebeam shows south_golf_cove. Are you working on the right model?"
+  ],
+  "suggestions": [
+    "User may want to: Add dimensions, place doors/windows, or tag rooms",
+    "Working on upper level - may need to check stair alignment",
+    "Reviewing interior design - may need to update Revit finishes",
+    "FIX: PROJECT MISMATCH: Revit has ap_builder open, but Bluebeam shows south_golf_cove. Are you working on the right model?",
+    "CONTINUE: - Restart Revit to load updated DLL",
+    "REMEMBER: Before attempting wall creation (or any model modification), verify that: (1) Revit has a project op..."
+  ],
+  "mode": "idle"
+}

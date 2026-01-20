@@ -1,0 +1,116 @@
+{
+  "version": "1.0.0",
+  "description": "AEC Drafting AI Project Registry - Maps friendly names to Revit project files",
+  "last_updated": "2025-12-13",
+  "projects": {
+    "20 NW 76": {
+      "path": "D:\\001 - PROJECTS\\01 - CLIENT PROJECTS\\01 - ARKY\\010-20 NW 76 Street Miami - New 4 Story Building\\Revit\\20 NW 76 ST - 4-STORY - Revised.rvt",
+      "aliases": ["76 street", "4 story", "nw 76", "20 northwest 76"],
+      "type": "multi-family",
+      "stories": 4,
+      "description": "4-story multi-family building in Miami"
+    },
+    "Avon Park": {
+      "path": "D:\\001 - PROJECTS\\01 - CLIENT PROJECTS\\01 - ARKY\\012-Avon Park Single Family\\Revit\\1700 West Sheffield Road.rvt",
+      "aliases": ["sheffield", "avon", "1700 west sheffield"],
+      "type": "single-family",
+      "stories": 1,
+      "description": "Single family residence in Avon Park"
+    },
+    "512 Clematis": {
+      "path": "D:\\001 - PROJECTS\\01 - CLIENT PROJECTS\\01 - ARKY\\BAHAMAS HOTEL RESORT PROJECT\\Revit\\512_CLEMATIS-2.rvt",
+      "aliases": ["clematis", "bahamas", "hotel"],
+      "type": "multi-family",
+      "stories": 5,
+      "description": "5-story multi-family residential"
+    },
+    "Goulds Tower": {
+      "path": "D:\\001 - PROJECTS\\01 - CLIENT PROJECTS\\01 - ARKY\\GOULDS TOWERS-1\\Revit\\GOULDS TOWER-1.rvt",
+      "aliases": ["goulds", "tower"],
+      "type": "multi-family",
+      "stories": 10,
+      "description": "High-rise tower project"
+    },
+    "Lehigh Acres": {
+      "path": "D:\\001 - PROJECTS\\01 - CLIENT PROJECTS\\01 - ARKY\\008-Lehigh Acres Model 4a1- SF\\Revit\\LEHIGH ACRES MODEL 4a1-SF.rvt",
+      "aliases": ["lehigh", "model 4a1"],
+      "type": "single-family",
+      "stories": 1,
+      "description": "Single family model home in Lehigh Acres"
+    },
+    "Church Project": {
+      "path": "D:\\001 - PROJECTS\\01 - CLIENT PROJECTS\\01 - ARKY\\005-Church Project\\Revit\\Church Project.rvt",
+      "aliases": ["church"],
+      "type": "institutional",
+      "stories": 1,
+      "description": "Church building project"
+    },
+    "6365 Sample Rd": {
+      "path": "D:\\001 - PROJECTS\\01 - CLIENT PROJECTS\\04 - FANTAL CONSULTING\\AFURI - 6365 W Sample Rd\\Revit\\6365 W SAMPLE RD.rvt",
+      "aliases": ["sample road", "afuri", "tropical soul", "restaurant"],
+      "type": "commercial",
+      "stories": 1,
+      "description": "Tropical Soul Restaurant - Commercial TI"
+    },
+    "South Golf Cove": {
+      "path": "D:\\001 - PROJECTS\\01 - CLIENT PROJECTS\\04 - FANTAL CONSULTING\\AP Builders - South Golf Cove Res\\Revit\\AP Builder Residence.rvt",
+      "aliases": ["golf cove", "ap builders", "ap builder"],
+      "type": "single-family",
+      "stories": 2,
+      "description": "Two-story residence with parapet"
+    },
+    "319 Belvedere": {
+      "path": "D:\\001 - PROJECTS\\01 - CLIENT PROJECTS\\06 - KRM DESIGN\\319 BELVEDERE RD\\Revit\\2025_319 BELVEDERE RD.rvt",
+      "aliases": ["belvedere", "krm"],
+      "type": "single-family",
+      "stories": 1,
+      "description": "Residential project"
+    },
+    "Bethesda East BDA": {
+      "path": "D:\\001 - PROJECTS\\01 - CLIENT PROJECTS\\02 - BRUCE DAVIS ARCHITECT\\2-105 Bethesda East BDA Installation\\Revit\\R17 BHSF BETH E BDA.rvt",
+      "aliases": ["bethesda east", "beth e", "bda"],
+      "type": "healthcare",
+      "stories": 1,
+      "description": "Baptist Health Bethesda East - BDA Installation"
+    },
+    "SMH GME Suite": {
+      "path": "D:\\001 - PROJECTS\\01 - CLIENT PROJECTS\\02 - BRUCE DAVIS ARCHITECT\\2-116 SMH GME Suite\\Revit\\R25 SMH GME_ARCH.rvt",
+      "aliases": ["smh", "gme"],
+      "type": "healthcare",
+      "stories": 1,
+      "description": "South Miami Hospital GME Suite"
+    },
+    "Porras Residence": {
+      "path": "D:\\001 - PROJECTS\\01 - CLIENT PROJECTS\\02 - BRUCE DAVIS ARCHITECT\\PORRAS RESIDENTIAL RENOVATIONS\\Revit\\R17 Porras Residence.rvt",
+      "aliases": ["porras"],
+      "type": "single-family",
+      "stories": 1,
+      "description": "Residential renovation project"
+    },
+    "Delancy Resort": {
+      "path": "D:\\001 - PROJECTS\\01 - CLIENT PROJECTS\\01 - ARKY\\BAHAMAS HOTEL RESORT PROJECT\\Revit\\Delancy Resort Hotel.rvt",
+      "aliases": ["delancy", "resort", "bahamas hotel"],
+      "type": "hospitality",
+      "stories": 3,
+      "description": "Bahamas resort hotel project"
+    },
+    "Sweetland ADU": {
+      "path": "D:\\001 - PROJECTS\\01 - CLIENT PROJECTS\\05 - HAYMOND BROTHERS CONSTRUCTION\\SWEETLAND PROJECT\\Revit\\Sweetland Project.rvt",
+      "aliases": ["sweetland", "adu", "haymond"],
+      "type": "single-family",
+      "stories": 1,
+      "description": "ADU project for Haymond Brothers"
+    },
+    "Sparkman Residence": {
+      "path": "D:\\001 - PROJECTS\\01 - CLIENT PROJECTS\\04 - FANTAL CONSULTING\\002-Sparkman Residence\\Revit\\Sparkman Residence.rvt",
+      "aliases": ["sparkman"],
+      "type": "single-family",
+      "stories": 1,
+      "description": "Sparkman residential project"
+    }
+  },
+  "search_tips": [
+    "Use any alias or part of the project name",
+    "Examples: 'open 76 street' or 'open avon' or 'open church'"
+  ]
+}
