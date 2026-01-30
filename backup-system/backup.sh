@@ -32,7 +32,7 @@ else
     echo "  ✗ Memory database not found!"
 fi
 
-# 2. Backup Claude Config (agents, skills, settings)
+# 2. Backup Claude Config (agents, skills, settings, user config)
 echo -e "${YELLOW}[2/5] Backing up Claude config...${NC}"
 CLAUDE_CONFIG="/home/weber/.claude"
 if [ -d "$CLAUDE_CONFIG" ]; then
@@ -41,11 +41,13 @@ if [ -d "$CLAUDE_CONFIG" ]; then
     cp -r "$CLAUDE_CONFIG/mcp-configs" "$BACKUP_ROOT/claude-config/" 2>/dev/null || true
     cp "$CLAUDE_CONFIG/settings.json" "$BACKUP_ROOT/claude-config/" 2>/dev/null || true
     cp "$CLAUDE_CONFIG/CLAUDE.md" "$BACKUP_ROOT/claude-config/" 2>/dev/null || true
+    # User config for multi-user support
+    cp "$CLAUDE_CONFIG/user.json" "$BACKUP_ROOT/claude-config/" 2>/dev/null || true
     # Skills symlink - copy actual content
     if [ -L "$CLAUDE_CONFIG/skills" ]; then
         cp -rL "$CLAUDE_CONFIG/skills" "$BACKUP_ROOT/claude-config/" 2>/dev/null || true
     fi
-    echo "  ✓ Claude config backed up"
+    echo "  ✓ Claude config backed up (including user.json)"
 else
     echo "  ✗ Claude config not found!"
 fi
@@ -81,6 +83,10 @@ echo "  ✓ Old backups cleaned"
 echo ""
 echo -e "${GREEN}=== Backup Complete ===${NC}"
 echo "Local backup location: $BACKUP_ROOT"
+echo ""
+echo "Memory Database: Multi-user enabled"
+echo "  - All users' memories stored in single database"
+echo "  - User isolation via user_id column"
 echo ""
 echo "GitHub repositories:"
 echo "  - https://github.com/WeberG619/RevitMCPBridge2026"

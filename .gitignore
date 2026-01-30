@@ -44,10 +44,31 @@ build/
 .DS_Store
 Thumbs.db
 
-# Secrets
+# Secrets and Credentials
 *.secret
 *.env
 .env.local
+.env.*
+credentials/
+credentials.json
+creds.json
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+token.json
+tokens.json
+auth.json
+.baileys_auth/
+.wwebjs_auth/
+.wwebjs_cache/
+service_account.json
+client_secret*.json
+oauth*.json
+api_key*
+*_api_key*
+secrets/
 
 # Large backups
 backups/hourly/
@@ -58,3 +79,31 @@ backups/weekly/
 temp/
 tmp/
 *.tmp
+
+# Runtime state files (don't track)
+system-bridge/daemon.pid
+system-bridge/live_state.json
+system-bridge/persistent_state.json
+system-bridge/health.json
+system-bridge/events.ndjson*
+system-bridge/watchdog.log*
+*.ndjson
+
+# New directories to skip (not part of core repo)
+email-watcher/
+email-monitor/
+gmail-attachments/
+gmail-config/
+google-calendar-mcp/
+google-drive-mcp/
+google-tasks-mcp/
+microsoft-teams-mcp/
+financial-mcp/
+brain-state/
+self-improvement-hooks/
+inbox-filer/
+jarvis/
+personaplex/
+photo-catalog/
+smart-preview/
+health-check/

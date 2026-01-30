@@ -46,10 +46,23 @@ EDGE_VOICES = {
 }
 
 DEFAULT_VOICE = "andrew"
-AUDIO_DIR = Path(r"D:\.playwright-mcp\audio")
-CACHE_DIR = AUDIO_DIR / "cache"
+
+# Use WSL paths for file operations, convert to Windows paths for playback
+AUDIO_DIR_WSL = Path("/mnt/d/.playwright-mcp/audio")
+AUDIO_DIR_WIN = r"D:\.playwright-mcp\audio"
+CACHE_DIR = AUDIO_DIR_WSL / "cache"
 MAX_RETRIES = 3  # Reduced since we have multiple engines
 TIMEOUT = 30
+
+def wsl_to_win_path(wsl_path: str) -> str:
+    """Convert WSL path to Windows path for PowerShell playback"""
+    if wsl_path.startswith("/mnt/"):
+        # /mnt/d/foo -> D:\foo
+        parts = wsl_path[5:].split("/", 1)
+        drive = parts[0].upper()
+        rest = parts[1].replace('/', '\\') if len(parts) > 1 else ""
+        return f"{drive}:\\" + rest
+    return wsl_path.replace('/', '\\')
 
 # =============================================================================
 # CACHING - Reuse audio for identical text
@@ -85,42 +98,105 @@ def save_to_cache(audio_file: str, text: str, engine: str) -> str:
 # =============================================================================
 # AUDIO PLAYBACK
 # =============================================================================
-def play_audio(audio_file: str) -> bool:
-    """Play audio file using Windows Media Player COM object (WMPlayer.OCX)"""
+def get_audio_duration(audio_file: str) -> float:
+    """Get audio duration in seconds using ffprobe"""
     try:
-        # Convert to Windows path format
-        win_path = audio_file.replace('/', '\\')
+        result = subprocess.run(
+            ["ffprobe", "-v", "error", "-show_entries", "format=duration",
+             "-of", "default=noprint_wrappers=1:nokey=1", audio_file],
+            capture_output=True,
+            text=True,
+            timeout=10
+        )
+        if result.returncode == 0 and result.stdout.strip():
+            return float(result.stdout.strip())
+    except Exception:
+        pass
 
+    # Fallback: estimate from file size (very rough: ~6KB per second for mp3)
+    try:
+        file_size = os.path.getsize(audio_file)
+        return max(5, file_size / 6000)
+    except:
+        return 30  # Default fallback
+
+
+def play_audio(audio_file: str) -> bool:
+    """Play audio file using PowerShell MediaPlayer (reliable on Windows/WSL)"""
+    try:
+        win_path = wsl_to_win_path(audio_file)
+
+        # Get actual audio duration
+        duration = get_audio_duration(audio_file)
+        wait_seconds = int(duration) + 2  # Add buffer
+
+        # Use PowerShell MediaPlayer - more reliable than pygame in WSL
         play_script = f'''
-        $wmp = New-Object -ComObject WMPlayer.OCX
-        $wmp.URL = "{win_path}"
-        $wmp.controls.play()
-
-        # Wait for media to load
-        $timeout = 30
-        $waited = 0
-        while ($wmp.playState -ne 3 -and $waited -lt $timeout) {{
-            Start-Sleep -Milliseconds 100
-            $waited += 0.1
-        }}
-
-        # Wait for playback to complete
-        while ($wmp.playState -eq 3) {{
-            Start-Sleep -Milliseconds 200
-        }}
-
+        Add-Type -AssemblyName presentationCore
+        $player = New-Object System.Windows.Media.MediaPlayer
+        $player.Open([Uri]"{win_path}")
         Start-Sleep -Milliseconds 500
-        $wmp.close()
+        $player.Play()
+        Start-Sleep -Seconds {wait_seconds}
+        $player.Stop()
+        $player.Close()
         '''
 
         result = subprocess.run(
             ["powershell.exe", "-NoProfile", "-Command", play_script],
             capture_output=True,
-            timeout=120
+            timeout=wait_seconds + 15
+        )
+        return result.returncode == 0
+
+    except Exception as e:
+        print(f"Playback error: {e}")
+        # Fallback to pygame if PowerShell fails
+        return play_audio_pygame(audio_file)
+
+
+def play_audio_pygame(audio_file: str) -> bool:
+    """Fallback: Play audio using pygame"""
+    try:
+        import pygame
+        pygame.mixer.init()
+        pygame.mixer.music.load(audio_file)
+        pygame.mixer.music.play()
+        while pygame.mixer.music.get_busy():
+            pygame.time.wait(100)
+        pygame.mixer.quit()
+        return True
+    except Exception as e:
+        print(f"Pygame playback error: {e}")
+        return False
+
+
+def play_audio_fallback(audio_file: str) -> bool:
+    """Fallback: Play audio using PowerShell (may show window)"""
+    try:
+        win_path = wsl_to_win_path(audio_file)
+
+        play_script = f'''
+        Add-Type -AssemblyName presentationCore
+        $mediaPlayer = New-Object system.windows.media.mediaplayer
+        $mediaPlayer.open("{win_path}")
+        Start-Sleep -Milliseconds 300
+        $mediaPlayer.Play()
+        $fileSize = (Get-Item "{win_path}").Length
+        $estimatedSeconds = [math]::Max(2, [math]::Ceiling($fileSize / 16000))
+        Start-Sleep -Seconds $estimatedSeconds
+        $mediaPlayer.Stop()
+        $mediaPlayer.Close()
+        '''
+
+        result = subprocess.run(
+            ["powershell.exe", "-NoProfile", "-Command", play_script],
+            capture_output=True,
+            timeout=60
         )
         return result.returncode == 0
     except Exception as e:
-        print(f"Playback error: {e}")
+        print(f"Fallback playback error: {e}")
         return False
 
 
@@ -234,9 +310,9 @@ def speak(text: str, voice: str = DEFAULT_VOICE, rate: str = "+0%") -> bool:
     Edge TTS is the PREFERRED engine for natural Andrew voice.
     Falls back to alternatives only when Edge TTS is rate-limited.
     """
-    AUDIO_DIR.mkdir(parents=True, exist_ok=True)
+    AUDIO_DIR_WSL.mkdir(parents=True, exist_ok=True)
     timestamp = datetime.now().strftime('%Y%m%d_%H%M%S_%f')
-    audio_file = str(AUDIO_DIR / f"speech_{timestamp}.mp3")
+    audio_file = str(AUDIO_DIR_WSL / f"speech_{timestamp}.mp3")
 
     # Check cache for any engine - prefer Edge cache
     for engine in ["edge", "gtts"]:

@@ -137,10 +137,14 @@ logger = setup_logging()
 class SystemState:
     """Tracks complete system state with persistence."""
 
+    # Email alerts file location
+    EMAIL_ALERTS_FILE = Path(r"D:\_CLAUDE-TOOLS\email-watcher\email_alerts.json")
+
     def __init__(self):
         self.applications: List[Dict] = []
         self.revit_status: Dict = {}
         self.bluebeam_status: Dict = {}
+        self.email_status: Dict = {}  # Email monitoring status
         self.active_window: str = ""
         self.monitors: Dict = {}
         self.system_info: Dict = {}
@@ -154,6 +158,25 @@ class SystemState:
             "errors": 0,
             "restarts": 0
         }
+
+    def load_email_status(self):
+        """Load email alert status from email watcher."""
+        try:
+            if self.EMAIL_ALERTS_FILE.exists():
+                with open(self.EMAIL_ALERTS_FILE, 'r') as f:
+                    data = json.load(f)
+                    self.email_status = {
+                        "monitoring": True,
+                        "last_check": data.get("last_check"),
+                        "unread_count": data.get("unread_count", 0),
+                        "urgent_count": data.get("urgent_count", 0),
+                        "needs_response_count": data.get("needs_response_count", 0),
+                        "alerts": data.get("alerts", [])[:5]  # Top 5 alerts only
+                    }
+            else:
+                self.email_status = {"monitoring": False, "reason": "Email watcher not running"}
+        except Exception as e:
+            self.email_status = {"monitoring": False, "error": str(e)}
 
     def to_dict(self) -> Dict:
         """Convert state to dict with schema versioning."""
@@ -177,6 +200,7 @@ class SystemState:
             "applications": self.applications,
             "revit": self.revit_status,
             "bluebeam": self.bluebeam_status,
+            "email": self.email_status,  # Email monitoring status
             "recent_events": self.events[-20:],
             "daemon_stats": self.stats
         }
@@ -899,6 +923,14 @@ if ($exists) {
         # Get Bluebeam status
         self.state.bluebeam_status = self.get_bluebeam_status()
 
+        # Get email status (every 3 updates = 30 seconds)
+        if not hasattr(self, '_email_counter'):
+            self._email_counter = 2  # Start at 2 so first update triggers
+        self._email_counter += 1
+        if self._email_counter >= 3:
+            self.state.load_email_status()
+            self._email_counter = 0
+
         # Get monitor info (less frequently - every 6 updates = 60 seconds)
         # Initialize to 5 so first update triggers collection
         if not hasattr(self, '_monitor_counter'):
@@ -1053,12 +1085,27 @@ def check_daemon_running() -> Optional[int]:
         try:
             with open(PID_FILE) as f:
                 pid = int(f.read().strip())
-            # Check if process exists
-            os.kill(pid, 0)
-            return pid
-        except (ProcessLookupError, ValueError):
+            # Check if process exists (Windows-compatible)
+            if sys.platform == "win32":
+                import ctypes
+                kernel32 = ctypes.windll.kernel32
+                PROCESS_QUERY_LIMITED_INFORMATION = 0x1000
+                handle = kernel32.OpenProcess(PROCESS_QUERY_LIMITED_INFORMATION, False, pid)
+                if handle:
+                    kernel32.CloseHandle(handle)
+                    return pid
+                else:
+                    # Process doesn't exist
+                    PID_FILE.unlink()
+            else:
+                os.kill(pid, 0)
+                return pid
+        except (ProcessLookupError, ValueError, OSError):
             # Process doesn't exist, remove stale PID file
-            PID_FILE.unlink()
+            try:
+                PID_FILE.unlink()
+            except:
+                pass
         except PermissionError:
             # Process exists but we can't signal it
             return pid

@@ -2,6 +2,7 @@
 """
 Claude Memory MCP Server
 Provides persistent memory storage and retrieval for Claude Code sessions.
+Supports multi-user isolation with shared knowledge base.
 """
 
 import json
@@ -10,8 +11,56 @@ import os
 import numpy as np
 from datetime import datetime
 from pathlib import Path
-from typing import Any
+from typing import Any, Optional
 from mcp.server.fastmcp import FastMCP
+
+# =============================================================================
+# USER DETECTION
+# =============================================================================
+
+_current_user: Optional[str] = None
+
+def get_current_user() -> str:
+    """
+    Get current user ID from config or environment.
+
+    Priority:
+    1. CLAUDE_USER_ID environment variable
+    2. ~/.claude/user.json file
+    3. System username as fallback
+    """
+    global _current_user
+
+    if _current_user is not None:
+        return _current_user
+
+    # Check environment variable first
+    if os.environ.get('CLAUDE_USER_ID'):
+        _current_user = os.environ['CLAUDE_USER_ID']
+        return _current_user
+
+    # Check user config file
+    user_config = Path.home() / ".claude" / "user.json"
+    if user_config.exists():
+        try:
+            with open(user_config, 'r') as f:
+                config = json.load(f)
+                if config.get('user_id'):
+                    _current_user = config['user_id']
+                    return _current_user
+        except Exception:
+            pass
+
+    # Fallback to system username
+    import getpass
+    _current_user = getpass.getuser()
+    return _current_user
+
+
+def set_current_user(user_id: str) -> None:
+    """Set current user ID (for testing or explicit override)."""
+    global _current_user
+    _current_user = user_id
 
 # Lazy load embedding model to avoid slow startup
 _embedding_model = None
@@ -157,7 +206,8 @@ def init_database():
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
             accessed_at TIMESTAMP,
             access_count INTEGER DEFAULT 0,
-            embedding BLOB
+            embedding BLOB,
+            user_id TEXT DEFAULT 'default'
         )
     """)
 
@@ -166,6 +216,34 @@ def init_database():
         cursor.execute("ALTER TABLE memories ADD COLUMN embedding BLOB")
     except sqlite3.OperationalError:
         pass  # Column already exists
+
+    # Add user_id column if it doesn't exist (for existing databases)
+    try:
+        cursor.execute("ALTER TABLE memories ADD COLUMN user_id TEXT DEFAULT 'default'")
+        # Migrate existing memories to current user
+        current_user = get_current_user()
+        cursor.execute("UPDATE memories SET user_id = ? WHERE user_id = 'default'", (current_user,))
+        print(f"Migrated existing memories to user: {current_user}")
+    except sqlite3.OperationalError:
+        pass  # Column already exists
+
+    # Add effectiveness tracking columns for self-improvement loop
+    try:
+        cursor.execute("ALTER TABLE memories ADD COLUMN times_surfaced INTEGER DEFAULT 0")
+    except sqlite3.OperationalError:
+        pass
+    try:
+        cursor.execute("ALTER TABLE memories ADD COLUMN times_helped INTEGER DEFAULT 0")
+    except sqlite3.OperationalError:
+        pass
+    try:
+        cursor.execute("ALTER TABLE memories ADD COLUMN last_tested TIMESTAMP")
+    except sqlite3.OperationalError:
+        pass
+    try:
+        cursor.execute("ALTER TABLE memories ADD COLUMN effectiveness_score REAL DEFAULT 0.0")
+    except sqlite3.OperationalError:
+        pass
 
     # Full-text search virtual table
     cursor.execute("""
@@ -204,14 +282,24 @@ def init_database():
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS projects (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
-            name TEXT UNIQUE NOT NULL,
+            name TEXT NOT NULL,
             path TEXT,
             description TEXT,
             status TEXT DEFAULT 'active',
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-            last_accessed TIMESTAMP
+            last_accessed TIMESTAMP,
+            user_id TEXT DEFAULT 'default',
+            UNIQUE(name, user_id)
         )
     """)
+
+    # Add user_id column to projects if it doesn't exist
+    try:
+        cursor.execute("ALTER TABLE projects ADD COLUMN user_id TEXT DEFAULT 'default'")
+        current_user = get_current_user()
+        cursor.execute("UPDATE projects SET user_id = ? WHERE user_id = 'default'", (current_user,))
+    except sqlite3.OperationalError:
+        pass  # Column already exists
 
     # Sessions history
     cursor.execute("""
@@ -221,9 +309,18 @@ def init_database():
             ended_at TIMESTAMP,
             project TEXT,
             summary TEXT,
-            memories_created INTEGER DEFAULT 0
+            memories_created INTEGER DEFAULT 0,
+            user_id TEXT DEFAULT 'default'
         )
     """)
+
+    # Add user_id column to sessions if it doesn't exist
+    try:
+        cursor.execute("ALTER TABLE sessions ADD COLUMN user_id TEXT DEFAULT 'default'")
+        current_user = get_current_user()
+        cursor.execute("UPDATE sessions SET user_id = ? WHERE user_id = 'default'", (current_user,))
+    except sqlite3.OperationalError:
+        pass  # Column already exists
 
     # Memory relationships table for knowledge graph
     cursor.execute("""
@@ -246,6 +343,9 @@ def init_database():
     cursor.execute("CREATE INDEX IF NOT EXISTS idx_memories_type ON memories(memory_type)")
     cursor.execute("CREATE INDEX IF NOT EXISTS idx_memories_importance ON memories(importance DESC)")
     cursor.execute("CREATE INDEX IF NOT EXISTS idx_memories_created ON memories(created_at DESC)")
+    cursor.execute("CREATE INDEX IF NOT EXISTS idx_memories_user ON memories(user_id)")
+    cursor.execute("CREATE INDEX IF NOT EXISTS idx_projects_user ON projects(user_id)")
+    cursor.execute("CREATE INDEX IF NOT EXISTS idx_sessions_user ON sessions(user_id)")
     cursor.execute("CREATE INDEX IF NOT EXISTS idx_relationships_source ON memory_relationships(source_id)")
     cursor.execute("CREATE INDEX IF NOT EXISTS idx_relationships_target ON memory_relationships(target_id)")
 
@@ -290,6 +390,9 @@ def memory_store(
     conn = get_db()
     cursor = conn.cursor()
 
+    # Get current user for isolation
+    user_id = get_current_user()
+
     tags_json = json.dumps(tags) if tags else None
 
     # Auto-generate summary if not provided
@@ -304,24 +407,24 @@ def memory_store(
         namespace = f"project:{project}"
 
     cursor.execute("""
-        INSERT INTO memories (content, summary, project, tags, importance, memory_type, embedding, namespace, verified, expires_at, source)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-    """, (content, summary, project, tags_json, importance, memory_type, embedding, namespace, 1 if verified else 0, expires_at, source))
+        INSERT INTO memories (content, summary, project, tags, importance, memory_type, embedding, namespace, verified, expires_at, source, user_id)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    """, (content, summary, project, tags_json, importance, memory_type, embedding, namespace, 1 if verified else 0, expires_at, source, user_id))
 
     memory_id = cursor.lastrowid
 
     # Update project last_accessed if project specified
     if project:
         cursor.execute("""
-            INSERT INTO projects (name, last_accessed)
-            VALUES (?, CURRENT_TIMESTAMP)
-            ON CONFLICT(name) DO UPDATE SET last_accessed = CURRENT_TIMESTAMP
-        """, (project,))
+            INSERT INTO projects (name, last_accessed, user_id)
+            VALUES (?, CURRENT_TIMESTAMP, ?)
+            ON CONFLICT(name, user_id) DO UPDATE SET last_accessed = CURRENT_TIMESTAMP
+        """, (project, user_id))
 
     conn.commit()
     conn.close()
 
-    return f"Memory stored with ID {memory_id} [project: {project or 'none'}, type: {memory_type}, importance: {importance}]"
+    return f"Memory stored with ID {memory_id} [user: {user_id}, project: {project or 'none'}, type: {memory_type}, importance: {importance}]"
 
 
 @mcp.tool()
@@ -348,6 +451,9 @@ def memory_recall(
     conn = get_db()
     cursor = conn.cursor()
 
+    # Get current user for isolation
+    user_id = get_current_user()
+
     # Build the query
     sql = """
         SELECT
@@ -365,9 +471,10 @@ def memory_recall(
         JOIN memories m ON memories_fts.rowid = m.id
         WHERE memories_fts MATCH ?
         AND m.importance >= ?
+        AND m.user_id = ?
     """
 
-    params = [query, min_importance]
+    params = [query, min_importance, user_id]
 
     if project:
         sql += " AND m.project = ?"
@@ -450,9 +557,12 @@ def memory_semantic_search(
     conn = get_db()
     cursor = conn.cursor()
 
-    # Get all memories with embeddings
-    sql = "SELECT id, content, summary, project, tags, importance, memory_type, created_at, embedding FROM memories WHERE embedding IS NOT NULL"
-    params = []
+    # Get current user for isolation
+    user_id = get_current_user()
+
+    # Get all memories with embeddings for this user
+    sql = "SELECT id, content, summary, project, tags, importance, memory_type, created_at, embedding FROM memories WHERE embedding IS NOT NULL AND user_id = ?"
+    params = [user_id]
 
     if project:
         sql += " AND project = ?"
@@ -697,6 +807,9 @@ def memory_get_context(
     conn = get_db()
     cursor = conn.cursor()
 
+    # Get current user for isolation
+    user_id = get_current_user()
+
     memories = []
 
     # Get recent memories
@@ -704,38 +817,39 @@ def memory_get_context(
         sql = """
             SELECT * FROM memories
             WHERE created_at > datetime('now', '-7 days')
+            AND user_id = ?
         """
         if project:
-            sql += f" AND project = ?"
-            cursor.execute(sql + " ORDER BY created_at DESC LIMIT ?", (project, limit // 3))
+            sql += " AND project = ?"
+            cursor.execute(sql + " ORDER BY created_at DESC LIMIT ?", (user_id, project, limit // 3))
         else:
-            cursor.execute(sql + " ORDER BY created_at DESC LIMIT ?", (limit // 3,))
+            cursor.execute(sql + " ORDER BY created_at DESC LIMIT ?", (user_id, limit // 3,))
         memories.extend(cursor.fetchall())
 
     # Get important memories
     if include_important:
-        sql = "SELECT * FROM memories WHERE importance >= 7"
+        sql = "SELECT * FROM memories WHERE importance >= 7 AND user_id = ?"
         if project:
             sql += " AND project = ?"
-            cursor.execute(sql + " ORDER BY importance DESC LIMIT ?", (project, limit // 3))
+            cursor.execute(sql + " ORDER BY importance DESC LIMIT ?", (user_id, project, limit // 3))
         else:
-            cursor.execute(sql + " ORDER BY importance DESC LIMIT ?", (limit // 3,))
+            cursor.execute(sql + " ORDER BY importance DESC LIMIT ?", (user_id, limit // 3,))
         memories.extend(cursor.fetchall())
 
     # Get decisions
     if include_decisions:
-        sql = "SELECT * FROM memories WHERE memory_type = 'decision'"
+        sql = "SELECT * FROM memories WHERE memory_type = 'decision' AND user_id = ?"
         if project:
             sql += " AND project = ?"
-            cursor.execute(sql + " ORDER BY created_at DESC LIMIT ?", (project, limit // 3))
+            cursor.execute(sql + " ORDER BY created_at DESC LIMIT ?", (user_id, project, limit // 3))
         else:
-            cursor.execute(sql + " ORDER BY created_at DESC LIMIT ?", (limit // 3,))
+            cursor.execute(sql + " ORDER BY created_at DESC LIMIT ?", (user_id, limit // 3,))
         memories.extend(cursor.fetchall())
 
     # Get project info if specified
     project_info = None
     if project:
-        cursor.execute("SELECT * FROM projects WHERE name = ?", (project,))
+        cursor.execute("SELECT * FROM projects WHERE name = ? AND user_id = ?", (project, user_id))
         project_info = cursor.fetchone()
 
     conn.close()
@@ -795,30 +909,33 @@ def memory_get_project(project: str, include_all: bool = False) -> str:
     conn = get_db()
     cursor = conn.cursor()
 
+    # Get current user for isolation
+    user_id = get_current_user()
+
     # Get project info
-    cursor.execute("SELECT * FROM projects WHERE name = ?", (project,))
+    cursor.execute("SELECT * FROM projects WHERE name = ? AND user_id = ?", (project, user_id))
     project_info = cursor.fetchone()
 
     # Get memories
     if include_all:
         cursor.execute("""
             SELECT * FROM memories
-            WHERE project = ?
+            WHERE project = ? AND user_id = ?
             ORDER BY created_at DESC
-        """, (project,))
+        """, (project, user_id))
     else:
         cursor.execute("""
             SELECT * FROM memories
-            WHERE project = ? AND (importance >= 5 OR memory_type = 'decision')
+            WHERE project = ? AND user_id = ? AND (importance >= 5 OR memory_type = 'decision')
             ORDER BY importance DESC, created_at DESC
-        """, (project,))
+        """, (project, user_id))
 
     memories = cursor.fetchall()
 
     # Update project last_accessed
     cursor.execute("""
-        UPDATE projects SET last_accessed = CURRENT_TIMESTAMP WHERE name = ?
-    """, (project,))
+        UPDATE projects SET last_accessed = CURRENT_TIMESTAMP WHERE name = ? AND user_id = ?
+    """, (project, user_id))
 
     conn.commit()
     conn.close()
@@ -869,6 +986,9 @@ def memory_list_projects() -> str:
     conn = get_db()
     cursor = conn.cursor()
 
+    # Get current user for isolation
+    user_id = get_current_user()
+
     cursor.execute("""
         SELECT
             p.name,
@@ -878,10 +998,11 @@ def memory_list_projects() -> str:
             COUNT(m.id) as memory_count,
             MAX(m.created_at) as last_memory
         FROM projects p
-        LEFT JOIN memories m ON p.name = m.project
+        LEFT JOIN memories m ON p.name = m.project AND m.user_id = ?
+        WHERE p.user_id = ?
         GROUP BY p.name
         ORDER BY p.last_accessed DESC
-    """)
+    """, (user_id, user_id))
 
     projects = cursor.fetchall()
     conn.close()
@@ -921,8 +1042,11 @@ def memory_update_project(
     conn = get_db()
     cursor = conn.cursor()
 
-    # Check if exists
-    cursor.execute("SELECT * FROM projects WHERE name = ?", (name,))
+    # Get current user for isolation
+    user_id = get_current_user()
+
+    # Check if exists for this user
+    cursor.execute("SELECT * FROM projects WHERE name = ? AND user_id = ?", (name, user_id))
     existing = cursor.fetchone()
 
     if existing:
@@ -942,21 +1066,22 @@ def memory_update_project(
 
         updates.append("last_accessed = CURRENT_TIMESTAMP")
         params.append(name)
+        params.append(user_id)
 
-        cursor.execute(f"UPDATE projects SET {', '.join(updates)} WHERE name = ?", params)
+        cursor.execute(f"UPDATE projects SET {', '.join(updates)} WHERE name = ? AND user_id = ?", params)
         action = "updated"
     else:
         # Create
         cursor.execute("""
-            INSERT INTO projects (name, path, description, status)
-            VALUES (?, ?, ?, ?)
-        """, (name, path, description, status or 'active'))
+            INSERT INTO projects (name, path, description, status, user_id)
+            VALUES (?, ?, ?, ?, ?)
+        """, (name, path, description, status or 'active', user_id))
         action = "created"
 
     conn.commit()
     conn.close()
 
-    return f"Project '{name}' {action} successfully"
+    return f"Project '{name}' {action} successfully for user {user_id}"
 
 
 @mcp.tool()
@@ -978,15 +1103,20 @@ def memory_forget(memory_id: int = None, query: str = None, confirm: bool = Fals
     conn = get_db()
     cursor = conn.cursor()
 
+    # Get current user for isolation - only delete user's own memories
+    user_id = get_current_user()
+
     if memory_id:
-        cursor.execute("DELETE FROM memories WHERE id = ?", (memory_id,))
+        cursor.execute("DELETE FROM memories WHERE id = ? AND user_id = ?", (memory_id, user_id))
         deleted = cursor.rowcount
     elif query:
         cursor.execute("""
             DELETE FROM memories WHERE id IN (
-                SELECT rowid FROM memories_fts WHERE memories_fts MATCH ?
+                SELECT m.id FROM memories_fts
+                JOIN memories m ON memories_fts.rowid = m.id
+                WHERE memories_fts MATCH ? AND m.user_id = ?
             )
-        """, (query,))
+        """, (query, user_id))
         deleted = cursor.rowcount
     else:
         conn.close()
@@ -1009,39 +1139,43 @@ def memory_stats() -> str:
     conn = get_db()
     cursor = conn.cursor()
 
-    # Total memories
-    cursor.execute("SELECT COUNT(*) FROM memories")
+    # Get current user for isolation
+    user_id = get_current_user()
+
+    # Total memories for this user
+    cursor.execute("SELECT COUNT(*) FROM memories WHERE user_id = ?", (user_id,))
     total = cursor.fetchone()[0]
 
     # By type
     cursor.execute("""
         SELECT memory_type, COUNT(*) as count
         FROM memories
+        WHERE user_id = ?
         GROUP BY memory_type
         ORDER BY count DESC
-    """)
+    """, (user_id,))
     by_type = cursor.fetchall()
 
     # By project
     cursor.execute("""
         SELECT project, COUNT(*) as count
         FROM memories
-        WHERE project IS NOT NULL
+        WHERE project IS NOT NULL AND user_id = ?
         GROUP BY project
         ORDER BY count DESC
         LIMIT 10
-    """)
+    """, (user_id,))
     by_project = cursor.fetchall()
 
     # Recent activity
     cursor.execute("""
         SELECT DATE(created_at) as date, COUNT(*) as count
         FROM memories
-        WHERE created_at > datetime('now', '-30 days')
+        WHERE created_at > datetime('now', '-30 days') AND user_id = ?
         GROUP BY DATE(created_at)
         ORDER BY date DESC
         LIMIT 7
-    """)
+    """, (user_id,))
     recent = cursor.fetchall()
 
     # Database size
@@ -1050,6 +1184,7 @@ def memory_stats() -> str:
     conn.close()
 
     output = [f"# Memory System Statistics\n"]
+    output.append(f"**User**: {user_id}")
     output.append(f"**Total Memories**: {total}")
     output.append(f"**Database Size**: {db_size:.1f} KB\n")
 
@@ -1096,6 +1231,9 @@ def memory_summarize_session(
     conn = get_db()
     cursor = conn.cursor()
 
+    # Get current user for isolation
+    user_id = get_current_user()
+
     # Build structured content
     content_parts = [f"## Session Summary\n{summary}\n"]
 
@@ -1132,9 +1270,9 @@ def memory_summarize_session(
 
     # Store as high-importance session summary
     cursor.execute("""
-        INSERT INTO memories (content, summary, project, tags, importance, memory_type)
-        VALUES (?, ?, ?, ?, ?, ?)
-    """, (full_content, summary[:200], project, json.dumps(["session-summary"]), 9, "context"))
+        INSERT INTO memories (content, summary, project, tags, importance, memory_type, user_id)
+        VALUES (?, ?, ?, ?, ?, ?, ?)
+    """, (full_content, summary[:200], project, json.dumps(["session-summary"]), 9, "context", user_id))
 
     session_id = cursor.lastrowid
 
@@ -1142,16 +1280,16 @@ def memory_summarize_session(
     if decisions_made:
         for decision in decisions_made:
             cursor.execute("""
-                INSERT INTO memories (content, project, tags, importance, memory_type)
-                VALUES (?, ?, ?, ?, ?)
-            """, (decision, project, json.dumps(["from-session", str(session_id)]), 8, "decision"))
+                INSERT INTO memories (content, project, tags, importance, memory_type, user_id)
+                VALUES (?, ?, ?, ?, ?, ?)
+            """, (decision, project, json.dumps(["from-session", str(session_id)]), 8, "decision", user_id))
 
     # Update project last accessed
     cursor.execute("""
-        INSERT INTO projects (name, last_accessed)
-        VALUES (?, CURRENT_TIMESTAMP)
-        ON CONFLICT(name) DO UPDATE SET last_accessed = CURRENT_TIMESTAMP
-    """, (project,))
+        INSERT INTO projects (name, last_accessed, user_id)
+        VALUES (?, CURRENT_TIMESTAMP, ?)
+        ON CONFLICT(name, user_id) DO UPDATE SET last_accessed = CURRENT_TIMESTAMP
+    """, (project, user_id))
 
     conn.commit()
     conn.close()
@@ -1184,6 +1322,9 @@ def memory_store_correction(
     conn = get_db()
     cursor = conn.cursor()
 
+    # Get current user for isolation
+    user_id = get_current_user()
+
     # Build correction content
     content = f"""## Correction Record
 
@@ -1205,15 +1346,16 @@ def memory_store_correction(
 
     # Store with maximum importance - corrections are critical
     cursor.execute("""
-        INSERT INTO memories (content, summary, project, tags, importance, memory_type)
-        VALUES (?, ?, ?, ?, ?, ?)
+        INSERT INTO memories (content, summary, project, tags, importance, memory_type, user_id)
+        VALUES (?, ?, ?, ?, ?, ?, ?)
     """, (
         content,
         f"CORRECTION: {what_was_wrong[:100]}",
         project,
         json.dumps(tags),
         10,  # Maximum importance
-        "error"  # Using error type for corrections
+        "error",  # Using error type for corrections
+        user_id
     ))
 
     correction_id = cursor.lastrowid
@@ -1244,13 +1386,17 @@ def memory_get_corrections(
     conn = get_db()
     cursor = conn.cursor()
 
+    # Get current user for isolation
+    user_id = get_current_user()
+
     sql = """
         SELECT id, content, project, tags, created_at
         FROM memories
         WHERE memory_type = 'error'
         AND tags LIKE '%correction%'
+        AND user_id = ?
     """
-    params = []
+    params = [user_id]
 
     if project:
         sql += " AND project = ?"
@@ -1302,13 +1448,16 @@ def memory_smart_context(
     conn = get_db()
     cursor = conn.cursor()
 
+    # Get current user for isolation
+    user_id = get_current_user()
+
     output = ["# Smart Context Load\n"]
 
     # Detect project from directory
     detected_project = None
     if current_directory:
         # Try to match directory to known projects
-        cursor.execute("SELECT name FROM projects ORDER BY last_accessed DESC")
+        cursor.execute("SELECT name FROM projects WHERE user_id = ? ORDER BY last_accessed DESC", (user_id,))
         projects = cursor.fetchall()
         for proj in projects:
             if proj['name'] and proj['name'] in current_directory:
@@ -1322,9 +1471,9 @@ def memory_smart_context(
     if include_corrections:
         cursor.execute("""
             SELECT content, created_at FROM memories
-            WHERE memory_type = 'error' AND tags LIKE '%correction%'
+            WHERE memory_type = 'error' AND tags LIKE '%correction%' AND user_id = ?
             ORDER BY created_at DESC LIMIT 5
-        """)
+        """, (user_id,))
         corrections = cursor.fetchall()
 
         if corrections:
@@ -1348,8 +1497,9 @@ def memory_smart_context(
             WHERE memory_type = 'context'
             AND tags LIKE '%session-summary%'
             AND content LIKE '%### Next Steps%'
+            AND user_id = ?
             ORDER BY created_at DESC LIMIT 3
-        """)
+        """, (user_id,))
         unfinished = cursor.fetchall()
 
         if unfinished:
@@ -1366,11 +1516,11 @@ def memory_smart_context(
 
     # Load recent high-importance memories
     if include_recent:
-        params = []
+        params = [user_id]
         sql = """
             SELECT content, project, memory_type, importance, created_at
             FROM memories
-            WHERE importance >= 7
+            WHERE importance >= 7 AND user_id = ?
         """
         if detected_project:
             sql += " AND project = ?"
@@ -1418,6 +1568,9 @@ def memory_find_patterns(
     conn = get_db()
     cursor = conn.cursor()
 
+    # Get current user for isolation
+    user_id = get_current_user()
+
     output = [f"# Pattern Analysis ({pattern_type})\n"]
 
     # Find correction patterns (recurring errors)
@@ -1427,8 +1580,9 @@ def memory_find_patterns(
             FROM memories
             WHERE memory_type = 'error'
             AND created_at > datetime('now', ?)
+            AND user_id = ?
         """
-        params = [f'-{time_range_days} days']
+        params = [f'-{time_range_days} days', user_id]
 
         if project:
             sql += " AND project = ?"
@@ -1476,8 +1630,9 @@ def memory_find_patterns(
             FROM memories
             WHERE memory_type = 'decision'
             AND created_at > datetime('now', ?)
+            AND user_id = ?
         """
-        params = [f'-{time_range_days} days']
+        params = [f'-{time_range_days} days', user_id]
 
         if project:
             sql += " AND project = ?"
@@ -1511,8 +1666,9 @@ def memory_find_patterns(
             FROM memories
             WHERE tags LIKE '%session-summary%'
             AND created_at > datetime('now', ?)
+            AND user_id = ?
         """
-        params = [f'-{time_range_days} days']
+        params = [f'-{time_range_days} days', user_id]
 
         if project:
             sql += " AND project = ?"
@@ -1577,7 +1733,11 @@ def memory_compact(
     conn = get_db()
     cursor = conn.cursor()
 
+    # Get current user for isolation - only compact user's own memories
+    user_id = get_current_user()
+
     output = [f"# Memory Compaction {'(DRY RUN)' if dry_run else 'Report'}\n"]
+    output.append(f"**User**: {user_id}\n")
     total_removed = 0
 
     # Remove expired memories
@@ -1587,7 +1747,8 @@ def memory_compact(
             FROM memories
             WHERE expires_at IS NOT NULL
             AND expires_at < datetime('now')
-        """)
+            AND user_id = ?
+        """, (user_id,))
         expired = cursor.fetchall()
 
         if expired:
@@ -1600,7 +1761,8 @@ def memory_compact(
                     DELETE FROM memories
                     WHERE expires_at IS NOT NULL
                     AND expires_at < datetime('now')
-                """)
+                    AND user_id = ?
+                """, (user_id,))
                 total_removed += cursor.rowcount
             output.append("")
 
@@ -1613,7 +1775,8 @@ def memory_compact(
             AND created_at < datetime('now', ?)
             AND verified = 0
             AND memory_type NOT IN ('correction', 'error')
-        """, (min_importance_threshold, f'-{older_than_days} days'))
+            AND user_id = ?
+        """, (min_importance_threshold, f'-{older_than_days} days', user_id))
         low_importance = cursor.fetchall()
 
         if low_importance:
@@ -1628,7 +1791,8 @@ def memory_compact(
                     AND created_at < datetime('now', ?)
                     AND verified = 0
                     AND memory_type NOT IN ('correction', 'error')
-                """, (min_importance_threshold, f'-{older_than_days} days'))
+                    AND user_id = ?
+                """, (min_importance_threshold, f'-{older_than_days} days', user_id))
                 total_removed += cursor.rowcount
             output.append("")
 
@@ -1662,13 +1826,16 @@ def memory_verify(
     conn = get_db()
     cursor = conn.cursor()
 
+    # Get current user for isolation - only verify user's own memories
+    user_id = get_current_user()
+
     cursor.execute("""
-        UPDATE memories SET verified = ? WHERE id = ?
-    """, (1 if verified else 0, memory_id))
+        UPDATE memories SET verified = ? WHERE id = ? AND user_id = ?
+    """, (1 if verified else 0, memory_id, user_id))
 
     if cursor.rowcount == 0:
         conn.close()
-        return f"Memory ID {memory_id} not found"
+        return f"Memory ID {memory_id} not found (or belongs to another user)"
 
     conn.commit()
     conn.close()
@@ -1965,6 +2132,726 @@ def memory_store_enhanced(
             engram.invalidate_cache()
 
     return result
+
+
+# ============================================================================
+# SELF-IMPROVEMENT LOOP TOOLS
+# ============================================================================
+
+# Patterns that indicate user is correcting Claude
+CORRECTION_PATTERNS = [
+    "no that's wrong", "that's incorrect", "actually,", "no, i meant",
+    "i told you", "not what i", "you forgot", "that's not right",
+    "wrong approach", "you should have", "the correct way", "mistake",
+    "you misunderstood", "let me clarify", "that's not how", "don't do that"
+]
+
+
+def detect_correction_intent(user_message: str) -> bool:
+    """
+    Detect if a user message indicates they're correcting Claude.
+
+    Args:
+        user_message: The user's message text
+
+    Returns:
+        True if correction intent detected
+    """
+    message_lower = user_message.lower()
+    return any(pattern in message_lower for pattern in CORRECTION_PATTERNS)
+
+
+@mcp.tool()
+def memory_check_before_action(
+    planned_action: str,
+    action_context: str = None
+) -> str:
+    """
+    Check if any stored correction applies before taking an action.
+    Call this BEFORE major actions to avoid repeating known mistakes.
+
+    Args:
+        planned_action: Description of what Claude is about to do
+        action_context: Additional context about the situation
+
+    Returns:
+        Warning if relevant correction found, or clearance to proceed
+    """
+    conn = get_db()
+    cursor = conn.cursor()
+
+    user_id = get_current_user()
+
+    # Get all corrections for this user
+    cursor.execute("""
+        SELECT id, content, project, created_at, times_surfaced, times_helped
+        FROM memories
+        WHERE memory_type = 'error'
+        AND tags LIKE '%correction%'
+        AND user_id = ?
+        ORDER BY created_at DESC
+    """, (user_id,))
+
+    corrections = cursor.fetchall()
+
+    if not corrections:
+        conn.close()
+        return "No corrections on file. Proceed with action."
+
+    # Check each correction for relevance using keyword matching
+    planned_lower = planned_action.lower()
+    context_lower = (action_context or "").lower()
+    combined = f"{planned_lower} {context_lower}"
+
+    relevant_corrections = []
+
+    for corr in corrections:
+        content_lower = corr['content'].lower()
+
+        # Extract key terms from correction
+        # Look for overlap in significant words
+        corr_words = set(w for w in content_lower.split() if len(w) > 4)
+        action_words = set(w for w in combined.split() if len(w) > 4)
+
+        overlap = corr_words & action_words
+
+        if len(overlap) >= 3:  # At least 3 significant words match
+            relevant_corrections.append((corr, len(overlap)))
+
+            # Increment times_surfaced
+            cursor.execute("""
+                UPDATE memories
+                SET times_surfaced = times_surfaced + 1,
+                    last_tested = CURRENT_TIMESTAMP
+                WHERE id = ?
+            """, (corr['id'],))
+
+    conn.commit()
+    conn.close()
+
+    if not relevant_corrections:
+        return "No relevant corrections found. Proceed with action."
+
+    # Sort by relevance (overlap count)
+    relevant_corrections.sort(key=lambda x: x[1], reverse=True)
+
+    output = ["# ⚠️ RELEVANT CORRECTIONS FOUND\n"]
+    output.append("**Review before proceeding:**\n")
+
+    for corr, overlap_count in relevant_corrections[:3]:  # Top 3
+        output.append(f"---")
+        output.append(f"**Correction ID {corr['id']}** (relevance: {overlap_count} keywords)")
+        output.append(f"Project: {corr['project'] or 'general'}")
+        output.append(f"Surfaced {corr['times_surfaced']} times, helped {corr['times_helped']} times")
+        output.append(f"\n{corr['content'][:500]}...")
+        output.append("")
+
+    output.append("\n**Action:** Review corrections above. If they apply, adjust approach.")
+    output.append("If proceeding anyway, call `memory_correction_helped(id, False)` if it causes issues.")
+
+    return '\n'.join(output)
+
+
+@mcp.tool()
+def memory_correction_helped(
+    correction_id: int,
+    helped: bool,
+    notes: str = None
+) -> str:
+    """
+    Record whether a surfaced correction actually helped avoid a mistake.
+    This feedback improves the self-improvement loop.
+
+    Args:
+        correction_id: ID of the correction that was surfaced
+        helped: True if the correction prevented a mistake, False if not relevant
+        notes: Optional notes about why it helped or didn't
+
+    Returns:
+        Confirmation and updated effectiveness score
+    """
+    conn = get_db()
+    cursor = conn.cursor()
+
+    user_id = get_current_user()
+
+    # Verify correction exists and belongs to user
+    cursor.execute("""
+        SELECT times_surfaced, times_helped, effectiveness_score
+        FROM memories
+        WHERE id = ? AND user_id = ? AND memory_type = 'error'
+    """, (correction_id, user_id))
+
+    result = cursor.fetchone()
+    if not result:
+        conn.close()
+        return f"Correction {correction_id} not found"
+
+    times_surfaced = result['times_surfaced'] or 1
+    times_helped = (result['times_helped'] or 0) + (1 if helped else 0)
+
+    # Calculate new effectiveness score
+    effectiveness = times_helped / max(times_surfaced, 1)
+
+    cursor.execute("""
+        UPDATE memories
+        SET times_helped = ?,
+            effectiveness_score = ?,
+            last_tested = CURRENT_TIMESTAMP
+        WHERE id = ?
+    """, (times_helped, effectiveness, correction_id))
+
+    # If notes provided, append to content
+    if notes:
+        cursor.execute("SELECT content FROM memories WHERE id = ?", (correction_id,))
+        current_content = cursor.fetchone()['content']
+        timestamp = datetime.now().isoformat()
+        updated_content = f"{current_content}\n\n---\n**Feedback ({timestamp})**: {'Helped' if helped else 'Not relevant'} - {notes}"
+        cursor.execute("UPDATE memories SET content = ? WHERE id = ?", (updated_content, correction_id))
+
+    conn.commit()
+    conn.close()
+
+    return f"Correction {correction_id} feedback recorded. Effectiveness: {effectiveness:.0%} ({times_helped}/{times_surfaced})"
+
+
+@mcp.tool()
+def memory_log_avoided_mistake(
+    what_almost_happened: str,
+    how_avoided: str,
+    correction_id: int = None,
+    project: str = None
+) -> str:
+    """
+    Log when Claude successfully avoided a known mistake.
+    This creates positive reinforcement in the learning loop.
+
+    Args:
+        what_almost_happened: The mistake that was almost made
+        how_avoided: How the mistake was caught/avoided
+        correction_id: ID of correction that helped (if any)
+        project: Related project
+
+    Returns:
+        Confirmation of success logging
+    """
+    conn = get_db()
+    cursor = conn.cursor()
+
+    user_id = get_current_user()
+
+    # Build success record
+    content = f"""## Mistake Avoided (Success Log)
+
+### What Almost Happened:
+{what_almost_happened}
+
+### How It Was Avoided:
+{how_avoided}
+
+### Related Correction ID: {correction_id or 'None'}
+"""
+
+    tags = ["success-log", "avoided-mistake", "self-improvement"]
+
+    cursor.execute("""
+        INSERT INTO memories (content, summary, project, tags, importance, memory_type, user_id, source)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+    """, (
+        content,
+        f"AVOIDED: {what_almost_happened[:100]}",
+        project,
+        json.dumps(tags),
+        7,  # High importance for successes
+        "outcome",
+        user_id,
+        "auto"
+    ))
+
+    success_id = cursor.lastrowid
+
+    # If correction_id provided, mark it as helped and link
+    if correction_id:
+        cursor.execute("""
+            UPDATE memories
+            SET times_helped = times_helped + 1,
+                effectiveness_score = CAST(times_helped + 1 AS REAL) / MAX(times_surfaced, 1),
+                last_tested = CURRENT_TIMESTAMP
+            WHERE id = ? AND user_id = ?
+        """, (correction_id, user_id))
+
+        # Create relationship link
+        try:
+            cursor.execute("""
+                INSERT INTO memory_relationships (source_id, target_id, relationship_type, notes)
+                VALUES (?, ?, 'supports', 'Success resulted from this correction')
+            """, (success_id, correction_id))
+        except:
+            pass  # Relationship may already exist
+
+    conn.commit()
+    conn.close()
+
+    return f"Success logged (ID: {success_id}). Learning loop reinforced!"
+
+
+@mcp.tool()
+def memory_auto_capture_correction(
+    user_message: str,
+    claude_mistake: str,
+    correct_approach: str,
+    project: str = None
+) -> str:
+    """
+    Automatically capture a correction detected from conversation.
+    Called when correction intent is detected in user message.
+
+    Args:
+        user_message: The user's corrective message
+        claude_mistake: What Claude did wrong
+        correct_approach: The right way to handle it
+        project: Related project
+
+    Returns:
+        Confirmation of auto-captured correction
+    """
+    # Delegate to existing correction storage
+    return memory_store_correction(
+        what_claude_said=claude_mistake,
+        what_was_wrong=f"User correction: {user_message}",
+        correct_approach=correct_approach,
+        project=project,
+        category="auto-detected"
+    )
+
+
+@mcp.tool()
+def memory_synthesize_patterns() -> str:
+    """
+    Analyze all corrections to find root causes and patterns.
+    Generates meta-learnings from accumulated mistakes.
+
+    Returns:
+        Analysis of correction patterns with recommendations
+    """
+    conn = get_db()
+    cursor = conn.cursor()
+
+    user_id = get_current_user()
+
+    # Get all corrections
+    cursor.execute("""
+        SELECT id, content, project, tags, created_at,
+               times_surfaced, times_helped, effectiveness_score
+        FROM memories
+        WHERE memory_type = 'error'
+        AND tags LIKE '%correction%'
+        AND user_id = ?
+        ORDER BY created_at DESC
+    """, (user_id,))
+
+    corrections = cursor.fetchall()
+    conn.close()
+
+    if not corrections:
+        return "No corrections found to analyze."
+
+    output = [f"# Correction Pattern Analysis\n"]
+    output.append(f"**Total Corrections:** {len(corrections)}\n")
+
+    # Analyze by category
+    categories = {}
+    projects = {}
+    effective = []
+    ineffective = []
+
+    for corr in corrections:
+        # Parse tags
+        tags = json.loads(corr['tags']) if corr['tags'] else []
+        for tag in tags:
+            if tag not in ['correction', 'high-priority']:
+                categories[tag] = categories.get(tag, 0) + 1
+
+        # Track by project
+        proj = corr['project'] or 'general'
+        projects[proj] = projects.get(proj, 0) + 1
+
+        # Track effectiveness
+        eff = corr['effectiveness_score'] or 0
+        if eff > 0.5:
+            effective.append(corr)
+        elif corr['times_surfaced'] and corr['times_surfaced'] > 2 and eff < 0.3:
+            ineffective.append(corr)
+
+    # Category breakdown
+    if categories:
+        output.append("## By Category")
+        for cat, count in sorted(categories.items(), key=lambda x: -x[1]):
+            output.append(f"- **{cat}**: {count} corrections")
+        output.append("")
+
+    # Project breakdown
+    output.append("## By Project")
+    for proj, count in sorted(projects.items(), key=lambda x: -x[1])[:5]:
+        output.append(f"- **{proj}**: {count} corrections")
+    output.append("")
+
+    # Effectiveness insights
+    output.append("## Effectiveness Analysis")
+    output.append(f"- **Effective corrections (>50% help rate):** {len(effective)}")
+    output.append(f"- **Potentially outdated (<30% help rate, surfaced 3+ times):** {len(ineffective)}")
+    output.append("")
+
+    # Pattern detection - look for common words
+    all_content = ' '.join(c['content'].lower() for c in corrections)
+    words = all_content.split()
+
+    # Find action words that appear frequently
+    action_words = ['guess', 'assume', 'skip', 'forget', 'ignore', 'wrong',
+                    'incorrect', 'miss', 'overlook', 'confuse']
+    word_freq = {}
+    for word in action_words:
+        count = words.count(word)
+        if count > 0:
+            word_freq[word] = count
+
+    if word_freq:
+        output.append("## Common Mistake Patterns")
+        for word, count in sorted(word_freq.items(), key=lambda x: -x[1]):
+            if count >= 2:
+                output.append(f"- Claude tends to **{word}** things ({count} mentions)")
+        output.append("")
+
+    # Recommendations
+    output.append("## Recommendations")
+
+    if 'workflow' in categories and categories['workflow'] > 3:
+        output.append("- **Process Issue**: Many workflow corrections. Consider creating checklists.")
+
+    if 'code' in categories and categories['code'] > 3:
+        output.append("- **Code Quality**: Multiple code corrections. Run more pre-action checks.")
+
+    if ineffective:
+        output.append(f"- **Cleanup**: {len(ineffective)} corrections may be outdated. Review and archive.")
+
+    if len(corrections) > 20:
+        output.append("- **Pattern**: Large correction history. Consider generating meta-corrections.")
+
+    return '\n'.join(output)
+
+
+@mcp.tool()
+def memory_get_improvement_stats() -> str:
+    """
+    Get statistics on the self-improvement loop performance.
+
+    Returns:
+        Metrics on learning effectiveness
+    """
+    conn = get_db()
+    cursor = conn.cursor()
+
+    user_id = get_current_user()
+
+    # Correction stats
+    cursor.execute("""
+        SELECT
+            COUNT(*) as total_corrections,
+            SUM(times_surfaced) as total_surfaced,
+            SUM(times_helped) as total_helped,
+            AVG(effectiveness_score) as avg_effectiveness
+        FROM memories
+        WHERE memory_type = 'error'
+        AND tags LIKE '%correction%'
+        AND user_id = ?
+    """, (user_id,))
+
+    corr_stats = cursor.fetchone()
+
+    # Success logs
+    cursor.execute("""
+        SELECT COUNT(*) as success_count
+        FROM memories
+        WHERE memory_type = 'outcome'
+        AND tags LIKE '%avoided-mistake%'
+        AND user_id = ?
+    """, (user_id,))
+
+    success_count = cursor.fetchone()['success_count']
+
+    # Recent corrections (last 30 days)
+    cursor.execute("""
+        SELECT COUNT(*) as recent
+        FROM memories
+        WHERE memory_type = 'error'
+        AND tags LIKE '%correction%'
+        AND created_at > datetime('now', '-30 days')
+        AND user_id = ?
+    """, (user_id,))
+
+    recent = cursor.fetchone()['recent']
+
+    # Corrections with feedback
+    cursor.execute("""
+        SELECT COUNT(*) as with_feedback
+        FROM memories
+        WHERE memory_type = 'error'
+        AND tags LIKE '%correction%'
+        AND times_surfaced > 0
+        AND user_id = ?
+    """, (user_id,))
+
+    with_feedback = cursor.fetchone()['with_feedback']
+
+    conn.close()
+
+    total = corr_stats['total_corrections'] or 0
+    surfaced = corr_stats['total_surfaced'] or 0
+    helped = corr_stats['total_helped'] or 0
+    avg_eff = corr_stats['avg_effectiveness'] or 0
+
+    output = ["# Self-Improvement Loop Statistics\n"]
+
+    output.append("## Corrections")
+    output.append(f"- **Total Corrections:** {total}")
+    output.append(f"- **Last 30 Days:** {recent}")
+    output.append(f"- **With Feedback:** {with_feedback}")
+    output.append("")
+
+    output.append("## Effectiveness")
+    output.append(f"- **Times Surfaced:** {surfaced}")
+    output.append(f"- **Times Helped:** {helped}")
+    output.append(f"- **Average Effectiveness:** {avg_eff:.1%}")
+    output.append("")
+
+    output.append("## Positive Reinforcement")
+    output.append(f"- **Mistakes Avoided (logged):** {success_count}")
+    output.append("")
+
+    # Calculate learning velocity
+    if total > 0:
+        learning_rate = helped / max(surfaced, 1)
+        output.append("## Learning Metrics")
+        output.append(f"- **Learning Rate:** {learning_rate:.1%} (corrections that help)")
+
+        if success_count > 0:
+            output.append(f"- **Reinforcement Ratio:** {success_count/total:.1f}x (successes per correction)")
+
+    return '\n'.join(output)
+
+
+@mcp.tool()
+def memory_decay_corrections(
+    dry_run: bool = True,
+    surfaced_threshold: int = 5,
+    decay_amount: int = 1
+) -> str:
+    """
+    Decay importance of corrections that aren't helping.
+
+    Corrections that have been surfaced multiple times but never marked
+    as helpful should have their importance reduced over time.
+
+    Args:
+        dry_run: If True, only report what would be decayed
+        surfaced_threshold: Corrections surfaced this many times with 0 helps get decayed
+        decay_amount: How much to reduce importance by
+
+    Returns:
+        Report of decayed corrections
+    """
+    user_id = get_current_user()
+    conn = sqlite3.connect(DB_PATH)
+    conn.row_factory = sqlite3.Row
+    cursor = conn.cursor()
+
+    # Find corrections that have been surfaced multiple times but never helped
+    cursor.execute("""
+        SELECT id, summary, importance, times_surfaced, times_helped, project
+        FROM memories
+        WHERE user_id = ?
+          AND memory_type = 'correction'
+          AND times_surfaced >= ?
+          AND (times_helped IS NULL OR times_helped = 0)
+          AND importance > 1
+        ORDER BY times_surfaced DESC
+    """, (user_id, surfaced_threshold))
+
+    candidates = cursor.fetchall()
+
+    output = ["# Correction Decay Analysis\n"]
+
+    if not candidates:
+        output.append("No corrections need decay. All frequently-surfaced corrections are helping!")
+        conn.close()
+        return '\n'.join(output)
+
+    output.append(f"**Found {len(candidates)} corrections to decay:**\n")
+
+    decayed = []
+    for row in candidates:
+        cid, summary, importance, surfaced, helped, project = row
+        new_importance = max(1, importance - decay_amount)
+
+        output.append(f"- **ID {cid}** ({project or 'no project'})")
+        output.append(f"  - Summary: {(summary or '')[:60]}...")
+        output.append(f"  - Surfaced {surfaced}x, helped {helped or 0}x")
+        output.append(f"  - Importance: {importance} → {new_importance}")
+        output.append("")
+
+        if not dry_run:
+            cursor.execute("""
+                UPDATE memories
+                SET importance = ?
+                WHERE id = ?
+            """, (new_importance, cid))
+            decayed.append(cid)
+
+    if dry_run:
+        output.append("---")
+        output.append("**Dry run - no changes made.** Call with `dry_run=False` to apply.")
+    else:
+        conn.commit()
+        output.append("---")
+        output.append(f"**Decayed {len(decayed)} corrections.**")
+
+    conn.close()
+    return '\n'.join(output)
+
+
+@mcp.tool()
+def memory_archive_old_corrections(
+    dry_run: bool = True,
+    days_old: int = 90,
+    max_effectiveness: float = 0.3
+) -> str:
+    """
+    Archive old, low-effectiveness corrections.
+
+    Moves corrections that are old and haven't been effective to an
+    'archived' type so they don't clutter active correction checks.
+
+    Args:
+        dry_run: If True, only report what would be archived
+        days_old: Archive corrections older than this many days
+        max_effectiveness: Only archive if effectiveness is below this
+
+    Returns:
+        Report of archived corrections
+    """
+    user_id = get_current_user()
+    conn = sqlite3.connect(DB_PATH)
+    conn.row_factory = sqlite3.Row
+    cursor = conn.cursor()
+
+    # Find old, low-effectiveness corrections
+    cursor.execute("""
+        SELECT id, summary, importance, times_surfaced, effectiveness_score,
+               project, created_at
+        FROM memories
+        WHERE user_id = ?
+          AND memory_type = 'correction'
+          AND created_at < datetime('now', ?)
+          AND (effectiveness_score IS NULL OR effectiveness_score < ?)
+          AND times_surfaced > 0
+        ORDER BY created_at ASC
+    """, (user_id, f'-{days_old} days', max_effectiveness))
+
+    candidates = cursor.fetchall()
+
+    output = ["# Correction Archive Analysis\n"]
+
+    if not candidates:
+        output.append("No corrections qualify for archival.")
+        output.append(f"(Checked: >{days_old} days old, <{max_effectiveness:.0%} effectiveness)")
+        conn.close()
+        return '\n'.join(output)
+
+    output.append(f"**Found {len(candidates)} corrections to archive:**\n")
+
+    archived = []
+    for row in candidates:
+        cid, summary, importance, surfaced, effectiveness, project, created = row
+
+        output.append(f"- **ID {cid}** ({project or 'no project'})")
+        output.append(f"  - Created: {created[:10] if created else 'unknown'}")
+        output.append(f"  - Summary: {(summary or '')[:60]}...")
+        output.append(f"  - Effectiveness: {(effectiveness or 0):.0%}")
+        output.append("")
+
+        if not dry_run:
+            cursor.execute("""
+                UPDATE memories
+                SET memory_type = 'archived_correction'
+                WHERE id = ?
+            """, (cid,))
+            archived.append(cid)
+
+    if dry_run:
+        output.append("---")
+        output.append("**Dry run - no changes made.** Call with `dry_run=False` to apply.")
+    else:
+        conn.commit()
+        output.append("---")
+        output.append(f"**Archived {len(archived)} corrections.**")
+        output.append("Archived corrections won't appear in correction checks but remain in database.")
+
+    conn.close()
+    return '\n'.join(output)
+
+
+@mcp.tool()
+def memory_retire_correction(
+    correction_id: int,
+    reason: str = "learned"
+) -> str:
+    """
+    Manually retire a correction that has been fully learned.
+
+    Use this when a correction is no longer relevant because:
+    - The lesson has been fully internalized
+    - The codebase/project has changed
+    - The correction was wrong or outdated
+
+    Args:
+        correction_id: ID of the correction to retire
+        reason: Why retiring (learned, outdated, wrong, not_applicable)
+
+    Returns:
+        Confirmation message
+    """
+    user_id = get_current_user()
+    conn = sqlite3.connect(DB_PATH)
+    conn.row_factory = sqlite3.Row
+    cursor = conn.cursor()
+
+    # Verify correction exists and belongs to user
+    cursor.execute("""
+        SELECT id, summary, memory_type FROM memories
+        WHERE id = ? AND user_id = ?
+    """, (correction_id, user_id))
+
+    row = cursor.fetchone()
+    if not row:
+        conn.close()
+        return f"Correction {correction_id} not found or doesn't belong to you."
+
+    if row['memory_type'] != 'correction':
+        conn.close()
+        return f"Memory {correction_id} is not a correction (type: {row['memory_type']})"
+
+    # Retire the correction
+    cursor.execute("""
+        UPDATE memories
+        SET memory_type = 'retired_correction',
+            content = content || '\n\n---\nRetired: ' || datetime('now') || '\nReason: ' || ?
+        WHERE id = ?
+    """, (reason, correction_id))
+
+    conn.commit()
+    conn.close()
+
+    return f"Correction {correction_id} retired (reason: {reason}). It will no longer appear in correction checks."
 
 
 if __name__ == "__main__":
