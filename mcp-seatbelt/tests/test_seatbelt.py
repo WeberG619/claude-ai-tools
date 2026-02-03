@@ -192,6 +192,73 @@ class TestValidator(TestCase):
         )
         self.assertEqual(result.action, "block")
 
+    def test_universal_block_ssh_path(self):
+        """Should block .ssh directory access."""
+        policy = Policy(pattern="test", action="log_only")
+
+        result = self.validator.validate(
+            "test_tool",
+            {"file_path": "C:\\Users\\test\\.ssh\\id_rsa"},
+            policy
+        )
+        self.assertEqual(result.action, "block")
+
+    def test_universal_block_ssh_path_unix(self):
+        """Should block .ssh directory access (Unix paths)."""
+        policy = Policy(pattern="test", action="log_only")
+
+        result = self.validator.validate(
+            "test_tool",
+            {"path": "/home/user/.ssh/authorized_keys"},
+            policy
+        )
+        self.assertEqual(result.action, "block")
+
+    def test_universal_block_aws_credentials(self):
+        """Should block .aws directory access."""
+        policy = Policy(pattern="test", action="log_only")
+
+        result = self.validator.validate(
+            "test_tool",
+            {"file": "C:\\Users\\test\\.aws\\credentials"},
+            policy
+        )
+        self.assertEqual(result.action, "block")
+
+    def test_universal_block_credentials_json(self):
+        """Should block credentials.json files."""
+        policy = Policy(pattern="test", action="log_only")
+
+        result = self.validator.validate(
+            "test_tool",
+            {"output": "D:\\backup\\credentials.json"},
+            policy
+        )
+        self.assertEqual(result.action, "block")
+
+    def test_universal_block_pem_files(self):
+        """Should block .pem key files."""
+        policy = Policy(pattern="test", action="log_only")
+
+        result = self.validator.validate(
+            "test_tool",
+            {"key_file": "/etc/ssl/private/server.pem"},
+            policy
+        )
+        self.assertEqual(result.action, "block")
+
+    def test_universal_block_private_key_names(self):
+        """Should block files named id_rsa, id_ed25519, etc."""
+        policy = Policy(pattern="test", action="log_only")
+
+        for key_name in ["id_rsa", "id_ed25519", "id_ecdsa"]:
+            result = self.validator.validate(
+                "test_tool",
+                {"file": f"/tmp/{key_name}"},
+                policy
+            )
+            self.assertEqual(result.action, "block", f"Failed to block {key_name}")
+
     def test_redact_sensitive(self):
         """Should redact sensitive fields in logs."""
         result = self.validator.validate(
@@ -401,6 +468,91 @@ class TestIntegration(TestCase):
         result = validator.validate(
             "mcp__git__execute",
             {"command": "push --force origin main"},
+            policy
+        )
+
+        self.assertEqual(result.action, "block")
+
+    def test_sql_set_password_blocked(self):
+        """SQL SET password should be blocked."""
+        engine = PolicyEngine()
+        validator = Validator()
+
+        policy = engine.get_policy("mcp__sqlite-server__write_query")
+        result = validator.validate(
+            "mcp__sqlite-server__write_query",
+            {"query": "UPDATE users SET password = 'hacked'"},
+            policy
+        )
+
+        self.assertEqual(result.action, "block")
+
+    def test_sql_set_api_key_blocked(self):
+        """SQL SET api_key should be blocked."""
+        engine = PolicyEngine()
+        validator = Validator()
+
+        policy = engine.get_policy("mcp__sqlite-server__write_query")
+        result = validator.validate(
+            "mcp__sqlite-server__write_query",
+            {"query": "UPDATE config SET api_key = 'stolen'"},
+            policy
+        )
+
+        self.assertEqual(result.action, "block")
+
+    def test_sql_set_token_blocked(self):
+        """SQL SET token should be blocked."""
+        engine = PolicyEngine()
+        validator = Validator()
+
+        policy = engine.get_policy("mcp__sqlite-server__write_query")
+        result = validator.validate(
+            "mcp__sqlite-server__write_query",
+            {"query": "UPDATE sessions SET token = 'hijacked'"},
+            policy
+        )
+
+        self.assertEqual(result.action, "block")
+
+    def test_sql_normal_update_allowed(self):
+        """Normal SQL UPDATE should be allowed."""
+        engine = PolicyEngine()
+        validator = Validator()
+
+        policy = engine.get_policy("mcp__sqlite-server__write_query")
+        result = validator.validate(
+            "mcp__sqlite-server__write_query",
+            {"query": "UPDATE users SET name = 'John'"},
+            policy
+        )
+
+        # Should not be blocked (log_only is the default)
+        self.assertNotEqual(result.action, "block")
+
+    def test_ssh_path_in_excel_blocked(self):
+        """SSH path in Excel import should be blocked."""
+        engine = PolicyEngine()
+        validator = Validator()
+
+        policy = engine.get_policy("mcp__excel-mcp__import_csv")
+        result = validator.validate(
+            "mcp__excel-mcp__import_csv",
+            {"file_path": "C:\\Users\\test\\.ssh\\id_rsa"},
+            policy
+        )
+
+        self.assertEqual(result.action, "block")
+
+    def test_credentials_file_in_excel_blocked(self):
+        """credentials.json in Excel export should be blocked."""
+        engine = PolicyEngine()
+        validator = Validator()
+
+        policy = engine.get_policy("mcp__excel-mcp__export_csv")
+        result = validator.validate(
+            "mcp__excel-mcp__export_csv",
+            {"file_path": "D:\\backup\\credentials.json"},
             policy
         )
 

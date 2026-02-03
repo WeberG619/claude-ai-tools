@@ -6,9 +6,10 @@ Exit codes:
   0 = Allow the tool call
   2 = Block the tool call (Claude sees rejection message)
 
-Environment variables (set by Claude Code):
-  CLAUDE_TOOL_NAME  - The tool being called (e.g., mcp__whatsapp__send_message)
-  CLAUDE_TOOL_INPUT - JSON string of parameters
+Input: Claude Code passes JSON via stdin with:
+  - tool_name: The tool being called (e.g., mcp__whatsapp__send_message)
+  - tool_input: Object with tool parameters
+  - session_id: Current session ID
 """
 
 import json
@@ -30,22 +31,30 @@ FAIL_OPEN = True
 # Minimum tool prefix to validate
 MCP_PREFIX = "mcp__"
 
+DEBUG_LOG = Path("/mnt/d/_CLAUDE-TOOLS/system-bridge/seatbelt_debug.log")
+
 
 def main():
     """Main entry point for the seatbelt hook."""
-    tool_name = os.environ.get('CLAUDE_TOOL_NAME', '')
-    tool_input_raw = os.environ.get('CLAUDE_TOOL_INPUT', '{}')
-    session_id = os.environ.get('CLAUDE_SESSION_ID', 'unknown')
+    # Read JSON from stdin (Claude Code passes tool info this way)
+    try:
+        stdin_data = sys.stdin.read()
+        hook_input = json.loads(stdin_data) if stdin_data.strip() else {}
+    except json.JSONDecodeError:
+        hook_input = {}
+
+    # Extract tool info from stdin JSON
+    tool_name = hook_input.get('tool_name', '')
+    tool_input = hook_input.get('tool_input', {})
+    session_id = hook_input.get('session_id', 'unknown')
+
+    # Debug: Log every invocation
+    with open(DEBUG_LOG, "a") as f:
+        f.write(f"{tool_name} | {json.dumps(tool_input)[:100]}\n")
 
     # Only process MCP tools
     if not tool_name.startswith(MCP_PREFIX):
         sys.exit(0)
-
-    # Parse tool input
-    try:
-        tool_input = json.loads(tool_input_raw)
-    except json.JSONDecodeError:
-        tool_input = {"_raw": tool_input_raw}
 
     try:
         # Initialize components

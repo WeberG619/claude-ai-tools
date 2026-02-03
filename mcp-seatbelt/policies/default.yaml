@@ -124,6 +124,10 @@ tools:
           - "DROP DATABASE"
           - "TRUNCATE"
           - "DELETE FROM.*WHERE 1"
+          # Gap fix: Block credential modifications
+          - "SET\\s+(password|credential|secret|token|api_key|private_key)"
+          - "UPDATE.*password\\s*="
+          - "INSERT.*password"
 
   mcp__sqlite-server__*:
     risk: 3

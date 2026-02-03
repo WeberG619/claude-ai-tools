@@ -40,6 +40,15 @@ class Validator:
         r':()\{\s*:\|:\s*&\s*\};:',  # Fork bomb
         r'> /dev/sd[a-z]',  # Write to raw disk
         r'dd\s+if=.*of=/dev/',  # DD to device
+        # Gap fix: Sensitive paths
+        r'[/\\]\.ssh[/\\]',  # SSH keys
+        r'[/\\]\.gnupg[/\\]',  # GPG keys
+        r'[/\\]\.aws[/\\]',  # AWS credentials
+        r'[/\\]\.kube[/\\]',  # Kubernetes config
+        r'id_rsa|id_ed25519|id_ecdsa',  # Private keys by name
+        r'\.pem\b',  # .pem key files (word boundary handles quotes)
+        r'private.*\.key\b',  # private .key files
+        r'credentials\.json|secrets\.json',  # Common credential files
     ]
 
     def __init__(self):
