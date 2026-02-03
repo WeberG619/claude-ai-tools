@@ -18,13 +18,19 @@ Usage:
 """
 
 import argparse
+import io
 import json
 import sys
 import re
-from datetime import datetime, timedelta
+from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
 import yaml
+
+# Fix Windows console encoding
+if sys.platform == 'win32':
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
+    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8', errors='replace')
 
 sys.path.insert(0, str(Path(__file__).parent))
 
@@ -140,7 +146,7 @@ def cmd_report(args):
     all_entries = logger.query(limit=1000)
 
     # Filter to last 7 days
-    week_ago = datetime.utcnow() - timedelta(days=7)
+    week_ago = datetime.now(timezone.utc).replace(tzinfo=None) - timedelta(days=7)
     recent = [e for e in all_entries if _parse_ts(e.get('timestamp', '')) > week_ago]
 
     blocked = [e for e in recent if e.get('action') == 'block']
