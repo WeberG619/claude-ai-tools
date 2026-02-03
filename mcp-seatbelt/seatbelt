@@ -1,0 +1,3 @@
+#!/bin/bash
+# Global seatbelt command - run from anywhere
+cd /mnt/d/_CLAUDE-TOOLS/mcp-seatbelt && python3 seatbelt_cli.py "$@"
