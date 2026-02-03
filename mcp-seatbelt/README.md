@@ -26,14 +26,44 @@ cd /mnt/d/_CLAUDE-TOOLS/mcp-seatbelt
 python -m pytest tests/ -v
 ```
 
-### View Audit Log
+## Management CLI
+
+The `seatbelt` command provides full management capabilities:
+
+```bash
+# Statistics and reporting
+seatbelt stats                      # Show statistics with visual charts
+seatbelt recent 20                  # Show last 20 MCP calls
+seatbelt blocked                    # Show all blocked calls
+seatbelt report                     # Generate weekly review report
+
+# Whitelist management (no YAML editing required)
+seatbelt whitelist                  # Show current contacts whitelist
+seatbelt whitelist add bruce@x.com  # Add contact to whitelist
+seatbelt whitelist remove test@x.com # Remove from whitelist
+
+# Policy management
+seatbelt policy excel-mcp           # Show policy for Excel tools
+seatbelt upgrade sqlite-server      # Increase restrictions (log→warn→block)
+seatbelt downgrade whatsapp         # Decrease restrictions (block→warn→log)
+```
+
+### Weekly Reports
+
+Automated weekly reports can be set up:
+
+```powershell
+# Run setup as Administrator (one time)
+powershell -ExecutionPolicy Bypass -File D:\_CLAUDE-TOOLS\mcp-seatbelt\setup_weekly_report.ps1
+```
+
+This creates a scheduled task that runs every Sunday at 10 AM, generating a security report and optionally speaking a summary.
+
+### View Raw Audit Log
 
 ```bash
 # Recent entries
 tail -20 /mnt/d/_CLAUDE-TOOLS/system-bridge/audit.ndjson | jq
-
-# Count by action
-cat /mnt/d/_CLAUDE-TOOLS/system-bridge/audit.ndjson | jq -s 'group_by(.action) | map({action: .[0].action, count: length})'
 
 # Blocked calls only
 cat /mnt/d/_CLAUDE-TOOLS/system-bridge/audit.ndjson | jq 'select(.action == "block")'
@@ -144,6 +174,10 @@ These operations are blocked by default:
 - ❌ Command injection patterns (`;`, `|`, `&`)
 - ❌ Path traversal (`../`)
 - ❌ Fork bombs and disk writes
+- ❌ SQL credential modifications (`SET password`, `SET api_key`, `SET token`)
+- ❌ Sensitive file access (`.ssh/`, `.aws/`, `.gnupg/`, `credentials.json`)
+- ❌ Private key files (`id_rsa`, `id_ed25519`, `.pem`, `.key`)
+- ❌ WhatsApp/email to non-whitelisted recipients
 
 ## File Structure
 
