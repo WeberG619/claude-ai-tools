@@ -1,0 +1,201 @@
+# MCP Seatbelt - Default Security Policies
+# Risk levels: 1-3 (low), 4-6 (medium), 7-8 (high), 9-10 (critical)
+# Actions: allow, block, warn, log_only
+
+# ============================================================
+# GRADUAL ROLLOUT: Week 1-2 is AUDIT ONLY mode
+# All tools default to log_only to gather usage data
+# Review audit.ndjson before enabling blocking
+# ============================================================
+
+tools:
+  # --------------------------------------------------------
+  # CRITICAL RISK (9-10) - Communication & Macros
+  # --------------------------------------------------------
+
+  # WhatsApp - Always log, warn on unknown recipients
+  mcp__whatsapp__whatsapp_send_message:
+    risk: 9
+    action: warn  # Start with warn, upgrade to block after audit
+    description: "WhatsApp messages - verify recipient"
+    rules:
+      - type: recipient_whitelist
+        fields: [contact, to, phone]
+        allowed: ["${SEATBELT_CONTACTS_WHITELIST}"]
+
+  mcp__whatsapp__*:
+    risk: 5
+    action: log_only
+    description: "WhatsApp read operations"
+
+  # Excel VBA Macros - BLOCK by default (dangerous)
+  mcp__excel-mcp__run_macro_tool:
+    risk: 10
+    action: block
+    description: "VBA macro execution blocked - too dangerous"
+
+  # --------------------------------------------------------
+  # HIGH RISK (7-8) - Git & Shell Operations
+  # --------------------------------------------------------
+
+  mcp__git__*:
+    risk: 7
+    action: log_only
+    description: "Git operations via MCP"
+    rules:
+      - type: block_patterns
+        patterns:
+          - "--force"
+          - "reset --hard"
+          - "push.*--delete"
+          - "branch -[dD]"
+          - "clean -f"
+      - type: command_sanitize
+        block_chars: [";", "|", "&", "`", "$"]
+
+  # Autonomous browser - high risk for web actions
+  mcp__autonomous-browser__*:
+    risk: 7
+    action: log_only
+    description: "Autonomous browser operations"
+
+  # --------------------------------------------------------
+  # MEDIUM RISK (4-6) - File & Model Operations
+  # --------------------------------------------------------
+
+  # Revit operations - medium risk, path validation
+  mcp__revit*:
+    risk: 5
+    action: log_only
+    description: "Revit BIM operations"
+    rules:
+      - type: path_validation
+        allowed_roots:
+          - "D:/"
+          - "/mnt/d/"
+          - "C:/Users/"
+        block_traversal: true
+
+  # Excel operations (except macros which are blocked above)
+  mcp__excel-mcp__*:
+    risk: 5
+    action: log_only
+    description: "Excel operations"
+    rules:
+      - type: path_validation
+        allowed_roots:
+          - "D:/"
+          - "/mnt/d/"
+          - "C:/Users/"
+
+  # Word operations
+  mcp__word-mcp__*:
+    risk: 4
+    action: log_only
+    description: "Word document operations"
+
+  # PowerPoint operations
+  mcp__powerpoint-mcp__*:
+    risk: 4
+    action: log_only
+    description: "PowerPoint operations"
+
+  # Bluebeam PDF operations
+  mcp__bluebeam__*:
+    risk: 4
+    action: log_only
+    description: "Bluebeam PDF operations"
+
+  # AutoCAD operations
+  mcp__autocad-mcp__*:
+    risk: 5
+    action: log_only
+    description: "AutoCAD operations"
+
+  # SQLite database operations
+  mcp__sqlite-server__write_query:
+    risk: 6
+    action: log_only
+    description: "SQLite write queries"
+    rules:
+      - type: block_patterns
+        patterns:
+          - "DROP TABLE"
+          - "DROP DATABASE"
+          - "TRUNCATE"
+          - "DELETE FROM.*WHERE 1"
+
+  mcp__sqlite-server__*:
+    risk: 3
+    action: log_only
+    description: "SQLite read operations"
+
+  # --------------------------------------------------------
+  # LOW RISK (1-3) - Read & Voice Operations
+  # --------------------------------------------------------
+
+  # Voice output - low risk
+  mcp__voice__*:
+    risk: 2
+    action: log_only
+    description: "Voice TTS operations"
+
+  # Memory operations - internal, low risk
+  mcp__claude-memory__*:
+    risk: 2
+    action: log_only
+    description: "Claude memory operations"
+
+  # Financial data - read only, low risk
+  mcp__financial-mcp__get_*:
+    risk: 2
+    action: log_only
+    description: "Financial data queries"
+
+  mcp__financial-mcp__*:
+    risk: 4
+    action: log_only
+    description: "Financial operations"
+
+  # YouTube - read only
+  mcp__youtube-mcp__*:
+    risk: 2
+    action: log_only
+    description: "YouTube data queries"
+
+  # Floor plan vision - read only
+  mcp__floor-plan-vision__*:
+    risk: 2
+    action: log_only
+    description: "Floor plan analysis"
+
+  # Visual memory - screen capture
+  mcp__visual-memory__*:
+    risk: 3
+    action: log_only
+    description: "Visual memory/screenshots"
+
+  # --------------------------------------------------------
+  # AIDER (AI Code) - Medium risk, needs monitoring
+  # --------------------------------------------------------
+
+  mcp__aider*:
+    risk: 6
+    action: log_only
+    description: "Aider AI code modification"
+    rules:
+      - type: path_validation
+        allowed_roots:
+          - "D:/"
+          - "/mnt/d/"
+          - "/home/"
+        block_traversal: true
+
+  # --------------------------------------------------------
+  # DEFAULT - Catch-all for unknown tools
+  # --------------------------------------------------------
+
+  default:
+    risk: 5
+    action: log_only
+    description: "Unknown MCP tool - logging for review"

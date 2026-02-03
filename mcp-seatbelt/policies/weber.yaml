@@ -1,0 +1,114 @@
+# MCP Seatbelt - Weber's Personal Overrides
+# These settings override default.yaml
+
+# Contacts whitelist - auto-populated from existing WhatsApp/email contacts
+# Add trusted recipients here
+contacts_whitelist:
+  # Work contacts
+  - "bruce@bdarchitect.net"
+  - "paola@bdarchitect.net"
+  - "@bdarchitect.net"  # All BD Architect emails
+
+  # Personal contacts
+  - "ifantal@lesfantal.com"
+  - "@lesfantal.com"
+
+  # Project contacts
+  - "rachelle@afuriaesthetics.com"
+
+  # Known safe domains
+  - "@gmail.com"  # Weber's own domain for testing
+
+tools:
+  # --------------------------------------------------------
+  # WHATSAPP - Strict recipient control
+  # Weber's known contacts only
+  # --------------------------------------------------------
+
+  mcp__whatsapp__whatsapp_send_message:
+    risk: 8
+    action: warn  # Warn but allow for now - review audit logs
+    description: "WhatsApp send - recipients validated"
+    rules:
+      - type: recipient_whitelist
+        fields: [contact, to, phone, chat_id]
+        allowed:
+          # Family & close contacts - add phone numbers/names here
+          - "Isa"
+          - "Isabella"
+          # Work contacts
+          - "Bruce"
+          - "Paola"
+          # Can also add phone numbers
+          # - "+1234567890"
+
+  # --------------------------------------------------------
+  # REVIT - Allow standard operations
+  # Weber uses Revit heavily, trust these operations
+  # --------------------------------------------------------
+
+  mcp__revit*:
+    risk: 4
+    action: log_only
+    description: "Revit operations - trusted workflow"
+    rules:
+      - type: path_validation
+        allowed_roots:
+          - "D:/"
+          - "/mnt/d/"
+          - "C:/Users/weber/"
+          - "C:/Users/rick/"  # Legacy path
+
+  # --------------------------------------------------------
+  # VOICE - Always allow (low risk, high value)
+  # --------------------------------------------------------
+
+  mcp__voice__*:
+    risk: 1
+    action: log_only
+    description: "Voice TTS - always allowed"
+
+  # --------------------------------------------------------
+  # MEMORY - Always allow (internal tool)
+  # --------------------------------------------------------
+
+  mcp__claude-memory__*:
+    risk: 1
+    action: log_only
+    description: "Memory operations - internal"
+
+  # --------------------------------------------------------
+  # EXCEL - Allow but log carefully
+  # Weber uses Excel for reports, trust basic operations
+  # --------------------------------------------------------
+
+  mcp__excel-mcp__*:
+    risk: 4
+    action: log_only
+    description: "Excel operations - trusted"
+    rules:
+      - type: path_validation
+        allowed_roots:
+          - "D:/"
+          - "/mnt/d/"
+          - "C:/Users/"
+
+  # Keep macro blocking from default
+  mcp__excel-mcp__run_macro_tool:
+    risk: 10
+    action: block
+    description: "VBA macros still blocked"
+
+  # --------------------------------------------------------
+  # FINANCIAL - Portfolio operations allowed
+  # --------------------------------------------------------
+
+  mcp__financial-mcp__paper_trade:
+    risk: 3
+    action: log_only
+    description: "Paper trading - no real money"
+
+  mcp__financial-mcp__add_to_portfolio:
+    risk: 4
+    action: log_only
+    description: "Portfolio tracking"
