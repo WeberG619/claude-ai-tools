@@ -1,0 +1,1585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Agent Team v2 - Live Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <style>
+        :root {
+            --bg-dark: #0d1117;
+            --bg-card: #161b22;
+            --bg-hover: #21262d;
+            --border: #30363d;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --accent-blue: #58a6ff;
+            --accent-green: #3fb950;
+            --accent-yellow: #d29922;
+            --accent-purple: #a371f7;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 280px 1fr 320px;
+            grid-template-rows: 56px auto 1fr;
+            height: 100vh;
+            gap: 1px;
+            background: var(--border);
+        }
+
+        /* Header */
+        .header {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, var(--bg-card) 0%, #1a2332 100%);
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .logo-icon { font-size: 24px; }
+
+        .current-task {
+            flex: 1;
+            text-align: center;
+            color: var(--accent-yellow);
+            font-size: 14px;
+        }
+
+        .status {
+            color: var(--accent-green);
+            font-size: 12px;
+            margin-left: 8px;
+            white-space: nowrap;
+        }
+
+        /* Mode Indicator */
+        .mode-bar {
+            grid-column: 1 / -1;
+            background: var(--bg-dark);
+            padding: 10px 24px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .mode-badge {
+            padding: 6px 16px;
+            border-radius: 16px;
+            font-size: 12px;
+            font-weight: 600;
+            background: var(--bg-hover);
+            color: var(--text-secondary);
+        }
+
+        .mode-badge.active {
+            background: var(--accent-green);
+            color: white;
+        }
+
+        .mode-badge.browser { background: var(--accent-blue); color: white; }
+        .mode-badge.terminal { background: var(--accent-purple); color: white; }
+        .mode-badge.code { background: var(--accent-green); color: white; }
+
+        .browser-url {
+            flex: 1;
+            font-family: monospace;
+            font-size: 12px;
+            color: var(--text-secondary);
+            background: var(--bg-hover);
+            padding: 8px 16px;
+            border-radius: 6px;
+            margin-left: 20px;
+        }
+
+        /* Panels */
+        .panel {
+            background: var(--bg-card);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .panel-header {
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--border);
+            font-weight: 600;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-secondary);
+        }
+
+        .panel-content {
+            flex: 1;
+            overflow-y: auto;
+            padding: 12px;
+        }
+
+        /* Agent Cards */
+        .agent-card {
+            background: var(--bg-hover);
+            border-radius: 10px;
+            padding: 14px;
+            margin-bottom: 10px;
+            border-left: 3px solid transparent;
+        }
+
+        .agent-card.speaking {
+            border-left: 5px solid #00ff00 !important;
+            background: rgba(0, 255, 0, 0.25) !important;
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.5) !important;
+            transform: scale(1.02);
+        }
+
+        .agent-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .agent-icon {
+            font-size: 24px;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-dark);
+            border-radius: 8px;
+        }
+
+        .agent-name {
+            font-weight: 600;
+            font-size: 13px;
+        }
+
+        .agent-voice {
+            font-size: 11px;
+            color: var(--text-secondary);
+        }
+
+        .agent-status {
+            font-size: 11px;
+            color: var(--text-secondary);
+            margin-top: 8px;
+        }
+
+        .speaking-text {
+            font-style: italic;
+            color: var(--text-primary);
+            font-size: 12px;
+            margin-top: 6px;
+        }
+
+        /* Wave animation */
+        .wave {
+            display: none;
+            gap: 3px;
+            margin-left: auto;
+        }
+
+        .speaking .wave { display: flex; }
+
+        .wave span {
+            width: 3px;
+            height: 16px;
+            background: var(--accent-green);
+            border-radius: 2px;
+            animation: wave 0.6s ease-in-out infinite;
+        }
+
+        .wave span:nth-child(2) { animation-delay: 0.1s; }
+        .wave span:nth-child(3) { animation-delay: 0.2s; }
+        .wave span:nth-child(4) { animation-delay: 0.3s; }
+
+        @keyframes wave {
+            0%, 100% { transform: scaleY(0.3); }
+            50% { transform: scaleY(1); }
+        }
+
+        /* Main Content - This is where the BrowserView sits */
+        .main-content {
+            background: var(--bg-dark);
+            /* BrowserView is positioned here by Electron */
+        }
+
+        /* Terminal/Code overlay - ALWAYS visible, BrowserView covers it when in browser mode */
+        .content-overlay {
+            position: absolute;
+            top: 170px;
+            left: 280px;
+            right: 320px;
+            bottom: 40px;
+            background: #0a0a0a;
+            z-index: 50;
+            display: flex;
+            flex-direction: column;
+            border: 2px solid #333;
+        }
+
+        /* When explicitly set to visible, ensure it shows */
+        .content-overlay.visible {
+            display: flex;
+        }
+
+        .terminal-content {
+            flex: 1;
+            padding: 24px;
+            font-family: 'Cascadia Code', monospace;
+            font-size: 16px;
+            color: #fff;
+            overflow: auto;
+        }
+
+        .code-content {
+            flex: 1;
+            padding: 16px;
+            font-family: 'Cascadia Code', monospace;
+            font-size: 14px;
+            overflow: auto;
+            background: #0d1117;
+        }
+
+        /* Activity Log */
+        .activity-item {
+            padding: 10px 14px;
+            border-bottom: 1px solid var(--border);
+            font-size: 12px;
+        }
+
+        .activity-time {
+            color: var(--text-secondary);
+            font-size: 10px;
+        }
+
+        .activity-message {
+            margin-top: 2px;
+        }
+
+        /* Session Controls - pushed to right side */
+        .session-controls {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            margin-left: auto;
+            margin-right: 8px;
+        }
+
+        .session-btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s;
+        }
+
+        .session-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .session-btn.start {
+            background: var(--accent-green);
+            color: white;
+        }
+
+        .session-btn.pause {
+            background: var(--accent-yellow);
+            color: #000;
+        }
+
+        .session-btn.stop {
+            background: #f85149;
+            color: white;
+        }
+
+        .session-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Execution Mode Indicator */
+        .execution-indicator {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .execution-indicator.simulation {
+            background: rgba(139, 148, 158, 0.2);
+            color: var(--text-secondary);
+            border: 1px solid var(--border);
+        }
+
+        .execution-indicator.execution {
+            background: rgba(63, 185, 80, 0.2);
+            color: var(--accent-green);
+            border: 1px solid var(--accent-green);
+        }
+
+        .execution-indicator:hover {
+            transform: scale(1.05);
+        }
+
+        .exec-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+
+        .simulation .exec-dot {
+            background: var(--text-secondary);
+        }
+
+        .execution .exec-dot {
+            background: var(--accent-green);
+            animation: pulse 1s infinite;
+        }
+
+        /* Execution Log Panel */
+        .execution-log {
+            background: var(--bg-dark);
+            border-top: 1px solid var(--border);
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        .exec-log-header {
+            padding: 8px 12px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            background: var(--bg-card);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .exec-log-item {
+            padding: 8px 12px;
+            border-bottom: 1px solid var(--border);
+            font-size: 12px;
+            font-family: monospace;
+        }
+
+        .exec-log-item.success {
+            border-left: 3px solid var(--accent-green);
+        }
+
+        .exec-log-item.failed {
+            border-left: 3px solid #f85149;
+        }
+
+        .exec-log-time {
+            color: var(--text-secondary);
+            font-size: 10px;
+            margin-right: 8px;
+        }
+
+        .exec-log-type {
+            color: var(--accent-blue);
+            font-weight: 600;
+        }
+
+        .exec-log-output {
+            margin-top: 4px;
+            padding: 6px 8px;
+            background: rgba(0,0,0,0.3);
+            border-radius: 4px;
+            font-size: 11px;
+            color: var(--text-secondary);
+            max-height: 60px;
+            overflow-y: auto;
+        }
+
+        /* Approval Dialog */
+        .approval-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.8);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .approval-overlay.visible {
+            display: flex;
+        }
+
+        .approval-dialog {
+            background: var(--bg-card);
+            border: 2px solid var(--accent-yellow);
+            border-radius: 12px;
+            padding: 24px;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+
+        .approval-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--accent-yellow);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .approval-message {
+            font-size: 14px;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+        }
+
+        .approval-command {
+            background: var(--bg-dark);
+            padding: 12px;
+            border-radius: 6px;
+            font-family: monospace;
+            font-size: 13px;
+            color: var(--accent-blue);
+            margin-bottom: 20px;
+            word-break: break-all;
+        }
+
+        .approval-buttons {
+            display: flex;
+            gap: 12px;
+            justify-content: flex-end;
+        }
+
+        .approval-btn {
+            padding: 10px 24px;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .approval-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .approval-btn.approve {
+            background: var(--accent-green);
+            color: white;
+        }
+
+        .approval-btn.deny {
+            background: #f85149;
+            color: white;
+        }
+
+        /* Task input + mode dropdown grouped together */
+        .task-group {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-left: 20px;
+        }
+
+        .task-input {
+            width: 260px;
+            padding: 8px 12px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            background: var(--bg-hover);
+            color: var(--text-primary);
+            font-size: 13px;
+        }
+
+        .mode-select {
+            padding: 8px 12px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            background: var(--bg-hover);
+            color: var(--text-primary);
+            font-size: 12px;
+        }
+
+        /* Reasoning Panel */
+        .reasoning-panel {
+            background: var(--bg-dark);
+            border-top: 1px solid var(--border);
+            padding: 12px 16px;
+            max-height: 150px;
+            overflow-y: auto;
+        }
+
+        .reasoning-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+            font-size: 11px;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+        }
+
+        .reasoning-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent-yellow);
+        }
+
+        .reasoning-dot.active {
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+        }
+
+        .reasoning-step {
+            font-size: 12px;
+            padding: 6px 10px;
+            background: var(--bg-hover);
+            border-radius: 4px;
+            margin-bottom: 4px;
+            border-left: 3px solid var(--accent-blue);
+            animation: slideIn 0.3s ease-out;
+        }
+
+        .reasoning-step.completed {
+            border-left-color: var(--accent-green);
+            opacity: 0.7;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(10px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Parallel indicator */
+        .parallel-indicator {
+            display: none;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            background: rgba(163, 113, 247, 0.2);
+            border: 1px solid var(--accent-purple);
+            border-radius: 6px;
+            font-size: 12px;
+            color: var(--accent-purple);
+        }
+
+        .parallel-indicator.active {
+            display: flex;
+        }
+
+        /* Panel Tabs */
+        .panel-tabs {
+            display: flex;
+            border-bottom: 1px solid var(--border);
+        }
+        .panel-tab {
+            flex: 1;
+            padding: 10px;
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .panel-tab.active {
+            color: var(--accent-green);
+            border-bottom: 2px solid var(--accent-green);
+        }
+        .panel-tab:hover {
+            color: var(--text-primary);
+        }
+
+        /* File Browser */
+        .file-browser {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .file-path-bar {
+            display: flex;
+            gap: 8px;
+            padding: 8px;
+            background: var(--bg-dark);
+            border-bottom: 1px solid var(--border);
+        }
+        .file-path-bar input {
+            flex: 1;
+            background: var(--bg-hover);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 6px 10px;
+            color: var(--text-primary);
+            font-size: 12px;
+            font-family: monospace;
+        }
+        .file-path-bar button {
+            background: var(--accent-green);
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+        .file-list {
+            flex: 1;
+            overflow-y: auto;
+        }
+        .file-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 12px;
+            cursor: pointer;
+            border-bottom: 1px solid var(--border);
+        }
+        .file-item:hover {
+            background: var(--bg-hover);
+        }
+        .file-item.selected {
+            background: rgba(88, 166, 255, 0.15);
+            border-left: 3px solid var(--accent-blue);
+        }
+        .file-icon {
+            font-size: 18px;
+            width: 24px;
+            text-align: center;
+        }
+        .file-name {
+            flex: 1;
+            font-size: 13px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .file-size {
+            font-size: 11px;
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <span class="logo-icon">🤖</span>
+                <span>Agent Team v2</span>
+            </div>
+            <div class="task-group">
+                <input type="text" class="task-input" id="taskInput" placeholder="Enter task or topic...">
+                <select class="mode-select" id="modeSelect">
+                    <option value="work">Work on Task</option>
+                    <option value="discuss">Discuss Topic</option>
+                    <option value="parallel">Parallel Build</option>
+                </select>
+            </div>
+            <div class="session-controls">
+                <div class="execution-indicator simulation" id="execIndicator" onclick="toggleExecutionMode()" title="Click to toggle execution mode">
+                    <span class="exec-dot"></span>
+                    <span id="execModeText">SIMULATION</span>
+                </div>
+                <button class="session-btn start" id="btnStart" onclick="startSession()">▶ Start</button>
+                <button class="session-btn pause" id="btnPause" onclick="togglePause()" disabled>⏸ Pause</button>
+                <button class="session-btn stop" id="btnStop" onclick="stopSession()" disabled>⏹ Stop</button>
+            </div>
+            <span class="status" id="connectionStatus">● Connecting...</span>
+        </header>
+
+        <!-- Mode Bar -->
+        <div class="mode-bar">
+            <span class="mode-badge active" id="modeBadge">BROWSER</span>
+            <div class="browser-url" id="browserUrl">https://github.com</div>
+        </div>
+
+        <!-- Left: Agents Panel -->
+        <div class="panel">
+            <div class="panel-header">Team</div>
+            <div class="panel-content" id="agentsPanel">
+                <div class="agent-card" data-agent="planner">
+                    <div class="agent-header">
+                        <div class="agent-icon">🎯</div>
+                        <div>
+                            <div class="agent-name">PLANNER</div>
+                            <div class="agent-voice">Andrew</div>
+                        </div>
+                        <div class="wave"><span></span><span></span><span></span><span></span></div>
+                    </div>
+                    <div class="agent-status">Idle</div>
+                </div>
+                <div class="agent-card" data-agent="researcher">
+                    <div class="agent-header">
+                        <div class="agent-icon">🔍</div>
+                        <div>
+                            <div class="agent-name">RESEARCHER</div>
+                            <div class="agent-voice">Christopher</div>
+                        </div>
+                        <div class="wave"><span></span><span></span><span></span><span></span></div>
+                    </div>
+                    <div class="agent-status">Idle</div>
+                </div>
+
+                <!-- Parallel indicator for builders -->
+                <div class="parallel-indicator" id="parallelIndicator">
+                    ⚡ Parallel Build Active
+                </div>
+
+                <!-- 3 Builder Cards -->
+                <div class="agent-card" data-agent="builder">
+                    <div class="agent-header">
+                        <div class="agent-icon">🔧</div>
+                        <div>
+                            <div class="agent-name">BUILDER (Backend)</div>
+                            <div class="agent-voice">Adam</div>
+                        </div>
+                        <div class="wave"><span></span><span></span><span></span><span></span></div>
+                    </div>
+                    <div class="agent-status">Idle</div>
+                </div>
+                <div class="agent-card" data-agent="builder-frontend">
+                    <div class="agent-header">
+                        <div class="agent-icon">🎨</div>
+                        <div>
+                            <div class="agent-name">BUILDER (Frontend)</div>
+                            <div class="agent-voice">Roger</div>
+                        </div>
+                        <div class="wave"><span></span><span></span><span></span><span></span></div>
+                    </div>
+                    <div class="agent-status">Idle</div>
+                </div>
+                <div class="agent-card" data-agent="builder-infra">
+                    <div class="agent-header">
+                        <div class="agent-icon">☁️</div>
+                        <div>
+                            <div class="agent-name">BUILDER (Infra)</div>
+                            <div class="agent-voice">Davis</div>
+                        </div>
+                        <div class="wave"><span></span><span></span><span></span><span></span></div>
+                    </div>
+                    <div class="agent-status">Idle</div>
+                </div>
+
+                <div class="agent-card" data-agent="critic">
+                    <div class="agent-header">
+                        <div class="agent-icon">🔬</div>
+                        <div>
+                            <div class="agent-name">CRITIC</div>
+                            <div class="agent-voice">Eric</div>
+                        </div>
+                        <div class="wave"><span></span><span></span><span></span><span></span></div>
+                    </div>
+                    <div class="agent-status">Idle</div>
+                </div>
+                <div class="agent-card" data-agent="narrator">
+                    <div class="agent-header">
+                        <div class="agent-icon">🎙️</div>
+                        <div>
+                            <div class="agent-name">NARRATOR</div>
+                            <div class="agent-voice">Jenny</div>
+                        </div>
+                        <div class="wave"><span></span><span></span><span></span><span></span></div>
+                    </div>
+                    <div class="agent-status">Idle</div>
+                </div>
+            </div>
+
+            <!-- Reasoning Panel -->
+            <div class="reasoning-panel" id="reasoningPanel">
+                <div class="reasoning-header">
+                    <div class="reasoning-dot" id="reasoningDot"></div>
+                    <span>Agent Reasoning</span>
+                </div>
+                <div id="reasoningSteps"></div>
+            </div>
+        </div>
+
+        <!-- Center: Main Content (BrowserView sits here) -->
+        <div class="main-content" id="mainContent">
+            <!-- Electron's BrowserView is positioned here -->
+        </div>
+
+        <!-- Terminal/Code Overlay - Always present, BrowserView covers when in browser mode -->
+        <div class="content-overlay" id="contentOverlay">
+            <div class="terminal-content" id="terminalContent">
+                <p style="color: #666; padding: 40px; text-align: center;">
+                    Waiting for terminal activity...
+                </p>
+            </div>
+            <div class="code-content" id="codeContent" style="display: none;"></div>
+        </div>
+
+        <!-- Right: Activity Log, Execution & Files -->
+        <div class="panel">
+            <div class="panel-tabs">
+                <button class="panel-tab active" onclick="showPanelTab('activity')">Activity</button>
+                <button class="panel-tab" onclick="showPanelTab('execution')">Execution</button>
+                <button class="panel-tab" onclick="showPanelTab('files')">Files</button>
+            </div>
+            <div class="panel-content tab-content" id="activityLog"></div>
+            <div class="panel-content tab-content" id="executionPanel" style="display: none;">
+                <div class="exec-log-header">
+                    <span>Execution Log</span>
+                    <span id="execCount" style="margin-left: auto; color: var(--accent-green);">0 actions</span>
+                </div>
+                <div id="executionLog"></div>
+            </div>
+            <div class="panel-content tab-content" id="filesPanel" style="display: none;">
+                <div class="file-browser">
+                    <div class="file-path-bar">
+                        <input type="text" id="currentPath" value="D:\" placeholder="Enter path...">
+                        <button onclick="loadDirectory()">Go</button>
+                    </div>
+                    <div class="file-list" id="fileList">
+                        <div class="file-item" onclick="navigateTo('D:\\')">
+                            <span class="file-icon">💾</span>
+                            <span class="file-name">D: Drive</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Approval Dialog Overlay -->
+    <div class="approval-overlay" id="approvalOverlay">
+        <div class="approval-dialog">
+            <div class="approval-title">
+                <span>⚠️</span>
+                <span>Approval Required</span>
+            </div>
+            <div class="approval-message" id="approvalMessage">
+                An agent wants to execute a potentially dangerous action:
+            </div>
+            <div class="approval-command" id="approvalCommand">
+                <!-- Command will be inserted here -->
+            </div>
+            <div class="approval-buttons">
+                <button class="approval-btn deny" onclick="handleApproval(false)">✕ Deny</button>
+                <button class="approval-btn approve" onclick="handleApproval(true)">✓ Approve</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const { ipcRenderer } = require('electron');
+
+        let currentMode = 'browser';
+        let sessionActive = false;
+        let sessionPaused = false;
+        let reasoningSteps = [];
+        let executionEnabled = false;
+        let executionCount = 0;
+        let pendingApproval = null;
+
+        // Handle activity updates from main process
+        ipcRenderer.on('activity-update', (event, data) => {
+            console.log('Received activity update:', data);
+            updateFromActivity(data);
+        });
+
+        // Handle connection status
+        ipcRenderer.on('connection-status', (event, status) => {
+            console.log('Connection status:', status);
+            const statusEl = document.getElementById('connectionStatus');
+            if (status === 'connected') {
+                statusEl.textContent = '● Connected';
+                statusEl.style.color = 'var(--accent-green)';
+            } else if (status === 'disconnected') {
+                statusEl.textContent = '○ Reconnecting...';
+                statusEl.style.color = 'var(--accent-yellow)';
+            } else {
+                statusEl.textContent = '○ Waiting...';
+                statusEl.style.color = 'var(--text-secondary)';
+            }
+        });
+
+        // Handle session state changes
+        ipcRenderer.on('session-state', (event, state) => {
+            console.log('Session state:', state);
+            sessionActive = state.active;
+            sessionPaused = state.paused;
+            updateSessionUI(state);
+        });
+
+        // Handle reasoning updates
+        ipcRenderer.on('reasoning-update', (event, data) => {
+            addReasoningStep(data);
+        });
+
+        // Handle parallel build start
+        ipcRenderer.on('parallel-start', (event, data) => {
+            showParallelIndicator(data.agents);
+        });
+
+        // Handle code display
+        ipcRenderer.on('code-display', (event, activity) => {
+            console.log('>>> RECEIVED CODE DISPLAY IPC <<<');
+            console.log('Activity:', activity);
+            showCodeMode(activity.file_path, activity.content, activity.language);
+            addActivity(activity);  // Add to activity log
+        });
+
+        // Handle terminal display
+        ipcRenderer.on('terminal-display', (event, activity) => {
+            console.log('>>> RECEIVED TERMINAL DISPLAY IPC <<<');
+            console.log('Activity:', activity);
+            showTerminalMode(activity.command, activity.output);
+            addActivity(activity);  // Add to activity log
+        });
+
+        // Handle execution result
+        ipcRenderer.on('execution-result', (event, result) => {
+            console.log('>>> EXECUTION RESULT <<<', result);
+            addExecutionLogEntry(result);
+        });
+
+        // Handle execution mode change
+        ipcRenderer.on('execution-mode', (event, data) => {
+            console.log('>>> EXECUTION MODE <<<', data.enabled);
+            updateExecutionIndicator(data.enabled);
+        });
+
+        // Handle approval request
+        ipcRenderer.on('approval-request', (event, data) => {
+            console.log('>>> APPROVAL REQUEST <<<', data);
+            showApprovalDialog(data);
+        });
+
+        // Handle approval response (confirmation)
+        ipcRenderer.on('approval-response', (event, data) => {
+            console.log('>>> APPROVAL RESPONSE <<<', data);
+            hideApprovalDialog();
+        });
+
+        // =====================================================================
+        // Session Control Functions
+        // =====================================================================
+
+        async function startSession() {
+            const task = document.getElementById('taskInput').value.trim();
+            const mode = document.getElementById('modeSelect').value;
+
+            if (!task) {
+                alert('Please enter a task or topic');
+                return;
+            }
+
+            try {
+                const response = await fetch('http://localhost:8890/api/session/start', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ task, mode })
+                });
+                const result = await response.json();
+                console.log('Session started:', result);
+            } catch (e) {
+                console.error('Failed to start session:', e);
+                alert('Failed to start session. Is the server running?');
+            }
+        }
+
+        async function togglePause() {
+            try {
+                const response = await fetch('http://localhost:8890/api/session/pause', {
+                    method: 'POST'
+                });
+                const result = await response.json();
+                console.log('Pause toggled:', result);
+            } catch (e) {
+                console.error('Failed to toggle pause:', e);
+            }
+        }
+
+        async function stopSession() {
+            try {
+                const response = await fetch('http://localhost:8890/api/session/stop', {
+                    method: 'POST'
+                });
+                const result = await response.json();
+                console.log('Session stopped:', result);
+            } catch (e) {
+                console.error('Failed to stop session:', e);
+            }
+        }
+
+        function updateSessionUI(state) {
+            const btnStart = document.getElementById('btnStart');
+            const btnPause = document.getElementById('btnPause');
+            const btnStop = document.getElementById('btnStop');
+            const taskInput = document.getElementById('taskInput');
+            const modeSelect = document.getElementById('modeSelect');
+
+            if (state.active) {
+                btnStart.disabled = true;
+                btnPause.disabled = false;
+                btnStop.disabled = false;
+                taskInput.disabled = true;
+                modeSelect.disabled = true;
+
+                if (state.task) {
+                    taskInput.value = state.task;
+                }
+
+                btnPause.textContent = state.paused ? '▶ Resume' : '⏸ Pause';
+            } else {
+                btnStart.disabled = false;
+                btnPause.disabled = true;
+                btnStop.disabled = true;
+                taskInput.disabled = false;
+                modeSelect.disabled = false;
+                btnPause.textContent = '⏸ Pause';
+            }
+        }
+
+        // =====================================================================
+        // Reasoning Panel Functions
+        // =====================================================================
+
+        function addReasoningStep(data) {
+            const stepsEl = document.getElementById('reasoningSteps');
+            const dotEl = document.getElementById('reasoningDot');
+
+            // Update dot animation
+            if (data.status === 'active') {
+                dotEl.classList.add('active');
+            } else {
+                dotEl.classList.remove('active');
+            }
+
+            // Add step
+            const step = document.createElement('div');
+            step.className = `reasoning-step ${data.status === 'completed' ? 'completed' : ''}`;
+            step.innerHTML = `<strong>${data.agent || 'Agent'}:</strong> ${escapeHtml(data.text)}`;
+            stepsEl.insertBefore(step, stepsEl.firstChild);
+
+            // Keep only last 10 steps
+            while (stepsEl.children.length > 10) {
+                stepsEl.removeChild(stepsEl.lastChild);
+            }
+
+            reasoningSteps.unshift(data);
+            if (reasoningSteps.length > 10) reasoningSteps.pop();
+        }
+
+        function showParallelIndicator(agents) {
+            const indicator = document.getElementById('parallelIndicator');
+            indicator.classList.add('active');
+            indicator.textContent = `⚡ Parallel: ${agents.join(', ')}`;
+
+            // Hide after 30 seconds
+            setTimeout(() => {
+                indicator.classList.remove('active');
+            }, 30000);
+        }
+
+        function updateFromActivity(data) {
+            console.log('updateFromActivity called with:', JSON.stringify(data));
+
+            // ALWAYS update agent status, even if no activity
+            updateAgentStatus(data);
+
+            const activity = data.activity;
+
+            // Handle different activity types
+            switch (activity.type) {
+                case 'browser_navigate':
+                    showBrowserMode(activity.url, activity.title);
+                    break;
+                case 'terminal_run':
+                    showTerminalMode(activity.command, activity.output);
+                    break;
+                case 'code_write':
+                    showCodeMode(activity.file_path, activity.content, activity.language);
+                    break;
+            }
+
+            // Add to activity log
+            addActivity(activity);
+        }
+
+        function showBrowserMode(url, title) {
+            currentMode = 'browser';
+
+            // Update mode badge (with null check)
+            const modeBadge = document.getElementById('modeBadge');
+            if (modeBadge) {
+                modeBadge.textContent = 'BROWSER';
+                modeBadge.className = 'mode-badge browser';
+            }
+
+            // Show browser URL (with null check)
+            const browserUrl = document.getElementById('browserUrl');
+            if (browserUrl) {
+                browserUrl.textContent = url;
+                browserUrl.style.display = 'block';
+            }
+
+            // Hide terminal/code content when in browser mode
+            const terminal = document.getElementById('terminalContent');
+            const code = document.getElementById('codeContent');
+            if (terminal) terminal.style.display = 'none';
+            if (code) code.style.display = 'none';
+
+            ipcRenderer.send('set-view-mode', 'browser');
+        }
+
+        function showTerminalMode(command, output) {
+            console.log('=== showTerminalMode CALLED ===');
+            console.log('Command:', command);
+            console.log('Output:', output);
+
+            currentMode = 'terminal';
+
+            // Update mode badge (with null check)
+            const modeBadge = document.getElementById('modeBadge');
+            if (modeBadge) {
+                modeBadge.textContent = 'TERMINAL';
+                modeBadge.className = 'mode-badge terminal';
+            }
+
+            // Hide browser URL (with null check)
+            const browserUrl = document.getElementById('browserUrl');
+            if (browserUrl) browserUrl.style.display = 'none';
+
+            // Show terminal content, hide code content
+            const terminal = document.getElementById('terminalContent');
+            const code = document.getElementById('codeContent');
+
+            if (terminal) {
+                terminal.style.display = 'block';
+                terminal.innerHTML = `
+                    <div style="padding: 20px;">
+                        <div style="margin-bottom: 20px; padding: 16px; background: #1a1a2e; border: 2px solid #00ff00; border-radius: 8px;">
+                            <span style="color: #00ff00; font-weight: bold;">$ </span>
+                            <span style="color: #ffff00; font-weight: bold;">${escapeHtml(command || 'No command')}</span>
+                        </div>
+                        <pre style="color: #00ff00; padding: 20px; background: rgba(0,255,0,0.1); border-radius: 8px; border-left: 4px solid #00ff00; white-space: pre-wrap; font-size: 14px;">${escapeHtml(output || 'No output')}</pre>
+                    </div>
+                `;
+            }
+            if (code) code.style.display = 'none';
+
+            console.log('Terminal content updated');
+        }
+
+        function showCodeMode(filePath, content, language) {
+            console.log('=== showCodeMode CALLED ===');
+            console.log('FilePath:', filePath);
+            console.log('Content length:', content?.length || 0);
+            console.log('Language:', language);
+
+            currentMode = 'code';
+
+            // Update mode badge (with null check)
+            const modeBadge = document.getElementById('modeBadge');
+            if (modeBadge) {
+                modeBadge.textContent = 'CODE';
+                modeBadge.className = 'mode-badge code';
+            }
+
+            // Hide browser URL (with null check)
+            const browserUrl = document.getElementById('browserUrl');
+            if (browserUrl) browserUrl.style.display = 'none';
+
+            // Show code content, hide terminal content
+            const terminal = document.getElementById('terminalContent');
+            const codeEl = document.getElementById('codeContent');
+
+            if (terminal) terminal.style.display = 'none';
+
+            if (codeEl) {
+                codeEl.style.display = 'block';
+
+                // Set code content with syntax highlighting
+                const codeToShow = content || '// No content provided';
+                let highlighted;
+                try {
+                    highlighted = hljs.highlight(codeToShow, { language: language || 'javascript' }).value;
+                } catch (e) {
+                    highlighted = escapeHtml(codeToShow);
+                }
+
+                codeEl.innerHTML = `
+                    <div style="padding: 16px; background: #1e1e2e; border-bottom: 2px solid #3498db; margin-bottom: 10px;">
+                        <span style="color: #3498db; font-weight: bold;">📄 ${escapeHtml(filePath || 'file')}</span>
+                    </div>
+                    <pre style="margin: 0; padding: 20px; overflow: auto;"><code class="hljs">${highlighted}</code></pre>
+                `;
+            }
+
+            console.log('Code content updated');
+        }
+
+        // Track the currently active agent
+        let currentActiveAgent = null;
+        let activeTimeout = null;
+
+        function updateAgentStatus(data) {
+            console.log('updateAgentStatus called:', data.agent, data.text, data.speaking);
+
+            // If we have an agent with text, mark them as active
+            if (data.agent && data.text) {
+                currentActiveAgent = data.agent;
+
+                // Clear any existing timeout
+                if (activeTimeout) clearTimeout(activeTimeout);
+
+                // Keep agent active for 15 seconds after last update
+                activeTimeout = setTimeout(() => {
+                    console.log('Clearing active agent');
+                    currentActiveAgent = null;
+                    refreshAgentDisplay();
+                }, 15000);
+            }
+
+            refreshAgentDisplay();
+        }
+
+        function refreshAgentDisplay() {
+            // Reset all cards first
+            document.querySelectorAll('.agent-card').forEach(card => {
+                card.classList.remove('speaking');
+                card.querySelector('.agent-status').textContent = 'Idle';
+                const oldText = card.querySelector('.speaking-text');
+                if (oldText) oldText.remove();
+            });
+
+            // Highlight the current active agent
+            if (currentActiveAgent) {
+                console.log('Highlighting agent:', currentActiveAgent);
+                const card = document.querySelector(`[data-agent="${currentActiveAgent}"]`);
+                console.log('Found card:', card);
+                if (card) {
+                    card.classList.add('speaking');
+                    card.querySelector('.agent-status').textContent = 'Speaking...';
+                    console.log('Card classes now:', card.className);
+                }
+            }
+        }
+
+        function addActivity(activity) {
+            const log = document.getElementById('activityLog');
+            const icons = {
+                'browser_navigate': '🌐',
+                'terminal_run': '⚡',
+                'code_write': '💻',
+                'thinking': '💭',
+                'execution': '⚙️',
+                'approval': '🔐',
+                'system': '📡',
+                'file_open': '📂'
+            };
+
+            const item = document.createElement('div');
+            item.className = 'activity-item';
+            item.innerHTML = `
+                <div class="activity-time">${new Date().toLocaleTimeString()}</div>
+                <div class="activity-message">${icons[activity.type] || '📌'} ${getActivityMessage(activity)}</div>
+            `;
+
+            log.insertBefore(item, log.firstChild);
+            while (log.children.length > 50) log.removeChild(log.lastChild);
+        }
+
+        function getActivityMessage(activity) {
+            switch (activity.type) {
+                case 'browser_navigate': return 'Navigate: ' + (activity.title || activity.url);
+                case 'terminal_run': return 'Run: ' + activity.command;
+                case 'code_write': return 'Write: ' + activity.file_path;
+                case 'execution':
+                    const status = activity.success ? '✓' : '✕';
+                    return `${status} Executed: ${activity.action_type}`;
+                case 'approval':
+                    const decision = activity.approved ? 'Approved' : 'Denied';
+                    return `${decision}: ${activity.action_type}`;
+                case 'system': return activity.message;
+                default: return activity.type;
+            }
+        }
+
+        function escapeHtml(text) {
+            if (!text) return '';
+            return text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        }
+
+        // =====================================================================
+        // Execution Mode Functions
+        // =====================================================================
+
+        function toggleExecutionMode() {
+            executionEnabled = !executionEnabled;
+            updateExecutionIndicator(executionEnabled);
+            ipcRenderer.send('set-execution-mode', executionEnabled);
+        }
+
+        function updateExecutionIndicator(enabled) {
+            executionEnabled = enabled;
+            const indicator = document.getElementById('execIndicator');
+            const text = document.getElementById('execModeText');
+
+            if (enabled) {
+                indicator.className = 'execution-indicator execution';
+                text.textContent = 'EXECUTION';
+            } else {
+                indicator.className = 'execution-indicator simulation';
+                text.textContent = 'SIMULATION';
+            }
+        }
+
+        function addExecutionLogEntry(result) {
+            executionCount++;
+            document.getElementById('execCount').textContent = `${executionCount} actions`;
+
+            const log = document.getElementById('executionLog');
+            const item = document.createElement('div');
+            item.className = `exec-log-item ${result.success ? 'success' : 'failed'}`;
+
+            const icon = result.success ? '✓' : '✕';
+            const time = new Date().toLocaleTimeString();
+
+            let details = '';
+            if (result.output) {
+                details = `<div class="exec-log-output">${escapeHtml(result.output.substring(0, 200))}</div>`;
+            }
+            if (result.error) {
+                details = `<div class="exec-log-output" style="color: #f85149;">${escapeHtml(result.error)}</div>`;
+            }
+
+            item.innerHTML = `
+                <span class="exec-log-time">${time}</span>
+                <span>${icon}</span>
+                <span class="exec-log-type">${result.action_type || 'unknown'}</span>
+                ${result.file_path ? `<span style="color: var(--text-secondary); margin-left: 8px;">${result.file_path}</span>` : ''}
+                ${details}
+            `;
+
+            log.insertBefore(item, log.firstChild);
+
+            // Keep only last 50 entries
+            while (log.children.length > 50) {
+                log.removeChild(log.lastChild);
+            }
+
+            // Also add to activity log
+            addActivity({
+                type: 'execution',
+                action_type: result.action_type,
+                success: result.success
+            });
+        }
+
+        // =====================================================================
+        // Approval Dialog Functions
+        // =====================================================================
+
+        function showApprovalDialog(data) {
+            pendingApproval = data;
+            document.getElementById('approvalMessage').textContent =
+                `Agent "${data.agent || 'unknown'}" wants to execute a ${data.action_type || 'action'}:`;
+            document.getElementById('approvalCommand').textContent = data.content || 'No content';
+            document.getElementById('approvalOverlay').classList.add('visible');
+        }
+
+        function hideApprovalDialog() {
+            pendingApproval = null;
+            document.getElementById('approvalOverlay').classList.remove('visible');
+        }
+
+        function handleApproval(approved) {
+            if (pendingApproval) {
+                ipcRenderer.send('approve-action', {
+                    action_id: pendingApproval.id || pendingApproval.action_id,
+                    approved: approved
+                });
+
+                // Log the decision
+                addActivity({
+                    type: 'approval',
+                    action_type: pendingApproval.action_type,
+                    approved: approved
+                });
+            }
+            hideApprovalDialog();
+        }
+
+        // Initialize
+        addActivity({ type: 'system', message: 'Dashboard ready' });
+
+        // =====================================================================
+        // File Browser Functions
+        // =====================================================================
+
+        const fs = require('fs');
+        const pathModule = require('path');
+
+        let currentDirectory = 'D:\\';
+
+        function showPanelTab(tab) {
+            // Update tab buttons
+            document.querySelectorAll('.panel-tab').forEach(t => t.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Show/hide content
+            document.getElementById('activityLog').style.display = tab === 'activity' ? 'block' : 'none';
+            document.getElementById('executionPanel').style.display = tab === 'execution' ? 'block' : 'none';
+            document.getElementById('filesPanel').style.display = tab === 'files' ? 'block' : 'none';
+
+            if (tab === 'files') {
+                loadDirectory();
+            }
+        }
+
+        function loadDirectory(dirPath) {
+            if (dirPath) {
+                currentDirectory = dirPath;
+            }
+
+            const pathInput = document.getElementById('currentPath');
+            pathInput.value = currentDirectory;
+
+            const fileList = document.getElementById('fileList');
+            fileList.innerHTML = '';
+
+            try {
+                // Add parent directory option
+                if (currentDirectory !== 'D:\\' && currentDirectory !== 'D:') {
+                    const parentDir = pathModule.dirname(currentDirectory);
+                    const parentItem = document.createElement('div');
+                    parentItem.className = 'file-item';
+                    parentItem.innerHTML = '<span class="file-icon">📁</span><span class="file-name">..</span>';
+                    parentItem.onclick = () => loadDirectory(parentDir);
+                    fileList.appendChild(parentItem);
+                }
+
+                // Read directory
+                const items = fs.readdirSync(currentDirectory, { withFileTypes: true });
+
+                // Sort: folders first, then files
+                items.sort((a, b) => {
+                    if (a.isDirectory() && !b.isDirectory()) return -1;
+                    if (!a.isDirectory() && b.isDirectory()) return 1;
+                    return a.name.localeCompare(b.name);
+                });
+
+                items.forEach(item => {
+                    const itemPath = pathModule.join(currentDirectory, item.name);
+                    const isDir = item.isDirectory();
+
+                    const icon = getFileIcon(item.name, isDir);
+
+                    const fileItem = document.createElement('div');
+                    fileItem.className = 'file-item';
+                    fileItem.innerHTML = `
+                        <span class="file-icon">${icon}</span>
+                        <span class="file-name">${item.name}</span>
+                    `;
+
+                    if (isDir) {
+                        fileItem.onclick = () => loadDirectory(itemPath);
+                    } else {
+                        fileItem.onclick = () => openFile(itemPath);
+                    }
+
+                    fileList.appendChild(fileItem);
+                });
+
+            } catch (err) {
+                fileList.innerHTML = `<div class="file-item"><span class="file-icon">⚠️</span><span class="file-name">Error: ${err.message}</span></div>`;
+            }
+        }
+
+        function getFileIcon(filename, isDir) {
+            if (isDir) return '📁';
+
+            const ext = pathModule.extname(filename).toLowerCase();
+            const icons = {
+                '.pdf': '📕',
+                '.docx': '📘', '.doc': '📘',
+                '.xlsx': '📗', '.xls': '📗',
+                '.pptx': '📙', '.ppt': '📙',
+                '.png': '🖼️', '.jpg': '🖼️', '.jpeg': '🖼️', '.gif': '🖼️', '.svg': '🖼️',
+                '.mp4': '🎬', '.mov': '🎬', '.avi': '🎬',
+                '.mp3': '🎵', '.wav': '🎵',
+                '.zip': '📦', '.rar': '📦', '.7z': '📦',
+                '.py': '🐍',
+                '.js': '📜', '.ts': '📜',
+                '.html': '🌐', '.css': '🎨',
+                '.json': '📋',
+                '.md': '📝',
+                '.txt': '📄',
+                '.rvt': '🏗️',
+                '.dwg': '📐', '.dxf': '📐'
+            };
+            return icons[ext] || '📄';
+        }
+
+        function openFile(filePath) {
+            console.log('Opening file:', filePath);
+
+            // Send to main process to open in viewer
+            ipcRenderer.send('open-file', filePath);
+
+            // Update current task
+            document.getElementById('currentTask').textContent = 'Viewing: ' + pathModule.basename(filePath);
+
+            // Add to activity log
+            addActivity({
+                type: 'file_open',
+                file_path: filePath
+            });
+        }
+
+        // Handle Enter key in path input
+        document.getElementById('currentPath').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                loadDirectory(e.target.value);
+            }
+        });
+    </script>
+</body>
+</html>
