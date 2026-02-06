@@ -39,9 +39,16 @@ try:
 except ImportError:
     SCHEMA_VALIDATION_AVAILABLE = False
 
+# Workflow engine integration
+try:
+    from workflow_engine import WorkflowLearner, PatternAnalyzer, _extract_project_from_title
+    WORKFLOW_AVAILABLE = True
+except ImportError:
+    WORKFLOW_AVAILABLE = False
+
 # Schema versioning constants
 SCHEMA_VERSION = 1
-DAEMON_VERSION = "2.0.0"  # Hardened version
+DAEMON_VERSION = "2.1.0"  # Workflow learning integration
 
 # =============================================================================
 # CONFIGURATION
@@ -91,6 +98,9 @@ SECRET_PATTERNS = [
     (r'token["\']?\s*[:=]\s*["\']?[^"\'}\s]+', 'token=[REDACTED]'),
     (r'Bearer\s+[A-Za-z0-9\-_]+\.[A-Za-z0-9\-_]+\.[A-Za-z0-9\-_]+', 'Bearer [REDACTED]'),
 ]
+
+# Workflow Learning
+WORKFLOW_ANALYSIS_INTERVAL = 30  # Every 30 updates (~5 minutes)
 
 # Proactive Alert Settings
 SPEAK_SCRIPT = Path(r"D:\_CLAUDE-TOOLS\voice-assistant\speak.py")
@@ -250,6 +260,22 @@ class ClaudeDaemon:
         self.alert_cooldowns: Dict[str, datetime] = {}
         self.revit_was_connected = False
         self.previous_memory_state = "normal"  # normal, warning, critical
+
+        # Workflow learning engine
+        if WORKFLOW_AVAILABLE:
+            try:
+                self.workflow_learner = WorkflowLearner()
+                self.pattern_analyzer = PatternAnalyzer()
+                self.last_focus_app = None  # Track focus to avoid duplicate recordings
+                logger.info("Workflow learning engine initialized")
+            except Exception as e:
+                logger.error(f"Workflow engine init failed: {e}")
+                self.workflow_learner = None
+                self.pattern_analyzer = None
+        else:
+            self.workflow_learner = None
+            self.pattern_analyzer = None
+            logger.warning("Workflow engine not available (import failed)")
 
         # Load persistent state if exists
         self._load_persistent_state()
@@ -556,40 +582,96 @@ $title.ToString()
         return self._run_powershell_hidden(ps_cmd, timeout=5) or ""
 
     def get_revit_status(self) -> Dict:
-        """Check Revit MCP connection."""
+        """Check Revit MCP connection for both 2025 and 2026."""
+        pipes = [
+            ("2026", r'\\.\pipe\RevitMCPBridge2026'),
+            ("2025", r'\\.\pipe\RevitMCPBridge2025'),
+        ]
+        instances = []
+
         try:
             import win32file
-            PIPE_NAME = r'\\.\pipe\RevitMCPBridge2026'
-            handle = win32file.CreateFile(
-                PIPE_NAME,
-                win32file.GENERIC_READ | win32file.GENERIC_WRITE,
-                0, None, win32file.OPEN_EXISTING, 0, None
-            )
+        except ImportError:
+            # Fall back to detecting Revit from application list
+            return self._get_revit_status_from_apps()
 
-            # Get document info
-            request = {"method": "getDocumentInfo", "params": {}}
-            message = json.dumps(request) + '\n'
-            win32file.WriteFile(handle, message.encode('utf-8'))
-            result, response = win32file.ReadFile(handle, 64 * 1024)
-            doc_info = json.loads(response.decode('utf-8').strip())
+        for version, pipe_name in pipes:
+            try:
+                handle = win32file.CreateFile(
+                    pipe_name,
+                    win32file.GENERIC_READ | win32file.GENERIC_WRITE,
+                    0, None, win32file.OPEN_EXISTING, 0, None
+                )
 
-            # Get active view
-            request = {"method": "getActiveView", "params": {}}
-            message = json.dumps(request) + '\n'
-            win32file.WriteFile(handle, message.encode('utf-8'))
-            result, response = win32file.ReadFile(handle, 64 * 1024)
-            view_info = json.loads(response.decode('utf-8').strip())
+                # Get document info
+                request = {"method": "getDocumentInfo", "params": {}}
+                message = json.dumps(request) + '\n'
+                win32file.WriteFile(handle, message.encode('utf-8'))
+                result, response = win32file.ReadFile(handle, 64 * 1024)
+                doc_info = json.loads(response.decode('utf-8').strip())
 
-            win32file.CloseHandle(handle)
+                # Get active view
+                request = {"method": "getActiveView", "params": {}}
+                message = json.dumps(request) + '\n'
+                win32file.WriteFile(handle, message.encode('utf-8'))
+                result, response = win32file.ReadFile(handle, 64 * 1024)
+                view_info = json.loads(response.decode('utf-8').strip())
 
-            return {
-                "connected": True,
-                "document": doc_info.get("title", "Unknown"),
-                "view": view_info.get("viewName", "Unknown"),
-                "viewType": view_info.get("viewType", "Unknown")
-            }
-        except Exception as e:
-            return {"connected": False, "error": str(e)[:100]}
+                win32file.CloseHandle(handle)
+
+                instances.append({
+                    "version": version,
+                    "connected": True,
+                    "document": doc_info.get("title", "Unknown"),
+                    "view": view_info.get("viewName", "Unknown"),
+                    "viewType": view_info.get("viewType", "Unknown")
+                })
+            except Exception:
+                pass  # This pipe not available
+
+        if instances:
+            # Return first connected instance as primary, all as list
+            result = instances[0].copy()
+            if len(instances) > 1:
+                result["all_instances"] = instances
+            return result
+
+        # No MCP pipes available - fall back to app detection
+        return self._get_revit_status_from_apps()
+
+    def _get_revit_status_from_apps(self) -> Dict:
+        """Detect Revit from running applications when MCP pipes unavailable."""
+        revit_apps = []
+        for app in self.state.applications:
+            if app.get("ProcessName", "").lower() == "revit":
+                title = app.get("MainWindowTitle", "")
+                version = "unknown"
+                project = title
+                if "Revit 2026" in title:
+                    version = "2026"
+                elif "Revit 2025" in title:
+                    version = "2025"
+                # Extract project name from title like "Autodesk Revit 2025.4 - [PROJECT - View]"
+                if " - [" in title:
+                    project = title.split(" - [")[1].rstrip("]")
+                    if " - " in project:
+                        project = project.split(" - ")[0]
+                revit_apps.append({
+                    "version": version,
+                    "connected": False,
+                    "mcp_available": False,
+                    "document": project,
+                    "window_title": title
+                })
+
+        if revit_apps:
+            result = revit_apps[0].copy()
+            result["detected_via"] = "window_title"
+            if len(revit_apps) > 1:
+                result["all_instances"] = revit_apps
+            return result
+
+        return {"connected": False, "running": False}
 
     def get_bluebeam_status(self) -> Dict:
         """Get Bluebeam status from window title."""
@@ -871,6 +953,34 @@ if ($exists) {
         except Exception as e:
             logger.error(f"Could not rotate event log: {e}")
 
+    def _record_workflow_action(self, action_type: str, app_name: str, window_title: str):
+        """Feed an action into the workflow learning engine."""
+        if not self.workflow_learner:
+            return
+        try:
+            project = None
+            if WORKFLOW_AVAILABLE:
+                project = _extract_project_from_title(window_title)
+            self.workflow_learner.record(
+                action_type,
+                {"name": app_name, "title": window_title},
+                project
+            )
+        except Exception as e:
+            logger.debug(f"Workflow record error: {e}")
+
+    def _run_pattern_analysis(self):
+        """Run periodic pattern analysis and export results."""
+        if not self.pattern_analyzer:
+            return
+        try:
+            result = self.pattern_analyzer.analyze_and_export(min_count=3)
+            candidates = len(result.get("workflow_candidates", []))
+            if candidates > 0:
+                logger.info(f"Pattern analysis: {candidates} workflow candidates found")
+        except Exception as e:
+            logger.error(f"Pattern analysis error: {e}")
+
     def detect_changes(self, new_apps: List[Dict]):
         """Detect application open/close events."""
         current_apps = {(a.get("ProcessName", ""), a.get("MainWindowTitle", ""))
@@ -884,6 +994,8 @@ if ($exists) {
                     app=app[0],
                     window_title=app[1]
                 )
+                # Feed to workflow engine
+                self._record_workflow_action(f"open:{app[0]}", app[0], app[1])
 
         for app in self.previous_apps - current_apps:
             if app[0] and app[1]:
@@ -893,6 +1005,7 @@ if ($exists) {
                     app=app[0],
                     window_title=app[1]
                 )
+                self._record_workflow_action(f"close:{app[0]}", app[0], app[1])
 
         self.previous_apps = current_apps
 
@@ -912,9 +1025,20 @@ if ($exists) {
             self.log_event("focus_changed", new_active, window_title=new_active)
             self.state.active_window = new_active
 
+            # Feed focus change to workflow engine (only meaningful app switches)
+            focus_app = None
+            for app in new_apps:
+                if app.get("MainWindowTitle", "") == new_active:
+                    focus_app = app.get("ProcessName", "")
+                    break
+            if focus_app and focus_app != self.last_focus_app:
+                self._record_workflow_action(f"focus:{focus_app}", focus_app, new_active)
+                self.last_focus_app = focus_app
+
         # Get Revit status (less frequently - every 5 updates = 50 seconds)
+        # Initialize to 4 so first update triggers immediately
         if not hasattr(self, '_revit_counter'):
-            self._revit_counter = 0
+            self._revit_counter = 4
         self._revit_counter += 1
         if self._revit_counter >= 5:
             self.state.revit_status = self.get_revit_status()
@@ -969,6 +1093,14 @@ if ($exists) {
         # Check for proactive alerts (every update after system info is fresh)
         if self._system_counter == 0:  # Just updated system info
             self.check_proactive_alerts()
+
+        # Periodic workflow pattern analysis (every ~5 minutes)
+        if not hasattr(self, '_workflow_counter'):
+            self._workflow_counter = 0
+        self._workflow_counter += 1
+        if self._workflow_counter >= WORKFLOW_ANALYSIS_INTERVAL:
+            self._run_pattern_analysis()
+            self._workflow_counter = 0
 
         # Save state to file
         self.save_state()
