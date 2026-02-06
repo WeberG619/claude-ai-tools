@@ -721,7 +721,7 @@ $result | ConvertTo-Json -Depth 3 -Compress
 
     def get_system_info(self) -> Dict:
         """Get system resource information."""
-        ps_cmd = '''
+        ps_cmd = r'''
 $cpu = (Get-Counter '\Processor(_Total)\% Processor Time' -SampleInterval 1 -MaxSamples 1).CounterSamples.CookedValue
 $mem = Get-CimInstance Win32_OperatingSystem
 $memUsed = [math]::Round(($mem.TotalVisibleMemorySize - $mem.FreePhysicalMemory) / 1MB, 1)
@@ -755,8 +755,8 @@ $clip
 
     def get_recent_files(self) -> List[str]:
         """Get recently accessed files from shell Recent folder."""
-        ps_cmd = '''
-$recent = "C:\\Users\\rick\\AppData\\Roaming\\Microsoft\\Windows\\Recent"
+        ps_cmd = r'''
+$recent = [Environment]::GetFolderPath("Recent")
 $exists = Test-Path $recent
 if ($exists) {
     $files = Get-ChildItem $recent -Filter *.lnk -ErrorAction SilentlyContinue |

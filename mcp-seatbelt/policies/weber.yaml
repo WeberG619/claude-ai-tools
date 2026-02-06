@@ -1,5 +1,6 @@
 # MCP Seatbelt - Weber's Personal Overrides
 # These settings override default.yaml
+# NOTE: Master contact list is in /mnt/d/_CLAUDE-TOOLS/WEBER_WORKFLOWS.md
 
 # Contacts whitelist - auto-populated from existing WhatsApp/email contacts
 # Add trusted recipients here
@@ -16,8 +17,10 @@ contacts_whitelist:
   # Project contacts
   - "rachelle@afuriaesthetics.com"
 
-  # Known safe domains
-  - "@gmail.com"  # Weber's own domain for testing
+  # Weber's personal emails
+  - "weberg619@gmail.com"
+  - "weber@bimopsstudio.com"
+  - "weber@wgdesigndrafting.com"
 
 tools:
   # --------------------------------------------------------
@@ -57,7 +60,7 @@ tools:
           - "D:/"
           - "/mnt/d/"
           - "C:/Users/weber/"
-          - "C:/Users/rick/"  # Legacy path
+          # Contact list maintained in /mnt/d/_CLAUDE-TOOLS/WEBER_WORKFLOWS.md
 
   # --------------------------------------------------------
   # VOICE - Always allow (low risk, high value)
