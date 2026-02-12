@@ -43,7 +43,6 @@ logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
     handlers=[
         logging.FileHandler(LOG_DIR / "proactive.log"),
-        logging.StreamHandler(),
     ],
 )
 logger = logging.getLogger("scheduler")
