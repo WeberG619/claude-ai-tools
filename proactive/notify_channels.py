@@ -23,29 +23,41 @@ GATEWAY_HUB_URL = "ws://127.0.0.1:18789"
 
 def send_telegram(message: str) -> bool:
     """Send a message to Weber's Telegram using the bot API directly."""
-    try:
-        import urllib.request
-        import urllib.parse
+    import urllib.request
+    import urllib.parse
 
-        url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
-        data = urllib.parse.urlencode({
-            "chat_id": TELEGRAM_CHAT_ID,
-            "text": message,
-            "parse_mode": "Markdown"
-        }).encode()
+    url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
 
-        req = urllib.request.Request(url, data=data, method="POST")
-        with urllib.request.urlopen(req, timeout=10) as resp:
-            result = json.loads(resp.read())
-            if result.get("ok"):
-                logger.info(f"Telegram sent: {message[:50]}...")
-                return True
-            else:
-                logger.error(f"Telegram API error: {result}")
-                return False
-    except Exception as e:
-        logger.error(f"Telegram send failed: {e}")
-        return False
+    # Try Markdown first, fall back to plain text if special chars cause 400
+    for parse_mode in ("Markdown", None):
+        try:
+            params = {
+                "chat_id": TELEGRAM_CHAT_ID,
+                "text": message,
+            }
+            if parse_mode:
+                params["parse_mode"] = parse_mode
+
+            data = urllib.parse.urlencode(params).encode()
+            req = urllib.request.Request(url, data=data, method="POST")
+            with urllib.request.urlopen(req, timeout=10) as resp:
+                result = json.loads(resp.read())
+                if result.get("ok"):
+                    logger.info(f"Telegram sent: {message[:50]}...")
+                    return True
+                else:
+                    logger.error(f"Telegram API error: {result}")
+                    return False
+        except urllib.error.HTTPError as e:
+            if e.code == 400 and parse_mode:
+                logger.debug(f"Markdown parse failed, retrying as plain text")
+                continue
+            logger.error(f"Telegram send failed: {e}")
+            return False
+        except Exception as e:
+            logger.error(f"Telegram send failed: {e}")
+            return False
+    return False
 
 
 def send_voice(message: str) -> bool:

@@ -3,12 +3,13 @@
 Morning Briefing Generator
 
 Generates daily briefings for Weber at 7 AM.
-Integrates with calendar, email, and Revit project status.
+Integrates with calendar, email, weather, and system status.
 """
 
-import subprocess
-import sys
 import json
+import sys
+import logging
+import urllib.request
 from datetime import datetime
 from pathlib import Path
 
@@ -16,19 +17,48 @@ from pathlib import Path
 sys.path.insert(0, "/mnt/d/_CLAUDE-TOOLS/google-calendar-mcp")
 sys.path.insert(0, "/mnt/d/_CLAUDE-TOOLS/voice-mcp")
 
+logger = logging.getLogger("morning_briefing")
+
+ALERTS_FILE = Path("/mnt/d/_CLAUDE-TOOLS/email-watcher/email_alerts.json")
+
+
 def get_calendar_events():
-    """Get today's calendar events"""
+    """Get today's calendar events via direct import."""
     try:
-        result = subprocess.run(
-            ['python3', '/mnt/d/_CLAUDE-TOOLS/google-calendar-mcp/calendar_client.py', 'today'],
-            capture_output=True, text=True, timeout=30
-        )
-        return result.stdout.strip() if result.stdout else "No calendar events today."
+        from calendar_client import get_today_events, format_event
+        events = get_today_events()
+
+        if not events:
+            return "No calendar events today."
+
+        lines = []
+        for event in events:
+            formatted = format_event(event)
+            lines.append(f"  {formatted['start']} - {formatted['summary']}")
+            if formatted['location']:
+                lines.append(f"    Location: {formatted['location']}")
+
+        return "\n".join(lines)
     except Exception as e:
+        logger.error(f"Calendar fetch failed: {e}")
         return f"Could not fetch calendar: {e}"
 
+
+def get_weather():
+    """Get weather from wttr.in (free, no API key)."""
+    try:
+        url = "https://wttr.in/Miami?format=3"
+        req = urllib.request.Request(url, headers={"User-Agent": "curl/7.0"})
+        with urllib.request.urlopen(req, timeout=5) as resp:
+            weather = resp.read().decode().strip()
+            return weather if weather else "Weather unavailable"
+    except Exception as e:
+        logger.debug(f"Weather fetch failed: {e}")
+        return "Weather unavailable"
+
+
 def get_email_summary():
-    """Get email summary from monitoring system"""
+    """Get email summary from monitoring system."""
     try:
         state_file = Path("/mnt/d/_CLAUDE-TOOLS/system-bridge/live_state.json")
         if state_file.exists():
@@ -51,8 +81,39 @@ def get_email_summary():
     except Exception as e:
         return f"Could not fetch email status: {e}"
 
+
+def get_email_priorities():
+    """Get specific priority emails from email_alerts.json."""
+    try:
+        if ALERTS_FILE.exists():
+            with open(ALERTS_FILE, "r") as f:
+                alerts = json.load(f)
+
+            items = alerts.get("alerts", [])
+            if not items:
+                return None
+
+            lines = []
+            for alert in items[:5]:  # Top 5
+                category = alert.get("category", "")
+                sender = alert.get("from", "")
+                subject = alert.get("subject", "")
+
+                # Shorten sender
+                if "<" in sender:
+                    sender = sender.split("<")[0].strip().strip('"')
+
+                tag = "URGENT" if category == "urgent_response" else "REPLY"
+                lines.append(f"  [{tag}] {sender}: {subject[:50]}")
+
+            return "\n".join(lines)
+    except (json.JSONDecodeError, IOError):
+        pass
+    return None
+
+
 def get_active_apps():
-    """Get currently running apps from system state"""
+    """Get currently running apps from system state."""
     try:
         state_file = Path("/mnt/d/_CLAUDE-TOOLS/system-bridge/live_state.json")
         if state_file.exists():
@@ -76,39 +137,47 @@ def get_active_apps():
     except Exception as e:
         return f"Could not fetch system status: {e}"
 
-def get_weather():
-    """Get weather forecast (simple placeholder)"""
-    # Could integrate with a weather API
-    return "Check weather at weather.com"
 
 def generate_briefing():
-    """Generate the full morning briefing"""
+    """Generate the full morning briefing."""
     now = datetime.now()
     day_name = now.strftime("%A, %B %d, %Y")
 
     calendar = get_calendar_events()
+    weather = get_weather()
     email = get_email_summary()
+    priorities = get_email_priorities()
     apps = get_active_apps()
 
-    briefing = f"""
-Good morning, Weber! Here's your briefing for {day_name}.
+    briefing = f"""Good morning, Weber! Here's your briefing for {day_name}.
+
+WEATHER:
+  {weather}
 
 CALENDAR:
 {calendar}
 
 EMAIL STATUS:
-{email}
+  {email}"""
+
+    if priorities:
+        briefing += f"""
+
+PRIORITY EMAILS:
+{priorities}"""
+
+    briefing += f"""
 
 SYSTEM STATUS:
-{apps}
+  {apps}
 
-Have a productive day!
-""".strip()
+Have a productive day!"""
 
     return briefing
 
+
 def main():
-    """Run the morning briefing"""
+    """Run the morning briefing."""
     print("=" * 60)
     print("GENERATING MORNING BRIEFING")
     print("=" * 60)
@@ -126,6 +195,7 @@ def main():
     except ImportError:
         # Fallback: just speak locally
         try:
+            import subprocess
             subprocess.run(
                 ['python3', '/mnt/d/_CLAUDE-TOOLS/voice-mcp/speak.py', briefing],
                 timeout=60
@@ -134,6 +204,7 @@ def main():
             print(f"Voice fallback failed: {e}")
 
     return briefing
+
 
 if __name__ == "__main__":
     main()

@@ -4,22 +4,21 @@ Smart Notification System
 
 Monitors system state and sends proactive notifications
 based on configurable rules.
+
+Note: Email and calendar rules have been moved to dedicated monitors
+(email_monitor.py and calendar_monitor.py). This module handles
+system-level notifications: Revit changes, high memory, etc.
 """
 
 import json
+import logging
 import time
-import subprocess
 from pathlib import Path
 from datetime import datetime
-from typing import Callable, Dict, List, Any
+from typing import Callable, Dict, List, Optional
 
-# Important clients to watch for
-IMPORTANT_CLIENTS = [
-    "ifantal@lesfantal.com",      # Isa Fantal
-    "bruce@bdarchitect.net",       # Bruce Davis
-    "paola@bdarchitect.net",       # Paola Gomez
-    "rachelle@afuriaesthetics.com" # Rachelle (Afuri)
-]
+logger = logging.getLogger("smart_notify")
+
 
 class NotificationRule:
     """A rule for triggering notifications"""
@@ -31,55 +30,27 @@ class NotificationRule:
         self.action = action
         self.message_template = message_template
         self.cooldown_minutes = cooldown_minutes
-        self.last_triggered = None
-
-    def should_trigger(self, event: Dict) -> bool:
-        """Check if this rule should trigger"""
-        # Check cooldown
-        if self.last_triggered:
-            elapsed = (datetime.now() - self.last_triggered).total_seconds() / 60
-            if elapsed < self.cooldown_minutes:
-                return False
-
-        # Check condition
-        return self.condition(event)
 
     def format_message(self, event: Dict) -> str:
         """Format the notification message"""
         return self.message_template.format(**event)
 
-class SmartNotifier:
-    """Smart notification manager"""
 
-    def __init__(self):
+class SmartNotifier:
+    """Smart notification manager for system-level events."""
+
+    def __init__(self, tracker_state=None):
+        self.tracker = tracker_state
         self.rules: List[NotificationRule] = []
         self.state_file = Path("/mnt/d/_CLAUDE-TOOLS/system-bridge/live_state.json")
         self.last_state = {}
         self._setup_default_rules()
 
     def _setup_default_rules(self):
-        """Set up default notification rules"""
+        """Set up default notification rules.
 
-        # Important email
-        self.rules.append(NotificationRule(
-            name="important_email",
-            trigger="email_from_client",
-            condition=lambda e: e.get('from', '') in IMPORTANT_CLIENTS,
-            action="notify_all",
-            message_template="Important email from {from}: {subject}",
-            cooldown_minutes=1
-        ))
-
-        # Urgent email
-        self.rules.append(NotificationRule(
-            name="urgent_email",
-            trigger="email_urgent",
-            condition=lambda e: e.get('category') == 'urgent',
-            action="notify_all",
-            message_template="URGENT: {subject} from {from}",
-            cooldown_minutes=1
-        ))
-
+        Note: email and calendar rules removed - now in dedicated monitors.
+        """
         # Revit opened
         self.rules.append(NotificationRule(
             name="revit_opened",
@@ -100,40 +71,29 @@ class SmartNotifier:
             cooldown_minutes=30
         ))
 
-        # Calendar reminder (15 min before)
-        self.rules.append(NotificationRule(
-            name="calendar_reminder",
-            trigger="calendar_event",
-            condition=lambda e: e.get('minutes_until', 999) <= 15,
-            action="notify_all",
-            message_template="Reminder: {title} in {minutes_until} minutes",
-            cooldown_minutes=10
-        ))
+    def _check_cooldown(self, rule_name: str, minutes: float) -> bool:
+        """Check cooldown using TrackerState if available, else in-memory."""
+        if self.tracker:
+            return self.tracker.check_cooldown(f"smart_{rule_name}", minutes)
+        return True  # No tracker = always allow (backward compat)
+
+    def _record_cooldown(self, rule_name: str):
+        """Record cooldown."""
+        if self.tracker:
+            self.tracker.record_cooldown(f"smart_{rule_name}")
 
     def get_current_state(self) -> Dict:
         """Read current system state"""
         try:
             if self.state_file.exists():
                 return json.loads(self.state_file.read_text())
-        except:
+        except Exception:
             pass
         return {}
 
     def detect_events(self, old_state: Dict, new_state: Dict) -> List[Dict]:
         """Detect events by comparing states"""
         events = []
-
-        # Check email changes
-        old_email = old_state.get('email', {})
-        new_email = new_state.get('email', {})
-
-        for alert in new_email.get('alerts', []):
-            events.append({
-                'type': 'email_urgent' if alert.get('category') == 'urgent' else 'email_from_client',
-                'from': alert.get('from', ''),
-                'subject': alert.get('subject', ''),
-                'category': alert.get('category', '')
-            })
 
         # Check system status
         system = new_state.get('system', {})
@@ -145,7 +105,6 @@ class SmartNotifier:
 
         # Check app changes
         old_apps = {a.get('ProcessName', '') for a in old_state.get('applications', [])}
-        new_apps = {a.get('ProcessName', '') for a in new_state.get('applications', [])}
 
         for app in new_state.get('applications', []):
             name = app.get('ProcessName', '')
@@ -171,28 +130,28 @@ class SmartNotifier:
             notify_telegram_only = lambda m: print(f"TELEGRAM: {m}")
 
         if action == "notify_all":
-            print(f"NOTIFY ALL: {formatted}")
+            logger.info(f"NOTIFY ALL: {formatted}")
             notify_all(message, voice=True)
 
         elif action == "notify_local":
-            print(f"LOCAL: {formatted}")
+            logger.info(f"LOCAL: {formatted}")
             notify_voice_only(message)
 
         elif action == "notify_telegram":
-            print(f"TELEGRAM: {formatted}")
+            logger.info(f"TELEGRAM: {formatted}")
             notify_telegram_only(message)
 
         elif action == "log_only":
-            print(f"LOG: {formatted}")
+            logger.info(f"LOG: {formatted}")
 
     def process_events(self, events: List[Dict]):
         """Process detected events against rules"""
         for event in events:
             for rule in self.rules:
-                if rule.should_trigger(event):
+                if rule.condition(event) and self._check_cooldown(rule.name, rule.cooldown_minutes):
                     message = rule.format_message(event)
                     self.send_notification(message, rule.action)
-                    rule.last_triggered = datetime.now()
+                    self._record_cooldown(rule.name)
 
     def run_once(self):
         """Run one monitoring cycle"""
@@ -203,32 +162,35 @@ class SmartNotifier:
 
     def run_continuous(self, interval_seconds: int = 30):
         """Run continuous monitoring"""
-        print("=" * 60)
-        print("SMART NOTIFICATION SYSTEM ACTIVE")
-        print(f"Monitoring every {interval_seconds} seconds...")
-        print("=" * 60)
+        logger.info("=" * 60)
+        logger.info("SMART NOTIFICATION SYSTEM ACTIVE")
+        logger.info(f"Monitoring every {interval_seconds} seconds...")
+        logger.info("=" * 60)
 
         while True:
             try:
                 self.run_once()
                 time.sleep(interval_seconds)
             except KeyboardInterrupt:
-                print("\nStopping smart notifications...")
+                logger.info("Stopping smart notifications...")
                 break
             except Exception as e:
-                print(f"Error: {e}")
+                logger.error(f"Error: {e}")
                 time.sleep(interval_seconds)
+
 
 def main():
     """Main entry point"""
+    import sys
+    logging.basicConfig(level=logging.INFO)
+
     notifier = SmartNotifier()
 
-    # Check for one-time or continuous mode
-    import sys
     if len(sys.argv) > 1 and sys.argv[1] == "--once":
         notifier.run_once()
     else:
         notifier.run_continuous()
+
 
 if __name__ == "__main__":
     main()
