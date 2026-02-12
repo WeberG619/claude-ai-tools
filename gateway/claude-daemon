@@ -1,0 +1,3 @@
+#!/bin/bash
+# Quick alias: claude-daemon start|stop|status|restart|logs
+exec /mnt/d/_CLAUDE-TOOLS/gateway/daemon.sh "$@"
