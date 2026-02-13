@@ -42,7 +42,7 @@ logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
     handlers=[
-        logging.FileHandler(LOG_DIR / "proactive.log"),
+        logging.StreamHandler(),  # daemon.sh redirects stdout to proactive.log
     ],
 )
 logger = logging.getLogger("scheduler")
@@ -64,7 +64,7 @@ STATE_SAVE_INTERVAL = 60
 HEALTH_CHECK_SERVICES = {
     "gateway-hub": {"pidfile": "/mnt/d/_CLAUDE-TOOLS/gateway/pids/gateway-hub.pid"},
     "telegram-bot": {"pidfile": "/mnt/d/_CLAUDE-TOOLS/gateway/pids/telegram-bot.pid"},
-    "email-watcher": {"pidfile": "/mnt/d/_CLAUDE-TOOLS/email-watcher/watcher.pid"},
+    "email-watcher": {"pidfile": "/mnt/d/_CLAUDE-TOOLS/gateway/pids/email-watcher.pid"},
 }
 
 
@@ -197,7 +197,10 @@ class ProactiveScheduler:
                 self.notifier.run_once()
             except Exception as e:
                 logger.error(f"Smart notify error: {e}")
-            time.sleep(SMART_NOTIFY_INTERVAL)
+            try:
+                time.sleep(SMART_NOTIFY_INTERVAL)
+            except InterruptedError:
+                pass
 
     def _calendar_loop(self):
         """Calendar monitor loop (60s interval)."""
@@ -207,7 +210,10 @@ class ProactiveScheduler:
                 self.calendar_monitor.check()
             except Exception as e:
                 logger.error(f"Calendar monitor error: {e}")
-            time.sleep(CALENDAR_INTERVAL)
+            try:
+                time.sleep(CALENDAR_INTERVAL)
+            except InterruptedError:
+                pass
 
     def _email_loop(self):
         """Email monitor loop (60s interval)."""
@@ -217,7 +223,10 @@ class ProactiveScheduler:
                 self.email_monitor.check()
             except Exception as e:
                 logger.error(f"Email monitor error: {e}")
-            time.sleep(EMAIL_INTERVAL)
+            try:
+                time.sleep(EMAIL_INTERVAL)
+            except InterruptedError:
+                pass
 
     def _health_loop(self):
         """Health check loop (5 min interval)."""
@@ -227,7 +236,10 @@ class ProactiveScheduler:
                 self.check_service_health()
             except Exception as e:
                 logger.error(f"Health check error: {e}")
-            time.sleep(HEALTH_INTERVAL)
+            try:
+                time.sleep(HEALTH_INTERVAL)
+            except InterruptedError:
+                pass
 
     def _schedule_loop(self):
         """Main schedule loop - handles daily/weekly timed events + state saving."""
@@ -265,7 +277,10 @@ class ProactiveScheduler:
                 logger.error(f"Schedule loop error: {e}")
 
             # Sleep 30s to ensure we don't miss minute boundaries
-            time.sleep(30)
+            try:
+                time.sleep(30)
+            except InterruptedError:
+                pass
 
     # ---- Start/Stop ----
 
@@ -299,6 +314,8 @@ class ProactiveScheduler:
             self._schedule_loop()
         except KeyboardInterrupt:
             logger.info("Keyboard interrupt received")
+        except Exception as e:
+            logger.error(f"Scheduler crashed with: {type(e).__name__}: {e}")
         finally:
             self.running = False
             self.tracker.save()

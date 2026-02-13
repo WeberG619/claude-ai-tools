@@ -38,8 +38,11 @@ SERVICE_DIRS[whatsapp-gw]="$TOOLS_DIR/whatsapp-gateway"
 SERVICES[web-chat]="python3 server.py"
 SERVICE_DIRS[web-chat]="$TOOLS_DIR/web-chat"
 
-SERVICES[proactive]="python3 scheduler.py"
+SERVICES[proactive]="python3 -u scheduler.py"
 SERVICE_DIRS[proactive]="$TOOLS_DIR/proactive"
+
+SERVICES[email-watcher]="python3 -u email_watcher.py"
+SERVICE_DIRS[email-watcher]="$TOOLS_DIR/email-watcher"
 
 # ============================================
 # FUNCTIONS
@@ -63,15 +66,16 @@ start_service() {
     fi
 
     # Start with auto-restart wrapper
+    # Single redirect for entire loop - avoids WSL NTFS stale file handle issues
     (
         while true; do
-            echo "[$(date)] Starting $name..." >> "$logfile"
-            cd "$dir" && $cmd >> "$logfile" 2>&1
+            echo "[$(date)] Starting $name..."
+            cd "$dir" && $cmd
             local exit_code=$?
-            echo "[$(date)] $name exited with code $exit_code. Restarting in 5s..." >> "$logfile"
+            echo "[$(date)] $name exited with code $exit_code. Restarting in 5s..."
             sleep 5
         done
-    ) &
+    ) >> "$logfile" 2>&1 &
 
     local wrapper_pid=$!
     echo $wrapper_pid > "$pidfile"
@@ -133,7 +137,7 @@ case "${1:-status}" in
         echo "CLAUDE ASSISTANT DAEMON - STARTING"
         echo "============================================"
         echo ""
-        for name in gateway-hub telegram-bot whatsapp-gw web-chat proactive; do
+        for name in gateway-hub telegram-bot whatsapp-gw web-chat proactive email-watcher; do
             start_service "$name"
         done
         echo ""
@@ -147,7 +151,7 @@ case "${1:-status}" in
         echo "CLAUDE ASSISTANT DAEMON - STOPPING"
         echo "============================================"
         echo ""
-        for name in proactive web-chat whatsapp-gw telegram-bot gateway-hub; do
+        for name in email-watcher proactive web-chat whatsapp-gw telegram-bot gateway-hub; do
             stop_service "$name"
         done
         echo ""
@@ -168,7 +172,7 @@ case "${1:-status}" in
         echo "$(date)"
         echo "============================================"
         echo ""
-        for name in gateway-hub telegram-bot whatsapp-gw web-chat proactive; do
+        for name in gateway-hub telegram-bot whatsapp-gw web-chat proactive email-watcher; do
             status_service "$name"
         done
         echo ""

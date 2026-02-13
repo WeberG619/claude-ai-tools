@@ -45,16 +45,24 @@ def get_calendar_events():
 
 
 def get_weather():
-    """Get weather from wttr.in (free, no API key)."""
-    try:
-        url = "https://wttr.in/Miami?format=3"
-        req = urllib.request.Request(url, headers={"User-Agent": "curl/7.0"})
-        with urllib.request.urlopen(req, timeout=5) as resp:
-            weather = resp.read().decode().strip()
-            return weather if weather else "Weather unavailable"
-    except Exception as e:
-        logger.debug(f"Weather fetch failed: {e}")
-        return "Weather unavailable"
+    """Get weather from wttr.in (free, no API key). Retries with fallback formats."""
+    # Try multiple formats in case one fails
+    urls = [
+        "https://wttr.in/Miami?format=3",
+        "https://wttr.in/Miami?format=%l:+%c+%t+%w",
+        "https://wttr.in/Miami?format=4",
+    ]
+    for url in urls:
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": "curl/7.0"})
+            with urllib.request.urlopen(req, timeout=8) as resp:
+                weather = resp.read().decode().strip()
+                if weather and len(weather) > 3:
+                    return weather
+        except Exception as e:
+            logger.debug(f"Weather fetch failed for {url}: {e}")
+            continue
+    return "Weather unavailable"
 
 
 def get_email_summary():

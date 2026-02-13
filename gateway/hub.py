@@ -36,9 +36,7 @@ HUB_PORT = 18789
 LOG_DIR = Path("/mnt/d/_CLAUDE-TOOLS/gateway/logs")
 LOG_DIR.mkdir(parents=True, exist_ok=True)
 
-# Proactive notification settings
-MORNING_BRIEFING_TIME = "07:00"  # 7 AM
-EVENING_SUMMARY_TIME = "18:00"  # 6 PM
+# Proactive notification settings (timed events managed by proactive/scheduler.py)
 
 # ============================================
 # LOGGING
@@ -344,8 +342,7 @@ async def main():
     )
 
     logger.info(f"Gateway Hub started on ws://{HUB_HOST}:{HUB_PORT}")
-    logger.info(f"Morning briefing scheduled for {MORNING_BRIEFING_TIME}")
-    logger.info(f"Evening summary scheduled for {EVENING_SUMMARY_TIME}")
+    logger.info("Note: Timed notifications managed by proactive/scheduler.py")
 
     # Start proactive notifier
     notifier_task = asyncio.create_task(notifier.schedule_notifications())

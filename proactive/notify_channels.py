@@ -60,12 +60,17 @@ def send_telegram(message: str) -> bool:
     return False
 
 
-def send_voice(message: str) -> bool:
-    """Speak the message using voice-mcp TTS."""
+def send_voice(message: str, max_chars: int = 500) -> bool:
+    """Speak the message using voice-mcp TTS. Truncates long messages."""
     try:
+        # Truncate long messages for voice (keep first section)
+        voice_text = message
+        if len(voice_text) > max_chars:
+            voice_text = voice_text[:max_chars].rsplit('\n', 1)[0] + "\n\n...and more details on Telegram."
+
         subprocess.run(
-            ['python3', '/mnt/d/_CLAUDE-TOOLS/voice-mcp/speak.py', message],
-            timeout=60,
+            ['python3', '/mnt/d/_CLAUDE-TOOLS/voice-mcp/speak.py', voice_text],
+            timeout=120,
             capture_output=True
         )
         return True

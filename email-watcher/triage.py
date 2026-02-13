@@ -134,6 +134,7 @@ SENDER_PATTERNS = {
         r".*@.*fidelity\.com",
         r".*@.*vanguard\.com",
         r".*@.*schwab\.com",
+        r".*@.*expensify\.com",
 
         # === TECH/SAAS/AI COMPANIES ===
         r".*@.*heygen\.com",
