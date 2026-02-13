@@ -17,6 +17,7 @@ Runs as a long-lived daemon (started by gateway/daemon.sh) that coordinates:
 import argparse
 import logging
 import os
+import shutil
 import signal
 import subprocess
 import sys
@@ -38,11 +39,15 @@ from morning_briefing import generate_briefing
 LOG_DIR = Path("/mnt/d/_CLAUDE-TOOLS/gateway/logs")
 LOG_DIR.mkdir(parents=True, exist_ok=True)
 
+# Write to Linux tmpfs for reliable I/O, copy to NTFS periodically
+LINUX_LOG = Path("/tmp/proactive-scheduler.log")
+NTFS_LOG = LOG_DIR / "proactive.log"
+
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
     handlers=[
-        logging.StreamHandler(),  # daemon.sh redirects stdout to proactive.log
+        logging.FileHandler(LINUX_LOG, mode="a"),
     ],
 )
 logger = logging.getLogger("scheduler")
@@ -268,9 +273,14 @@ class ProactiveScheduler:
                 if weekday == 4 and current_time == WEEKLY_RECAP_TIME:
                     self.run_weekly_recap()
 
-                # Save tracker state every 60s
+                # Save tracker state + sync log every 60s
                 if time.time() - last_save >= STATE_SAVE_INTERVAL:
                     self.tracker.save()
+                    # Sync log from tmpfs to NTFS for visibility
+                    try:
+                        shutil.copy2(str(LINUX_LOG), str(NTFS_LOG))
+                    except Exception:
+                        pass
                     last_save = time.time()
 
             except Exception as e:

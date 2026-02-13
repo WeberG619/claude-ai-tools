@@ -22,8 +22,10 @@ PID_DIR="$TOOLS_DIR/gateway/pids"
 mkdir -p "$LOG_DIR" "$PID_DIR"
 
 # Service definitions: name, command, working directory
+# SERVICE_OWN_LOG: set to "1" if service writes its own log (daemon redirects to /dev/null)
 declare -A SERVICES
 declare -A SERVICE_DIRS
+declare -A SERVICE_OWN_LOG
 
 SERVICES[gateway-hub]="python3 hub.py"
 SERVICE_DIRS[gateway-hub]="$TOOLS_DIR/gateway"
@@ -38,8 +40,10 @@ SERVICE_DIRS[whatsapp-gw]="$TOOLS_DIR/whatsapp-gateway"
 SERVICES[web-chat]="python3 server.py"
 SERVICE_DIRS[web-chat]="$TOOLS_DIR/web-chat"
 
+# Proactive scheduler handles its own FileHandler logging to proactive.log
 SERVICES[proactive]="python3 -u scheduler.py"
 SERVICE_DIRS[proactive]="$TOOLS_DIR/proactive"
+SERVICE_OWN_LOG[proactive]="1"
 
 SERVICES[email-watcher]="python3 -u email_watcher.py"
 SERVICE_DIRS[email-watcher]="$TOOLS_DIR/email-watcher"
@@ -66,16 +70,26 @@ start_service() {
     fi
 
     # Start with auto-restart wrapper
-    # Single redirect for entire loop - avoids WSL NTFS stale file handle issues
-    (
-        while true; do
-            echo "[$(date)] Starting $name..."
-            cd "$dir" && $cmd
-            local exit_code=$?
-            echo "[$(date)] $name exited with code $exit_code. Restarting in 5s..."
-            sleep 5
-        done
-    ) >> "$logfile" 2>&1 &
+    if [ "${SERVICE_OWN_LOG[$name]}" = "1" ]; then
+        # Service handles its own logging - redirect daemon output to /dev/null
+        (
+            while true; do
+                cd "$dir" && $cmd
+                sleep 5
+            done
+        ) > /dev/null 2>&1 &
+    else
+        # Daemon handles logging via redirect
+        (
+            while true; do
+                echo "[$(date)] Starting $name..."
+                cd "$dir" && $cmd
+                local exit_code=$?
+                echo "[$(date)] $name exited with code $exit_code. Restarting in 5s..."
+                sleep 5
+            done
+        ) >> "$logfile" 2>&1 &
+    fi
 
     local wrapper_pid=$!
     echo $wrapper_pid > "$pidfile"
@@ -85,22 +99,33 @@ start_service() {
 stop_service() {
     local name=$1
     local pidfile="$PID_DIR/$name.pid"
+    local cmd="${SERVICES[$name]}"
+
+    # Extract the executable pattern for pkill fallback (e.g. "scheduler.py" from "python3 -u scheduler.py")
+    local exe_pattern=$(echo "$cmd" | grep -oP '\S+\.(py|js)$')
 
     if [ -f "$pidfile" ]; then
         local pid=$(cat "$pidfile")
         if kill -0 "$pid" 2>/dev/null; then
-            # Kill the wrapper and all children
-            pkill -P "$pid" 2>/dev/null
+            # Kill wrapper and entire process tree
             kill "$pid" 2>/dev/null
-            rm -f "$pidfile"
-            echo "  [$name] Stopped"
-        else
-            rm -f "$pidfile"
-            echo "  [$name] Was not running (stale PID)"
+            sleep 0.3
+            pkill -P "$pid" 2>/dev/null
+            sleep 0.3
+            # Force kill wrapper if still alive
+            kill -0 "$pid" 2>/dev/null && kill -9 "$pid" 2>/dev/null
         fi
-    else
-        echo "  [$name] Not running"
+        rm -f "$pidfile"
     fi
+
+    # Fallback: kill any orphaned processes matching the service command
+    if [ -n "$exe_pattern" ]; then
+        pkill -f "$exe_pattern" 2>/dev/null
+        sleep 0.2
+        pkill -9 -f "$exe_pattern" 2>/dev/null
+    fi
+
+    echo "  [$name] Stopped"
 }
 
 status_service() {
