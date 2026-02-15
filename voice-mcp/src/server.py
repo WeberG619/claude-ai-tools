@@ -125,29 +125,27 @@ def _stop_existing_playback():
         pass
 
 def play_audio(audio_file: str) -> bool:
+    """Play audio file (fire-and-forget, non-blocking)"""
     try:
         # Prevent overlapping playback
         _stop_existing_playback()
 
         win_path = str(audio_file).replace("/mnt/d", "D:")
-        play_script = f'''
-        Add-Type -AssemblyName PresentationCore
-        $player = New-Object System.Windows.Media.MediaPlayer
-        $player.Open("{win_path}")
-        Start-Sleep -Milliseconds 300
-        $player.Play()
-        $timeout = 60; $waited = 0
-        while ($player.NaturalDuration.HasTimeSpan -eq $false -and $waited -lt $timeout) {{
-            Start-Sleep -Milliseconds 100
-            $waited += 0.1
-        }}
-        if ($player.NaturalDuration.HasTimeSpan) {{
-            $duration = $player.NaturalDuration.TimeSpan.TotalSeconds
-            Start-Sleep -Seconds ($duration + 0.5)
-        }}
-        $player.Close()
-        '''
-        _run_ps(play_script, timeout=120)
+        # Fire-and-forget: Start-Process launches a hidden powershell that plays and exits
+        script = (
+            "Start-Process powershell.exe -WindowStyle Hidden -ArgumentList '"
+            "-NoProfile -Command "
+            "Add-Type -AssemblyName PresentationCore; "
+            "$p = New-Object System.Windows.Media.MediaPlayer; "
+            f"$p.Open([Uri]\\\"{win_path}\\\"); "
+            "Start-Sleep -Milliseconds 50; "
+            "$p.Play(); "
+            "while ($p.NaturalDuration.HasTimeSpan -eq $false) { Start-Sleep -Milliseconds 100 }; "
+            "Start-Sleep -Seconds ($p.NaturalDuration.TimeSpan.TotalSeconds + 0.5); "
+            "$p.Close()"
+            "'"
+        )
+        _run_ps(script, timeout=5)
         return True
     except Exception as e:
         print(f"Playback error: {e}", file=sys.stderr)

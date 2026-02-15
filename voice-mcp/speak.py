@@ -17,6 +17,7 @@ import sys
 import os
 import socket
 import hashlib
+import threading
 from datetime import datetime
 from pathlib import Path
 
@@ -161,27 +162,27 @@ def _stop_existing_playback():
         pass
 
 def play_audio(audio_file: str) -> bool:
-    """Play audio file using PowerShell via bridge"""
+    """Play audio file using PowerShell via bridge (fire-and-forget, non-blocking)"""
     try:
         _stop_existing_playback()
         win_path = wsl_to_win_path(audio_file)
 
-        # Get actual audio duration
-        duration = get_audio_duration(audio_file)
-        wait_ms = int((duration + 0.2) * 1000)
-
+        # Fire-and-forget: Start-Process launches a hidden powershell that plays and exits
         script = (
-            'Add-Type -AssemblyName PresentationCore; '
-            '$player = New-Object System.Windows.Media.MediaPlayer; '
-            f'$player.Open([Uri]"{win_path}"); '
-            'Start-Sleep -Milliseconds 50; '
-            '$player.Play(); '
-            f'Start-Sleep -Milliseconds {wait_ms}; '
-            '$player.Stop(); '
-            '$player.Close()'
+            "Start-Process powershell.exe -WindowStyle Hidden -ArgumentList '"
+            "-NoProfile -Command "
+            "Add-Type -AssemblyName PresentationCore; "
+            "$p = New-Object System.Windows.Media.MediaPlayer; "
+            f"$p.Open([Uri]\\\"{win_path}\\\"); "
+            "Start-Sleep -Milliseconds 50; "
+            "$p.Play(); "
+            "while ($p.NaturalDuration.HasTimeSpan -eq $false) { Start-Sleep -Milliseconds 100 }; "
+            "Start-Sleep -Seconds ($p.NaturalDuration.TimeSpan.TotalSeconds + 0.5); "
+            "$p.Close()"
+            "'"
         )
 
-        result = _run_ps(script, timeout=int(duration) + 30)
+        result = _run_ps(script, timeout=5)
         return result.success
 
     except Exception as e:
@@ -206,24 +207,26 @@ def play_audio_pygame(audio_file: str) -> bool:
 
 
 def play_audio_fallback(audio_file: str) -> bool:
-    """Fallback: Play audio using PowerShell via bridge"""
+    """Fallback: Play audio using PowerShell via bridge (fire-and-forget, non-blocking)"""
     try:
         win_path = wsl_to_win_path(audio_file)
 
-        play_script = (
-            'Add-Type -AssemblyName presentationCore; '
-            '$mediaPlayer = New-Object system.windows.media.mediaplayer; '
-            f'$mediaPlayer.open("{win_path}"); '
-            'Start-Sleep -Milliseconds 50; '
-            '$mediaPlayer.Play(); '
-            f'$fileSize = (Get-Item "{win_path}").Length; '
-            '$estimatedSeconds = [math]::Max(2, [math]::Ceiling($fileSize / 16000)); '
-            'Start-Sleep -Seconds $estimatedSeconds; '
-            '$mediaPlayer.Stop(); '
-            '$mediaPlayer.Close()'
+        # Fire-and-forget: Start-Process launches a hidden powershell that plays and exits
+        script = (
+            "Start-Process powershell.exe -WindowStyle Hidden -ArgumentList '"
+            "-NoProfile -Command "
+            "Add-Type -AssemblyName PresentationCore; "
+            "$p = New-Object System.Windows.Media.MediaPlayer; "
+            f"$p.Open([Uri]\\\"{win_path}\\\"); "
+            "Start-Sleep -Milliseconds 50; "
+            "$p.Play(); "
+            "while ($p.NaturalDuration.HasTimeSpan -eq $false) { Start-Sleep -Milliseconds 100 }; "
+            "Start-Sleep -Seconds ($p.NaturalDuration.TimeSpan.TotalSeconds + 0.5); "
+            "$p.Close()"
+            "'"
         )
 
-        result = _run_ps(play_script, timeout=60)
+        result = _run_ps(script, timeout=5)
         return result.success
     except Exception as e:
         print(f"Fallback playback error: {e}")
@@ -288,10 +291,26 @@ async def speak_with_edge_async(text: str, voice_id: str, output_file: str) -> b
         return False
 
 
+_loop = None
+_loop_thread = None
+
+def _get_loop():
+    """Get or create a persistent event loop running in a background thread."""
+    global _loop, _loop_thread
+    if _loop is None or _loop.is_closed():
+        _loop = asyncio.new_event_loop()
+        _loop_thread = threading.Thread(target=_loop.run_forever, daemon=True)
+        _loop_thread.start()
+    return _loop
+
 def speak_with_edge(text: str, voice: str, output_file: str) -> bool:
-    """Synchronous wrapper for Edge TTS"""
+    """Synchronous wrapper for Edge TTS using persistent event loop"""
     voice_id = EDGE_VOICES.get(voice.lower(), EDGE_VOICES[DEFAULT_VOICE])
-    return asyncio.run(speak_with_edge_async(text, voice_id, output_file))
+    loop = _get_loop()
+    future = asyncio.run_coroutine_threadsafe(
+        speak_with_edge_async(text, voice_id, output_file), loop
+    )
+    return future.result(timeout=TIMEOUT)
 
 
 # =============================================================================

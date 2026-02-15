@@ -11,6 +11,7 @@ import sys
 import os
 import base64
 import tempfile
+import time
 from datetime import datetime
 from typing import Optional, Dict, Any, List
 import urllib.request
@@ -65,13 +66,19 @@ def run_powershell(script: str, capture_output: bool = True) -> tuple[str, str, 
     )
     return result.stdout, result.stderr, result.returncode
 
+_monitor_cache: Dict[str, Any] = {"data": None, "time": 0.0}
+
 def detect_monitors() -> Dict[str, Dict]:
-    """Detect monitor configuration from Windows.
+    """Detect monitor configuration from Windows (cached for 60s).
 
     Returns VIRTUAL (DPI-scaled) coordinates - NOT physical pixels.
     E.g., a 3840x2160 monitor at 150% DPI returns 2560x1440.
     This matches the coordinate space used by take_screenshot() and click_at().
     """
+    now = time.time()
+    if _monitor_cache["data"] and (now - _monitor_cache["time"]) < 60:
+        return _monitor_cache["data"]
+
     script = """
     # NO SetProcessDPIAware - returns virtual coordinates
     Add-Type -AssemblyName System.Windows.Forms
@@ -115,6 +122,8 @@ def detect_monitors() -> Dict[str, Dict]:
                 else:
                     monitors['right'] = screen
 
+        _monitor_cache["data"] = monitors
+        _monitor_cache["time"] = now
         return monitors
     except:
         return MONITORS
@@ -305,9 +314,10 @@ def take_screenshot(monitor: str = "center", filename: str = None) -> tuple:
 
     if not filename:
         timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-        filename = f"screenshot_{monitor}_{timestamp}.png"
+        filename = f"screenshot_{monitor}_{timestamp}.jpg"
 
     filepath = os.path.join(SCREENSHOT_DIR, filename)
+    win_path = filepath.replace("/mnt/d", "D:")
 
     script = f"""
     # NO SetProcessDPIAware - keep virtual coordinates to match click_at()
@@ -322,7 +332,7 @@ def take_screenshot(monitor: str = "center", filename: str = None) -> tuple:
     $bitmap = New-Object System.Drawing.Bitmap($width, $height)
     $graphics = [System.Drawing.Graphics]::FromImage($bitmap)
     $graphics.CopyFromScreen($x, $y, 0, 0, [System.Drawing.Size]::new($width, $height))
-    $bitmap.Save('{filepath.replace("/mnt/d", "D:")}')
+    $bitmap.Save('{win_path}', [System.Drawing.Imaging.ImageFormat]::Jpeg)
     $graphics.Dispose()
     $bitmap.Dispose()
 
@@ -762,7 +772,7 @@ async def call_tool(name: str, arguments: dict) -> list:
 
                 return [
                     TextContent(type="text", text=f"{browser.capitalize()} opened on {monitor} monitor, navigated to {url}"),
-                    ImageContent(type="image", data=image_data, mimeType="image/png")
+                    ImageContent(type="image", data=image_data, mimeType="image/jpeg")
                 ]
             else:
                 return [TextContent(type="text", text=f"{browser.capitalize()} opened on {monitor} monitor, navigated to {url}")]
@@ -780,7 +790,7 @@ async def call_tool(name: str, arguments: dict) -> list:
 
                 return [
                     TextContent(type="text", text=f"Navigated to {url}"),
-                    ImageContent(type="image", data=image_data, mimeType="image/png")
+                    ImageContent(type="image", data=image_data, mimeType="image/jpeg")
                 ]
             else:
                 return [TextContent(type="text", text=f"Navigated to {url}")]
@@ -795,7 +805,7 @@ async def call_tool(name: str, arguments: dict) -> list:
 
                 return [
                     TextContent(type="text", text=f"Screenshot of {monitor} monitor ({img_w}x{img_h} pixels). Use browser_click with monitor=\"{monitor}\" and pixel coordinates from this image."),
-                    ImageContent(type="image", data=image_data, mimeType="image/png")
+                    ImageContent(type="image", data=image_data, mimeType="image/jpeg")
                 ]
             else:
                 raise Exception("Failed to take screenshot")
@@ -872,7 +882,7 @@ async def call_tool(name: str, arguments: dict) -> list:
 
                 return [
                     TextContent(type="text", text=f"Searched for: {query}"),
-                    ImageContent(type="image", data=image_data, mimeType="image/png")
+                    ImageContent(type="image", data=image_data, mimeType="image/jpeg")
                 ]
             else:
                 return [TextContent(type="text", text=f"Searched for: {query}")]
