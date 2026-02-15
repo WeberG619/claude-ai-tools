@@ -16,6 +16,14 @@ from typing import Optional, Dict, Any, List
 import urllib.request
 import urllib.error
 
+# PowerShell Bridge — 100x faster than subprocess.run(powershell.exe...)
+sys.path.insert(0, "/mnt/d/_CLAUDE-TOOLS/powershell-bridge")
+try:
+    from client import run_powershell as _ps_bridge
+    _HAS_BRIDGE = True
+except ImportError:
+    _HAS_BRIDGE = False
+
 # MCP SDK imports
 try:
     from mcp.server import Server
@@ -45,8 +53,11 @@ MONITORS = {
 server = Server("windows-browser")
 
 def run_powershell(script: str, capture_output: bool = True) -> tuple[str, str, int]:
-    """Execute PowerShell script and return stdout, stderr, returncode"""
-    # Escape for PowerShell
+    """Execute PowerShell script and return stdout, stderr, returncode.
+    Uses the persistent bridge (~5ms) with subprocess fallback (~590ms)."""
+    if _HAS_BRIDGE:
+        result = _ps_bridge(script)
+        return result.stdout, result.stderr, result.returncode
     result = subprocess.run(
         ["powershell.exe", "-NoProfile", "-Command", script],
         capture_output=capture_output,
@@ -55,8 +66,14 @@ def run_powershell(script: str, capture_output: bool = True) -> tuple[str, str, 
     return result.stdout, result.stderr, result.returncode
 
 def detect_monitors() -> Dict[str, Dict]:
-    """Detect monitor configuration from Windows"""
+    """Detect monitor configuration from Windows.
+
+    Returns VIRTUAL (DPI-scaled) coordinates - NOT physical pixels.
+    E.g., a 3840x2160 monitor at 150% DPI returns 2560x1440.
+    This matches the coordinate space used by take_screenshot() and click_at().
+    """
     script = """
+    # NO SetProcessDPIAware - returns virtual coordinates
     Add-Type -AssemblyName System.Windows.Forms
     $screens = [System.Windows.Forms.Screen]::AllScreens
     $result = @()
@@ -273,8 +290,16 @@ public class Win32 {{
 
     return {"success": True, "url": url}
 
-def take_screenshot(monitor: str = "center", filename: str = None) -> str:
-    """Take a screenshot of specified monitor"""
+def take_screenshot(monitor: str = "center", filename: str = None) -> tuple:
+    """Take a screenshot of specified monitor.
+
+    IMPORTANT: Does NOT call SetProcessDPIAware(). This keeps the screenshot
+    in virtual coordinate space (e.g., 2560x1440 at 150% DPI), which matches
+    the coordinates returned by detect_monitors() and used by click_at().
+    All three functions must use the same coordinate space.
+
+    Returns (filepath, width, height) or (None, 0, 0) on failure.
+    """
     monitors = detect_monitors()
     mon = monitors.get(monitor, monitors.get('primary', MONITORS['center']))
 
@@ -285,6 +310,7 @@ def take_screenshot(monitor: str = "center", filename: str = None) -> str:
     filepath = os.path.join(SCREENSHOT_DIR, filename)
 
     script = f"""
+    # NO SetProcessDPIAware - keep virtual coordinates to match click_at()
     Add-Type -AssemblyName System.Windows.Forms
     Add-Type -AssemblyName System.Drawing
 
@@ -300,43 +326,74 @@ def take_screenshot(monitor: str = "center", filename: str = None) -> str:
     $graphics.Dispose()
     $bitmap.Dispose()
 
-    Write-Output "Screenshot saved"
+    Write-Output "${{width}}x${{height}}"
     """
 
     stdout, stderr, code = run_powershell(script)
 
     if code == 0:
-        return filepath
+        # Parse dimensions from output
+        try:
+            w, h = stdout.strip().split('x')
+            return filepath, int(w), int(h)
+        except:
+            return filepath, mon['Width'], mon['Height']
     else:
-        return None
+        return None, 0, 0
 
-def click_at(x: int, y: int) -> bool:
-    """Click at screen coordinates"""
-    script = f"""
-    Add-Type @'
-using System;
-using System.Runtime.InteropServices;
-public class MouseOps {{
-    [DllImport("user32.dll")]
-    public static extern bool SetCursorPos(int X, int Y);
-    [DllImport("user32.dll")]
-    public static extern void mouse_event(uint dwFlags, uint dx, uint dy, uint dwData, int dwExtraInfo);
-    public const uint MOUSEEVENTF_LEFTDOWN = 0x0002;
-    public const uint MOUSEEVENTF_LEFTUP = 0x0004;
+AHK_EXE = r"C:\Program Files\AutoHotkey\v2\AutoHotkey64.exe"
+AHK_SCRIPT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "click.ahk")
+AHK_SCRIPT_WIN = AHK_SCRIPT.replace("/mnt/d", "D:").replace("/", "\\")
+AHK_SENDKEYS_SCRIPT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "sendkeys.ahk")
+AHK_SENDKEYS_SCRIPT_WIN = AHK_SENDKEYS_SCRIPT.replace("/mnt/d", "D:").replace("/", "\\")
+AHK_SCROLL_SCRIPT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "scroll.ahk")
+AHK_SCROLL_SCRIPT_WIN = AHK_SCROLL_SCRIPT.replace("/mnt/d", "D:").replace("/", "\\")
 
-    public static void Click(int x, int y) {{
-        SetCursorPos(x, y);
-        mouse_event(MOUSEEVENTF_LEFTDOWN, 0, 0, 0, 0);
-        mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);
-    }}
-}}
-'@
-    [MouseOps]::Click({x}, {y})
-    Write-Output "Clicked at ({x}, {y})"
+def click_at(x: int, y: int, monitor: str = None, action: str = "click") -> dict:
+    """Click at coordinates relative to a monitor's screenshot using AutoHotkey.
+
+    AutoHotkey handles DPI scaling, multi-monitor negative coordinates, and
+    window focus natively - far more reliable than PowerShell SendInput/mouse_event
+    which get swallowed by the foreground process (VS Code/terminal).
+
+    Args:
+        x, y: Pixel coordinates from the screenshot image
+        monitor: Which monitor the coordinates are from (offsets by monitor position)
+        action: click, rightclick, doubleclick, or move
+
+    Returns dict with: success, target_x, target_y, actual_x, actual_y, active_window
     """
+    monitors = detect_monitors()
 
-    stdout, stderr, code = run_powershell(script)
-    return code == 0
+    # If monitor specified, offset coordinates by monitor's virtual position
+    abs_x, abs_y = x, y
+    if monitor and monitor in monitors:
+        mon = monitors[monitor]
+        abs_x = mon['X'] + x
+        abs_y = mon['Y'] + y
+
+    ahk_cmd = f'& "{AHK_EXE}" "{AHK_SCRIPT_WIN}" {abs_x} {abs_y} {action}'
+    stdout, _, code = run_powershell(ahk_cmd)
+    stdout = stdout.strip()
+
+    # Parse diagnostic output from AHK: target=X,Y|actual=X,Y|action=...|activewin=...
+    result = {"success": code == 0, "target_x": abs_x, "target_y": abs_y}
+    try:
+        parts = stdout.split('|')
+        for part in parts:
+            key, val = part.split('=', 1)
+            if key == 'actual':
+                ax, ay = val.split(',')
+                result['actual_x'] = int(ax)
+                result['actual_y'] = int(ay)
+            elif key == 'activewin':
+                result['active_window'] = val
+            elif key == 'action':
+                result['action'] = val
+    except:
+        pass
+
+    return result
 
 def type_text(text: str) -> bool:
     """Type text using SendKeys"""
@@ -351,6 +408,70 @@ def type_text(text: str) -> bool:
 
     stdout, stderr, code = run_powershell(script)
     return code == 0
+
+def send_keys(keys: str) -> dict:
+    """Send keyboard input using AutoHotkey's native Send command.
+
+    Supports full AHK key syntax:
+      Modifiers: ^ (Ctrl), ! (Alt), + (Shift), # (Win)
+      Special keys: {Enter}, {Tab}, {Escape}, {PgDn}, {PgUp}, etc.
+      Combos: ^a (Ctrl+A), ^l (Ctrl+L), !{F4} (Alt+F4)
+
+    Returns dict with: success, keys, window_before, window_after
+    """
+    ahk_cmd = f'& "{AHK_EXE}" "{AHK_SENDKEYS_SCRIPT_WIN}" {keys}'
+    stdout, _, code = run_powershell(ahk_cmd)
+    stdout = stdout.strip()
+
+    result = {"success": code == 0, "keys": keys}
+    try:
+        parts = stdout.split('|')
+        for part in parts:
+            key, val = part.split('=', 1)
+            result[key] = val
+    except:
+        pass
+
+    return result
+
+def scroll_at(x: int, y: int, monitor: str = None, direction: str = "down", clicks: int = 3) -> dict:
+    """Scroll at coordinates using AutoHotkey.
+
+    Args:
+        x, y: Pixel coordinates from the screenshot image
+        monitor: Which monitor the coordinates are from
+        direction: 'up' or 'down'
+        clicks: Number of scroll steps (default 3)
+
+    Returns dict with: success, target_x, target_y, direction, clicks, active_window
+    """
+    monitors = detect_monitors()
+
+    abs_x, abs_y = x, y
+    if monitor and monitor in monitors:
+        mon = monitors[monitor]
+        abs_x = mon['X'] + x
+        abs_y = mon['Y'] + y
+
+    ahk_cmd = f'& "{AHK_EXE}" "{AHK_SCROLL_SCRIPT_WIN}" {abs_x} {abs_y} {direction} {clicks}'
+    stdout, _, code = run_powershell(ahk_cmd)
+    stdout = stdout.strip()
+
+    result = {"success": code == 0, "target_x": abs_x, "target_y": abs_y, "direction": direction, "clicks": clicks}
+    try:
+        parts = stdout.split('|')
+        for part in parts:
+            key, val = part.split('=', 1)
+            if key == 'actual':
+                ax, ay = val.split(',')
+                result['actual_x'] = int(ax)
+                result['actual_y'] = int(ay)
+            elif key == 'activewin':
+                result['active_window'] = val
+    except:
+        pass
+
+    return result
 
 def bring_window_to_front(process_name: str) -> bool:
     """Bring a window to the foreground"""
@@ -475,17 +596,29 @@ async def list_tools() -> List[Tool]:
         ),
         Tool(
             name="browser_click",
-            description="Click at specific screen coordinates",
+            description="Click at coordinates from a screenshot using AutoHotkey. Pass the monitor name to correctly map screenshot pixel positions to screen coordinates. Works reliably on all monitors including negative-coordinate multi-monitor setups.",
             inputSchema={
                 "type": "object",
                 "properties": {
                     "x": {
                         "type": "integer",
-                        "description": "X coordinate (screen position)"
+                        "description": "X pixel coordinate from the screenshot"
                     },
                     "y": {
                         "type": "integer",
-                        "description": "Y coordinate (screen position)"
+                        "description": "Y pixel coordinate from the screenshot"
+                    },
+                    "monitor": {
+                        "type": "string",
+                        "enum": ["left", "center", "right", "primary"],
+                        "description": "Which monitor the coordinates are from (must match the monitor used in browser_screenshot)",
+                        "default": "primary"
+                    },
+                    "action": {
+                        "type": "string",
+                        "enum": ["click", "rightclick", "doubleclick", "move"],
+                        "description": "Type of mouse action",
+                        "default": "click"
                     }
                 },
                 "required": ["x", "y"]
@@ -503,6 +636,55 @@ async def list_tools() -> List[Tool]:
                     }
                 },
                 "required": ["text"]
+            }
+        ),
+        Tool(
+            name="browser_send_keys",
+            description="Send keyboard shortcuts and special keys using AutoHotkey. Supports Ctrl/Alt/Shift combos and special keys like Enter, Tab, PgDn, arrows, F-keys. Use AHK syntax: ^ for Ctrl, ! for Alt, + for Shift, # for Win. Examples: '^l' (Ctrl+L), '^a' (Ctrl+A), '{PgDn}' (Page Down), '{Enter}' (Enter), '^c' (Ctrl+C), '!{Tab}' (Alt+Tab), '{F5}' (F5 key).",
+            inputSchema={
+                "type": "object",
+                "properties": {
+                    "keys": {
+                        "type": "string",
+                        "description": "Keys to send in AutoHotkey syntax. Modifiers: ^ (Ctrl), ! (Alt), + (Shift), # (Win). Special keys: {Enter}, {Tab}, {Escape}, {PgDn}, {PgUp}, {Home}, {End}, {Up}, {Down}, {Left}, {Right}, {F1}-{F12}, {Backspace}, {Delete}, {Space}. Combos: ^a (Ctrl+A), ^l (Ctrl+L). Repeat: {PgDn 3} sends PgDn 3 times."
+                    }
+                },
+                "required": ["keys"]
+            }
+        ),
+        Tool(
+            name="browser_scroll",
+            description="Scroll up or down at a specific position on a monitor. Moves the mouse to the coordinates first, then sends scroll wheel events. Use with monitor parameter to target the correct screen.",
+            inputSchema={
+                "type": "object",
+                "properties": {
+                    "x": {
+                        "type": "integer",
+                        "description": "X pixel coordinate from screenshot (where to scroll)"
+                    },
+                    "y": {
+                        "type": "integer",
+                        "description": "Y pixel coordinate from screenshot (where to scroll)"
+                    },
+                    "monitor": {
+                        "type": "string",
+                        "enum": ["left", "center", "right", "primary"],
+                        "description": "Which monitor the coordinates are from",
+                        "default": "primary"
+                    },
+                    "direction": {
+                        "type": "string",
+                        "enum": ["up", "down"],
+                        "description": "Scroll direction",
+                        "default": "down"
+                    },
+                    "clicks": {
+                        "type": "integer",
+                        "description": "Number of scroll steps (default 3, increase for faster scrolling)",
+                        "default": 3
+                    }
+                },
+                "required": ["x", "y"]
             }
         ),
         Tool(
@@ -572,7 +754,7 @@ async def call_tool(name: str, arguments: dict) -> list:
 
             # Take a screenshot to show result
             await asyncio.sleep(2)
-            screenshot_path = take_screenshot(monitor)
+            screenshot_path, _, _ = take_screenshot(monitor)
 
             if screenshot_path and os.path.exists(screenshot_path):
                 with open(screenshot_path, 'rb') as f:
@@ -590,7 +772,7 @@ async def call_tool(name: str, arguments: dict) -> list:
             result = navigate_browser(url)
 
             await asyncio.sleep(1)
-            screenshot_path = take_screenshot("center")
+            screenshot_path, _, _ = take_screenshot("center")
 
             if screenshot_path and os.path.exists(screenshot_path):
                 with open(screenshot_path, 'rb') as f:
@@ -605,14 +787,14 @@ async def call_tool(name: str, arguments: dict) -> list:
 
         elif name == "browser_screenshot":
             monitor = arguments.get("monitor", "center")
-            screenshot_path = take_screenshot(monitor)
+            screenshot_path, img_w, img_h = take_screenshot(monitor)
 
             if screenshot_path and os.path.exists(screenshot_path):
                 with open(screenshot_path, 'rb') as f:
                     image_data = base64.b64encode(f.read()).decode()
 
                 return [
-                    TextContent(type="text", text=f"Screenshot of {monitor} monitor"),
+                    TextContent(type="text", text=f"Screenshot of {monitor} monitor ({img_w}x{img_h} pixels). Use browser_click with monitor=\"{monitor}\" and pixel coordinates from this image."),
                     ImageContent(type="image", data=image_data, mimeType="image/png")
                 ]
             else:
@@ -621,15 +803,57 @@ async def call_tool(name: str, arguments: dict) -> list:
         elif name == "browser_click":
             x = arguments.get("x")
             y = arguments.get("y")
-            success = click_at(x, y)
+            monitor = arguments.get("monitor", "primary")
+            action = arguments.get("action", "click")
+            result = click_at(x, y, monitor=monitor, action=action)
 
-            return [TextContent(type="text", text=f"Clicked at ({x}, {y})" if success else "Click failed")]
+            diag = f"{action.capitalize()} at ({x}, {y}) on {monitor} monitor"
+            diag += f" -> absolute ({result.get('target_x')}, {result.get('target_y')})"
+            if 'actual_x' in result:
+                diag += f", cursor landed at ({result['actual_x']}, {result['actual_y']})"
+            if 'active_window' in result:
+                diag += f", active_window={result['active_window']}"
+            if not result.get('success'):
+                diag = "Click failed: " + diag
+
+            return [TextContent(type="text", text=diag)]
 
         elif name == "browser_type":
             text = arguments.get("text")
             success = type_text(text)
 
             return [TextContent(type="text", text=f"Typed: {text}" if success else "Type failed")]
+
+        elif name == "browser_send_keys":
+            keys = arguments.get("keys")
+            result = send_keys(keys)
+
+            diag = f"Sent keys: {keys}"
+            if result.get('window_before'):
+                diag += f", window: {result['window_before']}"
+            if result.get('window_after') and result.get('window_after') != result.get('window_before'):
+                diag += f" -> {result['window_after']}"
+            if not result.get('success'):
+                diag = "Send keys failed: " + diag
+
+            return [TextContent(type="text", text=diag)]
+
+        elif name == "browser_scroll":
+            x = arguments.get("x")
+            y = arguments.get("y")
+            monitor = arguments.get("monitor", "primary")
+            direction = arguments.get("direction", "down")
+            clicks = arguments.get("clicks", 3)
+            result = scroll_at(x, y, monitor=monitor, direction=direction, clicks=clicks)
+
+            diag = f"Scrolled {direction} {clicks}x at ({x}, {y}) on {monitor} monitor"
+            diag += f" -> absolute ({result.get('target_x')}, {result.get('target_y')})"
+            if 'active_window' in result:
+                diag += f", active_window={result['active_window']}"
+            if not result.get('success'):
+                diag = "Scroll failed: " + diag
+
+            return [TextContent(type="text", text=diag)]
 
         elif name == "browser_search":
             query = arguments.get("query")
@@ -640,7 +864,7 @@ async def call_tool(name: str, arguments: dict) -> list:
             launch_browser_with_cdp(search_url, monitor, browser)
 
             await asyncio.sleep(2)
-            screenshot_path = take_screenshot(monitor)
+            screenshot_path, _, _ = take_screenshot(monitor)
 
             if screenshot_path and os.path.exists(screenshot_path):
                 with open(screenshot_path, 'rb') as f:
@@ -664,7 +888,53 @@ async def call_tool(name: str, arguments: dict) -> list:
         elif name == "get_monitors":
             monitors = detect_monitors()
 
-            return [TextContent(type="text", text=json.dumps(monitors, indent=2))]
+            # Add DPI info for diagnostics
+            dpi_script = """
+            Add-Type @'
+using System;
+using System.Runtime.InteropServices;
+public class DpiInfo {
+    [DllImport("user32.dll")]
+    public static extern bool SetProcessDPIAware();
+    [DllImport("user32.dll")]
+    public static extern int GetSystemMetrics(int nIndex);
+    [DllImport("gdi32.dll")]
+    public static extern int GetDeviceCaps(IntPtr hdc, int nIndex);
+    [DllImport("user32.dll")]
+    public static extern IntPtr GetDC(IntPtr hWnd);
+}
+'@
+            # Get virtual metrics first (before DPI aware)
+            $vw = [DpiInfo]::GetSystemMetrics(0)
+            $vh = [DpiInfo]::GetSystemMetrics(1)
+
+            # Now get physical metrics
+            $null = [DpiInfo]::SetProcessDPIAware()
+            $pw = [DpiInfo]::GetSystemMetrics(0)
+            $ph = [DpiInfo]::GetSystemMetrics(1)
+
+            # Get DPI
+            $hdc = [DpiInfo]::GetDC([IntPtr]::Zero)
+            $dpi = [DpiInfo]::GetDeviceCaps($hdc, 88)
+
+            Write-Output "${vw}x${vh}|${pw}x${ph}|${dpi}"
+            """
+            dpi_out, _, _ = run_powershell(dpi_script)
+            dpi_info = {}
+            try:
+                parts = dpi_out.strip().split('|')
+                dpi_info = {
+                    "virtual_resolution": parts[0],
+                    "physical_resolution": parts[1],
+                    "dpi": int(parts[2]),
+                    "scale_factor": round(int(parts[2]) / 96.0, 2),
+                    "coordinate_space": "virtual (all screenshot/click coords use this)"
+                }
+            except:
+                pass
+
+            info = {"monitors": monitors, "dpi_info": dpi_info}
+            return [TextContent(type="text", text=json.dumps(info, indent=2))]
 
         else:
             raise Exception(f"Unknown tool: {name}")
