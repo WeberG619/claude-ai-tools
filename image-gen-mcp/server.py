@@ -1,13 +1,16 @@
 #!/usr/bin/env python3
 """
 Image Generation MCP Server
-Uses Replicate API to generate and enhance images.
+Uses Replicate API to generate, enhance, and render images.
+Includes Flux Pro models for photorealistic architectural rendering.
 """
 
+import asyncio
 import os
 import base64
 import httpx
 import time
+from datetime import datetime
 from pathlib import Path
 from typing import Optional
 from mcp.server.fastmcp import FastMCP
@@ -20,11 +23,16 @@ REPLICATE_API_TOKEN = os.environ.get("REPLICATE_API_TOKEN")
 REPLICATE_API_URL = "https://api.replicate.com/v1"
 
 # Output directory for generated images
-OUTPUT_DIR = Path(os.environ.get("IMAGE_OUTPUT_DIR", "/mnt/d/_CLAUDE-TOOLS/image-gen-mcp/outputs"))
+OUTPUT_DIR = Path(os.environ.get("IMAGE_OUTPUT_DIR", "/mnt/d/temp/ai_renders"))
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 # Available models with their Replicate identifiers
 MODELS = {
+    "flux-pro": {
+        "id": "black-forest-labs/flux-pro",
+        "description": "Flux Pro - highest quality text-to-image generation",
+        "supports_img2img": False
+    },
     "flux-schnell": {
         "id": "black-forest-labs/flux-schnell",
         "description": "Fast, high-quality image generation (recommended for speed)",
@@ -34,6 +42,18 @@ MODELS = {
         "id": "black-forest-labs/flux-dev",
         "description": "Higher quality FLUX model (slower but better)",
         "supports_img2img": False
+    },
+    "flux-canny-pro": {
+        "id": "black-forest-labs/flux-canny-pro",
+        "description": "Flux Canny Pro - edge-based structure preservation, best for clean architectural lines",
+        "supports_img2img": True,
+        "control_model": True
+    },
+    "flux-depth-pro": {
+        "id": "black-forest-labs/flux-depth-pro",
+        "description": "Flux Depth Pro - depth-based preservation, best for 3D geometry",
+        "supports_img2img": True,
+        "control_model": True
     },
     "sdxl": {
         "id": "stability-ai/sdxl:39ed52f2a78e934b3ba6e2a89f5b1c712de7dfea535525255b1aa35c5565e08b",
@@ -57,6 +77,38 @@ MODELS = {
     }
 }
 
+# Location profiles for architectural rendering
+LOCATION_PROFILES = {
+    "south_florida": {
+        "environment": "South Florida coastal setting, Miami modern architecture",
+        "vegetation": "mature royal palm trees, coconut palms, tropical landscaping with bird of paradise, croton plants, bougainvillea hedges, manicured st augustine grass lawn",
+        "sky": "clear tropical blue sky with small white cumulus clouds, bright Florida sunshine",
+        "atmosphere": "warm humid tropical atmosphere, soft coastal golden hour light",
+        "materials": "clean white stucco exterior, impact-resistant hurricane windows, natural stone accents, contemporary metal railings"
+    },
+    "southwest_desert": {
+        "environment": "Arizona Sonoran desert setting, desert contemporary architecture",
+        "vegetation": "saguaro cactus, palo verde trees, agave plants, desert xeriscaping with decomposed granite, native desert wildflowers",
+        "sky": "deep blue desert sky, dramatic sunset colors with orange and purple",
+        "atmosphere": "crisp dry desert light, sharp defined shadows, warm earth tones",
+        "materials": "smooth stucco in warm desert tones, rusted corten steel accents, natural stone"
+    },
+    "southern_california": {
+        "environment": "Southern California coastal setting, California contemporary architecture",
+        "vegetation": "mediterranean landscaping, mature olive trees, italian cypress, birds of paradise, succulent gardens, ornamental grasses",
+        "sky": "california golden hour light, soft blue sky with subtle marine layer",
+        "atmosphere": "warm california sunshine, soft diffused coastal light",
+        "materials": "clean white stucco, floor-to-ceiling glass, natural wood accents, concrete"
+    },
+    "default": {
+        "environment": "contemporary residential architecture",
+        "vegetation": "professional landscaping, mature trees, manicured lawn, ornamental plantings",
+        "sky": "clear blue sky with soft clouds, natural daylight",
+        "atmosphere": "pleasant natural lighting, professional architectural photography",
+        "materials": "high-end exterior finishes, clean modern materials"
+    }
+}
+
 
 def get_headers():
     """Get API headers with authentication."""
@@ -68,13 +120,13 @@ def get_headers():
     }
 
 
-def wait_for_prediction(prediction_url: str, timeout: int = 300) -> dict:
-    """Poll for prediction completion."""
+async def wait_for_prediction(prediction_url: str, timeout: int = 300) -> dict:
+    """Poll for prediction completion (non-blocking async)."""
     start_time = time.time()
 
-    with httpx.Client(timeout=30) as client:
+    async with httpx.AsyncClient(timeout=30) as client:
         while time.time() - start_time < timeout:
-            response = client.get(prediction_url, headers=get_headers())
+            response = await client.get(prediction_url, headers=get_headers())
             result = response.json()
 
             status = result.get("status")
@@ -85,8 +137,7 @@ def wait_for_prediction(prediction_url: str, timeout: int = 300) -> dict:
             elif status == "canceled":
                 raise Exception("Prediction was canceled")
 
-            # Wait before polling again
-            time.sleep(2)
+            await asyncio.sleep(3)
 
     raise Exception(f"Prediction timed out after {timeout} seconds")
 
@@ -114,7 +165,6 @@ def image_to_data_url(image_path: str) -> str:
     with open(path, "rb") as f:
         image_data = f.read()
 
-    # Detect mime type from extension
     ext = path.suffix.lower()
     mime_types = {
         ".jpg": "image/jpeg",
@@ -128,8 +178,62 @@ def image_to_data_url(image_path: str) -> str:
     return f"data:{mime_type};base64,{b64}"
 
 
+def build_architectural_prompt(location: str, custom: str = "", include_pool: bool = False) -> str:
+    """Build a detailed photorealistic prompt for architectural rendering."""
+    profile = LOCATION_PROFILES.get(location, LOCATION_PROFILES["default"])
+
+    prompt_parts = [
+        "Ultra photorealistic architectural photography",
+        "exact same building design and structure as the reference image",
+        "preserving all windows, doors, roof lines, and proportions exactly",
+        profile["environment"],
+        profile["materials"],
+        profile["vegetation"],
+        profile["sky"],
+        profile["atmosphere"],
+    ]
+
+    if include_pool:
+        prompt_parts.append("luxury infinity edge swimming pool with crystal clear blue water")
+
+    if custom:
+        prompt_parts.append(custom)
+
+    prompt_parts.extend([
+        "shot on Sony A7R IV, 24mm lens",
+        "professional real estate photography",
+        "8K resolution, ultra sharp details",
+        "natural color grading, no overexposure",
+        "balanced exposure, detailed shadows and highlights"
+    ])
+
+    return ", ".join(prompt_parts)
+
+
+def create_prediction(model_id: str, input_params: dict) -> dict:
+    """Create a Replicate prediction, handling both versioned and unversioned models."""
+    payload = {"input": input_params}
+
+    if ":" in model_id:
+        payload["version"] = model_id.split(":")[-1]
+    else:
+        payload["model"] = model_id
+
+    with httpx.Client(timeout=60) as client:
+        response = client.post(
+            f"{REPLICATE_API_URL}/predictions",
+            headers=get_headers(),
+            json=payload
+        )
+
+        if response.status_code != 201:
+            raise Exception(f"Failed to create prediction: {response.text}")
+
+        return response.json()
+
+
 @mcp.tool()
-def image_generate(
+async def image_generate(
     prompt: str,
     model: str = "flux-schnell",
     negative_prompt: str = "",
@@ -146,6 +250,7 @@ def image_generate(
         prompt: Detailed description of the image you want to generate.
                 Include style, lighting, mood, and specific details.
         model: Model to use. Options:
+               - flux-pro (highest quality, ~$0.05/image)
                - flux-schnell (fast, recommended)
                - flux-dev (higher quality)
                - sdxl (photorealistic)
@@ -163,21 +268,22 @@ def image_generate(
         Path to the generated image file(s)
     """
     if not REPLICATE_API_TOKEN:
-        return "ERROR: REPLICATE_API_TOKEN not set. Please set this environment variable with your Replicate API token."
+        return "ERROR: REPLICATE_API_TOKEN not set."
 
     if model not in MODELS:
         return f"ERROR: Unknown model '{model}'. Available: {', '.join(MODELS.keys())}"
 
     model_info = MODELS[model]
 
-    # Build input based on model
+    if model_info.get("control_model"):
+        return f"ERROR: '{model}' requires a control image. Use image_enhance or architectural_render instead."
+
     input_params = {
         "prompt": prompt,
         "width": width,
         "height": height,
     }
 
-    # Add model-specific parameters
     if "flux" in model:
         input_params["num_outputs"] = min(num_outputs, 4)
         input_params["output_format"] = "png"
@@ -188,27 +294,9 @@ def image_generate(
         input_params["num_inference_steps"] = num_inference_steps
 
     try:
-        # Create prediction
-        with httpx.Client(timeout=30) as client:
-            response = client.post(
-                f"{REPLICATE_API_URL}/predictions",
-                headers=get_headers(),
-                json={
-                    "version": model_info["id"].split(":")[-1] if ":" in model_info["id"] else None,
-                    "model": model_info["id"].split(":")[0] if ":" in model_info["id"] else model_info["id"],
-                    "input": input_params
-                }
-            )
+        prediction = create_prediction(model_info["id"], input_params)
+        result = await wait_for_prediction(prediction["urls"]["get"])
 
-            if response.status_code != 201:
-                return f"ERROR: Failed to create prediction: {response.text}"
-
-            prediction = response.json()
-
-        # Wait for completion
-        result = wait_for_prediction(prediction["urls"]["get"])
-
-        # Download output images
         outputs = result.get("output", [])
         if isinstance(outputs, str):
             outputs = [outputs]
@@ -232,7 +320,7 @@ def image_generate(
 
 
 @mcp.tool()
-def image_enhance(
+async def image_enhance(
     image_path: str,
     prompt: str,
     model: str = "sdxl",
@@ -253,6 +341,8 @@ def image_enhance(
                - sdxl (recommended for architecture)
                - realistic-vision (photorealistic)
                - kandinsky (artistic)
+               - flux-canny-pro (edge-preserving, best for architectural lines)
+               - flux-depth-pro (depth-preserving, best for 3D geometry)
         strength: How much to change the image (0.0-1.0)
                   Lower = closer to original, Higher = more creative
         negative_prompt: What to avoid
@@ -262,7 +352,7 @@ def image_enhance(
         Path to the enhanced image file
     """
     if not REPLICATE_API_TOKEN:
-        return "ERROR: REPLICATE_API_TOKEN not set. Please set this environment variable with your Replicate API token."
+        return "ERROR: REPLICATE_API_TOKEN not set."
 
     if model not in MODELS:
         return f"ERROR: Unknown model '{model}'. Available: {', '.join(MODELS.keys())}"
@@ -270,9 +360,9 @@ def image_enhance(
     model_info = MODELS[model]
 
     if not model_info.get("supports_img2img"):
-        return f"ERROR: Model '{model}' does not support img2img. Use one of: sdxl, realistic-vision, kandinsky"
+        img2img_models = [k for k, v in MODELS.items() if v.get("supports_img2img")]
+        return f"ERROR: Model '{model}' does not support img2img. Use one of: {', '.join(img2img_models)}"
 
-    # Convert image to data URL
     try:
         image_data_url = image_to_data_url(image_path)
     except FileNotFoundError as e:
@@ -280,35 +370,29 @@ def image_enhance(
     except Exception as e:
         return f"ERROR reading image: {str(e)}"
 
-    input_params = {
-        "prompt": prompt,
-        "image": image_data_url,
-        "prompt_strength": strength,
-        "negative_prompt": negative_prompt,
-        "guidance_scale": guidance_scale,
-    }
+    # Build input based on whether it's a Flux control model or standard img2img
+    if model_info.get("control_model"):
+        input_params = {
+            "prompt": prompt,
+            "control_image": image_data_url,
+            "steps": 50,
+            "guidance": guidance_scale * 4,  # Flux uses higher guidance range (1-100)
+            "output_format": "png",
+            "safety_tolerance": 5,
+        }
+    else:
+        input_params = {
+            "prompt": prompt,
+            "image": image_data_url,
+            "prompt_strength": strength,
+            "negative_prompt": negative_prompt,
+            "guidance_scale": guidance_scale,
+        }
 
     try:
-        # Create prediction
-        with httpx.Client(timeout=60) as client:
-            response = client.post(
-                f"{REPLICATE_API_URL}/predictions",
-                headers=get_headers(),
-                json={
-                    "version": model_info["id"].split(":")[-1],
-                    "input": input_params
-                }
-            )
+        prediction = create_prediction(model_info["id"], input_params)
+        result = await wait_for_prediction(prediction["urls"]["get"])
 
-            if response.status_code != 201:
-                return f"ERROR: Failed to create prediction: {response.text}"
-
-            prediction = response.json()
-
-        # Wait for completion
-        result = wait_for_prediction(prediction["urls"]["get"])
-
-        # Download output
         outputs = result.get("output", [])
         if isinstance(outputs, str):
             outputs = [outputs]
@@ -327,6 +411,155 @@ def image_enhance(
 
 
 @mcp.tool()
+async def architectural_render(
+    image_path: str,
+    location: str = "south_florida",
+    model: str = "flux-depth-pro",
+    custom_prompt: str = "",
+    include_pool: bool = False,
+    steps: int = 50,
+    guidance: float = 30.0
+) -> str:
+    """
+    One-shot photorealistic architectural render from a Revit/CAD export.
+    Uses Flux Canny/Depth Pro to preserve building geometry while adding
+    photorealistic environment, materials, landscaping, and sky.
+
+    Args:
+        image_path: Path to the source image (Revit render export, elevation, etc.)
+        location: Location profile for environment/vegetation/sky. Options:
+                  - south_florida (tropical, palm trees, Miami modern)
+                  - southwest_desert (Arizona, cacti, desert contemporary)
+                  - southern_california (Mediterranean, olive trees, coastal)
+                  - default (generic professional)
+        model: Flux model to use:
+               - flux-depth-pro (recommended - best for 3D geometry preservation)
+               - flux-canny-pro (best for clean architectural line drawings)
+        custom_prompt: Additional prompt text to append (e.g., "evening lighting", "rainy day")
+        include_pool: Add a swimming pool to the scene
+        steps: Diffusion steps (15-50, higher = better quality, default 50)
+        guidance: Prompt guidance (1-100, higher = follow prompt more closely, default 30)
+
+    Returns:
+        Path to the rendered image file with cost estimate
+    """
+    if not REPLICATE_API_TOKEN:
+        return "ERROR: REPLICATE_API_TOKEN not set."
+
+    # Validate model is a Flux control model
+    valid_models = ["flux-canny-pro", "flux-depth-pro"]
+    if model not in valid_models:
+        return f"ERROR: architectural_render requires a Flux control model. Use one of: {', '.join(valid_models)}"
+
+    if location not in LOCATION_PROFILES:
+        return f"ERROR: Unknown location '{location}'. Available: {', '.join(LOCATION_PROFILES.keys())}"
+
+    model_info = MODELS[model]
+
+    try:
+        image_data_url = image_to_data_url(image_path)
+    except FileNotFoundError as e:
+        return f"ERROR: {str(e)}"
+    except Exception as e:
+        return f"ERROR reading image: {str(e)}"
+
+    # Build the architectural prompt from location profile
+    prompt = build_architectural_prompt(
+        location=location,
+        custom=custom_prompt,
+        include_pool=include_pool
+    )
+
+    input_params = {
+        "prompt": prompt,
+        "control_image": image_data_url,
+        "steps": steps,
+        "guidance": guidance,
+        "output_format": "png",
+        "safety_tolerance": 5,
+    }
+
+    try:
+        prediction = create_prediction(model_info["id"], input_params)
+        result = await wait_for_prediction(prediction["urls"]["get"], timeout=300)
+
+        outputs = result.get("output", [])
+        if isinstance(outputs, str):
+            outputs = [outputs]
+
+        if not outputs:
+            return "ERROR: No output image received"
+
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        model_short = model.replace("flux-", "").replace("-pro", "")
+        filename = f"render_{model_short}_{location}_{timestamp}.png"
+        path = download_image(outputs[0], filename)
+
+        return (
+            f"Architectural render complete!\n\n"
+            f"Output: {path}\n"
+            f"Model: {model}\n"
+            f"Location: {location.replace('_', ' ').title()}\n"
+            f"Steps: {steps}, Guidance: {guidance}\n"
+            f"Pool: {'Yes' if include_pool else 'No'}\n"
+            f"Cost: ~$0.05\n\n"
+            f"Prompt: {prompt[:150]}..."
+        )
+
+    except Exception as e:
+        return f"ERROR: {str(e)}"
+
+
+@mcp.tool()
+async def remove_background(image_path: str) -> str:
+    """
+    Remove the background from an image using AI.
+
+    Args:
+        image_path: Path to the source image
+
+    Returns:
+        Path to the image with background removed (transparent PNG)
+    """
+    if not REPLICATE_API_TOKEN:
+        return "ERROR: REPLICATE_API_TOKEN not set."
+
+    try:
+        image_data_url = image_to_data_url(image_path)
+    except FileNotFoundError as e:
+        return f"ERROR: {str(e)}"
+    except Exception as e:
+        return f"ERROR reading image: {str(e)}"
+
+    input_params = {
+        "image": image_data_url,
+    }
+
+    try:
+        prediction = create_prediction(
+            "lucataco/remove-bg:95fcc2a26d3899cd6c2691c900571aadf58dee94aade85a7a4f6f3fd7c21e36f",
+            input_params
+        )
+        result = await wait_for_prediction(prediction["urls"]["get"])
+
+        output = result.get("output")
+        if isinstance(output, list):
+            output = output[0]
+
+        if not output:
+            return "ERROR: No output image received"
+
+        timestamp = int(time.time())
+        filename = f"nobg_{timestamp}.png"
+        path = download_image(output, filename)
+
+        return f"Background removed!\n\nOriginal: {image_path}\nResult: {path}"
+
+    except Exception as e:
+        return f"ERROR: {str(e)}"
+
+
+@mcp.tool()
 def image_list_models() -> str:
     """
     List all available image generation models and their capabilities.
@@ -335,18 +568,25 @@ def image_list_models() -> str:
         Table of available models with descriptions
     """
     output = ["# Available Image Generation Models\n"]
-    output.append("| Model | Description | Img2Img |")
-    output.append("|-------|-------------|---------|")
+    output.append("| Model | Description | Img2Img | Control |")
+    output.append("|-------|-------------|---------|---------|")
 
     for name, info in MODELS.items():
         img2img = "Yes" if info.get("supports_img2img") else "No"
-        output.append(f"| {name} | {info['description']} | {img2img} |")
+        control = "Yes" if info.get("control_model") else "No"
+        output.append(f"| {name} | {info['description']} | {img2img} | {control} |")
 
     output.append("\n## Usage Tips")
-    output.append("- **For Revit render enhancement**: Use `realistic-vision` or `sdxl` with img2img")
+    output.append("- **For architectural rendering**: Use `architectural_render` with `flux-depth-pro` or `flux-canny-pro`")
+    output.append("- **For Revit render enhancement**: Use `image_enhance` with `flux-depth-pro` or `sdxl`")
     output.append("- **For quick generation**: Use `flux-schnell` or `sdxl-lightning`")
-    output.append("- **For highest quality**: Use `flux-dev` (slower)")
+    output.append("- **For highest quality text-to-image**: Use `flux-pro`")
     output.append("- **For artistic styles**: Use `kandinsky`")
+    output.append("- **To remove backgrounds**: Use `remove_background`")
+
+    output.append("\n## Location Profiles (for architectural_render)")
+    for name, profile in LOCATION_PROFILES.items():
+        output.append(f"- **{name}**: {profile['environment']}")
 
     return "\n".join(output)
 
@@ -367,13 +607,12 @@ def image_list_outputs() -> str:
     if not images:
         return "No generated images found in the output directory."
 
-    # Sort by modification time, newest first
     images.sort(key=lambda p: p.stat().st_mtime, reverse=True)
 
     output = [f"# Generated Images ({len(images)} total)\n"]
     output.append(f"Output directory: {OUTPUT_DIR}\n")
 
-    for img in images[:20]:  # Show last 20
+    for img in images[:20]:
         stat = img.stat()
         size_kb = stat.st_size / 1024
         mtime = time.strftime("%Y-%m-%d %H:%M", time.localtime(stat.st_mtime))
