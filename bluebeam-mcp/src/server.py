@@ -203,7 +203,7 @@ def take_bluebeam_screenshot(output_path: str) -> tuple[bool, str]:
 
     $handle = $revu.MainWindowHandle
     [Win32]::SetForegroundWindow($handle) | Out-Null
-    Start-Sleep -Milliseconds 200
+    Start-Sleep -Milliseconds 50
 
     $rect = New-Object RECT
     [Win32]::GetWindowRect($handle, [ref]$rect) | Out-Null
@@ -243,13 +243,13 @@ def navigate_to_page(page_number: int) -> tuple[bool, str]:
 "@
 
     [Win32Nav]::SetForegroundWindow($revu.MainWindowHandle) | Out-Null
-    Start-Sleep -Milliseconds 100
+    Start-Sleep -Milliseconds 50
 
     # Ctrl+G opens Go To Page dialog in Bluebeam
     [System.Windows.Forms.SendKeys]::SendWait("^g")
-    Start-Sleep -Milliseconds 300
-    [System.Windows.Forms.SendKeys]::SendWait("{page_number}")
     Start-Sleep -Milliseconds 100
+    [System.Windows.Forms.SendKeys]::SendWait("{page_number}")
+    Start-Sleep -Milliseconds 50
     [System.Windows.Forms.SendKeys]::SendWait("{{ENTER}}")
 
     "Navigated to page {page_number}"
@@ -399,7 +399,7 @@ async def list_tools() -> List[Tool]:
                     "delay_ms": {
                         "type": "integer",
                         "description": "Delay in milliseconds before sending keys",
-                        "default": 100
+                        "default": 50
                     }
                 },
                 "required": ["keys"]
@@ -496,7 +496,7 @@ async def call_tool(name: str, arguments: dict):
 
         elif name == "send_keys":
             keys = arguments.get("keys", "")
-            delay = arguments.get("delay_ms", 100)
+            delay = arguments.get("delay_ms", 50)
 
             script = f'''
             Add-Type -AssemblyName System.Windows.Forms
