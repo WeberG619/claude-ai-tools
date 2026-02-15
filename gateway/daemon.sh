@@ -48,6 +48,9 @@ SERVICE_OWN_LOG[proactive]="1"
 SERVICES[email-watcher]="python3 -u email_watcher.py"
 SERVICE_DIRS[email-watcher]="$TOOLS_DIR/email-watcher"
 
+SERVICES[ps-bridge]="python3 bridge.py"
+SERVICE_DIRS[ps-bridge]="$TOOLS_DIR/powershell-bridge"
+
 # ============================================
 # FUNCTIONS
 # ============================================
@@ -162,7 +165,7 @@ case "${1:-status}" in
         echo "CLAUDE ASSISTANT DAEMON - STARTING"
         echo "============================================"
         echo ""
-        for name in gateway-hub telegram-bot whatsapp-gw web-chat proactive email-watcher; do
+        for name in ps-bridge gateway-hub telegram-bot whatsapp-gw web-chat proactive email-watcher; do
             start_service "$name"
         done
         echo ""
@@ -176,7 +179,7 @@ case "${1:-status}" in
         echo "CLAUDE ASSISTANT DAEMON - STOPPING"
         echo "============================================"
         echo ""
-        for name in email-watcher proactive web-chat whatsapp-gw telegram-bot gateway-hub; do
+        for name in email-watcher proactive web-chat whatsapp-gw telegram-bot gateway-hub ps-bridge; do
             stop_service "$name"
         done
         echo ""
@@ -197,7 +200,7 @@ case "${1:-status}" in
         echo "$(date)"
         echo "============================================"
         echo ""
-        for name in gateway-hub telegram-bot whatsapp-gw web-chat proactive email-watcher; do
+        for name in ps-bridge gateway-hub telegram-bot whatsapp-gw web-chat proactive email-watcher; do
             status_service "$name"
         done
         echo ""
