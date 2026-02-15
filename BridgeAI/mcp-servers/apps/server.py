@@ -10,6 +10,22 @@ import os
 import sys
 
 sys.path.insert(0, '/mnt/d/_MCP-SERVERS')
+sys.path.insert(0, '/mnt/d/_CLAUDE-TOOLS/powershell-bridge')
+try:
+    from client import run_powershell as _ps_bridge
+    _HAS_BRIDGE = True
+except ImportError:
+    _HAS_BRIDGE = False
+
+def _run_ps(cmd: str, timeout: int = 15):
+    """Run PowerShell via bridge with subprocess fallback."""
+    if _HAS_BRIDGE:
+        return _ps_bridge(cmd, timeout)
+    r = subprocess.run(["powershell.exe", "-Command", cmd],
+                       capture_output=True, text=True, timeout=timeout)
+    class _R:
+        stdout = r.stdout; stderr = r.stderr; returncode = r.returncode; success = r.returncode == 0
+    return _R()
 
 try:
     from mcp.server.fastmcp import FastMCP
@@ -99,12 +115,9 @@ def launch_app(app_name: str, file_to_open: str = None) -> str:
         else:
             cmd = f"Start-Process '{launch_cmd}'"
 
-        result = subprocess.run(
-            ["powershell.exe", "-Command", cmd],
-            capture_output=True, text=True, timeout=15
-        )
+        result = _run_ps(cmd, timeout=15)
 
-        if result.returncode == 0 or not result.stderr:
+        if result.success or not result.stderr:
             return json.dumps({
                 "success": True,
                 "launched": app_name,
@@ -149,10 +162,7 @@ def close_app(app_name: str, force: bool = False) -> str:
     try:
         # Check if running
         check_cmd = f"Get-Process -Name '{process_name}' -ErrorAction SilentlyContinue"
-        result = subprocess.run(
-            ["powershell.exe", "-Command", check_cmd],
-            capture_output=True, text=True, timeout=10
-        )
+        result = _run_ps(check_cmd, timeout=10)
 
         if not result.stdout.strip():
             return json.dumps({
@@ -166,7 +176,7 @@ def close_app(app_name: str, force: bool = False) -> str:
         else:
             cmd = f"Get-Process -Name '{process_name}' | ForEach-Object {{ $_.CloseMainWindow() }}"
 
-        subprocess.run(["powershell.exe", "-Command", cmd], timeout=15)
+        _run_ps(cmd, timeout=15)
 
         return json.dumps({
             "success": True,
@@ -193,10 +203,7 @@ def list_running_apps() -> str:
         Sort-Object Memory_MB -Descending |
         ConvertTo-Json
         """
-        result = subprocess.run(
-            ["powershell.exe", "-Command", cmd],
-            capture_output=True, text=True, timeout=30
-        )
+        result = _run_ps(cmd, timeout=30)
         output = result.stdout.strip()
         if '[' in output:
             output = output[output.index('['):]
@@ -236,10 +243,7 @@ def switch_to_app(app_name: str) -> str:
             'not_found'
         }}
         """
-        result = subprocess.run(
-            ["powershell.exe", "-Command", cmd],
-            capture_output=True, text=True, timeout=10
-        )
+        result = _run_ps(cmd, timeout=10)
 
         if 'success' in result.stdout:
             return json.dumps({
@@ -284,7 +288,7 @@ def search_web(query: str, browser: str = "default") -> str:
         else:
             cmd = f"Start-Process '{browser_cmd}' -ArgumentList '{search_url}'"
 
-        subprocess.run(["powershell.exe", "-Command", cmd], timeout=10)
+        _run_ps(cmd, timeout=10)
 
         return json.dumps({
             "success": True,
@@ -335,7 +339,7 @@ def open_website(url: str, browser: str = "default") -> str:
         else:
             cmd = f"Start-Process '{browser_cmd}' -ArgumentList '{url}'"
 
-        subprocess.run(["powershell.exe", "-Command", cmd], timeout=10)
+        _run_ps(cmd, timeout=10)
 
         return json.dumps({
             "success": True,
@@ -359,10 +363,7 @@ def take_screenshot(save_path: str = None) -> str:
 
     if not save_path:
         # Default to Pictures folder
-        pictures = subprocess.run(
-            ["powershell.exe", "-Command", "[Environment]::GetFolderPath('MyPictures')"],
-            capture_output=True, text=True
-        ).stdout.strip()
+        pictures = _run_ps("[Environment]::GetFolderPath('MyPictures')").stdout.strip()
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         save_path = os.path.join(pictures, f"screenshot_{timestamp}.png")
 
@@ -377,7 +378,7 @@ def take_screenshot(save_path: str = None) -> str:
         $graphics.Dispose()
         $bitmap.Dispose()
         """
-        subprocess.run(["powershell.exe", "-Command", cmd], timeout=15)
+        _run_ps(cmd, timeout=15)
 
         return json.dumps({
             "success": True,
