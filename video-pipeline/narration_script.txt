@@ -1,0 +1,19 @@
+[0:00] What you're about to see is not a demo mockup. This is AI autonomously controlling Autodesk Revit to build a real house from scratch.
+[0:10] This is 1700 West Sheffield Road, a single family residence in Avon Park, Florida. We extracted every wall, door, window, and room from the original project.
+[0:22] Now watch as Claude AI recreates the entire floor plan, with zero human interaction.
+[0:30] Phase one. The AI prepares a blank canvas from the original project, preserving all the correct wall types and door families.
+[0:44] Phase two. Exterior walls. Eight-inch C-M-U block walls trace the L-shaped perimeter. The exact same wall type as the original: W-1.
+[1:07] Each wall appears in the viewport as it's created through the Revit API. Exact coordinates, wall types, and heights, all specified programmatically.
+[1:46] Phase three. Interior partitions. Four-and-a-half-inch partition walls define bedrooms, bathrooms, kitchen, and living areas.
+[2:18] Twenty-five interior walls placed in sequence. A three-bedroom, two-bath home with a two-car garage is emerging.
+[3:09] Phase four. Wall joining. The AI identifies every wall intersection and joins them for clean corners. No sloppy gaps.
+[3:24] Phase five. Doors. Twenty-six openings, each with its exact family type from the original. Garage door, sliding doors, pocket doors, bifolds, and flush panels.
+[3:42] Each door snaps precisely to its host wall. No more generic types. Every door matches the architect's original specification.
+[4:09] Phase six. Windows. Fourteen windows placed on exterior walls with correct sill heights. Double-hung windows and a sidelight at the front entry.
+[4:44] Phase seven. Rooms. The AI assigns room names and numbers to each enclosed space.
+[5:14] Living room, master bedroom, walk-in closet, master bath, three bedrooms, kitchen, family and dining room, laundry, and a two-car garage.
+[5:49] Phase eight. Tagging. Room tags and door tags appear automatically in the floor plan view.
+[6:44] Phase nine. The AI creates a three-D perspective view, a construction document sheet with the project's own title block. Not a generic Autodesk default.
+[7:19] Phase ten. The three-D reveal. A complete house, built entirely by AI. Walls joined, doors and windows placed, rooms tagged, sheet produced.
+[7:34] No mouse clicks. No manual drafting. Every element matches the original architect's design.
+[7:39] This is BIM Ops Studio. AI-powered Revit automation. Subscribe and follow us on LinkedIn for more. Link in the description.

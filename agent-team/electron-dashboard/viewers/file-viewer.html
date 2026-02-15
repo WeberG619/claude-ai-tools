@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>File Viewer</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: #0d1117;
+            color: #e6edf3;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .viewer-container {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .viewer-header {
+            padding: 12px 20px;
+            background: #161b22;
+            border-bottom: 1px solid #30363d;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .file-icon { font-size: 24px; }
+        .file-name {
+            font-weight: 600;
+            font-size: 14px;
+        }
+        .file-type {
+            font-size: 12px;
+            color: #8b949e;
+            background: #21262d;
+            padding: 4px 10px;
+            border-radius: 12px;
+        }
+        .viewer-content {
+            flex: 1;
+            overflow: auto;
+            padding: 20px;
+        }
+
+        /* PDF Viewer Styles */
+        #pdf-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        .pdf-page {
+            background: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            border-radius: 4px;
+        }
+        .pdf-controls {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #161b22;
+            padding: 10px 20px;
+            border-radius: 8px;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            border: 1px solid #30363d;
+        }
+        .pdf-controls button {
+            background: #238636;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .pdf-controls button:hover { background: #2ea043; }
+        .pdf-controls span { color: #8b949e; }
+
+        /* Word Document Styles */
+        #word-container {
+            background: white;
+            color: #1a1a1a;
+            padding: 60px 80px;
+            max-width: 850px;
+            margin: 0 auto;
+            min-height: 100%;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            font-family: 'Calibri', 'Segoe UI', sans-serif;
+            font-size: 11pt;
+            line-height: 1.5;
+        }
+        #word-container h1 { font-size: 24pt; margin-bottom: 12pt; }
+        #word-container h2 { font-size: 18pt; margin-bottom: 10pt; }
+        #word-container h3 { font-size: 14pt; margin-bottom: 8pt; }
+        #word-container p { margin-bottom: 10pt; }
+        #word-container table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 12pt 0;
+        }
+        #word-container table td, #word-container table th {
+            border: 1px solid #999;
+            padding: 8px;
+        }
+        #word-container img { max-width: 100%; }
+
+        /* Excel Spreadsheet Styles */
+        #excel-container {
+            overflow: auto;
+            background: #1a1a1a;
+        }
+        #excel-container table {
+            border-collapse: collapse;
+            font-family: 'Consolas', monospace;
+            font-size: 12px;
+            background: white;
+        }
+        #excel-container th {
+            background: #f0f0f0;
+            border: 1px solid #ccc;
+            padding: 8px 12px;
+            font-weight: 600;
+            position: sticky;
+            top: 0;
+        }
+        #excel-container td {
+            border: 1px solid #ddd;
+            padding: 6px 10px;
+            color: #333;
+        }
+        #excel-container tr:nth-child(even) { background: #f9f9f9; }
+        #excel-container tr:hover { background: #e8f4ff; }
+        .excel-tabs {
+            display: flex;
+            gap: 2px;
+            padding: 10px;
+            background: #161b22;
+            border-bottom: 1px solid #30363d;
+        }
+        .excel-tab {
+            padding: 8px 16px;
+            background: #21262d;
+            border: none;
+            color: #8b949e;
+            cursor: pointer;
+            border-radius: 6px 6px 0 0;
+        }
+        .excel-tab.active {
+            background: #238636;
+            color: white;
+        }
+
+        /* Image Viewer Styles */
+        #image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+        #image-container img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        /* Loading State */
+        .loading {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            gap: 20px;
+        }
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid #30363d;
+            border-top-color: #238636;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="viewer-container">
+        <div class="viewer-header">
+            <span class="file-icon" id="fileIcon">📄</span>
+            <span class="file-name" id="fileName">Loading...</span>
+            <span class="file-type" id="fileType">FILE</span>
+        </div>
+        <div class="viewer-content" id="viewerContent">
+            <div class="loading">
+                <div class="spinner"></div>
+                <span>Loading file...</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const { ipcRenderer } = require('electron');
+        const path = require('path');
+        const fs = require('fs');
+
+        // Get file path from URL params
+        const urlParams = new URLSearchParams(window.location.search);
+        const filePath = urlParams.get('file');
+
+        if (filePath) {
+            loadFile(filePath);
+        }
+
+        // Listen for file open commands
+        ipcRenderer.on('open-file', (event, filePath) => {
+            loadFile(filePath);
+        });
+
+        async function loadFile(filePath) {
+            const ext = path.extname(filePath).toLowerCase();
+            const fileName = path.basename(filePath);
+
+            document.getElementById('fileName').textContent = fileName;
+
+            const icons = {
+                '.pdf': '📕',
+                '.docx': '📘',
+                '.doc': '📘',
+                '.xlsx': '📗',
+                '.xls': '📗',
+                '.png': '🖼️',
+                '.jpg': '🖼️',
+                '.jpeg': '🖼️',
+                '.gif': '🖼️',
+                '.svg': '🖼️'
+            };
+
+            const types = {
+                '.pdf': 'PDF',
+                '.docx': 'WORD',
+                '.doc': 'WORD',
+                '.xlsx': 'EXCEL',
+                '.xls': 'EXCEL',
+                '.png': 'IMAGE',
+                '.jpg': 'IMAGE',
+                '.jpeg': 'IMAGE',
+                '.gif': 'IMAGE',
+                '.svg': 'IMAGE'
+            };
+
+            document.getElementById('fileIcon').textContent = icons[ext] || '📄';
+            document.getElementById('fileType').textContent = types[ext] || 'FILE';
+
+            try {
+                switch(ext) {
+                    case '.pdf':
+                        await loadPDF(filePath);
+                        break;
+                    case '.docx':
+                    case '.doc':
+                        await loadWord(filePath);
+                        break;
+                    case '.xlsx':
+                    case '.xls':
+                        await loadExcel(filePath);
+                        break;
+                    case '.png':
+                    case '.jpg':
+                    case '.jpeg':
+                    case '.gif':
+                    case '.svg':
+                        loadImage(filePath);
+                        break;
+                    default:
+                        loadText(filePath);
+                }
+            } catch(err) {
+                document.getElementById('viewerContent').innerHTML = `
+                    <div class="loading">
+                        <span style="color: #f85149;">Error loading file: ${err.message}</span>
+                    </div>
+                `;
+            }
+        }
+
+        async function loadPDF(filePath) {
+            const pdfjsLib = require('pdfjs-dist');
+
+            // Set worker
+            pdfjsLib.GlobalWorkerOptions.workerSrc = require.resolve('pdfjs-dist/build/pdf.worker.js');
+
+            const data = new Uint8Array(fs.readFileSync(filePath));
+            const pdf = await pdfjsLib.getDocument({ data }).promise;
+
+            const container = document.getElementById('viewerContent');
+            container.innerHTML = '<div id="pdf-container"></div>';
+            const pdfContainer = document.getElementById('pdf-container');
+
+            // Render all pages
+            for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+                const page = await pdf.getPage(pageNum);
+                const scale = 1.5;
+                const viewport = page.getViewport({ scale });
+
+                const canvas = document.createElement('canvas');
+                canvas.className = 'pdf-page';
+                const context = canvas.getContext('2d');
+                canvas.height = viewport.height;
+                canvas.width = viewport.width;
+
+                await page.render({
+                    canvasContext: context,
+                    viewport: viewport
+                }).promise;
+
+                pdfContainer.appendChild(canvas);
+            }
+
+            // Add controls
+            container.innerHTML += `
+                <div class="pdf-controls">
+                    <span>Page 1 of ${pdf.numPages}</span>
+                    <button onclick="window.scrollTo(0,0)">Top</button>
+                </div>
+            `;
+        }
+
+        async function loadWord(filePath) {
+            const mammoth = require('mammoth');
+            const buffer = fs.readFileSync(filePath);
+
+            const result = await mammoth.convertToHtml({ buffer });
+
+            document.getElementById('viewerContent').innerHTML = `
+                <div id="word-container">${result.value}</div>
+            `;
+        }
+
+        async function loadExcel(filePath) {
+            const XLSX = require('xlsx');
+            const buffer = fs.readFileSync(filePath);
+            const workbook = XLSX.read(buffer, { type: 'buffer' });
+
+            // Create tabs for sheets
+            let tabsHtml = '<div class="excel-tabs">';
+            workbook.SheetNames.forEach((name, i) => {
+                tabsHtml += `<button class="excel-tab ${i===0?'active':''}" onclick="showSheet('${name}', this)">${name}</button>`;
+            });
+            tabsHtml += '</div>';
+
+            // Convert first sheet to HTML
+            const firstSheet = workbook.Sheets[workbook.SheetNames[0]];
+            const html = XLSX.utils.sheet_to_html(firstSheet);
+
+            document.getElementById('viewerContent').innerHTML = tabsHtml + `<div id="excel-container">${html}</div>`;
+
+            // Store workbook for tab switching
+            window.currentWorkbook = workbook;
+        }
+
+        function showSheet(sheetName, btn) {
+            const XLSX = require('xlsx');
+            document.querySelectorAll('.excel-tab').forEach(t => t.classList.remove('active'));
+            btn.classList.add('active');
+
+            const sheet = window.currentWorkbook.Sheets[sheetName];
+            const html = XLSX.utils.sheet_to_html(sheet);
+            document.getElementById('excel-container').innerHTML = html;
+        }
+
+        function loadImage(filePath) {
+            document.getElementById('viewerContent').innerHTML = `
+                <div id="image-container">
+                    <img src="file://${filePath}" alt="Image">
+                </div>
+            `;
+        }
+
+        function loadText(filePath) {
+            const content = fs.readFileSync(filePath, 'utf8');
+            document.getElementById('viewerContent').innerHTML = `
+                <pre style="padding: 20px; background: #161b22; border-radius: 8px; overflow: auto; white-space: pre-wrap;">${escapeHtml(content)}</pre>
+            `;
+        }
+
+        function escapeHtml(text) {
+            return text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        }
+    </script>
+</body>
+</html>

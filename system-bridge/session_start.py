@@ -32,14 +32,55 @@ def load_orchestration_context():
         return f"Context loading error: {e}"
 
 
+def load_workflow_candidates():
+    """Load discovered workflow patterns from the learning engine."""
+    patterns_file = Path(r"D:\_CLAUDE-TOOLS\system-bridge\learned_patterns.json")
+    if not patterns_file.exists():
+        return None
+
+    try:
+        data = json.loads(patterns_file.read_text(encoding='utf-8'))
+        candidates = data.get("workflow_candidates", [])
+        transitions = data.get("frequent_transitions", [])
+        total_actions = data.get("total_actions_recorded", 0)
+
+        if not candidates and not transitions:
+            return None
+
+        lines = []
+        lines.append(f"## Workflow Learning Status")
+        lines.append(f"Actions tracked: {total_actions} | Analyzed: {data.get('analyzed_at', 'never')}")
+
+        if candidates:
+            lines.append(f"\n### Workflow Candidates ({len(candidates)} discovered)")
+            for c in candidates[:5]:
+                freq = c.get('frequency', 0)
+                steps = c.get('steps_readable', [])
+                dur = c.get('avg_duration_seconds', 0)
+                lines.append(f"- **{c['name']}** (seen {freq}x, ~{dur:.0f}s)")
+                for j, step in enumerate(steps):
+                    prefix = "  " + ("-> " if j > 0 else "   ")
+                    lines.append(f"{prefix}{step}")
+
+        if transitions:
+            lines.append(f"\n### Top Transitions ({len(transitions)} frequent)")
+            for t in transitions[:8]:
+                lines.append(f"- {t['from_readable']} -> {t['to_readable']} ({t['count']}x, ~{t.get('avg_gap_seconds', 0):.0f}s gap)")
+
+        return "\n".join(lines)
+    except Exception as e:
+        return f"Workflow patterns error: {e}"
+
+
 def main():
     """
     Main entry point - called by Claude Code hook.
 
     1. Ensures daemon is running (starts if needed)
     2. Loads orchestration context (project detection, knowledge triggers)
-    3. Outputs system state for Claude to read
-    4. Returns success message
+    3. Loads workflow learning candidates
+    4. Outputs system state for Claude to read
+    5. Returns success message
     """
     result = ensure_daemon_running()
 
@@ -57,6 +98,11 @@ def main():
     orchestration_output = load_orchestration_context()
     if orchestration_output:
         print(f"\n{orchestration_output}")
+
+    # Load workflow learning results
+    workflow_output = load_workflow_candidates()
+    if workflow_output:
+        print(f"\n{workflow_output}")
 
     # Output daemon status
     print(f"Daemon started - status: {result.get('status', 'unknown')}")

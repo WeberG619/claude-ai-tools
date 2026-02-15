@@ -1,0 +1,15 @@
+{
+  "session_id": null,
+  "task": null,
+  "mode": "backstage",
+  "current_speaker": null,
+  "turn_number": 0,
+  "max_turns": 8,
+  "history": [],
+  "shared_context": {},
+  "artifacts": [],
+  "status": "idle",
+  "consensus": null,
+  "pending_actions": [],
+  "user_approval_queue": []
+}

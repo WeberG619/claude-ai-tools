@@ -1,0 +1,119 @@
+{
+  "project_name": "1700 West Sheffield Road - Avon Park Single Family",
+  "description": "3-bedroom 2-bath single family residence with 2-car garage in Avon Park, FL",
+  "extracted_from": "Revit 2026.2 - 1700 West Sheffield Road",
+  "source_path": "D:\\001 - PROJECTS\\01 - CLIENT PROJECTS\\01 - ARKY\\012-Avon Park Single Family\\Revit\\1700 West Sheffield Road.rvt",
+  "extraction_date": "2026-02-08",
+  "version": "take2",
+
+  "levels": {
+    "tof": { "levelId": 1200491, "name": "T.O.F.", "elevation": -1.333 },
+    "ff":  { "levelId": 30,      "name": "F.F.",   "elevation": 0.0 },
+    "tob": { "levelId": 9946,    "name": "T.O.B.", "elevation": 10.0 }
+  },
+
+  "building_footprint": {
+    "description": "L-shaped footprint approx 55x49 ft with garage wing",
+    "min_x": -24.73,
+    "max_x": 30.19,
+    "min_y": -22.55,
+    "max_y": 26.76,
+    "width_ft": 54.92,
+    "depth_ft": 49.31
+  },
+
+  "wall_types_used": {
+    "cmu_8in_ext":    { "wallTypeId": 1200718, "name": "8\" CMU Exterior Wall - W1", "width": 0.854 },
+    "int_4half":      { "wallTypeId": 441519,  "name": "Interior - 4 1/2\" Partition W4", "width": 0.375 },
+    "foundation_8in": { "wallTypeId": 1215709, "name": "Foundation - 8\" Concrete", "width": 0.635 },
+    "stone_veneer":   { "wallTypeId": 1936965, "name": "5/8\" Stone Veneer", "width": 0.052 }
+  },
+
+  "titleblock": {
+    "titleblockId": 1289127,
+    "name": "ARKY - Title Block",
+    "sheetSize": "24x36 (2ft x 3ft)"
+  },
+
+  "exterior_walls": [
+    { "name": "North Wall",         "start": [-24.7, 26.8, 0], "end": [30.2, 26.8, 0],   "height": 10.5, "wallTypeId": 1200718 },
+    { "name": "East Wall",          "start": [30.2, 26.8, 0],  "end": [30.2, -19.5, 0],  "height": 10.5, "wallTypeId": 1200718 },
+    { "name": "South Garage Wall",  "start": [30.2, -19.5, 0], "end": [10.9, -19.5, 0],  "height": 10.5, "wallTypeId": 1200718 },
+    { "name": "Garage Step-Up S",   "start": [10.9, -19.5, 0], "end": [10.9, -13.2, 0],  "height": 10.5, "wallTypeId": 1200718 },
+    { "name": "Living Entry Wall",  "start": [10.9, -13.2, 0], "end": [1.5, -13.2, 0],   "height": 10.5, "wallTypeId": 1200718 },
+    { "name": "Living South Step",  "start": [1.5, -13.2, 0],  "end": [1.5, -22.6, 0],   "height": 10.5, "wallTypeId": 1200718 },
+    { "name": "South Master Wall",  "start": [1.6, -22.5, 0],  "end": [-24.7, -22.5, 0], "height": 10.5, "wallTypeId": 1200718 },
+    { "name": "West Wall",          "start": [-24.7, -22.5, 0],"end": [-24.7, 26.8, 0],  "height": 10.5, "wallTypeId": 1200718 }
+  ],
+
+  "interior_walls": [
+    { "name": "Bedroom Wing NS",      "start": [-12.3, 26.8, 0], "end": [-12.3, 14.3, 0],  "height": 10, "wallTypeId": 441519 },
+    { "name": "Bedroom Wing EW Upper","start": [-24.7, 14.3, 0], "end": [-8.3, 14.3, 0],   "height": 10, "wallTypeId": 441519 },
+    { "name": "Kitchen Living NS",    "start": [0.1, 13.3, 0],   "end": [0.1, 3.6, 0],     "height": 10, "wallTypeId": 441519 },
+    { "name": "Bath2 Upper EW",       "start": [-24.7, 6.1, 0],  "end": [-16.3, 6.1, 0],   "height": 10, "wallTypeId": 441519 },
+    { "name": "Bedroom2 Wing EW",     "start": [-24.7, 3.8, 0],  "end": [-12.3, 3.8, 0],   "height": 10, "wallTypeId": 441519 },
+    { "name": "Master EW Divider",    "start": [-24.7, -8.5, 0], "end": [-1.9, -8.5, 0],   "height": 10, "wallTypeId": 441519 },
+    { "name": "Kitchen Family EW",    "start": [0.1, 13.3, 0],   "end": [30.2, 13.3, 0],   "height": 10, "wallTypeId": 441519 },
+    { "name": "Closet Laundry NS",    "start": [22.1, 13.3, 0],  "end": [22.1, 1.0, 0],    "height": 10, "wallTypeId": 441519 },
+    { "name": "Garage Top EW",        "start": [30.2, 1.0, 0],   "end": [11.2, 1.0, 0],    "height": 10, "wallTypeId": 441519 },
+    { "name": "Kitchen NS Divider",   "start": [12.7, 13.3, 0],  "end": [12.7, 1.0, 0],    "height": 10, "wallTypeId": 441519 },
+    { "name": "Tub Half Upper EW",    "start": [-24.7, 12.0, 0], "end": [-16.3, 12.0, 0],  "height": 10, "wallTypeId": 441519 },
+    { "name": "Bath NS Corridor",     "start": [-16.3, 14.3, 0], "end": [-16.3, 3.8, 0],   "height": 10, "wallTypeId": 441519 },
+    { "name": "WIC Bedroom NS",       "start": [-12.3, -8.5, 0], "end": [-12.3, 3.8, 0],   "height": 10, "wallTypeId": 441519 },
+    { "name": "Living NS Wall",       "start": [-1.9, -12.9, 0], "end": [-1.9, 3.6, 0],    "height": 10, "wallTypeId": 441519 },
+    { "name": "WIC Divider EW",       "start": [-12.3, -0.7, 0], "end": [-1.9, -0.7, 0],   "height": 10, "wallTypeId": 441519 },
+    { "name": "WIC NS Divider",       "start": [-8.3, -8.5, 0],  "end": [-8.3, -0.7, 0],   "height": 10, "wallTypeId": 441519 },
+    { "name": "Master Bath NS",       "start": [-7.3, -22.5, 0], "end": [-7.3, -8.5, 0],   "height": 10, "wallTypeId": 441519 },
+    { "name": "Hall Main EW",         "start": [12.7, 3.6, 0],   "end": [-12.3, 3.6, 0],   "height": 10, "wallTypeId": 441519 },
+    { "name": "Bath3 NS Divider",     "start": [-8.3, 14.3, 0],  "end": [-8.3, 3.6, 0],    "height": 10, "wallTypeId": 441519 },
+    { "name": "Bath3 EW Bottom",      "start": [-8.3, 6.1, 0],   "end": [0.1, 6.1, 0],     "height": 10, "wallTypeId": 441519 },
+    { "name": "Bedroom3 Upper EW",    "start": [-8.3, 12.0, 0],  "end": [0.1, 12.0, 0],    "height": 10, "wallTypeId": 441519 },
+    { "name": "Bath3 Partition NS",   "start": [-3.9, 6.1, 0],   "end": [-3.9, 3.6, 0],    "height": 10, "wallTypeId": 441519 },
+    { "name": "Master Bath EW",       "start": [1.5, -12.9, 0],  "end": [-7.3, -12.9, 0],  "height": 10, "wallTypeId": 441519 },
+    { "name": "Utility NS Wall",      "start": [11.2, -13.2, 0], "end": [11.2, 1.0, 0],    "height": 10, "wallTypeId": 441519 },
+    { "name": "Laundry Upper EW",     "start": [30.2, 8.0, 0],   "end": [22.1, 8.0, 0],    "height": 10, "wallTypeId": 441519 }
+  ],
+
+  "rooms": [
+    { "name": "LIVING",         "number": "100", "location": [-5.0, -11.0, 0] },
+    { "name": "MASTER BEDROOM", "number": "101", "location": [-16.0, -15.0, 0] },
+    { "name": "W.I.C.",         "number": "102", "location": [-10.0, -4.5, 0] },
+    { "name": "MASTER BATH",    "number": "103", "location": [-4.0, -17.0, 0] },
+    { "name": "BEDROOM-2",     "number": "104", "location": [-18.0, 0.0, 0] },
+    { "name": "BATH-2",        "number": "105", "location": [-20.0, 9.0, 0] },
+    { "name": "BATH-3",        "number": "106", "location": [-4.0, 5.0, 0] },
+    { "name": "BEDROOM-3",     "number": "107", "location": [-18.0, 20.0, 0] },
+    { "name": "KITCHEN",       "number": "108", "location": [6.0, 8.0, 0] },
+    { "name": "FAMILY / DINING","number": "109", "location": [15.0, 20.0, 0] },
+    { "name": "HALL-1",        "number": "111", "location": [-6.0, 0.0, 0] },
+    { "name": "LAUNDRY",       "number": "113", "location": [26.0, 4.0, 0] },
+    { "name": "CLOSET",        "number": "114", "location": [26.0, 11.0, 0] },
+    { "name": "2-CAR GARAGE",  "number": "116", "location": [20.0, -10.0, 0] }
+  ],
+
+  "doors_summary": {
+    "total": 26,
+    "note": "Each door uses its exact family type from the original project extraction (full_extraction.json)",
+    "families_used": [
+      "Door-Garage-Embossed_Panel (192x84)",
+      "Door-Opening (various sizes)",
+      "Door-Interior-Single-Flush_Panel-Wood (30x80, 32x80, 36x80)",
+      "Door-Exterior-Single-Entry-Half Flat Glass-Wood_Clad (36x84)",
+      "Door-Bifold_4-Panel_Flush_SlimFold_Dunbarton (3'-6\" x 6'-8\")",
+      "Door-Interior-Double-Sliding-2_Panel-Wood (48x80, 60x80)",
+      "Door-Double-Sliding (68x80)",
+      "Door-Passage-Single-Flush (36x80)",
+      "Door-Interior-Single-Pocket-2_Panel-Wood (36x80)"
+    ]
+  },
+
+  "windows_summary": {
+    "total": 14,
+    "note": "All windows extracted from original with exact locations and sill heights",
+    "families_used": [
+      "Window-Double-Hung 37\"x63 (11 windows, sill 1.42')",
+      "Window-Double-Hung 36\"x36\" (3 windows, sill 3.67' - bathrooms)",
+      "Sidelight 18\"x82\" (1 sidelight at front entry)"
+    ]
+  }
+}

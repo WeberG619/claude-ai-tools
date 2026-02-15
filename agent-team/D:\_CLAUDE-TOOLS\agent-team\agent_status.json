@@ -1,0 +1,12 @@
+{
+  "agent": "narrator",
+  "speaking": false,
+  "text": "Testing code_write",
+  "timestamp": 1770229263.271227,
+  "activity": {
+    "type": "code_write",
+    "file_path": "/mnt/d/project/app.js",
+    "content": "// React component example\nimport React from 'react';\n\nfunction App() {\n    const [count, setCount] = useState(0);\n\n    return (\n        <div className=\"app\">\n            <h1>Counter: {count}</h1>\n            <button onClick={() => setCount(c => c + 1)}>\n                Increment\n            </button>\n        </div>\n    );\n}\n\nexport default App;\n",
+    "language": "javascript"
+  }
+}

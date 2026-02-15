@@ -1,0 +1,29 @@
+I'm recording a full demo of me talking to Revit through AI.
+
+No slides. No marketing fluff. Just a screen recording of my actual workflow.
+
+You'll see:
+- Voice command to Revit model in real time
+- Claude interpreting natural language into BIM operations
+- Named pipes executing commands inside Revit's API
+- Floor plans generating from a single sentence
+
+I've posted about RevitMCPBridge, the Jarvis voice assistant, the ML pipeline, and the full agent setup. But I know posts only go so far. You need to see it working.
+
+So I'm going to show you. Start to finish. Unedited.
+
+This is what AI-driven BIM actually looks like when it's not a conference demo or a concept video. It's messy, it's fast, and it works.
+
+Before I record -- what do you want to see?
+
+Drop a comment:
+- Voice to Revit floor plan generation?
+- AI reading a PDF and creating a model?
+- The full 15-server agent setup in action?
+- Something else?
+
+I'll prioritize based on what people actually want to watch.
+
+Follow along if you don't want to miss it.
+
+#BIM #AI #Revit #Demo #Architecture #AEC #RevitAPI #ClaudeAI #Automation #BIMAutomation #BuildInPublic

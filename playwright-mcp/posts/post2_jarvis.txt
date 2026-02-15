@@ -1,0 +1,23 @@
+I built a voice assistant that talks to Revit.
+
+Not a chatbot. Not a plugin. A voice interface that sits between me and my entire development environment.
+
+I say: "Create a floor plan with three bedrooms and a central hallway."
+
+Here's what happens next:
+- My voice gets transcribed in real time
+- Claude interprets the intent and breaks it into BIM operations
+- Commands flow through RevitMCPBridge via named pipes
+- Revit executes: walls go up, doors get placed, rooms get tagged
+
+Natural language to BIM geometry in seconds. No menus. No clicking through ribbon tabs. No repetitive manual placement.
+
+This isn't about replacing architects. It's about removing the friction between what you're thinking and what ends up in the model. The design intent goes straight from your voice to Revit's API.
+
+Right now it handles floor plan generation, element placement, parameter modifications, and view setup. I'm working on expanding it to handle more complex assemblies and multi-story logic.
+
+The sci-fi version of architecture isn't coming. I'm already using it.
+
+Built solo at BIM Ops Studio. More posts coming on the ML pipeline and the full agent setup behind all of this.
+
+#BIM #AI #Revit #VoiceAI #Architecture #Automation #AEC #ClaudeAI #PropTech #BIMAutomation #RevitAPI

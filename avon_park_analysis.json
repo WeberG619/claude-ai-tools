@@ -1,0 +1,413 @@
+{
+  "success": true,
+  "exteriorWalls": [
+    {
+      "startX": 0,
+      "startY": 0,
+      "endX": 13.5,
+      "endY": 0,
+      "orientation": "H",
+      "length": 13.5,
+      "thicknessInches": 8.0,
+      "desc": "South Wall - West Section (Bath-3 to Master Bath)"
+    },
+    {
+      "startX": 13.5,
+      "startY": 0,
+      "endX": 27,
+      "endY": 0,
+      "orientation": "H",
+      "length": 13.5,
+      "thicknessInches": 8.0,
+      "desc": "South Wall - Center (Master Bath to Living)"
+    },
+    {
+      "startX": 27,
+      "startY": 0,
+      "endX": 35.83,
+      "endY": 0,
+      "orientation": "H",
+      "length": 8.83,
+      "thicknessInches": 8.0,
+      "desc": "South Wall - East Section (Living to Garage)"
+    },
+    {
+      "startX": 35.83,
+      "startY": 0,
+      "endX": 47.83,
+      "endY": 0,
+      "orientation": "H",
+      "length": 12.0,
+      "thicknessInches": 8.0,
+      "desc": "Garage South Wall"
+    },
+    {
+      "startX": 47.83,
+      "startY": 0,
+      "endX": 55.83,
+      "endY": 0,
+      "orientation": "H",
+      "length": 8.0,
+      "thicknessInches": 8.0,
+      "desc": "Porch South Wall"
+    },
+    {
+      "startX": 55.83,
+      "startY": 0,
+      "endX": 55.83,
+      "endY": 8,
+      "orientation": "V",
+      "length": 8.0,
+      "thicknessInches": 8.0,
+      "desc": "East Wall - Porch"
+    },
+    {
+      "startX": 55.83,
+      "startY": 8,
+      "endX": 47.83,
+      "endY": 8,
+      "orientation": "H",
+      "length": 8.0,
+      "thicknessInches": 8.0,
+      "desc": "Porch North Wall"
+    },
+    {
+      "startX": 47.83,
+      "startY": 8,
+      "endX": 47.83,
+      "endY": 32,
+      "orientation": "V",
+      "length": 24.0,
+      "thicknessInches": 8.0,
+      "desc": "East Wall - Garage"
+    },
+    {
+      "startX": 47.83,
+      "startY": 32,
+      "endX": 35.83,
+      "endY": 32,
+      "orientation": "H",
+      "length": 12.0,
+      "thicknessInches": 8.0,
+      "desc": "Garage/Utility North Wall"
+    },
+    {
+      "startX": 35.83,
+      "startY": 32,
+      "endX": 35.83,
+      "endY": 42,
+      "orientation": "V",
+      "length": 10.0,
+      "thicknessInches": 8.0,
+      "desc": "East Wall - Main Building Upper"
+    },
+    {
+      "startX": 35.83,
+      "startY": 42,
+      "endX": 14,
+      "endY": 42,
+      "orientation": "H",
+      "length": 21.83,
+      "thicknessInches": 8.0,
+      "desc": "North Wall - Kitchen/Family"
+    },
+    {
+      "startX": 14,
+      "startY": 42,
+      "endX": 0,
+      "endY": 42,
+      "orientation": "H",
+      "length": 14.0,
+      "thicknessInches": 8.0,
+      "desc": "North Wall - Bedroom-3"
+    },
+    {
+      "startX": 0,
+      "startY": 42,
+      "endX": 0,
+      "endY": 0,
+      "orientation": "V",
+      "length": 42.0,
+      "thicknessInches": 8.0,
+      "desc": "West Wall - Full Height"
+    }
+  ],
+  "interiorWalls": [
+    {
+      "startX": 0,
+      "startY": 28,
+      "endX": 14,
+      "endY": 28,
+      "orientation": "H",
+      "length": 14.0,
+      "thicknessInches": 4.5,
+      "desc": "Bedroom-3 South Wall"
+    },
+    {
+      "startX": 14,
+      "startY": 14,
+      "endX": 14,
+      "endY": 42,
+      "orientation": "V",
+      "length": 28.0,
+      "thicknessInches": 4.5,
+      "desc": "Bedroom-3 East Wall / BR-2 East"
+    },
+    {
+      "startX": 0,
+      "startY": 14,
+      "endX": 14,
+      "endY": 14,
+      "orientation": "H",
+      "length": 14.0,
+      "thicknessInches": 4.5,
+      "desc": "Bedroom-2 South Wall"
+    },
+    {
+      "startX": 5.33,
+      "startY": 0,
+      "endX": 5.33,
+      "endY": 6,
+      "orientation": "V",
+      "length": 6.0,
+      "thicknessInches": 4.5,
+      "desc": "Bath-3 East Wall"
+    },
+    {
+      "startX": 0,
+      "startY": 6,
+      "endX": 5.33,
+      "endY": 6,
+      "orientation": "H",
+      "length": 5.33,
+      "thicknessInches": 4.5,
+      "desc": "Bath-3 North Wall"
+    },
+    {
+      "startX": 5.33,
+      "startY": 6,
+      "endX": 14,
+      "endY": 6,
+      "orientation": "H",
+      "length": 8.67,
+      "thicknessInches": 4.5,
+      "desc": "Bath-2 South Wall"
+    },
+    {
+      "startX": 5.33,
+      "startY": 14,
+      "endX": 14,
+      "endY": 14,
+      "orientation": "H",
+      "length": 8.67,
+      "thicknessInches": 4.5,
+      "desc": "Bath-2 North Wall"
+    },
+    {
+      "startX": 14,
+      "startY": 6,
+      "endX": 14,
+      "endY": 14,
+      "orientation": "V",
+      "length": 8.0,
+      "thicknessInches": 4.5,
+      "desc": "Bath-2 East Wall"
+    },
+    {
+      "startX": 14,
+      "startY": 10,
+      "endX": 27,
+      "endY": 10,
+      "orientation": "H",
+      "length": 13.0,
+      "thicknessInches": 4.5,
+      "desc": "Hall-1 South Wall"
+    },
+    {
+      "startX": 14,
+      "startY": 14,
+      "endX": 27,
+      "endY": 14,
+      "orientation": "H",
+      "length": 13.0,
+      "thicknessInches": 4.5,
+      "desc": "Hall-1 North Wall"
+    },
+    {
+      "startX": 22,
+      "startY": 0,
+      "endX": 22,
+      "endY": 10,
+      "orientation": "V",
+      "length": 10.0,
+      "thicknessInches": 4.5,
+      "desc": "Master Bedroom East Wall"
+    },
+    {
+      "startX": 13.5,
+      "startY": 7,
+      "endX": 22,
+      "endY": 7,
+      "orientation": "H",
+      "length": 8.5,
+      "thicknessInches": 4.5,
+      "desc": "Master Bath North Wall"
+    },
+    {
+      "startX": 13.5,
+      "startY": 0,
+      "endX": 13.5,
+      "endY": 7,
+      "orientation": "V",
+      "length": 7.0,
+      "thicknessInches": 4.5,
+      "desc": "Master Bath East Wall (partial)"
+    },
+    {
+      "startX": 17,
+      "startY": 7,
+      "endX": 17,
+      "endY": 10,
+      "orientation": "V",
+      "length": 3.0,
+      "thicknessInches": 4.5,
+      "desc": "WIC Partition"
+    },
+    {
+      "startX": 27,
+      "startY": 14,
+      "endX": 35.83,
+      "endY": 14,
+      "orientation": "H",
+      "length": 8.83,
+      "thicknessInches": 4.5,
+      "desc": "Living/Kitchen Divider"
+    },
+    {
+      "startX": 27,
+      "startY": 0,
+      "endX": 27,
+      "endY": 14,
+      "orientation": "V",
+      "length": 14.0,
+      "thicknessInches": 4.5,
+      "desc": "Living West Wall"
+    },
+    {
+      "startX": 27,
+      "startY": 28,
+      "endX": 35.83,
+      "endY": 28,
+      "orientation": "H",
+      "length": 8.83,
+      "thicknessInches": 4.5,
+      "desc": "Kitchen/Family Divider"
+    },
+    {
+      "startX": 35.83,
+      "startY": 14,
+      "endX": 35.83,
+      "endY": 32,
+      "orientation": "V",
+      "length": 18.0,
+      "thicknessInches": 4.5,
+      "desc": "Kitchen East Wall"
+    },
+    {
+      "startX": 10,
+      "startY": 35,
+      "endX": 14,
+      "endY": 35,
+      "orientation": "H",
+      "length": 4.0,
+      "thicknessInches": 4.5,
+      "desc": "Closet Wall - BR3"
+    },
+    {
+      "startX": 10,
+      "startY": 21,
+      "endX": 14,
+      "endY": 21,
+      "orientation": "H",
+      "length": 4.0,
+      "thicknessInches": 4.5,
+      "desc": "Closet Wall - BR2"
+    },
+    {
+      "startX": 35.83,
+      "startY": 24,
+      "endX": 42,
+      "endY": 24,
+      "orientation": "H",
+      "length": 6.17,
+      "thicknessInches": 4.5,
+      "desc": "Laundry North Wall"
+    },
+    {
+      "startX": 42,
+      "startY": 18,
+      "endX": 42,
+      "endY": 24,
+      "orientation": "V",
+      "length": 6.0,
+      "thicknessInches": 4.5,
+      "desc": "Laundry East Wall"
+    },
+    {
+      "startX": 42,
+      "startY": 24,
+      "endX": 42,
+      "endY": 32,
+      "orientation": "V",
+      "length": 8.0,
+      "thicknessInches": 4.5,
+      "desc": "Utility Partition"
+    },
+    {
+      "startX": 35.83,
+      "startY": 0,
+      "endX": 35.83,
+      "endY": 14,
+      "orientation": "V",
+      "length": 14.0,
+      "thicknessInches": 4.5,
+      "desc": "Garage Fire Wall"
+    },
+    {
+      "startX": 35.83,
+      "startY": 14,
+      "endX": 35.83,
+      "endY": 18,
+      "orientation": "V",
+      "length": 4.0,
+      "thicknessInches": 4.5,
+      "desc": "Garage Interior (to Utility)"
+    },
+    {
+      "startX": 35.83,
+      "startY": 18,
+      "endX": 47.83,
+      "endY": 18,
+      "orientation": "H",
+      "length": 12.0,
+      "thicknessInches": 4.5,
+      "desc": "Garage North Wall"
+    }
+  ],
+  "doors": [],
+  "windows": [],
+  "bounds": {
+    "minX": 0,
+    "minY": 0,
+    "maxX": 55.83,
+    "maxY": 42,
+    "width": 55.83,
+    "height": 42
+  },
+  "summary": {
+    "exteriorWallCount": 13,
+    "interiorWallCount": 26,
+    "doorCount": 0,
+    "windowCount": 0
+  }
+}

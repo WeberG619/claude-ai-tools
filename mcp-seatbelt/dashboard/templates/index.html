@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCP Seatbelt Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0f172a;
+            color: #e2e8f0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #334155;
+        }
+        .header h1 {
+            font-size: 24px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .header h1::before { content: "🔒"; }
+        .controls {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+        select, input {
+            background: #1e293b;
+            border: 1px solid #334155;
+            color: #e2e8f0;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .stat-card {
+            background: #1e293b;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+        }
+        .stat-card .value {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .stat-card .label {
+            font-size: 14px;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .stat-card.blocked .value { color: #f87171; }
+        .stat-card.allowed .value { color: #4ade80; }
+        .stat-card.warned .value { color: #fbbf24; }
+        .stat-card.risk .value { color: #60a5fa; }
+        .charts-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .chart-card {
+            background: #1e293b;
+            border-radius: 12px;
+            padding: 20px;
+        }
+        .chart-card h3 {
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 16px;
+            color: #94a3b8;
+        }
+        .chart-container {
+            position: relative;
+            height: 250px;
+        }
+        .table-card {
+            background: #1e293b;
+            border-radius: 12px;
+            padding: 20px;
+            overflow-x: auto;
+        }
+        .table-card h3 {
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 16px;
+            color: #94a3b8;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+        th, td {
+            text-align: left;
+            padding: 10px 12px;
+            border-bottom: 1px solid #334155;
+        }
+        th {
+            color: #64748b;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 11px;
+            letter-spacing: 0.5px;
+        }
+        tr:hover { background: #334155; }
+        .badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .badge.block { background: #7f1d1d; color: #fca5a5; }
+        .badge.log_only { background: #14532d; color: #86efac; }
+        .badge.allow { background: #14532d; color: #86efac; }
+        .badge.warn { background: #713f12; color: #fde047; }
+        .risk-high { color: #f87171; font-weight: 600; }
+        .risk-med { color: #fbbf24; }
+        .risk-low { color: #4ade80; }
+        .tool-name {
+            font-family: 'Monaco', 'Consolas', monospace;
+            font-size: 12px;
+            color: #93c5fd;
+        }
+        .refresh-btn {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .refresh-btn:hover { background: #2563eb; }
+        .filters {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+        @media (max-width: 900px) {
+            .charts-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>MCP Seatbelt Dashboard</h1>
+        <div class="controls">
+            <select id="days-select">
+                <option value="1">Last 24 hours</option>
+                <option value="7" selected>Last 7 days</option>
+                <option value="30">Last 30 days</option>
+            </select>
+            <button class="refresh-btn" onclick="loadData()">Refresh</button>
+        </div>
+    </div>
+
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="value" id="stat-total">-</div>
+            <div class="label">Total Calls</div>
+        </div>
+        <div class="stat-card allowed">
+            <div class="value" id="stat-allowed">-</div>
+            <div class="label">Allowed</div>
+        </div>
+        <div class="stat-card blocked">
+            <div class="value" id="stat-blocked">-</div>
+            <div class="label">Blocked</div>
+        </div>
+        <div class="stat-card warned">
+            <div class="value" id="stat-warned">-</div>
+            <div class="label">Warned</div>
+        </div>
+        <div class="stat-card risk">
+            <div class="value" id="stat-risk">-</div>
+            <div class="label">Avg Risk</div>
+        </div>
+    </div>
+
+    <div class="charts-grid">
+        <div class="chart-card">
+            <h3>Calls Per Day</h3>
+            <div class="chart-container">
+                <canvas id="dailyChart"></canvas>
+            </div>
+        </div>
+        <div class="chart-card">
+            <h3>By Action</h3>
+            <div class="chart-container">
+                <canvas id="actionChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class="chart-card" style="margin-bottom: 24px;">
+        <h3>Calls by Tool</h3>
+        <div class="chart-container">
+            <canvas id="toolChart"></canvas>
+        </div>
+    </div>
+
+    <div class="table-card">
+        <h3>High Risk Calls (Risk >= 7)</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Tool</th>
+                    <th>Action</th>
+                    <th>Risk</th>
+                    <th>Reason</th>
+                </tr>
+            </thead>
+            <tbody id="high-risk-table">
+                <tr><td colspan="5" style="text-align:center;color:#64748b;">Loading...</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="table-card" style="margin-top: 24px;">
+        <h3>Recent Activity</h3>
+        <div class="filters">
+            <input type="text" id="filter-tool" placeholder="Filter by tool..." style="width: 200px;">
+            <select id="filter-action">
+                <option value="">All actions</option>
+                <option value="log_only">Allowed</option>
+                <option value="block">Blocked</option>
+                <option value="warn">Warned</option>
+            </select>
+            <select id="filter-risk">
+                <option value="0">Any risk</option>
+                <option value="5">Risk >= 5</option>
+                <option value="7">Risk >= 7</option>
+                <option value="9">Risk >= 9</option>
+            </select>
+            <button class="refresh-btn" onclick="loadLogs()">Apply</button>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Tool</th>
+                    <th>Action</th>
+                    <th>Risk</th>
+                    <th>Session</th>
+                </tr>
+            </thead>
+            <tbody id="logs-table">
+                <tr><td colspan="5" style="text-align:center;color:#64748b;">Loading...</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        let dailyChart, actionChart, toolChart;
+
+        function getRiskClass(score) {
+            if (score >= 7) return 'risk-high';
+            if (score >= 4) return 'risk-med';
+            return 'risk-low';
+        }
+
+        function formatTime(ts) {
+            if (!ts) return '-';
+            return ts.replace('T', ' ').substring(5);
+        }
+
+        async function loadData() {
+            const days = document.getElementById('days-select').value;
+            const resp = await fetch(`/api/stats?days=${days}`);
+            const data = await resp.json();
+
+            // Update stats
+            document.getElementById('stat-total').textContent = data.total;
+            document.getElementById('stat-allowed').textContent = data.allowed;
+            document.getElementById('stat-blocked').textContent = data.blocked;
+            document.getElementById('stat-warned').textContent = data.warned;
+            document.getElementById('stat-risk').textContent = data.avg_risk;
+
+            // Daily chart
+            const dailyLabels = Object.keys(data.by_day).map(d => d.substring(5));
+            const dailyValues = Object.values(data.by_day);
+
+            if (dailyChart) dailyChart.destroy();
+            dailyChart = new Chart(document.getElementById('dailyChart'), {
+                type: 'bar',
+                data: {
+                    labels: dailyLabels,
+                    datasets: [{
+                        label: 'Calls',
+                        data: dailyValues,
+                        backgroundColor: '#3b82f6',
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: { beginAtZero: true, grid: { color: '#334155' }, ticks: { color: '#94a3b8' } },
+                        x: { grid: { display: false }, ticks: { color: '#94a3b8' } }
+                    }
+                }
+            });
+
+            // Action pie chart
+            if (actionChart) actionChart.destroy();
+            actionChart = new Chart(document.getElementById('actionChart'), {
+                type: 'doughnut',
+                data: {
+                    labels: ['Allowed', 'Blocked', 'Warned'],
+                    datasets: [{
+                        data: [data.allowed, data.blocked, data.warned],
+                        backgroundColor: ['#4ade80', '#f87171', '#fbbf24']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'bottom', labels: { color: '#94a3b8' } }
+                    }
+                }
+            });
+
+            // Tool bar chart
+            const toolLabels = Object.keys(data.by_tool).slice(0, 10);
+            const toolValues = toolLabels.map(t => data.by_tool[t]);
+
+            if (toolChart) toolChart.destroy();
+            toolChart = new Chart(document.getElementById('toolChart'), {
+                type: 'bar',
+                data: {
+                    labels: toolLabels,
+                    datasets: [{
+                        label: 'Calls',
+                        data: toolValues,
+                        backgroundColor: '#8b5cf6',
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        x: { beginAtZero: true, grid: { color: '#334155' }, ticks: { color: '#94a3b8' } },
+                        y: { grid: { display: false }, ticks: { color: '#94a3b8' } }
+                    }
+                }
+            });
+
+            // High risk table
+            const tbody = document.getElementById('high-risk-table');
+            if (data.high_risk.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;color:#4ade80;">No high-risk calls</td></tr>';
+            } else {
+                tbody.innerHTML = data.high_risk.map(row => `
+                    <tr>
+                        <td>${formatTime(row.timestamp)}</td>
+                        <td class="tool-name">${row.tool}</td>
+                        <td><span class="badge ${row.action}">${row.action}</span></td>
+                        <td class="${getRiskClass(row.risk_score)}">${row.risk_score}/10</td>
+                        <td>${row.reason || '-'}</td>
+                    </tr>
+                `).join('');
+            }
+
+            loadLogs();
+        }
+
+        async function loadLogs() {
+            const days = document.getElementById('days-select').value;
+            const tool = document.getElementById('filter-tool').value;
+            const action = document.getElementById('filter-action').value;
+            const minRisk = document.getElementById('filter-risk').value;
+
+            const params = new URLSearchParams({ days, tool, action, min_risk: minRisk });
+            const resp = await fetch(`/api/logs?${params}`);
+            const logs = await resp.json();
+
+            const tbody = document.getElementById('logs-table');
+            if (logs.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;color:#64748b;">No matching logs</td></tr>';
+            } else {
+                tbody.innerHTML = logs.map(row => `
+                    <tr>
+                        <td>${formatTime(row.timestamp)}</td>
+                        <td class="tool-name">${row.tool}</td>
+                        <td><span class="badge ${row.action}">${row.action}</span></td>
+                        <td class="${getRiskClass(row.risk_score)}">${row.risk_score}/10</td>
+                        <td style="color:#64748b;font-size:11px;">${row.session_id}</td>
+                    </tr>
+                `).join('');
+            }
+        }
+
+        // Auto-refresh every 30 seconds
+        setInterval(loadData, 30000);
+
+        // Initial load
+        loadData();
+
+        // Reload on days change
+        document.getElementById('days-select').addEventListener('change', loadData);
+    </script>
+</body>
+</html>

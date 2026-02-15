@@ -1,0 +1,61 @@
+{
+  "capture": {
+    "interval_seconds": 10,
+    "storage_path": "D:/_CLAUDE-TOOLS/visual-memory-mcp/captures",
+    "max_storage_gb": 50,
+    "jpeg_quality": 70
+  },
+  "privacy": {
+    "enabled": true,
+    "mode": "whitelist",
+    "whitelist_apps": [
+      "Revit",
+      "Bluebeam Revu",
+      "Code",
+      "Cursor",
+      "AutoCAD",
+      "devenv",
+      "explorer",
+      "Acrobat",
+      "FoxitReader",
+      "SumatraPDF"
+    ],
+    "whitelist_titles": [
+      "Gmail",
+      "Google Drive",
+      "Google Docs",
+      "Google Sheets",
+      "Outlook",
+      "- Visual Studio",
+      ".pdf",
+      ".rvt",
+      ".dwg"
+    ],
+    "blocklist_titles": [
+      "YouTube",
+      "Netflix",
+      "Incognito",
+      "Private",
+      "InPrivate",
+      "Bank",
+      "Chase",
+      "Wells Fargo",
+      "1Password",
+      "LastPass",
+      "Bitwarden",
+      "WhatsApp",
+      "Telegram",
+      "Signal",
+      "Messages"
+    ],
+    "pause_hotkey": "ctrl+shift+p"
+  },
+  "ocr": {
+    "enabled": true,
+    "engine": "windows"
+  },
+  "retention": {
+    "auto_delete_days": 90,
+    "keep_starred": true
+  }
+}

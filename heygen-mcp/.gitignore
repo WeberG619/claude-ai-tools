@@ -1,0 +1,16 @@
+# Secrets
+.env
+.env.*
+*.secret
+*.key
+*.pem
+credentials.json
+
+# Generated videos (large files)
+*.mp4
+*.avi
+*.mov
+
+# Cache
+__pycache__/
+*.pyc

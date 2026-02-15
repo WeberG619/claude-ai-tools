@@ -1,0 +1,75 @@
+#!/bin/bash
+# CDP helper — launch, connect, and manage Chrome CDP instances from WSL
+#
+# Usage:
+#   cdp launch          # Launch all 4 Chrome CDP instances
+#   cdp launch 2        # Launch just instance 2 (port 9223)
+#   cdp kill             # Kill all CDP instances
+#   cdp status           # Show which ports are active
+#   cdp connect [1-4]    # Print connection URL for instance (default: 1)
+#   cdp test [1-4]       # Test Playwright connection to instance
+
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+WIN_HOST=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}')
+BASE_PORT=9222
+
+cmd=${1:-status}
+instance=${2:-0}
+
+case "$cmd" in
+    launch)
+        if [ "$instance" -eq 0 ] 2>/dev/null; then
+            powershell.exe -NoProfile -ExecutionPolicy Bypass -File "D:\\_CLAUDE-TOOLS\\chrome-cdp\\launch_cdp.ps1"
+        else
+            powershell.exe -NoProfile -ExecutionPolicy Bypass -File "D:\\_CLAUDE-TOOLS\\chrome-cdp\\launch_cdp.ps1" -Port "$instance"
+        fi
+        ;;
+    kill)
+        powershell.exe -NoProfile -ExecutionPolicy Bypass -File "D:\\_CLAUDE-TOOLS\\chrome-cdp\\launch_cdp.ps1" -Kill
+        ;;
+    status)
+        echo "Chrome CDP Status (host: $WIN_HOST)"
+        echo "─────────────────────────────────────"
+        for i in 1 2 3 4; do
+            port=$((BASE_PORT + i - 1))
+            if curl -s --connect-timeout 2 "http://$WIN_HOST:$port/json/version" > /dev/null 2>&1; then
+                version=$(curl -s --connect-timeout 2 "http://$WIN_HOST:$port/json/version" | python3 -c "import sys,json; print(json.load(sys.stdin).get('Browser','?'))" 2>/dev/null)
+                tabs=$(curl -s --connect-timeout 2 "http://$WIN_HOST:$port/json/list" | python3 -c "import sys,json; print(len(json.load(sys.stdin)))" 2>/dev/null)
+                echo "  CDP-$i (port $port): ACTIVE — $version, $tabs tab(s)"
+            else
+                echo "  CDP-$i (port $port): offline"
+            fi
+        done
+        # Also check localhost (in case running directly)
+        echo ""
+        echo "Tip: If all offline from WSL, run firewall rule as admin:"
+        echo "  powershell.exe -Command \"New-NetFirewallRule -DisplayName 'Chrome CDP for WSL' -Direction Inbound -Action Allow -Protocol TCP -LocalPort 9222-9225\""
+        ;;
+    connect)
+        idx=${2:-1}
+        port=$((BASE_PORT + idx - 1))
+        echo "http://$WIN_HOST:$port"
+        ;;
+    test)
+        idx=${2:-1}
+        port=$((BASE_PORT + idx - 1))
+        echo "Testing Playwright connection to CDP-$idx (port $port)..."
+        python3 -c "
+from playwright.sync_api import sync_playwright
+pw = sync_playwright().start()
+try:
+    browser = pw.chromium.connect_over_cdp('http://$WIN_HOST:$port')
+    print(f'Connected! Contexts: {len(browser.contexts)}')
+    for ctx in browser.contexts:
+        for page in ctx.pages:
+            print(f'  Tab: {page.url[:80]}')
+    browser.close()
+except Exception as e:
+    print(f'Failed: {e}')
+pw.stop()
+"
+        ;;
+    *)
+        echo "Usage: cdp {launch|kill|status|connect|test} [instance 1-4]"
+        ;;
+esac

@@ -17,8 +17,8 @@ from typing import List, Dict, Optional, Tuple
 # Status file for fallback (also read by Electron)
 STATUS_FILE = Path("/mnt/d/_CLAUDE-TOOLS/agent-team/agent_status.json")
 
-# WebSocket push endpoint
-PUSH_ENDPOINT = "http://localhost:8890/api/push"
+# WebSocket push endpoint - use 127.0.0.1 (IPv4) instead of localhost (resolves to IPv6 on WSL)
+PUSH_ENDPOINT = "http://127.0.0.1:8890/api/push"
 
 
 class VisualSyncController:

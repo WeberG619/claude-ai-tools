@@ -25,6 +25,15 @@ import anthropic
 from visual_session import VisualActivityController
 from dialogue_v2 import DEVS, STATUS_FILE
 
+# Import speech coordinator for synchronized speech (prevents overlap)
+try:
+    from speech_coordinator import SpeechCoordinator
+    SPEECH_COORDINATOR = SpeechCoordinator()
+    SPEECH_COORD_AVAILABLE = True
+except ImportError:
+    SPEECH_COORDINATOR = None
+    SPEECH_COORD_AVAILABLE = False
+
 # Import visual sync for real-time dashboard updates
 try:
     from visual_sync import VisualSyncController, sync_response
@@ -45,6 +54,59 @@ except ImportError:
 
 # Voice script for TTS
 VOICE_SCRIPT = Path("/mnt/d/_CLAUDE-TOOLS/voice-mcp/speak.py")
+
+# Global flag to disable voice/TTS - set to True to mute all agent speech
+VOICE_DISABLED = False  # Voice ENABLED - agents narrate their actions
+
+
+def extract_narration(text: str) -> str:
+    """
+    Extract BRIEF speakable narration from agent response.
+    AGGRESSIVELY removes code - we show code visually, don't read it.
+    Only keep 1-2 sentences of explanation.
+    """
+    import re
+
+    # COMPLETELY REMOVE code blocks - don't even say "code written"
+    text = re.sub(r'```[\s\S]*?```', '', text)
+
+    # Remove ALL inline code (backticks)
+    text = re.sub(r'`[^`]+`', '', text)
+
+    # Remove anything that looks like code (lines starting with def, class, import, etc)
+    text = re.sub(r'^(def |class |import |from |if |for |while |return |#).*$', '', text, flags=re.MULTILINE)
+
+    # Remove raw JSON/dict/list content
+    text = re.sub(r'[\{\[][\s\S]*?[\}\]]', '', text)
+
+    # Remove file paths
+    text = re.sub(r'[/\\][\w./\\-]+\.\w+', '', text)
+
+    # Remove bullet points and numbered lists
+    text = re.sub(r'^[\s]*[-*•]\s+.*$', '', text, flags=re.MULTILINE)
+    text = re.sub(r'^\s*\d+\.\s+.*$', '', text, flags=re.MULTILINE)
+
+    # Remove markdown headers
+    text = re.sub(r'^#+\s+.*$', '', text, flags=re.MULTILINE)
+
+    # Remove "Here's", "Let me create", etc followed by filename - just keep brief intro
+    text = re.sub(r"(Let me create|Here's|Creating|Writing)\s+\w+\.\w+.*", r'\1 the file.', text)
+
+    # Clean up whitespace
+    text = re.sub(r'\n+', ' ', text)
+    text = re.sub(r' +', ' ', text)
+    text = text.strip()
+
+    # Keep ONLY first 1-2 sentences (max 150 chars for quick speech)
+    if len(text) > 150:
+        # Find first sentence boundary
+        end = text.find('. ')
+        if end > 20 and end < 150:
+            text = text[:end+1]
+        else:
+            text = text[:150].rsplit(' ', 1)[0] + '...'
+
+    return text.strip()
 
 
 @dataclass
@@ -140,13 +202,30 @@ Your responsibilities:
 - Estimate implementation effort
 - Build prototypes quickly
 
+**EXECUTION MODE INSTRUCTIONS:**
+When asked to create code, you MUST output it in executable format:
+1. First say "Let me create [filename]:" (e.g., "Let me create calculator.py:")
+2. Then output the complete code in a code block with language tag
+3. Include a test in the code's __main__ block so it can be verified
+
+Example format:
+Let me create calculator.py:
+```python
+def add(a, b):
+    return a + b
+
+if __name__ == '__main__':
+    print(f'Test: add(2,3) = {add(2,3)}')
+```
+
+This format allows the execution bridge to detect and run your code automatically.
+
 Communication style:
 - Direct and practical
-- Use phrases like "I can build that...", "Here's how I'd approach it...", "Let me show you..."
-- Keep responses to 1-3 sentences for natural conversation
+- When creating code, ALWAYS use the format above
 - Focus on doing rather than discussing
 
-You are in a live team session. Respond naturally as the Builder would in a real conversation.""",
+You are in a live team session with execution enabled.""",
         temperature=0.7
     ),
 
@@ -288,8 +367,14 @@ class AutonomousAgent:
         self.visual = VisualActivityController()
         self.execution_bridge = execution_bridge
 
-    def _update_status(self, text: str, speaking: bool = True):
-        """Update the dashboard status file."""
+    def _update_status(self, text: str, speaking: bool = True, activity: dict = None):
+        """Update the dashboard status file.
+
+        Args:
+            text: The text being spoken/displayed
+            speaking: Whether the agent is currently speaking
+            activity: Optional activity dict with type (code_write, terminal_run, browser_navigate)
+        """
         try:
             status = {
                 "agent": self.agent_type,
@@ -297,19 +382,49 @@ class AutonomousAgent:
                 "text": text[:200] if text else "",
                 "timestamp": time.time()
             }
+            # IMPORTANT: Preserve activity field for visual display
+            if activity:
+                status["activity"] = activity
             with open(STATUS_FILE, "w") as f:
                 json.dump(status, f)
         except Exception as e:
             print(f"Status update error: {e}")
 
-    def _speak(self, text: str) -> bool:
-        """Speak the text using TTS."""
+    def _speak(self, text: str, activity: dict = None) -> bool:
+        """Speak the text using TTS with SYNCHRONIZED access.
+
+        Uses SpeechCoordinator for file-locking to prevent overlapping speech.
+        Extracts narration only (no code - code is shown visually).
+
+        Args:
+            text: The text to speak (narration will be extracted)
+            activity: Optional activity to preserve in status (for visual display)
+        """
+        # Store activity for use in finally block (ensures view persists after speech)
+        self._last_activity = activity
         import subprocess
         import threading
 
+        # Check if voice is disabled globally
+        if VOICE_DISABLED:
+            # Still update status for visual feedback, but don't speak
+            self._update_status(text, speaking=True, activity=activity)
+            time.sleep(0.1)  # Brief pause for visual update
+            self._update_status(text, speaking=False, activity=activity)  # Preserve activity!
+            return True
+
+        # Extract narration only (strips code blocks, technical output)
+        narration = extract_narration(text)
+        if not narration or len(narration) < 10:
+            # Nothing meaningful to speak - just show visual
+            self._update_status(text, speaking=True, activity=activity)
+            time.sleep(0.3)
+            self._update_status(text, speaking=False, activity=activity)  # Preserve activity!
+            return True
+
         try:
-            # Set speaking status BEFORE starting TTS
-            self._update_status(text, speaking=True)
+            # Set speaking status BEFORE starting TTS (preserve activity!)
+            self._update_status(text, speaking=True, activity=activity)
 
             # Keep updating status while speaking to maintain green light
             speaking_active = True
@@ -317,31 +432,42 @@ class AutonomousAgent:
             def keep_alive():
                 """Keep the speaking status alive during TTS."""
                 while speaking_active:
-                    self._update_status(text, speaking=True)
-                    time.sleep(0.3)  # Update every 300ms
+                    # IMPORTANT: Preserve activity during speech!
+                    self._update_status(text, speaking=True, activity=activity)
+                    time.sleep(0.5)  # Update every 500ms
 
             # Start keep-alive thread
             keep_alive_thread = threading.Thread(target=keep_alive, daemon=True)
             keep_alive_thread.start()
 
-            # Run TTS
-            result = subprocess.run(
-                ["python3", str(VOICE_SCRIPT), text, self.persona.voice],
-                capture_output=True,
-                timeout=120
-            )
+            # Use COORDINATOR for synchronized speech (prevents overlap)
+            if SPEECH_COORD_AVAILABLE and SPEECH_COORDINATOR:
+                # SpeechCoordinator handles file locking internally
+                result = SPEECH_COORDINATOR.speak(
+                    agent=self.agent_type,
+                    text=narration,
+                    rate="+10%"
+                )
+            else:
+                # Fallback: direct subprocess (no locking)
+                result = subprocess.run(
+                    ["python3", str(VOICE_SCRIPT), narration, self.persona.voice],
+                    capture_output=True,
+                    timeout=120
+                )
+                result = result.returncode == 0
 
             # Stop keep-alive
             speaking_active = False
 
-            return result.returncode == 0
+            return result
 
         except Exception as e:
             print(f"Speech error: {e}")
             return False
         finally:
-            # Clear status immediately - next agent takes over
-            self._update_status("", speaking=False)
+            # Clear speaking status but PRESERVE activity for view persistence
+            self._update_status("", speaking=False, activity=getattr(self, '_last_activity', None))
 
     def think(self, context: str, team_history: List[Dict] = None) -> str:
         """
@@ -373,13 +499,26 @@ class AutonomousAgent:
                 "content": context
             })
 
-        # Broadcast reasoning start
+        # Broadcast reasoning start - SHOW THE THINKING PROCESS
         if VISUAL_SYNC_AVAILABLE:
             try:
                 sync = VisualSyncController()
+                # Show what the agent is about to think about
                 sync.broadcast_reasoning(self.agent_type, f"Analyzing: {context[:80]}...", "active")
-            except:
-                pass
+                # Also push to terminal view so user can SEE it
+                sync.push_status({
+                    "agent": self.agent_type,
+                    "speaking": False,
+                    "text": f"[{self.persona.name}] Thinking about: {context[:150]}...",
+                    "activity": {
+                        "type": "terminal_run",
+                        "command": f"# {self.persona.name} is analyzing the task...",
+                        "output": f"Context: {context[:300]}..."
+                    },
+                    "timestamp": time.time()
+                })
+            except Exception as e:
+                print(f"Visual sync error: {e}")
 
         # Call Claude API
         try:
@@ -404,29 +543,119 @@ class AutonomousAgent:
                     if exec_result.any_executed:
                         response_text += format_execution_results(exec_result)
 
-                        # Push real execution results to dashboard
+                        # Push real execution results to dashboard with proper activity types
                         if VISUAL_SYNC_AVAILABLE:
                             sync = VisualSyncController()
                             for result in exec_result.results:
                                 sync.push_execution_result(self.agent_type, result)
+                                # Push code_write activity if file was written
+                                if result.action_type == 'write_file' and result.success:
+                                    sync.push_status({
+                                        "agent": self.agent_type,
+                                        "speaking": True,
+                                        "text": f"Created {result.path}",
+                                        "activity": {
+                                            "type": "code_write",
+                                            "file_path": str(result.path),
+                                            "content": result.content or "",
+                                            "language": "python" if str(result.path).endswith('.py') else "text"
+                                        },
+                                        "timestamp": time.time()
+                                    })
+                                # Push auto_test results to terminal view
+                                elif result.action_type == 'auto_test':
+                                    sync.push_status({
+                                        "agent": self.agent_type,
+                                        "speaking": True,
+                                        "text": f"Testing {result.path}",
+                                        "activity": {
+                                            "type": "terminal_run",
+                                            "command": f"python3 {result.path}",
+                                            "output": result.output or result.error or "No output"
+                                        },
+                                        "timestamp": time.time()
+                                    })
                 except Exception as exec_error:
                     print(f"Execution bridge error for {self.agent_type}: {exec_error}")
 
             # Broadcast reasoning complete and sync visual activity
+            # SHOW THE RESPONSE SO USER CAN SEE THE PLANNING
             if VISUAL_SYNC_AVAILABLE:
                 try:
                     sync = VisualSyncController()
                     sync.broadcast_reasoning(self.agent_type, response_text[:100], "completed")
+
+                    # Push the full response to terminal view so user can READ it
+                    sync.push_status({
+                        "agent": self.agent_type,
+                        "speaking": True,
+                        "text": response_text[:200],
+                        "activity": {
+                            "type": "terminal_run",
+                            "command": f"# {self.persona.name}'s Response:",
+                            "output": response_text
+                        },
+                        "timestamp": time.time()
+                    })
+
                     # Detect and sync any file/URL references in response
                     sync.sync_from_response(self.agent_type, response_text)
-                except:
-                    pass
+                except Exception as e:
+                    print(f"Visual sync error: {e}")
 
             return response_text
 
         except Exception as e:
             print(f"API error for {self.agent_type}: {e}")
             return f"[{self.persona.name} is thinking...]"
+
+    def _detect_activity(self, text: str) -> Optional[dict]:
+        """Detect activity type from response text for visual display."""
+        import re
+        text_lower = text.lower()
+
+        # Check for code writing - be aggressive about detecting code blocks
+        code_match = re.search(r'```(\w+)?\n([\s\S]*?)```', text)
+        if code_match:
+            lang = code_match.group(1) or 'text'
+            code = code_match.group(2)
+            # Try to find file path
+            file_match = re.search(r'`([^`]+\.\w+)`|"([^"]+\.\w+)"|\'([^\']+\.\w+)\'', text)
+            file_path = file_match.group(1) or file_match.group(2) or file_match.group(3) if file_match else 'code'
+            return {
+                "type": "code_write",
+                "file_path": file_path,
+                "content": code,
+                "language": lang
+            }
+
+        # Check for terminal commands - expanded keywords
+        if any(kw in text_lower for kw in ['running', 'executing', 'command:', '$ ', 'npm ', 'pip ', 'python ', 'git ', 'ls ', 'cd ', 'test', 'build']):
+            cmd_match = re.search(r'`([^`]+)`|running\s+(\S+)', text, re.IGNORECASE)
+            if cmd_match:
+                cmd = cmd_match.group(1) or cmd_match.group(2)
+                return {
+                    "type": "terminal_run",
+                    "command": cmd,
+                    "output": ""
+                }
+
+        # Check for browser/URL
+        url_match = re.search(r'(https?://[^\s<>"\']+)', text)
+        if url_match and any(kw in text_lower for kw in ['navigate', 'browsing', 'opening', 'checking', 'documentation', 'research', 'found']):
+            return {
+                "type": "browser_navigate",
+                "url": url_match.group(1),
+                "title": ""
+            }
+
+        # ALWAYS return an activity - default to terminal view showing agent's thinking
+        # This ensures the dashboard ALWAYS switches views based on agent activity
+        return {
+            "type": "terminal_run",
+            "command": f"# {self.persona.name} is working...",
+            "output": text[:500] if text else "Processing..."
+        }
 
     def respond(self, context: str, team_history: List[Dict] = None, speak: bool = True) -> str:
         """
@@ -442,17 +671,23 @@ class AutonomousAgent:
         """
         response = self.think(context, team_history)
 
+        # Detect activity for visual display
+        activity = self._detect_activity(response)
+
         # Print and speak
         print(f"\n[{self.persona.name.upper()}]: {response}")
         if speak:
-            self._speak(response)
+            self._speak(response, activity=activity)
 
         return response
 
-    def speak_only(self, text: str):
+    def speak_only(self, text: str, activity: dict = None):
         """Just speak pre-generated text."""
         print(f"\n[{self.persona.name.upper()}]: {text}")
-        self._speak(text)
+        # Auto-detect activity if not provided
+        if activity is None:
+            activity = self._detect_activity(text)
+        self._speak(text, activity=activity)
 
 
 class AutonomousTeam:

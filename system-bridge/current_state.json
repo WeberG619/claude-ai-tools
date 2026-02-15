@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-12-03T22:39:59.766190",
+  "timestamp": "2026-02-06T11:11:14.327759",
   "applications": [
     {
       "error": "Expecting value: line 1 column 1 (char 0)"
@@ -11,155 +11,635 @@
   },
   "revit": {
     "success": true,
-    "viewId": 2197849,
-    "viewName": "PROPOSED SECOND FLOOR PLAN Copy 1",
-    "viewType": "FloorPlan",
-    "level": "SECOND FLOOR",
-    "scale": 48,
+    "viewId": 2634458,
+    "viewName": "3D View 6",
+    "viewType": "ThreeD",
+    "level": null,
+    "scale": 0,
     "isTemplate": false
   },
   "memory": {
     "recent": [
       {
-        "id": 143,
-        "content": "SESSION: Eliminated all 4 Claude Code limitations. Built: (1) claude_daemon.py - persistent background service that tracks system state every 10 seconds, logs app open/close events, monitors Revit/Bluebeam; (2) bluebeam_bridge.py - full Bluebeam control via ScriptEngine.exe JavaScript API; (3) Updated MCP configs to use correct paths. Files created in D:\\_CLAUDE-TOOLS\\system-bridge\\: claude_daemon.py, claude_startup.py, system_state.py, bluebeam_bridge.py, start_daemon.bat, stop_daemon.bat. Run ",
-        "summary": "SESSION: Eliminated all 4 Claude Code limitations. Built: (1) claude_daemon.py - persistent background service that tracks system state every 10 seconds, logs app open/close events, monitors Revit/Blu...",
-        "project": "RevitMCPBridge2026",
-        "type": "context",
-        "importance": 5,
-        "created": "2025-12-04 06:34:01"
-      },
-      {
-        "id": 142,
-        "content": "Built complete WSL-to-Windows integration system: (1) system_state.py - captures all open apps, monitors, Revit MCP status, and reads memory database directly; (2) claude_startup.py - startup script that loads full system context including corrections and unfinished work; (3) /startup slash command created. Now Claude can see: Revit (437 MCP methods), Bluebeam (has ScriptEngine.exe for automation), all open windows, 3 monitors, and 141 memories across 7 projects.",
-        "summary": "Built complete WSL-to-Windows integration system: (1) system_state.py - captures all open apps, monitors, Revit MCP status, and reads memory database directly; (2) claude_startup.py - startup script t...",
-        "project": "RevitMCPBridge2026",
-        "type": "context",
-        "importance": 5,
-        "created": "2025-12-04 06:21:21"
-      },
-      {
-        "id": 141,
-        "content": "## D-Drive Key Locations Reference\n\n### Active Projects (DO NOT MOVE):\n- `/mnt/d/RevitMCPBridge2026` - Main Revit MCP project\n- `/mnt/d/FloorPlanML` - ML floor plan detection\n\n### Organization Folders:\n- `/mnt/d/_ARCHIVE` - Old/inactive content\n- `/mnt/d/_SCRIPTS` - Utility scripts (Python, Bash, PowerShell, AHK)\n- `/mnt/d/_DOCS` - Strategy docs, images, misc files\n  - `/mnt/d/_DOCS/images` - Screenshots and graphics\n  - `/mnt/d/_DOCS/fiverr-assets` - Fiverr gig files\n\n### System Folders (Don't ",
-        "summary": "## D-Drive Key Locations Reference\n\n### Active Projects (DO NOT MOVE):\n- `/mnt/d/RevitMCPBridge2026` - Main Revit MCP project\n- `/mnt/d/FloorPlanML` - ML floor plan detection\n\n### Organization Folders...",
-        "project": "D-Drive-Organization",
-        "type": "fact",
-        "importance": 10,
-        "created": "2025-12-04 04:42:19"
-      },
-      {
-        "id": 140,
-        "content": "## D-Drive Organization - Phase 1 Complete (Dec 3, 2025)\n\n### What Was Done:\n1. **Deleted garbage files (14 items):**\n   - 0-byte files: nul, python, then, Azure, Build, Start, [List, [Paste\n   - Outdated directory maps: D-Drive-*.md, DIRECTORY_MAPPING_SUMMARY.md\n   - Empty: D-Drive-Directories-List.txt\n   - Cache: __pycache__\n\n2. **Created holding structure:**\n   - `_ARCHIVE/` - For old/inactive content\n   - `_SCRIPTS/` - For loose scripts (45 files moved)\n   - `_DOCS/` - For loose documents (3",
-        "summary": "## D-Drive Organization - Phase 1 Complete (Dec 3, 2025)\n\n### What Was Done:\n1. **Deleted garbage files (14 items):**\n   - 0-byte files: nul, python, then, Azure, Build, Start, [List, [Paste\n   - Outd...",
-        "project": "D-Drive-Organization",
+        "id": 670,
+        "content": "Common Sense Engine - Test Suite Added (74 tests, all passing)\n\nLocation: /mnt/d/_CLAUDE-TOOLS/agent-common-sense/test_sense.py\nRun: cd /mnt/d/_CLAUDE-TOOLS/agent-common-sense && python3 -m pytest test_sense.py -v\n\nTest groups (74 total):\n- ActionCheck (4): dataclass defaults, safe property\n- Classification (11): destructive/shared/safe signal detection\n- Seed Matching (11): all 15 seeds match targets, safe actions don't false-positive\n- Before Decisions (11): blocked/caution/safe outcomes, conf",
+        "summary": "74-test pytest suite for Common Sense Engine - all passing, covers all layers",
+        "project": "agent-common-sense",
         "type": "outcome",
-        "importance": 9,
-        "created": "2025-12-04 04:42:07"
+        "importance": 7,
+        "created": "2026-02-06 18:29:40"
       },
       {
-        "id": 138,
-        "content": "## Session Summary\nCompleted doors/windows YOLOv5 model training (50 epochs, 30.3 hours) and tested full PDF-to-Revit pipeline with both wall and door/window detection.\n\n### Key Outcomes\n- Doors/windows model training completed - saved to runs/train/doors_windows_v15/weights/best.pt (3.8MB)\n- Final metrics: Precision 14.1%, Recall 8.38%, mAP@0.5 4.64% (door: 1.88%, window: 7.4%)\n- Updated pdf_to_revit_pipeline.py to use correct doors_windows_v15 model\n- Complete pipeline test successful: detecte",
-        "summary": "Completed doors/windows YOLOv5 model training (50 epochs, 30.3 hours) and tested full PDF-to-Revit pipeline with both wall and door/window detection.",
-        "project": "FloorPlanML",
+        "id": 664,
+        "content": "## Session Summary\nBuilt and deployed a reusable Common Sense Engine that gives any agent experiential judgment through accumulated corrections. System includes a prompt kernel (decision loop + heuristics), 15 pre-seeded universal corrections, a Python API, and injection helpers for sub-agents. Integrated into CLAUDE.md startup sequence and seeded all 15 corrections into the memory DB. Tested twice with fresh sub-agents \u2014 all 10 scenarios produced correct decisions.\n\n### Key Outcomes\n- Created /",
+        "summary": "Built and deployed a reusable Common Sense Engine that gives any agent experiential judgment through accumulated corrections. System includes a prompt kernel (decision loop + heuristics), 15 pre-seede",
+        "project": "agent-common-sense",
         "type": "context",
         "importance": 9,
-        "created": "2025-12-04 03:20:02"
+        "created": "2026-02-06 17:50:10"
       },
       {
-        "id": 139,
-        "content": "Used doors_windows_v15 as final model (latest training run after duplicate process fixes)",
+        "id": 665,
+        "content": "Memory + corrections chosen as the core approach over rules/guardrails \u2014 experience compounds, rules don't",
         "summary": null,
-        "project": "FloorPlanML",
+        "project": "agent-common-sense",
         "type": "decision",
         "importance": 8,
-        "created": "2025-12-04 03:20:02"
+        "created": "2026-02-06 17:50:10"
       },
       {
-        "id": 137,
-        "content": "When the Revit MCP server (RevitMCPBridge2026) stops responding to requests:\n1. The named pipe connects successfully but requests timeout\n2. ESC key presses via pyautogui/SendKeys don't trigger the Idling event\n3. The ExternalEvent queue gets blocked and won't process new requests\n4. Manual restart is required: Go to Revit Add-ins tab \u2192 Click Stop MCP \u2192 Click Start MCP\n5. Alternatively restart Revit entirely\n6. Root cause: Revit's Idling event doesn't fire when something is blocking it, even if ",
-        "summary": "When the Revit MCP server (RevitMCPBridge2026) stops responding to requests:\n1. The named pipe connects successfully but requests timeout\n2. ESC key presses via pyautogui/SendKeys don't trigger the Id...",
-        "project": "RevitMCPBridge2026",
+        "id": 666,
+        "content": "Three-layer architecture: kernel (prompt injection for any LLM), seeds (pre-built corrections), Python API (programmatic agents)",
+        "summary": null,
+        "project": "agent-common-sense",
+        "type": "decision",
+        "importance": 8,
+        "created": "2026-02-06 17:50:10"
+      },
+      {
+        "id": 667,
+        "content": "Seeds matched directly against detection patterns in-memory rather than relying solely on DB search \u2014 works without DB",
+        "summary": null,
+        "project": "agent-common-sense",
+        "type": "decision",
+        "importance": 8,
+        "created": "2026-02-06 17:50:10"
+      },
+      {
+        "id": 668,
+        "content": "Kernel loaded at startup BEFORE memory context so judgment framework is active for all subsequent actions",
+        "summary": null,
+        "project": "agent-common-sense",
+        "type": "decision",
+        "importance": 8,
+        "created": "2026-02-06 17:50:10"
+      },
+      {
+        "id": 669,
+        "content": "All seeds stored as global namespace with verified=true so they surface in every project context",
+        "summary": null,
+        "project": "agent-common-sense",
+        "type": "decision",
+        "importance": 8,
+        "created": "2026-02-06 17:50:10"
+      },
+      {
+        "id": 663,
+        "content": "COMMON SENSE SEED [scope-002] LOW \u2014 Domain: scope\nWhat goes wrong: Created new files when editing existing ones would have been better\nCorrect approach: Prefer editing existing files. Only create new files when the functionality truly does not belong in any existing file.\nDetection trigger: File creation \u2014 ask yourself: does this belong in an existing file?",
+        "summary": "SEED: Edit existing files instead of creating new ones",
+        "project": null,
         "type": "error",
-        "importance": 9,
-        "created": "2025-12-02 15:35:46"
+        "importance": 4,
+        "created": "2026-02-06 17:27:25"
       },
       {
-        "id": 136,
-        "content": "Floor Plan Vision MCP Server - Threshold Tuning Fix (Dec 2, 2025)\n\nPROBLEM: Wall detection showed 182 walls, door detection showed 70 doors - too many false positives.\n\nROOT CAUSE: I was editing the WRONG file at /mnt/d/FloorPlanML/floor_plan_mcp/server.py. The actual MCP server runs from /mnt/d/RevitMCPBridge2026/floor-plan-vision-mcp/src/floor_plan_vision/ with modular detector files.\n\nFILES UPDATED (CORRECT LOCATION):\n1. /mnt/d/RevitMCPBridge2026/floor-plan-vision-mcp/src/floor_plan_vision/wa",
-        "summary": "Floor Plan Vision MCP Server - Threshold Tuning Fix (Dec 2, 2025)\n\nPROBLEM: Wall detection showed 182 walls, door detection showed 70 doors - too many false positives.\n\nROOT CAUSE: I was editing the W...",
-        "project": "FloorPlanML",
-        "type": "outcome",
-        "importance": 8,
-        "created": "2025-12-02 14:27:36"
+        "id": 662,
+        "content": "COMMON SENSE SEED [exec-002] LOW \u2014 Domain: execution\nWhat goes wrong: Ran a long-running or resource-intensive operation without warning the user\nCorrect approach: If an operation might take more than 30 seconds or consume significant resources, tell the user before starting. Offer to run in background.\nDetection trigger: Large builds, full test suites, big file operations, model training",
+        "summary": "SEED: Warn user before long-running operations",
+        "project": null,
+        "type": "error",
+        "importance": 4,
+        "created": "2026-02-06 17:27:23"
       },
       {
-        "id": 135,
-        "content": "Created floor_plan_mcp module at /mnt/d/FloorPlanML/floor_plan_mcp/server.py with 18 MCP tools for PDF floor plan analysis. Module extracts vector geometry using PyMuPDF (fitz) and detects walls, doors, windows, stairs, fixtures, casework, furniture. Also builds Revit model specifications. Tested successfully on Ramsey Residence CD Set - extracted 7535 lines, detected 994 walls, 30 doors.",
-        "summary": "Created floor_plan_mcp module at /mnt/d/FloorPlanML/floor_plan_mcp/server.py with 18 MCP tools for PDF floor plan analysis. Module extracts vector geometry using PyMuPDF (fitz) and detects walls, door...",
-        "project": "FloorPlanML",
-        "type": "outcome",
-        "importance": 8,
-        "created": "2025-12-02 02:19:04"
-      },
-      {
-        "id": 134,
-        "content": "FloorPlanML YOLO mAP issue FIXED:\n\nROOT CAUSE: Wall bounding boxes were too thin (height or width ~0.01 = 1% of image). YOLO struggles with extremely thin objects.\n\nFIX APPLIED: Modified generate_synthetic_images.py:\n1. Added MIN_BBOX_SIZE = 30 pixels (minimum for any dimension)\n2. Changed minimum normalized size from 0.001 to 0.03 (3% of image)\n3. Applied to walls, doors, windows, and furniture classes\n\nRESULTS:\n- BEFORE: mAP_0.5 = 0 (stayed at 0 for all 23 epochs, model learned nothing)\n- AFTE",
-        "summary": "FloorPlanML YOLO mAP issue FIXED:\n\nROOT CAUSE: Wall bounding boxes were too thin (height or width ~0.01 = 1% of image). YOLO struggles with extremely thin objects.\n\nFIX APPLIED: Modified generate_synt...",
-        "project": "FloorPlanML",
-        "type": "outcome",
-        "importance": 9,
-        "created": "2025-11-28 16:35:55"
+        "id": 661,
+        "content": "COMMON SENSE SEED [scope-001] MEDIUM \u2014 Domain: scope\nWhat goes wrong: Made changes beyond what was requested \u2014 added features, refactored unrelated code, improved things that were not asked for\nCorrect approach: Do exactly what was asked. Minimal diff. Do not add error handling for impossible cases, do not refactor adjacent code, do not add comments to unchanged functions.\nDetection trigger: Changes to files or functions not mentioned in the request",
+        "summary": "SEED: Stay in scope \u2014 do exactly what was asked, nothing more",
+        "project": null,
+        "type": "error",
+        "importance": 6,
+        "created": "2026-02-06 17:27:15"
       }
     ],
     "corrections": [
       {
-        "id": 109,
-        "content": "## Correction Record\n\n### What Claude Said/Did (WRONG):\nWall creation methods (createWall, batchCreateWalls) were failing with \"Object reference not set to an instance of an object\" error, and I initially thought it was a parameter format issue.\n\n### Why It Was Wrong:\nThe issue is likely that uiApp.ActiveUIDocument is null - meaning there's no active document in the foreground in Revit, or the user hasn't clicked into the Revit window.\n\n### Correct Approach:\nBefore attempting wall creation (or any model modification), verify that: (1) Revit has a project open, (2) The project is the active window, (3) No modal dialogs are open. The error happens at line 23: var doc = uiApp.ActiveUIDocument.Document - if ActiveUIDocument is null, accessing .Document throws null reference.\n\n**Category**: code\n",
-        "project": "RevitMCPBridge2026",
-        "created": "2025-11-25 03:34:29"
+        "id": 663,
+        "content": "COMMON SENSE SEED [scope-002] LOW \u2014 Domain: scope\nWhat goes wrong: Created new files when editing existing ones would have been better\nCorrect approach: Prefer editing existing files. Only create new files when the functionality truly does not belong in any existing file.\nDetection trigger: File creation \u2014 ask yourself: does this belong in an existing file?",
+        "project": null,
+        "created": "2026-02-06 17:27:25"
       },
       {
-        "id": 102,
-        "content": "## Correction Record\n\n### What Claude Said/Did (WRONG):\nStarted creating a separate Python workflow_orchestrator.py class\n\n### Why It Was Wrong:\nClaude Code itself IS the orchestrator. Building a separate Python orchestrator adds unnecessary complexity and doesn't match the architecture. Claude uses knowledge files + memory + MCP methods directly.\n\n### Correct Approach:\nLevel 3 infrastructure = knowledge files with workflows + memory for patterns + MCP methods. No separate orchestrator code needed. Claude reads knowledge, uses memory, executes methods.\n\n**Category**: architecture\n",
-        "project": "RevitMCPBridge2026",
-        "created": "2025-11-24 10:21:27"
+        "id": 662,
+        "content": "COMMON SENSE SEED [exec-002] LOW \u2014 Domain: execution\nWhat goes wrong: Ran a long-running or resource-intensive operation without warning the user\nCorrect approach: If an operation might take more than 30 seconds or consume significant resources, tell the user before starting. Offer to run in background.\nDetection trigger: Large builds, full test suites, big file operations, model training",
+        "project": null,
+        "created": "2026-02-06 17:27:23"
+      },
+      {
+        "id": 661,
+        "content": "COMMON SENSE SEED [scope-001] MEDIUM \u2014 Domain: scope\nWhat goes wrong: Made changes beyond what was requested \u2014 added features, refactored unrelated code, improved things that were not asked for\nCorrect approach: Do exactly what was asked. Minimal diff. Do not add error handling for impossible cases, do not refactor adjacent code, do not add comments to unchanged functions.\nDetection trigger: Changes to files or functions not mentioned in the request",
+        "project": null,
+        "created": "2026-02-06 17:27:15"
+      },
+      {
+        "id": 660,
+        "content": "COMMON SENSE SEED [exec-001] MEDIUM \u2014 Domain: execution\nWhat goes wrong: Retried the same failing approach multiple times expecting different results\nCorrect approach: If something fails twice with the same approach, stop. Investigate the root cause. Try a fundamentally different approach or escalate to the user.\nDetection trigger: Same command or action attempted 3+ times",
+        "project": null,
+        "created": "2026-02-06 17:27:11"
+      },
+      {
+        "id": 659,
+        "content": "COMMON SENSE SEED [net-002] MEDIUM \u2014 Domain: network\nWhat goes wrong: Made API calls in a loop without rate limiting or bounds\nCorrect approach: Add delays between API calls. Set a maximum iteration count. Check response codes before continuing.\nDetection trigger: Loops containing API calls or network requests",
+        "project": null,
+        "created": "2026-02-06 17:27:08"
       }
     ],
     "projects": [
       {
+        "name": "agent-common-sense",
+        "path": null,
+        "status": "active",
+        "last_accessed": "2026-02-06 18:29:40",
+        "memories": 7
+      },
+      {
+        "name": "Windows-Browser-MCP",
+        "path": null,
+        "status": "active",
+        "last_accessed": "2026-02-06 04:10:21",
+        "memories": 3
+      },
+      {
+        "name": "autonomous-agent",
+        "path": null,
+        "status": "active",
+        "last_accessed": "2026-02-03 06:52:43",
+        "memories": 1
+      },
+      {
+        "name": "JARVIS",
+        "path": null,
+        "status": "archived",
+        "last_accessed": "2026-02-02 06:41:45",
+        "memories": 13
+      },
+      {
+        "name": "telegram-bot",
+        "path": null,
+        "status": "active",
+        "last_accessed": "2026-02-02 02:35:21",
+        "memories": 1
+      },
+      {
         "name": "RevitMCPBridge2026",
         "path": "/mnt/d/RevitMCPBridge2026",
         "status": "active",
-        "last_accessed": "2025-12-04 06:34:01",
-        "memories": 68
+        "last_accessed": "2026-02-01 06:23:26",
+        "memories": 240
+      },
+      {
+        "name": "BIM Ops Studio",
+        "path": null,
+        "status": "active",
+        "last_accessed": "2026-02-01 02:00:54",
+        "memories": 5
+      },
+      {
+        "name": "global",
+        "path": null,
+        "status": "active",
+        "last_accessed": "2026-02-01 01:30:52",
+        "memories": 18
+      },
+      {
+        "name": "BDArchitect-DetailLibrary-2025",
+        "path": null,
+        "status": "archived",
+        "last_accessed": "2026-01-29 21:36:46",
+        "memories": 10
       },
       {
         "name": "D-Drive-Organization",
         "path": null,
-        "status": "active",
-        "last_accessed": "2025-12-04 04:42:19",
+        "status": "archived",
+        "last_accessed": "2026-01-29 21:36:46",
         "memories": 2
       },
       {
-        "name": "FloorPlanML",
-        "path": "/mnt/d/FloorPlanML",
-        "status": "active",
-        "last_accessed": "2025-12-04 03:20:02",
+        "name": "RevitMCPBridge",
+        "path": null,
+        "status": "archived",
+        "last_accessed": "2026-01-29 21:36:46",
         "memories": 8
       },
       {
-        "name": "FloorPlanVision",
+        "name": "RevitMCPBridge-WallPlacement",
         "path": null,
-        "status": "active",
-        "last_accessed": "2025-11-26 07:01:31",
-        "memories": 1
+        "status": "archived",
+        "last_accessed": "2026-01-29 21:36:46",
+        "memories": 8
+      },
+      {
+        "name": "RevitMCPBridge2025",
+        "path": null,
+        "status": "archived",
+        "last_accessed": "2026-01-29 21:36:46",
+        "memories": 26
       },
       {
         "name": "knowledge-base",
         "path": "/mnt/d/.claude-memory",
-        "status": "active",
-        "last_accessed": "2025-11-23 04:20:33",
+        "status": "archived",
+        "last_accessed": "2026-01-29 21:36:46",
         "memories": 60
+      },
+      {
+        "name": "BridgeAI",
+        "path": null,
+        "status": "archived",
+        "last_accessed": "2026-01-29 21:36:45",
+        "memories": 2
+      },
+      {
+        "name": "DetailLibraryTransfer",
+        "path": null,
+        "status": "archived",
+        "last_accessed": "2026-01-29 21:36:45",
+        "memories": 4
+      },
+      {
+        "name": "FloorPlanML",
+        "path": "/mnt/d/FloorPlanML",
+        "status": "archived",
+        "last_accessed": "2026-01-29 21:36:45",
+        "memories": 38
+      },
+      {
+        "name": "FloorPlanTracer",
+        "path": null,
+        "status": "archived",
+        "last_accessed": "2026-01-29 21:36:45",
+        "memories": 14
+      },
+      {
+        "name": "floor-plan-vision MCP",
+        "path": null,
+        "status": "archived",
+        "last_accessed": "2026-01-29 21:34:00",
+        "memories": 1
+      },
+      {
+        "name": "AI-Render-System",
+        "path": null,
+        "status": "archived",
+        "last_accessed": "2026-01-29 21:33:59",
+        "memories": 2
+      },
+      {
+        "name": "FloorPlanVision",
+        "path": null,
+        "status": "archived",
+        "last_accessed": "2026-01-29 21:33:59",
+        "memories": 1
+      },
+      {
+        "name": "Miami Development Intelligence",
+        "path": null,
+        "status": "archived",
+        "last_accessed": "2026-01-29 21:33:59",
+        "memories": 1
+      },
+      {
+        "name": "SmartFloorPlan",
+        "path": null,
+        "status": "archived",
+        "last_accessed": "2026-01-29 21:33:59",
+        "memories": 2
+      },
+      {
+        "name": "floor-plan-vision",
+        "path": null,
+        "status": "archived",
+        "last_accessed": "2026-01-29 21:33:59",
+        "memories": 1
+      },
+      {
+        "name": "AEC Drafting AI",
+        "path": null,
+        "status": "archived",
+        "last_accessed": "2026-01-29 21:33:58",
+        "memories": 4
+      },
+      {
+        "name": "AEC-Drafting-AI",
+        "path": null,
+        "status": "archived",
+        "last_accessed": "2026-01-29 21:33:58",
+        "memories": 3
+      },
+      {
+        "name": "CodeCompliance",
+        "path": "/mnt/d/RevitMCPBridge2026",
+        "status": "archived",
+        "last_accessed": "2026-01-29 21:33:58",
+        "memories": 7
+      },
+      {
+        "name": "PermitIntel",
+        "path": "/mnt/d/PermitIntel",
+        "status": "archived",
+        "last_accessed": "2026-01-29 21:33:58",
+        "memories": 3
+      },
+      {
+        "name": "SpinePassiveLearner",
+        "path": null,
+        "status": "archived",
+        "last_accessed": "2026-01-29 21:33:58",
+        "memories": 4
+      },
+      {
+        "name": "spine-aec-learning",
+        "path": null,
+        "status": "archived",
+        "last_accessed": "2026-01-29 21:33:58",
+        "memories": 2
+      },
+      {
+        "name": "AP Builders - South Golf Cove",
+        "path": null,
+        "status": "archived",
+        "last_accessed": "2026-01-29 21:33:57",
+        "memories": 2
+      },
+      {
+        "name": "Agent-OS",
+        "path": null,
+        "status": "archived",
+        "last_accessed": "2026-01-29 21:33:57",
+        "memories": 1
+      },
+      {
+        "name": "Avon Park Single Family",
+        "path": null,
+        "status": "archived",
+        "last_accessed": "2026-01-29 21:33:57",
+        "memories": 4
+      },
+      {
+        "name": "MSMC Histology",
+        "path": null,
+        "status": "archived",
+        "last_accessed": "2026-01-29 21:33:57",
+        "memories": 2
+      },
+      {
+        "name": "MSMC Histology Renovation",
+        "path": "C:\\Users\\rick\\OneDrive - BD Architect llc\\Documents - BDA Production\\2-154 MSMC Histology Renovation",
+        "status": "archived",
+        "last_accessed": "2026-01-29 21:33:57",
+        "memories": 1
+      },
+      {
+        "name": "6041 NW 84 TER",
+        "path": null,
+        "status": "archived",
+        "last_accessed": "2026-01-29 21:33:56",
+        "memories": 4
+      },
+      {
+        "name": "AP Builder Residence",
+        "path": null,
+        "status": "archived",
+        "last_accessed": "2026-01-29 21:33:56",
+        "memories": 7
+      },
+      {
+        "name": "MS Building Model",
+        "path": null,
+        "status": "archived",
+        "last_accessed": "2026-01-29 21:33:56",
+        "memories": 1
+      },
+      {
+        "name": "MS-Building-CAD-Trace",
+        "path": null,
+        "status": "archived",
+        "last_accessed": "2026-01-29 21:33:56",
+        "memories": 2
+      },
+      {
+        "name": "MS-Main-Building-Model",
+        "path": null,
+        "status": "archived",
+        "last_accessed": "2026-01-29 21:33:56",
+        "memories": 1
+      },
+      {
+        "name": "South Golf Cove Residence",
+        "path": null,
+        "status": "archived",
+        "last_accessed": "2026-01-29 21:33:56",
+        "memories": 3
+      },
+      {
+        "name": "GOULDS TOWER-1",
+        "path": null,
+        "status": "archived",
+        "last_accessed": "2026-01-29 21:33:55",
+        "memories": 1
+      },
+      {
+        "name": "GOULDS-TOWER-1",
+        "path": "D:\\001 - PROJECTS\\01 - CLIENT PROJECTS\\01 - ARKY\\GOULDS TOWERS-1",
+        "status": "archived",
+        "last_accessed": "2026-01-29 21:33:55",
+        "memories": 4
+      },
+      {
+        "name": "PersonaPlex",
+        "path": null,
+        "status": "archived",
+        "last_accessed": "2026-01-29 21:33:55",
+        "memories": 1
+      },
+      {
+        "name": "4020-Woodside-Duplex",
+        "path": null,
+        "status": "active",
+        "last_accessed": "2026-01-26 21:09:42",
+        "memories": 1
+      },
+      {
+        "name": "Wind-Structural-Calculations",
+        "path": null,
+        "status": "active",
+        "last_accessed": "2026-01-26 21:09:20",
+        "memories": 1
+      },
+      {
+        "name": "WhatsApp-MCP",
+        "path": null,
+        "status": "active",
+        "last_accessed": "2026-01-26 16:18:23",
+        "memories": 1
+      },
+      {
+        "name": "BD-Architect-BHN-Phase2",
+        "path": null,
+        "status": "active",
+        "last_accessed": "2026-01-26 06:59:42",
+        "memories": 1
+      },
+      {
+        "name": "Aventura-Eco-Building",
+        "path": null,
+        "status": "active",
+        "last_accessed": "2026-01-26 06:42:48",
+        "memories": 1
+      },
+      {
+        "name": "Fantal-Consultant",
+        "path": null,
+        "status": "active",
+        "last_accessed": "2026-01-26 06:40:00",
+        "memories": 1
+      },
+      {
+        "name": "BD-Architect-Tasks",
+        "path": null,
+        "status": "active",
+        "last_accessed": "2026-01-26 04:50:13",
+        "memories": 4
+      },
+      {
+        "name": "AVENTURA ECO OFFICES",
+        "path": null,
+        "status": "active",
+        "last_accessed": "2026-01-20 06:10:25",
+        "memories": 1
+      },
+      {
+        "name": "BHN CATH SUITES PHASE 2",
+        "path": null,
+        "status": "active",
+        "last_accessed": "2026-01-20 05:00:44",
+        "memories": 1
+      },
+      {
+        "name": "Claude-Tools",
+        "path": null,
+        "status": "active",
+        "last_accessed": "2026-01-20 02:52:18",
+        "memories": 1
+      },
+      {
+        "name": "site-data-api",
+        "path": null,
+        "status": "active",
+        "last_accessed": "2026-01-19 16:21:52",
+        "memories": 5
+      },
+      {
+        "name": "CLAUDE-TOOLS",
+        "path": null,
+        "status": "active",
+        "last_accessed": "2026-01-19 04:18:51",
+        "memories": 3
+      },
+      {
+        "name": "claude-memory-server",
+        "path": "/mnt/d/claude-memory-server",
+        "status": "active",
+        "last_accessed": "2026-01-19 01:34:03",
+        "memories": 4
+      },
+      {
+        "name": "Claude-Code-Workflow",
+        "path": null,
+        "status": "active",
+        "last_accessed": "2026-01-18 09:01:22",
+        "memories": 27
+      },
+      {
+        "name": "BD-Architect-Standards",
+        "path": null,
+        "status": "active",
+        "last_accessed": "2026-01-12 01:37:32",
+        "memories": 1
+      },
+      {
+        "name": "BHN Cath Suites Phase 2",
+        "path": "C:\\Users\\rick\\OneDrive - BD Architect llc\\Documents - BDA Production\\2-118.1 BHN Cath Suites Phase 2 (Support Area)",
+        "status": "active",
+        "last_accessed": "2026-01-11 19:14:47",
+        "memories": 2
+      },
+      {
+        "name": "2-118 BHN Cath Suites",
+        "path": null,
+        "status": "active",
+        "last_accessed": "2026-01-06 19:12:39",
+        "memories": 1
+      },
+      {
+        "name": "2-150 RM Tenant Improvement",
+        "path": null,
+        "status": "active",
+        "last_accessed": "2026-01-06 18:55:07",
+        "memories": 1
+      },
+      {
+        "name": "BD Architect Mapping System",
+        "path": null,
+        "status": "active",
+        "last_accessed": "2026-01-01 05:25:08",
+        "memories": 1
+      },
+      {
+        "name": "BD Architect Healthcare Template",
+        "path": null,
+        "status": "active",
+        "last_accessed": "2026-01-01 05:11:13",
+        "memories": 4
+      },
+      {
+        "name": "Revit Detail Libraries",
+        "path": null,
+        "status": "active",
+        "last_accessed": "2025-12-28 10:34:50",
+        "memories": 2
+      },
+      {
+        "name": "Fantal Consultant",
+        "path": null,
+        "status": "active",
+        "last_accessed": "2025-12-19 16:26:07",
+        "memories": 1
+      },
+      {
+        "name": "Claude-Code-Optimization",
+        "path": null,
+        "status": "active",
+        "last_accessed": "2025-12-09 03:16:15",
+        "memories": 4
+      },
+      {
+        "name": "system-bridge",
+        "path": null,
+        "status": "active",
+        "last_accessed": "2025-12-05 03:24:15",
+        "memories": 9
+      },
+      {
+        "name": "voice-assistant",
+        "path": null,
+        "status": "active",
+        "last_accessed": "2025-12-05 03:04:19",
+        "memories": 2
+      },
+      {
+        "name": "System-Improvements",
+        "path": null,
+        "status": "active",
+        "last_accessed": "2025-12-05 00:01:05",
+        "memories": 8
+      },
+      {
+        "name": "claude-orchestration",
+        "path": null,
+        "status": "active",
+        "last_accessed": "2025-12-04 18:55:30",
+        "memories": 1
       },
       {
         "name": "architecture-knowledge",
@@ -167,65 +647,54 @@
         "status": "active",
         "last_accessed": "2025-11-23 02:35:36",
         "memories": 1
-      },
-      {
-        "name": "claude-memory-server",
-        "path": "/mnt/d/claude-memory-server",
-        "status": "active",
-        "last_accessed": "2025-11-23 02:30:16",
-        "memories": 2
       }
     ],
     "unfinished": [
       {
-        "project": "FloorPlanML",
-        "created": "2025-12-04 03:20:02",
+        "project": "agent-common-sense",
+        "created": "2026-02-06 17:50:10",
         "next_steps": [
-          "- Improve model accuracy with GPU training or larger model (YOLOv5s/m instead of nano)",
-          "- Test pipeline on real architectural floor plans (not just CubiCasa dataset)",
-          "- Integrate with Revit MCP Bridge for end-to-end floor plan to Revit conversion",
-          "- Consider training with more diverse floor plan styles for better generalization"
+          "- Monitor fresh sessions to see if kernel loads correctly and seeds surface via smart_context",
+          "- Add automated test suite (test_sense.py) to catch regressions in seed matching",
+          "- Consider adding Weber-specific seeds for Revit, email, and project workflows",
+          "- Track how often corrections are stored vs avoided to measure system effectiveness over time"
         ]
       },
       {
-        "project": "RevitMCPBridge2026",
-        "created": "2025-11-28 02:00:05",
+        "project": "JARVIS",
+        "created": "2026-01-29 10:04:45",
         "next_steps": [
-          "- Restart Revit to load updated DLL",
-          "- Test viewport capture methods with a Revit model open",
-          "- Test AI rendering integration with Automatic1111 or ComfyUI running locally",
-          "- Optional: Add more style presets or custom workflow support"
+          "- Test memory tools in live JARVIS conversations",
+          "- Consider adding automatic memory storage during conversations",
+          "- Potentially add more proactive context loading"
         ]
       },
       {
-        "project": "RevitMCPBridge2026",
-        "created": "2025-11-25 09:48:38",
+        "project": "JARVIS",
+        "created": "2026-01-28 05:45:53",
         "next_steps": [
-          "- User should verify shell in Revit 3D view",
-          "- Manually add remaining 5 windows if needed",
-          "- Investigate transaction/undo issues causing element invalidation",
-          "- Consider using batch methods for placing multiple elements",
-          "- Add roof to complete basic shell structure"
+          "- Run setup_autostart_admin.bat as Administrator to enable auto-start",
+          "- Test voice wake word detection in real use",
+          "- Consider adding more financial advice patterns",
+          "- Add Florida code triggers for more query types"
         ]
       },
       {
-        "project": "RevitMCPBridge2026",
-        "created": "2025-11-24 10:22:47",
+        "project": "JARVIS",
+        "created": "2026-01-28 04:08:41",
         "next_steps": [
-          "- Test dialog handling fix after Revit restart",
-          "- Execute DD\u2192CD workflow on test project",
-          "- Measure: time, success rate, retries",
-          "- Document results to refine Level 3 patterns"
+          "- Test voice commands for RFI and invoice queries",
+          "- Add real project data to construction admin",
+          "- Connect financial tracker to actual invoicing workflow"
         ]
       },
       {
-        "project": "RevitMCPBridge2026",
-        "created": "2025-11-24 09:57:05",
+        "project": "site-data-api",
+        "created": "2026-01-19 16:12:51",
         "next_steps": [
-          "- Test dialog handling fix after Revit restart",
-          "- Investigate missing wall types issue",
-          "- Build autonomous workflow orchestration layer",
-          "- Add error recovery and retry logic to scripts"
+          "- Review the 188 failed elements to understand compliance issues",
+          "- Fix project name extraction from getProjectInfo response",
+          "- Test parameter write-back to mark compliance status in Revit"
         ]
       }
     ]

@@ -1,0 +1,21 @@
+I'm teaching AI to read architectural floor plans.
+
+Not just OCR. Not just edge detection. Actual spatial understanding -- walls, doors, rooms, dimensions, relationships between spaces.
+
+The pipeline so far:
+- 76 training videos processed and annotated
+- Custom model at 70% readiness (and climbing)
+- PDF and CAD drawings converted into structured data
+- Room detection, wall segmentation, opening identification
+
+The end goal is simple: drop a PDF floor plan into the pipeline, get a Revit model out the other side.
+
+Think about what that means. Every existing building with only paper drawings. Every as-built PDF sitting in a project folder. Every napkin sketch that needs to become a real model. All of it becomes machine-readable.
+
+The hard part isn't the ML. It's the architectural domain knowledge. Teaching a model that a dashed line near a wall is a door swing, not a property line. That a small rectangle in a wall is a window, not a column. Context matters, and architecture is full of implicit conventions that humans read effortlessly but machines struggle with.
+
+That's why this needs to be built by someone who's actually worked in BIM, not just in ML.
+
+More on the full agent setup next.
+
+#MachineLearning #AI #Architecture #BIM #FloorPlans #ComputerVision #AEC #DeepLearning #Revit #PropTech #ArchitecturalAI

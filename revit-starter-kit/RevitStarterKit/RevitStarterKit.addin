@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ============================================================================
+  RevitStarterKit.addin - Revit Add-in Manifest
+
+  This file tells Revit where to find your add-in DLL and which classes
+  to load. Copy this file to:
+
+    %AppData%\Autodesk\Revit\Addins\{RevitVersion}\
+
+  For example:
+    C:\Users\YourName\AppData\Roaming\Autodesk\Revit\Addins\2026\
+
+  IMPORTANT: Update the <Assembly> path below to point to your built DLL.
+
+  You can register your add-in as either:
+    - AddIn Type="Application": Loads on Revit startup (IExternalApplication)
+    - AddIn Type="Command":     Registers individual commands (IExternalCommand)
+
+  Using "Application" is recommended because it gives you control over
+  the ribbon UI. Individual commands registered as "Command" appear in
+  Revit's External Tools menu instead.
+  ============================================================================
+-->
+<RevitAddIns>
+
+  <!-- ================================================================
+       APPLICATION ENTRY (Recommended)
+       This loads the App class on startup and creates the ribbon UI.
+       ================================================================ -->
+  <AddIn Type="Application">
+    <Name>RevitStarterKit</Name>
+    <Assembly>RevitStarterKit.dll</Assembly>
+    <FullClassName>RevitStarterKit.App</FullClassName>
+    <AddInId>D4E5F6A7-B8C9-0D1E-2F3A-4B5C6D7E8F90</AddInId>
+    <VendorId>com.bimops</VendorId>
+    <VendorDescription>BIMOps - Revit Development Tools</VendorDescription>
+  </AddIn>
+
+  <!-- ================================================================
+       INDIVIDUAL COMMAND ENTRIES (Optional)
+
+       Uncomment these if you want commands to also appear in
+       Revit's Add-Ins > External Tools menu. This is not required
+       if you're using the Application entry above with ribbon buttons.
+       ================================================================ -->
+
+  <!--
+  <AddIn Type="Command">
+    <Name>Sample Command</Name>
+    <Assembly>RevitStarterKit.dll</Assembly>
+    <FullClassName>RevitStarterKit.Commands.SampleCommand</FullClassName>
+    <AddInId>A1B2C3D4-E5F6-7890-ABCD-000000000001</AddInId>
+    <VendorId>com.bimops</VendorId>
+    <VendorDescription>BIMOps - Revit Development Tools</VendorDescription>
+  </AddIn>
+
+  <AddIn Type="Command">
+    <Name>Export to CSV</Name>
+    <Assembly>RevitStarterKit.dll</Assembly>
+    <FullClassName>RevitStarterKit.Commands.DataExportCommand</FullClassName>
+    <AddInId>A1B2C3D4-E5F6-7890-ABCD-000000000002</AddInId>
+    <VendorId>com.bimops</VendorId>
+    <VendorDescription>BIMOps - Revit Development Tools</VendorDescription>
+  </AddIn>
+
+  <AddIn Type="Command">
+    <Name>Show Dialog</Name>
+    <Assembly>RevitStarterKit.dll</Assembly>
+    <FullClassName>RevitStarterKit.Commands.ShowDialogCommand</FullClassName>
+    <AddInId>A1B2C3D4-E5F6-7890-ABCD-000000000003</AddInId>
+    <VendorId>com.bimops</VendorId>
+    <VendorDescription>BIMOps - Revit Development Tools</VendorDescription>
+  </AddIn>
+  -->
+
+</RevitAddIns>

@@ -1,0 +1,1353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agent Command Center</title>
+    <style>
+        :root {
+            --bg-dark: #0d1117;
+            --bg-card: #161b22;
+            --bg-hover: #21262d;
+            --border: #30363d;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --accent-blue: #58a6ff;
+            --accent-green: #3fb950;
+            --accent-yellow: #d29922;
+            --accent-red: #f85149;
+            --accent-purple: #a371f7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            min-height: 100vh;
+        }
+
+        .header {
+            background: var(--bg-card);
+            border-bottom: 1px solid var(--border);
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header h1 {
+            font-size: 20px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .header h1 .icon {
+            font-size: 28px;
+        }
+
+        .status-bar {
+            display: flex;
+            gap: 20px;
+            font-size: 13px;
+        }
+
+        .status-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        .status-dot.green { background: var(--accent-green); }
+        .status-dot.yellow { background: var(--accent-yellow); }
+        .status-dot.red { background: var(--accent-red); }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 20px;
+            padding: 20px;
+            max-width: 1800px;
+            margin: 0 auto;
+        }
+
+        .panel {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .panel-header {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+            font-weight: 600;
+            font-size: 14px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .panel-header .badge {
+            background: var(--bg-hover);
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        .panel-content {
+            padding: 16px;
+        }
+
+        /* Command Bar */
+        .command-bar {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 20px;
+        }
+
+        .command-input-wrapper {
+            display: flex;
+            gap: 10px;
+        }
+
+        .command-input {
+            flex: 1;
+            background: var(--bg-dark);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 12px 16px;
+            color: var(--text-primary);
+            font-size: 14px;
+        }
+
+        .command-input:focus {
+            outline: none;
+            border-color: var(--accent-blue);
+        }
+
+        .command-input::placeholder {
+            color: var(--text-secondary);
+        }
+
+        .send-btn {
+            background: var(--accent-blue);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        .send-btn:hover {
+            opacity: 0.9;
+        }
+
+        /* Daemons Section */
+        .daemon-grid {
+            display: grid;
+            gap: 12px;
+        }
+
+        .daemon-card {
+            background: var(--bg-hover);
+            border-radius: 6px;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .daemon-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            background: var(--bg-dark);
+        }
+
+        .daemon-info {
+            flex: 1;
+        }
+
+        .daemon-name {
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .daemon-desc {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        .daemon-status {
+            font-size: 11px;
+            padding: 4px 8px;
+            border-radius: 4px;
+            background: rgba(63, 185, 80, 0.15);
+            color: var(--accent-green);
+        }
+
+        /* Agent Categories */
+        .category-section {
+            margin-bottom: 20px;
+        }
+
+        .category-header {
+            font-size: 12px;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+            padding: 0 4px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .category-icon {
+            font-size: 14px;
+        }
+
+        .agent-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+        }
+
+        .agent-card {
+            background: var(--bg-hover);
+            border: 1px solid transparent;
+            border-radius: 6px;
+            padding: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            position: relative;
+        }
+
+        .agent-card:hover {
+            border-color: var(--accent-blue);
+        }
+
+        .agent-card.selected {
+            border-color: var(--accent-blue);
+            background: rgba(88, 166, 255, 0.1);
+        }
+
+        .agent-card.working {
+            border-color: var(--accent-green);
+        }
+
+        .agent-card.working::before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            width: 8px;
+            height: 8px;
+            background: var(--accent-green);
+            border-radius: 50%;
+            animation: pulse 1s infinite;
+        }
+
+        .agent-name {
+            font-weight: 600;
+            font-size: 13px;
+            margin-bottom: 4px;
+        }
+
+        .agent-desc {
+            font-size: 11px;
+            color: var(--text-secondary);
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .agent-task {
+            font-size: 11px;
+            color: var(--accent-green);
+            margin-top: 6px;
+            padding-top: 6px;
+            border-top: 1px solid var(--border);
+        }
+
+        /* Right Sidebar */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Task Queue */
+        .task-list {
+            max-height: 250px;
+            overflow-y: auto;
+        }
+
+        .task-item {
+            padding: 10px 12px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .task-item:last-child {
+            border-bottom: none;
+        }
+
+        .task-status {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .task-status.pending { background: var(--accent-yellow); }
+        .task-status.completed { background: var(--accent-green); }
+        .task-status.running { background: var(--accent-blue); animation: pulse 1s infinite; }
+
+        .task-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .task-title {
+            font-size: 13px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .task-meta {
+            font-size: 11px;
+            color: var(--text-secondary);
+        }
+
+        /* Activity Log */
+        .log-list {
+            max-height: 300px;
+            overflow-y: auto;
+            font-family: 'SF Mono', 'Consolas', monospace;
+            font-size: 11px;
+            line-height: 1.6;
+        }
+
+        .log-entry {
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+
+        .log-entry:hover {
+            background: var(--bg-hover);
+        }
+
+        .log-time {
+            color: var(--text-secondary);
+        }
+
+        .log-level-INFO { color: var(--accent-blue); }
+        .log-level-WARNING { color: var(--accent-yellow); }
+        .log-level-ERROR { color: var(--accent-red); }
+
+        /* Quick Actions */
+        .quick-actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+
+        .quick-btn {
+            background: var(--bg-hover);
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+            padding: 10px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: all 0.2s;
+        }
+
+        .quick-btn:hover {
+            background: var(--bg-dark);
+            border-color: var(--accent-blue);
+        }
+
+        /* Connection Status */
+        .connection-indicator {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .connection-indicator.connected .status-dot {
+            background: var(--accent-green);
+        }
+
+        .connection-indicator.disconnected .status-dot {
+            background: var(--accent-red);
+        }
+
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 30px;
+            color: var(--text-secondary);
+        }
+
+        .empty-state .icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+            opacity: 0.5;
+        }
+
+        /* =================================== */
+        /* MCP Health Widget Styles            */
+        /* =================================== */
+
+        .mcp-health-panel .panel-icon {
+            margin-right: 8px;
+        }
+
+        .mcp-health-panel .header-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .mcp-health-panel .refresh-btn {
+            background: var(--bg-hover);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 4px 8px;
+            cursor: pointer;
+            color: var(--text-secondary);
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mcp-health-panel .refresh-btn:hover {
+            border-color: var(--accent-blue);
+            color: var(--accent-blue);
+        }
+
+        .mcp-health-panel .refresh-btn.loading svg {
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .health-summary {
+            font-weight: 600;
+        }
+
+        .health-summary.all-healthy {
+            background: rgba(63, 185, 80, 0.15) !important;
+            color: var(--accent-green) !important;
+        }
+
+        .health-summary.has-issues {
+            background: rgba(248, 81, 73, 0.15) !important;
+            color: var(--accent-red) !important;
+        }
+
+        .health-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 11px;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .auto-refresh-indicator {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .auto-refresh-indicator .spinner {
+            width: 10px;
+            height: 10px;
+            border: 2px solid var(--border);
+            border-top-color: var(--accent-blue);
+            border-radius: 50%;
+            animation: spin 2s linear infinite;
+        }
+
+        /* MCP Server Grid */
+        .mcp-server-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 10px;
+        }
+
+        .mcp-server-card {
+            background: var(--bg-hover);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            position: relative;
+        }
+
+        .mcp-server-card:hover {
+            border-color: var(--accent-blue);
+            transform: translateY(-1px);
+        }
+
+        .mcp-server-card .status-indicator {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .mcp-server-card .status-indicator.healthy {
+            background: var(--accent-green);
+            box-shadow: 0 0 8px rgba(63, 185, 80, 0.5);
+        }
+
+        .mcp-server-card .status-indicator.failing {
+            background: var(--accent-red);
+            box-shadow: 0 0 8px rgba(248, 81, 73, 0.5);
+            animation: pulse 1s infinite;
+        }
+
+        .mcp-server-card .status-indicator.disabled {
+            background: var(--accent-yellow);
+            opacity: 0.7;
+        }
+
+        .mcp-server-card .status-indicator.error {
+            background: var(--accent-red);
+        }
+
+        .mcp-server-card .server-name {
+            font-weight: 600;
+            font-size: 13px;
+            margin-bottom: 4px;
+            padding-right: 20px;
+        }
+
+        .mcp-server-card .server-command {
+            font-size: 11px;
+            color: var(--text-secondary);
+            font-family: 'SF Mono', 'Consolas', monospace;
+            background: var(--bg-dark);
+            padding: 2px 6px;
+            border-radius: 3px;
+            display: inline-block;
+            margin-bottom: 4px;
+        }
+
+        .mcp-server-card .server-source {
+            font-size: 10px;
+            color: var(--text-secondary);
+            opacity: 0.7;
+        }
+
+        /* MCP Loading State */
+        .loading-state {
+            grid-column: 1 / -1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            color: var(--text-secondary);
+            gap: 12px;
+        }
+
+        .spinner-large {
+            width: 30px;
+            height: 30px;
+            border: 3px solid var(--border);
+            border-top-color: var(--accent-blue);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        /* MCP Detail Modal */
+        .mcp-detail-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1000;
+        }
+
+        .mcp-detail-modal .modal-backdrop {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        .mcp-detail-modal .modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            width: 90%;
+            max-width: 500px;
+            max-height: 80vh;
+            overflow: hidden;
+        }
+
+        .mcp-detail-modal .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .mcp-detail-modal .modal-header h3 {
+            margin: 0;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .mcp-detail-modal .close-btn {
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--text-secondary);
+            cursor: pointer;
+            padding: 0;
+            line-height: 1;
+        }
+
+        .mcp-detail-modal .close-btn:hover {
+            color: var(--text-primary);
+        }
+
+        .mcp-detail-modal .modal-body {
+            padding: 16px;
+            overflow-y: auto;
+            max-height: calc(80vh - 60px);
+        }
+
+        .mcp-detail-modal .detail-row {
+            display: flex;
+            margin-bottom: 12px;
+        }
+
+        .mcp-detail-modal .detail-label {
+            font-size: 12px;
+            color: var(--text-secondary);
+            width: 100px;
+            flex-shrink: 0;
+        }
+
+        .mcp-detail-modal .detail-value {
+            font-size: 13px;
+            word-break: break-all;
+        }
+
+        .mcp-detail-modal .detail-value.code {
+            font-family: 'SF Mono', 'Consolas', monospace;
+            background: var(--bg-dark);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+
+        .mcp-detail-modal .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .mcp-detail-modal .status-badge.healthy {
+            background: rgba(63, 185, 80, 0.15);
+            color: var(--accent-green);
+        }
+
+        .mcp-detail-modal .status-badge.failing {
+            background: rgba(248, 81, 73, 0.15);
+            color: var(--accent-red);
+        }
+
+        .mcp-detail-modal .status-badge.disabled {
+            background: rgba(210, 153, 34, 0.15);
+            color: var(--accent-yellow);
+        }
+
+        .mcp-detail-modal .status-badge.error {
+            background: rgba(248, 81, 73, 0.15);
+            color: var(--accent-red);
+        }
+
+        .mcp-detail-modal .error-box {
+            background: rgba(248, 81, 73, 0.1);
+            border: 1px solid rgba(248, 81, 73, 0.3);
+            border-radius: 6px;
+            padding: 12px;
+            margin-top: 12px;
+        }
+
+        .mcp-detail-modal .error-box .error-title {
+            color: var(--accent-red);
+            font-weight: 600;
+            font-size: 12px;
+            margin-bottom: 6px;
+        }
+
+        .mcp-detail-modal .error-box .error-message {
+            font-family: 'SF Mono', 'Consolas', monospace;
+            font-size: 11px;
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>
+            <span class="icon">🤖</span>
+            Agent Command Center
+        </h1>
+        <div class="status-bar">
+            <div class="status-item">
+                <span class="status-dot green" id="systemStatus"></span>
+                <span id="activeWindow">Loading...</span>
+            </div>
+            <div class="status-item">
+                <span>Memory:</span>
+                <span id="memoryUsage">--</span>%
+            </div>
+            <div class="status-item">
+                <span>Agents:</span>
+                <span id="agentCount">--</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-grid">
+        <div class="left-panel">
+            <!-- Command Bar -->
+            <div class="command-bar">
+                <div class="command-input-wrapper">
+                    <input type="text" class="command-input" id="commandInput"
+                           placeholder="Give your agents a task... (e.g., 'Review the sheet setup for quality issues')">
+                    <button class="send-btn" id="sendBtn">Send Command</button>
+                </div>
+                <div style="margin-top: 10px; font-size: 12px; color: var(--text-secondary);">
+                    Selected agents: <span id="selectedAgentsText">None (auto-assign)</span>
+                </div>
+            </div>
+
+            <!-- Autonomous Executor Status -->
+            <div class="panel" style="margin-bottom: 20px; border-color: var(--accent-green);">
+                <div class="panel-header" style="background: rgba(63, 185, 80, 0.1);">
+                    <span>🧠 Autonomous Executor</span>
+                    <span class="badge" id="executorStatus" style="background: var(--accent-green); color: white;">CHECKING</span>
+                </div>
+                <div class="panel-content">
+                    <div id="activeWorkContainer">
+                        <div class="empty-state">
+                            <div class="icon">💤</div>
+                            <div>No agents actively working</div>
+                        </div>
+                    </div>
+                    <div id="recentTriggers" style="margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border);">
+                        <div style="font-size: 11px; color: var(--text-secondary); margin-bottom: 8px;">Recent Triggers:</div>
+                        <div id="triggerList" style="font-size: 12px;">None yet</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Running Daemons -->
+            <div class="panel" style="margin-bottom: 20px;">
+                <div class="panel-header">
+                    Running Daemons
+                    <span class="badge" id="daemonCount">0</span>
+                </div>
+                <div class="panel-content">
+                    <div class="daemon-grid" id="daemonGrid">
+                        <div class="empty-state">
+                            <div class="icon">⚙️</div>
+                            <div>No daemons detected</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MCP Server Health -->
+            <div class="panel mcp-health-panel" id="mcpHealthPanel" style="margin-bottom: 20px;">
+                <div class="panel-header">
+                    <span>
+                        <span class="panel-icon">🔌</span>
+                        MCP Server Health
+                    </span>
+                    <div class="header-controls">
+                        <span class="badge health-summary" id="mcpHealthSummary">Loading...</span>
+                        <button class="refresh-btn" onclick="mcpHealth.refresh()" title="Refresh now">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M23 4v6h-6M1 20v-6h6"/>
+                                <path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="panel-content">
+                    <div class="health-meta" id="mcpHealthMeta">
+                        <span class="last-check">Last check: <span id="mcpLastCheck">--</span></span>
+                        <span class="auto-refresh-indicator" id="mcpAutoRefreshIndicator">
+                            <span class="spinner"></span>
+                            Auto-refresh: 60s
+                        </span>
+                    </div>
+                    <div class="mcp-server-grid" id="mcpServerGrid">
+                        <div class="loading-state">
+                            <div class="spinner-large"></div>
+                            <span>Loading MCP servers...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MCP Detail Modal -->
+            <div class="mcp-detail-modal" id="mcpDetailModal" style="display: none;">
+                <div class="modal-backdrop" onclick="mcpHealth.closeDetail()"></div>
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 id="mcpDetailName">Server Name</h3>
+                        <button class="close-btn" onclick="mcpHealth.closeDetail()">&times;</button>
+                    </div>
+                    <div class="modal-body" id="mcpDetailBody"></div>
+                </div>
+            </div>
+
+            <!-- Agent Fleet -->
+            <div class="panel">
+                <div class="panel-header">
+                    Agent Fleet
+                    <span class="badge" id="totalAgents">0 agents</span>
+                </div>
+                <div class="panel-content" id="agentContainer">
+                    <!-- Categories will be rendered here -->
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            <!-- Quick Actions -->
+            <div class="panel">
+                <div class="panel-header">Quick Actions</div>
+                <div class="panel-content">
+                    <div class="quick-actions">
+                        <button class="quick-btn" onclick="quickCommand('revit', 'Check current Revit model quality')">
+                            🏗️ BIM Check
+                        </button>
+                        <button class="quick-btn" onclick="quickCommand('quality', 'Run QC on all sheets')">
+                            ✅ QC Review
+                        </button>
+                        <button class="quick-btn" onclick="quickCommand('documentation', 'Generate project status report')">
+                            📊 Status Report
+                        </button>
+                        <button class="quick-btn" onclick="selectAllAgents()">
+                            👥 Select All
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Task Queue -->
+            <div class="panel">
+                <div class="panel-header">
+                    Task Queue
+                    <span class="badge" id="taskCount">0</span>
+                </div>
+                <div class="task-list" id="taskList">
+                    <div class="empty-state">
+                        <div class="icon">📋</div>
+                        <div>No tasks queued</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Activity Log -->
+            <div class="panel">
+                <div class="panel-header">Activity Log</div>
+                <div class="log-list" id="logList">
+                    <div class="empty-state">
+                        <div class="icon">📜</div>
+                        <div>Waiting for activity...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="connection-indicator disconnected" id="connectionIndicator">
+        <span class="status-dot"></span>
+        <span id="connectionText">Connecting...</span>
+    </div>
+
+    <script>
+        // State
+        let selectedAgents = new Set();
+        let ws = null;
+        let reconnectAttempts = 0;
+
+        // Category icons
+        const categoryIcons = {
+            revit: '🏗️',
+            quality: '✅',
+            documentation: '📄',
+            workflow: '⚡',
+            development: '💻',
+            ai_agents: '🤖',
+            business: '💼',
+            research: '🔬',
+            code: '🔧',
+            other: '📦'
+        };
+
+        const categoryNames = {
+            revit: 'Revit / BIM',
+            quality: 'Quality Assurance',
+            documentation: 'Documentation',
+            workflow: 'Workflow & Orchestration',
+            development: 'Development Squad',
+            ai_agents: 'AI / Agent Squad',
+            business: 'Business Squad',
+            research: 'Research Squad',
+            code: 'Code Tools',
+            other: 'Other'
+        };
+
+        // WebSocket Connection
+        function connectWebSocket() {
+            const wsUrl = `ws://${window.location.host}/ws`;
+            ws = new WebSocket(wsUrl);
+
+            ws.onopen = () => {
+                console.log('WebSocket connected');
+                reconnectAttempts = 0;
+                updateConnectionStatus(true);
+            };
+
+            ws.onmessage = (event) => {
+                const message = JSON.parse(event.data);
+                handleMessage(message);
+            };
+
+            ws.onclose = () => {
+                console.log('WebSocket disconnected');
+                updateConnectionStatus(false);
+                // Reconnect after delay
+                setTimeout(() => {
+                    reconnectAttempts++;
+                    connectWebSocket();
+                }, Math.min(1000 * reconnectAttempts, 5000));
+            };
+
+            ws.onerror = (error) => {
+                console.error('WebSocket error:', error);
+            };
+        }
+
+        function updateConnectionStatus(connected) {
+            const indicator = document.getElementById('connectionIndicator');
+            const text = document.getElementById('connectionText');
+
+            if (connected) {
+                indicator.classList.remove('disconnected');
+                indicator.classList.add('connected');
+                text.textContent = 'Live';
+            } else {
+                indicator.classList.remove('connected');
+                indicator.classList.add('disconnected');
+                text.textContent = 'Reconnecting...';
+            }
+        }
+
+        function handleMessage(message) {
+            if (message.type === 'status') {
+                updateDashboard(message.data);
+            } else if (message.type === 'command_result') {
+                console.log('Command result:', message.data);
+            }
+        }
+
+        function updateDashboard(data) {
+            // Update header stats
+            document.getElementById('activeWindow').textContent =
+                truncate(data.system?.active_window || 'Unknown', 40);
+            document.getElementById('memoryUsage').textContent =
+                data.system?.memory_percent || '--';
+            document.getElementById('agentCount').textContent =
+                data.agent_count || 0;
+
+            // Update executor status
+            renderExecutorStatus(data.executor || {});
+
+            // Update daemons
+            renderDaemons(data.daemons || []);
+
+            // Update agents (with executor active state)
+            renderAgents(data.agents || {}, data.executor?.active_agents || {});
+
+            // Update tasks
+            renderTasks(data.tasks || []);
+
+            // Update logs
+            renderLogs(data.logs || []);
+        }
+
+        function renderExecutorStatus(executor) {
+            const statusBadge = document.getElementById('executorStatus');
+            const activeContainer = document.getElementById('activeWorkContainer');
+            const triggerList = document.getElementById('triggerList');
+
+            // Update status badge
+            if (executor.running) {
+                statusBadge.textContent = 'RUNNING';
+                statusBadge.style.background = 'var(--accent-green)';
+            } else {
+                statusBadge.textContent = 'STOPPED';
+                statusBadge.style.background = 'var(--accent-red)';
+            }
+
+            // Show active agents
+            const activeAgents = Object.entries(executor.active_agents || {});
+            if (activeAgents.length > 0) {
+                activeContainer.innerHTML = activeAgents.map(([name, info]) => `
+                    <div class="daemon-card" style="border-left: 3px solid var(--accent-green);">
+                        <div class="daemon-icon" style="animation: pulse 1s infinite;">🤖</div>
+                        <div class="daemon-info">
+                            <div class="daemon-name">${formatAgentName(name)}</div>
+                            <div class="daemon-desc">${truncate(info.task || 'Working...', 60)}</div>
+                        </div>
+                        <div class="daemon-status" style="background: rgba(88, 166, 255, 0.15); color: var(--accent-blue);">
+                            WORKING
+                        </div>
+                    </div>
+                `).join('');
+            } else {
+                activeContainer.innerHTML = `
+                    <div style="text-align: center; padding: 15px; color: var(--text-secondary); font-size: 13px;">
+                        💤 All agents idle - waiting for triggers
+                    </div>
+                `;
+            }
+
+            // Show recent triggers
+            const triggers = executor.pending_triggers || [];
+            if (triggers.length > 0) {
+                triggerList.innerHTML = triggers.slice(0, 3).map(t => `
+                    <div style="margin-bottom: 4px;">
+                        <span style="color: var(--accent-yellow);">⚡</span>
+                        ${t.trigger} <span style="color: var(--text-secondary);">(${formatTime(t.time)})</span>
+                    </div>
+                `).join('');
+            } else {
+                triggerList.innerHTML = '<span style="color: var(--text-secondary);">No triggers fired yet</span>';
+            }
+        }
+
+        function renderDaemons(daemons) {
+            const container = document.getElementById('daemonGrid');
+            document.getElementById('daemonCount').textContent = daemons.length;
+
+            if (daemons.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <div class="icon">⚙️</div>
+                        <div>No daemons running</div>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = daemons.map(d => `
+                <div class="daemon-card">
+                    <div class="daemon-icon">⚙️</div>
+                    <div class="daemon-info">
+                        <div class="daemon-name">${d.name}</div>
+                        <div class="daemon-desc">${d.description}</div>
+                    </div>
+                    <div class="daemon-status">PID ${d.pid}</div>
+                </div>
+            `).join('');
+        }
+
+        function renderAgents(agentsByCategory, activeAgents = {}) {
+            const container = document.getElementById('agentContainer');
+            let totalCount = 0;
+
+            const html = Object.entries(agentsByCategory).map(([category, agents]) => {
+                totalCount += agents.length;
+                return `
+                    <div class="category-section">
+                        <div class="category-header">
+                            <span class="category-icon">${categoryIcons[category] || '🔧'}</span>
+                            ${categoryNames[category] || category}
+                            <span style="color: var(--text-secondary);">(${agents.length})</span>
+                        </div>
+                        <div class="agent-grid">
+                            ${agents.map(agent => renderAgentCard(agent, activeAgents)).join('')}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            container.innerHTML = html || '<div class="empty-state">No agents loaded</div>';
+            document.getElementById('totalAgents').textContent = `${totalCount} agents`;
+        }
+
+        function renderAgentCard(agent, activeAgents = {}) {
+            const isSelected = selectedAgents.has(agent.name);
+            const activeInfo = activeAgents[agent.name];
+            const isWorking = agent.status === 'working' || activeInfo;
+            const currentTask = activeInfo?.task || agent.current_task;
+
+            return `
+                <div class="agent-card ${isSelected ? 'selected' : ''} ${isWorking ? 'working' : ''}"
+                     onclick="toggleAgent('${agent.name}')"
+                     title="${agent.description}">
+                    <div class="agent-name">${formatAgentName(agent.name)}</div>
+                    <div class="agent-desc">${agent.description}</div>
+                    ${currentTask ? `<div class="agent-task">📋 ${truncate(currentTask, 50)}</div>` : ''}
+                </div>
+            `;
+        }
+
+        function renderTasks(tasks) {
+            const container = document.getElementById('taskList');
+            document.getElementById('taskCount').textContent = tasks.length;
+
+            if (tasks.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <div class="icon">📋</div>
+                        <div>No tasks queued</div>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = tasks.map(t => `
+                <div class="task-item">
+                    <div class="task-status ${t.status}"></div>
+                    <div class="task-info">
+                        <div class="task-title">${t.title}</div>
+                        <div class="task-meta">${t.status} • ${formatTime(t.created_at)}</div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function renderLogs(logs) {
+            const container = document.getElementById('logList');
+
+            if (logs.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <div class="icon">📜</div>
+                        <div>No recent activity</div>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = logs.map(log => {
+                const match = log.match(/(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}),\d+ \[(\w+)\] (.*)/);
+                if (match) {
+                    const [_, time, level, message] = match;
+                    return `
+                        <div class="log-entry">
+                            <span class="log-time">${time.split(' ')[1]}</span>
+                            <span class="log-level-${level}">[${level}]</span>
+                            ${truncate(message, 60)}
+                        </div>
+                    `;
+                }
+                return `<div class="log-entry">${truncate(log, 80)}</div>`;
+            }).join('');
+        }
+
+        // Agent Selection
+        function toggleAgent(agentName) {
+            if (selectedAgents.has(agentName)) {
+                selectedAgents.delete(agentName);
+            } else {
+                selectedAgents.add(agentName);
+            }
+            updateSelectedDisplay();
+            // Re-render to show selection state
+            if (ws && ws.readyState === WebSocket.OPEN) {
+                ws.send(JSON.stringify({ type: 'ping' }));
+            }
+        }
+
+        function selectAllAgents() {
+            const cards = document.querySelectorAll('.agent-card');
+            cards.forEach(card => {
+                const name = card.querySelector('.agent-name').textContent;
+                // Convert display name back to original
+                selectedAgents.add(name.toLowerCase().replace(/ /g, '-'));
+            });
+            updateSelectedDisplay();
+        }
+
+        function clearSelection() {
+            selectedAgents.clear();
+            updateSelectedDisplay();
+        }
+
+        function updateSelectedDisplay() {
+            const text = document.getElementById('selectedAgentsText');
+            if (selectedAgents.size === 0) {
+                text.textContent = 'None (auto-assign)';
+            } else if (selectedAgents.size <= 3) {
+                text.textContent = Array.from(selectedAgents).join(', ');
+            } else {
+                text.textContent = `${selectedAgents.size} agents selected`;
+            }
+        }
+
+        // Commands
+        function sendCommand() {
+            const input = document.getElementById('commandInput');
+            const command = input.value.trim();
+
+            if (!command) return;
+
+            if (ws && ws.readyState === WebSocket.OPEN) {
+                ws.send(JSON.stringify({
+                    type: 'command',
+                    data: {
+                        command: command,
+                        agents: Array.from(selectedAgents),
+                        priority: 5
+                    }
+                }));
+            }
+
+            input.value = '';
+            clearSelection();
+        }
+
+        function quickCommand(category, command) {
+            // Select all agents in category
+            selectedAgents.clear();
+            document.querySelectorAll('.category-section').forEach(section => {
+                const headerText = section.querySelector('.category-header').textContent.toLowerCase();
+                if (headerText.includes(category.toLowerCase())) {
+                    section.querySelectorAll('.agent-card').forEach(card => {
+                        const name = card.querySelector('.agent-name').textContent;
+                        selectedAgents.add(name.toLowerCase().replace(/ /g, '-'));
+                    });
+                }
+            });
+
+            document.getElementById('commandInput').value = command;
+            updateSelectedDisplay();
+        }
+
+        // Utilities
+        function truncate(str, len) {
+            if (!str) return '';
+            return str.length > len ? str.substring(0, len) + '...' : str;
+        }
+
+        function formatAgentName(name) {
+            return name.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+        }
+
+        function formatTime(isoString) {
+            if (!isoString) return '';
+            const date = new Date(isoString);
+            return date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+        }
+
+        // Event Listeners
+        document.getElementById('sendBtn').addEventListener('click', sendCommand);
+        document.getElementById('commandInput').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') sendCommand();
+        });
+
+        // Initialize
+        connectWebSocket();
+
+        // Fallback polling if WebSocket fails
+        setInterval(() => {
+            if (!ws || ws.readyState !== WebSocket.OPEN) {
+                fetch('/api/status')
+                    .then(res => res.json())
+                    .then(data => updateDashboard(data))
+                    .catch(err => console.error('Polling error:', err));
+            }
+        }, 10000);
+    </script>
+
+    <!-- MCP Health Widget JavaScript -->
+    <script src="/static/js/mcp-health-widget.js"></script>
+</body>
+</html>

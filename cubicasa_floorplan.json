@@ -1,0 +1,37 @@
+{
+  "project": "CubiCasa Sample Floor Plan",
+  "notes": "Traced from fp_example4.png - 2BR apartment with kitchen, foyer, living room, terrace",
+
+  "exterior_walls": [
+    {"desc": "South Wall - Kitchen", "start": [0, 0], "end": [10.1, 0]},
+    {"desc": "South Wall - Foyer", "start": [10.1, 0], "end": [18.8, 0]},
+    {"desc": "South Wall - Living", "start": [18.8, 0], "end": [30.3, 0]},
+
+    {"desc": "East Wall", "start": [30.3, 0], "end": [30.3, 29.2]},
+
+    {"desc": "North Wall - Right Bedroom", "start": [30.3, 29.2], "end": [18.8, 29.2]},
+    {"desc": "North Wall - Bathroom", "start": [18.8, 29.2], "end": [10.1, 29.2]},
+    {"desc": "North Wall - Left Bedroom", "start": [10.1, 29.2], "end": [0, 29.2]},
+
+    {"desc": "West Wall - Upper (Bedroom)", "start": [0, 29.2], "end": [0, 18.1]},
+    {"desc": "West Wall - Terrace", "start": [0, 18.1], "end": [0, 10.7]},
+    {"desc": "West Wall - Kitchen", "start": [0, 10.7], "end": [0, 0]}
+  ],
+
+  "interior_walls": [
+    {"desc": "Kitchen East Wall", "start": [10.1, 0], "end": [10.1, 10.7]},
+    {"desc": "Kitchen North Wall", "start": [0, 10.7], "end": [10.1, 10.7]},
+
+    {"desc": "Foyer East Wall", "start": [18.8, 0], "end": [18.8, 18.1]},
+    {"desc": "Foyer North Wall / Terrace South", "start": [10.1, 18.1], "end": [18.8, 18.1]},
+
+    {"desc": "Living North Wall", "start": [18.8, 15.6], "end": [30.3, 15.6]},
+
+    {"desc": "Left Bedroom South Wall", "start": [0, 18.1], "end": [10.1, 18.1]},
+    {"desc": "Left Bedroom East Wall", "start": [10.1, 18.1], "end": [10.1, 29.2]},
+
+    {"desc": "Right Bedroom West Wall", "start": [18.8, 15.6], "end": [18.8, 29.2]},
+
+    {"desc": "Bathroom South Wall", "start": [10.1, 22.0], "end": [18.8, 22.0]}
+  ]
+}

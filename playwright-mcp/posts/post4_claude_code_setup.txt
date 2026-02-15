@@ -1,0 +1,26 @@
+I run a one-person studio with 15+ AI agents working simultaneously.
+
+Not hypothetically. Right now. Every day.
+
+Here's what my Claude Code setup actually does:
+- Reads and drafts emails through Gmail
+- Manages my calendar and schedules
+- Runs code reviews on every commit
+- Controls Revit through RevitMCPBridge
+- Responds to voice commands via my Jarvis assistant
+- Queries databases, processes PDFs, manages files
+- Searches the web and pulls project context from memory
+
+15+ MCP (Model Context Protocol) servers running in parallel. Each one gives Claude access to a different tool -- voice, Revit, browser, database, file system, email, calendar, and more.
+
+The result: I operate like a studio with a team, but it's just me and Claude.
+
+I don't context-switch between apps. I describe what I need, and the agent figures out which tools to use. Need to send a client email, update a Revit model, and check tomorrow's meetings? One conversation.
+
+This isn't a demo or a weekend project. It's my actual production workflow. I've been shipping client work this way for months.
+
+The barrier to entry for running a competitive AEC practice just dropped to one person with the right agent setup.
+
+BIM Ops Studio. One human. Many agents.
+
+#AI #BIM #Automation #ClaudeAI #MCP #AEC #Architecture #SoloFounder #AgentAI #Productivity #FutureOfWork #AIAgents

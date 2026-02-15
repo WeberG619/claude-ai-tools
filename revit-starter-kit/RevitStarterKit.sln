@@ -1,0 +1,40 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RevitStarterKit", "RevitStarterKit\RevitStarterKit.csproj", "{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+		Debug R24|Any CPU = Debug R24|Any CPU
+		Release R24|Any CPU = Release R24|Any CPU
+		Debug R25|Any CPU = Debug R25|Any CPU
+		Release R25|Any CPU = Release R25|Any CPU
+		Debug R26|Any CPU = Debug R26|Any CPU
+		Release R26|Any CPU = Release R26|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}.Debug|Any CPU.ActiveCfg = Debug R26|Any CPU
+		{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}.Debug|Any CPU.Build.0 = Debug R26|Any CPU
+		{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}.Release|Any CPU.ActiveCfg = Release R26|Any CPU
+		{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}.Release|Any CPU.Build.0 = Release R26|Any CPU
+		{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}.Debug R24|Any CPU.ActiveCfg = Debug R24|Any CPU
+		{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}.Debug R24|Any CPU.Build.0 = Debug R24|Any CPU
+		{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}.Release R24|Any CPU.ActiveCfg = Release R24|Any CPU
+		{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}.Release R24|Any CPU.Build.0 = Release R24|Any CPU
+		{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}.Debug R25|Any CPU.ActiveCfg = Debug R25|Any CPU
+		{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}.Debug R25|Any CPU.Build.0 = Debug R25|Any CPU
+		{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}.Release R25|Any CPU.ActiveCfg = Release R25|Any CPU
+		{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}.Release R25|Any CPU.Build.0 = Release R25|Any CPU
+		{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}.Debug R26|Any CPU.ActiveCfg = Debug R26|Any CPU
+		{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}.Debug R26|Any CPU.Build.0 = Debug R26|Any CPU
+		{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}.Release R26|Any CPU.ActiveCfg = Release R26|Any CPU
+		{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}.Release R26|Any CPU.Build.0 = Release R26|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

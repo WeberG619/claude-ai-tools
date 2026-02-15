@@ -1,0 +1,21 @@
+Tab: https://www.prsrvy.com/surveys/data-privacy?flowId=7f73e8381ad741438d7907975eac7
+Page text:
+By clicking CONTINUE, I agree to the Prodege PRIVACY POLICY for this and any future surveys provided by Prodege.
+
+Continue
+
+Inputs:
+radio: id=sbFooterSwagbucks name=tinyFooter label="Swagbucks" checked=false
+radio: id=sbFooterTopStores name=tinyFooter label="Top Stores" checked=false
+radio: id=sbFooterRewards name=tinyFooter label="Rewards" checked=false
+radio: id=sbFooterWaysToEarn name=tinyFooter label="Ways to Earn" checked=false
+radio: id=sbFooterMore name=tinyFooter label="Information" checked=false
+radio: id=sbFooterLegal name=tinyFooter label="Legal" checked=false
+radio: id=sbFooterAccessibility name=tinyFooter label="Accessibility" checked=false
+radio: id=sbFooterContactUs name=tinyFooter label="Contact Us" checked=false
+radio: id=sbFooterConnectWithUs name=tinyFooter label="Connect With Us" checked=false
+radio: id=sbFooterCouponStoresTinyToggle name=tinyFooter label="Coupon Codes For Your Favorite Online Stores" checked=false
+radio: id=sbFooterPrizesTinyToggle name=tinyFooter label="Gift Cards  From Your Favorite Brands" checked=false
+checkbox: id=sbFooterCouponStoresToggle label="Show More >" checked=false
+checkbox: id=sbFooterPrizesToggle label="Show More >" checked=false
+btn: "Continue" tag=BUTTON at(1215,328)

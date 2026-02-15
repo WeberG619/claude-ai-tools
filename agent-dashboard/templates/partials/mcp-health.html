@@ -1,0 +1,391 @@
+<!--
+    MCP Health Widget - Partial Template
+    =====================================
+    Shows MCP server health status in a grid layout.
+    Designed to be included in the main dashboard.
+
+    Usage: Include this HTML and load mcp-health-widget.js
+-->
+<div class="panel mcp-health-panel" id="mcpHealthPanel">
+    <div class="panel-header">
+        <span>
+            <span class="panel-icon">🔌</span>
+            MCP Server Health
+        </span>
+        <div class="header-controls">
+            <span class="badge health-summary" id="mcpHealthSummary">Loading...</span>
+            <button class="refresh-btn" onclick="mcpHealth.refresh()" title="Refresh now">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M23 4v6h-6M1 20v-6h6"/>
+                    <path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <div class="panel-content">
+        <!-- Last updated timestamp -->
+        <div class="health-meta" id="mcpHealthMeta">
+            <span class="last-check">Last check: <span id="mcpLastCheck">--</span></span>
+            <span class="auto-refresh-indicator" id="mcpAutoRefreshIndicator">
+                <span class="spinner"></span>
+                Auto-refresh: 60s
+            </span>
+        </div>
+
+        <!-- Server grid -->
+        <div class="mcp-server-grid" id="mcpServerGrid">
+            <!-- Servers will be rendered here by JavaScript -->
+            <div class="loading-state">
+                <div class="spinner-large"></div>
+                <span>Loading MCP servers...</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Expanded Server Detail Modal -->
+<div class="mcp-detail-modal" id="mcpDetailModal" style="display: none;">
+    <div class="modal-backdrop" onclick="mcpHealth.closeDetail()"></div>
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3 id="mcpDetailName">Server Name</h3>
+            <button class="close-btn" onclick="mcpHealth.closeDetail()">&times;</button>
+        </div>
+        <div class="modal-body" id="mcpDetailBody">
+            <!-- Server details rendered here -->
+        </div>
+    </div>
+</div>
+
+<style>
+    /* MCP Health Widget Styles */
+    .mcp-health-panel {
+        margin-bottom: 20px;
+    }
+
+    .mcp-health-panel .panel-icon {
+        margin-right: 8px;
+    }
+
+    .mcp-health-panel .header-controls {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .mcp-health-panel .refresh-btn {
+        background: var(--bg-hover);
+        border: 1px solid var(--border);
+        border-radius: 4px;
+        padding: 4px 8px;
+        cursor: pointer;
+        color: var(--text-secondary);
+        transition: all 0.2s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .mcp-health-panel .refresh-btn:hover {
+        border-color: var(--accent-blue);
+        color: var(--accent-blue);
+    }
+
+    .mcp-health-panel .refresh-btn.loading svg {
+        animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+
+    .health-summary {
+        font-weight: 600;
+    }
+
+    .health-summary.all-healthy {
+        background: rgba(63, 185, 80, 0.15) !important;
+        color: var(--accent-green) !important;
+    }
+
+    .health-summary.has-issues {
+        background: rgba(248, 81, 73, 0.15) !important;
+        color: var(--accent-red) !important;
+    }
+
+    .health-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 11px;
+        color: var(--text-secondary);
+        margin-bottom: 12px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .auto-refresh-indicator {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .auto-refresh-indicator .spinner {
+        width: 10px;
+        height: 10px;
+        border: 2px solid var(--border);
+        border-top-color: var(--accent-blue);
+        border-radius: 50%;
+        animation: spin 2s linear infinite;
+    }
+
+    /* Server Grid */
+    .mcp-server-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 10px;
+    }
+
+    .mcp-server-card {
+        background: var(--bg-hover);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 12px;
+        cursor: pointer;
+        transition: all 0.2s;
+        position: relative;
+    }
+
+    .mcp-server-card:hover {
+        border-color: var(--accent-blue);
+        transform: translateY(-1px);
+    }
+
+    .mcp-server-card .status-indicator {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+    }
+
+    .mcp-server-card .status-indicator.healthy {
+        background: var(--accent-green);
+        box-shadow: 0 0 8px rgba(63, 185, 80, 0.5);
+    }
+
+    .mcp-server-card .status-indicator.failing {
+        background: var(--accent-red);
+        box-shadow: 0 0 8px rgba(248, 81, 73, 0.5);
+        animation: pulse 1s infinite;
+    }
+
+    .mcp-server-card .status-indicator.disabled {
+        background: var(--accent-yellow);
+        opacity: 0.7;
+    }
+
+    .mcp-server-card .status-indicator.error {
+        background: var(--accent-red);
+    }
+
+    .mcp-server-card .server-name {
+        font-weight: 600;
+        font-size: 13px;
+        margin-bottom: 4px;
+        padding-right: 20px;
+    }
+
+    .mcp-server-card .server-command {
+        font-size: 11px;
+        color: var(--text-secondary);
+        font-family: 'SF Mono', 'Consolas', monospace;
+        background: var(--bg-dark);
+        padding: 2px 6px;
+        border-radius: 3px;
+        display: inline-block;
+        margin-bottom: 4px;
+    }
+
+    .mcp-server-card .server-source {
+        font-size: 10px;
+        color: var(--text-secondary);
+        opacity: 0.7;
+    }
+
+    /* Loading state */
+    .loading-state {
+        grid-column: 1 / -1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 40px;
+        color: var(--text-secondary);
+        gap: 12px;
+    }
+
+    .spinner-large {
+        width: 30px;
+        height: 30px;
+        border: 3px solid var(--border);
+        border-top-color: var(--accent-blue);
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+    }
+
+    /* Empty state */
+    .empty-state {
+        grid-column: 1 / -1;
+        text-align: center;
+        padding: 40px;
+        color: var(--text-secondary);
+    }
+
+    /* Detail Modal */
+    .mcp-detail-modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1000;
+    }
+
+    .mcp-detail-modal .modal-backdrop {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.7);
+    }
+
+    .mcp-detail-modal .modal-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        width: 90%;
+        max-width: 500px;
+        max-height: 80vh;
+        overflow: hidden;
+    }
+
+    .mcp-detail-modal .modal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .mcp-detail-modal .modal-header h3 {
+        margin: 0;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .mcp-detail-modal .close-btn {
+        background: none;
+        border: none;
+        font-size: 24px;
+        color: var(--text-secondary);
+        cursor: pointer;
+        padding: 0;
+        line-height: 1;
+    }
+
+    .mcp-detail-modal .close-btn:hover {
+        color: var(--text-primary);
+    }
+
+    .mcp-detail-modal .modal-body {
+        padding: 16px;
+        overflow-y: auto;
+        max-height: calc(80vh - 60px);
+    }
+
+    .mcp-detail-modal .detail-row {
+        display: flex;
+        margin-bottom: 12px;
+    }
+
+    .mcp-detail-modal .detail-label {
+        font-size: 12px;
+        color: var(--text-secondary);
+        width: 100px;
+        flex-shrink: 0;
+    }
+
+    .mcp-detail-modal .detail-value {
+        font-size: 13px;
+        word-break: break-all;
+    }
+
+    .mcp-detail-modal .detail-value.code {
+        font-family: 'SF Mono', 'Consolas', monospace;
+        background: var(--bg-dark);
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 12px;
+    }
+
+    .mcp-detail-modal .status-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 10px;
+        border-radius: 12px;
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+    .mcp-detail-modal .status-badge.healthy {
+        background: rgba(63, 185, 80, 0.15);
+        color: var(--accent-green);
+    }
+
+    .mcp-detail-modal .status-badge.failing {
+        background: rgba(248, 81, 73, 0.15);
+        color: var(--accent-red);
+    }
+
+    .mcp-detail-modal .status-badge.disabled {
+        background: rgba(210, 153, 34, 0.15);
+        color: var(--accent-yellow);
+    }
+
+    .mcp-detail-modal .status-badge.error {
+        background: rgba(248, 81, 73, 0.15);
+        color: var(--accent-red);
+    }
+
+    .mcp-detail-modal .error-box {
+        background: rgba(248, 81, 73, 0.1);
+        border: 1px solid rgba(248, 81, 73, 0.3);
+        border-radius: 6px;
+        padding: 12px;
+        margin-top: 12px;
+    }
+
+    .mcp-detail-modal .error-box .error-title {
+        color: var(--accent-red);
+        font-weight: 600;
+        font-size: 12px;
+        margin-bottom: 6px;
+    }
+
+    .mcp-detail-modal .error-box .error-message {
+        font-family: 'SF Mono', 'Consolas', monospace;
+        font-size: 11px;
+        color: var(--text-secondary);
+    }
+</style>

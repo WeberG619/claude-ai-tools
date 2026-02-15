@@ -19,7 +19,7 @@ import aiohttp
 from aiohttp import web
 
 # Server endpoint for session state
-SERVER_URL = "http://localhost:8890"
+SERVER_URL = "http://127.0.0.1:8890"  # Use IPv4 explicitly
 STATUS_FILE = Path("/mnt/d/_CLAUDE-TOOLS/agent-team/agent_status.json")
 
 # Current session process

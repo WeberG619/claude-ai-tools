@@ -208,19 +208,19 @@ def main():
     """CLI entry point."""
     result = ensure_daemon_running()
 
-    # Output for Claude
-    if result["action_taken"] != "none":
-        print(f"Daemon {result['action_taken']} - status: {result['daemon_status']}")
+    # Output minimal status for Claude (full state is read by brain_sync)
+    status = result["daemon_status"]
+    action = result["action_taken"]
 
-    if result["state"]:
-        # Return just the state for brevity
-        print(json.dumps(result["state"], indent=2))
-    elif result["error"]:
-        print(json.dumps({"error": result["error"]}))
+    if action != "none":
+        print(f"Daemon {action} - status: {status}")
     else:
-        print(json.dumps({"status": "daemon_starting", "message": "State will be available shortly"}))
+        print(f"Daemon status: {status}")
 
-    return 0 if result["daemon_status"] in ["running", "starting"] else 1
+    if result["error"]:
+        print(f"Warning: {result['error']}")
+
+    return 0 if status in ["running", "starting"] else 1
 
 
 if __name__ == "__main__":

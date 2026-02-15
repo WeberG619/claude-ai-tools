@@ -1,0 +1,16 @@
+# Voice Notes - Dependencies
+
+# OpenAI Whisper for speech-to-text
+openai-whisper>=20231117
+
+# Whisper dependencies (usually auto-installed but explicit for clarity)
+torch>=2.0.0
+torchaudio>=2.0.0
+
+# For audio file handling
+ffmpeg-python>=0.2.0
+
+# Note: ffmpeg binary must be installed separately:
+#   Ubuntu/Debian: sudo apt install ffmpeg
+#   macOS: brew install ffmpeg
+#   Windows: winget install ffmpeg OR download from ffmpeg.org

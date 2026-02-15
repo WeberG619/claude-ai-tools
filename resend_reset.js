@@ -1,0 +1,1 @@
+(function() { window.location.href = "https://resend.com/auth/reset-password?email=weberg619@gmail.com"; return "navigating"; })();

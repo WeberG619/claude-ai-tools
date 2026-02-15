@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weber Gouin - Resume</title>
+<style>
+  @page { size: letter; margin: 0.6in 0.7in; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Calibri, Arial, sans-serif; font-size: 10.5pt; color: #222; line-height: 1.45; max-width: 8.5in; margin: 0 auto; padding: 0.6in 0.7in; }
+
+  .header { text-align: center; margin-bottom: 14px; }
+  .header h1 { font-size: 22pt; font-weight: 700; color: #1a1a1a; letter-spacing: 0.5px; margin-bottom: 4px; }
+  .header .contact { font-size: 10pt; color: #444; }
+  .header .contact a { color: #2563eb; text-decoration: none; }
+  .divider { border: none; border-top: 2px solid #475569; margin: 10px 0 14px 0; }
+
+  h2 { font-size: 11.5pt; font-weight: 700; color: #1e293b; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid #cbd5e1; padding-bottom: 3px; margin: 14px 0 8px 0; }
+
+  .skills-grid { display: flex; flex-wrap: wrap; gap: 4px 16px; }
+  .skill-cat { flex: 1 1 45%; min-width: 250px; margin-bottom: 4px; }
+  .skill-cat strong { font-size: 10pt; color: #334155; }
+  .skill-cat span { font-size: 10pt; color: #555; }
+
+  .job { margin-bottom: 12px; }
+  .job-header { display: flex; justify-content: space-between; align-items: baseline; }
+  .job-title { font-weight: 700; font-size: 11pt; color: #1e293b; }
+  .job-date { font-size: 9.5pt; color: #64748b; white-space: nowrap; }
+  .job-company { font-style: italic; font-size: 10pt; color: #475569; margin-bottom: 3px; }
+  .job ul { padding-left: 18px; }
+  .job li { margin-bottom: 2px; font-size: 10pt; }
+
+  .project { margin-bottom: 8px; }
+  .project-name { font-weight: 700; font-size: 10pt; }
+  .project-desc { font-size: 9.5pt; color: #444; }
+
+  .section-note { font-size: 9.5pt; color: #64748b; font-style: italic; margin-bottom: 6px; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Weber J. Gouin</h1>
+  <div class="contact">
+    Sandpoint, ID &nbsp;|&nbsp; (786) 587-9726 &nbsp;|&nbsp;
+    <a href="mailto:weberg619@gmail.com">weberg619@gmail.com</a><br>
+    <a href="https://bimopsstudio.com">bimopsstudio.com</a> &nbsp;|&nbsp;
+    <a href="https://github.com/WeberG619">github.com/WeberG619</a>
+  </div>
+</div>
+<hr class="divider">
+
+<h2>Summary</h2>
+<p style="font-size: 10pt; margin-bottom: 4px;">
+  Software developer and AI systems engineer with 30+ years in the AEC industry. Builder of production autonomous agent systems, custom MCP servers, and browser automation pipelines. Deep expertise integrating AI (Claude, GPT) into real-world workflows. Unique crossover between architecture/BIM domain knowledge and modern Python/C# development.
+</p>
+
+<h2>Technical Skills</h2>
+<div class="skills-grid">
+  <div class="skill-cat"><strong>Languages:</strong> <span>Python, C#, JavaScript/Node.js, SQL, VBA, Bash</span></div>
+  <div class="skill-cat"><strong>AI / LLM:</strong> <span>Claude API, GPT API, MCP Protocol, Prompt Engineering, RAG, Agent Architecture</span></div>
+  <div class="skill-cat"><strong>Frameworks:</strong> <span>FastAPI, Flask, React, Playwright, Selenium, .NET</span></div>
+  <div class="skill-cat"><strong>Databases:</strong> <span>SQLite, PostgreSQL, Supabase, JSON/YAML data stores</span></div>
+  <div class="skill-cat"><strong>Automation:</strong> <span>Playwright, Puppeteer, n8n, Make, Google Apps Script, Excel VBA</span></div>
+  <div class="skill-cat"><strong>DevOps / Tools:</strong> <span>Git, GitHub Actions, Docker, WSL, Chrome DevTools Protocol</span></div>
+  <div class="skill-cat"><strong>AEC / BIM:</strong> <span>Revit API, Dynamo, AutoCAD, Bluebeam Revu, Construction Documents</span></div>
+  <div class="skill-cat"><strong>Platforms:</strong> <span>Windows, Linux (WSL), Cloud (VPS), Telegram Bot API, WhatsApp Business API</span></div>
+</div>
+
+<h2>Professional Experience</h2>
+
+<div class="job">
+  <div class="job-header">
+    <span class="job-title">AI Systems Engineer &amp; Full-Stack Developer</span>
+    <span class="job-date">2024 &ndash; Present</span>
+  </div>
+  <div class="job-company">BIM Ops Studio (<a href="https://bimopsstudio.com" style="color:#2563eb;text-decoration:none;">bimopsstudio.com</a>) &mdash; Autodesk Developer Network Member</div>
+  <ul>
+    <li>Published <strong>Professional Sheet Creator</strong> for Revit (2024-2026) &mdash; commercial plugin with 71 pre-configured templates, smart titleblock detection, and Excel/CSV integration that reduces 2-3 hour documentation tasks to 2 minutes</li>
+    <li>Architected and built <strong>RevitMCPBridge</strong>, a C#/.NET bridge exposing 449+ Autodesk Revit API endpoints through the Model Context Protocol &mdash; enabling AI agents to create walls, place doors, generate sheets, and produce construction documents autonomously</li>
+    <li>Developed <strong>12+ production MCP servers</strong> (Python/Node.js): persistent memory with semantic search, voice TTS, financial data analytics, browser automation, Excel control, Bluebeam Revu integration, and visual memory capture</li>
+    <li>Built an <strong>autonomous agent framework</strong> with task queues, decision engine, scheduled jobs, Telegram/voice notifications, and a self-improvement loop that tracks corrections across 550+ memories</li>
+    <li>Created <strong>OpportunityEngine</strong> &mdash; an autonomous business development pipeline that scans Upwork, GitHub, and Reddit for opportunities, scores/qualifies leads, drafts proposals via AI, and tracks the full pipeline in SQLite</li>
+    <li>Engineered <strong>browser automation systems</strong> using Playwright + Chrome DevTools Protocol for stealth web scraping, platform submissions, and credential-managed session reuse</li>
+    <li>Built <strong>FloorPlanML</strong> &mdash; a YOLOv5-based machine learning pipeline for detecting rooms, walls, doors, and dimensions in architectural floor plan images</li>
+    <li>Developed a <strong>system bridge daemon</strong> (Python) monitoring open applications, clipboard, monitors, and Revit project state in real-time &mdash; running 49+ days with zero errors</li>
+  </ul>
+</div>
+
+<div class="job">
+  <div class="job-header">
+    <span class="job-title">Freelance BIM Specialist &amp; Automation Developer</span>
+    <span class="job-date">2017 &ndash; 2024</span>
+  </div>
+  <div class="job-company">Independent Contractor (Upwork, Direct Clients)</div>
+  <ul>
+    <li>Managed BIM/Revit projects for architectural firms &mdash; hotels, hospitals, airports, multi-family residential</li>
+    <li>Developed Python and Dynamo scripts to automate repetitive Revit tasks, reducing documentation time by 40%+</li>
+    <li>Built custom Excel/VBA automation tools for project data management and reporting</li>
+    <li>Created Google Apps Script integrations for project tracking and client communication workflows</li>
+  </ul>
+</div>
+
+<div class="job">
+  <div class="job-header">
+    <span class="job-title">Revit Coordinator / BIM Technician</span>
+    <span class="job-date">2006 &ndash; 2017</span>
+  </div>
+  <div class="job-company">neUdesign Architecture &bull; ACAI &bull; Sklarchitecture &bull; Zelch and McMahon Architects</div>
+  <ul>
+    <li>Led BIM coordination on large-scale projects: Fort Lauderdale Airport Terminal 4, Mount Sinai Hospital, AC Marriott Hotel, Hampton Inn &amp; Suites, American Maritime Officers HQ</li>
+    <li>Coordinated multi-discipline models (Architectural, Structural, MEP) and managed clash detection</li>
+  </ul>
+</div>
+
+<h2>Key Projects</h2>
+
+<div class="project">
+  <span class="project-name">RevitMCPBridge (C#/.NET)</span> &mdash;
+  <span class="project-desc">Production bridge connecting Claude AI to Autodesk Revit via named pipes. 449+ methods covering walls, doors, windows, rooms, views, sheets, annotations, families, schedules, and PDF export. Deployed on active client projects.</span>
+</div>
+<div class="project">
+  <span class="project-name">Autonomous Agent System (Python)</span> &mdash;
+  <span class="project-desc">24/7 agent with task queue, decision engine, browser automation, Telegram notifications, voice TTS, and persistent memory. Handles scheduled tasks, email monitoring, and multi-platform integrations.</span>
+</div>
+<div class="project">
+  <span class="project-name">Claude Memory MCP Server (Python)</span> &mdash;
+  <span class="project-desc">Persistent memory system with semantic search, correction tracking, pattern detection, and self-improvement loop. 550+ memories across 60+ projects with automatic context surfacing.</span>
+</div>
+<div class="project">
+  <span class="project-name">Financial Data MCP Server (Python)</span> &mdash;
+  <span class="project-desc">Stock quotes, technical analysis, portfolio tracking, sentiment analysis, and options data via MCP tools. Integrates real-time market data with AI-powered analysis.</span>
+</div>
+<div class="project">
+  <span class="project-name">FloorPlanML (Python/PyTorch)</span> &mdash;
+  <span class="project-desc">YOLOv5-based ML pipeline for architectural floor plan analysis. Detects rooms, walls, doors, and dimensions from scanned drawings and PDFs.</span>
+</div>
+
+<h2>Education</h2>
+<p style="font-size: 10pt;">
+  <strong>Academy of Art University</strong>, San Francisco &mdash; Architecture<br>
+  <strong>Miami-Dade College</strong>, Miami &mdash; Architecture &amp; Building Technology
+</p>
+
+</body>
+</html>

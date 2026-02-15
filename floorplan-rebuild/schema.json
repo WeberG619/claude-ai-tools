@@ -1,0 +1,232 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "FloorPlan",
+  "description": "Architectural floor plan model - exact geometry only, no guessing",
+  "type": "object",
+  "required": ["metadata", "walls"],
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "required": ["units"],
+      "properties": {
+        "source_file": {
+          "type": "string",
+          "description": "Original image/PDF filename"
+        },
+        "scale": {
+          "type": "string",
+          "description": "Drawing scale if visible, e.g. '1/4\" = 1'-0\"'"
+        },
+        "units": {
+          "type": "string",
+          "enum": ["feet"],
+          "description": "Always feet for Revit compatibility"
+        },
+        "overall_width_ft": {
+          "type": "number",
+          "description": "Total building width in feet - ONLY if dimensioned on drawing"
+        },
+        "overall_depth_ft": {
+          "type": "number",
+          "description": "Total building depth in feet - ONLY if dimensioned on drawing"
+        },
+        "floor_to_ceiling_ft": {
+          "type": "number",
+          "default": 9.0,
+          "description": "Floor-to-ceiling height - use default 9' unless noted on drawing"
+        },
+        "notes": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Anything uncertain or requiring user verification"
+        }
+      }
+    },
+    "walls": {
+      "type": "array",
+      "description": "Wall centerlines with exact coordinates in feet",
+      "items": {
+        "type": "object",
+        "required": ["id", "start", "end"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique wall ID, e.g. 'W1', 'W2'"
+          },
+          "start": {
+            "type": "object",
+            "required": ["x", "y"],
+            "properties": {
+              "x": { "type": "number" },
+              "y": { "type": "number" }
+            }
+          },
+          "end": {
+            "type": "object",
+            "required": ["x", "y"],
+            "properties": {
+              "x": { "type": "number" },
+              "y": { "type": "number" }
+            }
+          },
+          "thickness_in": {
+            "type": "number",
+            "default": 6,
+            "description": "Wall thickness in inches. Exterior typically 6-8, interior 4-6. Use what's dimensioned or default 6."
+          },
+          "type": {
+            "type": "string",
+            "enum": ["exterior", "interior", "partition"],
+            "default": "interior"
+          },
+          "height_ft": {
+            "type": "number",
+            "description": "Wall height - defaults to floor_to_ceiling_ft if omitted"
+          }
+        }
+      }
+    },
+    "doors": {
+      "type": "array",
+      "description": "Doors positioned by offset along a wall",
+      "items": {
+        "type": "object",
+        "required": ["id", "wall_id", "offset_ft", "width_ft"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique door ID, e.g. 'D1', 'D2'"
+          },
+          "wall_id": {
+            "type": "string",
+            "description": "ID of the wall this door is on"
+          },
+          "offset_ft": {
+            "type": "number",
+            "description": "Distance in feet from wall START to near edge of door opening"
+          },
+          "width_ft": {
+            "type": "number",
+            "default": 3.0,
+            "description": "Door width in feet. Standard: 2.5 (closet), 3.0 (interior), 3.0 (exterior)"
+          },
+          "swing": {
+            "type": "string",
+            "enum": ["left", "right", "double", "sliding", "pocket", "bi-fold", "none"],
+            "default": "left",
+            "description": "Swing direction when facing the door from the swing side"
+          },
+          "swing_side": {
+            "type": "string",
+            "enum": ["positive", "negative"],
+            "default": "positive",
+            "description": "Which side of the wall the door swings to. 'positive' = left side of wall direction, 'negative' = right side"
+          }
+        }
+      }
+    },
+    "windows": {
+      "type": "array",
+      "description": "Windows positioned by offset along a wall",
+      "items": {
+        "type": "object",
+        "required": ["id", "wall_id", "offset_ft", "width_ft"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique window ID, e.g. 'WIN1', 'WIN2'"
+          },
+          "wall_id": {
+            "type": "string",
+            "description": "ID of the wall this window is on"
+          },
+          "offset_ft": {
+            "type": "number",
+            "description": "Distance in feet from wall START to near edge of window"
+          },
+          "width_ft": {
+            "type": "number",
+            "default": 3.0,
+            "description": "Window width in feet"
+          },
+          "sill_height_ft": {
+            "type": "number",
+            "default": 3.0,
+            "description": "Sill height above floor"
+          },
+          "head_height_ft": {
+            "type": "number",
+            "default": 7.0,
+            "description": "Head height above floor"
+          }
+        }
+      }
+    },
+    "rooms": {
+      "type": "array",
+      "description": "Room labels with center positions",
+      "items": {
+        "type": "object",
+        "required": ["name", "label_position"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Room name as shown on plan"
+          },
+          "label_position": {
+            "type": "object",
+            "required": ["x", "y"],
+            "properties": {
+              "x": { "type": "number" },
+              "y": { "type": "number" }
+            },
+            "description": "Approximate center of room in feet"
+          },
+          "dimensions": {
+            "type": "string",
+            "description": "Room dimensions as noted on plan, e.g. '12'-6\" x 14'-0\"'"
+          },
+          "area_sqft": {
+            "type": "number",
+            "description": "Area if noted on plan"
+          }
+        }
+      }
+    },
+    "dimensions": {
+      "type": "array",
+      "description": "Dimension annotations to draw on the DXF",
+      "items": {
+        "type": "object",
+        "required": ["start", "end", "text"],
+        "properties": {
+          "start": {
+            "type": "object",
+            "required": ["x", "y"],
+            "properties": {
+              "x": { "type": "number" },
+              "y": { "type": "number" }
+            }
+          },
+          "end": {
+            "type": "object",
+            "required": ["x", "y"],
+            "properties": {
+              "x": { "type": "number" },
+              "y": { "type": "number" }
+            }
+          },
+          "text": {
+            "type": "string",
+            "description": "Dimension text as shown on plan"
+          },
+          "offset_ft": {
+            "type": "number",
+            "default": 2.0,
+            "description": "How far from the measured line to place the dimension"
+          }
+        }
+      }
+    }
+  }
+}

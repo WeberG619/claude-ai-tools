@@ -1,0 +1,14 @@
+{
+  "cedcbac7": {
+    "action": "send_email",
+    "description": "Reply to Bruce Davis about the Afuri permit timeline",
+    "details": "Hi Bruce,\n\nThe permit for 6365 W Sample Rd should be ready by March 1. I will send the updated drawings by end of this week.\n\nBest regards,\nWeber Gouin",
+    "status": "cancelled",
+    "created_at": "2026-02-14T19:19:54.029045",
+    "expires_at": "2026-02-14T19:29:54.028754",
+    "timeout_minutes": 10,
+    "auto_approve": true,
+    "edit_text": null,
+    "responded_at": "2026-02-14T19:20:28.644510"
+  }
+}

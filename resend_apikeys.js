@@ -1,0 +1,1 @@
+(function() { window.location.href = "https://resend.com/api-keys"; return "navigating"; })();

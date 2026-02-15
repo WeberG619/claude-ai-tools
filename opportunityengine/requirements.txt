@@ -1,0 +1,16 @@
+# OpportunityEngine dependencies
+# Most functionality uses stdlib only (sqlite3, xml, urllib, json, re)
+# These are optional for enhanced features:
+
+# Upwork scout (optional - falls back to stdlib urllib)
+# requests>=2.31.0
+# feedparser>=6.0.0
+
+# GitHub scout requires: gh CLI (not a Python package)
+# Install: https://cli.github.com/
+
+# Proposal agent uses Claude CLI: claude --print
+# Install: npm install -g @anthropic-ai/claude-code
+
+# Notification integration uses existing autonomous-agent Notifier
+# No additional deps needed - uses Telegram bot API via urllib

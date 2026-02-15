@@ -105,6 +105,41 @@ def notify_voice_only(message: str):
     return send_voice(message)
 
 
+def request_approval(action: str, description: str, details: str = "",
+                     timeout_minutes: int = 10, auto_approve: bool = True) -> str:
+    """
+    Request Weber's approval via Telegram before taking a sensitive action.
+    Returns approval_id. Use check_approval() or wait_for_approval() to get result.
+
+    Example:
+        aid = request_approval("send_email", "Reply to Bruce about permits",
+                               details="Hi Bruce, the permit is ready...")
+        status = wait_for_approval(aid)
+        if status in ("approved", "timed_out"):
+            send_the_email()
+    """
+    import sys
+    sys.path.insert(0, "/mnt/d/_CLAUDE-TOOLS/gateway")
+    from approval_system import request_approval as _request
+    return _request(action, description, details, timeout_minutes, auto_approve)
+
+
+def check_approval(approval_id: str) -> str:
+    """Check approval status: pending/approved/cancelled/edited/timed_out."""
+    import sys
+    sys.path.insert(0, "/mnt/d/_CLAUDE-TOOLS/gateway")
+    from approval_system import check_approval as _check
+    return _check(approval_id)
+
+
+def wait_for_approval(approval_id: str, poll_interval: int = 5) -> str:
+    """Block until approval resolves. Returns final status string."""
+    import sys
+    sys.path.insert(0, "/mnt/d/_CLAUDE-TOOLS/gateway")
+    from approval_system import wait_for_approval as _wait
+    return _wait(approval_id, poll_interval)
+
+
 if __name__ == "__main__":
     import sys
     if len(sys.argv) > 1:

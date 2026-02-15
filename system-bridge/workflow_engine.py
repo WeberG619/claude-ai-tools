@@ -362,6 +362,195 @@ class ActionRecorder:
         }
 
 
+class PatternAnalyzer:
+    """Analyzes learned sequences to discover multi-step workflow patterns."""
+
+    PATTERNS_FILE = BASE_DIR / "learned_patterns.json"
+    MIN_FREQUENCY = 3
+
+    def __init__(self):
+        self.db = WorkflowDatabase()
+
+    def get_frequent_sequences(self, min_count=3, min_gap=0.5):
+        """Get all sequences that occur at least min_count times.
+        Filters out polling artifacts (transitions with near-zero gaps)."""
+        conn = sqlite3.connect(self.db.db_path)
+        conn.row_factory = sqlite3.Row
+        cursor = conn.cursor()
+        cursor.execute("""
+            SELECT trigger_action, next_action, count, avg_gap_seconds, project, last_seen
+            FROM sequences
+            WHERE count >= ?
+            AND (avg_gap_seconds IS NULL OR avg_gap_seconds >= ?)
+            AND trigger_action != next_action
+            ORDER BY count DESC
+        """, (min_count, min_gap))
+        results = [dict(row) for row in cursor.fetchall()]
+        conn.close()
+        return results
+
+    def discover_chains(self, min_count=3, max_chain_length=8):
+        """Discover multi-step workflow chains from bigram sequences.
+        Focuses on focus/open events and filters out daemon polling noise."""
+        sequences = self.get_frequent_sequences(min_count, min_gap=0.5)
+        if not sequences:
+            # Try with lower gap threshold
+            sequences = self.get_frequent_sequences(min_count, min_gap=0.1)
+        if not sequences:
+            return []
+
+        # Prioritize focus events (real user actions) over close events (often batch artifacts)
+        focus_sequences = [s for s in sequences if 'focus:' in s['trigger_action'] or 'open:' in s['trigger_action']]
+        if len(focus_sequences) >= 5:
+            sequences = focus_sequences
+
+        # Build adjacency map: trigger -> [(next, count, gap)]
+        adjacency = defaultdict(list)
+        for seq in sequences:
+            adjacency[seq['trigger_action']].append({
+                'next': seq['next_action'],
+                'count': seq['count'],
+                'gap': seq['avg_gap_seconds'] or 0,
+                'project': seq['project']
+            })
+
+        # Find all triggers and next actions
+        all_nexts = set(s['next_action'] for s in sequences)
+        all_triggers = set(s['trigger_action'] for s in sequences)
+
+        # Prefer starting points that begin chains (triggers not often reached from elsewhere)
+        start_candidates = sorted(all_triggers, key=lambda t: sum(
+            1 for s in sequences if s['next_action'] == t
+        ))
+
+        chains = []
+        seen_chain_keys = set()
+
+        for start in start_candidates:
+            # DFS to find chains
+            stack = [(start, [start], 0, float('inf'))]
+
+            while stack:
+                current, path, total_gap, min_freq = stack.pop()
+
+                if len(path) >= max_chain_length:
+                    chain_key = '|'.join(path)
+                    if chain_key not in seen_chain_keys and len(path) >= 3:
+                        seen_chain_keys.add(chain_key)
+                        chains.append({
+                            'steps': list(path),
+                            'length': len(path),
+                            'min_frequency': min_freq,
+                            'total_gap_seconds': total_gap
+                        })
+                    continue
+
+                next_actions = adjacency.get(current, [])
+                extended = False
+
+                for na in sorted(next_actions, key=lambda x: x['count'], reverse=True)[:3]:
+                    next_node = na['next']
+                    if next_node not in path:
+                        new_min = min(min_freq, na['count'])
+                        stack.append((
+                            next_node,
+                            path + [next_node],
+                            total_gap + na['gap'],
+                            new_min
+                        ))
+                        extended = True
+
+                if not extended and len(path) >= 3:
+                    chain_key = '|'.join(path)
+                    if chain_key not in seen_chain_keys:
+                        seen_chain_keys.add(chain_key)
+                        chains.append({
+                            'steps': list(path),
+                            'length': len(path),
+                            'min_frequency': min_freq,
+                            'total_gap_seconds': total_gap
+                        })
+
+        # Score by length * frequency, deduplicate subsets
+        chains.sort(key=lambda c: c['length'] * c['min_frequency'], reverse=True)
+
+        final_chains = []
+        for chain in chains:
+            steps_str = '|'.join(chain['steps'])
+            is_subset = any(steps_str in '|'.join(e['steps']) for e in final_chains)
+            if not is_subset:
+                final_chains.append(chain)
+
+        return final_chains[:20]
+
+    def analyze_and_export(self, min_count=3):
+        """Run full analysis and export to learned_patterns.json."""
+        chains = self.discover_chains(min_count)
+        frequent_pairs = self.get_frequent_sequences(min_count)
+
+        # Get total action count for context
+        conn = sqlite3.connect(self.db.db_path)
+        cursor = conn.cursor()
+        cursor.execute("SELECT COUNT(*) FROM actions")
+        total_actions = cursor.fetchone()[0]
+        cursor.execute("SELECT COUNT(*) FROM sequences")
+        total_sequences = cursor.fetchone()[0]
+        conn.close()
+
+        output = {
+            "analyzed_at": datetime.now().isoformat(),
+            "total_actions_recorded": total_actions,
+            "total_unique_sequences": total_sequences,
+            "frequent_sequence_count": len(frequent_pairs),
+            "workflow_candidates": [],
+            "frequent_transitions": []
+        }
+
+        # Format chains as workflow candidates
+        for i, chain in enumerate(chains):
+            steps_readable = []
+            for s in chain['steps']:
+                parts = s.split(':', 1)
+                steps_readable.append(parts[1] if len(parts) > 1 else s)
+
+            name = ' -> '.join(steps_readable[:5])
+            if len(steps_readable) > 5:
+                name += f' ... ({len(steps_readable)} steps)'
+
+            output['workflow_candidates'].append({
+                'id': f'wf_candidate_{i+1}',
+                'name': name,
+                'steps': chain['steps'],
+                'steps_readable': steps_readable,
+                'step_count': chain['length'],
+                'frequency': chain['min_frequency'],
+                'avg_duration_seconds': round(chain['total_gap_seconds'], 1),
+                'status': 'candidate',
+                'discovered_at': datetime.now().isoformat()
+            })
+
+        # Add frequent pairs
+        for pair in frequent_pairs[:30]:
+            t_parts = pair['trigger_action'].split(':', 1)
+            n_parts = pair['next_action'].split(':', 1)
+            output['frequent_transitions'].append({
+                'from': pair['trigger_action'],
+                'to': pair['next_action'],
+                'from_readable': t_parts[1] if len(t_parts) > 1 else t_parts[0],
+                'to_readable': n_parts[1] if len(n_parts) > 1 else n_parts[0],
+                'count': pair['count'],
+                'avg_gap_seconds': round(pair['avg_gap_seconds'] or 0, 1)
+            })
+
+        # Atomic write
+        temp_file = self.PATTERNS_FILE.with_suffix('.tmp')
+        with open(temp_file, 'w') as f:
+            json.dump(output, f, indent=2)
+        temp_file.replace(self.PATTERNS_FILE)
+
+        return output
+
+
 class AutoFixer:
     """Suggests and executes fixes for detected issues."""
 
@@ -505,8 +694,157 @@ def main():
         suggestion = fixer.suggest_fix(issue_type, context)
         print(json.dumps(suggestion, indent=2))
 
+    elif cmd == "analyze":
+        min_count = int(sys.argv[2]) if len(sys.argv) > 2 else 3
+        analyzer = PatternAnalyzer()
+        result = analyzer.analyze_and_export(min_count)
+        print(json.dumps({
+            "candidates": len(result.get("workflow_candidates", [])),
+            "transitions": len(result.get("frequent_transitions", [])),
+            "total_actions": result.get("total_actions_recorded", 0),
+            "exported_to": str(PatternAnalyzer.PATTERNS_FILE)
+        }, indent=2))
+
+    elif cmd == "backfill":
+        # Backfill from events.ndjson into workflows.db using batched SQL
+        events_file = BASE_DIR / "events.ndjson"
+        if not events_file.exists():
+            print('{"error": "events.ndjson not found"}')
+            return
+
+        # Parse all events first
+        parsed_events = []
+        errors = 0
+        with open(events_file, 'r') as f:
+            for line in f:
+                line = line.strip()
+                if not line:
+                    continue
+                try:
+                    event = json.loads(line)
+                    event_type = event.get("event_type", event.get("type", ""))
+                    details_str = event.get("details", "")
+                    ts = event.get("ts", event.get("timestamp", ""))
+
+                    app_name = ""
+                    window_title = ""
+                    if ": " in details_str:
+                        app_name, window_title = details_str.split(": ", 1)
+                    else:
+                        app_name = details_str
+
+                    project = _extract_project_from_title(window_title)
+
+                    if event_type in ("app_opened", "focus_changed"):
+                        action_type = f"focus:{app_name}"
+                    elif event_type == "app_closed":
+                        action_type = f"close:{app_name}"
+                    else:
+                        continue
+
+                    parsed_events.append({
+                        "ts": ts,
+                        "action_type": action_type,
+                        "details": json.dumps({"name": app_name, "title": window_title}),
+                        "project": project
+                    })
+                except Exception:
+                    errors += 1
+
+        # Batch insert into database
+        conn = sqlite3.connect(WORKFLOWS_DB)
+        cursor = conn.cursor()
+
+        # Insert all actions in one transaction
+        cursor.executemany("""
+            INSERT INTO actions (timestamp, action_type, details, project, context, session_id)
+            VALUES (:ts, :action_type, :details, :project, NULL, 'backfill')
+        """, parsed_events)
+
+        # Learn sequences from consecutive events
+        seq_count = 0
+        for i in range(1, len(parsed_events)):
+            prev = parsed_events[i-1]
+            curr = parsed_events[i]
+
+            # Calculate gap
+            try:
+                t1 = datetime.fromisoformat(prev["ts"])
+                t2 = datetime.fromisoformat(curr["ts"])
+                gap = (t2 - t1).total_seconds()
+            except (ValueError, TypeError):
+                gap = 999
+
+            if gap > 300:  # Skip if > 5 min gap
+                continue
+
+            trigger = prev["action_type"]
+            next_act = curr["action_type"]
+            project = curr["project"]
+
+            # Upsert sequence
+            cursor.execute("""
+                SELECT id, count, avg_gap_seconds FROM sequences
+                WHERE trigger_action = ? AND next_action = ?
+            """, (trigger, next_act))
+            row = cursor.fetchone()
+
+            if row:
+                new_count = row[1] + 1
+                new_avg = ((row[2] * row[1]) + gap) / new_count
+                cursor.execute("""
+                    UPDATE sequences SET count = ?, avg_gap_seconds = ?, last_seen = ?
+                    WHERE id = ?
+                """, (new_count, new_avg, curr["ts"], row[0]))
+            else:
+                cursor.execute("""
+                    INSERT INTO sequences (trigger_action, next_action, count, avg_gap_seconds, project, last_seen)
+                    VALUES (?, ?, 1, ?, ?, ?)
+                """, (trigger, next_act, gap, project, curr["ts"]))
+            seq_count += 1
+
+        conn.commit()
+        conn.close()
+
+        # Run analysis after backfill
+        analyzer = PatternAnalyzer()
+        result = analyzer.analyze_and_export(min_count=3)
+
+        print(json.dumps({
+            "backfilled": len(parsed_events),
+            "sequences_learned": seq_count,
+            "errors": errors,
+            "candidates_found": len(result.get("workflow_candidates", [])),
+            "transitions_found": len(result.get("frequent_transitions", []))
+        }, indent=2))
+
     else:
         print(f'{{"error": "Unknown command: {cmd}"}}')
+
+
+# Known project names for detection
+_KNOWN_PROJECTS = [
+    "R25 RM TENANT IMPROVEMENT",
+    "6365 W SAMPLE RD",
+    "R25 SMH ELEV",
+    "AFURI",
+]
+
+
+def _extract_project_from_title(title: str) -> Optional[str]:
+    """Extract project name from a window title."""
+    if not title:
+        return None
+    title_upper = title.upper()
+    for proj in _KNOWN_PROJECTS:
+        if proj.upper() in title_upper:
+            return proj
+    # Try to extract from Revit title pattern: "Revit 202X.X - [ProjectName - View]"
+    if "[" in title and "]" in title:
+        bracket_content = title.split("[")[1].split("]")[0]
+        if " - " in bracket_content:
+            return bracket_content.split(" - ")[0].strip()
+    return None
 
 
 if __name__ == "__main__":

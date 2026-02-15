@@ -103,7 +103,7 @@ SECRET_PATTERNS = [
 WORKFLOW_ANALYSIS_INTERVAL = 30  # Every 30 updates (~5 minutes)
 
 # Proactive Alert Settings
-SPEAK_SCRIPT = Path(r"D:\_CLAUDE-TOOLS\voice-assistant\speak.py")
+SPEAK_SCRIPT = Path(r"D:\_CLAUDE-TOOLS\voice-mcp\speak.py")
 MEMORY_WARNING_THRESHOLD = 85  # percent
 MEMORY_CRITICAL_THRESHOLD = 92  # percent
 ALERT_COOLDOWN = 300  # seconds between repeated alerts of same type
@@ -260,6 +260,7 @@ class ClaudeDaemon:
         self.alert_cooldowns: Dict[str, datetime] = {}
         self.revit_was_connected = False
         self.previous_memory_state = "normal"  # normal, warning, critical
+        self.previous_email_alert_ids: set = set()  # Track seen email alert IDs
 
         # Workflow learning engine
         if WORKFLOW_AVAILABLE:
@@ -477,6 +478,37 @@ class ClaudeDaemon:
                     self.record_alert(f"{app}_closed")
                     self.log_event("alert", f"{app_display} closed unexpectedly")
                     alerts_sent.append(f"{app}_closed")
+
+        # Check for new urgent/important emails
+        email_alerts = self.state.email_status.get("alerts", [])
+        current_alert_ids = {a.get("id") for a in email_alerts if a.get("id")}
+        new_alert_ids = current_alert_ids - self.previous_email_alert_ids
+
+        if new_alert_ids:
+            new_urgent = [a for a in email_alerts if a.get("id") in new_alert_ids and a.get("category") == "urgent_response"]
+            new_needs_response = [a for a in email_alerts if a.get("id") in new_alert_ids and a.get("category") == "needs_response"]
+
+            if new_urgent and self.can_alert("email_urgent"):
+                for alert in new_urgent:
+                    sender = alert.get("from", "Unknown").split("<")[0].strip()
+                    subject = alert.get("subject", "")[:50]
+                    self.speak_alert(f"Urgent email from {sender}. Subject: {subject}")
+                    self.log_event("alert", f"Urgent email from {sender}: {subject}")
+                self.record_alert("email_urgent")
+                alerts_sent.append("email_urgent")
+
+            if new_needs_response and self.can_alert("email_needs_response"):
+                count = len(new_needs_response)
+                if count == 1:
+                    sender = new_needs_response[0].get("from", "Unknown").split("<")[0].strip()
+                    self.speak_alert(f"New email from {sender} that may need your attention.")
+                else:
+                    self.speak_alert(f"You have {count} new emails that may need your attention.")
+                self.record_alert("email_needs_response")
+                self.log_event("alert", f"{count} new emails need response")
+                alerts_sent.append("email_needs_response")
+
+        self.previous_email_alert_ids = current_alert_ids
 
         return alerts_sent
 

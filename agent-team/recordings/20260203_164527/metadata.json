@@ -1,0 +1,13 @@
+{
+  "session_id": "20260203_164527",
+  "project": "Construction Document Validator - Build a tool that validates construction document sets for completeness, checking for missing sheets, broken references, required notes, and BIM standards compliance. The tool should work with Revit projects and PDF exports.",
+  "started_at": "2026-02-03T16:45:27.702076",
+  "agents": [
+    "planner",
+    "researcher",
+    "builder",
+    "critic",
+    "narrator"
+  ],
+  "status": "recording"
+}

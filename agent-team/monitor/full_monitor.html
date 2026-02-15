@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agent Team - Full Monitor</title>
+    <style>
+        :root {
+            --bg-dark: #0d1117;
+            --bg-card: #161b22;
+            --bg-hover: #21262d;
+            --border: #30363d;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --accent-blue: #58a6ff;
+            --accent-green: #3fb950;
+            --accent-yellow: #d29922;
+            --accent-red: #f85149;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 280px 1fr 320px;
+            grid-template-rows: 60px 1fr;
+            height: 100vh;
+            gap: 1px;
+            background: var(--border);
+        }
+
+        .header {
+            grid-column: 1 / -1;
+            background: var(--bg-card);
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header h1 {
+            font-size: 18px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--accent-green);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .current-task {
+            flex: 1;
+            text-align: center;
+            color: var(--accent-yellow);
+            font-size: 14px;
+            padding: 0 20px;
+        }
+
+        .panel {
+            background: var(--bg-card);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .panel-header {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-secondary);
+        }
+
+        .panel-content {
+            flex: 1;
+            overflow-y: auto;
+            padding: 12px;
+        }
+
+        /* Agents Panel */
+        .agent-card {
+            background: var(--bg-hover);
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 8px;
+            border-left: 3px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .agent-card.speaking {
+            border-left-color: var(--accent-green);
+            background: rgba(63, 185, 80, 0.15);
+            box-shadow: 0 0 15px rgba(63, 185, 80, 0.2);
+        }
+
+        .agent-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 6px;
+        }
+
+        .agent-icon { font-size: 20px; }
+        .agent-name { font-weight: 600; font-size: 14px; }
+        .agent-voice { font-size: 11px; color: var(--text-secondary); }
+        .agent-status { font-size: 12px; color: var(--text-secondary); margin-top: 4px; }
+        .agent-status.speaking { color: var(--accent-green); font-weight: 600; }
+
+        .wave {
+            display: none;
+            gap: 2px;
+            margin-left: auto;
+        }
+        .speaking .wave { display: flex; }
+        .wave span {
+            width: 3px;
+            height: 14px;
+            background: var(--accent-green);
+            border-radius: 2px;
+            animation: wave 0.5s ease-in-out infinite;
+        }
+        .wave span:nth-child(2) { animation-delay: 0.1s; }
+        .wave span:nth-child(3) { animation-delay: 0.2s; }
+        .wave span:nth-child(4) { animation-delay: 0.3s; }
+        @keyframes wave {
+            0%, 100% { transform: scaleY(0.4); }
+            50% { transform: scaleY(1); }
+        }
+
+        /* Code Panel */
+        .file-tabs {
+            display: flex;
+            gap: 4px;
+            padding: 8px 12px;
+            background: var(--bg-dark);
+            overflow-x: auto;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .file-tab {
+            padding: 6px 12px;
+            background: var(--bg-hover);
+            border-radius: 4px;
+            font-size: 11px;
+            cursor: pointer;
+            white-space: nowrap;
+            border: 1px solid transparent;
+        }
+
+        .file-tab:hover { background: var(--bg-card); }
+        .file-tab.active { background: var(--accent-blue); color: white; }
+        .file-tab.new { border-color: var(--accent-green); }
+
+        .code-view {
+            flex: 1;
+            background: #0d1117;
+            overflow: auto;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .code-view.writing {
+            border-color: var(--accent-green);
+            box-shadow: inset 0 0 30px rgba(63, 185, 80, 0.15);
+        }
+
+        .code-view pre {
+            margin: 0;
+            padding: 12px;
+            font-family: 'Cascadia Code', 'Fira Code', 'Consolas', monospace;
+            font-size: 12px;
+            line-height: 1.5;
+            white-space: pre-wrap;
+            word-break: break-all;
+            color: #e6edf3;
+        }
+
+        .file-tab.updated {
+            animation: fileUpdated 1s ease;
+            border-color: var(--accent-green);
+            background: rgba(63, 185, 80, 0.3);
+        }
+
+        @keyframes fileUpdated {
+            0%, 100% { background: rgba(63, 185, 80, 0.3); }
+            50% { background: rgba(63, 185, 80, 0.6); }
+        }
+
+        .code-panel-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .code-panel-header .writing-indicator {
+            display: none;
+            color: var(--accent-green);
+            font-size: 11px;
+            animation: blink 0.5s infinite;
+        }
+
+        .code-view.writing + .code-panel-header .writing-indicator,
+        .writing-active .writing-indicator {
+            display: inline;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        /* Activity Panel */
+        .activity-item {
+            padding: 8px 10px;
+            border-bottom: 1px solid var(--border);
+            font-size: 12px;
+        }
+
+        .activity-time {
+            color: var(--text-secondary);
+            font-size: 10px;
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .activity-item.speech { border-left: 2px solid var(--accent-green); }
+        .activity-item.file { border-left: 2px solid var(--accent-blue); }
+        .activity-item.error { border-left: 2px solid var(--accent-red); }
+
+        /* Project selector */
+        .project-select {
+            padding: 8px 12px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .project-select select {
+            width: 100%;
+            padding: 6px;
+            background: var(--bg-hover);
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+            border-radius: 4px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1><span class="status-dot"></span> Agent Team Monitor</h1>
+            <div class="current-task" id="current-task">Waiting for task...</div>
+            <span id="status">Connected</span>
+        </header>
+
+        <!-- Left: Agents -->
+        <div class="panel">
+            <div class="panel-header">Agents</div>
+            <div class="panel-content" id="agents">
+                <div class="agent-card" data-agent="planner">
+                    <div class="agent-header">
+                        <span class="agent-icon">🎯</span>
+                        <div>
+                            <div class="agent-name">PLANNER</div>
+                            <div class="agent-voice">Andrew</div>
+                        </div>
+                        <div class="wave"><span></span><span></span><span></span><span></span></div>
+                    </div>
+                    <div class="agent-status">Idle</div>
+                </div>
+                <div class="agent-card" data-agent="researcher">
+                    <div class="agent-header">
+                        <span class="agent-icon">🔍</span>
+                        <div>
+                            <div class="agent-name">RESEARCHER</div>
+                            <div class="agent-voice">Christopher</div>
+                        </div>
+                        <div class="wave"><span></span><span></span><span></span><span></span></div>
+                    </div>
+                    <div class="agent-status">Idle</div>
+                </div>
+                <div class="agent-card" data-agent="builder">
+                    <div class="agent-header">
+                        <span class="agent-icon">🔨</span>
+                        <div>
+                            <div class="agent-name">BUILDER</div>
+                            <div class="agent-voice">Roger</div>
+                        </div>
+                        <div class="wave"><span></span><span></span><span></span><span></span></div>
+                    </div>
+                    <div class="agent-status">Idle</div>
+                </div>
+                <div class="agent-card" data-agent="critic">
+                    <div class="agent-header">
+                        <span class="agent-icon">🔬</span>
+                        <div>
+                            <div class="agent-name">CRITIC</div>
+                            <div class="agent-voice">Eric</div>
+                        </div>
+                        <div class="wave"><span></span><span></span><span></span><span></span></div>
+                    </div>
+                    <div class="agent-status">Idle</div>
+                </div>
+                <div class="agent-card" data-agent="narrator">
+                    <div class="agent-header">
+                        <span class="agent-icon">📢</span>
+                        <div>
+                            <div class="agent-name">NARRATOR</div>
+                            <div class="agent-voice">Jenny</div>
+                        </div>
+                        <div class="wave"><span></span><span></span><span></span><span></span></div>
+                    </div>
+                    <div class="agent-status">Idle</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Center: Code View -->
+        <div class="panel" id="code-panel">
+            <div class="panel-header code-panel-header">
+                <span>Live Code View</span>
+                <span class="writing-indicator">● WRITING CODE</span>
+            </div>
+            <div class="project-select" id="project-info">
+                <span id="active-project">📁 Waiting for activity...</span>
+                <span id="active-file" style="margin-left: 10px; color: var(--accent-green);"></span>
+            </div>
+            <div class="file-tabs" id="file-tabs">
+                <div class="file-tab active">Select a file...</div>
+            </div>
+            <div class="code-view">
+                <pre id="code-content">// Select a file from the tabs above to view its code
+//
+// As agents write code, new files will appear here
+// Click on a file tab to see its contents</pre>
+            </div>
+        </div>
+
+        <!-- Right: Activity -->
+        <div class="panel">
+            <div class="panel-header">Activity Log</div>
+            <div class="panel-content" id="activity-log">
+                <div class="activity-item">
+                    <span class="activity-time">--:--:--</span>
+                    Monitor started
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentProject = null;
+        let currentFile = null;
+        let lastUpdateTime = 0;
+        let writingTimeout = null;
+        let lastContentHash = '';
+
+        // Poll for status updates
+        async function pollStatus() {
+            try {
+                const res = await fetch('/api/status');
+                const data = await res.json();
+                updateAgentStatus(data);
+            } catch (e) {
+                console.error('Status poll failed:', e);
+            }
+        }
+
+        // Poll GLOBAL state - auto-detects which project/file changed
+        async function pollGlobal() {
+            try {
+                const res = await fetch('/api/global');
+                const data = await res.json();
+                handleGlobalUpdate(data);
+            } catch (e) {
+                console.error('Global poll failed:', e);
+            }
+        }
+
+        function updateAgentStatus(data) {
+            // Reset all
+            document.querySelectorAll('.agent-card').forEach(card => {
+                card.classList.remove('speaking');
+                card.querySelector('.agent-status').textContent = 'Idle';
+                card.querySelector('.agent-status').classList.remove('speaking');
+            });
+
+            // Update speaking agent
+            if (data.agent && data.status === 'speaking') {
+                const card = document.querySelector(`[data-agent="${data.agent}"]`);
+                if (card) {
+                    card.classList.add('speaking');
+                    const status = card.querySelector('.agent-status');
+                    status.textContent = '🎤 Speaking...';
+                    status.classList.add('speaking');
+                }
+                addActivity(`${data.role || data.agent} is speaking`, 'speech');
+            }
+
+            // Update task
+            if (data.task) {
+                document.getElementById('current-task').textContent = data.task;
+            }
+        }
+
+        function setWritingState(active) {
+            const codeView = document.querySelector('.code-view');
+            const codePanel = document.getElementById('code-panel');
+
+            if (active) {
+                codeView.classList.add('writing');
+                codePanel.classList.add('writing-active');
+                // Clear any existing timeout
+                if (writingTimeout) clearTimeout(writingTimeout);
+                // Keep writing state for 3 seconds after last update
+                writingTimeout = setTimeout(() => {
+                    codeView.classList.remove('writing');
+                    codePanel.classList.remove('writing-active');
+                }, 3000);
+            }
+        }
+
+        function handleGlobalUpdate(data) {
+            const { active_project, active_file, last_update, is_new, content, projects } = data;
+
+            // Update project info display
+            if (active_project && active_file) {
+                document.getElementById('active-project').textContent = `📁 ${active_project}`;
+                document.getElementById('active-file').textContent = `📄 ${active_file}`;
+            }
+
+            // Update file tabs with all projects
+            updateFileTabs(projects || [], active_project, active_file);
+
+            // Check if content is new/changed
+            const newHash = hashString(content || '');
+            const contentChanged = newHash !== lastContentHash;
+
+            // If file/project changed or content updated
+            if (is_new || contentChanged) {
+                if (active_project !== currentProject || active_file !== currentFile) {
+                    // Log the switch
+                    if (currentProject && currentProject !== active_project) {
+                        addActivity(`🔄 Switched to project: ${active_project}`, 'file');
+                    }
+                    if (active_file && active_file !== currentFile) {
+                        addActivity(`📄 Active file: ${active_file}`, 'file');
+                    }
+                }
+
+                currentProject = active_project;
+                currentFile = active_file;
+                lastUpdateTime = last_update;
+                lastContentHash = newHash;
+
+                // Update code view directly from response
+                if (content) {
+                    document.getElementById('code-content').textContent = content;
+                    setWritingState(true);
+                }
+            }
+        }
+
+        function hashString(str) {
+            let hash = 0;
+            for (let i = 0; i < str.length; i++) {
+                const char = str.charCodeAt(i);
+                hash = ((hash << 5) - hash) + char;
+                hash = hash & hash;
+            }
+            return hash.toString();
+        }
+
+        function updateFileTabs(projects, activeProject, activeFile) {
+            const container = document.getElementById('file-tabs');
+
+            if (!projects || projects.length === 0) {
+                container.innerHTML = '<div class="file-tab">No projects yet...</div>';
+                return;
+            }
+
+            // Show projects as tabs, highlight active one
+            container.innerHTML = projects.map(p => {
+                const isActive = p === activeProject;
+                return `<div class="file-tab ${isActive ? 'active' : ''}">${p}</div>`;
+            }).join('');
+        }
+
+        function addActivity(message, type = '') {
+            const log = document.getElementById('activity-log');
+            // Avoid duplicate messages
+            const firstItem = log.firstElementChild;
+            if (firstItem) {
+                const existingText = firstItem.textContent;
+                if (existingText.includes(message.substring(2, 30))) {
+                    return;
+                }
+            }
+
+            const item = document.createElement('div');
+            item.className = `activity-item ${type}`;
+            item.innerHTML = `<span class="activity-time">${new Date().toLocaleTimeString()}</span>${message}`;
+            log.insertBefore(item, log.firstChild);
+
+            // Limit
+            while (log.children.length > 50) {
+                log.removeChild(log.lastChild);
+            }
+        }
+
+        // Start polling
+        setInterval(pollStatus, 500);
+        setInterval(pollGlobal, 800);  // Fast polling for live updates
+        pollStatus();
+        pollGlobal();
+
+        addActivity('🚀 Monitor started - watching all projects', '');
+    </script>
+</body>
+</html>

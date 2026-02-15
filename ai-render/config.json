@@ -1,6 +1,6 @@
 {
-    "replicate_api_token": "YOUR_TOKEN_HERE",
-    "output_dir": "D:\\temp\\ai_renders",
+    "replicate_api_token": "r8_C6arblkOoEKstzk2MNHi5dL5ZOkLvT93ArgYh",
+    "output_dir": "/mnt/d/001 - PROJECTS/01 - CLIENT PROJECTS/04 - FANTAL CONSULTING/AFURI - 6365 W Sample Rd/Renderings",
     "revit_http_url": "http://localhost:8765",
     "default_preset": "exterior_day",
     "default_width": 1920,

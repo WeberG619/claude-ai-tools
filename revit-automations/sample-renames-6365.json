@@ -1,0 +1,14 @@
+{
+  "renames": [
+    { "sheetNumber": "G0.01", "newName": "GENERAL SHEET 1" },
+    { "sheetNumber": "G0.02", "newName": "GENERAL SHEET 2" },
+    { "sheetNumber": "G0.03", "newName": "GENERAL SHEET 3" },
+    { "sheetNumber": "A1.0.1", "newName": "FLOOR PLAN - AREA 1" },
+    { "sheetNumber": "A1.0.2", "newName": "FLOOR PLAN - AREA 2" },
+    { "sheetNumber": "A1.0.3", "newName": "FLOOR PLAN - AREA 3" },
+    { "sheetNumber": "A1.0.4", "newName": "FLOOR PLAN - AREA 4" },
+    { "sheetNumber": "A1.0.5", "newName": "FLOOR PLAN - AREA 5" },
+    { "sheetNumber": "A1.1.1", "newName": "ENLARGED PLAN 1" },
+    { "sheetNumber": "A1.1.2", "newName": "ENLARGED PLAN 2" }
+  ]
+}

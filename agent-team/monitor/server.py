@@ -1180,7 +1180,7 @@ async def main():
     await site.start()
 
     print(f"\n{'='*60}")
-    print(f"🖥️  Agent Team Live Monitor")
+    print(f"[*] Agent Team Live Monitor")
     print(f"{'='*60}")
     print(f"Open in browser: http://localhost:{MONITOR_PORT}")
     print(f"{'='*60}\n")

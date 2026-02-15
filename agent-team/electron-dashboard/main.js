@@ -4,7 +4,7 @@ const fs = require('fs');
 const WebSocket = require('ws');
 
 // Server endpoints
-const WS_URL = 'ws://localhost:8890/ws';
+const WS_URL = 'ws://127.0.0.1:8890/ws';  // Use IPv4 explicitly (localhost resolves to IPv6 on WSL)
 const STATUS_FILE = 'D:\\_CLAUDE-TOOLS\\agent-team\\agent_status.json';
 
 let mainWindow;
@@ -24,7 +24,7 @@ function createWindow() {
             contextIsolation: false
         },
         frame: true,
-        title: 'Agent Team - Live Dashboard'
+        title: 'Agent Team v2.1 - Live Dashboard'
     });
 
     // Load the dashboard HTML
@@ -323,7 +323,7 @@ ipcMain.on('approve-action', async (event, data) => {
         });
 
         const options = {
-            hostname: 'localhost',
+            hostname: '127.0.0.1',  // IPv4 explicit
             port: 8890,
             path: '/api/approve',
             method: 'POST',
@@ -356,7 +356,7 @@ ipcMain.on('set-execution-mode', async (event, enabled) => {
         const postData = JSON.stringify({ enabled });
 
         const options = {
-            hostname: 'localhost',
+            hostname: '127.0.0.1',  // IPv4 explicit
             port: 8890,
             path: '/api/execution-mode',
             method: 'POST',
@@ -415,9 +415,40 @@ function showFileInView(filePath) {
     console.log('Opening file:', filePath);
 }
 
+// Cleanup function to stop all agent processes when app closes
+function cleanupProcesses() {
+    console.log('=== CLEANUP: Stopping all agent processes ===');
+    const { execSync } = require('child_process');
+
+    try {
+        // Kill agent team processes
+        execSync('pkill -9 -f "run_team" 2>/dev/null || true', { stdio: 'ignore' });
+        execSync('pkill -9 -f "autonomous" 2>/dev/null || true', { stdio: 'ignore' });
+
+        // Kill voice/TTS processes
+        execSync('pkill -9 -f "speak.py" 2>/dev/null || true', { stdio: 'ignore' });
+        execSync('pkill -9 -f "edge-tts" 2>/dev/null || true', { stdio: 'ignore' });
+        execSync('pkill -9 -f "mpv" 2>/dev/null || true', { stdio: 'ignore' });
+        execSync('pkill -9 -f "voice-mcp" 2>/dev/null || true', { stdio: 'ignore' });
+
+        // Kill monitor server
+        execSync('pkill -9 -f "monitor/server.py" 2>/dev/null || true', { stdio: 'ignore' });
+
+        console.log('=== CLEANUP: All processes stopped ===');
+    } catch (e) {
+        console.log('Cleanup error (non-fatal):', e.message);
+    }
+}
+
 app.whenReady().then(createWindow);
 
+app.on('before-quit', () => {
+    console.log('App quitting - running cleanup...');
+    cleanupProcesses();
+});
+
 app.on('window-all-closed', () => {
+    cleanupProcesses();
     if (process.platform !== 'darwin') {
         app.quit();
     }

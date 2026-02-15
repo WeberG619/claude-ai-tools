@@ -1,0 +1,51 @@
+WEBER GOUIN
+Sandpoint, ID | weber@bimopsstudio.com | (786) 587-9726
+
+PROFESSIONAL SUMMARY
+Detail-oriented professional with expertise in BIM/Revit architecture, technical writing, data management, and AI-assisted content creation. Skilled in translating complex technical concepts into clear documentation. Proficient with AI tools including Claude, ChatGPT, and automation workflows. Strong analytical and problem-solving abilities with experience in construction documentation, data entry, and content production.
+
+SKILLS
+- Technical Writing & Documentation
+- Content Writing & Editing
+- Proofreading & Quality Assurance
+- Data Entry & Spreadsheet Management (Excel, Google Sheets)
+- AI Tools: Claude, ChatGPT, Prompt Engineering
+- BIM/Revit Architecture & Construction Documents
+- Research & Analysis
+- PDF/CAD Conversion & Document Processing
+- Python Scripting & Automation
+- Project Coordination
+
+EXPERIENCE
+
+BIM Ops Studio | Principal / BIM Specialist
+2024 - Present
+- Develop and manage Building Information Models (BIM) for architectural projects using Autodesk Revit
+- Produce construction document sets including floor plans, elevations, sections, and details
+- Coordinate with architects and engineers on multi-discipline projects
+- Create technical documentation and project specifications
+- Automate workflows using Python scripting and AI integration
+
+Architectural Drafter / Technical Professional
+2020 - 2024
+- Prepared architectural drawings and construction documents
+- Performed quality assurance reviews on document sets
+- Managed project data and maintained organized file systems
+- Wrote technical reports and project documentation
+
+Content & Data Professional
+Freelance
+- Create professional content using AI-assisted workflows
+- Perform data entry, spreadsheet management, and document formatting
+- Proofread and edit documents for accuracy and clarity
+- Research and compile information for various projects
+- Write scripts, articles, and marketing content
+
+EDUCATION
+Architecture & Building Technology
+Professional Development in BIM, Revit, and Construction Documentation
+
+TOOLS & TECHNOLOGY
+Autodesk Revit | AutoCAD | Microsoft Office Suite | Google Workspace
+Python | AI/ML Tools (Claude, ChatGPT) | Adobe Acrobat
+Bluebeam Revu | Project Management Software

@@ -1,0 +1,76 @@
+{
+  "timestamp": "2026-02-05T18:24:18.258104",
+  "total": 17,
+  "ok": 17,
+  "fail": 0,
+  "servers": {
+    "ai-render-mcp": {
+      "status": "OK",
+      "detail": "Files exist"
+    },
+    "aider-mcp-server-llama4": {
+      "status": "OK",
+      "detail": "Files exist"
+    },
+    "aider-mcp-server-ollama": {
+      "status": "OK",
+      "detail": "Files exist"
+    },
+    "aider-mcp-server-quasar": {
+      "status": "OK",
+      "detail": "Files exist"
+    },
+    "autocad-mcp": {
+      "status": "OK",
+      "detail": "Files exist"
+    },
+    "bluebeam": {
+      "status": "OK",
+      "detail": "Files exist"
+    },
+    "claude-memory": {
+      "status": "OK",
+      "detail": "Files exist"
+    },
+    "image-gen": {
+      "status": "OK",
+      "detail": "Files exist"
+    },
+    "ml-floor-plan": {
+      "status": "OK",
+      "detail": "Files exist"
+    },
+    "obs": {
+      "status": "OK",
+      "detail": "Files exist"
+    },
+    "playwright": {
+      "status": "OK",
+      "detail": "Files exist"
+    },
+    "revit-2025": {
+      "status": "OK",
+      "detail": "Files exist"
+    },
+    "revit-2026": {
+      "status": "OK",
+      "detail": "Files exist"
+    },
+    "sqlite-server": {
+      "status": "OK",
+      "detail": "Files exist"
+    },
+    "video-mcp": {
+      "status": "OK",
+      "detail": "Files exist"
+    },
+    "voice": {
+      "status": "OK",
+      "detail": "Files exist"
+    },
+    "windows-browser": {
+      "status": "OK",
+      "detail": "Files exist"
+    }
+  }
+}

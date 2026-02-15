@@ -1,0 +1,152 @@
+<Window x:Class="RevitStarterKit.UI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Revit Starter Kit"
+        Width="480" Height="420"
+        MinWidth="400" MinHeight="350"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="CanResizeWithGrip"
+        ShowInTaskbar="False"
+        Background="#FAFAFA">
+
+    <!-- ================================================================
+         MainWindow.xaml - Sample WPF Dialog for Revit
+
+         This demonstrates a clean, professional WPF dialog layout
+         that works well inside Revit. Key design decisions:
+           - Fixed-width for simplicity (no complex responsive layout)
+           - Clear visual hierarchy with grouped controls
+           - Standard OK/Cancel buttons at the bottom
+           - Keyboard shortcuts (Enter=OK, Escape=Cancel)
+         ================================================================ -->
+
+    <Window.Resources>
+        <!-- Consistent margin for form controls -->
+        <Thickness x:Key="FieldMargin">0,4,0,4</Thickness>
+
+        <!-- Styled GroupBox -->
+        <Style TargetType="GroupBox">
+            <Setter Property="Margin" Value="0,0,0,12"/>
+            <Setter Property="Padding" Value="8"/>
+        </Style>
+
+        <!-- Styled Button -->
+        <Style x:Key="ActionButton" TargetType="Button">
+            <Setter Property="MinWidth" Value="90"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Margin" Value="6,0,0,0"/>
+            <Setter Property="Padding" Value="12,4"/>
+            <Setter Property="FontSize" Value="13"/>
+        </Style>
+
+        <!-- Primary (accent) button style -->
+        <Style x:Key="PrimaryButton" TargetType="Button" BasedOn="{StaticResource ActionButton}">
+            <Setter Property="Background" Value="#0078D4"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderBrush" Value="#005A9E"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#106EBE"/>
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Background" Value="#CCCCCC"/>
+                    <Setter Property="Foreground" Value="#888888"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
+    <Grid Margin="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>   <!-- Header -->
+            <RowDefinition Height="*"/>      <!-- Content -->
+            <RowDefinition Height="Auto"/>   <!-- Buttons -->
+        </Grid.RowDefinitions>
+
+        <!-- ============================================================
+             HEADER
+             ============================================================ -->
+        <StackPanel Grid.Row="0" Margin="0,0,0,12">
+            <TextBlock Text="Revit Starter Kit"
+                       FontSize="20" FontWeight="SemiBold"
+                       Foreground="#333333"/>
+            <TextBlock x:Name="txtDocumentName"
+                       Text="No document loaded"
+                       FontSize="12" Foreground="#888888"
+                       Margin="0,4,0,0"/>
+        </StackPanel>
+
+        <!-- ============================================================
+             MAIN CONTENT
+             ============================================================ -->
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <StackPanel>
+
+                <!-- Category Selection -->
+                <GroupBox Header="Element Selection">
+                    <StackPanel>
+                        <TextBlock Text="Category:" FontWeight="Medium"/>
+                        <ComboBox x:Name="cmbCategory"
+                                  Margin="{StaticResource FieldMargin}"
+                                  IsEditable="True"
+                                  IsTextSearchEnabled="True"
+                                  SelectionChanged="CmbCategory_SelectionChanged"/>
+
+                        <TextBlock Text="Filter by name (optional):" FontWeight="Medium"
+                                   Margin="0,8,0,0"/>
+                        <TextBox x:Name="txtFilter"
+                                 Margin="{StaticResource FieldMargin}"
+                                 Height="26"
+                                 VerticalContentAlignment="Center"
+                                 ToolTip="Enter text to filter elements by name. Leave blank to include all."/>
+                    </StackPanel>
+                </GroupBox>
+
+                <!-- Options -->
+                <GroupBox Header="Options">
+                    <StackPanel>
+                        <CheckBox x:Name="chkIncludeTypes"
+                                  Content="Include type parameters in output"
+                                  Margin="{StaticResource FieldMargin}"
+                                  IsChecked="True"/>
+
+                        <CheckBox x:Name="chkSelectedOnly"
+                                  Content="Process selected elements only"
+                                  Margin="{StaticResource FieldMargin}"
+                                  IsChecked="False"/>
+                    </StackPanel>
+                </GroupBox>
+
+                <!-- Status -->
+                <Border Background="#F0F0F0" CornerRadius="4" Padding="10">
+                    <TextBlock x:Name="txtStatus"
+                               Text="Select a category to begin."
+                               FontSize="12" Foreground="#666666"
+                               TextWrapping="Wrap"/>
+                </Border>
+
+            </StackPanel>
+        </ScrollViewer>
+
+        <!-- ============================================================
+             BUTTON BAR
+             ============================================================ -->
+        <StackPanel Grid.Row="2"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    Margin="0,16,0,0">
+
+            <Button Content="Cancel"
+                    Style="{StaticResource ActionButton}"
+                    IsCancel="True"
+                    Click="BtnCancel_Click"/>
+
+            <Button x:Name="btnOk"
+                    Content="OK"
+                    Style="{StaticResource PrimaryButton}"
+                    IsDefault="True"
+                    Click="BtnOk_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

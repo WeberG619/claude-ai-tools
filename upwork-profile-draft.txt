@@ -1,0 +1,47 @@
+UPWORK PROFILE DRAFT - Weber Gouin
+===================================
+
+PROFILE TITLE:
+Revit API Developer & BIM Automation Specialist | C# Plugins | AI Integration
+
+---
+
+PROFILE OVERVIEW / BIO:
+
+I build custom Revit plugins, automate BIM workflows, and integrate AI into architectural production pipelines. I don't do manual drafting — I build the tools that make drafting faster.
+
+What I do:
+• Custom Revit API plugins (C#/.NET) — add-ins, automation tools, data extraction, batch processing
+• BIM workflow automation — Dynamo scripts, Python automation, batch operations across models
+• AI + Revit integration — I built RevitMCPBridge, an open-source bridge connecting AI assistants directly to Revit for automated model operations
+• Revit template and family development — standards, shared parameters, project templates
+• Data extraction and reporting — schedule exports, model auditing, QA/QC automation
+
+Background: I work daily in Revit 2025/2026 on commercial architecture, medical facilities, and retail projects. I understand production workflows because I run them — which means the tools I build solve real problems, not theoretical ones.
+
+Tech stack: C#, .NET, Revit API, Python, Dynamo, WPF/XAML, AI/LLM integration, named pipes IPC, Git.
+
+---
+
+SKILLS:
+- Autodesk Revit
+- Revit API
+- C#
+- .NET Framework
+- Python
+- Dynamo (BIM)
+- BIM (Building Information Modeling)
+- Revit Family Creation
+- Plugin Development
+- Workflow Automation
+- API Development
+- WPF
+- Architecture
+- Construction Documents
+- AI Integration
+
+---
+
+EXPERIENCE LEVEL: Expert
+HOURLY RATE: $75-100/hr
+PROJECT PREFERENCE: Both short-term and long-term

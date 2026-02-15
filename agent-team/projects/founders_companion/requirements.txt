@@ -1,0 +1,30 @@
+# Founder's Companion - Dependencies
+
+# Web Framework
+fastapi>=0.109.0
+uvicorn>=0.27.0
+python-multipart>=0.0.6
+
+# HTTP Client (for OpenAI)
+httpx>=0.26.0
+
+# Data Validation
+pydantic>=2.5.0
+pydantic[email]
+
+# Environment
+python-dotenv>=1.0.0
+
+# Encryption (for Vault)
+cryptography>=41.0.0
+
+# Database (SQLite is built-in, but we need this for async support if needed)
+# aiosqlite>=0.19.0  # Optional for async
+
+# Testing
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+
+# Development
+black>=23.0.0
+isort>=5.12.0

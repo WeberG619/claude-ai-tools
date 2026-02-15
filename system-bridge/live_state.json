@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-01-20T08:38:14.434305",
+  "generated_at": "2026-02-15T04:00:09.977560",
   "source": {
-    "daemon_version": "2.0.0",
+    "daemon_version": "2.1.0",
     "hostname": "DESKTOP-01CMLA9",
-    "pid": 13072
+    "pid": 35836
   },
-  "timestamp": "2026-01-20T08:38:08.601038",
-  "active_window": "Welcome - Visual Studio Code",
+  "timestamp": "2026-02-15T04:00:03.824259",
+  "active_window": "C:\\WINDOWS\\system32\\wsl.exe",
   "monitors": {
     "screens": [
       {
@@ -55,31 +55,31 @@
   },
   "system": {
     "cpu_percent": 0,
-    "memory_percent": 45,
+    "memory_percent": 42,
     "memory_total_gb": 64,
-    "memory_used_gb": 29
+    "memory_used_gb": 27.1
   },
-  "clipboard_preview": "",
+  "clipboard_preview": "1. Create Supabase project and run 001_initial_schema.sql\n  2. Enable email+password auth + Google O...",
   "recent_files": [
-    "Revit (4)",
-    "AVENTURA ECO OFFICES - OPTION-2",
+    "Presentations",
+    "AI_System_Showcase",
+    "Spreadsheets",
+    "Q1_Expense_Dashboard",
+    "Documents",
+    "AI_System_Proposal",
     "The Internet (2)",
-    "msteamssystem-initiated (137)",
-    "Parking",
-    "Parking Space - TYP",
-    "03 Drawings (2)",
-    "R25 BHN CATH SUITES - PHASE2 - ARCH",
-    "EDIT - R25 MSMC Histology",
-    "EDIT - R25 SMH ELEV 1 AND 2_ARCH",
-    "04 SD - DD",
-    "R25 BHN CATH SUITES_PHASE2_clean_ARCH - 1-12-26",
-    "SMH ELEV 1 & 2 FIV PLAN",
-    "R25 SMH ELEV 1 AND 2_ARCH - 12-16-25",
-    "20 NW 76 ST - 4-STORY - Revised"
+    "ms-settingssound (3)",
+    "msteamssystem-initiated (141)",
+    "edited",
+    "cli",
+    "shortcuts",
+    "DaVinci_Resolve_20.3.2_Windows",
+    "obs-mcp",
+    "_demo_finance"
   ],
   "applications": [
     {
-      "Id": 45236,
+      "Id": 17500,
       "ProcessName": "ApplicationFrameHost",
       "MonitorIndex": 0,
       "Monitor": "right",
@@ -94,7 +94,7 @@
       }
     },
     {
-      "Id": 32452,
+      "Id": 5092,
       "ProcessName": "CalculatorApp",
       "MonitorIndex": 0,
       "Monitor": "right",
@@ -109,22 +109,22 @@
       }
     },
     {
-      "Id": 12356,
+      "Id": 43960,
       "ProcessName": "chrome",
       "MonitorIndex": 0,
       "Monitor": "right",
-      "MainWindowTitle": "YouTube - Google Chrome",
+      "MainWindowTitle": "Resend - Google Chrome",
       "Position": {
-        "Left": -7,
-        "Bottom": 1408,
-        "Top": -7,
-        "Right": 2568,
-        "Height": 1415,
-        "Width": 2575
+        "Left": 10,
+        "Bottom": 1390,
+        "Top": 10,
+        "Right": 1275,
+        "Height": 1380,
+        "Width": 1265
       }
     },
     {
-      "Id": 28028,
+      "Id": 33180,
       "ProcessName": "Code",
       "MonitorIndex": 2,
       "Monitor": "left",
@@ -139,11 +139,26 @@
       }
     },
     {
-      "Id": 44924,
+      "Id": 4848,
+      "ProcessName": "EXCEL",
+      "MonitorIndex": -1,
+      "Monitor": "unknown",
+      "MainWindowTitle": "Q1_Expense_Dashboard - Excel",
+      "Position": {
+        "Left": -21333,
+        "Bottom": -21307,
+        "Top": -21333,
+        "Right": -21175,
+        "Height": 26,
+        "Width": 158
+      }
+    },
+    {
+      "Id": 18544,
       "ProcessName": "ms-teams",
       "MonitorIndex": -1,
       "Monitor": "unknown",
-      "MainWindowTitle": "Chat | Paola Gomez | BD Architect llc | weber@bdarchitect.net | Microsoft Teams",
+      "MainWindowTitle": "Chat | Bruce Davis | BD Architect llc | weber@bdarchitect.net | Microsoft Teams",
       "Position": {
         "Left": -21333,
         "Bottom": -21307,
@@ -154,26 +169,11 @@
       }
     },
     {
-      "Id": 31640,
-      "ProcessName": "notepad",
-      "MonitorIndex": -1,
-      "Monitor": "unknown",
-      "MainWindowTitle": "*Untitled - Notepad",
-      "Position": {
-        "Left": -21333,
-        "Bottom": -21307,
-        "Top": -21333,
-        "Right": -21175,
-        "Height": 26,
-        "Width": 158
-      }
-    },
-    {
-      "Id": 41624,
-      "ProcessName": "Revit",
+      "Id": 10232,
+      "ProcessName": "POWERPNT",
       "MonitorIndex": 1,
       "Monitor": "center",
-      "MainWindowTitle": "Autodesk Revit 2026.2 - [AVENTURA ECO OFFICES - OPTION-2 - Floor Plan: LEVEL 1- FLOOR PLAN Copy 1]",
+      "MainWindowTitle": "AI_System_Showcase - PowerPoint",
       "Position": {
         "Left": -2567,
         "Bottom": 1408,
@@ -184,7 +184,7 @@
       }
     },
     {
-      "Id": 46136,
+      "Id": 33092,
       "ProcessName": "SystemSettings",
       "MonitorIndex": 0,
       "Monitor": "right",
@@ -199,7 +199,7 @@
       }
     },
     {
-      "Id": 54828,
+      "Id": 15764,
       "ProcessName": "TextInputHost",
       "MonitorIndex": 0,
       "Monitor": "right",
@@ -214,132 +214,158 @@
       }
     },
     {
-      "Id": 28668,
+      "Id": 18168,
       "ProcessName": "Wispr Flow",
-      "MonitorIndex": -1,
-      "Monitor": "unknown",
+      "MonitorIndex": 0,
+      "Monitor": "right",
       "MainWindowTitle": "Hub",
       "Position": {
-        "Left": -21333,
-        "Bottom": -21307,
-        "Top": -21333,
-        "Right": -21175,
-        "Height": 26,
-        "Width": 158
+        "Left": 604,
+        "Bottom": 1125,
+        "Top": 274,
+        "Right": 1955,
+        "Height": 851,
+        "Width": 1351
+      }
+    },
+    {
+      "Id": 44376,
+      "ProcessName": "wsl",
+      "MonitorIndex": 0,
+      "Monitor": "right",
+      "MainWindowTitle": "C:\\WINDOWS\\system32\\wsl.exe",
+      "Position": {
+        "Left": 177,
+        "Bottom": 694,
+        "Top": 177,
+        "Right": 1089,
+        "Height": 517,
+        "Width": 912
       }
     }
   ],
-  "revit": {},
+  "revit": {
+    "connected": false,
+    "running": false
+  },
   "bluebeam": {
     "running": false
   },
+  "email": {
+    "monitoring": true,
+    "last_check": "2026-02-15T03:59:46.863910",
+    "unread_count": 0,
+    "urgent_count": 0,
+    "needs_response_count": 0,
+    "alerts": []
+  },
   "recent_events": [
     {
-      "timestamp": "2026-01-20T08:38:10.237858",
+      "timestamp": "2026-02-15T03:07:12.314866",
       "type": "app_opened",
-      "details": "Revit: Autodesk Revit 2026.2 - [AVENTURA ECO OFFICES - OPTION-2 - Floor Plan: LEVEL 1- FLOOR PLAN Copy 1]"
+      "details": "chrome: Resend - Google Chrome"
     },
     {
-      "timestamp": "2026-01-20T08:38:10.238855",
+      "timestamp": "2026-02-15T03:07:12.591949",
+      "type": "app_closed",
+      "details": "chrome: Sign in - Google Accounts - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-15T03:07:25.882917",
       "type": "app_opened",
-      "details": "ApplicationFrameHost: Settings"
+      "details": "chrome: Emails \u00fa Resend - Google Chrome"
     },
     {
-      "timestamp": "2026-01-20T08:38:10.240862",
+      "timestamp": "2026-02-15T03:07:26.178013",
+      "type": "app_closed",
+      "details": "chrome: Resend - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-15T03:07:54.651972",
       "type": "app_opened",
-      "details": "ms-teams: Chat | Paola Gomez | BD Architect llc | [email] | Microsoft Teams"
+      "details": "chrome: API Keys \u00fa Resend - Google Chrome"
     },
     {
-      "timestamp": "2026-01-20T08:38:10.241856",
+      "timestamp": "2026-02-15T03:07:54.952803",
+      "type": "app_closed",
+      "details": "chrome: Emails \u00fa Resend - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-15T03:11:24.787122",
       "type": "app_opened",
-      "details": "notepad: *Untitled - Notepad"
+      "details": "chrome: Domains \u00fa Resend - Google Chrome"
     },
     {
-      "timestamp": "2026-01-20T08:38:10.242855",
+      "timestamp": "2026-02-15T03:11:25.093806",
       "type": "app_closed",
-      "details": "Photos: ChatGPT Image Nov 25, 2025, 10_59_32 AM.png"
+      "details": "chrome: API Keys \u00fa Resend - Google Chrome"
     },
     {
-      "timestamp": "2026-01-20T08:38:10.243855",
+      "timestamp": "2026-02-15T03:13:00.833682",
+      "type": "app_opened",
+      "details": "chrome: Resend - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-15T03:13:01.095236",
       "type": "app_closed",
-      "details": "msedge: Wayward Pines | Disney+ and 5 more pages - Profile 1 - Microsoft? Edge"
+      "details": "chrome: Domains \u00fa Resend - Google Chrome"
     },
     {
-      "timestamp": "2026-01-20T08:38:10.244861",
-      "type": "app_closed",
-      "details": "Photos: revit_auto_20251129_191249_render_20251129_191623.png"
-    },
-    {
-      "timestamp": "2026-01-20T08:38:10.246855",
-      "type": "app_closed",
-      "details": "Revit: Autodesk Revit 2026.2 - [20 NW 76 ST - 4-STORY - Revised - Sheet: A-1.2 - 4TH FLOOR PLAN]"
-    },
-    {
-      "timestamp": "2026-01-20T08:38:10.247852",
-      "type": "app_closed",
-      "details": "Photos: render_florida_modern_controlnet_20251130_061539.png"
-    },
-    {
-      "timestamp": "2026-01-20T08:38:10.248986",
-      "type": "app_closed",
-      "details": "SnippingTool: Snipping Tool"
-    },
-    {
-      "timestamp": "2026-01-20T08:38:10.250545",
-      "type": "app_closed",
-      "details": "chrome: Inbox (45) - [email] - Gmail - Google Chrome"
-    },
-    {
-      "timestamp": "2026-01-20T08:38:10.251541",
-      "type": "app_closed",
-      "details": "ms-teams: Chat | M Isa Fantal | Personal | [email] | Microsoft Teams"
-    },
-    {
-      "timestamp": "2026-01-20T08:38:10.252546",
-      "type": "app_closed",
-      "details": "Revu: 130_NE_78th_Street_OPTION_B_Urban_Industrial - Bluebeam Revu x64"
-    },
-    {
-      "timestamp": "2026-01-20T08:38:10.254550",
-      "type": "app_closed",
-      "details": "explorer: Client"
-    },
-    {
-      "timestamp": "2026-01-20T08:38:10.255548",
-      "type": "app_closed",
-      "details": "WinStore.App: Microsoft Store"
-    },
-    {
-      "timestamp": "2026-01-20T08:38:10.256545",
-      "type": "app_closed",
-      "details": "ApplicationFrameHost: Microsoft Store"
-    },
-    {
-      "timestamp": "2026-01-20T08:38:10.258540",
-      "type": "app_closed",
-      "details": "msedge: Welcome and 4 more pages - Personal - Microsoft? Edge"
-    },
-    {
-      "timestamp": "2026-01-20T08:38:10.259239",
-      "type": "app_closed",
-      "details": "OUTLOOK: Inbox - [email] - Outlook"
-    },
-    {
-      "timestamp": "2026-01-20T08:38:10.261219",
-      "type": "app_closed",
-      "details": "WINWORD: Let_Go_Let_God_Lead_Sermon_Revised - Word"
-    },
-    {
-      "timestamp": "2026-01-20T08:38:11.053685",
+      "timestamp": "2026-02-15T03:30:06.904285",
       "type": "focus_changed",
-      "details": "Welcome - Visual Studio Code"
+      "details": "C:\\WINDOWS\\SYSTEM32\\tasklist.exe"
+    },
+    {
+      "timestamp": "2026-02-15T03:30:19.286899",
+      "type": "focus_changed",
+      "details": "Restore pages?"
+    },
+    {
+      "timestamp": "2026-02-15T03:31:37.843959",
+      "type": "focus_changed",
+      "details": "C:\\WINDOWS\\SYSTEM32\\tasklist.exe"
+    },
+    {
+      "timestamp": "2026-02-15T03:31:50.827433",
+      "type": "focus_changed",
+      "details": "Restore pages?"
+    },
+    {
+      "timestamp": "2026-02-15T03:34:40.315634",
+      "type": "focus_changed",
+      "details": "C:\\WINDOWS\\SYSTEM32\\tasklist.exe"
+    },
+    {
+      "timestamp": "2026-02-15T03:34:52.713998",
+      "type": "focus_changed",
+      "details": "Restore pages?"
+    },
+    {
+      "timestamp": "2026-02-15T03:36:11.351983",
+      "type": "focus_changed",
+      "details": "C:\\WINDOWS\\SYSTEM32\\tasklist.exe"
+    },
+    {
+      "timestamp": "2026-02-15T03:36:24.290483",
+      "type": "focus_changed",
+      "details": "Restore pages?"
+    },
+    {
+      "timestamp": "2026-02-15T04:00:05.466597",
+      "type": "app_opened",
+      "details": "wsl: C:\\WINDOWS\\system32\\wsl.exe"
+    },
+    {
+      "timestamp": "2026-02-15T04:00:06.414026",
+      "type": "focus_changed",
+      "details": "C:\\WINDOWS\\system32\\wsl.exe"
     }
   ],
   "daemon_stats": {
     "started_at": "2025-12-04T10:13:59.664371",
-    "updates": 6811,
+    "updates": 9943,
     "errors": 0,
-    "restarts": 3
+    "restarts": 5
   },
-  "hash": "524c62b897689728"
+  "hash": "9130c18dd2dcfe4a"
 }

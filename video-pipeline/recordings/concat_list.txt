@@ -1,0 +1,3 @@
+file '/mnt/d/_CLAUDE-TOOLS/video-pipeline/recordings/title_card_video.mp4'
+file '/mnt/d/_CLAUDE-TOOLS/video-pipeline/recordings/demo_speedup.mp4'
+file '/mnt/d/_CLAUDE-TOOLS/video-pipeline/recordings/end_card_video.mp4'

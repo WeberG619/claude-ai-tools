@@ -1,0 +1,1 @@
+(function() { window.location.href = "https://sb.resend.com/auth/v1/verify?token=6bcd1d9dc7a0d226c6de8fc9e5fa3d9e54851ef89d47065a1bded4da&type=recovery&redirect_to=https://resend.com/auth/change-password"; return "navigating to reset link"; })();

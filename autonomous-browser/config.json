@@ -1,0 +1,27 @@
+{
+  "browser": {
+    "headless": false,
+    "proxy": null,
+    "user_agent": null,
+    "window_size": [1920, 1080]
+  },
+  "human_behavior": {
+    "typing_speed_range": [5, 12],
+    "mouse_movement_steps": [15, 25],
+    "enable_random_delays": true,
+    "enable_mouse_jitter": true
+  },
+  "vault": {
+    "auto_lock_minutes": 0,
+    "require_master_password": false
+  },
+  "logging": {
+    "retention_days": 90,
+    "log_screenshots": true,
+    "log_sensitive_actions": true
+  },
+  "sessions": {
+    "auto_save_cookies": true,
+    "cookie_expiry_days": 30
+  }
+}

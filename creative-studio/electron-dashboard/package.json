@@ -1,0 +1,15 @@
+{
+  "name": "creative-studio",
+  "version": "1.0.0",
+  "description": "Creative Studio - AI Agent Dashboard for Presentations & Content",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron ."
+  },
+  "author": "Weber Gouin",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^28.0.0"
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "name": "agent-team-dashboard",
+  "version": "2.1.0",
+  "description": "Live Agent Team Dashboard v2 - Multi-builder support with real-time visual sync",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev",
+    "build": "electron-builder --win",
+    "build:portable": "electron-builder --win portable",
+    "dist": "electron-builder --win --publish never"
+  },
+  "keywords": [
+    "agent",
+    "dashboard",
+    "electron",
+    "ai",
+    "collaboration"
+  ],
+  "author": "Weber Gouin",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^28.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "dependencies": {
+    "mammoth": "^1.11.0",
+    "pdfjs-dist": "^5.4.624",
+    "ws": "^8.16.0",
+    "xlsx": "^0.18.5"
+  },
+  "build": {
+    "appId": "com.bimops.agent-team",
+    "productName": "Agent Team Dashboard",
+    "copyright": "Copyright © 2026 Weber Gouin / BIM Ops Studio",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "**/*",
+      "!dist/**",
+      "!build/**",
+      "!*.md"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "build/icon.ico",
+      "artifactName": "${productName}-${version}-Setup.${ext}",
+      "signAndEditExecutable": false
+    },
+    "forceCodeSigning": false,
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Agent Team Dashboard"
+    },
+    "portable": {
+      "artifactName": "${productName}-${version}-Portable.${ext}"
+    }
+  }
+}

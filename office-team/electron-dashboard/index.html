@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Office Command Center</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #F5F7FA 0%, #E4E9F2 100%);
+            color: #2C3E50;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #3498DB 0%, #2980B9 100%);
+            padding: 15px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            color: white;
+            font-size: 1.5em;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .header-status {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .status-indicator {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.2);
+            padding: 8px 15px;
+            border-radius: 20px;
+            color: white;
+        }
+
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #2ECC71;
+            animation: pulse 2s infinite;
+        }
+
+        .status-dot.speaking {
+            background: #F39C12;
+            animation: pulse 0.5s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(1.1); }
+        }
+
+        /* Main layout */
+        .main-container {
+            display: flex;
+            height: calc(100vh - 70px);
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 320px;
+            background: white;
+            border-right: 1px solid #E0E6ED;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Agent panel */
+        .agent-panel {
+            padding: 20px;
+            border-bottom: 1px solid #E0E6ED;
+        }
+
+        .agent-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .agent-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8em;
+            background: #EBF5FB;
+            border: 3px solid #3498DB;
+        }
+
+        .agent-avatar.speaking {
+            border-color: #F39C12;
+            animation: speakPulse 0.8s infinite;
+        }
+
+        @keyframes speakPulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(243, 156, 18, 0.4); }
+            50% { box-shadow: 0 0 0 10px rgba(243, 156, 18, 0); }
+        }
+
+        .agent-details h3 {
+            font-size: 1.1em;
+            color: #2C3E50;
+        }
+
+        .agent-details p {
+            font-size: 0.85em;
+            color: #7F8C8D;
+        }
+
+        .agent-message {
+            background: #F8FAFC;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 0.9em;
+            line-height: 1.5;
+            color: #34495E;
+            max-height: 150px;
+            overflow-y: auto;
+        }
+
+        /* Quick actions */
+        .quick-actions {
+            padding: 20px;
+            flex: 1;
+            overflow-y: auto;
+        }
+
+        .quick-actions h4 {
+            color: #7F8C8D;
+            font-size: 0.75em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .action-btn {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            width: 100%;
+            padding: 12px 15px;
+            background: white;
+            border: 1px solid #E0E6ED;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        .action-btn:hover {
+            background: #EBF5FB;
+            border-color: #3498DB;
+        }
+
+        .action-btn .icon {
+            font-size: 1.3em;
+        }
+
+        .action-btn .label {
+            font-size: 0.9em;
+            color: #2C3E50;
+        }
+
+        /* Main content area */
+        .content-area {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background: #F5F7FA;
+        }
+
+        /* Panel header */
+        .panel-header {
+            padding: 20px 25px;
+            background: white;
+            border-bottom: 1px solid #E0E6ED;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .panel-header h2 {
+            font-size: 1.2em;
+            color: #2C3E50;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Panel content */
+        .panel-content {
+            flex: 1;
+            padding: 25px;
+            overflow-y: auto;
+        }
+
+        /* View panels */
+        .view-panel {
+            display: none;
+            height: 100%;
+        }
+
+        .view-panel.active {
+            display: block;
+        }
+
+        /* Email panel */
+        .email-draft {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .email-field {
+            margin-bottom: 15px;
+        }
+
+        .email-field label {
+            display: block;
+            font-size: 0.8em;
+            color: #7F8C8D;
+            margin-bottom: 5px;
+        }
+
+        .email-field input, .email-field textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #E0E6ED;
+            border-radius: 6px;
+            font-size: 0.95em;
+        }
+
+        .email-field textarea {
+            min-height: 200px;
+            resize: vertical;
+        }
+
+        /* Task list */
+        .task-list {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .task-item {
+            padding: 15px 20px;
+            border-bottom: 1px solid #F0F3F5;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .task-item:last-child {
+            border-bottom: none;
+        }
+
+        .task-checkbox {
+            width: 22px;
+            height: 22px;
+            border: 2px solid #BDC3C7;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .task-checkbox:hover {
+            border-color: #3498DB;
+        }
+
+        .task-checkbox.completed {
+            background: #2ECC71;
+            border-color: #2ECC71;
+        }
+
+        .task-content {
+            flex: 1;
+        }
+
+        .task-title {
+            font-size: 0.95em;
+            color: #2C3E50;
+        }
+
+        .task-meta {
+            font-size: 0.8em;
+            color: #95A5A6;
+            margin-top: 3px;
+        }
+
+        .task-priority {
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.75em;
+            font-weight: 500;
+        }
+
+        .task-priority.high {
+            background: #FDEDEC;
+            color: #E74C3C;
+        }
+
+        .task-priority.normal {
+            background: #EBF5FB;
+            color: #3498DB;
+        }
+
+        /* Calendar preview */
+        .calendar-preview {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .calendar-event {
+            padding: 12px;
+            border-left: 4px solid #3498DB;
+            background: #F8FAFC;
+            margin-bottom: 10px;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .calendar-event .time {
+            font-size: 0.8em;
+            color: #7F8C8D;
+        }
+
+        .calendar-event .title {
+            font-size: 0.95em;
+            color: #2C3E50;
+            margin-top: 3px;
+        }
+
+        /* Team panel */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .team-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+
+        .team-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .team-card .icon {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .team-card h4 {
+            color: #2C3E50;
+            margin-bottom: 5px;
+        }
+
+        .team-card p {
+            font-size: 0.85em;
+            color: #7F8C8D;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <h1>🏢 Office Command Center</h1>
+        <div class="header-status">
+            <div class="status-indicator">
+                <div class="status-dot" id="statusDot"></div>
+                <span id="statusText">Ready</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main container -->
+    <div class="main-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <!-- Current agent -->
+            <div class="agent-panel">
+                <div class="agent-info">
+                    <div class="agent-avatar" id="agentAvatar">🏢</div>
+                    <div class="agent-details">
+                        <h3 id="agentName">Office Team</h3>
+                        <p id="agentRole">Ready to assist</p>
+                    </div>
+                </div>
+                <div class="agent-message" id="agentMessage">
+                    Welcome to Office Command Center. Your AI team is ready to help with emails, scheduling, tasks, and more.
+                </div>
+            </div>
+
+            <!-- Quick actions -->
+            <div class="quick-actions">
+                <h4>Quick Actions</h4>
+                <button class="action-btn" onclick="openGmail()">
+                    <span class="icon">📧</span>
+                    <span class="label">Open Gmail</span>
+                </button>
+                <button class="action-btn" onclick="openCalendar()">
+                    <span class="icon">📅</span>
+                    <span class="label">Open Calendar</span>
+                </button>
+                <button class="action-btn" onclick="showPanel('tasks')">
+                    <span class="icon">✅</span>
+                    <span class="label">View Tasks</span>
+                </button>
+                <button class="action-btn" onclick="showPanel('email')">
+                    <span class="icon">✍️</span>
+                    <span class="label">Draft Email</span>
+                </button>
+                <button class="action-btn" onclick="showPanel('team')">
+                    <span class="icon">👥</span>
+                    <span class="label">Meet the Team</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Content area -->
+        <div class="content-area">
+            <!-- Office view (default) -->
+            <div class="view-panel active" id="panel-office">
+                <div class="panel-header">
+                    <h2>🏢 Dashboard</h2>
+                </div>
+                <div class="panel-content">
+                    <div class="team-grid">
+                        <div class="team-card">
+                            <div class="icon">📋</div>
+                            <h4>Secretary</h4>
+                            <p>Email triage & scheduling</p>
+                        </div>
+                        <div class="team-card">
+                            <div class="icon">✍️</div>
+                            <h4>Writer</h4>
+                            <p>Drafts & communications</p>
+                        </div>
+                        <div class="team-card">
+                            <div class="icon">🔍</div>
+                            <h4>Researcher</h4>
+                            <p>Information & context</p>
+                        </div>
+                        <div class="team-card">
+                            <div class="icon">📊</div>
+                            <h4>Coordinator</h4>
+                            <p>Tasks & follow-ups</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Email panel -->
+            <div class="view-panel" id="panel-email">
+                <div class="panel-header">
+                    <h2>✍️ Email Draft</h2>
+                </div>
+                <div class="panel-content">
+                    <div class="email-draft">
+                        <div class="email-field">
+                            <label>To:</label>
+                            <input type="email" id="emailTo" placeholder="recipient@email.com">
+                        </div>
+                        <div class="email-field">
+                            <label>Subject:</label>
+                            <input type="text" id="emailSubject" placeholder="Email subject">
+                        </div>
+                        <div class="email-field">
+                            <label>Message:</label>
+                            <textarea id="emailBody" placeholder="Your message..."></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tasks panel -->
+            <div class="view-panel" id="panel-tasks">
+                <div class="panel-header">
+                    <h2>✅ Tasks & Follow-ups</h2>
+                </div>
+                <div class="panel-content">
+                    <div class="task-list" id="taskList">
+                        <div class="task-item">
+                            <div class="task-checkbox"></div>
+                            <div class="task-content">
+                                <div class="task-title">No tasks yet</div>
+                                <div class="task-meta">Tasks will appear here</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Calendar panel -->
+            <div class="view-panel" id="panel-calendar">
+                <div class="panel-header">
+                    <h2>📅 Today's Schedule</h2>
+                </div>
+                <div class="panel-content">
+                    <div class="calendar-preview" id="calendarPreview">
+                        <div class="calendar-event">
+                            <div class="time">Loading...</div>
+                            <div class="title">Fetching calendar events</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team panel -->
+            <div class="view-panel" id="panel-team">
+                <div class="panel-header">
+                    <h2>👥 Your AI Team</h2>
+                </div>
+                <div class="panel-content">
+                    <div class="team-grid">
+                        <div class="team-card" style="border-left: 4px solid #4A90D9;">
+                            <div class="icon">📋</div>
+                            <h4>Secretary</h4>
+                            <p>Manages email triage, scheduling, and calendar coordination. The gatekeeper of your time.</p>
+                        </div>
+                        <div class="team-card" style="border-left: 4px solid #50C878;">
+                            <div class="icon">✍️</div>
+                            <h4>Writer</h4>
+                            <p>Drafts professional emails, proposals, and documents. Crafts your words.</p>
+                        </div>
+                        <div class="team-card" style="border-left: 4px solid #9B59B6;">
+                            <div class="icon">🔍</div>
+                            <h4>Researcher</h4>
+                            <p>Gathers information, looks up contacts, summarizes documents. Your knowledge base.</p>
+                        </div>
+                        <div class="team-card" style="border-left: 4px solid #E67E22;">
+                            <div class="icon">📊</div>
+                            <h4>Coordinator</h4>
+                            <p>Tracks tasks, manages follow-ups, ensures nothing falls through the cracks.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Research panel -->
+            <div class="view-panel" id="panel-research">
+                <div class="panel-header">
+                    <h2>🔍 Research</h2>
+                </div>
+                <div class="panel-content">
+                    <div class="email-draft">
+                        <p>Research results will appear here...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const { ipcRenderer } = require('electron');
+
+        // Agent icon mapping
+        const agentIcons = {
+            secretary: '📋',
+            writer: '✍️',
+            researcher: '🔍',
+            coordinator: '📊',
+            narrator: '🎙️'
+        };
+
+        const agentColors = {
+            secretary: '#4A90D9',
+            writer: '#50C878',
+            researcher: '#9B59B6',
+            coordinator: '#E67E22',
+            narrator: '#34495E'
+        };
+
+        // Handle agent status updates
+        ipcRenderer.on('agent-status', (event, status) => {
+            updateAgentDisplay(status);
+        });
+
+        // Handle panel switching
+        ipcRenderer.on('show-panel', (event, panel) => {
+            showPanel(panel);
+        });
+
+        function updateAgentDisplay(status) {
+            const avatar = document.getElementById('agentAvatar');
+            const name = document.getElementById('agentName');
+            const role = document.getElementById('agentRole');
+            const message = document.getElementById('agentMessage');
+            const statusDot = document.getElementById('statusDot');
+            const statusText = document.getElementById('statusText');
+
+            // Update agent info
+            const agent = status.agent || 'office';
+            const persona = status.persona || {};
+
+            avatar.textContent = persona.icon || agentIcons[agent] || '🏢';
+            avatar.style.borderColor = persona.color || agentColors[agent] || '#3498DB';
+
+            if (status.speaking) {
+                avatar.classList.add('speaking');
+                statusDot.classList.add('speaking');
+                statusText.textContent = `${persona.name || agent} speaking...`;
+            } else {
+                avatar.classList.remove('speaking');
+                statusDot.classList.remove('speaking');
+                statusText.textContent = 'Ready';
+            }
+
+            name.textContent = persona.name || agent.charAt(0).toUpperCase() + agent.slice(1);
+            role.textContent = status.speaking ? 'Speaking...' : 'Ready';
+
+            if (status.text) {
+                message.textContent = status.text;
+            }
+
+            // Update email draft if activity contains draft
+            if (status.activity && status.activity.type === 'email_compose') {
+                updateEmailDraft(status.activity);
+            }
+        }
+
+        function updateEmailDraft(activity) {
+            const content = activity.content || '';
+            // Try to parse email fields from content
+            const subjectMatch = content.match(/Subject:\s*(.+)/i);
+            const bodyMatch = content.match(/```[\s\S]*?```/);
+
+            if (subjectMatch) {
+                document.getElementById('emailSubject').value = subjectMatch[1];
+            }
+            if (bodyMatch) {
+                document.getElementById('emailBody').value = bodyMatch[0].replace(/```/g, '').trim();
+            }
+        }
+
+        function showPanel(panelName) {
+            // Hide all panels
+            document.querySelectorAll('.view-panel').forEach(p => p.classList.remove('active'));
+            // Show selected panel
+            const panel = document.getElementById(`panel-${panelName}`);
+            if (panel) {
+                panel.classList.add('active');
+            }
+        }
+
+        function openGmail() {
+            ipcRenderer.send('open-gmail');
+        }
+
+        function openCalendar() {
+            ipcRenderer.send('open-calendar');
+        }
+
+        // Initialize
+        showPanel('office');
+    </script>
+</body>
+</html>

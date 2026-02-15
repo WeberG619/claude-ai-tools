@@ -1,0 +1,249 @@
+{
+  "metadata": {
+    "source_file": "downloaded_floorplan.jpg",
+    "scale": "1:100 MTS (metric)",
+    "units": "feet",
+    "overall_width_ft": 29.53,
+    "overall_depth_ft": 36.09,
+    "floor_to_ceiling_ft": 9.0,
+    "notes": [
+      "Original dimensions in meters, converted: 1m = 3.28084 ft",
+      "Overall: 9.00m (29.53') wide x 11.00m (36.09') deep",
+      "Wall thickness assumed 8 inches (0.2m) for exterior, 6 inches (0.15m) for interior - not dimensioned on plan",
+      "Door widths assumed 3'-0\" (0.9m) standard unless otherwise visible",
+      "Window widths estimated from proportions relative to dimensioned walls - flagged as approximate",
+      "Door D6 (Bedroom 2 to hall): swing direction read from arc on plan",
+      "Staircase (UP) near center of plan - not modeled as walls"
+    ]
+  },
+  "walls": [
+    {
+      "id": "W1",
+      "start": {"x": 0, "y": 0},
+      "end": {"x": 29.53, "y": 0},
+      "thickness_in": 8,
+      "type": "exterior",
+      "comment": "South exterior wall - bottom of plan, 9.00m = 29.53'"
+    },
+    {
+      "id": "W2",
+      "start": {"x": 29.53, "y": 0},
+      "end": {"x": 29.53, "y": 36.09},
+      "thickness_in": 8,
+      "type": "exterior",
+      "comment": "East exterior wall - right side, 11.00m = 36.09'"
+    },
+    {
+      "id": "W3",
+      "start": {"x": 29.53, "y": 36.09},
+      "end": {"x": 0, "y": 36.09},
+      "thickness_in": 8,
+      "type": "exterior",
+      "comment": "North exterior wall - top of plan, 9.00m = 29.53'"
+    },
+    {
+      "id": "W4",
+      "start": {"x": 0, "y": 0},
+      "end": {"x": 0, "y": 36.09},
+      "thickness_in": 8,
+      "type": "exterior",
+      "comment": "West exterior wall - left side, 11.00m = 36.09'"
+    },
+    {
+      "id": "W5",
+      "start": {"x": 0, "y": 9.84},
+      "end": {"x": 19.69, "y": 9.84},
+      "thickness_in": 6,
+      "type": "interior",
+      "comment": "Interior wall separating bedrooms from dining/living - at 3.00m (9.84') from south wall, runs 6.00m (19.69') from west"
+    },
+    {
+      "id": "W6",
+      "start": {"x": 0, "y": 21.33},
+      "end": {"x": 6.56, "y": 21.33},
+      "thickness_in": 6,
+      "type": "interior",
+      "comment": "Wall between Bedroom 1 and C.R. - at 3.00+3.50=6.50m (21.33') from south, runs 2.00m (6.56') from west"
+    },
+    {
+      "id": "W7",
+      "start": {"x": 0, "y": 26.25},
+      "end": {"x": 19.69, "y": 26.25},
+      "thickness_in": 6,
+      "type": "interior",
+      "comment": "Wall between C.R./Dining and Kitchen - at 3.00+3.50+1.50=8.00m (26.25') from south"
+    },
+    {
+      "id": "W8",
+      "start": {"x": 6.56, "y": 9.84},
+      "end": {"x": 6.56, "y": 26.25},
+      "thickness_in": 6,
+      "type": "interior",
+      "comment": "N-S wall between bedrooms/CR and dining area - at 2.00m (6.56') from west wall"
+    },
+    {
+      "id": "W9",
+      "start": {"x": 13.12, "y": 9.84},
+      "end": {"x": 13.12, "y": 26.25},
+      "thickness_in": 6,
+      "type": "interior",
+      "comment": "N-S wall between dining/stair and living area - at 2.00+2.00=4.00m (13.12') from west"
+    },
+    {
+      "id": "W10",
+      "start": {"x": 19.69, "y": 0},
+      "end": {"x": 19.69, "y": 9.84},
+      "thickness_in": 8,
+      "type": "exterior",
+      "comment": "Porch east wall divider - at 4.00+2.00=6.00m (19.69') from west, separates Bedroom 2 area from Porch"
+    },
+    {
+      "id": "W11",
+      "start": {"x": 13.12, "y": 0},
+      "end": {"x": 13.12, "y": 9.84},
+      "thickness_in": 6,
+      "type": "interior",
+      "comment": "Wall between Bedroom 2 and stair/porch entry - at 4.00m (13.12') from west"
+    }
+  ],
+  "doors": [
+    {
+      "id": "D1",
+      "wall_id": "W5",
+      "offset_ft": 1.64,
+      "width_ft": 2.95,
+      "swing": "left",
+      "swing_side": "negative",
+      "comment": "Bedroom 1 door to dining area - visible arc swings into bedroom"
+    },
+    {
+      "id": "D2",
+      "wall_id": "W5",
+      "offset_ft": 8.20,
+      "width_ft": 2.95,
+      "swing": "right",
+      "swing_side": "negative",
+      "comment": "Bedroom 2 door to hall/stair area"
+    },
+    {
+      "id": "D3",
+      "wall_id": "W6",
+      "offset_ft": 1.64,
+      "width_ft": 2.30,
+      "swing": "left",
+      "swing_side": "positive",
+      "comment": "C.R. (bathroom) door from Bedroom 1 area"
+    },
+    {
+      "id": "D4",
+      "wall_id": "W7",
+      "offset_ft": 1.64,
+      "width_ft": 2.95,
+      "swing": "right",
+      "swing_side": "positive",
+      "comment": "Kitchen door from dining area"
+    },
+    {
+      "id": "D5",
+      "wall_id": "W3",
+      "offset_ft": 6.56,
+      "width_ft": 2.95,
+      "swing": "right",
+      "swing_side": "negative",
+      "comment": "Kitchen exterior door - north wall, visible at top of kitchen"
+    },
+    {
+      "id": "D6",
+      "wall_id": "W9",
+      "offset_ft": 1.64,
+      "width_ft": 2.95,
+      "swing": "left",
+      "swing_side": "positive",
+      "comment": "Living area door from dining/hall"
+    }
+  ],
+  "windows": [
+    {
+      "id": "WIN1",
+      "wall_id": "W4",
+      "offset_ft": 12.47,
+      "width_ft": 3.94,
+      "comment": "West wall window at Bedroom 1 - APPROXIMATE position from plan proportions"
+    },
+    {
+      "id": "WIN2",
+      "wall_id": "W4",
+      "offset_ft": 3.28,
+      "width_ft": 3.94,
+      "comment": "West wall window at Bedroom 2 - APPROXIMATE position from plan proportions"
+    },
+    {
+      "id": "WIN3",
+      "wall_id": "W1",
+      "offset_ft": 1.64,
+      "width_ft": 4.92,
+      "comment": "South wall window at Bedroom 2 - APPROXIMATE position"
+    },
+    {
+      "id": "WIN4",
+      "wall_id": "W2",
+      "offset_ft": 16.40,
+      "width_ft": 4.92,
+      "comment": "East wall window at Living Area - APPROXIMATE position, at 5.00m (16.40') from south"
+    },
+    {
+      "id": "WIN5",
+      "wall_id": "W2",
+      "offset_ft": 3.28,
+      "width_ft": 4.92,
+      "comment": "East wall window at Porch area - APPROXIMATE position"
+    }
+  ],
+  "rooms": [
+    {
+      "name": "Kitchen",
+      "label_position": {"x": 9.84, "y": 31.17},
+      "dimensions": "4.00m x 3.00m"
+    },
+    {
+      "name": "Living Area",
+      "label_position": {"x": 23.0, "y": 21.33},
+      "dimensions": "5.00m x 5.00m"
+    },
+    {
+      "name": "Dining Area",
+      "label_position": {"x": 9.84, "y": 18.04},
+      "dimensions": "~2.00m x 5.00m"
+    },
+    {
+      "name": "Bedroom 1",
+      "label_position": {"x": 3.28, "y": 16.40},
+      "dimensions": "2.00m x 3.50m"
+    },
+    {
+      "name": "Bedroom 2",
+      "label_position": {"x": 4.92, "y": 4.92},
+      "dimensions": "4.00m x 3.00m"
+    },
+    {
+      "name": "C.R.",
+      "label_position": {"x": 3.28, "y": 23.62},
+      "dimensions": "2.00m x 1.50m"
+    },
+    {
+      "name": "Porch",
+      "label_position": {"x": 24.61, "y": 4.92},
+      "dimensions": "3.00m x 3.00m"
+    }
+  ],
+  "dimensions": [
+    {"start": {"x": 0, "y": 36.09}, "end": {"x": 6.56, "y": 36.09}, "text": "2.00m (6'-7\")", "offset_ft": 2.0},
+    {"start": {"x": 6.56, "y": 36.09}, "end": {"x": 19.69, "y": 36.09}, "text": "4.00m (13'-1\")", "offset_ft": 2.0},
+    {"start": {"x": 19.69, "y": 36.09}, "end": {"x": 29.53, "y": 36.09}, "text": "3.00m (9'-10\")", "offset_ft": 2.0},
+    {"start": {"x": 29.53, "y": 0}, "end": {"x": 29.53, "y": 9.84}, "text": "3.00m (9'-10\")", "offset_ft": -2.0},
+    {"start": {"x": 29.53, "y": 9.84}, "end": {"x": 29.53, "y": 26.25}, "text": "5.00m (16'-5\")", "offset_ft": -2.0},
+    {"start": {"x": 29.53, "y": 26.25}, "end": {"x": 29.53, "y": 36.09}, "text": "3.00m (9'-10\")", "offset_ft": -2.0},
+    {"start": {"x": 0, "y": 0}, "end": {"x": 29.53, "y": 0}, "text": "9.00m (29'-6\")", "offset_ft": -2.0},
+    {"start": {"x": 29.53, "y": 0}, "end": {"x": 29.53, "y": 36.09}, "text": "11.00m (36'-1\")", "offset_ft": -4.0}
+  ]
+}

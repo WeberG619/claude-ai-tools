@@ -245,10 +245,13 @@
         .terminal-content {
             flex: 1;
             padding: 24px;
-            font-family: 'Cascadia Code', monospace;
-            font-size: 16px;
+            font-family: 'Cascadia Code', 'Consolas', monospace;
+            font-size: 18px;
             color: #fff;
             overflow: auto;
+            line-height: 1.6;
+            white-space: pre-wrap;
+            word-wrap: break-word;
         }
 
         .code-content {
@@ -538,12 +541,12 @@
             font-size: 12px;
         }
 
-        /* Reasoning Panel */
+        /* Reasoning Panel - PROMINENT */
         .reasoning-panel {
             background: var(--bg-dark);
-            border-top: 1px solid var(--border);
-            padding: 12px 16px;
-            max-height: 150px;
+            border-top: 2px solid var(--accent-blue);
+            padding: 16px;
+            max-height: 300px;
             overflow-y: auto;
         }
 
@@ -574,13 +577,14 @@
         }
 
         .reasoning-step {
-            font-size: 12px;
-            padding: 6px 10px;
+            font-size: 14px;
+            padding: 12px 16px;
             background: var(--bg-hover);
-            border-radius: 4px;
-            margin-bottom: 4px;
-            border-left: 3px solid var(--accent-blue);
+            border-radius: 6px;
+            margin-bottom: 8px;
+            border-left: 4px solid var(--accent-blue);
             animation: slideIn 0.3s ease-out;
+            line-height: 1.5;
         }
 
         .reasoning-step.completed {
@@ -1125,6 +1129,12 @@
 
             const activity = data.activity;
 
+            // Guard against undefined activity
+            if (!activity || !activity.type) {
+                console.log('No activity or activity.type - skipping view switch');
+                return;
+            }
+
             // Handle different activity types
             switch (activity.type) {
                 case 'browser_navigate':
@@ -1139,7 +1149,9 @@
             }
 
             // Add to activity log
-            addActivity(activity);
+            if (activity) {
+                addActivity(activity);
+            }
         }
 
         function showBrowserMode(url, title) {
@@ -1159,6 +1171,12 @@
                 browserUrl.style.display = 'block';
             }
 
+            // CRITICAL: Hide the overlay so BrowserView is visible
+            const overlay = document.getElementById('contentOverlay');
+            if (overlay) {
+                overlay.style.display = 'none';
+            }
+
             // Hide terminal/code content when in browser mode
             const terminal = document.getElementById('terminalContent');
             const code = document.getElementById('codeContent');
@@ -1166,6 +1184,7 @@
             if (code) code.style.display = 'none';
 
             ipcRenderer.send('set-view-mode', 'browser');
+            console.log('Browser mode activated, overlay hidden');
         }
 
         function showTerminalMode(command, output) {
@@ -1186,9 +1205,16 @@
             const browserUrl = document.getElementById('browserUrl');
             if (browserUrl) browserUrl.style.display = 'none';
 
-            // Show terminal content, hide code content
+            // CRITICAL: Show the overlay container and terminal content
+            const overlay = document.getElementById('contentOverlay');
             const terminal = document.getElementById('terminalContent');
             const code = document.getElementById('codeContent');
+
+            // Make overlay visible with high z-index
+            if (overlay) {
+                overlay.style.display = 'flex';
+                overlay.style.zIndex = '1000';  // Above everything
+            }
 
             if (terminal) {
                 terminal.style.display = 'block';
@@ -1198,13 +1224,16 @@
                             <span style="color: #00ff00; font-weight: bold;">$ </span>
                             <span style="color: #ffff00; font-weight: bold;">${escapeHtml(command || 'No command')}</span>
                         </div>
-                        <pre style="color: #00ff00; padding: 20px; background: rgba(0,255,0,0.1); border-radius: 8px; border-left: 4px solid #00ff00; white-space: pre-wrap; font-size: 14px;">${escapeHtml(output || 'No output')}</pre>
+                        <pre style="color: #00ff00; padding: 20px; background: rgba(0,255,0,0.1); border-radius: 8px; border-left: 4px solid #00ff00; white-space: pre-wrap; font-size: 14px;">${escapeHtml(output || 'Executing...')}</pre>
                     </div>
                 `;
             }
             if (code) code.style.display = 'none';
 
-            console.log('Terminal content updated');
+            // Tell main process to hide BrowserView
+            ipcRenderer.send('set-view-mode', 'terminal');
+
+            console.log('Terminal content updated, overlay shown');
         }
 
         function showCodeMode(filePath, content, language) {
@@ -1220,6 +1249,13 @@
             if (modeBadge) {
                 modeBadge.textContent = 'CODE';
                 modeBadge.className = 'mode-badge code';
+            }
+
+            // CRITICAL: Show the overlay container
+            const overlay = document.getElementById('contentOverlay');
+            if (overlay) {
+                overlay.style.display = 'flex';
+                overlay.style.zIndex = '1000';  // Above everything
             }
 
             // Hide browser URL (with null check)
@@ -1252,7 +1288,10 @@
                 `;
             }
 
-            console.log('Code content updated');
+            // Tell main process to hide BrowserView
+            ipcRenderer.send('set-view-mode', 'code');
+
+            console.log('Code content updated, overlay shown');
         }
 
         // Track the currently active agent
@@ -1260,21 +1299,25 @@
         let activeTimeout = null;
 
         function updateAgentStatus(data) {
-            console.log('updateAgentStatus called:', data.agent, data.text, data.speaking);
+            console.log('updateAgentStatus called:', data.agent, 'speaking:', data.speaking);
 
-            // If we have an agent with text, mark them as active
-            if (data.agent && data.text) {
+            // Clear any existing timeout
+            if (activeTimeout) clearTimeout(activeTimeout);
+
+            // If agent is speaking, mark them as active
+            if (data.agent && data.speaking) {
                 currentActiveAgent = data.agent;
 
-                // Clear any existing timeout
-                if (activeTimeout) clearTimeout(activeTimeout);
-
-                // Keep agent active for 15 seconds after last update
+                // Clear agent after 3 seconds of no updates (much more responsive)
                 activeTimeout = setTimeout(() => {
-                    console.log('Clearing active agent');
+                    console.log('Clearing active agent (timeout)');
                     currentActiveAgent = null;
                     refreshAgentDisplay();
-                }, 15000);
+                }, 3000);
+            }
+            // If speaking is explicitly false, clear immediately
+            else if (data.speaking === false) {
+                currentActiveAgent = null;
             }
 
             refreshAgentDisplay();
@@ -1303,6 +1346,12 @@
         }
 
         function addActivity(activity) {
+            // Guard against undefined activity
+            if (!activity) {
+                console.log('addActivity called with undefined activity - skipping');
+                return;
+            }
+
             const log = document.getElementById('activityLog');
             const icons = {
                 'browser_navigate': '🌐',
@@ -1315,11 +1364,12 @@
                 'file_open': '📂'
             };
 
+            const activityType = activity.type || 'unknown';
             const item = document.createElement('div');
             item.className = 'activity-item';
             item.innerHTML = `
                 <div class="activity-time">${new Date().toLocaleTimeString()}</div>
-                <div class="activity-message">${icons[activity.type] || '📌'} ${getActivityMessage(activity)}</div>
+                <div class="activity-message">${icons[activityType] || '📌'} ${getActivityMessage(activity)}</div>
             `;
 
             log.insertBefore(item, log.firstChild);
@@ -1327,18 +1377,20 @@
         }
 
         function getActivityMessage(activity) {
+            if (!activity || !activity.type) return 'Unknown activity';
+
             switch (activity.type) {
-                case 'browser_navigate': return 'Navigate: ' + (activity.title || activity.url);
-                case 'terminal_run': return 'Run: ' + activity.command;
-                case 'code_write': return 'Write: ' + activity.file_path;
+                case 'browser_navigate': return 'Navigate: ' + (activity.title || activity.url || 'unknown');
+                case 'terminal_run': return 'Run: ' + (activity.command || 'command');
+                case 'code_write': return 'Write: ' + (activity.file_path || 'file');
                 case 'execution':
                     const status = activity.success ? '✓' : '✕';
-                    return `${status} Executed: ${activity.action_type}`;
+                    return `${status} Executed: ${activity.action_type || 'action'}`;
                 case 'approval':
                     const decision = activity.approved ? 'Approved' : 'Denied';
-                    return `${decision}: ${activity.action_type}`;
-                case 'system': return activity.message;
-                default: return activity.type;
+                    return `${decision}: ${activity.action_type || 'action'}`;
+                case 'system': return activity.message || 'System event';
+                default: return activity.type || 'Activity';
             }
         }
 

@@ -1,0 +1,1425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agent Team - Live Visual Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <style>
+        :root {
+            --bg-dark: #0d1117;
+            --bg-card: #161b22;
+            --bg-hover: #21262d;
+            --bg-code: #0d1117;
+            --border: #30363d;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --accent-blue: #58a6ff;
+            --accent-green: #3fb950;
+            --accent-yellow: #d29922;
+            --accent-red: #f85149;
+            --accent-purple: #a371f7;
+            --accent-orange: #f0883e;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 280px 1fr 320px;
+            grid-template-rows: 56px 1fr;
+            height: 100vh;
+            gap: 1px;
+            background: var(--border);
+        }
+
+        /* Header */
+        .header {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, var(--bg-card) 0%, #1a2332 100%);
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            font-size: 24px;
+        }
+
+        .logo h1 {
+            font-size: 16px;
+            font-weight: 600;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent-green);
+            animation: pulse 2s infinite;
+        }
+
+        .status-dot.disconnected {
+            background: var(--accent-red);
+            animation: none;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(63, 185, 80, 0.4); }
+            50% { opacity: 0.8; box-shadow: 0 0 0 4px rgba(63, 185, 80, 0); }
+        }
+
+        .current-task {
+            flex: 1;
+            text-align: center;
+            color: var(--accent-yellow);
+            font-size: 13px;
+            font-weight: 500;
+            padding: 0 20px;
+        }
+
+        .connection-status {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        /* Panels */
+        .panel {
+            background: var(--bg-card);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .panel-header {
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--border);
+            font-weight: 600;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-secondary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .panel-content {
+            flex: 1;
+            overflow-y: auto;
+            padding: 12px;
+        }
+
+        /* Agent Cards */
+        .agent-card {
+            background: var(--bg-hover);
+            border-radius: 10px;
+            padding: 14px;
+            margin-bottom: 10px;
+            border-left: 3px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .agent-card.speaking {
+            border-left-color: var(--accent-green);
+            background: rgba(63, 185, 80, 0.12);
+            box-shadow: 0 0 20px rgba(63, 185, 80, 0.15);
+        }
+
+        .agent-card.active {
+            border-left-color: var(--accent-blue);
+            background: rgba(88, 166, 255, 0.08);
+        }
+
+        .agent-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .agent-icon {
+            font-size: 24px;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-dark);
+            border-radius: 8px;
+        }
+
+        .agent-info {
+            flex: 1;
+        }
+
+        .agent-name {
+            font-weight: 600;
+            font-size: 13px;
+            margin-bottom: 2px;
+        }
+
+        .agent-voice {
+            font-size: 11px;
+            color: var(--text-secondary);
+        }
+
+        .agent-status {
+            font-size: 11px;
+            color: var(--text-secondary);
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px solid var(--border);
+        }
+
+        .agent-status.speaking {
+            color: var(--accent-green);
+            font-weight: 500;
+        }
+
+        .speaking-text {
+            font-style: italic;
+            color: var(--text-primary);
+            font-size: 12px;
+            margin-top: 6px;
+            line-height: 1.4;
+            max-height: 60px;
+            overflow: hidden;
+        }
+
+        /* Sound Wave Animation */
+        .wave {
+            display: none;
+            gap: 3px;
+            margin-left: auto;
+            padding: 4px;
+        }
+
+        .speaking .wave {
+            display: flex;
+        }
+
+        .wave span {
+            width: 3px;
+            height: 16px;
+            background: var(--accent-green);
+            border-radius: 2px;
+            animation: wave 0.6s ease-in-out infinite;
+        }
+
+        .wave span:nth-child(2) { animation-delay: 0.1s; }
+        .wave span:nth-child(3) { animation-delay: 0.2s; }
+        .wave span:nth-child(4) { animation-delay: 0.3s; }
+
+        @keyframes wave {
+            0%, 100% { transform: scaleY(0.3); }
+            50% { transform: scaleY(1); }
+        }
+
+        /* Main Content Panel */
+        .main-panel {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content-mode-indicator {
+            display: flex;
+            gap: 8px;
+            padding: 10px 16px;
+            background: var(--bg-dark);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .mode-badge {
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+            background: var(--bg-hover);
+            color: var(--text-secondary);
+            transition: all 0.2s ease;
+        }
+
+        .mode-badge.active {
+            background: var(--accent-blue);
+            color: white;
+        }
+
+        .mode-badge.browser { background: var(--accent-orange); color: white; }
+        .mode-badge.code { background: var(--accent-green); color: white; }
+        .mode-badge.terminal { background: var(--accent-purple); color: white; }
+
+        /* Main Content Views */
+        .main-content {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .content-view {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content-view.active {
+            opacity: 1;
+            z-index: 1;
+        }
+
+        /* Browser View */
+        .browser-view {
+            background: var(--bg-dark);
+        }
+
+        .browser-url-bar {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 16px;
+            background: var(--bg-hover);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .browser-url-bar .icon {
+            color: var(--accent-green);
+        }
+
+        .browser-url {
+            flex: 1;
+            font-family: 'Cascadia Code', monospace;
+            font-size: 12px;
+            color: var(--text-secondary);
+            background: var(--bg-dark);
+            padding: 8px 12px;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+        }
+
+        .browser-content {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .browser-screenshot {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .browser-placeholder {
+            text-align: center;
+            color: var(--text-primary);
+        }
+
+        .browser-icon {
+            font-size: 64px;
+            margin-bottom: 20px;
+        }
+
+        .browser-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--accent-blue);
+        }
+
+        .browser-subtitle {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        /* Code View */
+        .code-view-container {
+            background: var(--bg-code);
+            display: block !important;
+        }
+
+        .code-view-container .code-file-header {
+            position: relative;
+            z-index: 1;
+        }
+
+        .code-view-container .code-content {
+            position: absolute;
+            top: 50px; /* Height of file header */
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        .code-file-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 16px;
+            background: var(--bg-hover);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .code-file-icon {
+            font-size: 16px;
+        }
+
+        .code-file-name {
+            font-family: 'Cascadia Code', monospace;
+            font-size: 13px;
+            color: var(--text-primary);
+        }
+
+        .code-language {
+            margin-left: auto;
+            font-size: 11px;
+            color: var(--accent-blue);
+            background: rgba(88, 166, 255, 0.1);
+            padding: 3px 8px;
+            border-radius: 4px;
+        }
+
+        .typing-indicator {
+            display: none;
+            color: var(--accent-green);
+            font-size: 11px;
+            animation: blink 0.5s infinite;
+        }
+
+        .typing .typing-indicator {
+            display: inline;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        .code-content {
+            flex: 1;
+            overflow: auto;
+            padding: 0;
+            color: #e6edf3 !important;
+        }
+
+        .code-content pre {
+            margin: 0;
+            padding: 16px;
+            font-family: 'Cascadia Code', 'Fira Code', 'Consolas', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            background: #0d1117 !important;
+            color: #e6edf3 !important;
+        }
+
+        .code-content code {
+            background: transparent !important;
+            color: inherit !important;
+        }
+
+        .code-content .hljs {
+            color: #e6edf3 !important;
+            background: transparent !important;
+        }
+
+        .code-cursor {
+            display: inline-block;
+            width: 2px;
+            height: 1.2em;
+            background: var(--accent-green);
+            animation: cursorBlink 0.8s infinite;
+            vertical-align: text-bottom;
+        }
+
+        @keyframes cursorBlink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        /* Terminal View */
+        .terminal-view {
+            background: #000 !important;
+            font-family: 'Cascadia Code', 'Fira Code', 'Consolas', monospace;
+            display: block !important;
+        }
+
+        .terminal-view .terminal-header {
+            position: relative;
+            z-index: 1;
+        }
+
+        .terminal-view .terminal-content {
+            position: absolute;
+            top: 50px; /* Height of terminal header */
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: block !important;
+        }
+
+        .terminal-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 16px;
+            background: #1a1a1a;
+            border-bottom: 1px solid #333;
+            flex-shrink: 0;
+        }
+
+        .terminal-dots {
+            display: flex;
+            gap: 6px;
+        }
+
+        .terminal-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .terminal-dot.red { background: #ff5f56; }
+        .terminal-dot.yellow { background: #ffbd2e; }
+        .terminal-dot.green { background: #27c93f; }
+
+        .terminal-title {
+            flex: 1;
+            text-align: center;
+            font-size: 12px;
+            color: #888;
+        }
+
+        .terminal-content {
+            flex: 1 1 auto !important;
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding: 24px !important;
+            font-size: 16px !important;
+            line-height: 1.7;
+            color: #ffffff !important;
+            font-family: 'Cascadia Code', 'Fira Code', 'Consolas', monospace !important;
+            background: #0a0a0a !important;
+            min-height: 200px;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: flex-start !important;
+            align-items: stretch !important;
+        }
+
+        /* Force all text inside terminal to be visible */
+        .terminal-content * {
+            color: inherit;
+        }
+
+        .terminal-content span {
+            display: inline !important;
+        }
+
+        .terminal-content pre {
+            display: block !important;
+            color: #00ff00 !important;
+            white-space: pre-wrap;
+            margin: 20px 0 0 0;
+            padding: 20px;
+            background: rgba(0, 255, 0, 0.1) !important;
+            border-radius: 8px;
+            border-left: 4px solid #00ff00;
+            font-family: inherit;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .terminal-line {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            font-size: 18px;
+        }
+
+        .terminal-prompt {
+            color: #00ff00 !important;
+            font-weight: bold;
+            margin-right: 10px;
+            text-shadow: 0 0 5px #00ff00;
+        }
+
+        .terminal-command {
+            color: #ffffff !important;
+            font-weight: 500;
+        }
+
+        .terminal-output {
+            color: #00ff00 !important;
+            white-space: pre-wrap;
+            margin-top: 20px;
+            padding: 16px;
+            background: rgba(0, 255, 0, 0.08);
+            border-radius: 6px;
+            border-left: 4px solid #00ff00;
+            font-family: inherit;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        /* Idle View */
+        .idle-view {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-dark);
+        }
+
+        .idle-logo {
+            font-size: 64px;
+            margin-bottom: 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .idle-text {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+
+        .idle-subtext {
+            font-size: 13px;
+            color: var(--text-secondary);
+            opacity: 0.6;
+        }
+
+        /* Activity Log */
+        .activity-log {
+            padding: 0;
+        }
+
+        .activity-item {
+            padding: 10px 14px;
+            border-bottom: 1px solid var(--border);
+            font-size: 12px;
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            animation: slideIn 0.2s ease;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(10px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .activity-icon {
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        .activity-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .activity-time {
+            color: var(--text-secondary);
+            font-size: 10px;
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .activity-message {
+            color: var(--text-primary);
+            line-height: 1.4;
+            word-break: break-word;
+        }
+
+        .activity-item.speech { border-left: 2px solid var(--accent-green); }
+        .activity-item.navigate { border-left: 2px solid var(--accent-orange); }
+        .activity-item.code { border-left: 2px solid var(--accent-blue); }
+        .activity-item.terminal { border-left: 2px solid var(--accent-purple); }
+        .activity-item.search { border-left: 2px solid var(--accent-yellow); }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-dark);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--text-secondary);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <div class="logo">
+                    <span class="logo-icon">🤖</span>
+                    <h1>Agent Team Live</h1>
+                </div>
+                <span class="status-dot" id="statusDot"></span>
+            </div>
+            <div class="current-task" id="currentTask">Waiting for activity...</div>
+            <span class="connection-status" id="connectionStatus">Connecting...</span>
+            <span style="color: #00ff00; font-size: 10px; margin-left: 10px;">v2.1</span>
+        </header>
+
+        <!-- Left: Agents Panel -->
+        <div class="panel">
+            <div class="panel-header">
+                <span>Team</span>
+            </div>
+            <div class="panel-content" id="agentsPanel">
+                <div class="agent-card" data-agent="planner">
+                    <div class="agent-header">
+                        <div class="agent-icon">🎯</div>
+                        <div class="agent-info">
+                            <div class="agent-name">PLANNER</div>
+                            <div class="agent-voice">Andrew</div>
+                        </div>
+                        <div class="wave"><span></span><span></span><span></span><span></span></div>
+                    </div>
+                    <div class="agent-status">Idle</div>
+                </div>
+
+                <div class="agent-card" data-agent="researcher">
+                    <div class="agent-header">
+                        <div class="agent-icon">🔍</div>
+                        <div class="agent-info">
+                            <div class="agent-name">RESEARCHER</div>
+                            <div class="agent-voice">Christopher</div>
+                        </div>
+                        <div class="wave"><span></span><span></span><span></span><span></span></div>
+                    </div>
+                    <div class="agent-status">Idle</div>
+                </div>
+
+                <div class="agent-card" data-agent="builder">
+                    <div class="agent-header">
+                        <div class="agent-icon">🔨</div>
+                        <div class="agent-info">
+                            <div class="agent-name">BUILDER</div>
+                            <div class="agent-voice">Roger</div>
+                        </div>
+                        <div class="wave"><span></span><span></span><span></span><span></span></div>
+                    </div>
+                    <div class="agent-status">Idle</div>
+                </div>
+
+                <div class="agent-card" data-agent="critic">
+                    <div class="agent-header">
+                        <div class="agent-icon">🔬</div>
+                        <div class="agent-info">
+                            <div class="agent-name">CRITIC</div>
+                            <div class="agent-voice">Eric</div>
+                        </div>
+                        <div class="wave"><span></span><span></span><span></span><span></span></div>
+                    </div>
+                    <div class="agent-status">Idle</div>
+                </div>
+
+                <div class="agent-card" data-agent="narrator">
+                    <div class="agent-header">
+                        <div class="agent-icon">📢</div>
+                        <div class="agent-info">
+                            <div class="agent-name">NARRATOR</div>
+                            <div class="agent-voice">Jenny</div>
+                        </div>
+                        <div class="wave"><span></span><span></span><span></span><span></span></div>
+                    </div>
+                    <div class="agent-status">Idle</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Center: Main Content -->
+        <div class="panel main-panel">
+            <div class="panel-header">
+                <span>Live View</span>
+                <span class="typing-indicator" id="typingIndicator">● TYPING CODE</span>
+            </div>
+            <div class="content-mode-indicator" id="modeIndicator">
+                <span class="mode-badge active" id="modeBadge">IDLE</span>
+            </div>
+            <div class="main-content">
+                <!-- Idle View (default) -->
+                <div class="content-view idle-view active" id="idleView">
+                    <div class="idle-logo">🤖</div>
+                    <div class="idle-text">Agent Team Ready</div>
+                    <div class="idle-subtext">Waiting for activity...</div>
+                </div>
+
+                <!-- Browser View -->
+                <div class="content-view browser-view" id="browserView">
+                    <div class="browser-url-bar">
+                        <span class="icon">🌐</span>
+                        <div class="browser-url" id="browserUrl">https://</div>
+                        <button onclick="openBrowserWindow()" style="margin-left: auto; padding: 6px 12px; background: var(--accent-blue); border: none; border-radius: 4px; color: white; cursor: pointer; font-size: 12px;">Open Browser Window</button>
+                    </div>
+                    <div class="browser-content" id="browserContent">
+                        <!-- Try iframe first, fallback to placeholder -->
+                        <iframe id="browserFrame" style="width: 100%; height: 100%; border: none; display: none;"></iframe>
+                        <div class="browser-placeholder" id="browserPlaceholder">
+                            <div class="browser-icon">🌐</div>
+                            <div class="browser-title" id="browserTitle">Navigating...</div>
+                            <div class="browser-subtitle" id="browserSubtitle">Click "Open Browser Window" for full browser</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Code View -->
+                <div class="content-view code-view-container" id="codeView">
+                    <div class="code-file-header">
+                        <span class="code-file-icon" id="codeFileIcon">📄</span>
+                        <span class="code-file-name" id="codeFileName">file.py</span>
+                        <span class="code-language" id="codeLanguage">python</span>
+                    </div>
+                    <div class="code-content">
+                        <pre><code id="codeContent" class="hljs"></code></pre>
+                    </div>
+                </div>
+
+                <!-- Terminal View -->
+                <div class="content-view terminal-view" id="terminalView">
+                    <div class="terminal-header">
+                        <div class="terminal-dots">
+                            <span class="terminal-dot red"></span>
+                            <span class="terminal-dot yellow"></span>
+                            <span class="terminal-dot green"></span>
+                        </div>
+                        <div class="terminal-title">Terminal</div>
+                    </div>
+                    <div class="terminal-content" id="terminalContent">
+                        <!-- Content will be injected by JavaScript -->
+                        <div class="terminal-line">
+                            <span class="terminal-prompt">$ </span>
+                            <span class="terminal-command">Ready...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right: Activity Log -->
+        <div class="panel">
+            <div class="panel-header">Activity Log</div>
+            <div class="panel-content activity-log" id="activityLog"></div>
+        </div>
+    </div>
+
+    <script>
+        // State
+        let ws = null;
+        let currentView = 'idle';
+        let typingAnimation = null;
+        let lastActivity = null;
+
+        // Code Typing Animation Class
+        class CodeTypingAnimation {
+            constructor(container) {
+                this.container = container;
+                this.currentContent = '';
+                this.targetContent = '';
+                this.typingSpeed = 15; // ms per character
+                this.isTyping = false;
+                this.abortController = null;
+            }
+
+            async typeCode(content, language) {
+                // Abort any existing animation
+                if (this.abortController) {
+                    this.abortController.abort();
+                }
+                this.abortController = new AbortController();
+
+                this.targetContent = content;
+                this.isTyping = true;
+                document.getElementById('typingIndicator').style.display = 'inline';
+
+                const lines = content.split('\n');
+                let currentText = '';
+
+                try {
+                    for (let lineIdx = 0; lineIdx < lines.length; lineIdx++) {
+                        const line = lines[lineIdx];
+
+                        // Type line character by character
+                        for (let charIdx = 0; charIdx <= line.length; charIdx++) {
+                            if (this.abortController.signal.aborted) return;
+
+                            currentText = lines.slice(0, lineIdx).join('\n') +
+                                         (lineIdx > 0 ? '\n' : '') +
+                                         line.substring(0, charIdx);
+
+                            this.container.innerHTML = this.highlight(currentText, language) +
+                                                      '<span class="code-cursor"></span>';
+
+                            await this.sleep(this.typingSpeed);
+                        }
+
+                        // Add newline
+                        if (lineIdx < lines.length - 1) {
+                            currentText += '\n';
+                            await this.sleep(50); // Brief pause at line end
+                        }
+                    }
+                } finally {
+                    this.isTyping = false;
+                    document.getElementById('typingIndicator').style.display = 'none';
+
+                    // Show final content without cursor
+                    this.container.innerHTML = this.highlight(content, language);
+                }
+            }
+
+            highlight(code, language) {
+                try {
+                    if (language && hljs.getLanguage(language)) {
+                        return hljs.highlight(code, { language }).value;
+                    }
+                    return hljs.highlightAuto(code).value;
+                } catch (e) {
+                    return this.escapeHtml(code);
+                }
+            }
+
+            escapeHtml(text) {
+                const div = document.createElement('div');
+                div.textContent = text;
+                return div.innerHTML;
+            }
+
+            sleep(ms) {
+                return new Promise(resolve => setTimeout(resolve, ms));
+            }
+
+            abort() {
+                if (this.abortController) {
+                    this.abortController.abort();
+                }
+            }
+        }
+
+        const codeAnimator = new CodeTypingAnimation(document.getElementById('codeContent'));
+
+        // Connect to WebSocket
+        function connect() {
+            ws = new WebSocket(`ws://${window.location.host}/ws`);
+
+            ws.onopen = () => {
+                document.getElementById('connectionStatus').textContent = 'Connected';
+                document.getElementById('statusDot').classList.remove('disconnected');
+                addActivity('system', '🟢 Connected to server');
+            };
+
+            ws.onclose = () => {
+                document.getElementById('connectionStatus').textContent = 'Disconnected';
+                document.getElementById('statusDot').classList.add('disconnected');
+                addActivity('system', '🔴 Disconnected - reconnecting...');
+                setTimeout(connect, 2000);
+            };
+
+            ws.onerror = () => {
+                console.error('WebSocket error');
+            };
+
+            ws.onmessage = (event) => {
+                try {
+                    const msg = JSON.parse(event.data);
+                    handleMessage(msg);
+                } catch (e) {
+                    console.error('Message parse error:', e);
+                }
+            };
+        }
+
+        // Handle WebSocket messages
+        function handleMessage(msg) {
+            switch (msg.type) {
+                case 'init':
+                    // Load initial activity
+                    if (msg.data && msg.data.activity_log) {
+                        msg.data.activity_log.forEach(item => addActivity(item.type, item.message, false));
+                    }
+                    break;
+
+                case 'agent_status':
+                    updateAgentStatus(msg.data);
+                    break;
+
+                case 'activity':
+                    handleActivity(msg.data);
+                    break;
+
+                case 'file_changes':
+                    // Handle file changes for code view
+                    break;
+            }
+        }
+
+        // Update agent status display
+        function updateAgentStatus(status) {
+            // Reset all cards
+            document.querySelectorAll('.agent-card').forEach(card => {
+                card.classList.remove('speaking', 'active');
+                card.querySelector('.agent-status').textContent = 'Idle';
+                card.querySelector('.agent-status').classList.remove('speaking');
+
+                // Remove speaking text if present
+                const speakingText = card.querySelector('.speaking-text');
+                if (speakingText) speakingText.remove();
+            });
+
+            // Update speaking agent
+            if (status.agent && status.speaking) {
+                const card = document.querySelector(`[data-agent="${status.agent}"]`);
+                if (card) {
+                    card.classList.add('speaking');
+                    const statusEl = card.querySelector('.agent-status');
+                    statusEl.textContent = 'Speaking...';
+                    statusEl.classList.add('speaking');
+
+                    // Add speaking text if available
+                    if (status.text) {
+                        const textEl = document.createElement('div');
+                        textEl.className = 'speaking-text';
+                        textEl.textContent = `"${status.text}"`;
+                        card.appendChild(textEl);
+                    }
+
+                    addActivity('speech', `🎤 ${status.agent.toUpperCase()}: ${status.text || 'Speaking...'}`);
+                }
+            }
+
+            // Handle activity updates
+            if (status.activity) {
+                handleActivity(status.activity);
+            }
+        }
+
+        // Handle activity updates
+        function handleActivity(activity) {
+            if (!activity || !activity.type) return;
+
+            // Avoid duplicate processing
+            const activityKey = JSON.stringify(activity);
+            if (activityKey === lastActivity) return;
+            lastActivity = activityKey;
+
+            switch (activity.type) {
+                case 'browser_navigate':
+                    showBrowserView(activity.url, activity.title);
+                    addActivity('navigate', `🌐 Navigating to: ${activity.title || activity.url}`);
+                    break;
+
+                case 'browser_search':
+                    const searchUrl = activity.engine === 'github'
+                        ? `https://github.com/search?q=${encodeURIComponent(activity.query)}`
+                        : `https://www.google.com/search?q=${encodeURIComponent(activity.query)}`;
+                    showBrowserView(searchUrl, `Searching: ${activity.query}`);
+                    addActivity('search', `🔍 Searching ${activity.engine}: ${activity.query}`);
+                    break;
+
+                case 'code_write':
+                    showCodeView(activity.file_path, activity.content, activity.language);
+                    addActivity('code', `💻 Writing: ${activity.file_path}`);
+                    break;
+
+                case 'code_read':
+                    showCodeReadView(activity.file_path, activity.content);
+                    addActivity('code', `📖 Reading: ${activity.file_path}`);
+                    break;
+
+                case 'terminal_run':
+                    showTerminalView(activity.command, activity.output);
+                    addActivity('terminal', `⚡ Running: ${activity.command}`);
+                    break;
+
+                case 'thinking':
+                    addActivity('thinking', `💭 ${activity.topic}`);
+                    break;
+            }
+        }
+
+        // Switch view
+        function switchView(viewId) {
+            document.querySelectorAll('.content-view').forEach(v => v.classList.remove('active'));
+            const view = document.getElementById(viewId);
+            if (view) view.classList.add('active');
+            currentView = viewId;
+
+            // Update mode badge
+            const badge = document.getElementById('modeBadge');
+            badge.className = 'mode-badge';
+
+            switch (viewId) {
+                case 'browserView':
+                    badge.textContent = 'BROWSER';
+                    badge.classList.add('browser');
+                    break;
+                case 'codeView':
+                    badge.textContent = 'CODE';
+                    badge.classList.add('code');
+                    break;
+                case 'terminalView':
+                    badge.textContent = 'TERMINAL';
+                    badge.classList.add('terminal');
+                    break;
+                default:
+                    badge.textContent = 'IDLE';
+                    badge.classList.add('active');
+            }
+        }
+
+        // Companion browser window reference
+        let browserWindow = null;
+        let currentBrowserUrl = null;
+
+        // Open companion browser window
+        function openBrowserWindow() {
+            // Calculate window position (to the right of dashboard or as popup)
+            const width = 1200;
+            const height = 800;
+            const left = window.screenX + window.innerWidth + 10;
+            const top = window.screenY;
+
+            browserWindow = window.open(
+                currentBrowserUrl || 'about:blank',
+                'AgentBrowser',
+                `width=${width},height=${height},left=${left},top=${top},menubar=no,toolbar=yes,location=yes,status=no`
+            );
+
+            if (browserWindow) {
+                document.getElementById('browserSubtitle').textContent = 'Browser window opened - it will navigate automatically';
+            }
+        }
+
+        // Navigate the companion browser
+        function navigateBrowser(url) {
+            currentBrowserUrl = url;
+
+            // If companion window is open, navigate it
+            if (browserWindow && !browserWindow.closed) {
+                try {
+                    browserWindow.location.href = url;
+                } catch (e) {
+                    // Cross-origin - reopen window
+                    browserWindow = window.open(url, 'AgentBrowser');
+                }
+            }
+
+            // Also try iframe (will work for some sites)
+            const iframe = document.getElementById('browserFrame');
+            const placeholder = document.getElementById('browserPlaceholder');
+
+            // Try iframe first
+            iframe.src = url;
+            iframe.style.display = 'block';
+            placeholder.style.display = 'none';
+
+            // If iframe fails to load (X-Frame-Options), show placeholder
+            iframe.onerror = () => {
+                iframe.style.display = 'none';
+                placeholder.style.display = 'flex';
+            };
+
+            // Timeout fallback - if iframe doesn't load content, show placeholder
+            setTimeout(() => {
+                try {
+                    // Check if iframe loaded (will throw if blocked)
+                    const test = iframe.contentWindow.location.href;
+                } catch (e) {
+                    // Blocked by X-Frame-Options, show placeholder
+                    iframe.style.display = 'none';
+                    placeholder.style.display = 'flex';
+                    placeholder.style.flexDirection = 'column';
+                    placeholder.style.alignItems = 'center';
+                    placeholder.style.justifyContent = 'center';
+                }
+            }, 2000);
+        }
+
+        // Show browser view
+        function showBrowserView(url, title) {
+            switchView('browserView');
+            document.getElementById('browserUrl').textContent = url;
+            document.getElementById('currentTask').textContent = title || url;
+
+            // Update placeholder with title
+            document.getElementById('browserTitle').textContent = title || 'Navigating...';
+
+            const placeholder = document.getElementById('browserPlaceholder');
+            placeholder.style.display = 'flex';
+            placeholder.style.flexDirection = 'column';
+            placeholder.style.alignItems = 'center';
+            placeholder.style.justifyContent = 'center';
+            placeholder.style.height = '100%';
+
+            // Navigate the browser
+            navigateBrowser(url);
+
+            // Try to load screenshot as fallback
+            setTimeout(() => {
+                fetch('/api/screenshot')
+                    .then(r => {
+                        if (r.status === 200) return r.blob();
+                        throw new Error('No screenshot');
+                    })
+                    .then(blob => {
+                        if (blob && blob.size > 1000) {
+                            const img = document.getElementById('browserScreenshot') || document.createElement('img');
+                            img.id = 'browserScreenshot';
+                            img.src = URL.createObjectURL(blob);
+                            img.style.cssText = 'max-width: 100%; max-height: 100%; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.3);';
+
+                            const content = document.getElementById('browserContent');
+                            const iframe = document.getElementById('browserFrame');
+
+                            // Only show screenshot if iframe failed
+                            if (iframe.style.display === 'none') {
+                                placeholder.innerHTML = '';
+                                placeholder.appendChild(img);
+                            }
+                        }
+                    })
+                    .catch(() => {});
+            }, 3000);
+        }
+
+        // Show code view with typing animation
+        function showCodeView(filePath, content, language) {
+            switchView('codeView');
+
+            const fileName = filePath.split('/').pop();
+            document.getElementById('codeFileName').textContent = fileName;
+            document.getElementById('codeLanguage').textContent = language || 'text';
+            document.getElementById('currentTask').textContent = `Writing: ${fileName}`;
+
+            // Detect language from extension if not provided
+            if (!language) {
+                const ext = fileName.split('.').pop();
+                const langMap = {
+                    'py': 'python', 'js': 'javascript', 'ts': 'typescript',
+                    'html': 'html', 'css': 'css', 'json': 'json',
+                    'cs': 'csharp', 'cpp': 'cpp', 'java': 'java'
+                };
+                language = langMap[ext] || 'text';
+            }
+
+            // Set file icon based on language
+            const iconMap = {
+                'python': '🐍', 'javascript': '📜', 'typescript': '📘',
+                'html': '🌐', 'css': '🎨', 'json': '📋',
+                'csharp': '🔷', 'cpp': '⚙️', 'java': '☕'
+            };
+            document.getElementById('codeFileIcon').textContent = iconMap[language] || '📄';
+
+            // Apply inline styles and set content directly (bypassing animation for reliability)
+            const codeContent = document.getElementById('codeContent');
+            const codeContainer = codeContent.parentElement;
+
+            // Style the container
+            codeContainer.style.cssText = 'background: #0d1117; margin: 0; padding: 16px; position: absolute; top: 50px; left: 0; right: 0; bottom: 0; overflow: auto;';
+
+            // Escape HTML and highlight
+            const escapedContent = content.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+            let highlighted;
+            try {
+                highlighted = hljs.highlight(content, { language }).value;
+            } catch(e) {
+                highlighted = escapedContent;
+            }
+
+            // Set the code with explicit inline styles
+            codeContent.innerHTML = highlighted;
+            codeContent.style.cssText = 'color: #e6edf3; background: transparent; font-family: "Cascadia Code", "Fira Code", monospace; font-size: 14px; line-height: 1.7; display: block; white-space: pre-wrap;';
+
+            console.log('Code view set, content length:', content.length);
+        }
+
+        // Show code read view (no animation)
+        function showCodeReadView(filePath, content) {
+            switchView('codeView');
+
+            const fileName = filePath.split('/').pop();
+            document.getElementById('codeFileName').textContent = fileName;
+            document.getElementById('currentTask').textContent = `Reading: ${fileName}`;
+
+            // Just display the code without animation
+            const ext = fileName.split('.').pop();
+            const langMap = {
+                'py': 'python', 'js': 'javascript', 'ts': 'typescript',
+                'html': 'html', 'css': 'css', 'json': 'json'
+            };
+            const language = langMap[ext] || 'text';
+
+            document.getElementById('codeLanguage').textContent = language;
+            document.getElementById('codeContent').innerHTML =
+                hljs.highlight(content || '// Loading...', { language }).value;
+        }
+
+        // Escape HTML to prevent rendering issues
+        function escapeHtml(text) {
+            if (!text) return '';
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // Show terminal view
+        function showTerminalView(command, output) {
+            console.log('showTerminalView called with:', { command, output });
+
+            switchView('terminalView');
+
+            const terminalContent = document.getElementById('terminalContent');
+            if (!terminalContent) {
+                console.error('terminalContent element not found!');
+                return;
+            }
+
+            // Use innerHTML with explicit inline styles for maximum compatibility
+            const safeCommand = (command || 'waiting...').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+            const safeOutput = output ? output.replace(/</g, '&lt;').replace(/>/g, '&gt;') : '';
+
+            // Use a single p element instead of nested spans
+            let html = `
+                <p style="margin: 0 0 24px 0; padding: 16px; background: #1a1a2e; border-radius: 8px; border: 2px solid #00ff00; font-family: monospace; font-size: 22px; line-height: 1.4;">
+                    <b style="color: #00ff00;">$</b> <b style="color: #ffff00;">${safeCommand}</b>
+                </p>
+            `;
+
+            if (safeOutput) {
+                html += `
+                    <pre style="color: #00ff00; white-space: pre-wrap; word-wrap: break-word; margin: 0; padding: 24px; background: rgba(0,255,0,0.12); border-radius: 8px; border-left: 4px solid #00ff00; font-size: 15px; line-height: 1.7; font-family: 'Cascadia Code', 'Fira Code', monospace;">${safeOutput}</pre>
+                `;
+            }
+
+            terminalContent.innerHTML = html;
+            terminalContent.scrollTop = 0;
+
+            document.getElementById('currentTask').textContent = `Running: ${command}`;
+
+            console.log('Terminal HTML set, length:', html.length);
+        }
+
+        // Add activity to log
+        function addActivity(type, message, animate = true) {
+            const log = document.getElementById('activityLog');
+
+            // Check for duplicates
+            const firstItem = log.firstElementChild;
+            if (firstItem && firstItem.querySelector('.activity-message')?.textContent === message) {
+                return;
+            }
+
+            const item = document.createElement('div');
+            item.className = `activity-item ${type}`;
+            if (!animate) item.style.animation = 'none';
+
+            const icon = {
+                'speech': '🎤',
+                'navigate': '🌐',
+                'search': '🔍',
+                'code': '💻',
+                'terminal': '⚡',
+                'thinking': '💭',
+                'system': '⚙️'
+            }[type] || '📌';
+
+            item.innerHTML = `
+                <span class="activity-icon">${icon}</span>
+                <div class="activity-content">
+                    <span class="activity-time">${new Date().toLocaleTimeString()}</span>
+                    <span class="activity-message">${message}</span>
+                </div>
+            `;
+
+            log.insertBefore(item, log.firstChild);
+
+            // Limit entries
+            while (log.children.length > 100) {
+                log.removeChild(log.lastChild);
+            }
+        }
+
+        // Poll for activity updates (fallback if WebSocket misses)
+        async function pollActivity() {
+            try {
+                const res = await fetch('/api/activity');
+                const data = await res.json();
+
+                if (data.activity) {
+                    handleActivity(data.activity);
+                }
+
+                // Update agent status
+                if (data.agent) {
+                    updateAgentStatus(data);
+                }
+            } catch (e) {
+                // Ignore poll errors
+            }
+        }
+
+        // Initialize
+        function init() {
+            connect();
+
+            // Poll for activity every 300ms as backup
+            setInterval(pollActivity, 300);
+
+            addActivity('system', '🚀 Dashboard initialized');
+        }
+
+        init();
+    </script>
+</body>
+</html>

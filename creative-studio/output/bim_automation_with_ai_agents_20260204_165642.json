@@ -1,0 +1,84 @@
+{
+  "title": "BIM Automation with AI Agents",
+  "theme": {
+    "primary_color": "#2C3E50",
+    "accent_color": "#3498DB",
+    "background": "#FFFFFF",
+    "font_title": "Arial Black",
+    "font_body": "Arial"
+  },
+  "slides": [
+    {
+      "number": 1,
+      "title": "The BIM Challenge",
+      "content": [],
+      "layout": "title-content",
+      "notes": "```slide\n[Slide 1: The BIM Challenge]\nLayout: Bold headline top-center, 3 pain point boxes in row below, construction site background (50% opacity)\nVisual: Icons for manual processes, time waste, erro",
+      "image_description": null
+    },
+    {
+      "number": 2,
+      "title": "AI Agents Transform BIM",
+      "content": [],
+      "layout": "title-content",
+      "notes": "```slide\n[Slide 1: The BIM Challenge]\nLayout: Bold headline top-center, 3 pain point boxes in row below, construction site background (50% opacity)\nVisual: Icons for manual processes, time waste, erro",
+      "image_description": null
+    },
+    {
+      "number": 3,
+      "title": "Real-World Impact",
+      "content": [],
+      "layout": "title-content",
+      "notes": "```slide\n[Slide 1: The BIM Challenge]\nLayout: Bold headline top-center, 3 pain point boxes in row below, construction site background (50% opacity)\nVisual: Icons for manual processes, time waste, erro",
+      "image_description": null
+    },
+    {
+      "number": 4,
+      "title": "Your Next Steps",
+      "content": [],
+      "layout": "title-content",
+      "notes": "```slide\n[Slide 1: The BIM Challenge]\nLayout: Bold headline top-center, 3 pain point boxes in row below, construction site background (50% opacity)\nVisual: Icons for manual processes, time waste, erro",
+      "image_description": null
+    },
+    {
+      "number": 5,
+      "title": "The BIM Challenge - REFINED",
+      "content": [],
+      "layout": "title-content",
+      "notes": "Perfect! Now I'll refine the visual elements to complement the finalized copy and ensure maximum impact for our technical audience.\n\n```slide\n[Slide 1: The BIM Challenge - REFINED]\nLayout: Bold headli",
+      "image_description": null
+    },
+    {
+      "number": 6,
+      "title": "AI Agents Transform BIM - REFINED",
+      "content": [],
+      "layout": "title-content",
+      "notes": "```slide\n[Slide 2: AI Agents Transform BIM - REFINED]\nLayout: Split screen with connecting blue arrow, left side muted gray, right side bright with success indicators\nVisual: Traditional gear icons vs",
+      "image_description": null
+    },
+    {
+      "number": 7,
+      "title": "```",
+      "content": [],
+      "layout": "title-content",
+      "notes": "```slide\n[Slide 2: AI Agents Transform BIM - REFINED]\nLayout: Split screen with connecting blue arrow, left side muted gray, right side bright with success indicators\nVisual: Traditional gear icons vs",
+      "image_description": null
+    },
+    {
+      "number": 8,
+      "title": "Real-World Impact - REFINED]",
+      "content": [],
+      "layout": "title-content",
+      "notes": "```slide\n[Slide 2: AI Agents Transform BIM - REFINED]\nLayout: Split screen with connecting blue arrow, left side muted gray, right side bright with success indicators\nVisual: Traditional gear icons vs",
+      "image_description": null
+    },
+    {
+      "number": 9,
+      "title": "Your Next Steps - REFINED]",
+      "content": [],
+      "layout": "title-content",
+      "notes": "```slide\n[Slide 2: AI Agents Transform BIM - REFINED]\nLayout: Split screen with connecting blue arrow, left side muted gray, right side bright with success indicators\nVisual: Traditional gear icons vs",
+      "image_description": null
+    }
+  ]
+}

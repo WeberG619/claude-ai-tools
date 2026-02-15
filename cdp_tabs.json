@@ -1,0 +1,637 @@
+﻿[ {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/inspector.html?ws=localhost:9222/devtools/page/6CFB47814FF2ACD08EE2F87C3763BDE6",
+   "faviconUrl": "https://assetsv2.fiverrcdn.com/assets/favicon-32x32-c14c90ef2f61e444157b7feaca9b5235.png",
+   "id": "6CFB47814FF2ACD08EE2F87C3763BDE6",
+   "parentId": "48B63911A6AC4044D889D41F9A9D1434",
+   "title": "https://js.px-cloud.net/?t=d-ugf4cso0r-1770697243370&amp;v=4237779b-0558-11f1-87c5-7b125fe08fd8",
+   "type": "iframe",
+   "url": "https://js.px-cloud.net/?t=d-ugf4cso0r-1770697243370&v=4237779b-0558-11f1-87c5-7b125fe08fd8",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/6CFB47814FF2ACD08EE2F87C3763BDE6"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/inspector.html?ws=localhost:9222/devtools/page/C62674236D7D452CD44A9922EA6D4A1A",
+   "faviconUrl": "https://assetsv2.fiverrcdn.com/assets/favicon-32x32-c14c90ef2f61e444157b7feaca9b5235.png",
+   "id": "C62674236D7D452CD44A9922EA6D4A1A",
+   "parentId": "48B63911A6AC4044D889D41F9A9D1434",
+   "title": "https://5566805.fls.doubleclick.net/activityi;dc_pre=CLnr8KGJzpIDFXGufwQdUY0CzQ;src=5566805;type=match0;cat=dtmat0;ord=3880765310866;npa=0;auiddc=1215704346.1770601209;u1=217095915;u10=1770601206000-5340b50dd06692509321394583a5ba015f781c34;u8=United%20States;u5=false;uaa=x86;uab=64;uafvl=Not(A%253ABrand%3B8.0.0.0%7CChromium%3B144.0.7559.133%7CGoogle%2520Chrome%3B144.0.7559.133;uamb=0;uam=;uap=Windows;uapv=10.0.0;uaw=0;pscdl=noapi;frm=0;_tu=KFA;gtm=45fe6261v9181644637z86127856za20gzb6127856zd6127856xea;gcs=G111;gcd=13v3v3v3v5l1;dma=0;dc_fmt=2;tag_exp=103116026~103200004~104527907~104528500~104684208~104684211~115616986~115938466~115938468~116185181~116185182~116988315;epver=2;dc_random=1770697244_c3Om5Cy9YD8rsfy1mId2OYqjiqOS2tflJg;_dc_test=1;~oref=https%3A%2F%2Fwww.fiverr.com%2Fusers%2Fweberg619%2Fmanage_gigs?",
+   "type": "iframe",
+   "url": "https://5566805.fls.doubleclick.net/activityi;dc_pre=CLnr8KGJzpIDFXGufwQdUY0CzQ;src=5566805;type=match0;cat=dtmat0;ord=3880765310866;npa=0;auiddc=1215704346.1770601209;u1=217095915;u10=1770601206000-5340b50dd06692509321394583a5ba015f781c34;u8=United%20States;u5=false;uaa=x86;uab=64;uafvl=Not(A%253ABrand%3B8.0.0.0%7CChromium%3B144.0.7559.133%7CGoogle%2520Chrome%3B144.0.7559.133;uamb=0;uam=;uap=Windows;uapv=10.0.0;uaw=0;pscdl=noapi;frm=0;_tu=KFA;gtm=45fe6261v9181644637z86127856za20gzb6127856zd6127856xea;gcs=G111;gcd=13v3v3v3v5l1;dma=0;dc_fmt=2;tag_exp=103116026~103200004~104527907~104528500~104684208~104684211~115616986~115938466~115938468~116185181~116185182~116988315;epver=2;dc_random=1770697244_c3Om5Cy9YD8rsfy1mId2OYqjiqOS2tflJg;_dc_test=1;~oref=https%3A%2F%2Fwww.fiverr.com%2Fusers%2Fweberg619%2Fmanage_gigs?",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/C62674236D7D452CD44A9922EA6D4A1A"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/inspector.html?ws=localhost:9222/devtools/page/48B63911A6AC4044D889D41F9A9D1434",
+   "faviconUrl": "https://assetsv2.fiverrcdn.com/assets/favicon-32x32-c14c90ef2f61e444157b7feaca9b5235.png",
+   "id": "48B63911A6AC4044D889D41F9A9D1434",
+   "title": "Gigs",
+   "type": "page",
+   "url": "https://www.fiverr.com/users/weberg619/manage_gigs",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/48B63911A6AC4044D889D41F9A9D1434"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/inspector.html?ws=localhost:9222/devtools/page/0F87F66A82CA024BAF9D10952379FBD3",
+   "faviconUrl": "https://assetsv2.fiverrcdn.com/assets/favicon-32x32-c14c90ef2f61e444157b7feaca9b5235.png",
+   "id": "0F87F66A82CA024BAF9D10952379FBD3",
+   "parentId": "48B63911A6AC4044D889D41F9A9D1434",
+   "title": "https://insight.adsrvr.org/track/cei?advertiser_id=9di75e4&amp;cookie_sync=1&amp;upv=3.0.0&amp;upid=9yhrkuj&amp;ref=https://www.fiverr.com/users/weberg619/manage_gigs",
+   "type": "iframe",
+   "url": "https://insight.adsrvr.org/track/cei?advertiser_id=9di75e4&cookie_sync=1&upv=3.0.0&upid=9yhrkuj&ref=https://www.fiverr.com/users/weberg619/manage_gigs",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/0F87F66A82CA024BAF9D10952379FBD3"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/inspector.html?ws=localhost:9222/devtools/page/A3727F159921FC94A554670984909781",
+   "faviconUrl": "https://assetsv2.fiverrcdn.com/assets/favicon-32x32-c14c90ef2f61e444157b7feaca9b5235.png",
+   "id": "A3727F159921FC94A554670984909781",
+   "parentId": "48B63911A6AC4044D889D41F9A9D1434",
+   "title": "https://solve-widget.forethought.ai/?v=2#id=forethought-widget-embed-script&amp;src=https%3A%2F%2Fsolve-widget.forethought.ai%2Fembed.js&amp;type=application%2Fjavascript&amp;initial-intent-id=fa73df7a-71e0-4f49-8506-92816dcf460d&amp;data-ft-user-name=weberg619&amp;data-ft-user-id=217095915&amp;data-api-key=7b31d896-0a67-4b71-a243-5ad6f0dd94c1&amp;data-ft-jwtoken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxNzcwNjk3MjQzL2I3OTYxNDQxLTA2YWYtNDc0Yi05YjUxLWI2MzRlZmMxNWU3YiIsImlhdCI6MTc3MDY5NzI0MywidXNlcl9pZCI6MjE3MDk1OTE1LCJleHAiOjE3NzA2OTc4NDN9.4M0y6YNYgSdj4treVUwqOYaaD_UZci_OKq57dwyJOVI&amp;config-ft-ignore-and-update-persistence-parameters=data-ft-JWToken%7Cdata-ft-jwtoken%7Cfull-screen%7Chidden%7Cdata-ft-user-name%7Cdata-ft-initialUrl%7Cdata-ft-user-id&amp;data-ft-embed-script-language=en&amp;data-ft-initialurl=https%3A%2F%2Fwww.fiverr.com%2Fusers%2Fweberg619%2Fmanage_gigs",
+   "type": "iframe",
+   "url": "https://solve-widget.forethought.ai/?v=2#id=forethought-widget-embed-script&src=https%3A%2F%2Fsolve-widget.forethought.ai%2Fembed.js&type=application%2Fjavascript&initial-intent-id=fa73df7a-71e0-4f49-8506-92816dcf460d&data-ft-user-name=weberg619&data-ft-user-id=217095915&data-api-key=7b31d896-0a67-4b71-a243-5ad6f0dd94c1&data-ft-jwtoken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxNzcwNjk3MjQzL2I3OTYxNDQxLTA2YWYtNDc0Yi05YjUxLWI2MzRlZmMxNWU3YiIsImlhdCI6MTc3MDY5NzI0MywidXNlcl9pZCI6MjE3MDk1OTE1LCJleHAiOjE3NzA2OTc4NDN9.4M0y6YNYgSdj4treVUwqOYaaD_UZci_OKq57dwyJOVI&config-ft-ignore-and-update-persistence-parameters=data-ft-JWToken%7Cdata-ft-jwtoken%7Cfull-screen%7Chidden%7Cdata-ft-user-name%7Cdata-ft-initialUrl%7Cdata-ft-user-id&data-ft-embed-script-language=en&data-ft-initialurl=https%3A%2F%2Fwww.fiverr.com%2Fusers%2Fweberg619%2Fmanage_gigs",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/A3727F159921FC94A554670984909781"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/inspector.html?ws=localhost:9222/devtools/page/5076D569F9BF8A4AF6592D6BCC29D897",
+   "faviconUrl": "https://assetsv2.fiverrcdn.com/assets/favicon-32x32-c14c90ef2f61e444157b7feaca9b5235.png",
+   "id": "5076D569F9BF8A4AF6592D6BCC29D897",
+   "parentId": "48B63911A6AC4044D889D41F9A9D1434",
+   "title": "https://www.googletagmanager.com/static/service_worker/61k0/sw_iframe.html?origin=https%3A%2F%2Fwww.fiverr.com",
+   "type": "iframe",
+   "url": "https://www.googletagmanager.com/static/service_worker/61k0/sw_iframe.html?origin=https%3A%2F%2Fwww.fiverr.com",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/5076D569F9BF8A4AF6592D6BCC29D897"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/inspector.html?ws=localhost:9222/devtools/page/88866229553AB55ADD95AFA2AEE5F1C2",
+   "faviconUrl": "https://assetsv2.fiverrcdn.com/assets/favicon-32x32-c14c90ef2f61e444157b7feaca9b5235.png",
+   "id": "88866229553AB55ADD95AFA2AEE5F1C2",
+   "parentId": "9B051C0C979281A1D1317268A769EEF5",
+   "title": "https://www.googletagmanager.com/static/service_worker/61k0/sw_iframe.html?origin=https%3A%2F%2Fwww.fiverr.com",
+   "type": "iframe",
+   "url": "https://www.googletagmanager.com/static/service_worker/61k0/sw_iframe.html?origin=https%3A%2F%2Fwww.fiverr.com",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/88866229553AB55ADD95AFA2AEE5F1C2"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/inspector.html?ws=localhost:9222/devtools/page/9B051C0C979281A1D1317268A769EEF5",
+   "faviconUrl": "https://assetsv2.fiverrcdn.com/assets/favicon-32x32-c14c90ef2f61e444157b7feaca9b5235.png",
+   "id": "9B051C0C979281A1D1317268A769EEF5",
+   "title": "Gigs",
+   "type": "page",
+   "url": "https://www.fiverr.com/users/weberg619/manage_gigs",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/9B051C0C979281A1D1317268A769EEF5"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/inspector.html?ws=localhost:9222/devtools/page/8FBECCBF98A08499B55CBC9A1E7690A2",
+   "faviconUrl": "https://assetsv2.fiverrcdn.com/assets/favicon-32x32-c14c90ef2f61e444157b7feaca9b5235.png",
+   "id": "8FBECCBF98A08499B55CBC9A1E7690A2",
+   "parentId": "9B051C0C979281A1D1317268A769EEF5",
+   "title": "https://js.px-cloud.net/?t=d-9e9ajhqg8-1770697213631&amp;v=4237779b-0558-11f1-87c5-7b125fe08fd8",
+   "type": "iframe",
+   "url": "https://js.px-cloud.net/?t=d-9e9ajhqg8-1770697213631&v=4237779b-0558-11f1-87c5-7b125fe08fd8",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/8FBECCBF98A08499B55CBC9A1E7690A2"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/inspector.html?ws=localhost:9222/devtools/page/22E4364275912161BB16DAC15B6A5D8B",
+   "faviconUrl": "https://assetsv2.fiverrcdn.com/assets/favicon-32x32-c14c90ef2f61e444157b7feaca9b5235.png",
+   "id": "22E4364275912161BB16DAC15B6A5D8B",
+   "parentId": "9B051C0C979281A1D1317268A769EEF5",
+   "title": "https://solve-widget.forethought.ai/?v=2#id=forethought-widget-embed-script&amp;src=https%3A%2F%2Fsolve-widget.forethought.ai%2Fembed.js&amp;type=application%2Fjavascript&amp;initial-intent-id=fa73df7a-71e0-4f49-8506-92816dcf460d&amp;data-ft-user-name=weberg619&amp;data-ft-user-id=217095915&amp;data-api-key=7b31d896-0a67-4b71-a243-5ad6f0dd94c1&amp;data-ft-jwtoken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxNzcwNjk3MjE0LzY0NjFkMDVkLTIxNDktNGZhNS04MGE5LTdhZWFmN2M0YjcxMiIsImlhdCI6MTc3MDY5NzIxNCwidXNlcl9pZCI6MjE3MDk1OTE1LCJleHAiOjE3NzA2OTc4MTR9.Woacibnlob5vNYUlIn4yr30kRB_mR6CvM7Ow9CMHlOg&amp;config-ft-ignore-and-update-persistence-parameters=data-ft-JWToken%7Cdata-ft-jwtoken%7Cfull-screen%7Chidden%7Cdata-ft-user-name%7Cdata-ft-initialUrl%7Cdata-ft-user-id&amp;data-ft-embed-script-language=en&amp;data-ft-initialurl=https%3A%2F%2Fwww.fiverr.com%2Fusers%2Fweberg619%2Fmanage_gigs",
+   "type": "iframe",
+   "url": "https://solve-widget.forethought.ai/?v=2#id=forethought-widget-embed-script&src=https%3A%2F%2Fsolve-widget.forethought.ai%2Fembed.js&type=application%2Fjavascript&initial-intent-id=fa73df7a-71e0-4f49-8506-92816dcf460d&data-ft-user-name=weberg619&data-ft-user-id=217095915&data-api-key=7b31d896-0a67-4b71-a243-5ad6f0dd94c1&data-ft-jwtoken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxNzcwNjk3MjE0LzY0NjFkMDVkLTIxNDktNGZhNS04MGE5LTdhZWFmN2M0YjcxMiIsImlhdCI6MTc3MDY5NzIxNCwidXNlcl9pZCI6MjE3MDk1OTE1LCJleHAiOjE3NzA2OTc4MTR9.Woacibnlob5vNYUlIn4yr30kRB_mR6CvM7Ow9CMHlOg&config-ft-ignore-and-update-persistence-parameters=data-ft-JWToken%7Cdata-ft-jwtoken%7Cfull-screen%7Chidden%7Cdata-ft-user-name%7Cdata-ft-initialUrl%7Cdata-ft-user-id&data-ft-embed-script-language=en&data-ft-initialurl=https%3A%2F%2Fwww.fiverr.com%2Fusers%2Fweberg619%2Fmanage_gigs",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/22E4364275912161BB16DAC15B6A5D8B"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/inspector.html?ws=localhost:9222/devtools/page/4AE08686295CF51A6476463DBF007903",
+   "faviconUrl": "https://assetsv2.fiverrcdn.com/assets/favicon-32x32-c14c90ef2f61e444157b7feaca9b5235.png",
+   "id": "4AE08686295CF51A6476463DBF007903",
+   "parentId": "9B051C0C979281A1D1317268A769EEF5",
+   "title": "https://5566805.fls.doubleclick.net/activityi;dc_pre=CI6q95OJzpIDFSG1fwQdv-AISA;src=5566805;type=match0;cat=dtmat0;ord=5118929596324;npa=0;auiddc=1215704346.1770601209;u1=217095915;u10=1770601206000-5340b50dd06692509321394583a5ba015f781c34;u8=United%20States;u5=false;uaa=x86;uab=64;uafvl=Not(A%253ABrand%3B8.0.0.0%7CChromium%3B144.0.7559.133%7CGoogle%2520Chrome%3B144.0.7559.133;uamb=0;uam=;uap=Windows;uapv=10.0.0;uaw=0;pscdl=noapi;frm=0;_tu=KFA;gtm=45fe6261v9181644637z86127856za20gzb6127856zd6127856xea;gcs=G111;gcd=13v3v3v3v5l1;dma=0;dc_fmt=2;tag_exp=103116026~103200004~104527906~104528501~104684208~104684211~115938465~115938469~116185181~116185182~116988315;epver=2;dc_random=1770697215_mdIuJH-rG15mPEEnNPkF83r7WKsCYSXl2g;_dc_test=1;~oref=https%3A%2F%2Fwww.fiverr.com%2Fusers%2Fweberg619%2Fmanage_gigs?",
+   "type": "iframe",
+   "url": "https://5566805.fls.doubleclick.net/activityi;dc_pre=CI6q95OJzpIDFSG1fwQdv-AISA;src=5566805;type=match0;cat=dtmat0;ord=5118929596324;npa=0;auiddc=1215704346.1770601209;u1=217095915;u10=1770601206000-5340b50dd06692509321394583a5ba015f781c34;u8=United%20States;u5=false;uaa=x86;uab=64;uafvl=Not(A%253ABrand%3B8.0.0.0%7CChromium%3B144.0.7559.133%7CGoogle%2520Chrome%3B144.0.7559.133;uamb=0;uam=;uap=Windows;uapv=10.0.0;uaw=0;pscdl=noapi;frm=0;_tu=KFA;gtm=45fe6261v9181644637z86127856za20gzb6127856zd6127856xea;gcs=G111;gcd=13v3v3v3v5l1;dma=0;dc_fmt=2;tag_exp=103116026~103200004~104527906~104528501~104684208~104684211~115938465~115938469~116185181~116185182~116988315;epver=2;dc_random=1770697215_mdIuJH-rG15mPEEnNPkF83r7WKsCYSXl2g;_dc_test=1;~oref=https%3A%2F%2Fwww.fiverr.com%2Fusers%2Fweberg619%2Fmanage_gigs?",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/4AE08686295CF51A6476463DBF007903"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/inspector.html?ws=localhost:9222/devtools/page/BEACAB00D5E5029E01319174DB591774",
+   "faviconUrl": "https://assetsv2.fiverrcdn.com/assets/favicon-32x32-c14c90ef2f61e444157b7feaca9b5235.png",
+   "id": "BEACAB00D5E5029E01319174DB591774",
+   "parentId": "9B051C0C979281A1D1317268A769EEF5",
+   "title": "https://insight.adsrvr.org/track/cei?advertiser_id=9di75e4&amp;cookie_sync=1&amp;upv=3.0.0&amp;upid=9yhrkuj&amp;ref=https://www.fiverr.com/users/weberg619/manage_gigs",
+   "type": "iframe",
+   "url": "https://insight.adsrvr.org/track/cei?advertiser_id=9di75e4&cookie_sync=1&upv=3.0.0&upid=9yhrkuj&ref=https://www.fiverr.com/users/weberg619/manage_gigs",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/BEACAB00D5E5029E01319174DB591774"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/inspector.html?ws=localhost:9222/devtools/page/F6FDDAB7CD6F8D9F823511AD64DBC9C7",
+   "faviconUrl": "data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAABMLAAATCwAAAAAAAAAAAAAAAAAAAAAAAHO/HQBzvx0Hc78dSXO/Hahzvx3kc78d+3O/Hftzvx3kc78dqHO/HUhzvx0Hc78dAAAAAAAAAAAAc78fAHO/HQBzvx0Yc78dknO/He9zvx3/c78d/3O/Hf9zvx3/c78d/3O/Hf9zvx3uc78dknO/HRhzvx0Ac78cAHO/HQBzvx0Yc78dsXO/Hf9zvx3/cr4b/3G+Gf9yvxv/c78d/3K+G/9xvhn/cr4b/3O/Hf9zvx2xc78dGHO/HQBzvx0Gc78dknO/Hf9zvx3/c78e/43LR/+c0l//hMc5/3K/G/+JyUH/nNJf/4jJP/9zvxz/c78d/3O/HZJzvx0Gc78dSXO/He1zvx3/c78d/3TAH//O6K///////67afP9wvRf/v+KY//////+74JL/cb4a/3O/Hf9zvx3tc78dSXO/Hahzvx3/c78d/3O/Hf90wB//0Omz//////+v237/b70X/8Hjm///////veGV/3G+Gv9zvx3/c78d/3O/Hadzvx3jc78d/3O/Hf9zvx3/dMAf/9Dps///////r9t+/2+9F//B45v//////73hlf9xvhr/c78d/3O/Hf9zvx3jc78d+3O/Hf9zvx3/c78d/3S/Hv/Q6bP//////6/afv9vvRb/weOb//////+94ZX/cb4a/3O/Hf9zvx3/c78d+3O/Hftzvx3/c78c/3nCJv+23on/7Pbh///////e8Mn/w+Se/+Xz1f//////veGV/3G+Gv9zvx3/c78d/3O/Hftzvx3jc78d/3K/HP98wyz/4PHN/////v//////+/35//n89f/4/PP/+fz1/7nfjv9xvhv/c78d/3O/Hf9zvx3jc78dp3O/Hf9zvx3/dcAg/4vKQ//Z7sL//////8fmpf+SzVD/kc1N/5DMS/+CxjX/c78c/3O/Hf9zvx3/c78dqHO/HUpzvx3tc78d/3O/Hf9xvhn/uN+N///////x+en/2+/F/5/TZP9vvRf/cr8b/3O/Hf9zvx3/c78d7XO/HUlzvx0Gc78dknO/Hf9zvx3/cr8c/4DFMv/E5J//5/TZ/+334v+o13P/cb4a/3O/Hf9zvx3/c78d/3O/HZJzvx0Gc78dAHO/HRhzvx2xc78d/3O/Hf9yvxz/dMAf/37ELv+AxTL/ecIm/3O/Hf9zvx3/c78d/3O/HbFzvx0Yc78dAHS/GgBzvx0Ac78dGHO/HZJzvx3uc78d/3O/Hf9yvxz/cr8c/3O/HP9zvx3/c78d73O/HZJzvx0Yc78dAHS/GgAAAAAAAAAAAHO/HQBzvx0Hc78dSXO/Hahzvx3kc78d+3O/Hftzvx3kc78dqHO/HUlzvx0Hc78dAAAAAAAAAAAA4AcAAMADAACAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIABAADAAwAA4AcAAA==",
+   "id": "F6FDDAB7CD6F8D9F823511AD64DBC9C7",
+   "title": "Page not found - Fiverr",
+   "type": "page",
+   "url": "https://www.fiverr.com/seller_dashboard/gigs/create",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/F6FDDAB7CD6F8D9F823511AD64DBC9C7"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/inspector.html?ws=localhost:9222/devtools/page/CC26B4FDCE4BD0129980FB1594656FB2",
+   "faviconUrl": "data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAABMLAAATCwAAAAAAAAAAAAAAAAAAAAAAAHO/HQBzvx0Hc78dSXO/Hahzvx3kc78d+3O/Hftzvx3kc78dqHO/HUhzvx0Hc78dAAAAAAAAAAAAc78fAHO/HQBzvx0Yc78dknO/He9zvx3/c78d/3O/Hf9zvx3/c78d/3O/Hf9zvx3uc78dknO/HRhzvx0Ac78cAHO/HQBzvx0Yc78dsXO/Hf9zvx3/cr4b/3G+Gf9yvxv/c78d/3K+G/9xvhn/cr4b/3O/Hf9zvx2xc78dGHO/HQBzvx0Gc78dknO/Hf9zvx3/c78e/43LR/+c0l//hMc5/3K/G/+JyUH/nNJf/4jJP/9zvxz/c78d/3O/HZJzvx0Gc78dSXO/He1zvx3/c78d/3TAH//O6K///////67afP9wvRf/v+KY//////+74JL/cb4a/3O/Hf9zvx3tc78dSXO/Hahzvx3/c78d/3O/Hf90wB//0Omz//////+v237/b70X/8Hjm///////veGV/3G+Gv9zvx3/c78d/3O/Hadzvx3jc78d/3O/Hf9zvx3/dMAf/9Dps///////r9t+/2+9F//B45v//////73hlf9xvhr/c78d/3O/Hf9zvx3jc78d+3O/Hf9zvx3/c78d/3S/Hv/Q6bP//////6/afv9vvRb/weOb//////+94ZX/cb4a/3O/Hf9zvx3/c78d+3O/Hftzvx3/c78c/3nCJv+23on/7Pbh///////e8Mn/w+Se/+Xz1f//////veGV/3G+Gv9zvx3/c78d/3O/Hftzvx3jc78d/3K/HP98wyz/4PHN/////v//////+/35//n89f/4/PP/+fz1/7nfjv9xvhv/c78d/3O/Hf9zvx3jc78dp3O/Hf9zvx3/dcAg/4vKQ//Z7sL//////8fmpf+SzVD/kc1N/5DMS/+CxjX/c78c/3O/Hf9zvx3/c78dqHO/HUpzvx3tc78d/3O/Hf9xvhn/uN+N///////x+en/2+/F/5/TZP9vvRf/cr8b/3O/Hf9zvx3/c78d7XO/HUlzvx0Gc78dknO/Hf9zvx3/cr8c/4DFMv/E5J//5/TZ/+334v+o13P/cb4a/3O/Hf9zvx3/c78d/3O/HZJzvx0Gc78dAHO/HRhzvx2xc78d/3O/Hf9yvxz/dMAf/37ELv+AxTL/ecIm/3O/Hf9zvx3/c78d/3O/HbFzvx0Yc78dAHS/GgBzvx0Ac78dGHO/HZJzvx3uc78d/3O/Hf9yvxz/cr8c/3O/HP9zvx3/c78d73O/HZJzvx0Yc78dAHS/GgAAAAAAAAAAAHO/HQBzvx0Hc78dSXO/Hahzvx3kc78d+3O/Hftzvx3kc78dqHO/HUlzvx0Hc78dAAAAAAAAAAAA4AcAAMADAACAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIABAADAAwAA4AcAAA==",
+   "id": "CC26B4FDCE4BD0129980FB1594656FB2",
+   "title": "Page not found - Fiverr",
+   "type": "page",
+   "url": "https://www.fiverr.com/seller_dashboard/gigs/create",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/CC26B4FDCE4BD0129980FB1594656FB2"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/inspector.html?ws=localhost:9222/devtools/page/53F1B58D1BC37F670E94DF00EBCE843E",
+   "faviconUrl": "https://assetsv2.fiverrcdn.com/assets/favicon-32x32-c14c90ef2f61e444157b7feaca9b5235.png",
+   "id": "53F1B58D1BC37F670E94DF00EBCE843E",
+   "title": "Gigs",
+   "type": "page",
+   "url": "https://www.fiverr.com/users/weberg619/manage_gigs",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/53F1B58D1BC37F670E94DF00EBCE843E"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/inspector.html?ws=localhost:9222/devtools/page/D321BF3C002322C95F03541A18923F1F",
+   "faviconUrl": "https://assetsv2.fiverrcdn.com/assets/favicon-32x32-c14c90ef2f61e444157b7feaca9b5235.png",
+   "id": "D321BF3C002322C95F03541A18923F1F",
+   "parentId": "53F1B58D1BC37F670E94DF00EBCE843E",
+   "title": "https://js.px-cloud.net/?t=d-bt0ic4gd0-1770697102031&amp;v=4237779b-0558-11f1-87c5-7b125fe08fd8",
+   "type": "iframe",
+   "url": "https://js.px-cloud.net/?t=d-bt0ic4gd0-1770697102031&v=4237779b-0558-11f1-87c5-7b125fe08fd8",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/D321BF3C002322C95F03541A18923F1F"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/inspector.html?ws=localhost:9222/devtools/page/FCDACDE0CA6196D0B7516F254A0338AA",
+   "faviconUrl": "https://assetsv2.fiverrcdn.com/assets/favicon-32x32-c14c90ef2f61e444157b7feaca9b5235.png",
+   "id": "FCDACDE0CA6196D0B7516F254A0338AA",
+   "parentId": "53F1B58D1BC37F670E94DF00EBCE843E",
+   "title": "https://5566805.fls.doubleclick.net/activityi;dc_pre=CLDlxd6IzpIDFXePfwQdvdclpg;src=5566805;type=match0;cat=dtmat0;ord=8344798010715;npa=0;auiddc=1215704346.1770601209;u1=217095915;u10=1770601206000-5340b50dd06692509321394583a5ba015f781c34;u8=United%20States;u5=false;uaa=x86;uab=64;uafvl=Not(A%253ABrand%3B8.0.0.0%7CChromium%3B144.0.7559.133%7CGoogle%2520Chrome%3B144.0.7559.133;uamb=0;uam=;uap=Windows;uapv=10.0.0;uaw=0;pscdl=noapi;frm=0;_tu=KFA;gtm=45fe6261v9181644637z86127856za20gzb6127856zd6127856xea;gcs=G111;gcd=13v3v3v3v5l1;dma=0;dc_fmt=2;tag_exp=103116026~103200004~104527906~104528500~104684208~104684211~115616985~115938466~115938469~116185181~116185182~116988315;epver=2;dc_random=1770697103_hO5njvhkMCH-MHFpEM1Ns-W-iwLmySzY2Q;_dc_test=1;~oref=https%3A%2F%2Fwww.fiverr.com%2Fusers%2Fweberg619%2Fmanage_gigs?",
+   "type": "iframe",
+   "url": "https://5566805.fls.doubleclick.net/activityi;dc_pre=CLDlxd6IzpIDFXePfwQdvdclpg;src=5566805;type=match0;cat=dtmat0;ord=8344798010715;npa=0;auiddc=1215704346.1770601209;u1=217095915;u10=1770601206000-5340b50dd06692509321394583a5ba015f781c34;u8=United%20States;u5=false;uaa=x86;uab=64;uafvl=Not(A%253ABrand%3B8.0.0.0%7CChromium%3B144.0.7559.133%7CGoogle%2520Chrome%3B144.0.7559.133;uamb=0;uam=;uap=Windows;uapv=10.0.0;uaw=0;pscdl=noapi;frm=0;_tu=KFA;gtm=45fe6261v9181644637z86127856za20gzb6127856zd6127856xea;gcs=G111;gcd=13v3v3v3v5l1;dma=0;dc_fmt=2;tag_exp=103116026~103200004~104527906~104528500~104684208~104684211~115616985~115938466~115938469~116185181~116185182~116988315;epver=2;dc_random=1770697103_hO5njvhkMCH-MHFpEM1Ns-W-iwLmySzY2Q;_dc_test=1;~oref=https%3A%2F%2Fwww.fiverr.com%2Fusers%2Fweberg619%2Fmanage_gigs?",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/FCDACDE0CA6196D0B7516F254A0338AA"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/inspector.html?ws=localhost:9222/devtools/page/9A6545E36313E67D2C1CC5652004EA39",
+   "faviconUrl": "https://assetsv2.fiverrcdn.com/assets/favicon-32x32-c14c90ef2f61e444157b7feaca9b5235.png",
+   "id": "9A6545E36313E67D2C1CC5652004EA39",
+   "parentId": "53F1B58D1BC37F670E94DF00EBCE843E",
+   "title": "https://insight.adsrvr.org/track/cei?advertiser_id=9di75e4&amp;cookie_sync=1&amp;upv=3.0.0&amp;upid=9yhrkuj&amp;ref=https://www.fiverr.com/users/weberg619/manage_gigs",
+   "type": "iframe",
+   "url": "https://insight.adsrvr.org/track/cei?advertiser_id=9di75e4&cookie_sync=1&upv=3.0.0&upid=9yhrkuj&ref=https://www.fiverr.com/users/weberg619/manage_gigs",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/9A6545E36313E67D2C1CC5652004EA39"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/inspector.html?ws=localhost:9222/devtools/page/0A09808E519A0CBF98F0EE3C99375FA9",
+   "faviconUrl": "https://assetsv2.fiverrcdn.com/assets/favicon-32x32-c14c90ef2f61e444157b7feaca9b5235.png",
+   "id": "0A09808E519A0CBF98F0EE3C99375FA9",
+   "parentId": "53F1B58D1BC37F670E94DF00EBCE843E",
+   "title": "https://solve-widget.forethought.ai/?v=2#id=forethought-widget-embed-script&amp;src=https%3A%2F%2Fsolve-widget.forethought.ai%2Fembed.js&amp;type=application%2Fjavascript&amp;initial-intent-id=fa73df7a-71e0-4f49-8506-92816dcf460d&amp;data-ft-user-name=weberg619&amp;data-ft-user-id=217095915&amp;data-api-key=7b31d896-0a67-4b71-a243-5ad6f0dd94c1&amp;data-ft-jwtoken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxNzcwNjk3MTAyLzdjNjM5ZDA3LWNhNWMtNGQ0NC05MzQwLTU3OTdhZWFjODk2ZSIsImlhdCI6MTc3MDY5NzEwMiwidXNlcl9pZCI6MjE3MDk1OTE1LCJleHAiOjE3NzA2OTc3MDJ9.tI7dtohrIQDSM5P6nNv9PdNbPxiuJsVhL8SCiY1ojvU&amp;config-ft-ignore-and-update-persistence-parameters=data-ft-JWToken%7Cdata-ft-jwtoken%7Cfull-screen%7Chidden%7Cdata-ft-user-name%7Cdata-ft-initialUrl%7Cdata-ft-user-id&amp;data-ft-embed-script-language=en&amp;data-ft-initialurl=https%3A%2F%2Fwww.fiverr.com%2Fusers%2Fweberg619%2Fmanage_gigs",
+   "type": "iframe",
+   "url": "https://solve-widget.forethought.ai/?v=2#id=forethought-widget-embed-script&src=https%3A%2F%2Fsolve-widget.forethought.ai%2Fembed.js&type=application%2Fjavascript&initial-intent-id=fa73df7a-71e0-4f49-8506-92816dcf460d&data-ft-user-name=weberg619&data-ft-user-id=217095915&data-api-key=7b31d896-0a67-4b71-a243-5ad6f0dd94c1&data-ft-jwtoken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxNzcwNjk3MTAyLzdjNjM5ZDA3LWNhNWMtNGQ0NC05MzQwLTU3OTdhZWFjODk2ZSIsImlhdCI6MTc3MDY5NzEwMiwidXNlcl9pZCI6MjE3MDk1OTE1LCJleHAiOjE3NzA2OTc3MDJ9.tI7dtohrIQDSM5P6nNv9PdNbPxiuJsVhL8SCiY1ojvU&config-ft-ignore-and-update-persistence-parameters=data-ft-JWToken%7Cdata-ft-jwtoken%7Cfull-screen%7Chidden%7Cdata-ft-user-name%7Cdata-ft-initialUrl%7Cdata-ft-user-id&data-ft-embed-script-language=en&data-ft-initialurl=https%3A%2F%2Fwww.fiverr.com%2Fusers%2Fweberg619%2Fmanage_gigs",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/0A09808E519A0CBF98F0EE3C99375FA9"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/inspector.html?ws=localhost:9222/devtools/page/E32C6FD0F60AE2844971D01AA4526F16",
+   "faviconUrl": "https://assetsv2.fiverrcdn.com/assets/favicon-32x32-c14c90ef2f61e444157b7feaca9b5235.png",
+   "id": "E32C6FD0F60AE2844971D01AA4526F16",
+   "parentId": "53F1B58D1BC37F670E94DF00EBCE843E",
+   "title": "https://www.googletagmanager.com/static/service_worker/61k0/sw_iframe.html?origin=https%3A%2F%2Fwww.fiverr.com",
+   "type": "iframe",
+   "url": "https://www.googletagmanager.com/static/service_worker/61k0/sw_iframe.html?origin=https%3A%2F%2Fwww.fiverr.com",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/E32C6FD0F60AE2844971D01AA4526F16"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/inspector.html?ws=localhost:9222/devtools/page/EE8AFA159ADB655F7AD7EA13A46B870B",
+   "faviconUrl": "https://fiverr-res.cloudinary.com/npm-assets/layout-service/favicon-32x32.8f21439.png",
+   "id": "EE8AFA159ADB655F7AD7EA13A46B870B",
+   "title": "Seller Dashboard",
+   "type": "page",
+   "url": "https://www.fiverr.com/seller_dashboard",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/EE8AFA159ADB655F7AD7EA13A46B870B"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/inspector.html?ws=localhost:9222/devtools/page/53911088BFEAEE2B9583B879E36D4AE7",
+   "faviconUrl": "https://fiverr-res.cloudinary.com/npm-assets/layout-service/favicon-32x32.8f21439.png",
+   "id": "53911088BFEAEE2B9583B879E36D4AE7",
+   "parentId": "EE8AFA159ADB655F7AD7EA13A46B870B",
+   "title": "https://js.px-cloud.net/?t=d-ckybz7jdf-1770697084333&amp;v=4237779b-0558-11f1-87c5-7b125fe08fd8",
+   "type": "iframe",
+   "url": "https://js.px-cloud.net/?t=d-ckybz7jdf-1770697084333&v=4237779b-0558-11f1-87c5-7b125fe08fd8",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/53911088BFEAEE2B9583B879E36D4AE7"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/inspector.html?ws=localhost:9222/devtools/page/7EA47C02AACD6F6BA74076269D193623",
+   "faviconUrl": "https://fiverr-res.cloudinary.com/npm-assets/layout-service/favicon-32x32.8f21439.png",
+   "id": "7EA47C02AACD6F6BA74076269D193623",
+   "parentId": "EE8AFA159ADB655F7AD7EA13A46B870B",
+   "title": "https://5566805.fls.doubleclick.net/activityi;dc_pre=CMCJiNaIzpIDFfW1fwQdPRMSSg;src=5566805;type=match0;cat=dtmat0;ord=8474216034162;npa=0;auiddc=1215704346.1770601209;u1=217095915;u10=1770601206000-5340b50dd06692509321394583a5ba015f781c34;u8=United%20States;u5=false;uaa=x86;uab=64;uafvl=Not(A%253ABrand%3B8.0.0.0%7CChromium%3B144.0.7559.133%7CGoogle%2520Chrome%3B144.0.7559.133;uamb=0;uam=;uap=Windows;uapv=10.0.0;uaw=0;pscdl=noapi;frm=0;_tu=KFA;gtm=45fe6261v9181644637z86127856za20gzb6127856zd6127856xea;gcs=G111;gcd=13v3v3v3v5l1;dma=0;dc_fmt=2;tag_exp=103116026~103200004~104527906~104528500~104684208~104684211~115938465~115938469~116185181~116185182~116988315;epver=2;dc_random=1770697085_TQ2ymR1f9MEhD-WC10S6XdYWPhcPktIIrQ;_dc_test=1;~oref=https%3A%2F%2Fwww.fiverr.com%2Fseller_dashboard?",
+   "type": "iframe",
+   "url": "https://5566805.fls.doubleclick.net/activityi;dc_pre=CMCJiNaIzpIDFfW1fwQdPRMSSg;src=5566805;type=match0;cat=dtmat0;ord=8474216034162;npa=0;auiddc=1215704346.1770601209;u1=217095915;u10=1770601206000-5340b50dd06692509321394583a5ba015f781c34;u8=United%20States;u5=false;uaa=x86;uab=64;uafvl=Not(A%253ABrand%3B8.0.0.0%7CChromium%3B144.0.7559.133%7CGoogle%2520Chrome%3B144.0.7559.133;uamb=0;uam=;uap=Windows;uapv=10.0.0;uaw=0;pscdl=noapi;frm=0;_tu=KFA;gtm=45fe6261v9181644637z86127856za20gzb6127856zd6127856xea;gcs=G111;gcd=13v3v3v3v5l1;dma=0;dc_fmt=2;tag_exp=103116026~103200004~104527906~104528500~104684208~104684211~115938465~115938469~116185181~116185182~116988315;epver=2;dc_random=1770697085_TQ2ymR1f9MEhD-WC10S6XdYWPhcPktIIrQ;_dc_test=1;~oref=https%3A%2F%2Fwww.fiverr.com%2Fseller_dashboard?",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/7EA47C02AACD6F6BA74076269D193623"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/inspector.html?ws=localhost:9222/devtools/page/5B31DD4733572B190E393606883F262E",
+   "faviconUrl": "https://fiverr-res.cloudinary.com/npm-assets/layout-service/favicon-32x32.8f21439.png",
+   "id": "5B31DD4733572B190E393606883F262E",
+   "parentId": "EE8AFA159ADB655F7AD7EA13A46B870B",
+   "title": "https://insight.adsrvr.org/track/cei?advertiser_id=9di75e4&amp;cookie_sync=1&amp;upv=3.0.0&amp;upid=9yhrkuj&amp;ref=https://www.fiverr.com/seller_dashboard",
+   "type": "iframe",
+   "url": "https://insight.adsrvr.org/track/cei?advertiser_id=9di75e4&cookie_sync=1&upv=3.0.0&upid=9yhrkuj&ref=https://www.fiverr.com/seller_dashboard",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/5B31DD4733572B190E393606883F262E"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/inspector.html?ws=localhost:9222/devtools/page/C0C6122A1FC0AD54253DBD77DE2439BB",
+   "faviconUrl": "https://fiverr-res.cloudinary.com/npm-assets/layout-service/favicon-32x32.8f21439.png",
+   "id": "C0C6122A1FC0AD54253DBD77DE2439BB",
+   "parentId": "EE8AFA159ADB655F7AD7EA13A46B870B",
+   "title": "https://solve-widget.forethought.ai/?v=2#id=forethought-widget-embed-script&amp;src=https%3A%2F%2Fsolve-widget.forethought.ai%2Fembed.js&amp;type=application%2Fjavascript&amp;initial-intent-id=fa73df7a-71e0-4f49-8506-92816dcf460d&amp;data-ft-user-name=weberg619&amp;data-ft-user-id=217095915&amp;data-api-key=7b31d896-0a67-4b71-a243-5ad6f0dd94c1&amp;data-ft-jwtoken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxNzcwNjk3MDg0LzM5NzIyYzlmLWMyMTAtNDQ1MS04NGJlLTk5ZTZiNTM2ZDg3NyIsImlhdCI6MTc3MDY5NzA4NCwidXNlcl9pZCI6MjE3MDk1OTE1LCJleHAiOjE3NzA2OTc2ODR9.vq3tYwSZ0kmK2FQbg3e0y9jxLUpSIDDr2N6YydQiRwE&amp;config-ft-ignore-and-update-persistence-parameters=data-ft-JWToken%7Cdata-ft-jwtoken%7Cfull-screen%7Chidden%7Cdata-ft-user-name%7Cdata-ft-initialUrl%7Cdata-ft-user-id&amp;data-ft-embed-script-language=en&amp;data-ft-initialurl=https%3A%2F%2Fwww.fiverr.com%2Fseller_dashboard",
+   "type": "iframe",
+   "url": "https://solve-widget.forethought.ai/?v=2#id=forethought-widget-embed-script&src=https%3A%2F%2Fsolve-widget.forethought.ai%2Fembed.js&type=application%2Fjavascript&initial-intent-id=fa73df7a-71e0-4f49-8506-92816dcf460d&data-ft-user-name=weberg619&data-ft-user-id=217095915&data-api-key=7b31d896-0a67-4b71-a243-5ad6f0dd94c1&data-ft-jwtoken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxNzcwNjk3MDg0LzM5NzIyYzlmLWMyMTAtNDQ1MS04NGJlLTk5ZTZiNTM2ZDg3NyIsImlhdCI6MTc3MDY5NzA4NCwidXNlcl9pZCI6MjE3MDk1OTE1LCJleHAiOjE3NzA2OTc2ODR9.vq3tYwSZ0kmK2FQbg3e0y9jxLUpSIDDr2N6YydQiRwE&config-ft-ignore-and-update-persistence-parameters=data-ft-JWToken%7Cdata-ft-jwtoken%7Cfull-screen%7Chidden%7Cdata-ft-user-name%7Cdata-ft-initialUrl%7Cdata-ft-user-id&data-ft-embed-script-language=en&data-ft-initialurl=https%3A%2F%2Fwww.fiverr.com%2Fseller_dashboard",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/C0C6122A1FC0AD54253DBD77DE2439BB"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/inspector.html?ws=localhost:9222/devtools/page/17F21A88AA7F8884FF969C99073A80DD",
+   "faviconUrl": "https://fiverr-res.cloudinary.com/npm-assets/layout-service/favicon-32x32.8f21439.png",
+   "id": "17F21A88AA7F8884FF969C99073A80DD",
+   "parentId": "EE8AFA159ADB655F7AD7EA13A46B870B",
+   "title": "https://www.googletagmanager.com/static/service_worker/61k0/sw_iframe.html?origin=https%3A%2F%2Fwww.fiverr.com",
+   "type": "iframe",
+   "url": "https://www.googletagmanager.com/static/service_worker/61k0/sw_iframe.html?origin=https%3A%2F%2Fwww.fiverr.com",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/17F21A88AA7F8884FF969C99073A80DD"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/inspector.html?ws=localhost:9222/devtools/page/BC52AAD41DB5290D914558F38285E429",
+   "faviconUrl": "https://fiverr-res.cloudinary.com/npm-assets/layout-service/favicon-32x32.8f21439.png",
+   "id": "BC52AAD41DB5290D914558F38285E429",
+   "parentId": "DB86544DF6CAFE96C64335000DB3993B",
+   "title": "https://www.googletagmanager.com/static/service_worker/61k0/sw_iframe.html?origin=https%3A%2F%2Fwww.fiverr.com",
+   "type": "iframe",
+   "url": "https://www.googletagmanager.com/static/service_worker/61k0/sw_iframe.html?origin=https%3A%2F%2Fwww.fiverr.com",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/BC52AAD41DB5290D914558F38285E429"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/inspector.html?ws=localhost:9222/devtools/page/4E2E47B176C133AA661EEC226A01795E",
+   "faviconUrl": "https://fiverr-res.cloudinary.com/npm-assets/layout-service/favicon-32x32.8f21439.png",
+   "id": "4E2E47B176C133AA661EEC226A01795E",
+   "parentId": "DB86544DF6CAFE96C64335000DB3993B",
+   "title": "https://insight.adsrvr.org/track/cei?advertiser_id=9di75e4&amp;cookie_sync=1&amp;upv=3.0.0&amp;upid=9yhrkuj&amp;ref=https://www.fiverr.com/seller_dashboard",
+   "type": "iframe",
+   "url": "https://insight.adsrvr.org/track/cei?advertiser_id=9di75e4&cookie_sync=1&upv=3.0.0&upid=9yhrkuj&ref=https://www.fiverr.com/seller_dashboard",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/4E2E47B176C133AA661EEC226A01795E"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/inspector.html?ws=localhost:9222/devtools/page/EEB6FE341586CE13F10CA4ADBA65AFFF",
+   "faviconUrl": "https://fiverr-res.cloudinary.com/npm-assets/layout-service/favicon-32x32.8f21439.png",
+   "id": "EEB6FE341586CE13F10CA4ADBA65AFFF",
+   "parentId": "DB86544DF6CAFE96C64335000DB3993B",
+   "title": "https://5566805.fls.doubleclick.net/activityi;dc_pre=CMvszsmIzpIDFYtQLQQdXKIKUw;src=5566805;type=match0;cat=dtmat0;ord=1475341959567;npa=0;auiddc=1215704346.1770601209;u1=217095915;u10=1770601206000-5340b50dd06692509321394583a5ba015f781c34;u8=United%20States;u5=false;uaa=x86;uab=64;uafvl=Not(A%253ABrand%3B8.0.0.0%7CChromium%3B144.0.7559.133%7CGoogle%2520Chrome%3B144.0.7559.133;uamb=0;uam=;uap=Windows;uapv=10.0.0;uaw=0;pscdl=noapi;frm=0;_tu=KFA;gtm=45fe6261v9181644637z86127856za20gzb6127856zd6127856xea;gcs=G111;gcd=13v3v3v3v5l1;dma=0;dc_fmt=2;tag_exp=103116026~103200004~104527907~104528500~104684208~104684211~115616986~115938465~115938469~116185181~116185182~116988315;epver=2;dc_random=1770697059_aZrh9u_Fm1XkIFvdEYaGZRiuVYyi9T0pfw;_dc_test=1;~oref=https%3A%2F%2Fwww.fiverr.com%2Fseller_dashboard?",
+   "type": "iframe",
+   "url": "https://5566805.fls.doubleclick.net/activityi;dc_pre=CMvszsmIzpIDFYtQLQQdXKIKUw;src=5566805;type=match0;cat=dtmat0;ord=1475341959567;npa=0;auiddc=1215704346.1770601209;u1=217095915;u10=1770601206000-5340b50dd06692509321394583a5ba015f781c34;u8=United%20States;u5=false;uaa=x86;uab=64;uafvl=Not(A%253ABrand%3B8.0.0.0%7CChromium%3B144.0.7559.133%7CGoogle%2520Chrome%3B144.0.7559.133;uamb=0;uam=;uap=Windows;uapv=10.0.0;uaw=0;pscdl=noapi;frm=0;_tu=KFA;gtm=45fe6261v9181644637z86127856za20gzb6127856zd6127856xea;gcs=G111;gcd=13v3v3v3v5l1;dma=0;dc_fmt=2;tag_exp=103116026~103200004~104527907~104528500~104684208~104684211~115616986~115938465~115938469~116185181~116185182~116988315;epver=2;dc_random=1770697059_aZrh9u_Fm1XkIFvdEYaGZRiuVYyi9T0pfw;_dc_test=1;~oref=https%3A%2F%2Fwww.fiverr.com%2Fseller_dashboard?",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/EEB6FE341586CE13F10CA4ADBA65AFFF"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/inspector.html?ws=localhost:9222/devtools/page/54D10657D762D365935E3237050245C4",
+   "faviconUrl": "https://fiverr-res.cloudinary.com/npm-assets/layout-service/favicon-32x32.8f21439.png",
+   "id": "54D10657D762D365935E3237050245C4",
+   "parentId": "DB86544DF6CAFE96C64335000DB3993B",
+   "title": "https://js.px-cloud.net/?t=d-ufk0ywas2-1770697057926&amp;v=4237779b-0558-11f1-87c5-7b125fe08fd8",
+   "type": "iframe",
+   "url": "https://js.px-cloud.net/?t=d-ufk0ywas2-1770697057926&v=4237779b-0558-11f1-87c5-7b125fe08fd8",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/54D10657D762D365935E3237050245C4"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/inspector.html?ws=localhost:9222/devtools/page/DB86544DF6CAFE96C64335000DB3993B",
+   "faviconUrl": "https://fiverr-res.cloudinary.com/npm-assets/layout-service/favicon-32x32.8f21439.png",
+   "id": "DB86544DF6CAFE96C64335000DB3993B",
+   "title": "Seller Dashboard",
+   "type": "page",
+   "url": "https://www.fiverr.com/seller_dashboard",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/DB86544DF6CAFE96C64335000DB3993B"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/inspector.html?ws=localhost:9222/devtools/page/B78E246415DBCE1F48625C5DB67C6E0F",
+   "faviconUrl": "https://fiverr-res.cloudinary.com/npm-assets/layout-service/favicon-32x32.8f21439.png",
+   "id": "B78E246415DBCE1F48625C5DB67C6E0F",
+   "parentId": "DB86544DF6CAFE96C64335000DB3993B",
+   "title": "https://solve-widget.forethought.ai/?v=2#id=forethought-widget-embed-script&amp;src=https%3A%2F%2Fsolve-widget.forethought.ai%2Fembed.js&amp;type=application%2Fjavascript&amp;initial-intent-id=fa73df7a-71e0-4f49-8506-92816dcf460d&amp;data-ft-user-name=weberg619&amp;data-ft-user-id=217095915&amp;data-api-key=7b31d896-0a67-4b71-a243-5ad6f0dd94c1&amp;data-ft-jwtoken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxNzcwNjk3MDU4L2ZmMGNlMDhmLTJjYzYtNDhjMy04NzE3LTNjZjM3OWFjMzJiMyIsImlhdCI6MTc3MDY5NzA1OCwidXNlcl9pZCI6MjE3MDk1OTE1LCJleHAiOjE3NzA2OTc2NTh9.UNwY-TFuZu63srRdF-1UCEY6qpwLCB7aC1aXDrkXeCg&amp;config-ft-ignore-and-update-persistence-parameters=data-ft-JWToken%7Cdata-ft-jwtoken%7Cfull-screen%7Chidden%7Cdata-ft-user-name%7Cdata-ft-initialUrl%7Cdata-ft-user-id&amp;data-ft-embed-script-language=en&amp;data-ft-initialurl=https%3A%2F%2Fwww.fiverr.com%2Fseller_dashboard",
+   "type": "iframe",
+   "url": "https://solve-widget.forethought.ai/?v=2#id=forethought-widget-embed-script&src=https%3A%2F%2Fsolve-widget.forethought.ai%2Fembed.js&type=application%2Fjavascript&initial-intent-id=fa73df7a-71e0-4f49-8506-92816dcf460d&data-ft-user-name=weberg619&data-ft-user-id=217095915&data-api-key=7b31d896-0a67-4b71-a243-5ad6f0dd94c1&data-ft-jwtoken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxNzcwNjk3MDU4L2ZmMGNlMDhmLTJjYzYtNDhjMy04NzE3LTNjZjM3OWFjMzJiMyIsImlhdCI6MTc3MDY5NzA1OCwidXNlcl9pZCI6MjE3MDk1OTE1LCJleHAiOjE3NzA2OTc2NTh9.UNwY-TFuZu63srRdF-1UCEY6qpwLCB7aC1aXDrkXeCg&config-ft-ignore-and-update-persistence-parameters=data-ft-JWToken%7Cdata-ft-jwtoken%7Cfull-screen%7Chidden%7Cdata-ft-user-name%7Cdata-ft-initialUrl%7Cdata-ft-user-id&data-ft-embed-script-language=en&data-ft-initialurl=https%3A%2F%2Fwww.fiverr.com%2Fseller_dashboard",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/B78E246415DBCE1F48625C5DB67C6E0F"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/inspector.html?ws=localhost:9222/devtools/page/550140F5C9E6A39EA75D13C349283A37",
+   "faviconUrl": "https://fiverr-res.cloudinary.com/npm-assets/layout-service/favicon-32x32.8f21439.png",
+   "id": "550140F5C9E6A39EA75D13C349283A37",
+   "title": "Seller Dashboard",
+   "type": "page",
+   "url": "https://www.fiverr.com/seller_dashboard",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/550140F5C9E6A39EA75D13C349283A37"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/inspector.html?ws=localhost:9222/devtools/page/30296260D18A14ACD791E327356E6BF4",
+   "faviconUrl": "https://fiverr-res.cloudinary.com/npm-assets/layout-service/favicon-32x32.8f21439.png",
+   "id": "30296260D18A14ACD791E327356E6BF4",
+   "parentId": "550140F5C9E6A39EA75D13C349283A37",
+   "title": "https://js.px-cloud.net/?t=d-e2fznxmg2-1770697012741&amp;v=4237779b-0558-11f1-87c5-7b125fe08fd8",
+   "type": "iframe",
+   "url": "https://js.px-cloud.net/?t=d-e2fznxmg2-1770697012741&v=4237779b-0558-11f1-87c5-7b125fe08fd8",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/30296260D18A14ACD791E327356E6BF4"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/inspector.html?ws=localhost:9222/devtools/page/A11B3B0C5BA1E7122D2AD4CFFD262653",
+   "faviconUrl": "https://fiverr-res.cloudinary.com/npm-assets/layout-service/favicon-32x32.8f21439.png",
+   "id": "A11B3B0C5BA1E7122D2AD4CFFD262653",
+   "parentId": "550140F5C9E6A39EA75D13C349283A37",
+   "title": "https://solve-widget.forethought.ai/?v=2#id=forethought-widget-embed-script&amp;src=https%3A%2F%2Fsolve-widget.forethought.ai%2Fembed.js&amp;type=application%2Fjavascript&amp;initial-intent-id=fa73df7a-71e0-4f49-8506-92816dcf460d&amp;data-ft-user-name=weberg619&amp;data-ft-user-id=217095915&amp;data-api-key=7b31d896-0a67-4b71-a243-5ad6f0dd94c1&amp;data-ft-jwtoken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxNzcwNjk3MDEzLzg3MDQ4MTgzLTdiNTctNDNhYS04ZWY2LWRlOTAwMWEyYTkwYyIsImlhdCI6MTc3MDY5NzAxMywidXNlcl9pZCI6MjE3MDk1OTE1LCJleHAiOjE3NzA2OTc2MTN9.2Snb4DbSNik9yPendej-JzXIKAF7H7nweapvQUMhTSg&amp;config-ft-ignore-and-update-persistence-parameters=data-ft-JWToken%7Cdata-ft-jwtoken%7Cfull-screen%7Chidden%7Cdata-ft-user-name%7Cdata-ft-initialUrl%7Cdata-ft-user-id&amp;data-ft-embed-script-language=en&amp;data-ft-initialurl=https%3A%2F%2Fwww.fiverr.com%2Fseller_dashboard",
+   "type": "iframe",
+   "url": "https://solve-widget.forethought.ai/?v=2#id=forethought-widget-embed-script&src=https%3A%2F%2Fsolve-widget.forethought.ai%2Fembed.js&type=application%2Fjavascript&initial-intent-id=fa73df7a-71e0-4f49-8506-92816dcf460d&data-ft-user-name=weberg619&data-ft-user-id=217095915&data-api-key=7b31d896-0a67-4b71-a243-5ad6f0dd94c1&data-ft-jwtoken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxNzcwNjk3MDEzLzg3MDQ4MTgzLTdiNTctNDNhYS04ZWY2LWRlOTAwMWEyYTkwYyIsImlhdCI6MTc3MDY5NzAxMywidXNlcl9pZCI6MjE3MDk1OTE1LCJleHAiOjE3NzA2OTc2MTN9.2Snb4DbSNik9yPendej-JzXIKAF7H7nweapvQUMhTSg&config-ft-ignore-and-update-persistence-parameters=data-ft-JWToken%7Cdata-ft-jwtoken%7Cfull-screen%7Chidden%7Cdata-ft-user-name%7Cdata-ft-initialUrl%7Cdata-ft-user-id&data-ft-embed-script-language=en&data-ft-initialurl=https%3A%2F%2Fwww.fiverr.com%2Fseller_dashboard",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/A11B3B0C5BA1E7122D2AD4CFFD262653"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/inspector.html?ws=localhost:9222/devtools/page/EE6CF80B669C8B9BE05551674BD6F730",
+   "faviconUrl": "https://fiverr-res.cloudinary.com/npm-assets/layout-service/favicon-32x32.8f21439.png",
+   "id": "EE6CF80B669C8B9BE05551674BD6F730",
+   "parentId": "550140F5C9E6A39EA75D13C349283A37",
+   "title": "https://5566805.fls.doubleclick.net/activityi;dc_pre=CKmY17SIzpIDFWhLLQQd3w4LMA;src=5566805;type=match0;cat=dtmat0;ord=6659794839083;npa=0;auiddc=1215704346.1770601209;u1=217095915;u10=1770601206000-5340b50dd06692509321394583a5ba015f781c34;u8=United%20States;u5=false;uaa=x86;uab=64;uafvl=Not(A%253ABrand%3B8.0.0.0%7CChromium%3B144.0.7559.133%7CGoogle%2520Chrome%3B144.0.7559.133;uamb=0;uam=;uap=Windows;uapv=10.0.0;uaw=0;pscdl=noapi;frm=0;_tu=KFA;gtm=45fe6261v9181644637z86127856za20gzb6127856zd6127856xea;gcs=G111;gcd=13v3v3v3v5l1;dma=0;dc_fmt=2;tag_exp=103116026~103200004~104527907~104528500~104684208~104684211~115616985~115938466~115938469~116185181~116185182~116988315;epver=2;dc_random=1770697015_QNDB0QTUvxqa70ypo4vj4wWqZbeaXosl4Q;_dc_test=1;~oref=https%3A%2F%2Fwww.fiverr.com%2Fseller_dashboard?",
+   "type": "iframe",
+   "url": "https://5566805.fls.doubleclick.net/activityi;dc_pre=CKmY17SIzpIDFWhLLQQd3w4LMA;src=5566805;type=match0;cat=dtmat0;ord=6659794839083;npa=0;auiddc=1215704346.1770601209;u1=217095915;u10=1770601206000-5340b50dd06692509321394583a5ba015f781c34;u8=United%20States;u5=false;uaa=x86;uab=64;uafvl=Not(A%253ABrand%3B8.0.0.0%7CChromium%3B144.0.7559.133%7CGoogle%2520Chrome%3B144.0.7559.133;uamb=0;uam=;uap=Windows;uapv=10.0.0;uaw=0;pscdl=noapi;frm=0;_tu=KFA;gtm=45fe6261v9181644637z86127856za20gzb6127856zd6127856xea;gcs=G111;gcd=13v3v3v3v5l1;dma=0;dc_fmt=2;tag_exp=103116026~103200004~104527907~104528500~104684208~104684211~115616985~115938466~115938469~116185181~116185182~116988315;epver=2;dc_random=1770697015_QNDB0QTUvxqa70ypo4vj4wWqZbeaXosl4Q;_dc_test=1;~oref=https%3A%2F%2Fwww.fiverr.com%2Fseller_dashboard?",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/EE6CF80B669C8B9BE05551674BD6F730"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/inspector.html?ws=localhost:9222/devtools/page/2C50F427D8DED98F266264FC97FBD692",
+   "faviconUrl": "https://fiverr-res.cloudinary.com/npm-assets/layout-service/favicon-32x32.8f21439.png",
+   "id": "2C50F427D8DED98F266264FC97FBD692",
+   "parentId": "550140F5C9E6A39EA75D13C349283A37",
+   "title": "https://insight.adsrvr.org/track/cei?advertiser_id=9di75e4&amp;cookie_sync=1&amp;upv=3.0.0&amp;upid=9yhrkuj&amp;ref=https://www.fiverr.com/seller_dashboard",
+   "type": "iframe",
+   "url": "https://insight.adsrvr.org/track/cei?advertiser_id=9di75e4&cookie_sync=1&upv=3.0.0&upid=9yhrkuj&ref=https://www.fiverr.com/seller_dashboard",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/2C50F427D8DED98F266264FC97FBD692"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/inspector.html?ws=localhost:9222/devtools/page/D083319667D35AEACD5245AA96C9044F",
+   "faviconUrl": "https://fiverr-res.cloudinary.com/npm-assets/layout-service/favicon-32x32.8f21439.png",
+   "id": "D083319667D35AEACD5245AA96C9044F",
+   "parentId": "550140F5C9E6A39EA75D13C349283A37",
+   "title": "https://www.googletagmanager.com/static/service_worker/61k0/sw_iframe.html?origin=https%3A%2F%2Fwww.fiverr.com",
+   "type": "iframe",
+   "url": "https://www.googletagmanager.com/static/service_worker/61k0/sw_iframe.html?origin=https%3A%2F%2Fwww.fiverr.com",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/D083319667D35AEACD5245AA96C9044F"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/inspector.html?ws=localhost:9222/devtools/page/CCB9E2484B0FC1FA96938583081F0C37",
+   "faviconUrl": "https://www.redditstatic.com/shreddit/assets/favicon/64x64.png",
+   "id": "CCB9E2484B0FC1FA96938583081F0C37",
+   "parentId": "D036F2A7070CA5DEF2685177E68CFC18",
+   "title": "https://www.google.com/recaptcha/enterprise/anchor?ar=1&amp;k=6LfirrMoAAAAAHZOipvza4kpp_VtTwLNuXVwURNQ&amp;co=aHR0cHM6Ly93d3cucmVkZGl0LmNvbTo0NDM.&amp;hl=en&amp;v=gYdqkxiddE5aXrugNbBbKgtN&amp;size=invisible&amp;anchor-ms=20000&amp;execute-ms=30000&amp;cb=leiglb6gdeen",
+   "type": "iframe",
+   "url": "https://www.google.com/recaptcha/enterprise/anchor?ar=1&k=6LfirrMoAAAAAHZOipvza4kpp_VtTwLNuXVwURNQ&co=aHR0cHM6Ly93d3cucmVkZGl0LmNvbTo0NDM.&hl=en&v=gYdqkxiddE5aXrugNbBbKgtN&size=invisible&anchor-ms=20000&execute-ms=30000&cb=leiglb6gdeen",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/CCB9E2484B0FC1FA96938583081F0C37"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/inspector.html?ws=localhost:9222/devtools/page/D036F2A7070CA5DEF2685177E68CFC18",
+   "faviconUrl": "https://www.redditstatic.com/shreddit/assets/favicon/64x64.png",
+   "id": "D036F2A7070CA5DEF2685177E68CFC18",
+   "title": "Reddit - The heart of the internet",
+   "type": "page",
+   "url": "https://www.reddit.com/?feed=home",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/D036F2A7070CA5DEF2685177E68CFC18"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/inspector.html?ws=localhost:9222/devtools/page/8E83F0BC97AF2FAE50E9E36D1AF5361B",
+   "id": "8E83F0BC97AF2FAE50E9E36D1AF5361B",
+   "parentId": "49F14779069231ED56CCC467EFBDC20E",
+   "title": "https://ogs.google.com/u/0/widget/app?eom=1&amp;awwd=1&amp;gpa=3&amp;em=1&amp;scv=1&amp;dpi=67911908&amp;origin=chrome-untrusted%3A%2F%2Fnew-tab-page&amp;origin=chrome%3A%2F%2Fnew-tab-page&amp;cn=app&amp;pid=1&amp;spid=243&amp;hl=en&amp;dm=",
+   "type": "iframe",
+   "url": "https://ogs.google.com/u/0/widget/app?eom=1&awwd=1&gpa=3&em=1&scv=1&dpi=67911908&origin=chrome-untrusted%3A%2F%2Fnew-tab-page&origin=chrome%3A%2F%2Fnew-tab-page&cn=app&pid=1&spid=243&hl=en&dm=",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/8E83F0BC97AF2FAE50E9E36D1AF5361B"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/inspector.html?ws=localhost:9222/devtools/page/49F14779069231ED56CCC467EFBDC20E",
+   "id": "49F14779069231ED56CCC467EFBDC20E",
+   "parentId": "3011365BF8D56A294B7E9F6F3A24E2E6",
+   "title": "chrome-untrusted://new-tab-page/one-google-bar?paramsencoded=",
+   "type": "iframe",
+   "url": "chrome-untrusted://new-tab-page/one-google-bar?paramsencoded=",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/49F14779069231ED56CCC467EFBDC20E"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/inspector.html?ws=localhost:9222/devtools/page/3011365BF8D56A294B7E9F6F3A24E2E6",
+   "id": "3011365BF8D56A294B7E9F6F3A24E2E6",
+   "title": "New Tab",
+   "type": "page",
+   "url": "chrome://newtab/",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/3011365BF8D56A294B7E9F6F3A24E2E6"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/inspector.html?ws=localhost:9222/devtools/page/2494849D2F82BDFCD8AA58A346F184F9",
+   "faviconUrl": "https://github.githubassets.com/favicons/favicon-dark.svg",
+   "id": "2494849D2F82BDFCD8AA58A346F184F9",
+   "title": "[MCP] Gmail · Issue #8072 · activepieces/activepieces",
+   "type": "page",
+   "url": "https://github.com/activepieces/activepieces/issues/8072",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/2494849D2F82BDFCD8AA58A346F184F9"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/inspector.html?ws=localhost:9222/devtools/page/519EC6E40697D81193C9E04CB0B975F6",
+   "faviconUrl": "https://www.upwork.com/favicon.ico",
+   "id": "519EC6E40697D81193C9E04CB0B975F6",
+   "title": "Profile Settings",
+   "type": "page",
+   "url": "https://www.upwork.com/freelancers/settings/profile",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/519EC6E40697D81193C9E04CB0B975F6"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/inspector.html?ws=localhost:9222/devtools/page/148E395C4C2E1C5EA4476E2260B3E393",
+   "faviconUrl": "https://www.prsrvy.com/favicon.png",
+   "id": "148E395C4C2E1C5EA4476E2260B3E393",
+   "title": "survey-data-privacy-page",
+   "type": "page",
+   "url": "https://www.prsrvy.com/surveys/data-privacy?flowId=7f73e8381ad741438d7907975eac7ae4&memberCountry=US&hsh=bffc11c9d06d7d553da296441f2ae8c94ea2e2d328fbdb2c75650deb852e4594",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/148E395C4C2E1C5EA4476E2260B3E393"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/inspector.html?ws=localhost:9222/devtools/page/C72CB930DFF243EE1E7C5FFC23B1F682",
+   "faviconUrl": "https://asset-core5.clickworker.com/assets/media/images/favicon-9901ca8aaa549be4e84721c59cff95f4.ico",
+   "id": "C72CB930DFF243EE1E7C5FFC23B1F682",
+   "title": "Clickworker Workplace | Job processing",
+   "type": "page",
+   "url": "https://workplace.clickworker.com/en/workplace/jobs/1079435/edit",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/C72CB930DFF243EE1E7C5FFC23B1F682"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/inspector.html?ws=localhost:9222/devtools/page/FD2C1B063D40F96590155EC1960709BF",
+   "faviconUrl": "https://asset-core5.clickworker.com/assets/media/images/favicon-9901ca8aaa549be4e84721c59cff95f4.ico",
+   "id": "FD2C1B063D40F96590155EC1960709BF",
+   "parentId": "C72CB930DFF243EE1E7C5FFC23B1F682",
+   "title": "https://web.bitlabs.ai/surveys/opened?url=https://r.prodegesurveys.com/out?sh=05f197e1-1ed9-4780-9389-2ce8541ad898%26uh=d4f7710b-b7a5-475a-84ef-09a629a059f4%26p=%26subid=c284069617&amp;success=true",
+   "type": "iframe",
+   "url": "https://web.bitlabs.ai/surveys/opened?url=https://r.prodegesurveys.com/out?sh=05f197e1-1ed9-4780-9389-2ce8541ad898%26uh=d4f7710b-b7a5-475a-84ef-09a629a059f4%26p=%26subid=c284069617&success=true",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/FD2C1B063D40F96590155EC1960709BF"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/inspector.html?ws=localhost:9222/devtools/page/A5E3407EEDA752D78126A3096888517F",
+   "faviconUrl": "https://www.upwork.com/favicon.ico",
+   "id": "A5E3407EEDA752D78126A3096888517F",
+   "title": "Buy Connects - Upwork",
+   "type": "page",
+   "url": "https://www.upwork.com/nx/plans/connects/buy?from=fwh",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/A5E3407EEDA752D78126A3096888517F"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/inspector.html?ws=localhost:9222/devtools/page/75FBFCA5D6CF807B05CF9FF701EBA2DE",
+   "faviconUrl": "https://www.redditstatic.com/shreddit/assets/favicon/64x64.png",
+   "id": "75FBFCA5D6CF807B05CF9FF701EBA2DE",
+   "parentId": "79FDFC00F76B235F63678A63CF32FA14",
+   "title": "https://www.google.com/recaptcha/enterprise/anchor?ar=2&amp;k=6LfirrMoAAAAAHZOipvza4kpp_VtTwLNuXVwURNQ&amp;co=aHR0cHM6Ly93d3cucmVkZGl0LmNvbTo0NDM.&amp;hl=en&amp;v=gYdqkxiddE5aXrugNbBbKgtN&amp;size=invisible&amp;anchor-ms=20000&amp;execute-ms=30000&amp;cb=w1vj9c5npw8u",
+   "type": "iframe",
+   "url": "https://www.google.com/recaptcha/enterprise/anchor?ar=2&k=6LfirrMoAAAAAHZOipvza4kpp_VtTwLNuXVwURNQ&co=aHR0cHM6Ly93d3cucmVkZGl0LmNvbTo0NDM.&hl=en&v=gYdqkxiddE5aXrugNbBbKgtN&size=invisible&anchor-ms=20000&execute-ms=30000&cb=w1vj9c5npw8u",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/75FBFCA5D6CF807B05CF9FF701EBA2DE"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/inspector.html?ws=localhost:9222/devtools/page/79FDFC00F76B235F63678A63CF32FA14",
+   "faviconUrl": "https://www.redditstatic.com/shreddit/assets/favicon/64x64.png",
+   "id": "79FDFC00F76B235F63678A63CF32FA14",
+   "title": "Send a message",
+   "type": "page",
+   "url": "https://www.reddit.com/message/compose/?to=iamlouieVV&subject=Web+Developer+for+Repeat+Client+Work&message=Hey+%E2%80%94+saw+your+post+looking+for+a+web+developer+for+repeat+client+work.+I%27d+be+a+good+fit.%0A%0APortfolio%3A+bimopsstudio.com%0A%0APrice+per+site%3A%0A-+Standard+small+business+site+%285-7+pages%29%3A+%24600%0A-+With+custom+functionality%3A+%24800-%241%2C000%0A-+Complex+builds%3A+%241%2C200%0A%0ATurnaround%3A+5-7+business+days+for+standard.+Faster+if+needed.%0A%0AIncluded%3A%0A-+Responsive+design+%28mobile+%2B+desktop%29%0A-+Up+to+7+pages%0A-+Contact+form+with+email+delivery%0A-+Basic+SEO+setup%0A-+Google+Analytics+integration%0A-+1+round+of+revisions%0A-+Handoff+with+documentation%0A%0ATimezone%3A+Pacific+%28US+West+Coast%29%0A%0AHappy+to+do+a+trial+site+at+the+lower+end+so+you+can+see+quality+before+committing.%0A%0A%E2%80%94+Weber",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/79FDFC00F76B235F63678A63CF32FA14"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/inspector.html?ws=localhost:9222/devtools/page/994F3BDE3215C337BEBCD12ED0494796",
+   "id": "994F3BDE3215C337BEBCD12ED0494796",
+   "title": "",
+   "type": "worker",
+   "url": "",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/994F3BDE3215C337BEBCD12ED0494796"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/inspector.html?ws=localhost:9222/devtools/page/4B099016B44B42548DBC6B97BC44156A",
+   "id": "4B099016B44B42548DBC6B97BC44156A",
+   "title": "",
+   "type": "worker",
+   "url": "",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/4B099016B44B42548DBC6B97BC44156A"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/inspector.html?ws=localhost:9222/devtools/page/AEC33E937621C89752FFCB289DE67BBA",
+   "id": "AEC33E937621C89752FFCB289DE67BBA",
+   "title": "",
+   "type": "worker",
+   "url": "",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/AEC33E937621C89752FFCB289DE67BBA"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/inspector.html?ws=localhost:9222/devtools/page/1D0F6390937FC1DAFFC67DDB39190C4E",
+   "id": "1D0F6390937FC1DAFFC67DDB39190C4E",
+   "title": "",
+   "type": "worker",
+   "url": "",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/1D0F6390937FC1DAFFC67DDB39190C4E"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/inspector.html?ws=localhost:9222/devtools/page/D67FDEDE3CA2F27D5E250BF6AF6B7AB0",
+   "id": "D67FDEDE3CA2F27D5E250BF6AF6B7AB0",
+   "title": "",
+   "type": "worker",
+   "url": "",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/D67FDEDE3CA2F27D5E250BF6AF6B7AB0"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/inspector.html?ws=localhost:9222/devtools/page/6CAB4FC463FF7B00C0C5A5B88C780DEF",
+   "id": "6CAB4FC463FF7B00C0C5A5B88C780DEF",
+   "title": "",
+   "type": "worker",
+   "url": "",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/6CAB4FC463FF7B00C0C5A5B88C780DEF"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/inspector.html?ws=localhost:9222/devtools/page/487A5FF94B3D541870FB582B69054906",
+   "id": "487A5FF94B3D541870FB582B69054906",
+   "title": "",
+   "type": "worker",
+   "url": "",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/487A5FF94B3D541870FB582B69054906"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/inspector.html?ws=localhost:9222/devtools/page/857FDF15286E42AA833DAE0FB4ED47D2",
+   "id": "857FDF15286E42AA833DAE0FB4ED47D2",
+   "title": "",
+   "type": "worker",
+   "url": "",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/857FDF15286E42AA833DAE0FB4ED47D2"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/inspector.html?ws=localhost:9222/devtools/page/10C288F08D5C9763519E2F18738D96A7",
+   "id": "10C288F08D5C9763519E2F18738D96A7",
+   "title": "",
+   "type": "worker",
+   "url": "",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/10C288F08D5C9763519E2F18738D96A7"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/inspector.html?ws=localhost:9222/devtools/page/021C9A8C6CD5253F54943C9BECBCB092",
+   "id": "021C9A8C6CD5253F54943C9BECBCB092",
+   "title": "",
+   "type": "worker",
+   "url": "",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/021C9A8C6CD5253F54943C9BECBCB092"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/inspector.html?ws=localhost:9222/devtools/page/2D25BBD0345ED76A3A5C3C486026571F",
+   "id": "2D25BBD0345ED76A3A5C3C486026571F",
+   "title": "",
+   "type": "worker",
+   "url": "",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/2D25BBD0345ED76A3A5C3C486026571F"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/inspector.html?ws=localhost:9222/devtools/page/C4C23FB39FB81F624A72C6B8820D0196",
+   "id": "C4C23FB39FB81F624A72C6B8820D0196",
+   "title": "",
+   "type": "worker",
+   "url": "",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/C4C23FB39FB81F624A72C6B8820D0196"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/worker_app.html?ws=localhost:9222/devtools/page/E289E4220ACF5559AA8D28B97ADA9465",
+   "id": "E289E4220ACF5559AA8D28B97ADA9465",
+   "title": "Service Worker https://www.googletagmanager.com/static/service_worker/61k0/sw.js?origin=https%3A%2F%2Fwww.fiverr.com",
+   "type": "service_worker",
+   "url": "https://www.googletagmanager.com/static/service_worker/61k0/sw.js?origin=https%3A%2F%2Fwww.fiverr.com",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/E289E4220ACF5559AA8D28B97ADA9465"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/inspector.html?ws=localhost:9222/devtools/page/7E46521AA3DB0753AAE7C794B7F8771B",
+   "id": "7E46521AA3DB0753AAE7C794B7F8771B",
+   "title": "",
+   "type": "worker",
+   "url": "",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/7E46521AA3DB0753AAE7C794B7F8771B"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/inspector.html?ws=localhost:9222/devtools/page/05F5C3FA80B3C65529E8E450CC0CCDDE",
+   "id": "05F5C3FA80B3C65529E8E450CC0CCDDE",
+   "title": "",
+   "type": "worker",
+   "url": "",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/05F5C3FA80B3C65529E8E450CC0CCDDE"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/worker_app.html?ws=localhost:9222/devtools/page/F6844DF5686DB632D29033A94F51A228",
+   "id": "F6844DF5686DB632D29033A94F51A228",
+   "title": "",
+   "type": "shared_worker",
+   "url": "https://www.fiverr.com/tab_manager.js",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/F6844DF5686DB632D29033A94F51A228"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/inspector.html?ws=localhost:9222/devtools/page/5A4A5616524A74D38D6C906BCA006EB3",
+   "id": "5A4A5616524A74D38D6C906BCA006EB3",
+   "title": "",
+   "type": "worker",
+   "url": "",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/5A4A5616524A74D38D6C906BCA006EB3"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@7da823b1d594d1b49797911900e003ec96a8c0e7/worker_app.html?ws=localhost:9222/devtools/page/0DC815B8999D3B774C23176DEFA5E62F",
+   "id": "0DC815B8999D3B774C23176DEFA5E62F",
+   "title": "github-socket-worker-v3-364744a26103ff4b092581a12cc57f6b9f51b0cd009252b6969213d81a27713c",
+   "type": "shared_worker",
+   "url": "https://github.com/assets-cdn/worker/socket-worker-f5e0d666a0d1de44.js?module=true",
+   "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/0DC815B8999D3B774C23176DEFA5E62F"
+} ]
+

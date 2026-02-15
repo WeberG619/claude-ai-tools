@@ -98,9 +98,18 @@ class ExecutionBridge:
 
     # Patterns for detecting file write intents
     FILE_WRITE_PATTERNS = [
-        r'(?:let me |I\'ll |I will )?(?:create|write|save)(?: a)? (?:file|code)(?: to)? ["`]?([^\s"`\n]+)["`]?',
-        r'(?:writing|creating|saving)(?: to)? ["`]?([^\s"`\n]+\.\w{1,10})["`]?',
+        # Direct "create X.py" pattern - most common
+        r'(?:let me |I\'ll |I will )?(?:create|write|save|make)\s+([a-zA-Z_][a-zA-Z0-9_]*\.py)',
+        # With "file" or "code" keyword
+        r'(?:let me |I\'ll |I will )?(?:create|write|save)(?: a| the)? (?:file|code)(?: (?:called|named))?\s*["`]?([^\s"`\n]+\.\w{1,10})["`]?',
+        r'(?:writing|creating|saving)(?: to)?\s+["`]?([^\s"`\n]+\.\w{1,10})["`]?',
         r'file:\s*["`]?([^\s"`\n]+\.\w{1,10})["`]?',
+        # Backtick quoted Python files
+        r'`([a-zA-Z_][a-zA-Z0-9_]*\.py)`',
+        # "into X.py" or "to X.py"
+        r'(?:in|to|into)\s+["`]?([a-zA-Z_][a-zA-Z0-9_]*\.py)["`]?',
+        # "the X.py" or "our X.py"
+        r'(?:the|our)\s+["`]?([a-zA-Z_][a-zA-Z0-9_]*\.py)["`]?',
     ]
 
     # Pattern for code blocks with optional language
@@ -190,6 +199,20 @@ class ExecutionBridge:
                 "error": result.error
             })
 
+        # AUTO-TEST: Run Python files that were created to verify they work
+        python_files_created = [
+            r for r in results
+            if r.action_type == 'write_file'
+            and r.success
+            and r.path
+            and r.path.endswith('.py')
+        ]
+
+        for file_result in python_files_created:
+            test_result = self._auto_test_python_file(file_result.path)
+            if test_result:
+                results.append(test_result)
+
         return ExecutionResult(actions=actions, results=results)
 
     def parse_actions(self, text: str) -> List[Action]:
@@ -209,20 +232,32 @@ class ExecutionBridge:
 
         for i, (language, code) in enumerate(code_blocks):
             # Try to find a file path associated with this code block
-            # Look in the text before the code block
+            # Look in the text before AND after the code block
             block_start = text.find(f"```{language}\n{code}```")
-            if block_start > 0:
-                preceding_text = text[max(0, block_start-200):block_start]
+            block_end = block_start + len(f"```{language}\n{code}```") if block_start >= 0 else -1
 
-                # Look for file path patterns
-                file_path = None
-                for pattern in self.FILE_WRITE_PATTERNS:
-                    match = re.search(pattern, preceding_text, re.IGNORECASE)
-                    if match:
-                        file_path = match.group(1)
-                        break
+            # Look 500 chars before (increased from 200)
+            preceding_text = text[max(0, block_start-500):block_start] if block_start > 0 else ""
+            # Also look 200 chars after for "save as X.py" patterns
+            following_text = text[block_end:block_end+200] if block_end > 0 else ""
+            search_text = preceding_text + " " + following_text
 
-                if file_path:
+            # Look for file path patterns
+            file_path = None
+            for pattern in self.FILE_WRITE_PATTERNS:
+                match = re.search(pattern, search_text, re.IGNORECASE)
+                if match:
+                    file_path = match.group(1)
+                    break
+
+            # If still no file path but it's Python code, default to language-based name
+            if not file_path and language == 'python' and 'def ' in code:
+                # Try to extract a meaningful name from the code
+                func_match = re.search(r'def\s+(\w+)', code)
+                if func_match:
+                    file_path = f"{func_match.group(1)}.py"
+
+            if file_path:
                     actions.append(Action(
                         type=ActionType.WRITE_FILE,
                         content=code.strip(),
@@ -402,6 +437,60 @@ class ExecutionBridge:
                 success=False,
                 error=f"Failed to read file: {e}",
                 action_type="read_file"
+            )
+
+    def _auto_test_python_file(self, file_path: str) -> Optional[ToolResult]:
+        """
+        Automatically test a Python file by running it.
+
+        Args:
+            file_path: Path to the Python file
+
+        Returns:
+            ToolResult with test output, or None if not testable
+        """
+        try:
+            # Run the Python file
+            result = subprocess.run(
+                ['python3', file_path],
+                capture_output=True,
+                text=True,
+                timeout=30,
+                cwd=self.workspace
+            )
+
+            output = result.stdout[:1000] if result.stdout else ""
+            error = result.stderr[:500] if result.stderr else ""
+
+            if result.returncode == 0:
+                return ToolResult(
+                    success=True,
+                    output=f"✓ AUTO-TEST PASSED:\n{output}" if output else "✓ AUTO-TEST: No output (file ran successfully)",
+                    action_type="auto_test",
+                    path=file_path
+                )
+            else:
+                return ToolResult(
+                    success=False,
+                    output=output,
+                    error=f"✗ AUTO-TEST FAILED:\n{error}",
+                    action_type="auto_test",
+                    path=file_path
+                )
+        except subprocess.TimeoutExpired:
+            return ToolResult(
+                success=False,
+                error="AUTO-TEST: Timed out after 30 seconds",
+                action_type="auto_test",
+                path=file_path
+            )
+        except Exception as e:
+            # Don't fail silently - return error result
+            return ToolResult(
+                success=False,
+                error=f"AUTO-TEST error: {e}",
+                action_type="auto_test",
+                path=file_path
             )
 
     def run_command(self, command: str, timeout: int = 60) -> ToolResult:

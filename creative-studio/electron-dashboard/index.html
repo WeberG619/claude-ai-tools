@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Studio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: #EAEAEA;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Header with gradient */
+        .header {
+            background: linear-gradient(135deg, #e94560 0%, #ff6b6b 50%, #feca57 100%);
+            padding: 15px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 20px rgba(233, 69, 96, 0.3);
+        }
+
+        .header h1 {
+            color: white;
+            font-size: 1.5em;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .header-status {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .status-indicator {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.2);
+            padding: 8px 15px;
+            border-radius: 20px;
+            color: white;
+            backdrop-filter: blur(10px);
+        }
+
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #2ECC71;
+            animation: pulse 2s infinite;
+        }
+
+        .status-dot.speaking {
+            background: #FECA57;
+            animation: pulse 0.5s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(1.2); }
+        }
+
+        /* Main layout */
+        .main-container {
+            display: flex;
+            height: calc(100vh - 70px);
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 320px;
+            background: rgba(26, 26, 46, 0.95);
+            border-right: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            flex-direction: column;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Agent panel */
+        .agent-panel {
+            padding: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .agent-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .agent-avatar {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            background: linear-gradient(135deg, #e94560, #ff6b6b);
+            border: 3px solid #e94560;
+            box-shadow: 0 4px 15px rgba(233, 69, 96, 0.4);
+        }
+
+        .agent-avatar.speaking {
+            animation: speakGlow 0.8s infinite;
+        }
+
+        @keyframes speakGlow {
+            0%, 100% { box-shadow: 0 0 20px rgba(254, 202, 87, 0.6); }
+            50% { box-shadow: 0 0 40px rgba(254, 202, 87, 0.9); }
+        }
+
+        .agent-details h3 {
+            font-size: 1.2em;
+            color: #FECA57;
+        }
+
+        .agent-details p {
+            font-size: 0.85em;
+            color: #888;
+        }
+
+        .agent-message {
+            background: rgba(255,255,255,0.05);
+            padding: 15px;
+            border-radius: 12px;
+            font-size: 0.9em;
+            line-height: 1.6;
+            color: #CCC;
+            max-height: 120px;
+            overflow-y: auto;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Quick actions */
+        .quick-actions {
+            padding: 20px;
+            flex: 1;
+            overflow-y: auto;
+        }
+
+        .quick-actions h4 {
+            color: #e94560;
+            font-size: 0.75em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .action-btn {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            width: 100%;
+            padding: 14px 18px;
+            background: linear-gradient(135deg, rgba(233,69,96,0.1), rgba(255,107,107,0.1));
+            border: 1px solid rgba(233,69,96,0.3);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-bottom: 10px;
+            text-align: left;
+            color: #EEE;
+        }
+
+        .action-btn:hover {
+            background: linear-gradient(135deg, rgba(233,69,96,0.3), rgba(255,107,107,0.3));
+            border-color: #e94560;
+            transform: translateX(5px);
+        }
+
+        .action-btn .icon {
+            font-size: 1.4em;
+        }
+
+        .action-btn .label {
+            font-size: 0.95em;
+        }
+
+        /* Content area */
+        .content-area {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background: rgba(15, 52, 96, 0.3);
+        }
+
+        /* Panel header */
+        .panel-header {
+            padding: 20px 25px;
+            background: rgba(26, 26, 46, 0.8);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .panel-header h2 {
+            font-size: 1.3em;
+            color: #FECA57;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Panel content */
+        .panel-content {
+            flex: 1;
+            padding: 25px;
+            overflow-y: auto;
+        }
+
+        /* View panels */
+        .view-panel {
+            display: none;
+            height: 100%;
+        }
+
+        .view-panel.active {
+            display: block;
+        }
+
+        /* Team showcase */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .team-card {
+            background: linear-gradient(135deg, rgba(26,26,46,0.9), rgba(22,33,62,0.9));
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s;
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+            border-color: #e94560;
+            box-shadow: 0 10px 30px rgba(233, 69, 96, 0.2);
+        }
+
+        .team-card .icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        .team-card h4 {
+            color: #FECA57;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+
+        .team-card p {
+            font-size: 0.85em;
+            color: #999;
+            line-height: 1.5;
+        }
+
+        /* Slide preview */
+        .slide-preview {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            color: #333;
+            min-height: 400px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+
+        .slide-preview h3 {
+            color: #2C3E50;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+
+        .slide-preview ul {
+            font-size: 1.1em;
+            line-height: 2;
+            padding-left: 25px;
+        }
+
+        /* Presentations list */
+        .presentations-list {
+            background: rgba(26,26,46,0.8);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .presentation-item {
+            padding: 15px 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .presentation-item:hover {
+            background: rgba(233, 69, 96, 0.1);
+        }
+
+        .presentation-item .icon {
+            font-size: 1.5em;
+        }
+
+        .presentation-item .info {
+            flex: 1;
+        }
+
+        .presentation-item .name {
+            color: #EEE;
+            font-size: 0.95em;
+        }
+
+        .presentation-item .date {
+            color: #666;
+            font-size: 0.8em;
+        }
+
+        /* Copy output */
+        .copy-output {
+            background: rgba(26,26,46,0.8);
+            border-radius: 12px;
+            padding: 25px;
+            font-family: 'Georgia', serif;
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #DDD;
+            white-space: pre-wrap;
+        }
+
+        .copy-output h3 {
+            color: #FECA57;
+            margin-bottom: 15px;
+            font-family: 'Segoe UI', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <h1>🎨 Creative Studio</h1>
+        <div class="header-status">
+            <div class="status-indicator">
+                <div class="status-dot" id="statusDot"></div>
+                <span id="statusText">Ready to create</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main container -->
+    <div class="main-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <!-- Current agent -->
+            <div class="agent-panel">
+                <div class="agent-info">
+                    <div class="agent-avatar" id="agentAvatar">🎨</div>
+                    <div class="agent-details">
+                        <h3 id="agentName">Creative Team</h3>
+                        <p id="agentRole">Ready to inspire</p>
+                    </div>
+                </div>
+                <div class="agent-message" id="agentMessage">
+                    Welcome to Creative Studio! Your AI creative team is ready to build presentations, write compelling copy, and bring your ideas to life.
+                </div>
+            </div>
+
+            <!-- Quick actions -->
+            <div class="quick-actions">
+                <h4>Create Something</h4>
+                <button class="action-btn" onclick="showPanel('slides')">
+                    <span class="icon">📊</span>
+                    <span class="label">New Presentation</span>
+                </button>
+                <button class="action-btn" onclick="showPanel('copy')">
+                    <span class="icon">✍️</span>
+                    <span class="label">Write Copy</span>
+                </button>
+                <button class="action-btn" onclick="showPanel('library')">
+                    <span class="icon">📁</span>
+                    <span class="label">My Presentations</span>
+                </button>
+                <button class="action-btn" onclick="showPanel('team')">
+                    <span class="icon">👥</span>
+                    <span class="label">Meet the Team</span>
+                </button>
+                <button class="action-btn" onclick="openOutputFolder()">
+                    <span class="icon">📂</span>
+                    <span class="label">Open Output Folder</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Content area -->
+        <div class="content-area">
+            <!-- Home/default view -->
+            <div class="view-panel active" id="panel-home">
+                <div class="panel-header">
+                    <h2>🎬 Creative Studio</h2>
+                </div>
+                <div class="panel-content">
+                    <div class="team-grid">
+                        <div class="team-card">
+                            <div class="icon">🎬</div>
+                            <h4>Director</h4>
+                            <p>Creative vision & story structure</p>
+                        </div>
+                        <div class="team-card">
+                            <div class="icon">🎨</div>
+                            <h4>Designer</h4>
+                            <p>Visual layouts & aesthetics</p>
+                        </div>
+                        <div class="team-card">
+                            <div class="icon">✍️</div>
+                            <h4>Copywriter</h4>
+                            <p>Headlines & messaging</p>
+                        </div>
+                        <div class="team-card">
+                            <div class="icon">📝</div>
+                            <h4>Editor</h4>
+                            <p>Polish & refinement</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slides panel -->
+            <div class="view-panel" id="panel-slides">
+                <div class="panel-header">
+                    <h2>📊 Presentation Preview</h2>
+                </div>
+                <div class="panel-content">
+                    <div class="slide-preview" id="slidePreview">
+                        <h3>Your Presentation</h3>
+                        <p>Slides will appear here as the team creates them...</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copy panel -->
+            <div class="view-panel" id="panel-copy">
+                <div class="panel-header">
+                    <h2>✍️ Copy & Content</h2>
+                </div>
+                <div class="panel-content">
+                    <div class="copy-output" id="copyOutput">
+                        <h3>Your Copy</h3>
+                        Content will appear here as the team writes...
+                    </div>
+                </div>
+            </div>
+
+            <!-- Library panel -->
+            <div class="view-panel" id="panel-library">
+                <div class="panel-header">
+                    <h2>📁 My Presentations</h2>
+                </div>
+                <div class="panel-content">
+                    <div class="presentations-list" id="presentationsList">
+                        <div class="presentation-item">
+                            <span class="icon">📊</span>
+                            <div class="info">
+                                <div class="name">Loading presentations...</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team panel -->
+            <div class="view-panel" id="panel-team">
+                <div class="panel-header">
+                    <h2>👥 Your Creative Team</h2>
+                </div>
+                <div class="panel-content">
+                    <div class="team-grid">
+                        <div class="team-card" style="border-left: 4px solid #E74C3C;">
+                            <div class="icon">🎬</div>
+                            <h4>Director</h4>
+                            <p>Sets the creative vision and story structure. Thinks about audience, message, and impact. The visionary who sees the big picture.</p>
+                        </div>
+                        <div class="team-card" style="border-left: 4px solid #9B59B6;">
+                            <div class="icon">🎨</div>
+                            <h4>Designer</h4>
+                            <p>Creates visual layouts, slide compositions, and aesthetic direction. Makes ideas look stunning and professional.</p>
+                        </div>
+                        <div class="team-card" style="border-left: 4px solid #F39C12;">
+                            <div class="icon">✍️</div>
+                            <h4>Copywriter</h4>
+                            <p>Crafts compelling headlines, body copy, and scripts. Makes words sell and stories resonate with the audience.</p>
+                        </div>
+                        <div class="team-card" style="border-left: 4px solid #27AE60;">
+                            <div class="icon">📝</div>
+                            <h4>Editor</h4>
+                            <p>Polishes, proofreads, and refines all content. The quality gate that ensures everything is perfect.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const { ipcRenderer } = require('electron');
+
+        const agentIcons = {
+            director: '🎬',
+            designer: '🎨',
+            copywriter: '✍️',
+            editor: '📝',
+            narrator: '🎙️'
+        };
+
+        const agentColors = {
+            director: '#E74C3C',
+            designer: '#9B59B6',
+            copywriter: '#F39C12',
+            editor: '#27AE60',
+            narrator: '#34495E'
+        };
+
+        // Handle agent status updates
+        ipcRenderer.on('agent-status', (event, status) => {
+            updateAgentDisplay(status);
+        });
+
+        // Handle activity updates
+        ipcRenderer.on('activity-update', (event, activity) => {
+            if (activity.type === 'slide_design') {
+                showPanel('slides');
+            } else if (activity.type === 'copywriting') {
+                showPanel('copy');
+                document.getElementById('copyOutput').innerHTML = `<h3>Latest Copy</h3>${activity.content}`;
+            }
+        });
+
+        // Handle presentations list
+        ipcRenderer.on('presentations-list', (event, files) => {
+            const list = document.getElementById('presentationsList');
+            if (files.length === 0) {
+                list.innerHTML = '<div class="presentation-item"><span class="icon">📭</span><div class="info"><div class="name">No presentations yet</div></div></div>';
+                return;
+            }
+            list.innerHTML = files.map(f => `
+                <div class="presentation-item" onclick="previewPresentation('${f.path.replace(/\\/g, '/')}')">
+                    <span class="icon">📊</span>
+                    <div class="info">
+                        <div class="name">${f.name}</div>
+                        <div class="date">${new Date(f.created).toLocaleDateString()}</div>
+                    </div>
+                </div>
+            `).join('');
+        });
+
+        function updateAgentDisplay(status) {
+            const avatar = document.getElementById('agentAvatar');
+            const name = document.getElementById('agentName');
+            const role = document.getElementById('agentRole');
+            const message = document.getElementById('agentMessage');
+            const statusDot = document.getElementById('statusDot');
+            const statusText = document.getElementById('statusText');
+
+            const agent = status.agent || 'creative';
+            const persona = status.persona || {};
+
+            avatar.textContent = persona.icon || agentIcons[agent] || '🎨';
+            avatar.style.background = `linear-gradient(135deg, ${persona.color || agentColors[agent] || '#e94560'}, ${persona.color || '#ff6b6b'})`;
+
+            if (status.speaking) {
+                avatar.classList.add('speaking');
+                statusDot.classList.add('speaking');
+                statusText.textContent = `${persona.name || agent} creating...`;
+            } else {
+                avatar.classList.remove('speaking');
+                statusDot.classList.remove('speaking');
+                statusText.textContent = 'Ready to create';
+            }
+
+            name.textContent = persona.name || agent.charAt(0).toUpperCase() + agent.slice(1);
+            role.textContent = status.speaking ? 'Working...' : 'Ready';
+
+            if (status.text) {
+                message.textContent = status.text;
+            }
+        }
+
+        function showPanel(panelName) {
+            document.querySelectorAll('.view-panel').forEach(p => p.classList.remove('active'));
+            const panel = document.getElementById(`panel-${panelName}`);
+            if (panel) {
+                panel.classList.add('active');
+            }
+
+            // Load presentations when showing library
+            if (panelName === 'library') {
+                ipcRenderer.send('get-presentations');
+            }
+        }
+
+        function previewPresentation(path) {
+            ipcRenderer.send('preview-presentation', path);
+        }
+
+        function openOutputFolder() {
+            ipcRenderer.send('open-output-folder');
+        }
+
+        // Initialize
+        showPanel('home');
+    </script>
+</body>
+</html>

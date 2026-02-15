@@ -1,0 +1,1 @@
+{"agent": "planner", "speaking": true, "text": "Running tests", "timestamp": 1770247126.368, "activity": {"type": "terminal_run", "command": "npm run test", "output": "All tests passed\!"}}

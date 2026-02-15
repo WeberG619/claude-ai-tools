@@ -25,7 +25,7 @@ CONFIG_FILE = Path(__file__).parent / "config.json"
 
 def load_config():
     config = {
-        "replicate_api_token": os.environ.get("REPLICATE_API_TOKEN", "r8_HtU11reGPKdxthkdfo8myHuHbwiWLQ92gZbcj"),
+        "replicate_api_token": os.environ.get("REPLICATE_API_TOKEN", ""),
         "output_dir": r"D:\temp\ai_renders",
         "revit_http_url": "http://localhost:8765"
     }

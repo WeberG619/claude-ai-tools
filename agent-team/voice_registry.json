@@ -1,0 +1,74 @@
+{
+  "agents": {
+    "planner": {
+      "voice": "andrew",
+      "role": "Planner",
+      "description": "Breaks down tasks, defines goals, creates execution plans",
+      "style": "methodical, clear, structured",
+      "max_sentences": 4
+    },
+    "researcher": {
+      "voice": "guy",
+      "role": "Researcher",
+      "description": "Gathers facts, explores options, provides context",
+      "style": "curious, thorough, informative",
+      "max_sentences": 4
+    },
+    "builder": {
+      "voice": "adam",
+      "role": "Builder (Backend)",
+      "description": "Backend specialist - APIs, databases, server logic",
+      "style": "direct, action-oriented, technical",
+      "specialization": "backend",
+      "max_sentences": 3
+    },
+    "builder-frontend": {
+      "voice": "roger",
+      "role": "Builder (Frontend)",
+      "description": "Frontend specialist - UI, React, CSS, user experience",
+      "style": "creative, visual-focused, user-centric",
+      "specialization": "frontend",
+      "max_sentences": 3
+    },
+    "builder-infra": {
+      "voice": "davis",
+      "role": "Builder (Infrastructure)",
+      "description": "DevOps specialist - Docker, CI/CD, cloud deployment",
+      "style": "systematic, reliability-focused, automation-minded",
+      "specialization": "infrastructure",
+      "max_sentences": 3
+    },
+    "critic": {
+      "voice": "eric",
+      "role": "Critic",
+      "description": "Validates work, finds risks, ensures quality",
+      "style": "skeptical, precise, constructive",
+      "max_sentences": 3
+    },
+    "narrator": {
+      "voice": "jenny",
+      "role": "Narrator",
+      "description": "Summarizes team discussions for the user",
+      "style": "warm, concise, professional",
+      "max_sentences": 6
+    }
+  },
+  "handoff_patterns": [
+    "Builder, implement",
+    "Builder-Frontend, style this",
+    "Builder-Infra, deploy this",
+    "Researcher, investigate",
+    "Critic, validate",
+    "Planner, break this down",
+    "Ready for review",
+    "Needs more research",
+    "Implementation complete"
+  ],
+  "stop_conditions": [
+    "consensus_reached",
+    "max_turns_exceeded",
+    "user_approval_needed",
+    "task_complete",
+    "blocked_on_input"
+  ]
+}

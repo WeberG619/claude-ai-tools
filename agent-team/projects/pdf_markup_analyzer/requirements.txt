@@ -1,0 +1,7 @@
+# PDF Markup Analyzer Dependencies
+
+# Core PDF processing (optional - for PDF extraction)
+PyMuPDF>=1.23.0
+
+# No other required dependencies - uses standard library
+# csv, json, datetime, pathlib, dataclasses are all built-in

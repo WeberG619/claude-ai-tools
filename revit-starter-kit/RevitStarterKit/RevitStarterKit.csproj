@@ -1,0 +1,118 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- ============================================================
+       RevitStarterKit - Multi-Version Revit Add-in Project
+
+       Build Configurations:
+         Debug R24 / Release R24  -> Revit 2024 (.NET Framework 4.8)
+         Debug R25 / Release R25  -> Revit 2025 (.NET 8.0)
+         Debug R26 / Release R26  -> Revit 2026 (.NET 8.0)
+
+       IMPORTANT: Set the RevitApiPath property below to point to
+       your local Revit API DLLs before building.
+       ============================================================ -->
+
+  <PropertyGroup>
+    <RootNamespace>RevitStarterKit</RootNamespace>
+    <AssemblyName>RevitStarterKit</AssemblyName>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <AppendTargetFrameworkToOutputPath>true</AppendTargetFrameworkToOutputPath>
+    <Configurations>Debug R24;Release R24;Debug R25;Release R25;Debug R26;Release R26</Configurations>
+    <Platforms>AnyCPU</Platforms>
+  </PropertyGroup>
+
+  <!-- ============================================================
+       TARGET FRAMEWORK SELECTION
+       Revit 2024 = .NET Framework 4.8
+       Revit 2025/2026 = .NET 8.0-windows
+       ============================================================ -->
+
+  <PropertyGroup Condition="$(Configuration.Contains('R24'))">
+    <TargetFramework>net48</TargetFramework>
+    <DefineConstants>$(DefineConstants);REVIT2024</DefineConstants>
+    <RevitVersion>2024</RevitVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="$(Configuration.Contains('R25'))">
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <DefineConstants>$(DefineConstants);REVIT2025</DefineConstants>
+    <RevitVersion>2025</RevitVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="$(Configuration.Contains('R26'))">
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <DefineConstants>$(DefineConstants);REVIT2026</DefineConstants>
+    <RevitVersion>2026</RevitVersion>
+  </PropertyGroup>
+
+  <!-- Debug / Release settings -->
+  <PropertyGroup Condition="$(Configuration.Contains('Debug'))">
+    <DefineConstants>$(DefineConstants);DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="$(Configuration.Contains('Release'))">
+    <DefineConstants>$(DefineConstants);TRACE</DefineConstants>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+
+  <!-- ============================================================
+       REVIT API REFERENCES
+
+       Option A (Recommended): Set the environment variable REVIT_API_PATH
+         e.g. C:\Program Files\Autodesk\Revit 2026
+
+       Option B: Edit the paths below directly.
+       ============================================================ -->
+
+  <PropertyGroup>
+    <!-- Fallback path if environment variable not set -->
+    <RevitApiPath Condition="'$(REVIT_API_PATH)' != ''">$(REVIT_API_PATH)</RevitApiPath>
+    <RevitApiPath Condition="'$(REVIT_API_PATH)' == ''">C:\Program Files\Autodesk\Revit $(RevitVersion)</RevitApiPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="RevitAPI">
+      <HintPath>$(RevitApiPath)\RevitAPI.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="RevitAPIUI">
+      <HintPath>$(RevitApiPath)\RevitAPIUI.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <!-- Additional framework references for .NET Framework 4.8 builds -->
+  <ItemGroup Condition="$(Configuration.Contains('R24'))">
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="System.Xaml" />
+  </ItemGroup>
+
+  <!-- ============================================================
+       POST-BUILD: Copy the .addin manifest to the Revit Addins folder.
+       Uncomment and adjust the path if you want auto-deploy on build.
+       ============================================================ -->
+  <!--
+  <Target Name="CopyAddinManifest" AfterTargets="Build">
+    <PropertyGroup>
+      <RevitAddinsFolder>$(AppData)\Autodesk\Revit\Addins\$(RevitVersion)</RevitAddinsFolder>
+    </PropertyGroup>
+    <Copy SourceFiles="$(ProjectDir)RevitStarterKit.addin"
+          DestinationFolder="$(RevitAddinsFolder)"
+          SkipUnchangedFiles="true" />
+    <Copy SourceFiles="$(TargetPath)"
+          DestinationFolder="$(RevitAddinsFolder)"
+          SkipUnchangedFiles="true" />
+    <Message Text="Deployed to $(RevitAddinsFolder)" Importance="high" />
+  </Target>
+  -->
+
+</Project>
