@@ -24,6 +24,14 @@ from typing import List, Optional
 from datetime import datetime
 from pathlib import Path
 
+# PowerShell Bridge — 100x faster than subprocess.run(powershell.exe...)
+sys.path.insert(0, "/mnt/d/_CLAUDE-TOOLS/powershell-bridge")
+try:
+    from client import run_powershell as _ps_bridge
+    _HAS_BRIDGE = True
+except ImportError:
+    _HAS_BRIDGE = False
+
 try:
     from mcp.server import Server
     from mcp.types import Tool, TextContent
@@ -52,8 +60,15 @@ server = Server("bluebeam")
 # POWERSHELL HELPERS
 # =============================================================================
 def run_powershell(script: str, timeout: int = 30) -> tuple[bool, str]:
-    """Execute PowerShell script and return (success, output)."""
+    """Execute PowerShell script and return (success, output).
+    Uses the persistent bridge (~5ms) with subprocess fallback (~590ms)."""
     try:
+        if _HAS_BRIDGE:
+            result = _ps_bridge(script, timeout)
+            output = result.stdout.strip()
+            if not result.success and result.stderr:
+                output = result.stderr.strip()
+            return result.success, output
         result = subprocess.run(
             ["powershell.exe", "-NoProfile", "-Command", script],
             capture_output=True,
