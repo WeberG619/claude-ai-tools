@@ -20,6 +20,15 @@ import shutil
 from typing import List
 from datetime import datetime
 from pathlib import Path
+import threading
+
+# PowerShell Bridge
+sys.path.insert(0, "/mnt/d/_CLAUDE-TOOLS/powershell-bridge")
+try:
+    from client import run_powershell as _ps_bridge
+    _HAS_BRIDGE = True
+except ImportError:
+    _HAS_BRIDGE = False
 
 # =============================================================================
 # FORCE IPv4 - Critical fix for Edge TTS connectivity
@@ -94,6 +103,16 @@ def save_to_cache(audio_file: str, text: str, voice: str) -> str:
 # =============================================================================
 # AUDIO PLAYBACK
 # =============================================================================
+def _run_ps(cmd, timeout=30):
+    if _HAS_BRIDGE:
+        return _ps_bridge(cmd, timeout)
+    r = subprocess.run(["powershell.exe", "-NoProfile", "-Command", cmd],
+                       capture_output=True, text=True, timeout=timeout)
+    class _R:
+        stdout = r.stdout; stderr = r.stderr; returncode = r.returncode; success = r.returncode == 0
+    return _R()
+
+
 def play_audio(audio_file: str) -> bool:
     try:
         win_path = str(audio_file).replace("/mnt/d", "D:")
@@ -114,11 +133,14 @@ def play_audio(audio_file: str) -> bool:
         }}
         $player.Close()
         '''
-        subprocess.Popen(
-            ["powershell.exe", "-NoProfile", "-Command", play_script],
-            stdout=subprocess.DEVNULL,
-            stderr=subprocess.DEVNULL
-        )
+        if _HAS_BRIDGE:
+            threading.Thread(target=_ps_bridge, args=(play_script, 120), daemon=True).start()
+        else:
+            subprocess.Popen(
+                ["powershell.exe", "-NoProfile", "-Command", play_script],
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.DEVNULL
+            )
         return True
     except Exception as e:
         print(f"Playback error: {e}", file=sys.stderr)
@@ -246,10 +268,7 @@ async def call_tool(name: str, arguments: dict):
             return [TextContent(type="text", text=f"Available voices:\n{voice_list}")]
 
         elif name == "stop_speaking":
-            subprocess.run(
-                ["powershell.exe", "-Command", "Get-Process | Where-Object {$_.MainWindowTitle -like '*MediaPlayer*'} | Stop-Process -Force -ErrorAction SilentlyContinue"],
-                capture_output=True
-            )
+            _run_ps("Get-Process | Where-Object {$_.MainWindowTitle -like '*MediaPlayer*'} | Stop-Process -Force -ErrorAction SilentlyContinue")
             return [TextContent(type="text", text="Stopped any playing speech")]
 
         else:

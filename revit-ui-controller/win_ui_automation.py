@@ -4,12 +4,24 @@ Uses PowerShell + System.Windows.Automation to enumerate and interact with UI el
 """
 
 import subprocess
+import sys
 import json
 from typing import Optional, Dict, List, Any
+
+# PowerShell Bridge
+sys.path.insert(0, "/mnt/d/_CLAUDE-TOOLS/powershell-bridge")
+try:
+    from client import run_powershell as _ps_bridge
+    _HAS_BRIDGE = True
+except ImportError:
+    _HAS_BRIDGE = False
 
 
 def run_powershell(script: str, capture_output: bool = True) -> tuple[str, str, int]:
     """Execute PowerShell script and return stdout, stderr, returncode"""
+    if _HAS_BRIDGE:
+        r = _ps_bridge(script, timeout=30)
+        return r.stdout, r.stderr, r.returncode
     result = subprocess.run(
         ["powershell.exe", "-NoProfile", "-Command", script],
         capture_output=capture_output,

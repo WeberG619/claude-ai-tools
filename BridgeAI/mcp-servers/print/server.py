@@ -9,6 +9,14 @@ import json
 import os
 import sys
 
+# PowerShell Bridge
+sys.path.insert(0, "/mnt/d/_CLAUDE-TOOLS/powershell-bridge")
+try:
+    from client import run_powershell as _ps_bridge
+    _HAS_BRIDGE = True
+except ImportError:
+    _HAS_BRIDGE = False
+
 sys.path.insert(0, '/mnt/d/_MCP-SERVERS')
 
 try:
@@ -19,6 +27,16 @@ except ImportError:
 mcp = FastMCP("bridgeai-print")
 
 
+def _run_ps(cmd, timeout=30):
+    if _HAS_BRIDGE:
+        return _ps_bridge(cmd, timeout)
+    r = subprocess.run(["powershell.exe", "-NoProfile", "-Command", cmd],
+                       capture_output=True, text=True, timeout=timeout)
+    class _R:
+        stdout = r.stdout; stderr = r.stderr; returncode = r.returncode; success = r.returncode == 0
+    return _R()
+
+
 @mcp.tool()
 def list_printers() -> str:
     """
@@ -27,10 +45,9 @@ def list_printers() -> str:
     Use this first when user wants to print something.
     """
     try:
-        result = subprocess.run(
-            ["powershell.exe", "-Command",
-             "Get-Printer | Select-Object Name, PrinterStatus, Default, PortName | ConvertTo-Json"],
-            capture_output=True, text=True, timeout=30
+        result = _run_ps(
+            "Get-Printer | Select-Object Name, PrinterStatus, Default, PortName | ConvertTo-Json",
+            timeout=30
         )
         output = result.stdout.strip()
         if '[' in output:
@@ -49,10 +66,9 @@ def get_default_printer() -> str:
     Get the name of the default printer.
     """
     try:
-        result = subprocess.run(
-            ["powershell.exe", "-Command",
-             "(Get-Printer | Where-Object {$_.Default -eq $true}).Name"],
-            capture_output=True, text=True, timeout=30
+        result = _run_ps(
+            "(Get-Printer | Where-Object {$_.Default -eq $true}).Name",
+            timeout=30
         )
         printer_name = result.stdout.strip()
         return json.dumps({"default_printer": printer_name if printer_name else "No default printer set"})
@@ -78,10 +94,7 @@ def print_file(file_path: str, printer_name: str = None, copies: int = 1) -> str
 
     # Check if file exists
     check_cmd = f"Test-Path '{file_path}'"
-    result = subprocess.run(
-        ["powershell.exe", "-Command", check_cmd],
-        capture_output=True, text=True
-    )
+    result = _run_ps(check_cmd)
     if 'False' in result.stdout:
         return json.dumps({"error": f"File not found: {file_path}"})
 
@@ -94,7 +107,7 @@ def print_file(file_path: str, printer_name: str = None, copies: int = 1) -> str
             printer_arg = f"-Name '{printer_name}'" if printer_name else ""
             cmd = f"Get-Content '{file_path}' | Out-Printer {printer_arg}"
             for _ in range(copies):
-                subprocess.run(["powershell.exe", "-Command", cmd], timeout=60)
+                _run_ps(cmd, timeout=60)
 
         elif ext in ['.pdf', '.doc', '.docx', '.xls', '.xlsx', '.png', '.jpg', '.jpeg', '.gif', '.bmp']:
             # Use Start-Process with -Verb Print
@@ -103,7 +116,7 @@ def print_file(file_path: str, printer_name: str = None, copies: int = 1) -> str
             for _ in range(copies):
                 # Use shell verb 'print' which works for most document types
                 cmd = f"Start-Process -FilePath '{file_path}' -Verb Print -PassThru | Wait-Process -Timeout 30"
-                subprocess.run(["powershell.exe", "-Command", cmd], timeout=60)
+                _run_ps(cmd, timeout=60)
 
         else:
             return json.dumps({
@@ -137,10 +150,7 @@ def get_print_queue(printer_name: str = None) -> str:
         else:
             cmd = "Get-Printer | ForEach-Object { $p = $_; Get-PrintJob -PrinterName $_.Name -ErrorAction SilentlyContinue | Select-Object @{N='Printer';E={$p.Name}}, Id, DocumentName, JobStatus } | ConvertTo-Json"
 
-        result = subprocess.run(
-            ["powershell.exe", "-Command", cmd],
-            capture_output=True, text=True, timeout=30
-        )
+        result = _run_ps(cmd, timeout=30)
         output = result.stdout.strip()
         if not output:
             return json.dumps({"message": "No print jobs in queue", "jobs": []})
@@ -161,10 +171,7 @@ def cancel_print_job(printer_name: str, job_id: int) -> str:
     """
     try:
         cmd = f"Remove-PrintJob -PrinterName '{printer_name}' -ID {job_id}"
-        subprocess.run(
-            ["powershell.exe", "-Command", cmd],
-            capture_output=True, text=True, timeout=30
-        )
+        _run_ps(cmd, timeout=30)
         return json.dumps({
             "success": True,
             "message": f"Cancelled print job {job_id} on {printer_name}"
@@ -180,10 +187,7 @@ def set_default_printer(printer_name: str) -> str:
     """
     try:
         cmd = f"Set-Printer -Name '{printer_name}' -Default"
-        result = subprocess.run(
-            ["powershell.exe", "-Command", cmd],
-            capture_output=True, text=True, timeout=30
-        )
+        result = _run_ps(cmd, timeout=30)
         if result.returncode == 0:
             return json.dumps({
                 "success": True,

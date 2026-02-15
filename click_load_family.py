@@ -4,6 +4,24 @@ import subprocess
 import time
 import sys
 
+# PowerShell Bridge
+sys.path.insert(0, "/mnt/d/_CLAUDE-TOOLS/powershell-bridge")
+try:
+    from client import run_powershell as _ps_bridge
+    _HAS_BRIDGE = True
+except ImportError:
+    _HAS_BRIDGE = False
+
+
+def _run_ps(cmd, timeout=30):
+    if _HAS_BRIDGE:
+        return _ps_bridge(cmd, timeout)
+    r = subprocess.run(["powershell.exe", "-NoProfile", "-Command", cmd],
+                       capture_output=True, text=True, timeout=timeout)
+    class _R:
+        stdout = r.stdout; stderr = r.stderr; returncode = r.returncode; success = r.returncode == 0
+    return _R()
+
 def get_revit_rect():
     ps = '''
 $revit = Get-Process Revit -ErrorAction SilentlyContinue | Select-Object -First 1
@@ -22,7 +40,7 @@ if ($revit) {
     "$($r.Left),$($r.Top),$($r.Right),$($r.Bottom)"
 }
 '''
-    result = subprocess.run(['powershell.exe', '-Command', ps], capture_output=True, text=True)
+    result = _run_ps(ps)
     parts = result.stdout.strip().split(',')
     if len(parts) == 4:
         return [int(p) for p in parts]
@@ -47,7 +65,7 @@ if ($revit) {
     "OK"
 }
 '''
-    result = subprocess.run(['powershell.exe', '-Command', ps], capture_output=True, text=True)
+    result = _run_ps(ps)
     return "OK" in result.stdout
 
 # Main

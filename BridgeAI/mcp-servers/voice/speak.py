@@ -20,6 +20,14 @@ import hashlib
 from datetime import datetime
 from pathlib import Path
 
+# PowerShell Bridge
+sys.path.insert(0, "/mnt/d/_CLAUDE-TOOLS/powershell-bridge")
+try:
+    from client import run_powershell as _ps_bridge
+    _HAS_BRIDGE = True
+except ImportError:
+    _HAS_BRIDGE = False
+
 # =============================================================================
 # FORCE IPv4 - Critical fix for Edge TTS connectivity in WSL
 # =============================================================================
@@ -85,6 +93,16 @@ def save_to_cache(audio_file: str, text: str, engine: str) -> str:
 # =============================================================================
 # AUDIO PLAYBACK
 # =============================================================================
+def _run_ps(cmd, timeout=30):
+    if _HAS_BRIDGE:
+        return _ps_bridge(cmd, timeout)
+    r = subprocess.run(["powershell.exe", "-NoProfile", "-Command", cmd],
+                       capture_output=True, text=True, timeout=timeout)
+    class _R:
+        stdout = r.stdout; stderr = r.stderr; returncode = r.returncode; success = r.returncode == 0
+    return _R()
+
+
 def play_audio(audio_file: str) -> bool:
     """Play audio file using Windows Media Player COM object (WMPlayer.OCX)"""
     try:
@@ -113,11 +131,7 @@ def play_audio(audio_file: str) -> bool:
         $wmp.close()
         '''
 
-        result = subprocess.run(
-            ["powershell.exe", "-NoProfile", "-Command", play_script],
-            capture_output=True,
-            timeout=120
-        )
+        result = _run_ps(play_script, timeout=120)
         return result.returncode == 0
     except Exception as e:
         print(f"Playback error: {e}")
@@ -208,11 +222,7 @@ def speak_with_sapi(text: str) -> bool:
         '''
 
         print("Trying Windows SAPI...")
-        result = subprocess.run(
-            ["powershell.exe", "-NoProfile", "-Command", sapi_script],
-            capture_output=True,
-            timeout=120
-        )
+        result = _run_ps(sapi_script, timeout=120)
 
         if result.returncode == 0:
             print("Windows SAPI: Success!")

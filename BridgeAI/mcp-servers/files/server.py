@@ -12,6 +12,14 @@ import shutil
 from pathlib import Path
 from datetime import datetime
 
+# PowerShell Bridge
+sys.path.insert(0, "/mnt/d/_CLAUDE-TOOLS/powershell-bridge")
+try:
+    from client import run_powershell as _ps_bridge
+    _HAS_BRIDGE = True
+except ImportError:
+    _HAS_BRIDGE = False
+
 sys.path.insert(0, '/mnt/d/_MCP-SERVERS')
 
 try:
@@ -20,6 +28,16 @@ except ImportError:
     from fastmcp import FastMCP
 
 mcp = FastMCP("bridgeai-files")
+
+
+def _run_ps(cmd, timeout=30):
+    if _HAS_BRIDGE:
+        return _ps_bridge(cmd, timeout)
+    r = subprocess.run(["powershell.exe", "-NoProfile", "-Command", cmd],
+                       capture_output=True, text=True, timeout=timeout)
+    class _R:
+        stdout = r.stdout; stderr = r.stderr; returncode = r.returncode; success = r.returncode == 0
+    return _R()
 
 
 def get_windows_path(path: str) -> str:
@@ -33,10 +51,7 @@ def get_user_folders() -> dict:
     """Get common user folder paths"""
     home = os.path.expanduser('~')
     # For WSL, map to Windows user folders
-    win_user = subprocess.run(
-        ["powershell.exe", "-Command", "$env:USERPROFILE"],
-        capture_output=True, text=True
-    ).stdout.strip()
+    win_user = _run_ps("$env:USERPROFILE").stdout.strip()
 
     return {
         "desktop": os.path.join(win_user, "Desktop"),
@@ -87,10 +102,7 @@ def list_folder(folder_path: str = None, folder_name: str = None) -> str:
             @{{N='Modified';E={{$_.LastWriteTime.ToString('yyyy-MM-dd HH:mm')}}}} |
         ConvertTo-Json
         """
-        result = subprocess.run(
-            ["powershell.exe", "-Command", cmd],
-            capture_output=True, text=True, timeout=30
-        )
+        result = _run_ps(cmd, timeout=30)
         output = result.stdout.strip()
         if not output:
             return json.dumps({"folder": win_path, "contents": [], "message": "Folder is empty"})
@@ -123,10 +135,7 @@ def search_files(search_term: str, folder_name: str = None, folder_path: str = N
 
     if not folder_path:
         # Default to user profile
-        folder_path = subprocess.run(
-            ["powershell.exe", "-Command", "$env:USERPROFILE"],
-            capture_output=True, text=True
-        ).stdout.strip()
+        folder_path = _run_ps("$env:USERPROFILE").stdout.strip()
 
     win_path = get_windows_path(folder_path)
 
@@ -144,10 +153,7 @@ def search_files(search_term: str, folder_name: str = None, folder_path: str = N
         Select-Object -First 50 |
         ConvertTo-Json
         """
-        result = subprocess.run(
-            ["powershell.exe", "-Command", cmd],
-            capture_output=True, text=True, timeout=120
-        )
+        result = _run_ps(cmd, timeout=120)
         output = result.stdout.strip()
         if not output:
             return json.dumps({"search_term": search_term, "results": [], "message": "No files found"})
@@ -184,10 +190,7 @@ def create_folder(folder_path: str = None, folder_name: str = None, parent_folde
 
     try:
         cmd = f"New-Item -Path '{win_path}' -ItemType Directory -Force | Select-Object FullName | ConvertTo-Json"
-        result = subprocess.run(
-            ["powershell.exe", "-Command", cmd],
-            capture_output=True, text=True, timeout=30
-        )
+        result = _run_ps(cmd, timeout=30)
         return json.dumps({
             "success": True,
             "created": win_path,
@@ -222,10 +225,7 @@ def move_file(source_path: str, destination_folder: str = None, destination_path
 
     try:
         cmd = f"Move-Item -Path '{win_source}' -Destination '{win_dest}' -PassThru | Select-Object FullName | ConvertTo-Json"
-        result = subprocess.run(
-            ["powershell.exe", "-Command", cmd],
-            capture_output=True, text=True, timeout=30
-        )
+        result = _run_ps(cmd, timeout=30)
         return json.dumps({
             "success": True,
             "from": win_source,
@@ -259,10 +259,7 @@ def copy_file(source_path: str, destination_folder: str = None, destination_path
 
     try:
         cmd = f"Copy-Item -Path '{win_source}' -Destination '{win_dest}' -PassThru | Select-Object FullName | ConvertTo-Json"
-        result = subprocess.run(
-            ["powershell.exe", "-Command", cmd],
-            capture_output=True, text=True, timeout=30
-        )
+        result = _run_ps(cmd, timeout=30)
         return json.dumps({
             "success": True,
             "from": win_source,
@@ -287,19 +284,13 @@ def delete_file(file_path: str, confirm: bool = False) -> str:
     # Check if file exists
     try:
         cmd = f"Test-Path '{win_path}'"
-        result = subprocess.run(
-            ["powershell.exe", "-Command", cmd],
-            capture_output=True, text=True, timeout=10
-        )
+        result = _run_ps(cmd, timeout=10)
         if 'False' in result.stdout:
             return json.dumps({"error": f"File not found: {win_path}"})
 
         # Get file info
         cmd = f"Get-Item '{win_path}' | Select-Object Name, @{{N='Size_MB';E={{[math]::Round($_.Length/1MB, 2)}}}} | ConvertTo-Json"
-        result = subprocess.run(
-            ["powershell.exe", "-Command", cmd],
-            capture_output=True, text=True, timeout=10
-        )
+        result = _run_ps(cmd, timeout=10)
 
         if not confirm:
             return json.dumps({
@@ -311,7 +302,7 @@ def delete_file(file_path: str, confirm: bool = False) -> str:
 
         # Actually delete
         cmd = f"Remove-Item -Path '{win_path}' -Force"
-        subprocess.run(["powershell.exe", "-Command", cmd], timeout=30)
+        _run_ps(cmd, timeout=30)
         return json.dumps({
             "success": True,
             "deleted": win_path,
@@ -335,10 +326,7 @@ def rename_file(file_path: str, new_name: str) -> str:
 
     try:
         cmd = f"Rename-Item -Path '{win_path}' -NewName '{new_name}' -PassThru | Select-Object FullName | ConvertTo-Json"
-        result = subprocess.run(
-            ["powershell.exe", "-Command", cmd],
-            capture_output=True, text=True, timeout=30
-        )
+        result = _run_ps(cmd, timeout=30)
         return json.dumps({
             "success": True,
             "old_name": os.path.basename(win_path),
@@ -359,7 +347,7 @@ def open_file(file_path: str) -> str:
 
     try:
         cmd = f"Start-Process '{win_path}'"
-        subprocess.run(["powershell.exe", "-Command", cmd], timeout=10)
+        _run_ps(cmd, timeout=10)
         return json.dumps({
             "success": True,
             "opened": win_path,
@@ -392,7 +380,7 @@ def open_folder(folder_path: str = None, folder_name: str = None) -> str:
 
     try:
         cmd = f"explorer.exe '{win_path}'"
-        subprocess.run(["powershell.exe", "-Command", cmd], timeout=10)
+        _run_ps(cmd, timeout=10)
         return json.dumps({
             "success": True,
             "opened": win_path,
@@ -432,7 +420,7 @@ def create_text_file(file_name: str, content: str, folder_name: str = None, fold
         # Escape content for PowerShell
         escaped_content = content.replace("'", "''")
         cmd = f"Set-Content -Path '{win_path}' -Value '{escaped_content}'"
-        subprocess.run(["powershell.exe", "-Command", cmd], timeout=30)
+        _run_ps(cmd, timeout=30)
         return json.dumps({
             "success": True,
             "created": win_path,

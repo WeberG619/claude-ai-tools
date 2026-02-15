@@ -21,6 +21,14 @@ from typing import List
 from datetime import datetime
 from pathlib import Path
 
+# PowerShell Bridge
+sys.path.insert(0, "/mnt/d/_CLAUDE-TOOLS/powershell-bridge")
+try:
+    from client import run_powershell as _ps_bridge
+    _HAS_BRIDGE = True
+except ImportError:
+    _HAS_BRIDGE = False
+
 # =============================================================================
 # FORCE IPv4 - Critical fix for Edge TTS connectivity
 # =============================================================================
@@ -94,8 +102,33 @@ def save_to_cache(audio_file: str, text: str, voice: str) -> str:
 # =============================================================================
 # AUDIO PLAYBACK
 # =============================================================================
+LOCK_FILE = AUDIO_DIR / ".speaking.lock"
+
+def _run_ps(cmd, timeout=30):
+    """Run a PowerShell command via bridge with subprocess fallback."""
+    if _HAS_BRIDGE:
+        return _ps_bridge(cmd, timeout)
+    r = subprocess.run(["powershell.exe", "-NoProfile", "-Command", cmd],
+                       capture_output=True, text=True, timeout=timeout)
+    class _R:
+        stdout = r.stdout; stderr = r.stderr; returncode = r.returncode; success = r.returncode == 0
+    return _R()
+
+def _stop_existing_playback():
+    """Kill any running speech playback to prevent echo/overlap."""
+    try:
+        _run_ps(
+            "Get-Process powershell | Where-Object {$_.Id -ne $PID} | ForEach-Object { if ((Get-WmiObject Win32_Process -Filter \"ProcessId=$($_.Id)\").CommandLine -like '*MediaPlayer*') { Stop-Process -Id $_.Id -Force -ErrorAction SilentlyContinue } }",
+            timeout=5
+        )
+    except Exception:
+        pass
+
 def play_audio(audio_file: str) -> bool:
     try:
+        # Prevent overlapping playback
+        _stop_existing_playback()
+
         win_path = str(audio_file).replace("/mnt/d", "D:")
         play_script = f'''
         Add-Type -AssemblyName PresentationCore
@@ -114,11 +147,7 @@ def play_audio(audio_file: str) -> bool:
         }}
         $player.Close()
         '''
-        subprocess.Popen(
-            ["powershell.exe", "-NoProfile", "-Command", play_script],
-            stdout=subprocess.DEVNULL,
-            stderr=subprocess.DEVNULL
-        )
+        _run_ps(play_script, timeout=120)
         return True
     except Exception as e:
         print(f"Playback error: {e}", file=sys.stderr)
@@ -246,9 +275,9 @@ async def call_tool(name: str, arguments: dict):
             return [TextContent(type="text", text=f"Available voices:\n{voice_list}")]
 
         elif name == "stop_speaking":
-            subprocess.run(
-                ["powershell.exe", "-Command", "Get-Process | Where-Object {$_.MainWindowTitle -like '*MediaPlayer*'} | Stop-Process -Force -ErrorAction SilentlyContinue"],
-                capture_output=True
+            _run_ps(
+                "Get-Process | Where-Object {$_.MainWindowTitle -like '*MediaPlayer*'} | Stop-Process -Force -ErrorAction SilentlyContinue",
+                timeout=10
             )
             return [TextContent(type="text", text="Stopped any playing speech")]
 

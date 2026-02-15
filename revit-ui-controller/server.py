@@ -13,6 +13,25 @@ import sys
 from pathlib import Path
 from typing import Any, Optional
 
+# PowerShell Bridge
+sys.path.insert(0, "/mnt/d/_CLAUDE-TOOLS/powershell-bridge")
+try:
+    from client import run_powershell as _ps_bridge
+    _HAS_BRIDGE = True
+except ImportError:
+    _HAS_BRIDGE = False
+
+
+def _run_ps(cmd, timeout=30):
+    if _HAS_BRIDGE:
+        return _ps_bridge(cmd, timeout)
+    import subprocess
+    r = subprocess.run(["powershell.exe", "-NoProfile", "-Command", cmd],
+                       capture_output=True, text=True, timeout=timeout)
+    class _R:
+        stdout = r.stdout; stderr = r.stderr; returncode = r.returncode; success = r.returncode == 0
+    return _R()
+
 from mcp.server import Server
 from mcp.types import TextContent, Tool
 from pydantic import BaseModel
@@ -75,12 +94,7 @@ class RevitMCPClient:
         }}
         """
 
-        result = subprocess.run(
-            ["powershell.exe", "-NoProfile", "-Command", script],
-            capture_output=True,
-            text=True,
-            timeout=30,
-        )
+        result = _run_ps(script, timeout=30)
 
         if result.returncode == 0 and result.stdout.strip():
             try:

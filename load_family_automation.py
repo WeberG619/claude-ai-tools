@@ -7,6 +7,24 @@ import time
 import subprocess
 import sys
 
+# PowerShell Bridge
+sys.path.insert(0, "/mnt/d/_CLAUDE-TOOLS/powershell-bridge")
+try:
+    from client import run_powershell as _ps_bridge
+    _HAS_BRIDGE = True
+except ImportError:
+    _HAS_BRIDGE = False
+
+
+def _run_ps(cmd, timeout=30):
+    if _HAS_BRIDGE:
+        return _ps_bridge(cmd, timeout)
+    r = subprocess.run(["powershell.exe", "-NoProfile", "-Command", cmd],
+                       capture_output=True, text=True, timeout=timeout)
+    class _R:
+        stdout = r.stdout; stderr = r.stderr; returncode = r.returncode; success = r.returncode == 0
+    return _R()
+
 pyautogui.FAILSAFE = True
 pyautogui.PAUSE = 0.1
 
@@ -32,7 +50,7 @@ def focus_revit():
         Write-Output "Revit not found"
     }
     '''
-    result = subprocess.run(['powershell.exe', '-Command', ps_script], capture_output=True, text=True)
+    result = _run_ps(ps_script)
     print(result.stdout.strip())
     time.sleep(0.5)
     return "Focused Revit" in result.stdout
@@ -58,7 +76,7 @@ def get_revit_window_info():
         Write-Output "$($rect.Left),$($rect.Top),$($rect.Right),$($rect.Bottom)"
     }
     '''
-    result = subprocess.run(['powershell.exe', '-Command', ps_script], capture_output=True, text=True)
+    result = _run_ps(ps_script)
     coords = result.stdout.strip().split(',')
     if len(coords) == 4:
         return [int(c) for c in coords]

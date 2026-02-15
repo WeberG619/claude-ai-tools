@@ -12,6 +12,14 @@ import os
 import base64
 import time
 
+# PowerShell Bridge
+sys.path.insert(0, "/mnt/d/_CLAUDE-TOOLS/powershell-bridge")
+try:
+    from client import run_powershell as _ps_bridge
+    _HAS_BRIDGE = True
+except ImportError:
+    _HAS_BRIDGE = False
+
 sys.path.insert(0, '/mnt/d/_MCP-SERVERS')
 
 try:
@@ -20,6 +28,17 @@ except ImportError:
     from fastmcp import FastMCP
 
 mcp = FastMCP("bridgeai-samsung-tv")
+
+
+def _run_ps(cmd, timeout=30):
+    if _HAS_BRIDGE:
+        return _ps_bridge(cmd, timeout)
+    r = subprocess.run(["powershell.exe", "-NoProfile", "-Command", cmd],
+                       capture_output=True, text=True, timeout=timeout)
+    class _R:
+        stdout = r.stdout; stderr = r.stderr; returncode = r.returncode; success = r.returncode == 0
+    return _R()
+
 
 # Configuration - update these for your TV
 TV_CONFIG = {
@@ -87,10 +106,7 @@ def discover_samsung_tvs() -> str:
         }
         $results | ConvertTo-Json
         """
-        result = subprocess.run(
-            ["powershell.exe", "-Command", cmd],
-            capture_output=True, text=True, timeout=120
-        )
+        result = _run_ps(cmd, timeout=120)
 
         output = result.stdout.strip()
         if output and '[' in output:
@@ -292,10 +308,7 @@ def send_key_powershell(ip: str, key: str) -> str:
         "success"
         """
 
-        result = subprocess.run(
-            ["powershell.exe", "-Command", ps_cmd],
-            capture_output=True, text=True, timeout=15
-        )
+        result = _run_ps(ps_cmd, timeout=15)
 
         if "success" in result.stdout:
             return json.dumps({"success": True, "key_sent": key})

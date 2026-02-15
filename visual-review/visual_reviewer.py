@@ -24,6 +24,24 @@ from enum import Enum
 from typing import Optional
 import tempfile
 
+# PowerShell Bridge
+sys.path.insert(0, "/mnt/d/_CLAUDE-TOOLS/powershell-bridge")
+try:
+    from client import run_powershell as _ps_bridge
+    _HAS_BRIDGE = True
+except ImportError:
+    _HAS_BRIDGE = False
+
+
+def _run_ps(cmd, timeout=30):
+    if _HAS_BRIDGE:
+        return _ps_bridge(cmd, timeout)
+    r = subprocess.run(["powershell.exe", "-NoProfile", "-Command", cmd],
+                       capture_output=True, text=True, timeout=timeout)
+    class _R:
+        stdout = r.stdout; stderr = r.stderr; returncode = r.returncode; success = r.returncode == 0
+    return _R()
+
 
 class IssueSeverity(Enum):
     CRITICAL = "critical"  # Code violation, must fix
@@ -156,12 +174,7 @@ $response = $reader.ReadLine()
 $pipe.Close()
 Write-Output $response
 '''
-        result = subprocess.run(
-            ["powershell.exe", "-Command", ps_script],
-            capture_output=True,
-            text=True,
-            timeout=30
-        )
+        result = _run_ps(ps_script, timeout=30)
 
         if result.returncode == 0 and output_path.exists():
             return str(output_path)
@@ -197,12 +210,7 @@ $response = $reader.ReadLine()
 $pipe.Close()
 Write-Output $response
 '''
-        result = subprocess.run(
-            ["powershell.exe", "-Command", ps_script],
-            capture_output=True,
-            text=True,
-            timeout=30
-        )
+        result = _run_ps(ps_script, timeout=30)
 
         if result.returncode == 0:
             response = json.loads(result.stdout.strip())

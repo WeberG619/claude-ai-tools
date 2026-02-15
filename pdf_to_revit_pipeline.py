@@ -38,6 +38,24 @@ import time
 from collections import defaultdict
 from typing import Optional, Dict, Any, List
 
+# PowerShell Bridge
+sys.path.insert(0, "/mnt/d/_CLAUDE-TOOLS/powershell-bridge")
+try:
+    from client import run_powershell as _ps_bridge
+    _HAS_BRIDGE = True
+except ImportError:
+    _HAS_BRIDGE = False
+
+
+def _run_ps(cmd, timeout=30):
+    if _HAS_BRIDGE:
+        return _ps_bridge(cmd, timeout)
+    r = subprocess.run(["powershell.exe", "-NoProfile", "-Command", cmd],
+                       capture_output=True, text=True, timeout=timeout)
+    class _R:
+        stdout = r.stdout; stderr = r.stderr; returncode = r.returncode; success = r.returncode == 0
+    return _R()
+
 
 # ============================================================================
 # CONFIGURATION
@@ -185,12 +203,7 @@ try {{
 """
 
     try:
-        result = subprocess.run(
-            ["powershell.exe", "-NoProfile", "-Command", ps_script],
-            capture_output=True,
-            text=True,
-            timeout=timeout + 10
-        )
+        result = _run_ps(ps_script, timeout=timeout + 10)
 
         stdout = result.stdout.strip()
         if not stdout:
@@ -569,6 +582,62 @@ def _filter_false_positives(walls: List[Dict],
               f"{removed_cluster} clustered = {total_removed} walls")
 
     return [walls[i] for i in sorted(keep)]
+
+
+def _match_doors_to_walls(doors, walls, max_perp_dist=5.0, end_tolerance=3.0):
+    """Match each door to its nearest host wall by perpendicular distance.
+
+    Args:
+        doors: List of door dicts with centerX/centerY or position.x/y
+        walls: Combined list of exterior + interior walls (with startX/Y, endX/Y, orientation)
+        max_perp_dist: Max perpendicular distance from wall centerline (ft)
+        end_tolerance: How far past wall endpoints a door can be (ft)
+
+    Returns:
+        List of (door_index, wall_index, perpendicular_distance) tuples.
+        Unmatched doors are not included.
+    """
+    matches = []
+    for di, door in enumerate(doors):
+        dx = door.get("centerX", door.get("position", {}).get("x", 0))
+        dy = door.get("centerY", door.get("position", {}).get("y", 0))
+        best = None
+
+        for wi, wall in enumerate(walls):
+            sx, sy = wall["startX"], wall["startY"]
+            ex, ey = wall["endX"], wall["endY"]
+
+            if wall["orientation"] == "H":
+                wall_y = (sy + ey) / 2
+                perp = abs(dy - wall_y)
+                lo = min(sx, ex) - end_tolerance
+                hi = max(sx, ex) + end_tolerance
+                if lo <= dx <= hi and perp < max_perp_dist:
+                    if best is None or perp < best[2]:
+                        best = (di, wi, perp)
+            elif wall["orientation"] == "V":
+                wall_x = (sx + ex) / 2
+                perp = abs(dx - wall_x)
+                lo = min(sy, ey) - end_tolerance
+                hi = max(sy, ey) + end_tolerance
+                if lo <= dy <= hi and perp < max_perp_dist:
+                    if best is None or perp < best[2]:
+                        best = (di, wi, perp)
+
+        if best:
+            matches.append(best)
+
+    return matches
+
+
+def _match_windows_to_walls(windows, walls, max_perp_dist=6.0, end_tolerance=3.0):
+    """Match windows to host walls. Uses larger max_perp_dist since window labels
+    are often placed inside the room, further from the exterior wall face."""
+    normalized = []
+    for w in windows:
+        pos = w.get("position", {})
+        normalized.append({**w, "centerX": pos.get("x", 0), "centerY": pos.get("y", 0)})
+    return _match_doors_to_walls(normalized, walls, max_perp_dist, end_tolerance)
 
 
 def _final_overlap_dedup(walls: List[Dict], pos_tol: float = 12.0,
@@ -1575,24 +1644,25 @@ def step_place_doors(analysis: Dict, wall_result: Optional[Dict],
     print(f"\n[STEP 4a] Placing {len(doors)} doors...")
 
     placed = 0
+    matched = sum(1 for d in doors if d.get("hostWallId"))
     for door in doors:
         cx = door.get("centerX", 0)
         cy = door.get("centerY", 0)
         width_ft = door.get("widthFeet", 3.0)
+        host_wall_id = door.get("hostWallId")
 
-        # Use placeDoor if available, otherwise placeFamilyInstance
-        result = send_mcp_command("placeDoor", {
+        params = {
             "location": [cx, cy, 0],
             "levelId": level_id,
             "width": width_ft,
-        })
+        }
+        if host_wall_id:
+            params["wallId"] = host_wall_id
+
+        result = send_mcp_command("placeDoor", params)
 
         if result.get("success"):
             placed += 1
-        else:
-            # Doors often fail because finding host wall is tricky
-            # This is expected — manual adjustment may be needed
-            pass
 
     print(f"    Placed: {placed}/{len(doors)} doors")
     if placed < len(doors):
@@ -1621,16 +1691,22 @@ def step_place_windows(analysis: Dict, wall_result: Optional[Dict],
     print(f"\n[STEP 4b] Placing {len(windows)} windows...")
 
     placed = 0
+    matched = sum(1 for w in windows if w.get("hostWallId"))
     for window in windows:
         pos = window.get("position", {})
         width_ft = window.get("widthFeet", 3.0)
+        host_wall_id = window.get("hostWallId")
 
-        result = send_mcp_command("placeWindow", {
+        params = {
             "location": [pos.get("x", 0), pos.get("y", 0), 0],
             "levelId": level_id,
             "width": width_ft,
             "sillHeight": 3.0,  # Default 3' sill
-        })
+        }
+        if host_wall_id:
+            params["wallId"] = host_wall_id
+
+        result = send_mcp_command("placeWindow", params)
 
         if result.get("success"):
             placed += 1
@@ -1726,6 +1802,30 @@ def dry_run_report(analysis: Dict, level_id: int, height: float,
                   f"({pos.get('x', 0):.1f}, {pos.get('y', 0):.1f})"
                   f"  wall: {w.get('wallOrientation', '?')}")
 
+    # Door/window → wall matching preview
+    all_walls = ext_walls + int_walls
+    if doors and all_walls:
+        door_matches = _match_doors_to_walls(doors, all_walls)
+        print(f"\nDoor → Wall Matching:")
+        print(f"  Matched: {len(door_matches)}/{len(doors)} "
+              f"({100 * len(door_matches) / len(doors):.0f}%)")
+        for di, wi, dist in door_matches:
+            d = doors[di]
+            w = all_walls[wi]
+            print(f"    Door {di+1} → Wall {wi+1} ({w.get('orientation','?')}, "
+                  f"{w.get('length',0):.1f}ft) dist={dist:.2f}ft")
+
+    if windows and all_walls:
+        window_matches = _match_windows_to_walls(windows, all_walls)
+        print(f"\nWindow → Wall Matching:")
+        print(f"  Matched: {len(window_matches)}/{len(windows)} "
+              f"({100 * len(window_matches) / len(windows):.0f}%)")
+        for wi_idx, wall_idx, dist in window_matches:
+            w_elem = windows[wi_idx]
+            wall = all_walls[wall_idx]
+            print(f"    Window {wi_idx+1} → Wall {wall_idx+1} ({wall.get('orientation','?')}, "
+                  f"{wall.get('length',0):.1f}ft) dist={dist:.2f}ft")
+
     print(f"\nWall Creation Parameters:")
     print(f"  Level ID: {level_id}")
     print(f"  Wall height: {height} ft")
@@ -1758,11 +1858,75 @@ def save_analysis(analysis: Dict, output_path: str):
     print(f"\n    Analysis saved to: {output_path}")
 
 
+def _convert_simple_wall_format(data: Dict) -> Dict:
+    """Convert simple wall JSON (start/end arrays) to pipeline format.
+
+    Detects the simpler format by checking for 'exterior_walls' key (snake_case
+    with start/end coordinate arrays) vs pipeline's 'exteriorWalls' (camelCase
+    with startX/startY/endX/endY).
+    """
+    def convert_walls(walls_in, default_thickness):
+        out = []
+        for w in walls_in:
+            sx, sy = w["start"]
+            ex, ey = w["end"]
+            dx, dy = ex - sx, ey - sy
+            length = math.hypot(dx, dy)
+            orient = "H" if abs(dx) >= abs(dy) else "V"
+            out.append({
+                "startX": sx, "startY": sy,
+                "endX": ex, "endY": ey,
+                "orientation": orient,
+                "length": round(length, 2),
+                "thicknessInches": w.get("thicknessInches", default_thickness),
+                "desc": w.get("desc", ""),
+            })
+        return out
+
+    ext = convert_walls(data.get("exterior_walls", []), 8.0)
+    int_ = convert_walls(data.get("interior_walls", []), 4.5)
+
+    # Compute bounds from wall endpoints
+    all_pts_x = [w["startX"] for w in ext + int_] + [w["endX"] for w in ext + int_]
+    all_pts_y = [w["startY"] for w in ext + int_] + [w["endY"] for w in ext + int_]
+    min_x = min(all_pts_x) if all_pts_x else 0
+    max_x = max(all_pts_x) if all_pts_x else 0
+    min_y = min(all_pts_y) if all_pts_y else 0
+    max_y = max(all_pts_y) if all_pts_y else 0
+
+    print(f"    Converted simple format: {len(ext)} exterior + {len(int_)} interior walls")
+
+    return {
+        "success": True,
+        "exteriorWalls": ext,
+        "interiorWalls": int_,
+        "doors": [],
+        "windows": [],
+        "bounds": {
+            "minX": min_x, "minY": min_y,
+            "maxX": max_x, "maxY": max_y,
+            "width": max_x - min_x, "height": max_y - min_y,
+        },
+        "summary": {
+            "exteriorWallCount": len(ext),
+            "interiorWallCount": len(int_),
+            "doorCount": 0,
+            "windowCount": 0,
+        },
+    }
+
+
 def load_analysis(input_path: str) -> Optional[Dict]:
-    """Load previously saved analysis results."""
+    """Load analysis results. Auto-converts simple wall format if detected."""
     try:
         with open(input_path, 'r') as f:
-            return json.load(f)
+            data = json.load(f)
+
+        # Auto-detect simple format (snake_case keys with start/end arrays)
+        if "exterior_walls" in data or "interior_walls" in data:
+            return _convert_simple_wall_format(data)
+
+        return data
     except Exception as e:
         print(f"    Failed to load analysis: {e}")
         return None
@@ -2022,6 +2186,33 @@ def run_pipeline(input_path: str,
         "created": wall_result.get("createdCount", 0) if wall_result else 0,
         "failed": wall_result.get("failedCount", 0) if wall_result else 0,
     }
+
+    # Step 3b: Match doors/windows to host walls
+    wall_id_map = {}  # our_index -> revit_wallId
+    if wall_result and wall_result.get("createdWalls"):
+        for i, cw in enumerate(wall_result["createdWalls"]):
+            wall_id_map[i] = cw["wallId"]
+
+    all_walls = analysis.get("exteriorWalls", []) + analysis.get("interiorWalls", [])
+    doors = analysis.get("doors", [])
+    windows = analysis.get("windows", [])
+
+    if doors and all_walls:
+        door_matches = _match_doors_to_walls(doors, all_walls)
+        for di, wi, dist in door_matches:
+            if wi in wall_id_map:
+                analysis["doors"][di]["hostWallId"] = wall_id_map[wi]
+                analysis["doors"][di]["hostWallIndex"] = wi
+        print(f"\n[STEP 3b] Matched {len(door_matches)}/{len(doors)} doors to host walls "
+              f"({100 * len(door_matches) / len(doors):.0f}%)")
+
+    if windows and all_walls:
+        window_matches = _match_windows_to_walls(windows, all_walls)
+        for wi_idx, wall_idx, dist in window_matches:
+            if wall_idx in wall_id_map:
+                analysis["windows"][wi_idx]["hostWallId"] = wall_id_map[wall_idx]
+        print(f"[STEP 3b] Matched {len(window_matches)}/{len(windows)} windows to host walls "
+              f"({100 * len(window_matches) / len(windows):.0f}%)")
 
     # Step 4a: Place doors
     if not skip_doors:

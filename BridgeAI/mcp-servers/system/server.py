@@ -10,6 +10,14 @@ import os
 import sys
 from datetime import datetime
 
+# PowerShell Bridge
+sys.path.insert(0, "/mnt/d/_CLAUDE-TOOLS/powershell-bridge")
+try:
+    from client import run_powershell as _ps_bridge
+    _HAS_BRIDGE = True
+except ImportError:
+    _HAS_BRIDGE = False
+
 # Add MCP SDK path
 sys.path.insert(0, '/mnt/d/_MCP-SERVERS')
 
@@ -22,6 +30,17 @@ except ImportError:
 mcp = FastMCP("bridgeai-system")
 
 SCRIPTS_PATH = os.path.join(os.path.dirname(__file__), '..', '..', 'scripts')
+
+
+def _run_ps(cmd, timeout=30):
+    if _HAS_BRIDGE:
+        return _ps_bridge(cmd, timeout)
+    r = subprocess.run(["powershell.exe", "-NoProfile", "-Command", cmd],
+                       capture_output=True, text=True, timeout=timeout)
+    class _R:
+        stdout = r.stdout; stderr = r.stderr; returncode = r.returncode; success = r.returncode == 0
+    return _R()
+
 
 def run_powershell(script_name: str, params: dict) -> dict:
     """Run a PowerShell script and return JSON result"""
@@ -36,10 +55,15 @@ def run_powershell(script_name: str, params: dict) -> dict:
             args.append(f"-{key}")
             args.append(str(value))
 
-    cmd = ["powershell.exe", "-ExecutionPolicy", "Bypass", "-File", script_path] + args
-
     try:
-        result = subprocess.run(cmd, capture_output=True, text=True, timeout=60)
+        if _HAS_BRIDGE:
+            # Build command string for bridge: & "script" -Arg1 val1 ...
+            args_str = " ".join(args)
+            bridge_cmd = f'& "{script_path}" {args_str}'
+            result = _ps_bridge(bridge_cmd, 60)
+        else:
+            cmd = ["powershell.exe", "-ExecutionPolicy", "Bypass", "-File", script_path] + args
+            result = subprocess.run(cmd, capture_output=True, text=True, timeout=60)
         # Parse JSON output
         output = result.stdout.strip()
         # Remove any non-JSON prefix (like profile messages)
@@ -236,14 +260,13 @@ def get_system_info() -> str:
     Returns OS version, computer name, user name.
     """
     try:
-        result = subprocess.run(
-            ["powershell.exe", "-Command",
-             "$os = Get-CimInstance Win32_OperatingSystem; " +
-             "$cs = Get-CimInstance Win32_ComputerSystem; " +
-             "@{computer_name=$env:COMPUTERNAME; user_name=$env:USERNAME; " +
-             "os_name=$os.Caption; os_version=$os.Version; " +
-             "manufacturer=$cs.Manufacturer; model=$cs.Model} | ConvertTo-Json"],
-            capture_output=True, text=True, timeout=30
+        result = _run_ps(
+            "$os = Get-CimInstance Win32_OperatingSystem; " +
+            "$cs = Get-CimInstance Win32_ComputerSystem; " +
+            "@{computer_name=$env:COMPUTERNAME; user_name=$env:USERNAME; " +
+            "os_name=$os.Caption; os_version=$os.Version; " +
+            "manufacturer=$cs.Manufacturer; model=$cs.Model} | ConvertTo-Json",
+            timeout=30
         )
         output = result.stdout.strip()
         if '{' in output:
@@ -260,14 +283,13 @@ def get_installed_programs() -> str:
     Useful for checking what software is available.
     """
     try:
-        result = subprocess.run(
-            ["powershell.exe", "-Command",
-             "Get-ItemProperty HKLM:\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\* | " +
-             "Where-Object {$_.DisplayName} | " +
-             "Select-Object DisplayName, DisplayVersion, Publisher | " +
-             "Sort-Object DisplayName | " +
-             "ConvertTo-Json"],
-            capture_output=True, text=True, timeout=60
+        result = _run_ps(
+            "Get-ItemProperty HKLM:\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\* | " +
+            "Where-Object {$_.DisplayName} | " +
+            "Select-Object DisplayName, DisplayVersion, Publisher | " +
+            "Sort-Object DisplayName | " +
+            "ConvertTo-Json",
+            timeout=60
         )
         output = result.stdout.strip()
         if '[' in output:

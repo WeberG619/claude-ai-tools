@@ -16,6 +16,14 @@ from typing import Optional, Dict, Any, List
 import urllib.request
 import urllib.error
 
+# PowerShell Bridge
+sys.path.insert(0, "/mnt/d/_CLAUDE-TOOLS/powershell-bridge")
+try:
+    from client import run_powershell as _ps_bridge
+    _HAS_BRIDGE = True
+except ImportError:
+    _HAS_BRIDGE = False
+
 # MCP SDK imports
 try:
     from mcp.server import Server
@@ -46,7 +54,9 @@ server = Server("windows-browser")
 
 def run_powershell(script: str, capture_output: bool = True) -> tuple[str, str, int]:
     """Execute PowerShell script and return stdout, stderr, returncode"""
-    # Escape for PowerShell
+    if _HAS_BRIDGE:
+        result = _ps_bridge(script, 30)
+        return result.stdout, result.stderr, result.returncode
     result = subprocess.run(
         ["powershell.exe", "-NoProfile", "-Command", script],
         capture_output=capture_output,

@@ -5,12 +5,31 @@ Handles communication with RevitMCPBridge via named pipes.
 
 import json
 import subprocess
+import sys
 import time
 import logging
 import re
 from pathlib import Path
 from typing import Optional, Dict, List, Any, Tuple
 from datetime import datetime
+
+# PowerShell Bridge
+sys.path.insert(0, "/mnt/d/_CLAUDE-TOOLS/powershell-bridge")
+try:
+    from client import run_powershell as _ps_bridge
+    _HAS_BRIDGE = True
+except ImportError:
+    _HAS_BRIDGE = False
+
+
+def _run_ps(cmd, timeout=30):
+    if _HAS_BRIDGE:
+        return _ps_bridge(cmd, timeout)
+    r = subprocess.run(["powershell.exe", "-NoProfile", "-Command", cmd],
+                       capture_output=True, text=True, timeout=timeout)
+    class _R:
+        stdout = r.stdout; stderr = r.stderr; returncode = r.returncode; success = r.returncode == 0
+    return _R()
 
 from .database import Database
 
@@ -67,12 +86,7 @@ try {{
 """
 
         try:
-            result = subprocess.run(
-                ["powershell.exe", "-NoProfile", "-Command", ps_script],
-                capture_output=True,
-                text=True,
-                timeout=timeout + 30  # Extra buffer
-            )
+            result = _run_ps(ps_script, timeout=timeout + 30)
 
             if result.returncode != 0:
                 return {"success": False, "error": result.stderr or "PowerShell error"}

@@ -16,6 +16,25 @@ from datetime import datetime
 from typing import Optional
 import argparse
 
+# PowerShell Bridge
+sys.path.insert(0, "/mnt/d/_CLAUDE-TOOLS/powershell-bridge")
+try:
+    from client import run_powershell as _ps_bridge
+    _HAS_BRIDGE = True
+except ImportError:
+    _HAS_BRIDGE = False
+
+
+def _run_ps(cmd, timeout=30):
+    if _HAS_BRIDGE:
+        return _ps_bridge(cmd, timeout)
+    r = subprocess.run(["powershell.exe", "-NoProfile", "-Command", cmd],
+                       capture_output=True, text=True, timeout=timeout)
+    class _R:
+        stdout = r.stdout; stderr = r.stderr; returncode = r.returncode; success = r.returncode == 0
+    return _R()
+
+
 # Add paths for imports
 sys.path.insert(0, str(Path(__file__).parent))
 
@@ -153,12 +172,7 @@ try {{
 '''
 
     try:
-        result = subprocess.run(
-            ["powershell.exe", "-Command", ps_script],
-            capture_output=True,
-            text=True,
-            timeout=10
-        )
+        result = _run_ps(ps_script, timeout=10)
 
         if result.returncode == 0 and result.stdout.strip():
             # Filter out non-JSON lines (PowerShell profile messages, etc.)

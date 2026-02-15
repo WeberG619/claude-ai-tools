@@ -16,6 +16,24 @@ from typing import Optional
 
 from analysis_rules import Finding, FindingTier
 
+# PowerShell Bridge
+sys.path.insert(0, "/mnt/d/_CLAUDE-TOOLS/powershell-bridge")
+try:
+    from client import run_powershell as _ps_bridge
+    _HAS_BRIDGE = True
+except ImportError:
+    _HAS_BRIDGE = False
+
+
+def _run_ps(cmd, timeout=30):
+    if _HAS_BRIDGE:
+        return _ps_bridge(cmd, timeout)
+    r = subprocess.run(["powershell.exe", "-NoProfile", "-Command", cmd],
+                       capture_output=True, text=True, timeout=timeout)
+    class _R:
+        stdout = r.stdout; stderr = r.stderr; returncode = r.returncode; success = r.returncode == 0
+    return _R()
+
 
 # Configuration
 QUEUE_FILE = Path.home() / ".claude" / "ambient_queue.json"
@@ -64,12 +82,7 @@ $text = @"
 "@
 python "D:\\_CLAUDE-TOOLS\\voice-mcp\\speak.py" $text
 '''
-        result = subprocess.run(
-            ["powershell.exe", "-Command", ps_script],
-            capture_output=True,
-            text=True,
-            timeout=30
-        )
+        result = _run_ps(ps_script, timeout=30)
 
         if result.returncode == 0:
             print(f"[Voice] Spoke (fallback): {text}")
@@ -164,11 +177,7 @@ $xml.LoadXml($template)
 $toast = [Windows.UI.Notifications.ToastNotification]::new($xml)
 [Windows.UI.Notifications.ToastNotificationManager]::CreateToastNotifier("Revit Monitor").Show($toast)
 '''
-        subprocess.run(
-            ["powershell.exe", "-Command", ps_script],
-            capture_output=True,
-            timeout=5
-        )
+        _run_ps(ps_script, timeout=5)
     except:
         pass  # Notification is optional
 

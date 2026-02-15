@@ -11,12 +11,32 @@ Author: BIM Ops Studio
 
 import json
 import os
+import sys
 import time
 import struct
 from typing import Dict, List, Optional, Any, Union
 from dataclasses import dataclass
 from datetime import datetime
 import logging
+
+# PowerShell Bridge
+sys.path.insert(0, "/mnt/d/_CLAUDE-TOOLS/powershell-bridge")
+try:
+    from client import run_powershell as _ps_bridge
+    _HAS_BRIDGE = True
+except ImportError:
+    _HAS_BRIDGE = False
+
+
+def _run_ps(cmd, timeout=30):
+    if _HAS_BRIDGE:
+        return _ps_bridge(cmd, timeout)
+    import subprocess
+    r = subprocess.run(["powershell.exe", "-NoProfile", "-Command", cmd],
+                       capture_output=True, text=True, timeout=timeout)
+    class _R:
+        stdout = r.stdout; stderr = r.stderr; returncode = r.returncode; success = r.returncode == 0
+    return _R()
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -169,12 +189,7 @@ try {{
 
         try:
             # Run PowerShell command
-            result = subprocess.run(
-                ["powershell.exe", "-NoProfile", "-NonInteractive", "-Command", ps_script],
-                capture_output=True,
-                text=True,
-                timeout=self.timeout + 5
-            )
+            result = _run_ps(ps_script, timeout=self.timeout + 5)
 
             if result.returncode != 0:
                 self._last_error = result.stderr.strip()
