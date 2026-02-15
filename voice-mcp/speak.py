@@ -20,6 +20,22 @@ import hashlib
 from datetime import datetime
 from pathlib import Path
 
+# PowerShell Bridge — 100x faster than subprocess.run(powershell.exe...)
+sys.path.insert(0, "/mnt/d/_CLAUDE-TOOLS/powershell-bridge")
+try:
+    from client import run_powershell as _ps_bridge
+    def _run_ps(command: str, timeout: int = 30):
+        """Run PowerShell via bridge (fast) with subprocess fallback."""
+        return _ps_bridge(command, timeout)
+except ImportError:
+    def _run_ps(command: str, timeout: int = 30):
+        """Fallback: direct subprocess."""
+        r = subprocess.run(["powershell.exe", "-NoProfile", "-Command", command],
+                           capture_output=True, text=True, timeout=timeout)
+        class _R:
+            stdout = r.stdout; stderr = r.stderr; returncode = r.returncode; success = r.returncode == 0
+        return _R()
+
 # =============================================================================
 # FORCE IPv4 - Critical fix for Edge TTS connectivity in WSL
 # =============================================================================
@@ -35,14 +51,26 @@ socket.setdefaulttimeout(30)
 # CONFIGURATION
 # =============================================================================
 EDGE_VOICES = {
-    "andrew": "en-US-AndrewNeural",
-    "adam": "en-US-AdamMultilingualNeural",
-    "guy": "en-US-GuyNeural",
-    "davis": "en-US-DavisNeural",
-    "jenny": "en-US-JennyNeural",
-    "aria": "en-US-AriaNeural",
-    "amanda": "en-US-AmandaMultilingualNeural",
-    "michelle": "en-US-MichelleNeural",
+    # Primary voices
+    "andrew": "en-US-AndrewNeural",      # Male - natural, warm (Planner)
+    "guy": "en-US-GuyNeural",            # Male - clear
+    "christopher": "en-US-ChristopherNeural",  # Male
+    "eric": "en-US-EricNeural",          # Male
+    "jenny": "en-US-JennyNeural",        # Female - natural (Narrator)
+    "aria": "en-US-AriaNeural",          # Female
+    "michelle": "en-US-MichelleNeural",  # Female
+
+    # Alternative male voices (more natural sounding)
+    "brian": "en-US-BrianNeural",        # Male - very natural, conversational
+    "roger": "en-US-RogerNeural",        # Male - mature, professional
+    "steffan": "en-US-SteffanNeural",    # Male - younger, casual
+    "ryan": "en-GB-RyanNeural",          # Male - British, natural
+    "thomas": "en-GB-ThomasNeural",      # Male - British, warm
+    "liam": "en-CA-LiamNeural",          # Male - Canadian, friendly
+
+    # Legacy aliases for compatibility
+    "adam": "en-US-ChristopherNeural",   # Fallback to Christopher
+    "davis": "en-US-EricNeural",         # Fallback to Eric
 }
 
 DEFAULT_VOICE = "andrew"
@@ -55,28 +83,32 @@ MAX_RETRIES = 3  # Reduced since we have multiple engines
 TIMEOUT = 30
 
 def wsl_to_win_path(wsl_path: str) -> str:
-    """Convert WSL path to Windows path for PowerShell playback"""
-    if wsl_path.startswith("/mnt/"):
-        # /mnt/d/foo -> D:\foo
-        parts = wsl_path[5:].split("/", 1)
+    """Convert WSL path to Windows path for PowerShell playback.
+    Validates against path traversal attacks."""
+    # Resolve the path first to eliminate .. sequences
+    resolved = str(Path(wsl_path).resolve())
+    if resolved.startswith("/mnt/"):
+        parts = resolved[5:].split("/", 1)
         drive = parts[0].upper()
+        if not drive.isalpha() or len(drive) != 1:
+            raise ValueError(f"Invalid drive letter: {drive}")
         rest = parts[1].replace('/', '\\') if len(parts) > 1 else ""
         return f"{drive}:\\" + rest
-    return wsl_path.replace('/', '\\')
+    return resolved.replace('/', '\\')
 
 # =============================================================================
 # CACHING - Reuse audio for identical text
 # =============================================================================
-def get_cache_key(text: str, engine: str) -> str:
-    """Generate cache key from text and engine"""
-    content = f"{engine}:{text}"
+def get_cache_key(text: str, engine: str, voice: str = "andrew") -> str:
+    """Generate cache key from text, engine, AND voice"""
+    content = f"{engine}:{voice}:{text}"
     return hashlib.md5(content.encode()).hexdigest()[:16]
 
 
-def get_cached_audio(text: str, engine: str) -> str | None:
-    """Check if we have cached audio for this text"""
+def get_cached_audio(text: str, engine: str, voice: str = "andrew") -> str | None:
+    """Check if we have cached audio for this text AND voice"""
     CACHE_DIR.mkdir(parents=True, exist_ok=True)
-    cache_key = get_cache_key(text, engine)
+    cache_key = get_cache_key(text, engine, voice)
     cache_file = CACHE_DIR / f"{cache_key}.mp3"
 
     if cache_file.exists() and cache_file.stat().st_size > 1000:
@@ -84,10 +116,10 @@ def get_cached_audio(text: str, engine: str) -> str | None:
     return None
 
 
-def save_to_cache(audio_file: str, text: str, engine: str) -> str:
-    """Save audio file to cache"""
+def save_to_cache(audio_file: str, text: str, engine: str, voice: str = "andrew") -> str:
+    """Save audio file to cache with voice-specific key"""
     CACHE_DIR.mkdir(parents=True, exist_ok=True)
-    cache_key = get_cache_key(text, engine)
+    cache_key = get_cache_key(text, engine, voice)
     cache_file = CACHE_DIR / f"{cache_key}.mp3"
 
     import shutil
@@ -116,42 +148,44 @@ def get_audio_duration(audio_file: str) -> float:
     # Fallback: estimate from file size (very rough: ~6KB per second for mp3)
     try:
         file_size = os.path.getsize(audio_file)
-        return max(5, file_size / 6000)
+        return max(1, file_size / 6000)  # Minimum 1 second, not 5
     except:
         return 30  # Default fallback
 
 
-def play_audio(audio_file: str) -> bool:
-    """Play audio file using PowerShell MediaPlayer (reliable on Windows/WSL)"""
+def _stop_existing_playback():
+    """Kill any running speech playback to prevent echo/overlap."""
     try:
+        _run_ps("Get-Process powershell | Where-Object {$_.Id -ne $PID} | ForEach-Object { if ((Get-WmiObject Win32_Process -Filter \"ProcessId=$($_.Id)\").CommandLine -like '*MediaPlayer*') { Stop-Process -Id $_.Id -Force -ErrorAction SilentlyContinue } }", timeout=5)
+    except Exception:
+        pass
+
+def play_audio(audio_file: str) -> bool:
+    """Play audio file using PowerShell via bridge"""
+    try:
+        _stop_existing_playback()
         win_path = wsl_to_win_path(audio_file)
 
         # Get actual audio duration
         duration = get_audio_duration(audio_file)
-        wait_seconds = int(duration) + 2  # Add buffer
+        wait_ms = int((duration + 0.2) * 1000)
 
-        # Use PowerShell MediaPlayer - more reliable than pygame in WSL
-        play_script = f'''
-        Add-Type -AssemblyName presentationCore
-        $player = New-Object System.Windows.Media.MediaPlayer
-        $player.Open([Uri]"{win_path}")
-        Start-Sleep -Milliseconds 500
-        $player.Play()
-        Start-Sleep -Seconds {wait_seconds}
-        $player.Stop()
-        $player.Close()
-        '''
-
-        result = subprocess.run(
-            ["powershell.exe", "-NoProfile", "-Command", play_script],
-            capture_output=True,
-            timeout=wait_seconds + 15
+        script = (
+            'Add-Type -AssemblyName PresentationCore; '
+            '$player = New-Object System.Windows.Media.MediaPlayer; '
+            f'$player.Open([Uri]"{win_path}"); '
+            'Start-Sleep -Milliseconds 50; '
+            '$player.Play(); '
+            f'Start-Sleep -Milliseconds {wait_ms}; '
+            '$player.Stop(); '
+            '$player.Close()'
         )
-        return result.returncode == 0
+
+        result = _run_ps(script, timeout=int(duration) + 30)
+        return result.success
 
     except Exception as e:
         print(f"Playback error: {e}")
-        # Fallback to pygame if PowerShell fails
         return play_audio_pygame(audio_file)
 
 
@@ -172,29 +206,25 @@ def play_audio_pygame(audio_file: str) -> bool:
 
 
 def play_audio_fallback(audio_file: str) -> bool:
-    """Fallback: Play audio using PowerShell (may show window)"""
+    """Fallback: Play audio using PowerShell via bridge"""
     try:
         win_path = wsl_to_win_path(audio_file)
 
-        play_script = f'''
-        Add-Type -AssemblyName presentationCore
-        $mediaPlayer = New-Object system.windows.media.mediaplayer
-        $mediaPlayer.open("{win_path}")
-        Start-Sleep -Milliseconds 300
-        $mediaPlayer.Play()
-        $fileSize = (Get-Item "{win_path}").Length
-        $estimatedSeconds = [math]::Max(2, [math]::Ceiling($fileSize / 16000))
-        Start-Sleep -Seconds $estimatedSeconds
-        $mediaPlayer.Stop()
-        $mediaPlayer.Close()
-        '''
-
-        result = subprocess.run(
-            ["powershell.exe", "-NoProfile", "-Command", play_script],
-            capture_output=True,
-            timeout=60
+        play_script = (
+            'Add-Type -AssemblyName presentationCore; '
+            '$mediaPlayer = New-Object system.windows.media.mediaplayer; '
+            f'$mediaPlayer.open("{win_path}"); '
+            'Start-Sleep -Milliseconds 50; '
+            '$mediaPlayer.Play(); '
+            f'$fileSize = (Get-Item "{win_path}").Length; '
+            '$estimatedSeconds = [math]::Max(2, [math]::Ceiling($fileSize / 16000)); '
+            'Start-Sleep -Seconds $estimatedSeconds; '
+            '$mediaPlayer.Stop(); '
+            '$mediaPlayer.Close()'
         )
-        return result.returncode == 0
+
+        result = _run_ps(play_script, timeout=60)
+        return result.success
     except Exception as e:
         print(f"Fallback playback error: {e}")
         return False
@@ -273,24 +303,23 @@ def speak_with_sapi(text: str) -> bool:
     Not as natural, but ALWAYS works offline.
     """
     try:
-        safe_text = text.replace("'", "''").replace('"', '`"')
+        import re
+        # Strip any characters that could break PowerShell string interpolation
+        safe_text = re.sub(r'[^\w\s.,!?;:\-\'()/]', '', text)
+        safe_text = safe_text.replace("'", "''").replace('"', '`"')
 
-        sapi_script = f'''
-        Add-Type -AssemblyName System.Speech
-        $synth = New-Object System.Speech.Synthesis.SpeechSynthesizer
-        $synth.Rate = 0
-        $synth.Speak("{safe_text}")
-        $synth.Dispose()
-        '''
-
-        print("Trying Windows SAPI...")
-        result = subprocess.run(
-            ["powershell.exe", "-NoProfile", "-Command", sapi_script],
-            capture_output=True,
-            timeout=120
+        sapi_script = (
+            'Add-Type -AssemblyName System.Speech; '
+            '$synth = New-Object System.Speech.Synthesis.SpeechSynthesizer; '
+            '$synth.Rate = 0; '
+            f'$synth.Speak("{safe_text}"); '
+            '$synth.Dispose()'
         )
 
-        if result.returncode == 0:
+        print("Trying Windows SAPI...")
+        result = _run_ps(sapi_script, timeout=120)
+
+        if result.success:
             print("Windows SAPI: Success!")
             return True
         return False
@@ -314,22 +343,22 @@ def speak(text: str, voice: str = DEFAULT_VOICE, rate: str = "+0%") -> bool:
     timestamp = datetime.now().strftime('%Y%m%d_%H%M%S_%f')
     audio_file = str(AUDIO_DIR_WSL / f"speech_{timestamp}.mp3")
 
-    # Check cache for any engine - prefer Edge cache
+    # Check cache for this specific voice
     for engine in ["edge", "gtts"]:
-        cached = get_cached_audio(text, engine)
+        cached = get_cached_audio(text, engine, voice)
         if cached:
-            print(f"Using cached audio ({engine})")
+            print(f"Using cached audio ({engine}, {voice})")
             return play_audio(cached)
 
-    # ENGINE 1: Edge TTS (PREFERRED - Best Quality, Andrew voice)
+    # ENGINE 1: Edge TTS (PREFERRED - Best Quality, multiple voices)
     if speak_with_edge(text, voice, audio_file):
-        save_to_cache(audio_file, text, "edge")
+        save_to_cache(audio_file, text, "edge", voice)
         return play_audio(audio_file)
 
-    # ENGINE 2: Google TTS (Fallback when Edge is rate-limited)
+    # ENGINE 2: Google TTS (Fallback - only one voice available)
     print("Edge TTS unavailable (rate-limited). Trying Google TTS...")
     if speak_with_gtts(text, audio_file):
-        save_to_cache(audio_file, text, "gtts")
+        save_to_cache(audio_file, text, "gtts", voice)
         return play_audio(audio_file)
 
     # ENGINE 3: Windows SAPI (Last Resort - Always Works)
