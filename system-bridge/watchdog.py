@@ -72,10 +72,18 @@ class DaemonWatchdog:
         try:
             with open(PID_FILE) as f:
                 pid = int(f.read().strip())
-            # Check if process exists (works on Windows too)
-            os.kill(pid, 0)
-            return True
-        except (ProcessLookupError, ValueError, FileNotFoundError):
+
+            if sys.platform == 'win32':
+                # Use tasklist on Windows to avoid os.kill WinError 6
+                result = subprocess.run(
+                    ['tasklist', '/FI', f'PID eq {pid}', '/NH'],
+                    capture_output=True, text=True, timeout=5
+                )
+                return str(pid) in result.stdout
+            else:
+                os.kill(pid, 0)
+                return True
+        except (ProcessLookupError, ValueError, FileNotFoundError, OSError):
             return False
         except PermissionError:
             # Process exists but we can't signal it
