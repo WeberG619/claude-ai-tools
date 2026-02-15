@@ -9,12 +9,47 @@ import sqlite3
 import subprocess
 import os
 import sys
+import time
 from datetime import datetime
 from pathlib import Path
 
-# Paths
-MEMORY_DB = Path(r"D:\_CLAUDE-TOOLS\claude-memory-server\data\memories.db")
-STATE_FILE = Path(r"D:\_CLAUDE-TOOLS\system-bridge\current_state.json")
+# PowerShell Bridge — 100x faster than subprocess.run(powershell.exe...)
+sys.path.insert(0, "/mnt/d/_CLAUDE-TOOLS/powershell-bridge")
+try:
+    from client import run_powershell as _ps_bridge
+    _HAS_BRIDGE = True
+except ImportError:
+    _HAS_BRIDGE = False
+
+def _run_ps(command: str, timeout: int = 10):
+    """Run PowerShell via bridge (fast) with subprocess fallback."""
+    if _HAS_BRIDGE:
+        return _ps_bridge(command, timeout)
+    r = subprocess.run(["powershell.exe", "-NoProfile", "-Command", command],
+                       capture_output=True, text=True, timeout=timeout)
+    class _R:
+        stdout = r.stdout; stderr = r.stderr; returncode = r.returncode; success = r.returncode == 0
+    return _R()
+
+# Paths (WSL-compatible)
+MEMORY_DB = Path("/mnt/d/_CLAUDE-TOOLS/claude-memory-server/data/memories.db")
+STATE_FILE = Path("/mnt/d/_CLAUDE-TOOLS/system-bridge/current_state.json")
+
+# Persistent SQLite connection (reused across all queries)
+_db_conn = None
+
+def _get_db():
+    """Get or create a persistent SQLite connection."""
+    global _db_conn
+    if _db_conn is None:
+        if not MEMORY_DB.exists():
+            return None
+        _db_conn = sqlite3.connect(str(MEMORY_DB), check_same_thread=False)
+        _db_conn.row_factory = sqlite3.Row
+    return _db_conn
+
+# Monitor cache (5-minute TTL — monitors rarely change)
+_monitor_cache = {"data": None, "time": 0.0}
 
 def get_open_applications():
     """Get all open windows with titles."""
@@ -24,12 +59,8 @@ def get_open_applications():
     ConvertTo-Json
     '''
     try:
-        result = subprocess.run(
-            ['powershell', '-Command', ps_cmd],
-            capture_output=True, text=True, timeout=10
-        )
+        result = _run_ps(ps_cmd, timeout=10)
         apps = json.loads(result.stdout) if result.stdout else []
-        # Handle single result (not a list)
         if isinstance(apps, dict):
             apps = [apps]
         return apps
@@ -37,20 +68,24 @@ def get_open_applications():
         return [{"error": str(e)}]
 
 def get_monitors():
-    """Get monitor information."""
+    """Get monitor information (cached for 5 minutes)."""
+    now = time.time()
+    if _monitor_cache["data"] and (now - _monitor_cache["time"]) < 300:
+        return _monitor_cache["data"]
+
     ps_cmd = '''
     Get-CimInstance -Namespace root\\wmi -ClassName WmiMonitorBasicDisplayParams |
     Select-Object InstanceName, Active | ConvertTo-Json
     '''
     try:
-        result = subprocess.run(
-            ['powershell', '-Command', ps_cmd],
-            capture_output=True, text=True, timeout=10
-        )
+        result = _run_ps(ps_cmd, timeout=10)
         monitors = json.loads(result.stdout) if result.stdout else []
         if isinstance(monitors, dict):
             monitors = [monitors]
-        return {"count": len(monitors), "details": monitors}
+        data = {"count": len(monitors), "details": monitors}
+        _monitor_cache["data"] = data
+        _monitor_cache["time"] = now
+        return data
     except Exception as e:
         return {"count": 0, "error": str(e)}
 
@@ -81,14 +116,12 @@ def get_revit_status():
 
 def get_recent_memories(limit=10):
     """Get recent memories from the database."""
-    if not MEMORY_DB.exists():
+    conn = _get_db()
+    if not conn:
         return []
 
     try:
-        conn = sqlite3.connect(MEMORY_DB)
-        conn.row_factory = sqlite3.Row
         cursor = conn.cursor()
-
         cursor.execute("""
             SELECT id, content, summary, project, memory_type, importance, created_at
             FROM memories
@@ -108,21 +141,18 @@ def get_recent_memories(limit=10):
                 "created": row["created_at"]
             })
 
-        conn.close()
         return memories
     except Exception as e:
         return [{"error": str(e)}]
 
 def get_corrections(limit=5):
     """Get recent corrections (highest priority memories)."""
-    if not MEMORY_DB.exists():
+    conn = _get_db()
+    if not conn:
         return []
 
     try:
-        conn = sqlite3.connect(MEMORY_DB)
-        conn.row_factory = sqlite3.Row
         cursor = conn.cursor()
-
         cursor.execute("""
             SELECT id, content, project, created_at
             FROM memories
@@ -140,21 +170,18 @@ def get_corrections(limit=5):
                 "created": row["created_at"]
             })
 
-        conn.close()
         return corrections
     except Exception as e:
         return [{"error": str(e)}]
 
 def get_projects():
     """Get all projects from memory database."""
-    if not MEMORY_DB.exists():
+    conn = _get_db()
+    if not conn:
         return []
 
     try:
-        conn = sqlite3.connect(MEMORY_DB)
-        conn.row_factory = sqlite3.Row
         cursor = conn.cursor()
-
         cursor.execute("""
             SELECT p.name, p.path, p.status, p.last_accessed,
                    COUNT(m.id) as memory_count
@@ -174,21 +201,18 @@ def get_projects():
                 "memories": row["memory_count"]
             })
 
-        conn.close()
         return projects
     except Exception as e:
         return [{"error": str(e)}]
 
 def get_unfinished_work():
     """Get sessions with open next steps."""
-    if not MEMORY_DB.exists():
+    conn = _get_db()
+    if not conn:
         return []
 
     try:
-        conn = sqlite3.connect(MEMORY_DB)
-        conn.row_factory = sqlite3.Row
         cursor = conn.cursor()
-
         cursor.execute("""
             SELECT content, project, created_at
             FROM memories
@@ -213,7 +237,6 @@ def get_unfinished_work():
                 "next_steps": next_steps[:5]
             })
 
-        conn.close()
         return unfinished
     except Exception as e:
         return [{"error": str(e)}]
@@ -248,11 +271,11 @@ def save_state():
 
 def store_memory(content, project=None, memory_type="context", importance=5, tags=None):
     """Store a new memory in the database."""
-    if not MEMORY_DB.exists():
+    conn = _get_db()
+    if not conn:
         return {"error": "Memory database not found"}
 
     try:
-        conn = sqlite3.connect(MEMORY_DB)
         cursor = conn.cursor()
 
         tags_json = json.dumps(tags) if tags else None
@@ -274,7 +297,6 @@ def store_memory(content, project=None, memory_type="context", importance=5, tag
             """, (project,))
 
         conn.commit()
-        conn.close()
 
         return {"success": True, "memory_id": memory_id}
     except Exception as e:
