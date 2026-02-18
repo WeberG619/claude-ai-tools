@@ -1,0 +1,23 @@
+{
+  "domain": "network",
+  "version": "1.0",
+  "description": "Network and communication corrections. Recipient verification, rate limiting, outbound safety.",
+  "corrections": [
+    {
+      "id": "net-001",
+      "what_went_wrong": "Sent a message/email/request to the wrong recipient or endpoint",
+      "correct_approach": "Always verify the recipient, URL, or endpoint before sending. Display it to the user for confirmation on first use.",
+      "detection": "Any outbound communication — email, API call, webhook, chat message",
+      "severity": "high",
+      "tags": ["communication", "shared-state", "universal"]
+    },
+    {
+      "id": "net-002",
+      "what_went_wrong": "Made API calls in a loop without rate limiting or bounds",
+      "correct_approach": "Add delays between API calls. Set a maximum iteration count. Check response codes before continuing.",
+      "detection": "Loops containing API calls or network requests",
+      "severity": "medium",
+      "tags": ["api", "network", "universal"]
+    }
+  ]
+}

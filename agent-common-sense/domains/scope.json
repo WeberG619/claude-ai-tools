@@ -1,0 +1,23 @@
+{
+  "domain": "scope",
+  "version": "1.0",
+  "description": "Scope discipline corrections. Over-engineering prevention, minimal diff, file creation guards.",
+  "corrections": [
+    {
+      "id": "scope-001",
+      "what_went_wrong": "Made changes beyond what was requested — added features, refactored unrelated code, 'improved' things that weren't asked for",
+      "correct_approach": "Do exactly what was asked. Don't add error handling for impossible cases, don't refactor adjacent code, don't add comments to unchanged functions. Minimal diff.",
+      "detection": "Changes to files or functions not mentioned in the request",
+      "severity": "medium",
+      "tags": ["scope", "discipline", "universal"]
+    },
+    {
+      "id": "scope-002",
+      "what_went_wrong": "Created new files when editing existing ones would have been better",
+      "correct_approach": "Prefer editing existing files. Only create new files when the functionality truly doesn't belong in any existing file.",
+      "detection": "File creation — ask 'does this belong in an existing file?'",
+      "severity": "low",
+      "tags": ["scope", "filesystem", "universal"]
+    }
+  ]
+}

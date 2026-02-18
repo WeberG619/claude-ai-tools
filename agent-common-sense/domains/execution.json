@@ -1,0 +1,23 @@
+{
+  "domain": "execution",
+  "version": "1.0",
+  "description": "Execution and debugging corrections. Retry discipline, resource awareness, progress checking.",
+  "corrections": [
+    {
+      "id": "exec-001",
+      "what_went_wrong": "Retried the same failing approach multiple times expecting different results",
+      "correct_approach": "If something fails twice with the same approach, stop. Investigate the root cause. Try a fundamentally different approach or escalate to the user.",
+      "detection": "Same command or action attempted 3+ times",
+      "severity": "medium",
+      "tags": ["execution", "debugging", "universal"]
+    },
+    {
+      "id": "exec-002",
+      "what_went_wrong": "Ran a long-running or resource-intensive operation without warning the user",
+      "correct_approach": "If an operation might take more than 30 seconds or consume significant resources, tell the user before starting. Offer to run in background.",
+      "detection": "Large builds, full test suites, big file operations, model training",
+      "severity": "low",
+      "tags": ["execution", "ux", "universal"]
+    }
+  ]
+}

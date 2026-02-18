@@ -1,0 +1,31 @@
+{
+  "domain": "filesystem",
+  "version": "1.0",
+  "description": "File system operation corrections. Path verification, read-before-write, deletion guards.",
+  "corrections": [
+    {
+      "id": "fs-001",
+      "what_went_wrong": "Deleted/overwritten a file without checking if it was tracked or important",
+      "correct_approach": "Always check git status or file importance before delete/overwrite. If untracked and user-created, confirm before removing.",
+      "detection": "Any action involving rm, delete, overwrite, or truncate",
+      "severity": "high",
+      "tags": ["destructive", "filesystem", "universal"]
+    },
+    {
+      "id": "fs-002",
+      "what_went_wrong": "Assumed a path existed without verifying",
+      "correct_approach": "Check that directories and files exist before writing to them or referencing them. Paths change between machines, projects, and sessions.",
+      "detection": "Any file write, copy, or move operation",
+      "severity": "medium",
+      "tags": ["paths", "filesystem", "universal"]
+    },
+    {
+      "id": "fs-003",
+      "what_went_wrong": "Modified a file without reading it first",
+      "correct_approach": "Always read the current state of a file before editing. The file may have changed since you last saw it, or may not contain what you expect.",
+      "detection": "Any edit or write operation",
+      "severity": "high",
+      "tags": ["filesystem", "editing", "universal"]
+    }
+  ]
+}

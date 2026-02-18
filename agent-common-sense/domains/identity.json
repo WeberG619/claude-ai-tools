@@ -1,0 +1,15 @@
+{
+  "domain": "identity",
+  "version": "1.0",
+  "description": "Identity and communication corrections. Name verification, credential handling, user preferences.",
+  "corrections": [
+    {
+      "id": "auth-001",
+      "what_went_wrong": "Used the wrong name, email, or identity when acting on behalf of the user",
+      "correct_approach": "Always use the user's configured name and email. Check stored preferences. Never guess or use defaults from the system.",
+      "detection": "Any action that includes user identity — commits, emails, signatures",
+      "severity": "high",
+      "tags": ["identity", "communication", "universal"]
+    }
+  ]
+}

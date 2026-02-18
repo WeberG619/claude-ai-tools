@@ -1,0 +1,15 @@
+{
+  "domain": "data",
+  "version": "1.0",
+  "description": "Data and database corrections. Destructive query guards, backup verification, schema safety.",
+  "corrections": [
+    {
+      "id": "data-001",
+      "what_went_wrong": "Dropped, truncated, or overwrote a database table without backup",
+      "correct_approach": "Before any destructive database operation, confirm the table name, check row count, and ask the user. Offer to export first.",
+      "detection": "DROP TABLE, TRUNCATE, DELETE without WHERE, bulk UPDATE",
+      "severity": "critical",
+      "tags": ["database", "destructive", "universal"]
+    }
+  ]
+}

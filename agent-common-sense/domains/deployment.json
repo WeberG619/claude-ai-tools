@@ -1,0 +1,15 @@
+{
+  "domain": "deployment",
+  "version": "1.0",
+  "description": "Deployment and release corrections. Target verification, path validation, environment checks.",
+  "corrections": [
+    {
+      "id": "deploy-001",
+      "what_went_wrong": "Deployed to the wrong environment, path, or target",
+      "correct_approach": "Always verify the deployment target. Check project-specific corrections for known-good paths. Confirm with user on first deploy.",
+      "detection": "Any copy, deploy, publish, or install action",
+      "severity": "critical",
+      "tags": ["deployment", "destructive", "universal"]
+    }
+  ]
+}

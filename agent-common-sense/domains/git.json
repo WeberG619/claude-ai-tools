@@ -1,0 +1,31 @@
+{
+  "domain": "git",
+  "version": "1.0",
+  "description": "Git and version control corrections. Force-push protection, secret detection, destructive operation guards.",
+  "corrections": [
+    {
+      "id": "git-001",
+      "what_went_wrong": "Force-pushed to main/master or a shared branch",
+      "correct_approach": "Never force-push to shared branches. Use feature branches. If you must force-push, confirm with the user and ensure no one else has pushed.",
+      "detection": "git push --force, git push -f, targeting main/master",
+      "severity": "critical",
+      "tags": ["git", "destructive", "shared-state"]
+    },
+    {
+      "id": "git-002",
+      "what_went_wrong": "Committed secrets, credentials, or .env files",
+      "correct_approach": "Check staged files for secrets before committing. Never stage .env, credentials.json, API keys, or token files.",
+      "detection": "git add, git commit with sensitive file patterns",
+      "severity": "critical",
+      "tags": ["git", "security", "universal"]
+    },
+    {
+      "id": "git-003",
+      "what_went_wrong": "Used git reset --hard or checkout . and lost uncommitted work",
+      "correct_approach": "Before any destructive git operation, check for uncommitted changes with git status. Stash or commit first.",
+      "detection": "git reset --hard, git checkout ., git clean",
+      "severity": "high",
+      "tags": ["git", "destructive", "universal"]
+    }
+  ]
+}
