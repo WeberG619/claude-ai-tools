@@ -30,6 +30,26 @@ try:
 except ImportError:
     pass
 
+try:
+    from .autocapture import CorrectionCapture
+except ImportError:
+    pass
+
+try:
+    from .summarizer import CorrectionSummarizer
+except ImportError:
+    pass
+
+try:
+    from .context import ContextEngine
+except ImportError:
+    pass
+
+try:
+    from .workflows import WorkflowRecorder, Workflow
+except ImportError:
+    pass
+
 __all__ = [
     "CommonSense", "ActionCheck",
     "SearchBackend", "KeywordSearch", "TFIDFSearch", "EmbeddingSearch",
@@ -38,5 +58,9 @@ __all__ = [
     "find_duplicates", "deduplicate_database", "decay_score", "cleanup_database",
     "FeedbackTracker",
     "DomainLoader", "DomainPack",
+    "CorrectionCapture",
+    "CorrectionSummarizer",
+    "ContextEngine",
+    "WorkflowRecorder", "Workflow",
 ]
-__version__ = "2.0.0"
+__version__ = "2.1.0"

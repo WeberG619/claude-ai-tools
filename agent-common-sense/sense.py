@@ -532,6 +532,115 @@ class CommonSense:
             return self._feedback.get_stale_corrections(days=days)
         return []
 
+    # ─── AUTO-CAPTURE ──────────────────────────────────────────
+
+    def check_for_correction(self, message: str) -> Optional[dict]:
+        """Check a user message for correction intent and auto-capture.
+
+        Returns captured correction info or None.
+        """
+        try:
+            from autocapture import CorrectionCapture
+            capture = CorrectionCapture(db_path=self.db_path)
+            result = capture.check_message(message)
+            if result and result.confidence >= 0.6:
+                return {
+                    "what_wrong": result.what_wrong,
+                    "correct_approach": result.correct_approach,
+                    "confidence": result.confidence,
+                    "domain": result.domain,
+                    "severity": result.severity,
+                }
+        except ImportError:
+            pass
+        return None
+
+    def auto_capture(self, message: str) -> Optional[dict]:
+        """Check and store a correction from a user message.
+
+        Combines detection + storage in one call.
+        """
+        try:
+            from autocapture import CorrectionCapture
+            capture = CorrectionCapture(db_path=self.db_path)
+            return capture.capture_and_store(message)
+        except ImportError:
+            return None
+
+    # ─── SUMMARIZATION ─────────────────────────────────────────
+
+    def summarize_rules(self, dry_run: bool = True) -> str:
+        """Generate high-level rules from all corrections.
+
+        Returns the generated rules content.
+        """
+        try:
+            from summarizer import CorrectionSummarizer
+            summarizer = CorrectionSummarizer(db_path=self.db_path)
+            return summarizer.write_rules(dry_run=dry_run)
+        except ImportError:
+            return ""
+
+    # ─── CONTEXT-AWARE ─────────────────────────────────────────
+
+    def get_contextual_corrections(self, limit: int = 10) -> list[dict]:
+        """Get corrections relevant to the current system context.
+
+        Reads system state and scores corrections by relevance.
+        """
+        try:
+            from context import ContextEngine
+            engine = ContextEngine(db_path=self.db_path)
+            return engine.get_relevant_corrections(limit=limit)
+        except ImportError:
+            return []
+
+    def get_contextual_injection(self, limit: int = 10) -> str:
+        """Generate a context-aware prompt injection.
+
+        Only includes corrections relevant to what's currently open.
+        """
+        try:
+            from context import ContextEngine
+            engine = ContextEngine(db_path=self.db_path)
+            return engine.get_contextual_injection(limit=limit)
+        except ImportError:
+            return ""
+
+    # ─── WORKFLOW RECORDING ────────────────────────────────────
+
+    def start_workflow(self, name: str, description: str = "",
+                       domain: str = "general"):
+        """Start recording a workflow."""
+        try:
+            from workflows import WorkflowRecorder
+            if not hasattr(self, '_recorder') or self._recorder is None:
+                self._recorder = WorkflowRecorder(db_path=self.db_path)
+            self._recorder.start(name, description=description, domain=domain)
+        except ImportError:
+            pass
+
+    def record_step(self, tool_name: str, tool_input: dict,
+                     result_summary: str = ""):
+        """Record a step in the current workflow."""
+        if hasattr(self, '_recorder') and self._recorder and self._recorder.recording:
+            self._recorder.add_step(tool_name, tool_input, result_summary)
+
+    def save_workflow(self, tags: list = None, success: bool = True) -> bool:
+        """Save the current workflow recording."""
+        if hasattr(self, '_recorder') and self._recorder and self._recorder.recording:
+            return self._recorder.save(tags=tags, success=success)
+        return False
+
+    def find_workflows(self, query: str, limit: int = 5) -> list[dict]:
+        """Find workflows similar to a description."""
+        try:
+            from workflows import WorkflowRecorder
+            recorder = WorkflowRecorder(db_path=self.db_path)
+            return recorder.find_similar(query, limit=limit)
+        except ImportError:
+            return []
+
     # ─── INTERNALS ─────────────────────────────────────────────
 
     def _recall_corrections(self, action: str, context: str = "") -> list:
