@@ -1,13 +1,14 @@
 """
 FloorPlanEngine — Architecturally Intelligent Layout Generation
 
-3-stage pipeline:
-  Natural Language → [Program] → [Layout] → [Revit] → Complete Model
+4-stage pipeline:
+  Natural Language → [Program] → [Layout] → [Reasoning] → [Revit] → Complete Model
 
 Usage:
     from floor_plan_engine import generate_floor_plan
-    plan = generate_floor_plan(total_area=1200, bedrooms=2)
+    plan = generate_floor_plan(total_area=1200, bedrooms=2, analyze=True)
     print(plan.ascii_preview())
+    print(plan.analyze().critique)
 
     # Execute in Revit:
     from floor_plan_engine import execute_in_revit
@@ -24,8 +25,10 @@ from .validation import validate_floor_plan
 from .revit_bridge import execute_in_revit
 from .reasoning import think_through, critique, narrate_walkthrough, build_connectivity_graph
 from .builder import FloorPlanBuilder
+from .improve import improve
+from .vision import extract_from_image, parse_response
 
-from typing import Optional, List, Dict, Any
+from typing import Optional, List, Dict, Any, Union, Tuple
 
 
 def generate_floor_plan(
@@ -34,8 +37,9 @@ def generate_floor_plan(
     bathrooms: Optional[int] = None,
     extra_rooms: Optional[List[Dict[str, Any]]] = None,
     validate: bool = True,
+    analyze: bool = False,
     verbose: bool = False,
-) -> FloorPlan:
+) -> Union[FloorPlan, Tuple[FloorPlan, FloorPlanAnalysis]]:
     """Generate a complete floor plan from high-level parameters.
 
     Args:
@@ -44,10 +48,11 @@ def generate_floor_plan(
         bathrooms: Number of bathrooms (auto if None)
         extra_rooms: Additional rooms [{"type": "office", "name": "Home Office"}]
         validate: Run validation checks
+        analyze: Run critical thinking analysis (v3 reasoning engine)
         verbose: Print progress
 
     Returns:
-        FloorPlan with rooms, walls, doors, windows ready for Revit execution
+        FloorPlan if analyze=False, or (FloorPlan, FloorPlanAnalysis) if analyze=True
     """
     # Stage 1: Program extraction
     program = extract_program(
@@ -85,6 +90,25 @@ def generate_floor_plan(
             for warn in report["warnings"][:5]:
                 print(f"  WARN: {warn['message']}")
 
+    # Stage 3: Critical thinking analysis
+    if analyze:
+        analysis = think_through(plan)
+        if verbose:
+            print(f"\nStage 3: Analysis — {analysis.score:.0f}/100 ({analysis.verdict})")
+            print(f"  Reachable: {len(analysis.reachable_rooms)}/{len(plan.rooms)}")
+            if analysis.unreachable_rooms:
+                print(f"  UNREACHABLE: {', '.join(analysis.unreachable_rooms)}")
+            if analysis.zone_violations:
+                for v in analysis.zone_violations:
+                    print(f"  ZONE: {v}")
+            if analysis.door_issues:
+                for d in analysis.door_issues[:3]:
+                    print(f"  DOOR: {d}")
+            if analysis.window_issues:
+                for w in analysis.window_issues[:3]:
+                    print(f"  WIN: {w}")
+        return plan, analysis
+
     return plan
 
 
@@ -108,4 +132,9 @@ __all__ = [
     "build_connectivity_graph",
     # v3: Builder
     "FloorPlanBuilder",
+    # v3: Auto-improvement
+    "improve",
+    # v3: Vision pipeline
+    "extract_from_image",
+    "parse_response",
 ]
