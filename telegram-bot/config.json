@@ -2,7 +2,7 @@
   "bot_name": "Weber Assistant",
   "bot_username": "WeberAssistantBot",
   "bot_link": "https://t.me/WeberAssistantBot",
-  "bot_token": "8273941796:AAEoJ36D-cpvQRE-eYZo8S2aq8-adSfIQlc",
+  "bot_token": "SET_VIA_TELEGRAM_BOT_TOKEN_ENV_VAR",
   "created_at": "2026-02-01T17:59:00",
   "owner": "Weber Gouin"
 }

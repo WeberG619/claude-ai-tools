@@ -36,7 +36,7 @@ from pathlib import Path
 logger = logging.getLogger("approval_system")
 
 # Config
-TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "8273941796:AAEoJ36D-cpvQRE-eYZo8S2aq8-adSfIQlc")
+TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "")
 TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID", "8101819463")
 APPROVALS_FILE = Path("/mnt/d/_CLAUDE-TOOLS/gateway/pending_approvals.json")
 APPROVALS_FILE.parent.mkdir(parents=True, exist_ok=True)

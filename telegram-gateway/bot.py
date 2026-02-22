@@ -58,7 +58,9 @@ PENDING_EDITS = {}
 # CONFIGURATION
 # ============================================
 
-BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "8273941796:AAEoJ36D-cpvQRE-eYZo8S2aq8-adSfIQlc")
+BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+if not BOT_TOKEN:
+    raise RuntimeError("TELEGRAM_BOT_TOKEN environment variable is required")
 ALLOWED_USERS = [8101819463]
 LOG_FILE = "/mnt/d/_CLAUDE-TOOLS/telegram-gateway/conversations.log"
 LIVE_STATE_FILE = "/mnt/d/_CLAUDE-TOOLS/system-bridge/live_state.json"
@@ -346,27 +348,146 @@ async def cmd_ask(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 
 # ============================================
-# CLAUDE QUERY (for complex requests)
+# CLAUDE QUERY (via Anthropic API directly)
 # ============================================
 
+ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
+if not ANTHROPIC_API_KEY:
+    raise RuntimeError("ANTHROPIC_API_KEY environment variable is required")
+
+SYSTEM_PROMPT_BASE = """You are Weber's AI assistant responding via Telegram. Keep responses concise and mobile-friendly.
+Weber is a BIM automation specialist who works with Revit, AutoCAD, and AI tools.
+Be direct and helpful. Use short paragraphs. Avoid long code blocks unless asked.
+
+IMPORTANT: You DO have access to Weber's live system state. It is injected below in every message.
+When asked about system status, running apps, memory, Revit, email, etc. — answer using this data.
+Never say you can't see the system. You can. The data is real-time from Weber's workstation."""
+
+
+def _build_system_prompt() -> str:
+    """Build system prompt with live system state injected."""
+    state_block = ""
+    try:
+        if os.path.exists(LIVE_STATE_FILE):
+            with open(LIVE_STATE_FILE) as f:
+                state = json.load(f)
+
+            # System resources
+            sys_info = state.get("system", {})
+            cpu = sys_info.get("cpu_percent", "?")
+            mem_pct = sys_info.get("memory_percent", "?")
+            mem_used = sys_info.get("memory_used_gb", "?")
+            mem_total = sys_info.get("memory_total_gb", "?")
+
+            # Active window
+            active_win = state.get("active_window", "Unknown")
+
+            # Running apps
+            apps = state.get("applications", [])
+            app_lines = []
+            for a in apps:
+                name = a.get("ProcessName", "?")
+                title = a.get("MainWindowTitle", "")
+                monitor = a.get("Monitor", "?")
+                if title:
+                    app_lines.append(f"  - {name}: {title} (monitor: {monitor})")
+
+            # Monitors
+            monitors = state.get("monitors", {})
+            mon_count = monitors.get("count", "?")
+
+            # Revit
+            revit = state.get("revit", {})
+            revit_running = revit.get("running", False)
+            revit_connected = revit.get("connected", False)
+
+            # Email
+            email = state.get("email", {})
+            unread = email.get("unread_count", 0)
+            urgent = email.get("urgent_count", 0)
+            needs_resp = email.get("needs_response_count", 0)
+            alerts = email.get("alerts", [])
+            alert_lines = []
+            for al in alerts[:3]:
+                subj = al.get("subject", "?")[:60]
+                frm = al.get("from", "?").split("<")[0].strip()[:30]
+                cat = al.get("category", "?")
+                alert_lines.append(f"  - [{cat}] {frm}: {subj}")
+
+            # Recent files
+            recent_files = state.get("recent_files", [])[:5]
+
+            # Timestamp
+            generated = state.get("generated_at", "?")
+
+            state_block = f"""
+
+--- LIVE SYSTEM STATE (updated: {generated}) ---
+Active Window: {active_win}
+CPU: {cpu}% | Memory: {mem_pct}% ({mem_used}GB / {mem_total}GB)
+Monitors: {mon_count}
+Revit: {"Running" if revit_running else "Not running"} | MCP Bridge: {"Connected" if revit_connected else "Not connected"}
+
+Running Apps:
+{chr(10).join(app_lines) if app_lines else "  (none detected)"}
+
+Email: {unread} unread, {urgent} urgent, {needs_resp} needs response
+{("Email Alerts:" + chr(10) + chr(10).join(alert_lines)) if alert_lines else "No email alerts."}
+
+Recent Files: {", ".join(recent_files) if recent_files else "None"}
+--- END SYSTEM STATE ---"""
+
+    except Exception as e:
+        state_block = f"\n\n[System state unavailable: {e}]"
+
+    return SYSTEM_PROMPT_BASE + state_block
+
+
 async def query_claude(message: str, context: str = "") -> str:
-    """Query Claude Code CLI"""
+    """Query Claude API directly with live system context injected."""
+    import urllib.request
+
     try:
         full_prompt = f"[Context: {context}]\n\n{message}" if context else message
-        proc = await asyncio.create_subprocess_exec(
-            'claude', '-p', full_prompt, '--output-format', 'text',
-            stdout=asyncio.subprocess.PIPE,
-            stderr=asyncio.subprocess.PIPE
-        )
-        try:
-            stdout, stderr = await asyncio.wait_for(proc.communicate(), timeout=CLAUDE_TIMEOUT)
-        except asyncio.TimeoutError:
-            proc.kill()
-            return "Timed out. Try a simpler question."
 
-        response = stdout.decode().strip()
+        payload = json.dumps({
+            "model": "claude-sonnet-4-5-20250929",
+            "max_tokens": 1024,
+            "system": _build_system_prompt(),
+            "messages": [{"role": "user", "content": full_prompt}]
+        }).encode()
+
+        req = urllib.request.Request(
+            "https://api.anthropic.com/v1/messages",
+            data=payload,
+            headers={
+                "Content-Type": "application/json",
+                "x-api-key": ANTHROPIC_API_KEY,
+                "anthropic-version": "2023-06-01",
+            },
+            method="POST"
+        )
+
+        loop = asyncio.get_event_loop()
+        resp = await asyncio.wait_for(
+            loop.run_in_executor(None, lambda: urllib.request.urlopen(req, timeout=CLAUDE_TIMEOUT)),
+            timeout=CLAUDE_TIMEOUT
+        )
+        result = json.loads(resp.read().decode())
+
+        # Extract text from response
+        text_parts = [block["text"] for block in result.get("content", []) if block.get("type") == "text"]
+        response = "\n".join(text_parts).strip()
         return response if response else "No response from Claude."
+
+    except asyncio.TimeoutError:
+        return "Timed out. Try a simpler question."
+    except urllib.error.HTTPError as e:
+        body = e.read().decode("utf-8", errors="replace")
+        logger.error(f"Claude API error: {e.code} - {body}")
+        return f"API error ({e.code}). Try again."
     except Exception as e:
+        logger.error(f"Claude query error: {e}")
         return f"Error: {e}"
 
 
