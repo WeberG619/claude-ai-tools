@@ -1,0 +1,94 @@
+%%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#4A90D9', 'primaryTextColor': '#fff', 'primaryBorderColor': '#357ABD', 'lineColor': '#95a5a6', 'secondaryColor': '#2ECC71', 'tertiaryColor': '#E74C3C'}}}%%
+
+%% ═══════════════════════════════════════════════════════════════
+%% AUTONOMY ENGINE — 5-PHASE ARCHITECTURE
+%% ═══════════════════════════════════════════════════════════════
+
+graph TB
+    %% ─── PHASE 1: GOALS ──────────────────────────────────
+    subgraph GOALS["Phase 1: Goals"]
+        direction TB
+        USER[/"User Intent"/] --> GE[Goal Engine]
+        GE --> |"decompose"| SG1[Sub-Goal 1]
+        GE --> |"decompose"| SG2[Sub-Goal 2]
+        GE --> |"decompose"| SG3[Sub-Goal 3]
+        SG1 --> |"progress rollup"| GE
+        SG2 --> |"progress rollup"| GE
+        SG3 --> |"progress rollup"| GE
+    end
+
+    %% ─── PHASE 2: PLANNER ────────────────────────────────
+    subgraph PLANNER["Phase 2: Planner"]
+        direction TB
+        PL[Planner] --> |"template match"| TM[Plan Templates]
+        PL --> |"MECE validate"| MV[Coverage Check]
+        PL --> |"create"| ST1[Step 1]
+        PL --> |"create"| ST2[Step 2]
+        PL --> |"create"| ST3[Step 3]
+        ST1 --> |"auto-decompose if complex"| SP[Sub-Plan]
+    end
+
+    %% ─── PHASE 3: ALIGNMENT ──────────────────────────────
+    subgraph ALIGNMENT["Phase 3: Alignment"]
+        direction TB
+        AC[Alignment Core] --> |"detect domain"| DD{Domain<br/>Detector}
+        DD --> |"bim"| DC1[BIM Corrections]
+        DD --> |"git"| DC2[Git Corrections]
+        DD --> |"desktop"| DC3[Desktop Corrections]
+        DD --> |"..."| DC4[8 Domain Packs]
+        AC --> |"load"| KN[Common Sense Kernel]
+        AC --> |"load"| SA[Strong Agent Framework]
+        DC1 --> |"merge"| CP[/"Compiled Prompt Prefix"/]
+        DC2 --> |"merge"| CP
+        DC3 --> |"merge"| CP
+        KN --> |"merge"| CP
+        SA --> |"merge"| CP
+    end
+
+    %% ─── PHASE 4: COORDINATOR ────────────────────────────
+    subgraph COORDINATOR["Phase 4: Coordinator"]
+        direction TB
+        CO[Agent Coordinator] --> |"manage"| RL[Resource Locks]
+        CO --> |"share"| SS[Shared State]
+        CO --> |"validate"| HO[Handoff Check]
+        CO --> |"track"| AS[Agent Sessions]
+    end
+
+    %% ─── PHASE 5: EXECUTION ──────────────────────────────
+    subgraph EXECUTION["Phase 5: Execution"]
+        direction TB
+        AG[Agent] --> |"execute task"| RES[Result]
+        RES --> |"success"| PROG[Progress Update]
+        RES --> |"failure"| CORR[New Correction]
+    end
+
+    %% ─── CONNECTIONS BETWEEN PHASES ──────────────────────
+    GE --> |"goal → plan"| PL
+    ST1 --> |"step → alignment"| AC
+    ST2 --> |"step → alignment"| AC
+    CP --> |"inject into"| AG
+    AG --> |"coordinate via"| CO
+    PROG --> |"cascade to"| GE
+    CORR --> |"store in"| DC1
+
+    %% ─── THE CORRECTION FLYWHEEL ─────────────────────────
+    CORR --> |"domain tagged"| DD
+    DD --> |"future compile"| CP
+
+    %% ─── STYLING ─────────────────────────────────────────
+    style GOALS fill:#1a1a2e,stroke:#4A90D9,stroke-width:2px,color:#fff
+    style PLANNER fill:#1a1a2e,stroke:#7B68EE,stroke-width:2px,color:#fff
+    style ALIGNMENT fill:#1a1a2e,stroke:#E74C3C,stroke-width:2px,color:#fff
+    style COORDINATOR fill:#1a1a2e,stroke:#2ECC71,stroke-width:2px,color:#fff
+    style EXECUTION fill:#1a1a2e,stroke:#F39C12,stroke-width:2px,color:#fff
+
+    style USER fill:#4A90D9,color:#fff
+    style GE fill:#4A90D9,color:#fff
+    style PL fill:#7B68EE,color:#fff
+    style AC fill:#E74C3C,color:#fff
+    style CO fill:#2ECC71,color:#fff
+    style AG fill:#F39C12,color:#fff
+    style CP fill:#E74C3C,color:#fff,stroke:#fff
+    style CORR fill:#E74C3C,color:#fff
+    style PROG fill:#2ECC71,color:#fff
+    style DD fill:#E67E22,color:#fff
