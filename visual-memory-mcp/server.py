@@ -695,6 +695,9 @@ def parse_time(time_str: str) -> datetime:
 async def call_tool(name: str, arguments: dict):
 
     if name == "memory_start_capture":
+        # Reload config on every start so whitelist changes take effect
+        fresh_config = load_config()
+        privacy.__init__(fresh_config)
         engine.start()
         return [TextContent(type="text", text="Visual memory capture started.")]
 

@@ -267,14 +267,26 @@ def _add_window_to_room(plan: FloorPlan,
 
     # Find which sides are exterior
     candidates = []
-    if room.y <= tol:  # south
-        candidates.append(("south", room.cx, 0.0, room.w))
-    if abs(room.top - fp_h) <= tol:  # north
-        candidates.append(("north", room.cx, fp_h, room.w))
-    if room.x <= tol:  # west
-        candidates.append(("west", 0.0, room.cy, room.h))
-    if abs(room.right - fp_w) <= tol:  # east
-        candidates.append(("east", fp_w, room.cy, room.h))
+    polygon = plan.footprint_polygon if plan.footprint_polygon else None
+    if polygon:
+        from .wall_utils import is_on_polygon_edge
+        if is_on_polygon_edge(room.x, room.y, room.right, room.y, polygon, tol):
+            candidates.append(("south", room.cx, room.y, room.w))
+        if is_on_polygon_edge(room.x, room.top, room.right, room.top, polygon, tol):
+            candidates.append(("north", room.cx, room.top, room.w))
+        if is_on_polygon_edge(room.x, room.y, room.x, room.top, polygon, tol):
+            candidates.append(("west", room.x, room.cy, room.h))
+        if is_on_polygon_edge(room.right, room.y, room.right, room.top, polygon, tol):
+            candidates.append(("east", room.right, room.cy, room.h))
+    else:
+        if room.y <= tol:  # south
+            candidates.append(("south", room.cx, 0.0, room.w))
+        if abs(room.top - fp_h) <= tol:  # north
+            candidates.append(("north", room.cx, fp_h, room.w))
+        if room.x <= tol:  # west
+            candidates.append(("west", 0.0, room.cy, room.h))
+        if abs(room.right - fp_w) <= tol:  # east
+            candidates.append(("east", fp_w, room.cy, room.h))
 
     if not candidates:
         return None

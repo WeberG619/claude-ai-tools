@@ -1,0 +1,11 @@
+{
+  "back": "Back",
+  "validation": {
+    "required": "Required",
+    "valid": "Looks Good",
+    "wrongPassword": "Password is incorrect",
+    "incorrectEmail": "Provided email address is incorrect",
+    "incorrectOtpCode": "Incorrect one-time passcode",
+    "incorrectMasterPassword": "Master password is incorrect"
+  }
+}

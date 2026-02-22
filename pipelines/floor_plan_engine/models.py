@@ -233,12 +233,22 @@ class FloorPlan:
     windows: List[WindowPlacement] = field(default_factory=list)
     footprint_width: float = 0.0
     footprint_height: float = 0.0
+    footprint_polygon: List[Tuple[float, float]] = field(default_factory=list)
     total_area: float = 0.0
     bedrooms: int = 0
     bathrooms: int = 0
 
     def to_building_program(self) -> Dict[str, Any]:
         """Export as JSON matching C# BuildingProgram class."""
+        if self.footprint_polygon:
+            footprint = [{"x": p[0], "y": p[1]} for p in self.footprint_polygon]
+        else:
+            footprint = [
+                {"x": 0, "y": 0},
+                {"x": self.footprint_width, "y": 0},
+                {"x": self.footprint_width, "y": self.footprint_height},
+                {"x": 0, "y": self.footprint_height},
+            ]
         return {
             "buildingType": "SingleFamilyResidential",
             "numberOfStories": 1,
@@ -246,12 +256,7 @@ class FloorPlan:
             "totalBuildingArea": self.total_area,
             "footprintWidth": self.footprint_width,
             "footprintLength": self.footprint_height,
-            "buildingFootprint": [
-                {"x": 0, "y": 0},
-                {"x": self.footprint_width, "y": 0},
-                {"x": self.footprint_width, "y": self.footprint_height},
-                {"x": 0, "y": self.footprint_height},
-            ],
+            "buildingFootprint": footprint,
             "rooms": [
                 {
                     "name": r.name,

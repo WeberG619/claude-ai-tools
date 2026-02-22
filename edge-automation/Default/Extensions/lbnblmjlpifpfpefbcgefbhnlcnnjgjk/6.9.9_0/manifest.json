@@ -1,0 +1,51 @@
+{
+   "action": {
+      "default_icon": {
+         "16": "public/images/icon16.png",
+         "32": "public/images/icon32.png"
+      },
+      "default_popup": "public/popup.html"
+   },
+   "background": {
+      "service_worker": "service-worker.js"
+   },
+   "content_scripts": [ {
+      "js": [ "content.js" ],
+      "matches": [ "\u003Call_urls>" ],
+      "run_at": "document_end"
+   }, {
+      "js": [ "checkPageManual.js", "overlays.js" ],
+      "matches": [ "\u003Call_urls>" ],
+      "run_at": "document_start"
+   } ],
+   "content_security_policy": {
+      "extension_pages": "script-src 'self'; object-src 'self'"
+   },
+   "declarative_net_request": {
+      "rule_resources": [  ]
+   },
+   "default_locale": "en",
+   "description": "__MSG_appDesc__",
+   "externally_connectable": {
+      "matches": [ "https://*.blocksite.co/*" ]
+   },
+   "host_permissions": [ "\u003Call_urls>" ],
+   "icons": {
+      "128": "public/images/icon128.png",
+      "16": "public/images/icon16.png",
+      "32": "public/images/icon32.png",
+      "48": "public/images/icon48.png"
+   },
+   "incognito": "spanning",
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAos3UmANsjZwp7GHhHsSqz9FBfoXceZaMg6STPQuizHULhAW5xynzcdDSS+PMmuUlYleaRk5IsM29Cg6vFPFOcQgNthuz4woiIz6yeeQ4uyVJFjcy28lWg4te0Rw7HkpCNVKF89EMmySwgaVKOdzYxvsX2Wxi8GW/O/SBgI6srjJ/9NS07iZ6wkDRFPDkhV9bNdnupWlg42ZJBb7jHqKLE5TnNy8ICgt014qesOxT8GRQkgopS7Pf56A75Sp7M6uDFvcAYLoNamWHi6dsIjkYx7jZxGky9vchV5wZVUP0E41mE4BC8hAVVzfkpS5nRR5UaqRnHV7nHuxGZvDct/vsZwIDAQAB",
+   "manifest_version": 3,
+   "name": "__MSG_appName__",
+   "permissions": [ "tabs", "declarativeNetRequest", "storage", "unlimitedStorage", "contextMenus", "notifications", "webRequest", "webNavigation", "cookies", "scripting", "alarms", "idle" ],
+   "short_name": "__MSG_appShortName__",
+   "update_url": "https://edge.microsoft.com/extensionwebstorebase/v1/crx",
+   "version": "6.9.9",
+   "web_accessible_resources": [ {
+      "matches": [ "\u003Call_urls>" ],
+      "resources": [ "public/*", "public/images/*" ]
+   } ]
+}

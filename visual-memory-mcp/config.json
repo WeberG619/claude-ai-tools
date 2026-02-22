@@ -10,7 +10,7 @@
     "mode": "whitelist",
     "whitelist_apps": [
       "Revit",
-      "Bluebeam Revu",
+      "Revu",
       "Code",
       "Cursor",
       "AutoCAD",
@@ -18,7 +18,11 @@
       "explorer",
       "Acrobat",
       "FoxitReader",
-      "SumatraPDF"
+      "SumatraPDF",
+      "EXCEL",
+      "WINWORD",
+      "POWERPNT",
+      "chrome"
     ],
     "whitelist_titles": [
       "Gmail",

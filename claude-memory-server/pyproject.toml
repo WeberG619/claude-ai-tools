@@ -1,0 +1,36 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "claude-memory-mcp"
+version = "1.0.0"
+description = "Persistent memory for Claude Code — remembers everything, learns from mistakes"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [{ name = "Weber Gouin" }]
+keywords = ["claude", "mcp", "memory", "ai", "claude-code"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Libraries",
+]
+dependencies = [
+    "mcp[cli]>=1.0.0",
+    "fastmcp>=0.1.0",
+]
+
+[project.optional-dependencies]
+semantic = ["fastembed>=0.5.0", "numpy>=1.24.0"]
+all = ["claude-memory-mcp[semantic]"]
+
+[project.scripts]
+claude-memory = "claude_memory.server:main"
+
+[project.urls]
+Homepage = "https://github.com/BIMOpsStudio/claude-memory-mcp"
+Issues = "https://github.com/BIMOpsStudio/claude-memory-mcp/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/claude_memory"]

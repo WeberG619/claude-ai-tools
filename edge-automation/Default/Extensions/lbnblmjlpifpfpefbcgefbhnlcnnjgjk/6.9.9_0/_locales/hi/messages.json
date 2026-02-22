@@ -1,0 +1,2077 @@
+{
+   "100thSiteAddedUserActionCTA": {
+      "message": "महान"
+   },
+   "100thSiteAddedUserActionSubTitle": {
+      "message": "आपकी ब्लॉक सूची में 100 साइटें जोड़ी गई हैं"
+   },
+   "100thSiteAddedUserActionTitle": {
+      "message": "वाह!"
+   },
+   "5thSiteAddedUserActionCTA": {
+      "message": "बहुत बढ़िया"
+   },
+   "5thSiteAddedUserActionSubTitle": {
+      "message": "अच्छी तरह से अपने ब्लॉक सूची में 5 साइटों को जोड़ने पर किया"
+   },
+   "5thSiteAddedUserActionTitle": {
+      "message": "हू!"
+   },
+   "InsightsTab": {
+      "message": "इनसाइट्स"
+   },
+   "PasswordProtectSecondStepSubtitle": {
+      "message": "नीचे 'रद्द करें' पर क्लिक करने वाले उपयोगकर्ता प्रतिदिन औसतन 15 मिनट अतिरिक्त बचत करते हैं।"
+   },
+   "PasswordProtectSecondStepTitle": {
+      "message": "क्या आप वाकई इस पेज को अनलॉक करना चाहते हैं?"
+   },
+   "PinToToolBarMessageBtnText": {
+      "message": "समझ गया"
+   },
+   "PinToToolBarMessageText": {
+      "message": "इसे दृश्यमान बनाने के लिए विस्तार सूची की जाँच करें"
+   },
+   "PinToToolBarMessageTitle": {
+      "message": "100% उत्पादक होने के लिए पिन ब्लॉकसाइट"
+   },
+   "ShareFacebookIconTitle": {
+      "message": "फेसबुक"
+   },
+   "aboutBlockCategoriesSubtitle": {
+      "message": "एक बटन के टॉगल के साथ पूरी श्रेणी को तुरंत ब्लॉक करें।"
+   },
+   "aboutBlockCategoriesTitle": {
+      "message": "श्रेणियाँ ब्लॉक करें"
+   },
+   "aboutContactSupport": {
+      "message": "सहयोग टीम से संपर्क करें"
+   },
+   "aboutCreateBlockListsSubtitle": {
+      "message": "वे वेबसाइट्स या पृष्ठ जोड़ें जिंहें आप अपनी साइट सूची में ब्लॉक करना चाहते है और सुरक्षित, अधिक सकारात्मक साइटों पर स्वचालित रूप से जाएं. आप उपयोगी साइटों की सूची भी बना सकते हैं और काम करने के लिए कुछ ही साइटों को अनुमति देते हुए विशेष साइटों को ब्लॉक कर सकते हैं."
+   },
+   "aboutCreateBlockListsTitle": {
+      "message": "ब्लॉक लिस्ट बनाएं"
+   },
+   "aboutHowToEnableInInPrivateStep1": {
+      "message": "किनारे पर नेविगेट करें: // एक्सटेंशन"
+   },
+   "aboutHowToEnableInInPrivateStep2": {
+      "message": "ब्लॉकसाइट खोजें और क्लिक करें"
+   },
+   "aboutHowToEnableInInPrivateStep3": {
+      "message": "\"इनप्राइवेट में अनुमति दें\" बॉक्स को चेक करें"
+   },
+   "aboutHowToEnableInInPrivateSubtitle": {
+      "message": "ब्लॉकसाइट को एज के निजी मोड में सक्षम करने के लिए, इन चरणों का पालन करें:"
+   },
+   "aboutHowToEnableInInPrivateTitle": {
+      "message": "इनप्राइवेट मोड को कैसे इनेबल करें"
+   },
+   "aboutHowToEnableInIncognitoStep1": {
+      "message": "chrome://extensions पर जाएं"
+   },
+   "aboutHowToEnableInIncognitoStep2": {
+      "message": "ब्लॉक साइट ढूंढें"
+   },
+   "aboutHowToEnableInIncognitoStep3": {
+      "message": "'गुप्त में अनुमति दें' चेक करें"
+   },
+   "aboutHowToEnableInIncognitoSubtitle": {
+      "message": "Chrome की गुप्त मोड में ब्लॉक साइट को सक्षम करने के लिए, इन चरणों का पालन करें:"
+   },
+   "aboutHowToEnableInIncognitoTitle": {
+      "message": "गुप्त में कैसे सक्षम करें"
+   },
+   "aboutIncognitoCTA": {
+      "message": "गुप्त मोड"
+   },
+   "aboutIncognitoSubtitle": {
+      "message": "पूरी ब्लॉक साइट कार्यक्षमता गुप्त मोड में भी काम कर सकती है, बस आपको उसे अनुमति देनी है. इसे करने का तरीका देखने के लिए इन निर्देशों का पालन करेंः "
+   },
+   "aboutIncognitoTitle": {
+      "message": "गुप्त मोड (केवल क्रोम पर उपलब्ध)"
+   },
+   "aboutKeepInternetSafeSubtitle": {
+      "message": "सभी वयस्क साइटों को एक क्लिक में ब्लॉक करने के लिए एक्सटेंशन मेनू के माध्यम से एडल्ट ब्लॉक सक्रिय करें. "
+   },
+   "aboutKeepInternetSafeTitle": {
+      "message": "अपने इंटरनेट को सुरक्षित रखें"
+   },
+   "aboutPasswordSubtitle": {
+      "message": "ब्लॉक साइट विकल्पों तक पहुँच को सीमित करने या ब्लॉक की गई साइटों तक पहुँच प्राप्त करने के विकल्प को पासवर्ड से सक्षम करने के लिए सेटिंग्स में पासवर्ड सेट करें."
+   },
+   "aboutPasswordTitle": {
+      "message": "पासवर्ड सेट करें"
+   },
+   "aboutPrivacyPolicy": {
+      "message": "गोपनीयता नीति"
+   },
+   "aboutRateUsSubtitle": {
+      "message": "यदि आप Block Site को उपयोगी पाते हैं, तो कृपया Chrome Webstore में हमें रेटिंग दें. हम इसकी अत्यधिक सराहना करेंगे."
+   },
+   "aboutRateUsTitle": {
+      "message": "हमारी तरह? दुनिया को पता लगने दें.\n"
+   },
+   "aboutRightClickMenuSubtitle": {
+      "message": "त्वरित पहुंच मेनू खोलने के लिए किसी भी वेबसाइट पर कहीं भी दायां क्लिक करें. धीमेपन से बचने के लिए एक पल में साइटों को ब्लॉक करें और लक्ष्य पर बने रहें.\n\n"
+   },
+   "aboutRightClickMenuTitle": {
+      "message": "मेनू पर राइट क्लिक करें"
+   },
+   "aboutScheduleSubtitle": {
+      "message": "वे दिन और अंतराल चुनें, जब आप Block Site को सक्रिय करना चाहते हैं. अपने कार्य शेड्यूल (उदाहरण के लिए सुबह 9 से शाम 5 बजे) के आधार पर कस्टम ब्लॉक सेटअप करें, ताकि कार्य के दौरान या स्कूल में दिन के समय आपको धीमापन महसूस न हो."
+   },
+   "aboutScheduleTitle": {
+      "message": "विशेष समयावधि के लिए ब्लॉक करें"
+   },
+   "aboutSubtitle": {
+      "message": "ब्लॉक साइट आपको ध्यान केंद्रित रखने और अपनी उत्पादकता सुधारने में सक्षम बनाता है. आप किसी भीविचलित करने वाली या हानिकारक वेबसाइट को आसानी से ब्लॉक कर सकते हैं. इच्छा शक्ति आवश्यक नहीं है."
+   },
+   "aboutTermsOfUse": {
+      "message": "उपयोग की शर्तें"
+   },
+   "aboutTitle": {
+      "message": "ब्लॉक साइट के बारे में"
+   },
+   "addBlockInputAddButton": {
+      "message": "सामान जोडें"
+   },
+   "addEmailAndPassword": {
+      "message": "ईमेल और पासवर्ड जोड़ें"
+   },
+   "addFirstKeywordUserActionCTA": {
+      "message": "हुर्रे"
+   },
+   "addFirstKeywordUserActionSubTitle": {
+      "message": "खोजशब्दों को अवरुद्ध करके आप बहुत अधिक उत्पादक होंगे"
+   },
+   "addFirstKeywordUserActionTitle": {
+      "message": "प्रशंसा स्वीकार करना!"
+   },
+   "addFirstRedirectUserActionCTA": {
+      "message": "अति उत्कृष्ट"
+   },
+   "addFirstRedirectUserActionSubTitle": {
+      "message": "अवरुद्ध साइटें अब पुनर्निर्देशित की जाएंगी ताकि आप अधिक केंद्रित हों"
+   },
+   "addFirstRedirectUserActionTitle": {
+      "message": "बहुत बढ़िया!"
+   },
+   "addSiteAddModePrimaryButton1": {
+      "message": "ब्लॉक सूची में जोड़ें"
+   },
+   "addSiteAddModePrimaryButton2": {
+      "message": "ब्लॉक सूची में जोड़ें"
+   },
+   "addSiteAddModePrimaryButton3": {
+      "message": "ब्लॉक सूची में जोड़ें"
+   },
+   "addSiteAddModePrimaryButton4": {
+      "message": "ब्लॉक सूची में जोड़ें"
+   },
+   "addSiteAddModeSecondaryButton1": {
+      "message": "शायद बाद में"
+   },
+   "addSiteAddModeSecondaryButton2": {
+      "message": "शायद बाद में"
+   },
+   "addSiteAddModeSecondaryButton3": {
+      "message": "शायद बाद में"
+   },
+   "addSiteAddModeSecondaryButton4": {
+      "message": "शायद बाद में"
+   },
+   "addSiteAddModeSubTitle1": {
+      "message": "यह सुनिश्चित करने के लिए कि आप ज़ोन में बने रहें, इस वेबसाइट को ब्लॉक करें!"
+   },
+   "addSiteAddModeSubTitle2": {
+      "message": "इस साइट को अपनी ब्लॉक सूची में जोड़कर अपनी उत्पादकता में सुधार करें"
+   },
+   "addSiteAddModeSubTitle3": {
+      "message": "इस साइट को अपनी ब्लॉक सूची में जोड़कर अपनी उत्पादकता 10% बढ़ाएँ"
+   },
+   "addSiteAddModeSubTitle4": {
+      "message": "समय बर्बाद करने वाली साइट का पता चला! फोकस्ड रहने के लिए अभी ब्लॉक करें।"
+   },
+   "addSiteAddModeTitle1": {
+      "message": "विचलित होना बंद करो!"
+   },
+   "addSiteAddModeTitle2": {
+      "message": "क्षेत्र में रहो!"
+   },
+   "addSiteAddModeTitle3": {
+      "message": "समय बचाने के लिए (website.com) जोड़ें!"
+   },
+   "addSiteAddModeTitle4": {
+      "message": "एक दिन में एक अतिरिक्त घंटे बचाने के लिए ब्लॉक (website.com) करें!"
+   },
+   "addSiteAreYouSurePrimaryButton": {
+      "message": "जी हां इसे करें"
+   },
+   "addSiteAreYouSureSecondaryButton": {
+      "message": "नहीं, रद्द करें"
+   },
+   "addSiteAreYouSureSubTitle": {
+      "message": "ब्लॉकसाइट ध्यान भंग करने वाली साइटों को ब्लॉक करने का सुझाव देना बंद कर देगी।"
+   },
+   "addSiteAreYouSureTitle": {
+      "message": "क्या आप सुनिश्चित हैं?"
+   },
+   "addSiteReachedLimitPrimaryButton": {
+      "message": "असीमित जाओ"
+   },
+   "addSiteReachedLimitSecondaryButton": {
+      "message": "शायद बाद में"
+   },
+   "addSiteReachedLimitSubTitle": {
+      "message": "एक असीमित ब्लॉक सूची प्राप्त करने के लिए अभी अपग्रेड करें और बहुत सारी सुविधाएँ जो आपकी उत्पादकता में सुधार करेंगी और आपका समय बचाएंगी!"
+   },
+   "addSiteReachedLimitTitle": {
+      "message": "आप अपनी ब्लॉक सूची की सीमा तक पहुंच गए हैं"
+   },
+   "addSiteSuccessPrimaryButton": {
+      "message": "अभी ब्लॉक करें"
+   },
+   "addSiteSuccessSecondaryButton": {
+      "message": "ब्लॉक सूची पर जाएं"
+   },
+   "addSiteSuccessSubTitle": {
+      "message": "(website.com) को आपकी ब्लॉकलिस्ट में जोड़ दिया गया है। आप इसे अपने एक्सटेंशन के विकल्प पृष्ठ में बदल सकते हैं"
+   },
+   "addSiteSuccessTitle": {
+      "message": "साइट को ब्लॉक सूची में जोड़ा गया"
+   },
+   "appDesc": {
+      "description": "वेब स्टोर में प्रदर्शित एप्लिकेशन का विवरण.",
+      "message": "केंद्रित रहें और उत्पादकता बढ़ाएं: कस्टम ब्लॉकलिस्ट, शेड्यूल्ड साइट ब्लॉकिंग व पासवर्ड सुरक्षा के साथ।"
+   },
+   "appName": {
+      "description": "वेब स्टोर में प्रदर्शित एप्लिकेशन का शीर्षक.",
+      "message": "BlockSite: वेबसाइटों को ब्लॉक करें और फोकस्ड रहें"
+   },
+   "appShortName": {
+      "description": "एप्लिकेशन का संक्षिप्त शीर्षक",
+      "message": "BlockSite"
+   },
+   "backgroundMultiPacksTitle": {
+      "message": "ब्लॉकपेज विज़ुअल और टेक्स्ट"
+   },
+   "blockByCategoryTextAdult": {
+      "message": "ऊप्स! %domain%  अनुपलब्ध है क्योंकि यह वयस्क से संबंधित है जो एक श्रेणी है जिसे आपने ' अवरुद्ध किया है। केंद्रित रहें, आपको यह मिल गया है।"
+   },
+   "blockByCategoryTextGambling": {
+      "message": "ऊप्स! %domain%  अनुपलब्ध है क्योंकि यह जुए से संबंधित है जो एक श्रेणी है जिसे आपने ' अवरुद्ध किया है। केंद्रित रहें, आपको यह मिल गया है।"
+   },
+   "blockByCategoryTextNewsAndMedia": {
+      "message": "ऊप्स! %domain%  अनुपलब्ध है क्योंकि यह समाचार से संबंधित है जो एक श्रेणी है जिसे आपने ' अवरुद्ध कर दिया है। केंद्रित रहें, आपको यह मिल गया है।"
+   },
+   "blockByCategoryTextShopping": {
+      "message": "उफ़! %domain% अनुपलब्ध है क्योंकि यह खरीदारी से संबंधित है जो कि एक श्रेणी है जिसे आपने ब्लॉक किया है। केंद्रित रहें, आपको यह मिल गया है।"
+   },
+   "blockByCategoryTextSocialNetworksAndOnlineCommunities": {
+      "message": "ऊप्स! %domain%  अनुपलब्ध है क्योंकि यह सामाजिक से संबंधित है जो एक श्रेणी है जिसे आपने ' अवरुद्ध किया है। केंद्रित रहें, आपको यह मिल गया है।"
+   },
+   "blockByCategoryTextSports": {
+      "message": "ऊप्स! %domain%  अनुपलब्ध है क्योंकि यह उन खेलों से संबंधित है जो एक ऐसी श्रेणी है जिसे आपने ' अवरुद्ध किया है। केंद्रित रहें, आपको यह मिल गया है।"
+   },
+   "blockByCategoryTitleAdult": {
+      "message": "तिलचट्टे. कटे हुए अंग. जॉन गुडमैन."
+   },
+   "blockByCategoryTitleGambling": {
+      "message": "घर को हमेशा जीतने न दें।"
+   },
+   "blockByCategoryTitleNewsAndMedia": {
+      "message": "कोई ख़बर न होना अच्छी ख़बर है।"
+   },
+   "blockByCategoryTitleShopping": {
+      "message": "एक डॉलर खर्च नहीं किया गया एक डॉलर कमाया गया है!"
+   },
+   "blockByCategoryTitleSocialNetworksAndOnlineCommunities": {
+      "message": "कोई पोस्टिंग, कोई पसंद नहीं, बस जी रहा है।"
+   },
+   "blockByCategoryTitleSports": {
+      "message": "शांत रहें और डिस्कनेक्ट करें।"
+   },
+   "blockExtensionsPageSubtitle": {
+      "message": "कृपया पहुँच प्राप्त करने के लिए अपना पासवर्ड दर्ज करें"
+   },
+   "blockExtensionsPageTitle": {
+      "message": "$ BROWSER $ एक्सटेंशन पृष्ठ - संरक्षित",
+      "placeholders": {
+         "browser": {
+            "content": "$1"
+         }
+      }
+   },
+   "blockMoreDistractingSite": {
+      "message": "विचलित करने वाली और साइटें ब्लॉक करें"
+   },
+   "blockSitesBlockSite": {
+      "message": "इस साइट को ब्लॉक करें"
+   },
+   "blockSitesBlockedTitle": {
+      "message": "यह साइट अभी ब्लॉक है"
+   },
+   "blockSitesBlockedTitleNow": {
+      "message": "साइट को आपकी ब्लॉकलिस्ट में जोड़ा गया"
+   },
+   "blockSitesEditBlockList": {
+      "message": "ब्लॉक सूची संपादित करें"
+   },
+   "blockSitesNotAvailable": {
+      "message": "इस पृष्ठ पर उपलब्ध नहीं"
+   },
+   "blockSitesOnBoardingDescription": {
+      "message": "आपकी ब्लॉक सूची में जोड़ी गई वेबसाइटों को तब तक स्थायी रूप से अवरुद्ध कर दिया जाएगा जब तक कि आप उन्हें अपनी सूची से हटा नहीं देते या शेड्यूल सेट नहीं कर देते।"
+   },
+   "blockSitesOnBoardingTitle": {
+      "message": "साइटों को अपनी ब्लॉक सूची में जोड़ें"
+   },
+   "blockSitesOptionsOnboardingText": {
+      "message": "उन साइट्स को जोड़ना शुरू करें, जिन्हें आप अपनी सूची में ब्लॉक करना चाहते हैं।"
+   },
+   "blockSitesOptionsSearchBarPlaceholder": {
+      "message": "कोई वेब पता दर्ज करें (उदा: facebook.com)"
+   },
+   "blockSitesOptionsSubtitle": {
+      "message": "साइट्स को स्थाई रूप से या शेड्यूल के अनुसार ब्लॉक करें"
+   },
+   "blockSitesOptionsTableTitle": {
+      "message": "ब्लॉक की गई साइटें"
+   },
+   "blockSitesOptionsTitle": {
+      "message": "साइटें अवरुद्ध करें"
+   },
+   "blockSitesRefreshPage": {
+      "message": "पृष्ठ ताज़ा करें"
+   },
+   "blockSitesTab": {
+      "message": "साइटें अवरुद्ध करें"
+   },
+   "blockWordsOnBoardingDescription": {
+      "message": "इस विशिष्ट कीवर्ड वाले सभी वेबसाइट URL और शीर्षक ब्लॉक कर दिए जाएंगे (एक कीवर्ड सैकड़ों साइटों को ब्लॉक कर सकता है)"
+   },
+   "blockWordsOnBoardingTitle": {
+      "message": "ब्लॉक करने के लिए कीवर्ड जोड़ें"
+   },
+   "blockWordsOptionsSearchBarPlaceholder": {
+      "message": "कोई शब्द या वाक्यांश दर्ज करें"
+   },
+   "blockWordsOptionsSubtitle": {
+      "message": "विशिष्ट शब्दों वाले URL को ब्लॉक करें"
+   },
+   "blockWordsOptionsTableTitle": {
+      "message": "अवरोधित शब्द"
+   },
+   "blockWordsOptionsTitle": {
+      "message": "शब्दों के अनुसार ब्लॉक करें"
+   },
+   "blockedHeaderFocusModeMinutes": {
+      "message": "$BREAK_TIME_LEFT$ मिनट",
+      "placeholders": {
+         "break_time_left": {
+            "content": "$1",
+            "example": "25"
+         }
+      }
+   },
+   "blockedHeaderFocusModeUntilBreak": {
+      "message": "ब्रेक टाइम तक"
+   },
+   "blockedHeaderMenuCustomizeBlockPage": {
+      "message": "ब्लॉक पेज को अनुकूलित करें"
+   },
+   "blockedHeaderMenuEdit": {
+      "message": "ब्लॉक सूची संपादित करें"
+   },
+   "blockedHeaderMenuPasswordProtection": {
+      "message": "पासवर्ड सुरक्षा"
+   },
+   "blockedHeaderMenuRedirect": {
+      "message": "रीडायरेक्ट करें"
+   },
+   "blockedHeaderMenuUpgradeButton": {
+      "message": "अपग्रेड"
+   },
+   "blockedHeaderTitle": {
+      "message": "इस साइट को BlockSite द्वारा अवरोधित किया गया है"
+   },
+   "blockedTabMessage1": {
+      "message": "आपकी ब्लॉक साइट्स सूची में %domain% है। शायद इसका कोई कारण है।"
+   },
+   "blockedTabMessage2": {
+      "message": "आपने %domain% को ब्लॉक किया है ताकि आप काम पूरा कर सकें। अब वापस काम पर लौट जाएं।"
+   },
+   "blockedTabMessage3": {
+      "message": "वाह, अब सब कुछ बेहतर है. यह देखने के लिए पीछे जाएं कि आप क्या कर रहे थे."
+   },
+   "blockedTabMessage4": {
+      "message": "%domain% को ब्लॉक किया जा चुका है। अधिक उपयोग बनने के लिए विचलित करने वाली साइटें और जोड़ें।"
+   },
+   "blockedTabMessage5": {
+      "message": "लगता है आपने शब्द \"%domain%\" को ब्लॉक कर दिया है. आईये इसे उसी तरह रखें."
+   },
+   "blockedTabMessage6": {
+      "message": "यह वेबसाइट आपकी व्हाइटलिस्ट में नहीं है. शायद किसी अच्छे कारण से भी."
+   },
+   "blockedTableApplyButton": {
+      "message": "लागू करना"
+   },
+   "blockedTableCancelButton": {
+      "message": "रद्द करें"
+   },
+   "blocklistOnBoardingDescriptionPrefix": {
+      "message": "मुलाकात"
+   },
+   "blocklistOnBoardingDescriptionSuffix": {
+      "message": "कार्रवाई में अवरुद्ध देखने के लिए"
+   },
+   "blocklistOnBoardingTitle": {
+      "message": "ये साइट्स अब ब्लॉक हो गई हैं"
+   },
+   "bundleImagesDownloadFailedText": {
+      "message": "कृपया पुन: प्रयास करें"
+   },
+   "bundleImagesDownloadFailedTitle": {
+      "message": "छवियाँ डाउनलोड करने में विफल"
+   },
+   "bundleImagesDownloadInProgressText": {
+      "message": "कृपया पूरा होने तक ब्राउज़र बंद न करें"
+   },
+   "bundleImagesDownloadInProgressTitle": {
+      "message": "छवियों को डाउनलोड करना"
+   },
+   "bundleImagesDownloadSuccessTitle": {
+      "message": "चित्र सफलतापूर्वक डाउनलोड किए गए"
+   },
+   "bundleListPopupCancelButton": {
+      "message": "रद्द करें"
+   },
+   "bundleListPopupDoneButton": {
+      "message": "किया हुआ"
+   },
+   "bundleListPopupSubTitle": {
+      "message": "जब आप किसी अवरोधित पृष्ठ पर पहुंचने का प्रयास करते हैं तो यादृच्छिक रूप से दिखाए जाने के लिए छवि बहु पैक का चयन करें।"
+   },
+   "bundleListPopupTitle": {
+      "message": "इस पृष्ठ को अनुकूलित करें"
+   },
+   "bundleListPopupTooltip": {
+      "message": "हर बार एक ब्लॉक पेज दिखाए जाने पर चयनित मल्टी पैक की छवियां यादृच्छिक रूप से दिखाई देंगी।"
+   },
+   "cannotAddBlockSiteWhichPartOfRedirect": {
+      "message": "उस साइट को ब्लॉक नहीं कर सकते जो रीडायरेक्ट के रूप में सेट है"
+   },
+   "cantBlockRedirectWordMsg": {
+      "message": "किसी ऐसे शब्द को ब्लॉक नहीं कर सकते जो रीडायरेक्ट URL का हिस्सा है"
+   },
+   "cantRedirectToBlockedSite": {
+      "message": "ऊप्स! यह पुनर्निर्देशित साइट आपकी ब्लॉक साइट्स सूची द्वारा अवरुद्ध है"
+   },
+   "cantRedirectToBlockedWord": {
+      "message": "ऊप्स! यह पुनर्निर्देशित साइट आपके ब्लॉक बाय वर्ड्स सूची द्वारा अवरुद्ध है"
+   },
+   "cantRedirectToWorkModeBlockedSite": {
+      "message": "ऊप्स! यह रीडायरेक्ट साइट आपकी फ़ोकस मोड सूची द्वारा अवरुद्ध है"
+   },
+   "categoriesAdult": {
+      "message": "वयस्क"
+   },
+   "categoriesGambling": {
+      "message": "जुआ"
+   },
+   "categoriesGoUnlimitedButton": {
+      "message": "असीमित जाओ"
+   },
+   "categoriesNewsAndMedia": {
+      "message": "समाचार"
+   },
+   "categoriesOnBoardingDescription": {
+      "message": "एक क्लिक में हजारों वेबसाइटों को ब्लॉक करने के लिए श्रेणियों का चयन करें"
+   },
+   "categoriesOnBoardingTitle": {
+      "message": "वेबसाइटों को श्रेणी के अनुसार ब्लॉक करें"
+   },
+   "categoriesOptionsSubtitle": {
+      "message": "कृपया चुनें कि किन श्रेणियों को ब्लॉक करना है"
+   },
+   "categoriesOptionsTitle": {
+      "message": "श्रेणियाँ"
+   },
+   "categoriesPrivacyText": {
+      "message": "ब्लॉकसाइट के लिए आपको श्रेणी अवरोधन प्रदान करने में सक्षम होने के लिए हमें आपके द्वारा देखी जाने वाली साइटों पर जानकारी तक पहुंचने के लिए आपकी अनुमति की आवश्यकता है। इस पहुंच और इस जानकारी के उपयोग को सक्षम करने के लिए कृपया 'मैं स्वीकार करता हूं' पर क्लिक करें जैसा कि हमारे विवरण में वर्णित है "
+   },
+   "categoriesPrivacyTitle": {
+      "message": "श्रेणी के अनुसार ब्लॉक करें"
+   },
+   "categoriesShopping": {
+      "message": "खरीदारी"
+   },
+   "categoriesSocialNetworksAndOnlineCommunities": {
+      "message": "सामाजिक"
+   },
+   "categoriesSports": {
+      "message": "खेल"
+   },
+   "categoriesTableTitle": {
+      "message": "अवरुद्ध श्रेणियों की सूची"
+   },
+   "clickHereToCheckOut": {
+      "message": "चेक आउट करने के लिए यहां क्लिक करें"
+   },
+   "clickingHereLink": {
+      "message": "यहाँ क्लिक करना"
+   },
+   "contextMenusAllowThisLink": {
+      "message": "इस लिंक को अनुमति दें"
+   },
+   "contextMenusAllowThisLinkWorkMode": {
+      "message": "फोकस मोड सूची के लिए इस लिंक को अनुमति दें"
+   },
+   "contextMenusAllowThisSite": {
+      "message": "इस साइट को अनुमति दें"
+   },
+   "contextMenusAllowThisSiteWorkMode": {
+      "message": "इस साइट को फ़ोकस मोड सूची के लिए अनुमति दें"
+   },
+   "contextMenusBlockThisLink": {
+      "message": "इस लिंक को ब्लॉक करें"
+   },
+   "contextMenusBlockThisLinkWorkMode": {
+      "message": "फ़ोकस मोड सूची में लिंक पता जोड़ें"
+   },
+   "contextMenusBlockThisSite": {
+      "message": "इस साइट को ब्लॉक करें"
+   },
+   "contextMenusBlockThisSiteWorkMode": {
+      "message": "मोड सूची पर ध्यान केंद्रित करने के लिए साइट जोड़ें"
+   },
+   "copiedIconTitle": {
+      "message": "कॉपी किया गया"
+   },
+   "copyIconTitle": {
+      "message": "कॉपी करें"
+   },
+   "customizeBlockPageApplyChangeNo": {
+      "message": "नहीं"
+   },
+   "customizeBlockPageApplyChangeSubTitle": {
+      "message": "अपने अवरुद्ध पृष्ठ पर किए गए परिवर्तनों को हाँ पर क्लिक करके लागू करें।"
+   },
+   "customizeBlockPageApplyChangeTitle": {
+      "message": "परिवर्तन लागू करें?"
+   },
+   "customizeBlockPageApplyChangeYes": {
+      "message": "हाँ"
+   },
+   "customizeBlockPageApplyChanges": {
+      "message": "परिवर्तन लागू करें"
+   },
+   "customizeBlockPageBlack": {
+      "message": "काली"
+   },
+   "customizeBlockPageBlockSiteFunnyImage": {
+      "message": "ब्लॉकशीट मजेदार छवियाँ"
+   },
+   "customizeBlockPageBlocksiteText": {
+      "message": "ब्लॉकसाइट का पाठ"
+   },
+   "customizeBlockPageChangesApplied": {
+      "message": "आपके परिवर्तन लागू हो गए हैं।"
+   },
+   "customizeBlockPageChangesFailed": {
+      "message": "कुछ गलत हो गया। कृपया पुन: प्रयास करें।"
+   },
+   "customizeBlockPageCurrentBackground": {
+      "message": "वर्तमान पृष्ठभूमि"
+   },
+   "customizeBlockPageCustomizeText": {
+      "message": "पाठ को अनुकूलित करें"
+   },
+   "customizeBlockPageNoPremiumCTA": {
+      "message": "कस्टम ब्लॉक पेज प्राप्त करें"
+   },
+   "customizeBlockPageNoPremiumMacbookSubtitle": {
+      "message": "उफ़! site.com अनुपलब्ध है क्योंकि यह सामाजिक से संबंधित है जो कि एक श्रेणी है जिसे आपने ब्लॉक किया है। केंद्रित रहें, आपको यह मिल गया है।"
+   },
+   "customizeBlockPageNoPremiumMacbookTitle": {
+      "message": "कोई पोस्टिंग, कोई पसंद नहीं, बस जी रहा है।"
+   },
+   "customizeBlockPageNoPremiumSubtitle": {
+      "message": "अपना ध्यान केंद्रित रखने में सहायता के लिए इसे प्रेरक या मज़ेदार बनाएं।"
+   },
+   "customizeBlockPageNoPremiumTitle": {
+      "message": "अपना खुद का अवरुद्ध पृष्ठ बनाएं"
+   },
+   "customizeBlockPagePreviewYourChanges": {
+      "message": "सहेजने से पहले अपने परिवर्तनों का पूर्वावलोकन करें"
+   },
+   "customizeBlockPageResetImage": {
+      "message": "मजेदार छवियों को ब्लॉकशीट पर वापस रीसेट करें"
+   },
+   "customizeBlockPageResetToDefault": {
+      "message": "डिफ़ॉल्ट पर रीसेट"
+   },
+   "customizeBlockPageSetBackground": {
+      "message": "बैकग्राउंड इमेज सेट करें"
+   },
+   "customizeBlockPageSetPageText": {
+      "message": "पृष्ठ पाठ सेट करें"
+   },
+   "customizeBlockPageSetSubTitleText": {
+      "message": "उपशीर्षक टेक्स्ट दर्ज करें"
+   },
+   "customizeBlockPageSetTitleText": {
+      "message": "शीर्षक टेक्स्ट दर्ज करें"
+   },
+   "customizeBlockPageSubtitle": {
+      "message": "छवियों और अपने खुद के पाठ के साथ अपने ब्लॉक पृष्ठों को अनुकूलित करें। सहेजने से पहले वास्तविक समय में नीचे स्क्रीन पर बदलाव देखें!"
+   },
+   "customizeBlockPageTextColor": {
+      "message": "लिखावट का रंग"
+   },
+   "customizeBlockPageTitle": {
+      "message": "कस्टम ब्लॉक पेज"
+   },
+   "customizeBlockPageUploadImage": {
+      "message": "UPLOAD कस्टम छवि"
+   },
+   "customizeBlockPageUserCustomImage": {
+      "message": "उपयोगकर्ता कस्टम पृष्ठभूमि"
+   },
+   "customizeBlockPageWhite": {
+      "message": "सफेद"
+   },
+   "customizePage": {
+      "message": "पेज को अनुकूलित करें"
+   },
+   "customizedBlockPageNonPremiumTry": {
+      "message": "आज़ाद के लिए असीमित असीमित कोशिश करें"
+   },
+   "dailyBonusCollect": {
+      "message": "कलेक्ट"
+   },
+   "dailyBonusSubTitle": {
+      "message": "ब्लॉकसाइट ने आपको दैनिक बोनस दिया है!"
+   },
+   "dailyBonusTitle": {
+      "message": "बधाई हो"
+   },
+   "doNotShowAgainMessage": {
+      "message": "फिर से मत दिखाना"
+   },
+   "editYourList": {
+      "message": "अपनी सूची संपादित करें"
+   },
+   "emailVerificationCTA": {
+      "message": "समझ गया"
+   },
+   "emailVerificationInstructions": {
+      "message": "कृपया उसी ब्राउज़र विंडो से लिंक पर क्लिक करें जिसे ब्लॉकसाइट स्थापित किया गया है।"
+   },
+   "emailVerificationSubTitle": {
+      "message": "हमने आपके मेल पर एक सत्यापन लिंक भेजा है, जो 24 घंटे के लिए वैध है। सत्यापित करने के लिए कृपया अपने इनबॉक्स की जाँच करें"
+   },
+   "emailVerificationTitle": {
+      "message": "लगभग हो गया"
+   },
+   "emailVerificationTitle1": {
+      "message": "ब्लॉकसाइट आपको अपना ईमेल पता सत्यापित करने के लिए एक लिंक के साथ एक ईमेल भेजेगा।"
+   },
+   "emailVerificationTitle2": {
+      "message": "आपका ईमेल पता केवल पासवर्ड सुरक्षा के उद्देश्य के लिए उपयोग किया जाएगा।"
+   },
+   "emptyResultsBlockedKeywordsSubtitle": {
+      "message": "जब आप ब्लॉक करने के लिए कीवर्ड जोड़ते हैं, तो आप इसे यहां देखेंगे।"
+   },
+   "emptyResultsBlockedKeywordsTitle": {
+      "message": "अभी तक कोई अवरोधित कीवर्ड नहीं"
+   },
+   "emptyResultsBlockedSitesSubtitle": {
+      "message": "जब आप साइटों को ब्लॉक करने के लिए जोड़ते हैं, तो आप इसे यहां देखेंगे।"
+   },
+   "emptyResultsBlockedSitesTitle": {
+      "message": "अभी तक कोई अवरुद्ध साइट नहीं है"
+   },
+   "enableInInPrivateMode": {
+      "message": "निजी मोड में सक्षम करें"
+   },
+   "enableInIncognitoMode": {
+      "message": "गुप्त मोड में सक्षम करें"
+   },
+   "enterPasswordToGainAccess": {
+      "message": "पहुँच प्राप्त करने के लिए पावर्ड दर्ज करें"
+   },
+   "enterYourEmail": {
+      "message": "अपना ईमेल दर्ज करें"
+   },
+   "enterYourPassword": {
+      "message": "अपना पासवर्ड दर्ज करें"
+   },
+   "firstSiteAddedUserActionCTA": {
+      "message": "ठंडा"
+   },
+   "firstSiteAddedUserActionSubTitle": {
+      "message": "अपनी पहली साइट जोड़ने पर बधाई!"
+   },
+   "firstSiteAddedUserActionTitle": {
+      "message": "उत्तम सामग्री!"
+   },
+   "firstTimeFocusModeCTA": {
+      "message": "शुरू करें"
+   },
+   "firstTimeFocusModeSubtitle": {
+      "message": "ध्यान भंग करने वाली साइटों को ब्लॉक करें और फ़ोकस मोड सक्रिय होने पर ज़ोन में रहें।"
+   },
+   "firstTimeFocusModeTitle": {
+      "message": "ध्यान केंद्रित करो। केंद्रित रहो।"
+   },
+   "firstTimeGamblingCategoryUserActionCTA": {
+      "message": "शानदार"
+   },
+   "firstTimeGamblingCategoryUserActionSubTitle": {
+      "message": "जुआ को अवरुद्ध कर दिया गया है। बहुत कम विचलित अब।"
+   },
+   "firstTimeGamblingCategoryUserActionTitle": {
+      "message": "हुर्रे!"
+   },
+   "firstTimeNewsCategoryUserActionCTA": {
+      "message": "शानदार"
+   },
+   "firstTimeNewsCategoryUserActionSubTitle": {
+      "message": "समाचार को अवरुद्ध कर दिया गया है। बहुत कम विचलित अब।"
+   },
+   "firstTimeNewsCategoryUserActionTitle": {
+      "message": "हुर्रे!"
+   },
+   "firstTimeScheduleUserActionCTA": {
+      "message": "आश्चर्यजनक"
+   },
+   "firstTimeScheduleUserActionSubTitle": {
+      "message": "अब आप ट्रैक पर बने रह सकेंगे!"
+   },
+   "firstTimeScheduleUserActionTitle": {
+      "message": "वाहवाही!"
+   },
+   "firstTimeShoppingCategoryUserActionCTA": {
+      "message": "शानदार"
+   },
+   "firstTimeShoppingCategoryUserActionSubTitle": {
+      "message": "खरीदारी पर रोक लगा दी गई है। अब बहुत कम विकर्षण।"
+   },
+   "firstTimeShoppingCategoryUserActionTitle": {
+      "message": "हुर्रे!"
+   },
+   "firstTimeSocialCategoryUserActionCTA": {
+      "message": "शानदार"
+   },
+   "firstTimeSocialCategoryUserActionSubTitle": {
+      "message": "सामाजिक अवरुद्ध हो गया है। बहुत कम विचलित अब।"
+   },
+   "firstTimeSocialCategoryUserActionTitle": {
+      "message": "हुर्रे!"
+   },
+   "firstTimeSportsCategoryUserActionCTA": {
+      "message": "शानदार"
+   },
+   "firstTimeSportsCategoryUserActionSubTitle": {
+      "message": "खेलों को अवरुद्ध कर दिया गया है। बहुत कम विचलित अब।"
+   },
+   "firstTimeSportsCategoryUserActionTitle": {
+      "message": "हुर्रे!"
+   },
+   "firstTimeSyncUserActionCTA": {
+      "message": "समझ गया"
+   },
+   "firstTimeSyncUserActionSubTitle": {
+      "message": "अब अधिकतम उत्पादकता के लिए सभी उपकरणों को सिंक करें maximum"
+   },
+   "firstTimeSyncUserActionTitle": {
+      "message": "बहुत बढ़िया!"
+   },
+   "focusModeActionsPause": {
+      "message": "Pause"
+   },
+   "focusModeActionsReset": {
+      "message": "रीसेट करें"
+   },
+   "focusModeActionsResume": {
+      "message": "बायोडाटा"
+   },
+   "focusModeAddSiteOnBoardingDescription": {
+      "message": "फ़ोकस मोड ब्लॉकलिस्ट आपकी मुख्य ब्लॉक सूची के साथ संयोग से काम करती है।"
+   },
+   "focusModeAddSiteOnBoardingTitle": {
+      "message": "साइटों को अपनी फ़ोकस मोड सूची में जोड़ें"
+   },
+   "focusModeAreYouSureBackToSession": {
+      "message": "वापस सत्र के लिए"
+   },
+   "focusModeAreYouSureSubtitle": {
+      "message": "क्या आप सुनिश्चित हैं कि यह घड़ी बंद करने का समय है?"
+   },
+   "focusModeAreYouSureTitle": {
+      "message": "क्या आप सुनिश्चित हैं?"
+   },
+   "focusModeBreakInterval": {
+      "message": "%MINUTES% मिनट के लिए ब्रेक लें"
+   },
+   "focusModeBreakText": {
+      "message": "ब्रेक के दौरान अपनी अवरुद्ध साइटों तक पहुंचें"
+   },
+   "focusModeBreakTimeLeftText": {
+      "message": "ब्रेक समय तक $ BREAK_TIME_LEFT $ मिनट",
+      "placeholders": {
+         "break_time_left": {
+            "content": "$1",
+            "example": "25"
+         }
+      }
+   },
+   "focusModeCircleBarTooltip": {
+      "message": "अंतराल में वर्तमान समय बचा है"
+   },
+   "focusModeCyclesTooltip": {
+      "message": "वर्तमान, पूर्ण और भविष्य के चक्र की स्थिति"
+   },
+   "focusModeEnterPassToPauseOrReset": {
+      "message": "%TIMER_ACTION% लिए अपना पासवर्ड दर्ज करें"
+   },
+   "focusModeFocusInterval": {
+      "message": "%MINUTES% मिनट के लिए ध्यान केंद्रित करें"
+   },
+   "focusModeFocusText": {
+      "message": "फोकस सत्र साइटें अवरुद्ध हैं"
+   },
+   "focusModeHourUnit": {
+      "message": "मानव संसाधन"
+   },
+   "focusModeMinutesUnit": {
+      "message": "मिनट"
+   },
+   "focusModeNoSitesText": {
+      "message": "ब्लॉक सूची की कोई भी साइट ब्लॉक नहीं की गई"
+   },
+   "focusModeNotificationEndOfCycleMessage": {
+      "message": "$ CYCLES_COMPLETED $ का $ CYCLES $ चक्र पूरा हुआ। यह ध्यान केंद्रित करने का समय है!",
+      "placeholders": {
+         "cycles": {
+            "content": "$ 2",
+            "example": "2"
+         },
+         "cycles_completed": {
+            "content": "$1",
+            "example": "1"
+         }
+      }
+   },
+   "focusModeNotificationEndOfCycleTitle": {
+      "message": "ब्रेक इंटरवल खत्म हो गया है।"
+   },
+   "focusModeNotificationEndOfCyclesButton": {
+      "message": "सत्र प्रारंभ करें"
+   },
+   "focusModeNotificationEndOfCyclesMessage": {
+      "message": "एक और फोकस मोड सत्र प्रारंभ करें?"
+   },
+   "focusModeNotificationEndOfCyclesTitle": {
+      "message": "ब्रेक इंटरवल खत्म हो गया है।"
+   },
+   "focusModeNotificationEndOfCyclesTitleWithStars": {
+      "message": "ब्रेक खत्म हो गया है। आपने $ STARS $ सितारे अर्जित किए हैं।",
+      "placeholders": {
+         "stars": {
+            "content": "$1",
+            "example": "25"
+         }
+      }
+   },
+   "focusModeNotificationEndOfFocusIntervalMessage": {
+      "message": "अब यह ब्रेक लेने का समय है!"
+   },
+   "focusModeNotificationEndOfFocusIntervalTitle": {
+      "message": "फोकस अंतराल खत्म हो गया है।"
+   },
+   "focusModeOptionsStartFocusSession": {
+      "message": "फोकस सत्र प्रारंभ करें"
+   },
+   "focusModeOptionsSubtitle": {
+      "message": "किसी कार्य पर ध्यान केंद्रित करने और अपने काम के समय को निर्धारित करने और अंतराल को तोड़ने के लिए अधिक उत्पादक उपयोग फ़ोकस मोड पर होना चाहिए। फ़ोकस सत्र के दौरान विकर्षण से बचने के लिए अपनी ब्लॉक सूची में साइटें जोड़ें"
+   },
+   "focusModeOptionsTimerSetup": {
+      "message": "समय सीमा"
+   },
+   "focusModeOptionsTitle": {
+      "message": "संकेन्द्रित विधि"
+   },
+   "focusModeSessionOnBoardingDescription": {
+      "message": "अपना फ़ोकस मोड सत्र प्रारंभ करने के लिए यहां क्लिक करके उन कार्यों को पूरा करना प्रारंभ करें"
+   },
+   "focusModeSessionOnBoardingTitle": {
+      "message": "अपना टाइमर शुरू करें"
+   },
+   "focusModeSettingsBreakTime": {
+      "message": "ब्रेक टाइम"
+   },
+   "focusModeSettingsCycles": {
+      "message": "साइकिल"
+   },
+   "focusModeSettingsFocusTime": {
+      "message": "फोकस समय"
+   },
+   "focusModeSettingsGoToOptions": {
+      "message": "विकल्पों पर जाएं"
+   },
+   "focusModeSettingsMinutes": {
+      "message": "मिनट"
+   },
+   "focusModeSettingsNumberOfCycles": {
+      "message": "चक्रों की संख्या"
+   },
+   "focusModeSettingsStartSession": {
+      "message": "सत्र प्रारंभ करें"
+   },
+   "focusModeSettingsSubtitle": {
+      "message": "किसी कार्य पर ध्यान दें और अधिक उत्पादक बनें"
+   },
+   "focusModeSettingsTitle": {
+      "message": "फोकस मोड टाइमर"
+   },
+   "focusModeSettingsTooltipFirst": {
+      "message": "ध्यान केंद्रित करने के लिए वांछित समय निर्धारित करें। आपकी फ़ोकस मोड सूची की साइटें अवरुद्ध हो जाएंगी।"
+   },
+   "focusModeSettingsTooltipSecond": {
+      "message": "वांछित ब्रेक समय निर्धारित करें और स्वतंत्र रूप से अपनी सूची से उन वेबसाइटों पर जाएं।"
+   },
+   "focusModeSettingsTooltipThird": {
+      "message": "फोकस समय के चक्र की संख्या और ब्रेक आपको स्वचालित रूप से चलाने की इच्छा रखते हैं।"
+   },
+   "focusModeTab": {
+      "message": "संकेन्द्रित विधि"
+   },
+   "focusModeTimerOnBoardingDescription": {
+      "message": "साइटों को ब्लॉक करने के लिए एक विशिष्ट ब्लॉक सूची सेट करें और उन साइटों तक पहुंचने में सक्षम होने से किसी भी चक्र के अंत में खुद को एक ब्रेक के साथ पुरस्कृत करें।"
+   },
+   "focusModeTimerOnBoardingTitle": {
+      "message": "फ़ोकस मोड सत्र सेट करें"
+   },
+   "focusModeToPauseOrResetEnterPassword": {
+      "message": "%TIMER_ACTION% पासवर्ड डालें"
+   },
+   "focusModeWrongPassword": {
+      "message": "गलत पासवर्ड"
+   },
+   "focusModesSecondsUnit": {
+      "message": "सेकंड"
+   },
+   "forgotPassSentOkBtn": {
+      "message": "ठीक"
+   },
+   "forgotPassSentText": {
+      "message": "आपका पासवर्ड भेज दिया गया है"
+   },
+   "forgotPassSentTitle": {
+      "message": "पासवर्ड भेजा गया"
+   },
+   "forgotPassword": {
+      "message": "पासवर्ड भूल गए?"
+   },
+   "goBack": {
+      "message": "पीछे जाएं"
+   },
+   "goBackToWork": {
+      "message": "काम करने के लिए पीछे जाएं"
+   },
+   "goPremium": {
+      "message": "प्रीमियम के लिए जाएँ"
+   },
+   "headerGoUnlimited": {
+      "message": "असीमित जाओ"
+   },
+   "headerLogin": {
+      "message": "लॉग इन करें"
+   },
+   "headerLogout": {
+      "message": "लॉग आउट"
+   },
+   "importPopupMerge": {
+      "message": "मर्ज करें"
+   },
+   "importPopupOverride": {
+      "message": "ओवरराइड करें"
+   },
+   "importPopupTitle": {
+      "message": "क्या आप अपनी वर्तमान सूची को मर्ज या ओवरराइड करना चाहते हैं?"
+   },
+   "insightsCategory_entertainment": {
+      "message": "मनोरंजन"
+   },
+   "insightsCategory_games": {
+      "message": "खेल"
+   },
+   "insightsCategory_news": {
+      "message": "समाचार"
+   },
+   "insightsCategory_other": {
+      "message": "अन्य"
+   },
+   "insightsCategory_shopping": {
+      "message": "खरीदारी"
+   },
+   "insightsCategory_social": {
+      "message": "सामाजिक"
+   },
+   "insightsCategory_sports": {
+      "message": "खेल"
+   },
+   "insightsDescription": {
+      "message": "देखें कि आप अधिक उत्पादक होने के लिए अपना समय ऑनलाइन कैसे व्यतीत करते हैं"
+   },
+   "insightsEmptyDescription": {
+      "message": "हम अभी भी आपकी अंतर्दृष्टि की गणना कर रहे हैं, कृपया अपडेट के लिए जल्द ही वापस देखें!"
+   },
+   "insightsEmptyTitle": {
+      "message": "अभी कोई अंतर्दृष्टि नहीं है। 24 घंटे में फिर से कोशिश करें।"
+   },
+   "insightsErrorDescription": {
+      "message": "चिंता मत करो! हम इस समस्या को हल करने के लिए कड़ी मेहनत कर रहे हैं इसलिए कृपया बाद में पुनः प्रयास करें।"
+   },
+   "insightsErrorTitle": {
+      "message": "उफ़! कुछ गलत हो गया!"
+   },
+   "insightsPrivacyText": {
+      "message": "ब्लॉकसाइट को वयस्क सामग्री के साथ पृष्ठों का पता लगाने और ब्लॉक करने में सक्षम होने के लिए, हमें आपके द्वारा देखी जाने वाली साइटों पर जानकारी तक पहुंचने के लिए आपकी अनुमति की आवश्यकता है। इस पहुंच और इस जानकारी के उपयोग को सक्षम करने के लिए कृपया 'सहमत' पर क्लिक करें जैसा कि हमारे विवरण में वर्णित है "
+   },
+   "insightsPrivacyTitle": {
+      "message": "उफ़!"
+   },
+   "insightsTimeSaved": {
+      "message": "मैंने कितना समय बचाया है?"
+   },
+   "insightsTitle": {
+      "message": "इनसाइट्स"
+   },
+   "insightsTopVisit": {
+      "message": "शीर्ष देखे गए श्रेणियाँ"
+   },
+   "invalidPassBlockedPage": {
+      "message": "अमांय पासवर्ड. पुनः प्रयास करें."
+   },
+   "leaveWithoutSaving": {
+      "message": "बिना सहेजे छोड़ दें"
+   },
+   "levelUpCongrats": {
+      "message": "बधाई! आप $POINTS$ सितारों तक पहुँच चुके हैं",
+      "placeholders": {
+         "points": {
+            "content": "$1",
+            "example": "25"
+         }
+      }
+   },
+   "levelUpGainStars": {
+      "message": "अधिक सितारे हासिल करने के लिए उत्पादक बने रहें।"
+   },
+   "levelUpGotIt": {
+      "message": "समझ गया"
+   },
+   "levelUpStayProductive": {
+      "message": "उत्पादक बने रहें और सितारों को आगे बढ़ते रहने के लिए ध्यान केंद्रित करें।"
+   },
+   "levelUpUnlocked": {
+      "message": "खुला!"
+   },
+   "levelUpViewProgress": {
+      "message": "प्रगति देखें"
+   },
+   "levelUpWellDone": {
+      "message": "अच्छी तरह से एक नए स्तर पर प्रगति पर!"
+   },
+   "limitListBannerCounter": {
+      "message": "आपकी ब्लॉक सूची में जोड़ने के लिए साइटें बची हैं।"
+   },
+   "limitListBannerCounterReached": {
+      "message": "आप अपनी ब्लॉक सूची की सीमा तक पहुँच गए हैं।"
+   },
+   "limitListBannerUpgrade": {
+      "message": "असीमित जाओ"
+   },
+   "limitListBannerUpgradeTip": {
+      "message": "असीमित ब्लॉक सूची का उन्नयन और आनंद लेने के लिए यहां क्लिक करें।"
+   },
+   "limitListBannerUpgradeTipPopup": {
+      "message": "असीमित ब्लॉक सूची का उन्नयन और आनंद लेने के लिए क्लिक करें।"
+   },
+   "limitListBannerUpgradeTipReachedPopup": {
+      "message": "आपकी ब्लॉक सूची अपनी अधिकतम साइटों तक पहुँच गई है।"
+   },
+   "limitListOverlayContentTitle": {
+      "message": "हमारे प्रीमियम उपयोगकर्ता एक घंटे का बहुमूल्य समय बचाते हैं। सभी प्रीमियम सुविधाएं प्राप्त करें और आज अधिक उत्पादक बनना शुरू करें!"
+   },
+   "limitListOverlayEditBlockListPopup": {
+      "message": "ब्लॉक सूची संपादित करें"
+   },
+   "limitListOverlayFeatureFirstSubtitle": {
+      "message": "हालाँकि आपको बहुत सी साइटें पसंद हैं"
+   },
+   "limitListOverlayFeatureFirstTitle": {
+      "message": "असीमित ब्लॉक सूची"
+   },
+   "limitListOverlayFeatureFourthSubtitle": {
+      "message": "बादल में संग्रहीत"
+   },
+   "limitListOverlayFeatureFourthTitle": {
+      "message": "एक्सटेंशन के बीच सिंक करें"
+   },
+   "limitListOverlayFeatureSecondSubtitle": {
+      "message": "ब्लॉक करने का सबसे तेज़ तरीका"
+   },
+   "limitListOverlayFeatureSecondTitle": {
+      "message": "श्रेणियों के साथ थोक में ब्लॉक करें"
+   },
+   "limitListOverlayFeatureThirdSubtitle": {
+      "message": "आप के लिए अद्वितीय चित्र और पाठ चुनें"
+   },
+   "limitListOverlayFeatureThirdTitle": {
+      "message": "अपने ब्लॉक पेज को कस्टमाइज़ करें"
+   },
+   "limitListOverlayImportTitle": {
+      "message": "आयात सीमा पहुँच गई"
+   },
+   "limitListOverlayMaybeLater": {
+      "message": "शायद बाद में"
+   },
+   "limitListOverlaySpecialOfferTitle": {
+      "message": "विशेष प्रस्ताव!"
+   },
+   "limitListOverlaySubtitle": {
+      "message": "अधिक मिलना। असीमित जाओ"
+   },
+   "limitListOverlaySubtitlePopup": {
+      "message": "सभी उपकरणों पर असीमित साइट प्राप्त करने के लिए अब अपग्रेड करें।"
+   },
+   "limitListOverlayTitle": {
+      "message": "ब्लॉक सूची साइट सीमा तक पहुँच गया"
+   },
+   "limitListOverlayTitlePopup": {
+      "message": "आप अपनी ब्लॉक सूची की सीमा तक पहुँच चुके हैं!"
+   },
+   "limitListOverlayUpgradeNow": {
+      "message": "असीमित जाओ"
+   },
+   "limitListOverlayUpgradePopup": {
+      "message": "असीमित जाओ"
+   },
+   "limitPopupDiscountSpecialOfferSubTitle": {
+      "message": "हमारे सबसे कम कभी सदस्यता मूल्य"
+   },
+   "loginSyncGotIt": {
+      "message": "समझ गया"
+   },
+   "loginSyncLoginToSite": {
+      "message": "एक्सटेंशन को सिंक करने के लिए, कृपया साइनअप / लॉगिन करें"
+   },
+   "loginSyncPleaseLogin": {
+      "message": "कृपया सिंक करने के लिए लॉगिन करें"
+   },
+   "logoutPopupQuestionApproveText": {
+      "message": "जी हां इसे करें"
+   },
+   "logoutPopupQuestionCancelText": {
+      "message": "नहीं, रद्द करें"
+   },
+   "logoutPopupQuestionDescription": {
+      "message": "लॉग आउट के दौरान किया गया कोई भी परिवर्तन क्लाउड के साथ समन्वयित नहीं होगा।"
+   },
+   "logoutPopupQuestionTitle": {
+      "message": "क्या आप सुनिश्चित हैं?"
+   },
+   "mandatoryConsentAgree": {
+      "message": "सहमत हूँ"
+   },
+   "mandatoryConsentDisagree": {
+      "message": "असहमत हूँ"
+   },
+   "mandatoryConsentDisclaimer": {
+      "message": "यदि आप ‘असहमत हूँ’ पर क्लिक करते हैं तो भी आप BlockSite का उपयोग कर सकते हैं, हालांकि वयस्क ब्लॉकिंग सुविधा उपलब्ध नहीं होगी।"
+   },
+   "mandatoryConsentPrivacyPolicy": {
+      "message": "गोपनीयता नीति"
+   },
+   "mandatoryConsentSubtitle": {
+      "message": "ब्लॉकसाइट को वयस्क सामग्री के साथ पृष्ठों का पता लगाने और ब्लॉक करने में सक्षम होने के लिए, हमें आपके द्वारा देखी जाने वाली साइटों पर जानकारी तक पहुंचने के लिए आपकी अनुमति की आवश्यकता है। इस पहुंच और इस जानकारी के उपयोग को सक्षम करने के लिए कृपया 'सहमत' पर क्लिक करें जैसा कि हमारे विवरण में वर्णित है"
+   },
+   "mandatoryConsentTitle1": {
+      "message": "में चयन करें"
+   },
+   "mandatoryConsentTitle2": {
+      "message": "ब्लॉकसाइट पर आगे बढ़ने का आदेश।"
+   },
+   "motivationalText1": {
+      "message": "इसके बारे में भूल जाओ।"
+   },
+   "motivationalText10": {
+      "message": "अवरोधित!"
+   },
+   "motivationalText11": {
+      "message": "उह ओह!"
+   },
+   "motivationalText12": {
+      "message": "अच्छा प्रयास, बच्चे."
+   },
+   "motivationalText2": {
+      "message": "नहीं हो सकता, जोस."
+   },
+   "motivationalText3": {
+      "message": "अच्छा प्रयास..."
+   },
+   "motivationalText4": {
+      "message": "क्या आप गंभीर हैं?"
+   },
+   "motivationalText5": {
+      "message": "आपको क्या लगता है कि आप क्या कर रहे हैं?"
+   },
+   "motivationalText6": {
+      "message": "इधर-उधर जाना बंद करें!"
+   },
+   "motivationalText7": {
+      "message": "पपीज़. अनोखे ब्राउन मोल्स. जस्टिन बीबर."
+   },
+   "motivationalText8": {
+      "message": "तिलचट्टे. कटे हुए अंग. जॉन गुडमैन."
+   },
+   "motivationalText9": {
+      "message": "दादी. कोबी ब्रायंट. सर्जिकल प्रक्रियाएं."
+   },
+   "offTitle": {
+      "message": "ब्लॉक साइट इस समय बंद है"
+   },
+   "onBoardingDismiss": {
+      "message": "खारिज"
+   },
+   "onBoardingNextStep": {
+      "message": "अगला"
+   },
+   "optionMenuBannerCTASignupNow": {
+      "message": "अभी साइनअप करें"
+   },
+   "optionsLockedSubtitle": {
+      "message": "कृपया BlockSite विकल्प पृष्ठ तक पहुँच प्राप्त करने के लिए अपना पासवर्ड दर्ज करें"
+   },
+   "optionsLockedTitle": {
+      "message": "BlockSite विकल्प लॉक किए गए"
+   },
+   "optionsMenuAbout": {
+      "message": "के बारे में"
+   },
+   "optionsMenuBannerCTAGoUnlimited": {
+      "message": "असीमित जाओ"
+   },
+   "optionsMenuBannerCTATryNow": {
+      "message": "अब कोशिश करो"
+   },
+   "optionsMenuBannerSubtitleCategory": {
+      "message": "एक क्लिक में हजारों साइटों को ब्लॉक करके अधिक समय बचाएं"
+   },
+   "optionsMenuBannerSubtitleCustomizeBlockPage": {
+      "message": "इसे अपना बनाने के लिए इमेज और टेक्स्ट चुनें"
+   },
+   "optionsMenuBannerSubtitleDesktop": {
+      "message": "एक ऐप से एज, फायरफॉक्स और क्रोम पर समय बर्बाद करने वाली साइटों को ब्लॉक करें!"
+   },
+   "optionsMenuBannerSubtitleGoUnlimited": {
+      "message": "हमारी नवीनतम सुविधाओं का आनंद लेने वाले पहले व्यक्ति बनें"
+   },
+   "optionsMenuBannerSubtitleInsights": {
+      "message": "अपने ब्राउज़िंग रुझानों का अन्वेषण करें और आप अपना समय ऑनलाइन कैसे व्यतीत करते हैं "
+   },
+   "optionsMenuBannerSubtitleMobile": {
+      "message": "क्यूआर कोड को स्कैन करें और चलते-फिरते उत्पादक बने रहें"
+   },
+   "optionsMenuBannerSubtitlePasswordProtection": {
+      "message": "साइटों को अपनी ब्लॉक सूची से हटाना कठिन बनाएं"
+   },
+   "optionsMenuBannerSubtitleSignup": {
+      "message": "पुरस्कार अर्जित करें और अपनी ब्लॉक सूची को सभी उपकरणों में सिंक करें"
+   },
+   "optionsMenuBannerSubtitleSlack": {
+      "message": "फ़ोकस मोड में डू नॉट डिस्टर्ब मोड को स्वचालित रूप से चालू करें"
+   },
+   "optionsMenuBannerSubtitleUnlimitedBlockList": {
+      "message": "अपनी ब्लॉक सूची में जितनी चाहें उतनी साइटें जोड़ें"
+   },
+   "optionsMenuBannerTitleCategory": {
+      "message": "श्रेणी के अनुसार ब्लॉक करें"
+   },
+   "optionsMenuBannerTitleCustomizeBlockPage": {
+      "message": "ब्लॉक पेज को अनुकूलित करें"
+   },
+   "optionsMenuBannerTitleDesktop": {
+      "message": "विंडोज बीटा के लिए ब्लॉकसाइट"
+   },
+   "optionsMenuBannerTitleGoUnlimited": {
+      "message": "अधिक मिलना। असीमित जाओ"
+   },
+   "optionsMenuBannerTitleInsights": {
+      "message": "इनसाइट्स"
+   },
+   "optionsMenuBannerTitleMobile": {
+      "message": "अपने स्मार्टफ़ोन पर ब्लॉकसाइट ऐप"
+   },
+   "optionsMenuBannerTitlePasswordProtection": {
+      "message": "पासवर्ड सुरक्षा"
+   },
+   "optionsMenuBannerTitleSignup": {
+      "message": "अधिक उत्पादकता के लिए साइन अप करें"
+   },
+   "optionsMenuBannerTitleSlack": {
+      "message": "ब्लॉकसाइट का स्लैक ऐप"
+   },
+   "optionsMenuBannerTitleUnlimitedBlockList": {
+      "message": "असीमित ब्लॉक सूची"
+   },
+   "optionsMenuBlockByWords": {
+      "message": "शब्दों के अनुसार ब्लॉक करें"
+   },
+   "optionsMenuBlockSites": {
+      "message": "साइटें अवरुद्ध करें"
+   },
+   "optionsMenuBlocking": {
+      "message": "ब्लॉक कर रहा है"
+   },
+   "optionsMenuCategories": {
+      "message": "श्रेणियाँ"
+   },
+   "optionsMenuCustomizeBlockPage": {
+      "message": "कस्टम ब्लॉक पेज"
+   },
+   "optionsMenuFocusMode": {
+      "message": "संकेन्द्रित विधि"
+   },
+   "optionsMenuPasswordProtection": {
+      "message": "पासवर्ड सुरक्षा"
+   },
+   "optionsMenuSettings": {
+      "message": "सेटिंग्‍स"
+   },
+   "optionsMenuSyncWithOtherDevices": {
+      "message": "अन्य उपकरणों के साथ सिंक"
+   },
+   "optionsMenuSyncedOff": {
+      "message": "विकलांग"
+   },
+   "optionsMenuSyncedOn": {
+      "message": "सक्रिय"
+   },
+   "optionsNotificationEmptyList": {
+      "message": "आपकी सूची खाली है! निर्यात करने के लिए कुछ नहीं है."
+   },
+   "optionsNotificationEmptyWord": {
+      "message": "खाली शब्द नहीं जोड़ सकते"
+   },
+   "optionsNotificationIncorrectFileStructure": {
+      "message": "गलत फ़ाइल संरचना। आवश्यक सीएसवी प्रारूप देखने के लिए कृपया अपनी वर्तमान सूची को निर्यात करने का प्रयास करें।"
+   },
+   "optionsNotificationIncorrectURL": {
+      "message": "गलत url"
+   },
+   "optionsNotificationListExported": {
+      "message": "आपकी सूची सफलतापूर्वक निर्यात की गई थी।"
+   },
+   "optionsNotificationListImported": {
+      "message": "आपकी सूची सफलतापूर्वक आयात की गई थी।"
+   },
+   "optionsNotificationSiteAdded": {
+      "message": "साइट जोड़ी गई"
+   },
+   "optionsNotificationURLAlreadyExist": {
+      "message": "URL पहले से मौजूद है"
+   },
+   "optionsNotificationWordAlreadyExist": {
+      "message": "शब्द पहले से मौजूद हैं"
+   },
+   "optionsPageRedirectButton": {
+      "message": "रीडायरेक्ट करें"
+   },
+   "optionsPageRedirectOK": {
+      "message": "ठीक"
+   },
+   "optionsPageRedirectPlaceHolder": {
+      "message": "वेब पता (उदा: google.com)"
+   },
+   "optionsPageRedirectRemove": {
+      "message": "हटाएं"
+   },
+   "optionsPageRedirectTitle": {
+      "message": " अपने अवरुद्ध पृष्ठों को पुनर्निर्देशित करें"
+   },
+   "optionsPageRedirectTooltipNotSet": {
+      "message": "रीडायरेक्ट वेबसाइट सेट करने के लिए क्लिक करें"
+   },
+   "optionsPageRedirectTooltipSet": {
+      "message": "$URL$ पर रीडायरेक्ट करें",
+      "placeholders": {
+         "url": {
+            "content": "$1",
+            "example": "https://example.com"
+         }
+      }
+   },
+   "optionsPageScheduleAddInterval": {
+      "message": "अंतराल जोड़ें"
+   },
+   "optionsPageScheduleButton": {
+      "message": "कार्यक्रम"
+   },
+   "optionsPageScheduleClickDay": {
+      "message": "(निष्क्रिय करने के लिए किसी दिन पर क्लिक करें)"
+   },
+   "optionsPageScheduleEveryDay": {
+      "message": "हर दिन"
+   },
+   "optionsPageScheduleRemoveSchedule": {
+      "message": "हटाएं"
+   },
+   "optionsPageScheduleSelectDays": {
+      "message": "दिन चुनें"
+   },
+   "optionsPageScheduleSetBlocking": {
+      "message": "ब्लॉकिंग शेड्यूल सेट करें"
+   },
+   "optionsPageScheduleSetSchedule": {
+      "message": "शेड्यूल सेट करें"
+   },
+   "optionsPageScheduleSetTimes": {
+      "message": "सेट समय"
+   },
+   "optionsPageScheduleTo": {
+      "message": "सेवा"
+   },
+   "passwordProtectionGoUnlimitedButton": {
+      "message": "असीमित जाओ"
+   },
+   "passwordProtectionHookSubtitle": {
+      "message": "अपनी सेटिंग को पासकोड से लॉक करके विलंब करना कठिन बनाएं"
+   },
+   "passwordProtectionHookTitleRemoveSite": {
+      "message": "साइटों को निकालने का प्रयास करना बंद करें! पासवर्ड सुरक्षा प्राप्त करें"
+   },
+   "passwordProtectionHookTitleToggleOff": {
+      "message": "अपने आप को धोखा मत दो! पासवर्ड सुरक्षा प्राप्त करें।"
+   },
+   "passwordProtectionLoseAccessApprove": {
+      "message": "जी हां इसे करें"
+   },
+   "passwordProtectionLoseAccessCancel": {
+      "message": "नहीं, रद्द करें"
+   },
+   "passwordProtectionLoseAccessSubtitle": {
+      "message": "पासवर्ड सुरक्षा अब एक प्रीमियम सुविधा है। एक वफादार उपयोगकर्ता के रूप में, यह आपके लिए मुफ़्त है। इसे इस तरह रखने के लिए, इसे सक्षम किया जाना चाहिए।"
+   },
+   "passwordProtectionLoseAccessTitleFirst": {
+      "message": "आप ऐक्सेस खोने वाले हैं."
+   },
+   "passwordProtectionLoseAccessTitleSecond": {
+      "message": "क्या आप सुनिश्चित हैं?"
+   },
+   "passwordProtectionMaybeLaterButton": {
+      "message": "शायद बाद में"
+   },
+   "passwordProtectionNonPremiumCTA": {
+      "message": "पासवर्ड सुरक्षा प्राप्त करें"
+   },
+   "passwordProtectionNonPremiumSubtitle": {
+      "message": "अपनी सेटिंग्स को बदलने और अपनी ब्लॉक सूची से साइटों को हटाने के लिए इसे और भी कठिन बनाएं"
+   },
+   "passwordProtectionNonPremiumTitle": {
+      "message": "पासवर्ड प्रोटेक्शन के साथ प्रोडक्टिव रहें"
+   },
+   "passwordProtectionOptionAddChallenge": {
+      "message": "अवरोधित पृष्ठ चुनौती - अनब्लॉक पृष्ठ पर अतिरिक्त चरण जोड़ें"
+   },
+   "passwordProtectionOptionBlockBlockedPage": {
+      "message": "ब्लॉक की गई साइट्स तक पहुँच प्राप्त करने के लिए पासवर्ड आवश्यक है"
+   },
+   "passwordProtectionOptionBlockSettings": {
+      "message": "अपने पसंदीदा ब्लॉकसाइट विकल्पों और पासवर्ड के साथ $ BROWSER $ एक्सटेंशन पृष्ठ को सुरक्षित रखें",
+      "placeholders": {
+         "browser": {
+            "content": "$1"
+         }
+      }
+   },
+   "passwordProtectionOptionNotifyUninstalled": {
+      "message": "BlockSite की स्थापना रद्द किए जाने पर ईमेल द्वारा सूचना पाएं"
+   },
+   "passwordProtectionPreferences": {
+      "message": "पासवर्ड सुरक्षा प्राथमिकताएं"
+   },
+   "passwordProtectionSetupNowButton": {
+      "message": "अभी सेटअप करें"
+   },
+   "passwordProtectionUnlockButton": {
+      "message": "अभी खोलें"
+   },
+   "passwordProtectionUnlockPageSubtitle": {
+      "message": "पेज को अनलॉक करने के लिए कृपया अपना पासवर्ड दर्ज करें"
+   },
+   "passwordProtectionUnlockPageTitle": {
+      "message": "यह पेज लॉक है!"
+   },
+   "passwordProtectionVerificationEmail": {
+      "message": "ईमेल"
+   },
+   "passwordProtectionVerificationMinimumPass": {
+      "message": "कम से कम 5 वर्ण"
+   },
+   "passwordProtectionVerificationPassword": {
+      "message": "पासवर्ड"
+   },
+   "passwordProtectionVerificationRequired": {
+      "message": "सत्यापन आवश्यक है"
+   },
+   "passwordQuestionBack": {
+      "message": "पीछे जाएं"
+   },
+   "passwordQuestionClickBack": {
+      "message": "नीचे दिए गए 'BACK` पर क्लिक करने वाले उपयोगकर्ता"
+   },
+   "passwordQuestionDontShowAgain": {
+      "message": "यह पता नहीं है"
+   },
+   "passwordQuestionPleaseTryAgain": {
+      "message": "गलत है। कृपया पुन: प्रयास करें।"
+   },
+   "passwordQuestionReallyToDo": {
+      "message": "क्या आप वास्तव में ऐसा करना चाहते हैं?"
+   },
+   "passwordQuestionSaveMinutes": {
+      "message": "औसतन 15 मिनट बचाएं।"
+   },
+   "passwordQuestionToUnlock": {
+      "message": "कृपया टाइप करने के लिए"
+   },
+   "passwordVerificationWarning": {
+      "message": "पासवर्ड सुरक्षा सक्षम नहीं की गई है। सक्षम करने के लिए, कृपया उसी ब्राउज़र विंडो में ईमेल में दी गई लिंक खोलें जिसे आप मूल रूप से अपने खाते को सेटअप करने के लिए उपयोग करते हैं।"
+   },
+   "popupHeaderUpgradeNow": {
+      "message": "असीमित जाओ"
+   },
+   "popupLockedSubtitle": {
+      "message": "एक्सटेंशन सेटिंग्स तक पहुँच प्राप्त करने के लिए अपना पासवर्ड दर्ज करें"
+   },
+   "popupLockedTitle": {
+      "message": "BlockSite बंद है"
+   },
+   "popupQuestionApprove": {
+      "message": "हाँ"
+   },
+   "popupQuestionCancel": {
+      "message": "नहीं"
+   },
+   "premiumBannerCTA": {
+      "message": "असीमित जाओ"
+   },
+   "premiumBannerNew": {
+      "message": "नया!"
+   },
+   "premiumBannerSubtitleA": {
+      "message": "एक विशिष्ट अवरुद्ध पृष्ठ बनाने के लिए अपनी स्वयं की छवि और पाठ चुनें।"
+   },
+   "premiumBannerSubtitleB": {
+      "message": "Don't get distracted by shortlisting. Add as many sites as you like."
+   },
+   "premiumBannerTitleA": {
+      "message": "अपना खुद का ब्लॉक पेज बनाओ!"
+   },
+   "premiumBannerTitleB": {
+      "message": "असीमित ब्लॉक सूची प्राप्त करें!"
+   },
+   "premiumHookCTA": {
+      "message": "मुफ्त में आजमाइये"
+   },
+   "premiumHookTitle": {
+      "message": "असीमित जाओ"
+   },
+   "premiumOverlayCategorySubtitle": {
+      "message": "ब्लॉक करने का सबसे तेज़ तरीका"
+   },
+   "premiumOverlayCategoryTitle": {
+      "message": "श्रेणी के अनुसार ब्लॉक करें"
+   },
+   "premiumOverlayCustomizationSubtitle": {
+      "message": "चित्र और पाठ सेट करें"
+   },
+   "premiumOverlayCustomizationTitle": {
+      "message": "ब्लॉक पेज को अनुकूलित करें"
+   },
+   "premiumOverlayGoUnlimited": {
+      "message": "असीमित जाओ"
+   },
+   "premiumOverlayInsightsSubtitle": {
+      "message": "ब्राउज़िंग ट्रेंड का अन्वेषण करें"
+   },
+   "premiumOverlayInsightsTitle": {
+      "message": "उपयोगी जानकारी"
+   },
+   "premiumOverlayMaybeLater": {
+      "message": "शायद बाद में"
+   },
+   "premiumOverlaySubtitle": {
+      "message": "आज़ाद के लिए 3 दिन की कोशिश करो"
+   },
+   "premiumOverlayTitle": {
+      "message": "ब्लॉकसाइट असीमित"
+   },
+   "premiumOverlayUnlimitedSubtitle": {
+      "message": "कहीं भी। किसी भी समय।"
+   },
+   "premiumOverlayUnlimitedTitle": {
+      "message": "असीमित ब्लॉकिंग सूची"
+   },
+   "privacyIAccept": {
+      "message": "मुझे स्वीकार है"
+   },
+   "privacySettingsPrivacyPolicy": {
+      "message": "गोपनीयता नीति।"
+   },
+   "privacySettingsSubtitle": {
+      "message": "ब्लॉकसाइट को आपके निर्देशित URL, आईपी पते, ऑपरेटिंग सिस्टम और ब्राउज़र की जानकारी तक पहुंच प्रदान करने की अनुमति देता है, जैसा कि हमारे निर्देशन में किया गया है "
+   },
+   "privacySettingsTitle": {
+      "message": "\"ब्लॉक करके श्रेणी\" ब्लॉक करें सक्षम करें"
+   },
+   "protectionSettingsSaved": {
+      "message": "सुरक्षा सेटिंग्स सहेजी गई"
+   },
+   "pushToAccountCTA": {
+      "message": "अभी साइनअप करें"
+   },
+   "pushToAccountSubTitle": {
+      "message": "उत्पादक होने के लिए पुरस्कार अर्जित करने और सभी उपकरणों में ब्लॉकसाइट को सिंक करने के लिए एक निःशुल्क ब्लॉकसाइट खाता बनाएं"
+   },
+   "pushToAccountTitle": {
+      "message": "साइन-अप करने वाले उपयोगकर्ता अपने लक्ष्यों को जल्दी प्राप्त करते हैं"
+   },
+   "pushToBlockListCTA": {
+      "message": "असीमित जाओ"
+   },
+   "pushToBlockListSubTitle": {
+      "message": "अपनी ब्लॉक सूची में जितनी चाहें उतनी साइटें जोड़ने के लिए आज ही अपग्रेड करें"
+   },
+   "pushToBlockListTitle": {
+      "message": "आज अपग्रेड करके असीमित ब्लॉक सूची प्राप्त करें"
+   },
+   "pushToCategoriesCTA": {
+      "message": "असीमित जाओ"
+   },
+   "pushToCategoriesSubTitle": {
+      "message": "समय बचाएं और एक क्लिक में हजारों वेबसाइटों को अवरुद्ध करके केंद्रित रहें।"
+   },
+   "pushToCategoriesTitle": {
+      "message": "एक क्लिक में हजारों वेबसाइट को ब्लॉक करें!"
+   },
+   "pushToCustomizedPageSubTitle": {
+      "message": "छवियों और ग्रंथों को चुनें और अपना स्वयं का अवरुद्ध पृष्ठ बनाएं"
+   },
+   "pushToCustomizedPageTitle": {
+      "message": "अवरुद्ध पृष्ठ बनाएं और कस्टमाइज़ करें"
+   },
+   "pushToCustomizedPagedCTA": {
+      "message": "असीमित जाओ"
+   },
+   "pushToDesktopCTA": {
+      "message": "अब कोशिश करो"
+   },
+   "pushToDesktopOverlayCTAMaybeLater": {
+      "message": "शायद बाद में"
+   },
+   "pushToDesktopOverlayCTAUpgrade": {
+      "message": "और जानो"
+   },
+   "pushToDesktopOverlaySubtitleA": {
+      "message": "अब आप एक ऐप के साथ एज, फ़ायरफ़ॉक्स और क्रोम पर सभी विकर्षणों को रोक सकते हैं! आज बिल्कुल नया ऐप डाउनलोड करें"
+   },
+   "pushToDesktopOverlaySubtitleB": {
+      "message": "अब आप हमारे नए विंडोज डेस्कटॉप ऐप के साथ क्रोम, फ़ायरफ़ॉक्स और एज पर सभी विकर्षणों को रोक सकते हैं"
+   },
+   "pushToDesktopOverlayTitleA": {
+      "message": "एकाधिक ब्राउज़रों में ब्लॉक करें"
+   },
+   "pushToDesktopOverlayTitleB": {
+      "message": "नया विंडोज़ ऐप अब लाइव है!"
+   },
+   "pushToDesktopSubTitle": {
+      "message": "अब आप एक ऐप के साथ एज, फ़ायरफ़ॉक्स और क्रोम पर सभी विकर्षणों को रोक सकते हैं! आज बिल्कुल नया ऐप डाउनलोड करें"
+   },
+   "pushToDesktopTitle": {
+      "message": "ब्लॉकसाइट विंडोज ऐप बीटा \n अब उपलब्ध है!"
+   },
+   "pushToGoUnlimitedCTA": {
+      "message": "असीमित जाओ"
+   },
+   "pushToGoUnlimitedSubTitle": {
+      "message": "प्रीमियम उपयोगकर्ता हर दिन अधिक समय बचाते हैं। आप BlockSite Unlimited में अपग्रेड करके भी कर सकते हैं।"
+   },
+   "pushToGoUnlimitedTitle": {
+      "message": "अधिक मिलना। असीमित जाओ"
+   },
+   "pushToInsightsCTA": {
+      "message": "असीमित जाओ"
+   },
+   "pushToInsightsSubTitle": {
+      "message": "समय के साथ अपने ऑनलाइन ब्राउज़िंग रुझानों का अन्वेषण करें और जानें कि अपनी उत्पादकता कैसे सुधारें"
+   },
+   "pushToInsightsTitle": {
+      "message": "अपने ब्राउज़िंग के रुझान की पड़ताल \n इनसाइट्स के साथ!"
+   },
+   "pushToMobileOverlayCTA": {
+      "message": "शायद बाद में"
+   },
+   "pushToMobileOverlaySubtitle": {
+      "message": "मोबाइल के लिए ब्लॉकसाइट प्राप्त करने के लिए बारकोड को स्कैन करके चलते समय उत्पादक रहें"
+   },
+   "pushToMobileOverlayTitle": {
+      "message": "मोबाइल पर ब्लॉकसाइट प्राप्त करें"
+   },
+   "rateUsBlessingStepBtn": {
+      "message": "वेबस्टोर पर हमें रेट करें"
+   },
+   "rateUsBlessingStepSubTitle": {
+      "message": "आपकी प्रतिक्रिया मायने रखती है! वेब स्टोर पर एक समीक्षा छोड़ कर हमारे ऐप के लाभों को खोजने में दूसरों की सहायता करें।"
+   },
+   "rateUsBlessingStepTitle": {
+      "message": "वाह! हमें खुशी है कि आपको यह पसंद आया!"
+   },
+   "rateUsReviewStepBtn": {
+      "message": "प्रतिक्रिया भेजें"
+   },
+   "rateUsReviewStepMsgError": {
+      "message": "अमान्य वर्ण दर्ज किए गए।"
+   },
+   "rateUsReviewStepSubTitle": {
+      "message": "हमारा समर्थन और उत्पाद टीमें इस पर काम कर रही हैं, जल्द ही संतुष्टि की उम्मीद है।"
+   },
+   "rateUsReviewStepTextContent": {
+      "message": "आपकी प्रतिक्रिया"
+   },
+   "rateUsReviewStepTitleContent": {
+      "message": "हम कैसे सुधार सकते हैं?"
+   },
+   "rateUsSReviewStepTitle": {
+      "message": "धन्यवाद, आपकी राय हमारे लिए महत्वपूर्ण है!"
+   },
+   "rateUsSubmittingStepBtn": {
+      "message": "जमा करें"
+   },
+   "rateUsSubmittingStepSubTitle": {
+      "message": "आप क्या सोचते हैं हमें बताने के लिए सितारों पर टैप करें"
+   },
+   "rateUsSubmittingStepTitle": {
+      "message": "आप ब्लॉकसाइट को कैसे रेट करेंगे?"
+   },
+   "redirectOnBoardingDescription": {
+      "message": "एक वेबसाइट जोड़ें जिसे आप किसी अवरुद्ध साइट, कीवर्ड तक पहुँचने का प्रयास करते समय या फ़ोकस मोड का उपयोग करते समय पुनर्निर्देशित करना चाहते हैं"
+   },
+   "redirectOnBoardingTitle": {
+      "message": "रीडायरेक्ट साइट सेट करें"
+   },
+   "resetPasswordSuccessBtnText": {
+      "message": "ठीक"
+   },
+   "resetPasswordSuccessSubTitle": {
+      "message": "आपका पासवर्ड भेज दिया गया है $MAIL$",
+      "placeholders": {
+         "mail": {
+            "content": "$1",
+            "example": "example@mail.com"
+         }
+      }
+   },
+   "resetPasswordSuccessTitle": {
+      "message": "पासवर्ड भेजा गया"
+   },
+   "rewardUnlockCta": {
+      "message": "सभी पुरस्कार ब्राउज़ करें"
+   },
+   "rewardUnlockDescription": {
+      "message": "बहुत बढ़िया! आपकी कड़ी मेहनत रंग लाई है और आपको इसका इनाम मिला है! आप इसे अभी उपयोग कर सकते हैं या इसे बाद के लिए सहेज सकते हैं।"
+   },
+   "rewardUnlockTitle": {
+      "message": "इनाम खुला!"
+   },
+   "saveEmailSettings": {
+      "message": "सहेजें"
+   },
+   "scheduleOnBoardingDescription": {
+      "message": "विशिष्ट दिनों और समय सीमा पर साइटों को ब्लॉक करें। इन समय सीमा के बाहर साइटों को ब्लॉक नहीं किया जाएगा।"
+   },
+   "scheduleOnBoardingTitle": {
+      "message": "ब्लॉकिंग शेड्यूल बनाएं"
+   },
+   "setFirstPassProtectUserActionCTA": {
+      "message": "बहुत खुबस"
+   },
+   "setFirstPassProtectUserActionSubTitle": {
+      "message": "विचलित होने से बचना अब बहुत आसान हो जाएगा"
+   },
+   "setFirstPassProtectUserActionTitle": {
+      "message": "अच्छी नौकरी!"
+   },
+   "setUpEmailAndPass": {
+      "message": "सक्रिय करने के लिए ईमेल और पासवर्ड का सेटअप करें"
+   },
+   "settingEnableFocusModeFaviconSubtitle": {
+      "message": "एक्सटेंशन के फ़ेविकॉन पर वर्तमान अंतराल में बचे समय को दिखाने के लिए इसे सक्षम करें।"
+   },
+   "settingEnableFocusModeFaviconTitle": {
+      "message": "शेष समय फ़ेविकॉन पर दिखाएं"
+   },
+   "settingEnableSyncStatusSubtitle": {
+      "message": "मोबाइल और / या अन्य एक्सटेंशन के साथ आसानी से सक्षम / अक्षम करने के लिए शॉर्टकट दिखाने के लिए सक्षम करें।"
+   },
+   "settingEnableSyncStatusTitle": {
+      "message": "सिंक विकल्प पृष्ठ शॉर्टकट मेनू दिखाएं"
+   },
+   "settingsChangedTitle1": {
+      "message": "अतिरिक्त सुरक्षा सुविधाएं सक्रिय करने के लिए, कृपया अपना ईमेल और पासवर्ड सहेजें."
+   },
+   "settingsEnableBlockSiteShortcutSubtitle": {
+      "message": "किसी वेबसाइट पर राइट-क्लिक करके और ब्लॉकसाइट मेनू का चयन करके अपनी ब्लॉक सूची या अपनी फ़ोकस मोड सूची में साइटें जोड़ें।"
+   },
+   "settingsEnableBlockSiteShortcutTitle": {
+      "message": "राइट-क्लिक का उपयोग करके ब्लॉकसाइट शॉर्टकट विकल्प को सक्षम करें"
+   },
+   "settingsGeneralHeader": {
+      "message": "सामान्य"
+   },
+   "settingsIntegrationsHeader": {
+      "message": "एकीकरण"
+   },
+   "settingsNotSaved": {
+      "message": "सेटिंग्स नहीं सहेजी गई"
+   },
+   "settingsOptionSubtitle": {
+      "message": ""
+   },
+   "settingsOptionTitle": {
+      "message": "सेटिंग्‍स"
+   },
+   "settingsShowMotivationalSubtitle": {
+      "message": "इसे सक्षम करने से अवरुद्ध साइट पर चित्र दिखाई देंगे। अक्षम करने पर एक श्वेत पृष्ठभूमि दिखाई देगी।"
+   },
+   "settingsShowMotivationalTitle": {
+      "message": "अवरुद्ध पृष्ठ प्रेरक चित्र दिखाएं"
+   },
+   "settingsSlackDNDSubtitle": {
+      "message": "फ़ोकस सत्र में स्लैक टू डू नॉट डिस्टर्ब मोड को स्वचालित रूप से सेट करें"
+   },
+   "settingsSlackDNDTitle": {
+      "message": "ध्यान सत्र के दौरान सुस्त DND"
+   },
+   "settingsSlackDNDTurnOffOverlayNoThanks": {
+      "message": "जी नहीं, धन्यवाद"
+   },
+   "settingsSlackDNDTurnOffOverlaySubtitle": {
+      "message": "यदि आप ब्लॉकसाइट के लिए स्लैक को बंद कर देते हैं, तो आप अधिक आसानी से विचलित हो जाएंगे। क्या आप अब भी Slack को बंद करना चाहते हैं?"
+   },
+   "settingsSlackDNDTurnOffOverlayTitle": {
+      "message": "क्या आप सुनिश्चित हैं?"
+   },
+   "settingsSlackDNDTurnOffOverlayYesPlease": {
+      "message": "जी बोलिये"
+   },
+   "settingsSlackDNDTurnOnOverlayGoUnlimitedSlackAccount": {
+      "message": "असीमित जाओ"
+   },
+   "settingsSlackDNDTurnOnOverlayLinkSlackAccount": {
+      "message": "लिंक स्लैक खाता"
+   },
+   "settingsSlackDNDTurnOnOverlayMaybeLater": {
+      "message": "शायद बाद में"
+   },
+   "settingsSlackDNDTurnOnOverlayNotifications": {
+      "message": "स्वचालित रूप से नॉट डिस्टर्ब मोड सेट करके फ़ोकस मोड के दौरान मौन पर सूचनाएं डालें"
+   },
+   "settingsSlackDNDTurnOnOverlayPrivacy": {
+      "message": "कृपया ध्यान दें: ब्लॉकसाइट आपके संदेशों को निजी रखता है। हम भेजे या प्राप्त किए गए किसी भी संदेश या चैट को संग्रहीत या देखते नहीं हैं।"
+   },
+   "settingsSlackDNDTurnOnOverlayTitle": {
+      "message": "ब्लॉकसेइट के साथ स्लैक को एकीकृत करके और भी अधिक विकर्षणों से बचें"
+   },
+   "settingsSlackDNDTurnOnUpgradeOverlayTitle": {
+      "message": "ब्लॉकसाइट के साथ स्लैक को एकीकृत करने के लिए असीमित पर अपग्रेड करें"
+   },
+   "settingsSlackDNDUpgradeButton": {
+      "message": "असीमित जाओ"
+   },
+   "settingsSlackSubtitleNonPremium": {
+      "message": "स्‍लैक के लिए ब्‍लॉकसाइट्स ऑटोमेशन के साथ अपने फोकस को सशक्त बनाने के लिए ब्लॉकसाइट अनलिमिटेड पर अपग्रेड करें।"
+   },
+   "settingsSlackSubtitlePremium": {
+      "message": "स्लैक के लिए ब्लॉकसाइट ऑटोमेशन के साथ अपना ध्यान केंद्रित करें।"
+   },
+   "settingsSyncHeader": {
+      "message": "सिंक करें"
+   },
+   "settingsSyncSubtitle": {
+      "message": "अपने वर्तमान एक्सटेंशन की प्राथमिकताओं को बैकअप करें और उसी उपयोगकर्ता खाते के तहत साइन इन करने पर हमारे एंड्रॉइड और / या एक्सटेंशन प्लेटफार्मों से 4 अन्य उपकरणों के साथ क्लाउड या सिंक करने के लिए सूची को ब्लॉक करें।"
+   },
+   "settingsSyncTitle": {
+      "message": "अन्य उपकरणों के साथ सिंक"
+   },
+   "settingsViewHeader": {
+      "message": "राय"
+   },
+   "shareLinkedinIconTitle": {
+      "message": "लिंक्डइन"
+   },
+   "sharePopupSubTitle": {
+      "message": "ब्लॉकसाइट के बारे में बताकर दूसरों की मदद करें"
+   },
+   "sharePopupTitle": {
+      "message": "उत्पादकता और फ़ोकस के लिए अपने प्यार को साझा करें"
+   },
+   "shareTwitterIconTitle": {
+      "message": "ट्विटर"
+   },
+   "specialOfferPopupFinePrint": {
+      "message": "सालाना बिल किया। आवर्ती बिलिंग। किसी भी कारण से कभी भी रद्द करें"
+   },
+   "specialOfferPopupGoMaybeLater": {
+      "message": "शायद बाद में"
+   },
+   "specialOfferPopupGoUnlimited": {
+      "message": "असीमित जाओ"
+   },
+   "specialOfferPopupSave": {
+      "message": "सहेजें"
+   },
+   "specialOfferPopupSubtitle": {
+      "message": " आपको बल्क ब्लॉकिंग, पासवर्ड सुरक्षा, और बहुत कुछ जैसी सुविधाएं भी मिलेंगी। बस सीमित समय केवल के लिए!"
+   },
+   "specialOfferPopupTitle": {
+      "message": "$ . के लिए असीमित अवरोधन प्राप्त करें"
+   },
+   "specialOfferPopupYear": {
+      "message": "साल"
+   },
+   "syncOverrideConfirmationApprove": {
+      "message": "हाँ"
+   },
+   "syncOverrideConfirmationCancel": {
+      "message": "नहीं"
+   },
+   "syncOverrideConfirmationSubTitle": {
+      "message": "ऑफ़लाइन मोड में किए गए सभी परिवर्तन अन्य उपकरणों पर अपडेट नहीं किए जाएंगे और खो जाएंगे।"
+   },
+   "syncOverrideConfirmationTitle": {
+      "message": "क्या आप सुनिश्चित हैं?"
+   },
+   "tagTextLatestNews": {
+      "message": "ताज़ा खबर"
+   },
+   "tagTextPremium": {
+      "message": "प्रीमियम"
+   },
+   "tagTextQuickTip": {
+      "message": "तुरता सलाह"
+   },
+   "tooltipExportList": {
+      "message": "सूची निर्यात करें"
+   },
+   "tooltipImportList": {
+      "message": "सूची आयात करें"
+   },
+   "updateEmailAndPassword": {
+      "message": "ईमेल और पासवर्ड अपडेट करें"
+   },
+   "updateThemHereLink": {
+      "message": "उन्हें यहां अपडेट करें"
+   },
+   "userActionStars": {
+      "message": "आपने +$STARS$ सितारे अर्जित किए हैं",
+      "placeholders": {
+         "stars": {
+            "content": "$1",
+            "example": "25"
+         }
+      }
+   },
+   "verificationCheckYourEmail": {
+      "message": "सक्षम करने के लिए, कृपया सत्यापन लिंक के लिए अपना ईमेल देखें।"
+   },
+   "verificationClickToResend": {
+      "message": "कृपया यहां क्लिक करें resend करने के लिए।"
+   },
+   "verificationDidntReceiveEmail": {
+      "message": "यदि आपको ईमेल प्राप्त नहीं हुआ है,"
+   },
+   "verifyResetPasswordAcceptBtn": {
+      "message": "हाँ, पासवर्ड रीसेट करें"
+   },
+   "verifyResetPasswordCancelBtn": {
+      "message": "नहीं, रद्द करें"
+   },
+   "verifyResetPasswordText": {
+      "message": "हम आपका पासवर्ड रीसेट कर देंगे और आपके ईमेल पर एक नया पासवर्ड भेज देंगे"
+   },
+   "verifyResetPasswordTitle": {
+      "message": "क्या आप सुनिश्चित हैं?"
+   },
+   "viewAccount": {
+      "message": "अपना खाता देखें"
+   },
+   "whatsNewFeature1": {
+      "message": "बेहतर फोकस के लिए हमने आपके ब्लॉकिंग अनुभव में सुधार किया है और अब आप अपने ब्लॉकिंग शेड्यूल में श्रेणियां और कीवर्ड जोड़ सकते हैं।"
+   },
+   "whatsNewGotIt": {
+      "message": "समझ गया"
+   },
+   "whatsNewSubtitle": {
+      "message": "यहाँ ब्लॉकसाइट पर नया क्या है:"
+   },
+   "whatsNewTitle": {
+      "message": "वापसी पर स्वागत है"
+   },
+   "whiteListRedirectRemovePopupDescription": {
+      "message": "श्वेत और काली सूची मोड के बीच स्विच करते समय हमें आपकी रीडायरेक्ट साइट को साफ़ करना होगा"
+   },
+   "whitelistInfoToolTip": {
+      "message": "अपने श्वेत सूची में उन लोगों के अलावा सभी वेबसाइटों को ब्लॉक करें"
+   },
+   "whitelistModeTitle": {
+      "message": "Whitelist मोड"
+   },
+   "whitelistPopUpDescription": {
+      "message": "उन साइटों के अलावा सभी साइट्स ब्लॉक हो जाएंगी जो सूची में हैं."
+   },
+   "whitelistPopUpTitle": {
+      "message": "क्या आप सुनिश्चित हैं?"
+   },
+   "workModeEnterPassToPauseOrReset": {
+      "message": "%TIMER_ACTION% लिए अपना पासवर्ड दर्ज करें",
+      "placeholders": {
+         "timer_action": {
+            "content": "$1",
+            "example": "25"
+         }
+      }
+   },
+   "workModeToPauseOrResetEnterPassword": {
+      "message": "%TIMER_ACTION% पासवर्ड डालें",
+      "placeholders": {
+         "timer_action": {
+            "content": "$1",
+            "example": "25"
+         }
+      }
+   },
+   "workModeWrongPassword": {
+      "message": "गलत पासवर्ड"
+   },
+   "wrongPassword": {
+      "message": "उफ़! यह नहीं है. कृपया पुनः प्रयास करें."
+   }
+}

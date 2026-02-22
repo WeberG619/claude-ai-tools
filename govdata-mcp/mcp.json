@@ -1,7 +1,7 @@
 {
   "name": "govdata-mcp",
-  "version": "1.0.0",
-  "description": "Government Data MCP Server - Building permits, code violations, zoning, OSHA inspections, and contractor licensing across multiple US jurisdictions",
+  "version": "2.0.0",
+  "description": "Government Data MCP Server - Building permits, code violations, zoning, OSHA inspections, contractor licensing, and building code reference across 25+ US jurisdictions. Supports IBC 2021, IRC 2021, FBC 2023, and FBC Residential 2023.",
   "tools": [
     "search_permits",
     "get_permit_details",
@@ -10,22 +10,32 @@
     "search_contractors",
     "get_building_permits_stats",
     "search_osha_inspections",
-    "lookup_building_code"
+    "lookup_building_code",
+    "list_jurisdictions"
   ],
   "categories": {
     "permits": ["search_permits", "get_permit_details", "get_building_permits_stats"],
     "violations": ["search_code_violations", "search_osha_inspections"],
     "zoning": ["lookup_zoning"],
     "contractors": ["search_contractors"],
-    "codes": ["lookup_building_code"]
+    "codes": ["lookup_building_code"],
+    "discovery": ["list_jurisdictions"]
   },
   "supported_jurisdictions": [
-    "miami-dade",
-    "san-francisco",
-    "new-york",
-    "chicago",
-    "los-angeles"
+    "miami-dade", "san-francisco", "new-york", "chicago", "los-angeles",
+    "broward", "coral-springs", "palm-beach", "orlando", "hillsborough",
+    "pinellas", "jacksonville",
+    "florida-geo", "florida-dep", "florida-dot", "florida-dbpr",
+    "houston", "dallas", "austin", "seattle", "portland",
+    "denver", "phoenix", "philadelphia", "boston", "atlanta", "washington-dc"
   ],
+  "building_code_editions": [
+    "2021 IBC",
+    "2021 IRC",
+    "2023 FBC",
+    "2023 FBC Residential"
+  ],
+  "data_platforms": ["arcgis", "socrata", "reference"],
   "env_vars": {
     "CENSUS_API_KEY": "Optional - Census Bureau API key for building permit statistics",
     "SOCRATA_APP_TOKEN": "Optional - Socrata app token for higher rate limits"

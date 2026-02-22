@@ -136,10 +136,21 @@ Start-Process "path\to\document.docx"
 
 ## 📊 MICROSOFT EXCEL
 
-**Opening Excel:**
+**Launch via COM (required for MCP control):**
+```powershell
+$excel = New-Object -ComObject Excel.Application
+$excel.Visible = $true
+$wb = $excel.Workbooks.Add()
+```
+
+**NEVER use `Start-Process excel.exe`** — COM binding won't work reliably.
+
+**Open existing file:**
 ```powershell
 Start-Process "path\to\spreadsheet.xlsx"
 ```
+
+**Position on monitor:** See `/mnt/d/_CLAUDE-TOOLS/WINDOW_MANAGEMENT.md`
 
 ---
 
@@ -207,6 +218,20 @@ mcp__claude-memory__memory_store_correction(
 
 ---
 
+## 🖥️ WINDOW MANAGEMENT (Multi-Monitor + DPI)
+
+**Full guide:** `/mnt/d/_CLAUDE-TOOLS/WINDOW_MANAGEMENT.md`
+
+**Quick rules:**
+- 3 monitors, all 2560x1440 virtual (3840x2160 physical, 150% DPI)
+- Center monitor = DISPLAY2, x=-2560 (Weber's preferred demo monitor)
+- **MUST call `SetProcessDPIAware()` before any `SetWindowPos`**
+- **NEVER use `ShowWindow(SW_MAXIMIZE)`** — spans monitors
+- **NEVER use `window_move` MCP tool** — not DPI-aware
+- Use `SetWindowPos(hwnd, 0, -2560, 0, 2560, 1400, 0x0004)` for center monitor
+
+---
+
 ## ❌ COMMON MISTAKES - NEVER DO THESE
 
 | Wrong | Correct |
@@ -217,6 +242,74 @@ mcp__claude-memory__memory_store_correction(
 | HTTP to Revit ports | Use named pipes |
 | Guess paths | Check system state or ask |
 | Skip reading workflows | Always read this file first |
+| Use `window_move` MCP tool | Use DPI-aware `SetWindowPos` pattern |
+| Use `ShowWindow(SW_MAXIMIZE)` | Use `SetWindowPos` to fill monitor |
+| Use `Start-Process excel.exe` | Use `New-Object -ComObject Excel.Application` |
+| Send keys without verifying focus | `SetForegroundWindow` + screenshot first |
+
+---
+
+## 🏛️ PERMIT & PROPERTY RESEARCH
+
+### eTRAKiT Permit Tracking
+**MCP Server:** `mcp__etrakit-mcp__*`
+**Path:** `/mnt/d/_CLAUDE-TOOLS/etrakit-mcp/`
+
+Scrapes CentralSquare eTRAKiT permit portals (Broward County cities). Uses CDP browser automation with 30-minute cache.
+
+```
+mcp__etrakit-mcp__search_permits(city="...", permit_number="...")
+mcp__etrakit-mcp__get_permit_details(city="...", permit_number="...")
+```
+
+### Property Appraiser
+**MCP Server:** `mcp__property-appraiser-mcp__*`
+**Path:** `/mnt/d/_CLAUDE-TOOLS/property-appraiser-mcp/`
+
+Scrapes Broward County (BCPA) and Miami-Dade County property appraiser data. 7-day cache TTL.
+
+```
+mcp__property-appraiser-mcp__search_property(county="broward", address="...")
+mcp__property-appraiser-mcp__get_property_details(folio="...")
+```
+
+### Government Data
+**MCP Server:** `mcp__govdata-mcp__*`
+**Path:** `/mnt/d/_CLAUDE-TOOLS/govdata-mcp/`
+
+Building permits, code violations, zoning data from government open data portals.
+
+---
+
+## 🔬 RESEARCH TOOLS
+
+### Academic Research
+**MCP Server:** `mcp__research-mcp__*`
+**Path:** `/mnt/d/_CLAUDE-TOOLS/research-mcp/`
+
+Literature discovery and analysis from academic sources.
+
+### HuggingFace Datasets
+**MCP Server:** `mcp__datasets-mcp__*`
+**Path:** `/mnt/d/_CLAUDE-TOOLS/datasets-mcp/`
+
+Search, explore, preview, and download HuggingFace Hub datasets.
+
+---
+
+## 👁️ VISUAL MEMORY
+
+**MCP Server:** `mcp__visual-memory__*`
+**Path:** `/mnt/d/_CLAUDE-TOOLS/visual-memory-mcp/`
+
+Captures screen at intervals, indexes with OCR, enables visual recall. Privacy-first with whitelist/blocklist controls.
+
+```
+mcp__visual-memory__memory_start_capture()   # Start capturing
+mcp__visual-memory__memory_search(query="...") # Search by text in screenshots
+mcp__visual-memory__memory_recall_recent()    # Get recent captures
+mcp__visual-memory__memory_recall_app(app="...") # Get captures from specific app
+```
 
 ---
 
@@ -230,5 +323,5 @@ mcp__claude-memory__memory_store_correction(
 
 ---
 
-*Last Updated: 2026-01-26*
+*Last Updated: 2026-02-22*
 *Add new workflows here as they are established*

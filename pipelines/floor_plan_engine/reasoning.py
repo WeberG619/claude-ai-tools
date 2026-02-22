@@ -26,9 +26,26 @@ def _find_entry_room(plan: FloorPlan) -> str:
             return r.name
     # 2. Room connected to an entry door (room_b == "exterior")
     for d in plan.doors:
-        if d.room_b == "exterior" or (not d.room_b and d.room_a):
+        if d.room_b == "exterior" and d.room_a:
             return d.room_a
-    # 3. Fallback: room closest to south wall (y=0)
+        if not d.room_b and d.room_a:
+            return d.room_a
+    # 3. Entry door exists but room_a is empty — find nearest room
+    for d in plan.doors:
+        if d.room_b == "exterior" and not d.room_a:
+            # Find nearest room to the entry door location
+            best = None
+            best_dist = float('inf')
+            for r in plan.rooms:
+                # Distance from door to room center
+                dist = ((d.location[0] - r.cx) ** 2
+                        + (d.location[1] - r.cy) ** 2) ** 0.5
+                if dist < best_dist:
+                    best_dist = dist
+                    best = r
+            if best:
+                return best.name
+    # 4. Fallback: room closest to south wall (y=0)
     if plan.rooms:
         return min(plan.rooms, key=lambda r: r.y).name
     return ""
@@ -43,8 +60,30 @@ def _room_by_name(plan: FloorPlan, name: str) -> Optional[RoomRect]:
 
 
 def _room_has_exterior_wall(room: RoomRect, fp_w: float, fp_h: float,
-                            tol: float = 0.5) -> List[str]:
-    """Return list of sides ('south','north','east','west') on the exterior."""
+                            tol: float = 0.5,
+                            polygon: List[Tuple[float, float]] = None) -> List[str]:
+    """Return list of sides ('south','north','east','west') on the exterior.
+
+    When a polygon is provided, checks each room edge against the polygon
+    edges rather than just the bounding box.
+    """
+    if polygon:
+        from .wall_utils import is_on_polygon_edge
+        sides = []
+        # south edge
+        if is_on_polygon_edge(room.x, room.y, room.right, room.y, polygon, tol):
+            sides.append("south")
+        # north edge
+        if is_on_polygon_edge(room.x, room.top, room.right, room.top, polygon, tol):
+            sides.append("north")
+        # west edge
+        if is_on_polygon_edge(room.x, room.y, room.x, room.top, polygon, tol):
+            sides.append("west")
+        # east edge
+        if is_on_polygon_edge(room.right, room.y, room.right, room.top, polygon, tol):
+            sides.append("east")
+        return sides
+
     sides = []
     if room.y <= tol:
         sides.append("south")
@@ -365,7 +404,8 @@ def analyze_windows(plan: FloorPlan) -> dict:
             continue
 
         ext_sides = _room_has_exterior_wall(
-            r, plan.footprint_width, plan.footprint_height
+            r, plan.footprint_width, plan.footprint_height,
+            polygon=plan.footprint_polygon or None,
         )
 
         if rule.get("needs_egress") and r.name not in rooms_with_windows:
@@ -445,7 +485,8 @@ def narrate_walkthrough(plan: FloorPlan, graph: Dict[str, List[str]],
     parts = []
     entry_room = room_map[entry]
     ext_sides = _room_has_exterior_wall(
-        entry_room, plan.footprint_width, plan.footprint_height
+        entry_room, plan.footprint_width, plan.footprint_height,
+        polygon=plan.footprint_polygon or None,
     )
     entry_side = ext_sides[0] if ext_sides else "south"
 

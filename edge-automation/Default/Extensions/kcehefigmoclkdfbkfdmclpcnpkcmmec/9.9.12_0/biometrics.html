@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Verify Biometrics</title>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <link href="pages/application.css" rel="stylesheet" />
+    <style>
+      html,
+      body {
+        padding: 0;
+        margin: 0;
+        font-family: Poppins, Roboto, Helvetica, Arial, sans-serif;
+      }
+      iframe {
+        border: none;
+        width: 180px;
+        height: 200px;
+        transition: height 0.3s;
+      }
+      .header {
+        box-sizing: border-box;
+        padding: 30px 30px 15px;
+        width: 100%;
+      }
+      .header__logo {
+        width: 80px;
+        height: auto;
+      }
+      .header__title {
+        display: none;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 1.3125rem;
+        line-height: 138%;
+        color: #003049;
+        margin-bottom: 0;
+      }
+      .header__title--secondary {
+        color: #0AAF96;
+      }
+      .container {
+        box-sizing: border-box;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 10px 20px 15px;
+        position: relative;
+      }
+      .step {
+        display: none;
+      }
+      .step__icon {
+        width: 100px;
+        height: 100px;
+        margin: 0 auto;
+      }
+      .step__title {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 1rem;
+        line-height: 150%;
+        text-align: center;
+        color: #003049;
+        opacity: 1;
+        transition: opacity 0.3s;
+        margin-top: 0;
+        transition: height 0.3s;
+      }
+      .step__description {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 150%;
+        text-align: center;
+        color: #000000;
+        opacity: 1;
+        transition: opacity 0.3s;
+      }
+      .description__hint-title {
+        display: block;
+        font-size: 0.875rem;
+        line-height: 160%;
+        color: #003049;
+        font-weight: 600;
+        margin: 16px 0;
+      }
+      .description__hint {
+        display: block;
+        font-size: 0.75rem;
+        line-height: 160%;
+        color: #003049;
+        margin-bottom: 8px;
+      }
+      .retry-button {
+        margin: 8px auto 15px;
+      }
+      .error {
+        color: #ec7a58;
+      }
+      #instructions {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: white;
+        height: 100%;
+        width: 100%;
+      }
+      #instructions > ol {
+        list-style: none;
+        margin: 0 15px 20px;
+      }
+      #instructions > ol > li {
+        counter-increment: customlistcounter;
+        margin-bottom: 16px;
+        color: #000;
+      }
+      #instructions > ol > li::before {
+        content: counter(customlistcounter) ':';
+        padding-right: 5px;
+      }
+      #instructions > ol > li > b {
+        font-weight: 600;
+      }
+      a[id^='instructions-button'] {
+        margin: 5px 0 15px;
+        font-size: 0.875rem;
+        color: #0aaf96;
+        cursor: pointer;
+      }
+      a#instructions-button--hide {
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <img
+        src="/pages/images/blur_logo_ext_window.png"
+        class="header__logo"
+        alt="IronVest Logo"
+      />
+      <h3 id="title--idle" class="header__title">Confirming Your Identity!</span>
+      <h3 id="title--in-progress" class="header__title"> Confirming Your Identity!</span>
+      <h3 id="title--malware-scanning" class="header__title">Confirming Your Identity!</span>
+      <h3 id="title--success" class="header__title header__title--secondary">Identity Confirmed!</span>
+      <h3 id="title--failure" class="header__title error">Biometrics Verification Failed</span>
+      <h3 id="title--missing-permissions" class="header__title error">Something went wrong!</span>
+      <h3 id="title--instructions"class="header__title">Camera Blocked!</span>
+    </div>
+    <div class="container">
+      <iframe id="biometrics-iframe" src allow="camera"></iframe>
+
+      <div id="step--idle" class="step">
+        <h6 class="step__title">Verifying Biometrics...</h6>
+        <p class="step__description">Stay within the preview window</p>
+      </div>
+
+      <div id="step--in-progress" class="step">
+        <h6 class="step__title">Checking it's really you...</h6>
+        <p class="step__description">Let's triple-check and make absolutely certain</p>
+      </div>
+
+      <div id="step--malware-scanning" class="step">
+        <h6 class="step__title">Checking for malware...</h6>
+        <p class="step__description">Double-checking for any sneaky shenanigans</p>
+      </div>
+
+      <div id="step--success" class="step">
+        <h6 class="step__title">Success!</h6>
+        <p class="step__description">Looking good</p>
+      </div>
+
+      <div id="step--failure" class="step">
+        <img
+          src="/pages/images/verification-failed.svg"
+          class="step__icon"
+          alt="Verification failed"
+        />
+        <p class="step__description">
+          <span class="description__hint-title">For best results:</span>
+          <span class="description__hint">Use a <b>light source</b> to illuminate your face.</span>
+          <span class="description__hint">Keep your <b>face centered</b> within the video preview.</span>
+          <span class="description__hint"><b>Hold still</b> for 3 seconds during the capture.</span>
+          <button class="retry-button btn btn-primary">Try again</button>
+        </p>
+      </div>
+
+      <div id="step--missing-permissions" class="step">
+        <button class="retry-button btn btn-primary">Try again</button>
+        <p id="description" class="step__description">
+          A camera isn't present or it may be blocked by your browser.
+        </p>
+        <a id="instructions-button--show">
+          Show Instructions on How To Resolve
+        </a>
+      </div>
+
+      <div id="instructions">
+        <ol>
+          <li>
+            Click on
+            <img
+              width="21px"
+              height="21px"
+              src="/pages/images/biometrics/chrome/camera-blocked.svg"
+              alt="Camera"
+            />
+            at the top right of your browsers address bar.
+            <br />
+            <img
+              style="margin-top: 16px"
+              width="345px"
+              height="54px"
+              src="/pages/images/biometrics/chrome/camera-address-bar.svg"
+              alt="Address bar"
+            />
+          </li>
+          <li>
+            In the camera blocked dialog, choose
+            "<b>Always&nbsp;Allow&nbsp;(Placeholder&nbsp;Text)....</b>".
+          </li>
+          <li>
+            Once selected, click "<b>Done</b>" and reload load the page to apply
+            the change.
+          </li>
+        </ol>
+        <a id="instructions-button--hide">Hide Instructions</a>
+      </div>
+    </div>
+    <script type="application/javascript" src="jquery-min.js"></script>
+    <script type="application/javascript" src="biometrics.js"></script>
+  </body>
+</html>

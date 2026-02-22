@@ -71,13 +71,16 @@ class FreelancerScout(BaseScout):
 
         for term in FREELANCER_SEARCH_TERMS:
             try:
-                cmd = f"cd 'D:\\_CLAUDE-TOOLS\\opportunityengine\\scouts'; python freelancer_browser.py '{term}'"
+                cmd = f"cd 'D:\\_CLAUDE-TOOLS\\opportunityengine\\scouts'; python freelancer_browser.py '{term}' 2>$null"
                 result = _run_ps(cmd, timeout=60)
-                if result.returncode != 0:
-                    logger.warning(f"Freelancer scrape failed for '{term}': {result.stderr[:200]}")
-                    continue
 
                 stdout = result.stdout.strip()
+
+                # Check for JSON output first — Node deprecation warnings on stderr
+                # cause PowerShell to return non-zero even when the script succeeds
+                if not stdout or (result.returncode != 0 and "[" not in stdout and "{" not in stdout):
+                    logger.warning(f"Freelancer scrape failed for '{term}': {result.stderr[:200] if result.stderr else 'no output'}")
+                    continue
                 json_start = stdout.find("[")
                 if json_start == -1:
                     json_start = stdout.find("{")

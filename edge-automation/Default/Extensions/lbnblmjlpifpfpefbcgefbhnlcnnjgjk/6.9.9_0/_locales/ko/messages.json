@@ -1,0 +1,2077 @@
+{
+   "100thSiteAddedUserActionCTA": {
+      "message": "위대한"
+   },
+   "100thSiteAddedUserActionSubTitle": {
+      "message": "100개의 사이트가 사용자의 블록 목록에 추가되었습니다."
+   },
+   "100thSiteAddedUserActionTitle": {
+      "message": "와!"
+   },
+   "5thSiteAddedUserActionCTA": {
+      "message": "섬뜩한"
+   },
+   "5thSiteAddedUserActionSubTitle": {
+      "message": "5개의 사이트를 블록 목록에 추가하는 방법"
+   },
+   "5thSiteAddedUserActionTitle": {
+      "message": "오!"
+   },
+   "InsightsTab": {
+      "message": "통찰력"
+   },
+   "PasswordProtectSecondStepSubtitle": {
+      "message": "'아래' 취소 ' 를 클릭하면 하루 평균 15분이 추가로 저장됩니다."
+   },
+   "PasswordProtectSecondStepTitle": {
+      "message": "이 페이지를 잠금 해제하시겠습니까?"
+   },
+   "PinToToolBarMessageBtnText": {
+      "message": "이해했습니다"
+   },
+   "PinToToolBarMessageText": {
+      "message": "확장 목록을 표시하려면 이 목록을 선택하십시오."
+   },
+   "PinToToolBarMessageTitle": {
+      "message": "핀을 꼽는 BlockSite 는 100% 생산적이다."
+   },
+   "aboutBlockCategoriesSubtitle": {
+      "message": "단추를 토글하여 전체 카테고리를 신속하게 차단합니다."
+   },
+   "aboutBlockCategoriesTitle": {
+      "message": "블록 블록"
+   },
+   "aboutContactSupport": {
+      "message": "지원 센터 지원"
+   },
+   "aboutCreateBlockListsSubtitle": {
+      "message": "차단하려는 웹 사이트 또는 페이지를 사이트 목록에 추가하고, 더 안전하고 더 무해한 사이트로 자동으로 리디렉션되도록 합니다. 친숙한 사이트 목록을 만들고 특정 사이트 차단에서 특정 사이트만 작동이 가능하도록 전환할 수도 있습니다."
+   },
+   "aboutCreateBlockListsTitle": {
+      "message": "차단 목록 생성"
+   },
+   "aboutHowToEnableInInPrivateStep1": {
+      "message": "edge://확장 탐색"
+   },
+   "aboutHowToEnableInInPrivateStep2": {
+      "message": "BlockSite를 찾아서 클릭하기"
+   },
+   "aboutHowToEnableInInPrivateStep3": {
+      "message": "\"InPrivate에서 허용\" 상자를 선택하십시오."
+   },
+   "aboutHowToEnableInInPrivateSubtitle": {
+      "message": "에지의 InPrivate 모드에서 BlockSite를 사용하려면 다음 단계를 수행한다."
+   },
+   "aboutHowToEnableInInPrivateTitle": {
+      "message": "InPrivate 모드를 사용하는 방법"
+   },
+   "aboutHowToEnableInIncognitoStep1": {
+      "message": "Chrome으로 이동합니다://extensions"
+   },
+   "aboutHowToEnableInIncognitoStep2": {
+      "message": "Block Site를 찾습니다"
+   },
+   "aboutHowToEnableInIncognitoStep3": {
+      "message": "'Incognito에서 허용'을 체크 표시합니다"
+   },
+   "aboutHowToEnableInIncognitoSubtitle": {
+      "message": "크롬의 인코그니토 모드에서 블록 사이트를 사용하려면 다음 단계를 수행하십시오."
+   },
+   "aboutHowToEnableInIncognitoTitle": {
+      "message": "Incognito에서 활성화하는 방법"
+   },
+   "aboutIncognitoCTA": {
+      "message": "Incognito 모드"
+   },
+   "aboutIncognitoSubtitle": {
+      "message": "모든 Block Site 기능은 incognito 모드에서도 사용할 수 있습니다. 허용하기만 하면 됩니다. 방법을 확인하려면 다음 지침을 따르십시오: "
+   },
+   "aboutIncognitoTitle": {
+      "message": "Incognito 모드 (Chrome 에서만 사용 가능)"
+   },
+   "aboutKeepInternetSafeSubtitle": {
+      "message": "확장 메뉴를 통해 성인 차단을 활성화하여 한 번의 클릭으로 모든 성인 사이트를 차단합니다. "
+   },
+   "aboutKeepInternetSafeTitle": {
+      "message": "인터넷을 안전하게 보호하십시오."
+   },
+   "aboutPasswordSubtitle": {
+      "message": "설정 페이지에서 암호를 설정하여 Block Site 옵션에 대한 액세스를 제한하거나, 암호를 통해 차단된 사이트에 대한 액세스 옵션을 활성화합니다."
+   },
+   "aboutPasswordTitle": {
+      "message": "암호 설정"
+   },
+   "aboutPrivacyPolicy": {
+      "message": "개인정보 보호정책"
+   },
+   "aboutRateUsSubtitle": {
+      "message": "사이트 차단이 유용하다고 생각되면 Chrome 웹 스토어에서 평가해 주십시오. 저희에게 큰 힘이 됩니다."
+   },
+   "aboutRateUsTitle": {
+      "message": "마음에 드시나요? 모두에게 알려 주세요."
+   },
+   "aboutRightClickMenuSubtitle": {
+      "message": "웹 사이트의 아무곳에서나 마우스 오른쪽 단추를 클릭하여 빠른 액세스 메뉴를 엽니다. 몇 초 안에 사이트를 차단하여 미루는 버릇을 버리고 목표에 집중하십시오."
+   },
+   "aboutRightClickMenuTitle": {
+      "message": "오른쪽 클릭 메뉴"
+   },
+   "aboutScheduleSubtitle": {
+      "message": "Block Site 기능을 활성화할 일 수 및 기간을 선택합니다. 작업 일정에 따라 사용자 지정 차단을 설정하므로(예: 09:00 - 17:00), 회사나 학교에 있는 동안 집중할 수 있습니다."
+   },
+   "aboutScheduleTitle": {
+      "message": "특정 시간 동안 차단"
+   },
+   "aboutSubtitle": {
+      "message": "Block Site는 집중력을 유지하고 생산성을 개선시켜 줍니다. 집중을 방해하거나 유해한 웹 사이트를 간단히 차단할 수 있습니다. 힘들게 절제할 필요가 없어집니다."
+   },
+   "aboutTermsOfUse": {
+      "message": "이용 약관"
+   },
+   "aboutTitle": {
+      "message": "Block Site 정보"
+   },
+   "addBlockInputAddButton": {
+      "message": "Add Item"
+   },
+   "addEmailAndPassword": {
+      "message": "이메일 및 암호 추가"
+   },
+   "addFirstKeywordUserActionCTA": {
+      "message": "만세"
+   },
+   "addFirstKeywordUserActionSubTitle": {
+      "message": "키워드를 차단하면 훨씬 더 생산적이 될 것이다."
+   },
+   "addFirstKeywordUserActionTitle": {
+      "message": "보아!"
+   },
+   "addFirstRedirectUserActionCTA": {
+      "message": "탁월한"
+   },
+   "addFirstRedirectUserActionSubTitle": {
+      "message": "이제 차단된 사이트가 경로 재지정되므로 사용자가 더 초점을 맞출 수 있습니다."
+   },
+   "addFirstRedirectUserActionTitle": {
+      "message": "좋아!"
+   },
+   "addSiteAddModePrimaryButton1": {
+      "message": "블록 리스트에 추가"
+   },
+   "addSiteAddModePrimaryButton2": {
+      "message": "블록 리스트에 추가"
+   },
+   "addSiteAddModePrimaryButton3": {
+      "message": "블록 리스트에 추가"
+   },
+   "addSiteAddModePrimaryButton4": {
+      "message": "블록 리스트에 추가"
+   },
+   "addSiteAddModeSecondaryButton1": {
+      "message": "아마 나중에"
+   },
+   "addSiteAddModeSecondaryButton2": {
+      "message": "아마 나중에"
+   },
+   "addSiteAddModeSecondaryButton3": {
+      "message": "아마 나중에"
+   },
+   "addSiteAddModeSecondaryButton4": {
+      "message": "아마 나중에"
+   },
+   "addSiteAddModeSubTitle1": {
+      "message": "이 웹 사이트를 차단하여 구역에 남아 있는지 확인하십시오."
+   },
+   "addSiteAddModeSubTitle2": {
+      "message": "이 사이트를 블록 목록에 추가하여 생산성 향상"
+   },
+   "addSiteAddModeSubTitle3": {
+      "message": "이 사이트를 블록 목록에 추가하여 생산성을 10% 증가시키십시오."
+   },
+   "addSiteAddModeSubTitle4": {
+      "message": "시간 낭비 사이트가 발견되었습니다! 이제 초점을 맞추기 위해 블록을 작성합니다."
+   },
+   "addSiteAddModeTitle1": {
+      "message": "정신이 산만해지지 마!"
+   },
+   "addSiteAddModeTitle2": {
+      "message": "구역에 있어!"
+   },
+   "addSiteAddModeTitle3": {
+      "message": "추가 (website.com) 하여 시간을 절약할 수 있습니다."
+   },
+   "addSiteAddModeTitle4": {
+      "message": "블록 (website.com) 에서 하루에 한 시간을 더 절약할 수 있습니다!"
+   },
+   "addSiteAreYouSurePrimaryButton": {
+      "message": "예, Do It"
+   },
+   "addSiteAreYouSureSecondaryButton": {
+      "message": "아니오, 취소"
+   },
+   "addSiteAreYouSureSubTitle": {
+      "message": "블록사이트는 방해 사이트 차단을 제안하는 것을 중단할 것이다."
+   },
+   "addSiteAreYouSureTitle": {
+      "message": "계속 진행할까요?"
+   },
+   "addSiteReachedLimitPrimaryButton": {
+      "message": "무제한"
+   },
+   "addSiteReachedLimitSecondaryButton": {
+      "message": "아마 나중에"
+   },
+   "addSiteReachedLimitSubTitle": {
+      "message": "지금 업그레이드하여 UNLIMITED 블록 목록을 얻고 생산성을 향상시키고 시간을 절약할 수 있는 더 많은 기능을 제공합니다."
+   },
+   "addSiteReachedLimitTitle": {
+      "message": "블록 목록 한계에 도달했습니다."
+   },
+   "addSiteSuccessPrimaryButton": {
+      "message": "블록 나우"
+   },
+   "addSiteSuccessSecondaryButton": {
+      "message": "블록 목록으로 이동"
+   },
+   "addSiteSuccessSubTitle": {
+      "message": "(website.com) 가 사용자의 차단 목록에 추가되었습니다. 확장의 옵션 페이지에서 이를 변경할 수 있습니다."
+   },
+   "addSiteSuccessTitle": {
+      "message": "사이트가 블록 목록에 추가됨"
+   },
+   "appDesc": {
+      "description": "웹 스토어에 표시된 애플리케이션의 설명.",
+      "message": "초점 유지 및 생산성 향상: 사용자 정의 블록 목록, 스케줄된 사이트 차단, 비밀번호 보호."
+   },
+   "appName": {
+      "description": "웹 스토어에 표시된 애플리케이션의 제목.",
+      "message": "BlockSite: 블록 웹 사이트 & 유지"
+   },
+   "appShortName": {
+      "description": "애플리케이션의 짧은 제목",
+      "message": "Block Site"
+   },
+   "backgroundMultiPacksTitle": {
+      "message": "블록 페이지 비주얼 및 텍스트"
+   },
+   "blockByCategoryTextAdult": {
+      "message": "' 앗 ! %domain% 는 독자 분이 차단하고 있는 범주인 성인과 관련된 것이므로 이용할 수 없습니다. 집중하고 있어요, 당신은 이것을 가지고 있어요."
+   },
+   "blockByCategoryTextGambling": {
+      "message": "' Oops ! %domain% 는 당신이 차단하고 있는 카테고리인 도박과 관련이 있다. 집중하고 있어요, 당신은 이것을 가지고 있어요."
+   },
+   "blockByCategoryTextNewsAndMedia": {
+      "message": "이런 ' Oops ! %domain% 는 당신이 차단하고 있는 카테고리인 뉴스와 관련되어 있기 때문에 사용할 수 없다. 집중하고 있어요, 당신은 이것을 가지고 있어요."
+   },
+   "blockByCategoryTextShopping": {
+      "message": "Oops ! %domain% 은 사용자가 차단한 카테고리인 쇼핑과 관련이 있으므로 사용할 수 없습니다. 집중하지 말고 있잖아"
+   },
+   "blockByCategoryTextSocialNetworksAndOnlineCommunities": {
+      "message": "' 앗 ! %domain% 는 당신이 차단하고 있는 범주인 사회와 관련되어 있기 때문에 사용할 수 없다. 집중하고 있어요, 당신은 이것을 가지고 있어요."
+   },
+   "blockByCategoryTextSports": {
+      "message": "%domain% 'Oops' 는 여러분이 차단하고 있는 카테고리인 스포츠와 관련되어 있기 때문에 사용할 수 없다. 집중하고 있어요, 당신은 이것을 가지고 있어요."
+   },
+   "blockByCategoryTitleAdult": {
+      "message": "바퀴벌레. 잘린 팔 다리. 존 굿맨."
+   },
+   "blockByCategoryTitleGambling": {
+      "message": "집이 항상 이기는 것을 허락하지 마라."
+   },
+   "blockByCategoryTitleNewsAndMedia": {
+      "message": "좋은 소식은 없습니다."
+   },
+   "blockByCategoryTitleShopping": {
+      "message": "1달러를 쓰지 않으면 1달러를 벌 수 있다."
+   },
+   "blockByCategoryTitleSocialNetworksAndOnlineCommunities": {
+      "message": "포스팅도, 거짓말도 하지 않고 살고 있을 뿐이다."
+   },
+   "blockByCategoryTitleSports": {
+      "message": "진정하고 단절을 유지하라."
+   },
+   "blockExtensionsPageSubtitle": {
+      "message": "액세스하려면 암호를 입력하십시오"
+   },
+   "blockExtensionsPageTitle": {
+      "message": "$BROWSER$ 확장 페이지-보호되는 페이지",
+      "placeholders": {
+         "browser": {
+            "content": "$1"
+         }
+      }
+   },
+   "blockMoreDistractingSite": {
+      "message": "더 많은 방해 사이트 차단"
+   },
+   "blockSitesBlockSite": {
+      "message": "이 사이트 차단"
+   },
+   "blockSitesBlockedTitle": {
+      "message": "이 사이트는 현재 차단되어 있습니다"
+   },
+   "blockSitesBlockedTitleNow": {
+      "message": "사이트가 사용자의 차단 목록에 추가됨"
+   },
+   "blockSitesEditBlockList": {
+      "message": "블록 목록 편집"
+   },
+   "blockSitesNotAvailable": {
+      "message": "이 페이지에서는 사용할 수 없습니다"
+   },
+   "blockSitesOnBoardingDescription": {
+      "message": "차단 목록에 추가된 웹 사이트는 목록에서 제거하거나 스케줄을 설정할 때까지 영구적으로 차단됩니다."
+   },
+   "blockSitesOnBoardingTitle": {
+      "message": "블록 목록에 사이트 추가하기"
+   },
+   "blockSitesOptionsOnboardingText": {
+      "message": "차단하려는 사이트를 목록에 추가하는 것부터 시작하십시오."
+   },
+   "blockSitesOptionsSearchBarPlaceholder": {
+      "message": "웹 주소 입력 (ex: facebook.com)"
+   },
+   "blockSitesOptionsSubtitle": {
+      "message": "사이트를 영구적으로 또는 일정에 따라 차단하십시오"
+   },
+   "blockSitesOptionsTableTitle": {
+      "message": "차단된 사이트"
+   },
+   "blockSitesOptionsTitle": {
+      "message": "사이트 차단"
+   },
+   "blockSitesRefreshPage": {
+      "message": "페이지 새로 고치기"
+   },
+   "blockSitesTab": {
+      "message": "사이트 차단"
+   },
+   "blockWordsOnBoardingDescription": {
+      "message": "이 특정 키워드를 포함하는 모든 웹 사이트 URL및 제목이 차단됩니다 (키워드는 수백 개의 사이트를 차단할 수 있음)."
+   },
+   "blockWordsOnBoardingTitle": {
+      "message": "블록에 키워드 추가하기"
+   },
+   "blockWordsOptionsSearchBarPlaceholder": {
+      "message": "단어 또는 구문 입력"
+   },
+   "blockWordsOptionsSubtitle": {
+      "message": "특정 단어를 포함하는 블록 URL"
+   },
+   "blockWordsOptionsTableTitle": {
+      "message": "차단된 단어"
+   },
+   "blockWordsOptionsTitle": {
+      "message": "단어로 차단"
+   },
+   "blockedHeaderFocusModeMinutes": {
+      "message": "$BREAK_TIME_LEFT$ 분",
+      "placeholders": {
+         "break_time_left": {
+            "content": "$1",
+            "example": "25"
+         }
+      }
+   },
+   "blockedHeaderFocusModeUntilBreak": {
+      "message": "휴식시간이 될 때까지"
+   },
+   "blockedHeaderMenuCustomizeBlockPage": {
+      "message": "블록 페이지 사용자 정의"
+   },
+   "blockedHeaderMenuEdit": {
+      "message": "블록 목록 편집"
+   },
+   "blockedHeaderMenuPasswordProtection": {
+      "message": "암호 보호"
+   },
+   "blockedHeaderMenuRedirect": {
+      "message": "리디렉션"
+   },
+   "blockedHeaderMenuUpgradeButton": {
+      "message": "업그레이드하는 작업"
+   },
+   "blockedHeaderTitle": {
+      "message": "이 사이트는 BlockSite에서 차단됩니다"
+   },
+   "blockedTabMessage1": {
+      "message": "Block Sites 목록에 %domain%을(를) 입력했습니다. 이유가 있을 것입니다."
+   },
+   "blockedTabMessage2": {
+      "message": "작업을 처리하기 위해 %domain%을(를) 차단했습니다. 이제 다시 작업하러 가십시오."
+   },
+   "blockedTabMessage3": {
+      "message": "휴, 이제 나아졌군요. 하던 작업으로 돌아가십시오."
+   },
+   "blockedTabMessage4": {
+      "message": "%domain%이(가) 차단되었습니다. 집중력을 방해하는 사이트를 더 추가하고 생산성을 향상하십시오."
+   },
+   "blockedTabMessage5": {
+      "message": "\"%domain%\"라는 단어를 차단한 것 같습니다. 계속 유지합니다."
+   },
+   "blockedTabMessage6": {
+      "message": "이 웹 사이트는 귀하의 허용 목록에 있지 않습니다. 아마 그럴 만한 이유가 있을 겁니다."
+   },
+   "blockedTableApplyButton": {
+      "message": "적용"
+   },
+   "blockedTableCancelButton": {
+      "message": "취소"
+   },
+   "blocklistOnBoardingDescriptionPrefix": {
+      "message": "방문하기"
+   },
+   "blocklistOnBoardingDescriptionSuffix": {
+      "message": "동작을 방해하는 것을 보기 위해"
+   },
+   "blocklistOnBoardingTitle": {
+      "message": "이 사이트는 현재 차단되어 있습니다."
+   },
+   "bundleImagesDownloadFailedText": {
+      "message": "다시 시도해보십시오."
+   },
+   "bundleImagesDownloadFailedTitle": {
+      "message": "이미지 다운로드에 실패했습니다."
+   },
+   "bundleImagesDownloadInProgressText": {
+      "message": "완료될 때까지 브라우저를 종료하지 마십시오."
+   },
+   "bundleImagesDownloadInProgressTitle": {
+      "message": "이미지 다운로드하기"
+   },
+   "bundleImagesDownloadSuccessTitle": {
+      "message": "성공적으로 다운로드한 이미지"
+   },
+   "bundleListPopupCancelButton": {
+      "message": "취소"
+   },
+   "bundleListPopupDoneButton": {
+      "message": "도그"
+   },
+   "bundleListPopupSubTitle": {
+      "message": "차단된 페이지에 도달하려고 할 때 무작위로 표시될 이미지 다중 팩을 선택하십시오."
+   },
+   "bundleListPopupTitle": {
+      "message": "이 페이지 사용자 정의하기"
+   },
+   "bundleListPopupTooltip": {
+      "message": "선택된 다중 팩의 이미지는 블록 페이지가 표시될 때마다 무작위로 표시됩니다."
+   },
+   "cannotAddBlockSiteWhichPartOfRedirect": {
+      "message": "리디렉션으로 설정된 사이트를 차단할 수 없습니다"
+   },
+   "cantBlockRedirectWordMsg": {
+      "message": "경로 재지정 URL의 일부인 단어를 차단할 수 없습니다."
+   },
+   "cantRedirectToBlockedSite": {
+      "message": "어머! 이 경로 재지정 사이트는 차단 사이트 목록에 의해 차단됨"
+   },
+   "cantRedirectToBlockedWord": {
+      "message": "어머! 이 경로 재지정 사이트는 단어별 차단 목록에 의해 차단됨"
+   },
+   "cantRedirectToWorkModeBlockedSite": {
+      "message": "앗! 이 경로 재지정 사이트는 초점 모드 목록에 의해 차단됨"
+   },
+   "categoriesAdult": {
+      "message": "성인"
+   },
+   "categoriesGambling": {
+      "message": "도박"
+   },
+   "categoriesGoUnlimitedButton": {
+      "message": "무제한"
+   },
+   "categoriesNewsAndMedia": {
+      "message": "뉴스"
+   },
+   "categoriesOnBoardingDescription": {
+      "message": "한 번의 클릭으로 수천 개의 웹 사이트를 차단하려면 카테고리를 선택하십시오."
+   },
+   "categoriesOnBoardingTitle": {
+      "message": "카테고리별 블록 웹사이트"
+   },
+   "categoriesOptionsSubtitle": {
+      "message": "차단할 카테고리를 선택하십시오."
+   },
+   "categoriesOptionsTitle": {
+      "message": "카테고리"
+   },
+   "categoriesPrivacyText": {
+      "message": "BlockSite에 카테고리 블로킹을 제공할 수 있으려면 귀하가 방문하는 사이트의 정보에 액세스할 수 있는 권한이 필요합니다. 이 액세스를 사용 가능하게 하고 이 정보를 사용하려면 '동의합니다' 를 클릭하십시오. "
+   },
+   "categoriesPrivacyTitle": {
+      "message": "카테고리별 블록"
+   },
+   "categoriesShopping": {
+      "message": "쇼핑"
+   },
+   "categoriesSocialNetworksAndOnlineCommunities": {
+      "message": "사회적인"
+   },
+   "categoriesSports": {
+      "message": "스포츠의"
+   },
+   "categoriesTableTitle": {
+      "message": "차단된 카테고리 목록"
+   },
+   "clickHereToCheckOut": {
+      "message": "체크아웃하려면 여기를 클릭하십시오."
+   },
+   "clickingHereLink": {
+      "message": "클릭하기"
+   },
+   "contextMenusAllowThisLink": {
+      "message": "이 링크 허용"
+   },
+   "contextMenusAllowThisLinkWorkMode": {
+      "message": "초점 모드 목록에 대해 이 링크 허용"
+   },
+   "contextMenusAllowThisSite": {
+      "message": "이 사이트 허용"
+   },
+   "contextMenusAllowThisSiteWorkMode": {
+      "message": "초점 모드 목록에 대해 이 사이트 허용"
+   },
+   "contextMenusBlockThisLink": {
+      "message": "이 링크 차단"
+   },
+   "contextMenusBlockThisLinkWorkMode": {
+      "message": "초점 모드 목록에 링크 주소 추가"
+   },
+   "contextMenusBlockThisSite": {
+      "message": "이 사이트 차단"
+   },
+   "contextMenusBlockThisSiteWorkMode": {
+      "message": "초점 모드 목록에 사이트 추가"
+   },
+   "copiedIconTitle": {
+      "message": "복사된"
+   },
+   "copyIconTitle": {
+      "message": "복사"
+   },
+   "customizeBlockPageApplyChangeNo": {
+      "message": "아니오"
+   },
+   "customizeBlockPageApplyChangeSubTitle": {
+      "message": "예를 클릭하여 차단된 페이지에 작성한 변경사항을 적용하십시오."
+   },
+   "customizeBlockPageApplyChangeTitle": {
+      "message": "변경 사항 적용?"
+   },
+   "customizeBlockPageApplyChangeYes": {
+      "message": "예"
+   },
+   "customizeBlockPageApplyChanges": {
+      "message": "변경 내용 적용"
+   },
+   "customizeBlockPageBlack": {
+      "message": "검정"
+   },
+   "customizeBlockPageBlockSiteFunnyImage": {
+      "message": "BlockSite Funny 이미지"
+   },
+   "customizeBlockPageBlocksiteText": {
+      "message": "블록사이트의 텍스트"
+   },
+   "customizeBlockPageChangesApplied": {
+      "message": "변경사항이 적용되었습니다."
+   },
+   "customizeBlockPageChangesFailed": {
+      "message": "뭔가 잘못되었어요. 다시 시도해 주세요."
+   },
+   "customizeBlockPageCurrentBackground": {
+      "message": "현재 배경"
+   },
+   "customizeBlockPageCustomizeText": {
+      "message": "텍스트 사용자 정의"
+   },
+   "customizeBlockPageNoPremiumCTA": {
+      "message": "사용자 정의 블록 페이지 가져오기"
+   },
+   "customizeBlockPageNoPremiumMacbookSubtitle": {
+      "message": "site.com은 사용자가 차단한 카테고리인 소셜과 관련되어 있으므로 사용할 수 없습니다. 집중하지 말고 있잖아"
+   },
+   "customizeBlockPageNoPremiumMacbookTitle": {
+      "message": "포스팅도, 거짓말도 하지 않고 살고 있을 뿐이다."
+   },
+   "customizeBlockPageNoPremiumSubtitle": {
+      "message": "영감을 주거나 재미있게 만드세요. 집중하는 것을 돕기 위해서요."
+   },
+   "customizeBlockPageNoPremiumTitle": {
+      "message": "자신만의 차단된 페이지 만들기"
+   },
+   "customizeBlockPagePreviewYourChanges": {
+      "message": "저장하기 전에 변경사항 미리보기"
+   },
+   "customizeBlockPageResetImage": {
+      "message": "BlockSite Funny 이미지로 다시 돌아가기"
+   },
+   "customizeBlockPageResetToDefault": {
+      "message": "기본 설정으로 재설정"
+   },
+   "customizeBlockPageSetBackground": {
+      "message": "배경 이미지 설정하기"
+   },
+   "customizeBlockPageSetPageText": {
+      "message": "페이지 텍스트 설정하기"
+   },
+   "customizeBlockPageSetSubTitleText": {
+      "message": "자막 텍스트 입력하기"
+   },
+   "customizeBlockPageSetTitleText": {
+      "message": "제목 텍스트 입력하기"
+   },
+   "customizeBlockPageSubtitle": {
+      "message": "자체의 이미지 및 텍스트로 블록 페이지를 사용자 정의하십시오. 저장하기 전에 아래 화면의 변경사항을 실시간으로 확인하십시오."
+   },
+   "customizeBlockPageTextColor": {
+      "message": "텍스트 색상"
+   },
+   "customizeBlockPageTitle": {
+      "message": "사용자 정의 블록 페이지"
+   },
+   "customizeBlockPageUploadImage": {
+      "message": "사용자 정의 이미지 업로드"
+   },
+   "customizeBlockPageUserCustomImage": {
+      "message": "사용자 정의 배경"
+   },
+   "customizeBlockPageWhite": {
+      "message": "흰색"
+   },
+   "customizePage": {
+      "message": "페이지 사용자 정의"
+   },
+   "customizedBlockPageNonPremiumTry": {
+      "message": "BlockSite Unlimited for FREE"
+   },
+   "dailyBonusCollect": {
+      "message": "수집"
+   },
+   "dailyBonusSubTitle": {
+      "message": "블록사이트는 당신에게 매일 보너스를 제공해 주고 있어요!"
+   },
+   "dailyBonusTitle": {
+      "message": "축하합니다"
+   },
+   "doNotShowAgainMessage": {
+      "message": "다시 표시하지 않음"
+   },
+   "editYourList": {
+      "message": "목록 편집"
+   },
+   "emailVerificationCTA": {
+      "message": "이해했습니다"
+   },
+   "emailVerificationInstructions": {
+      "message": "동일한 브라우저 창 블록 사이트에서 링크를 클릭하십시오."
+   },
+   "emailVerificationSubTitle": {
+      "message": "우리는 당신의 우편에 대한 확인 링크를 24시간 유효하게 보냈습니다. 확인하려면 다음 위치에서 받은 편지함을 확인하십시오."
+   },
+   "emailVerificationTitle": {
+      "message": "거의 다 했다"
+   },
+   "emailVerificationTitle1": {
+      "message": "블록 사이트에서 이메일 주소를 확인하는 링크가 있는 이메일을 발송합니다."
+   },
+   "emailVerificationTitle2": {
+      "message": "사용자의 이메일 주소는 비밀번호 보호 용도로만 사용됩니다."
+   },
+   "emptyResultsBlockedKeywordsSubtitle": {
+      "message": "블록에 키워드를 추가하면 여기에 키워드가 표시됩니다."
+   },
+   "emptyResultsBlockedKeywordsTitle": {
+      "message": "차단된 키워드가 아직 없습니다."
+   },
+   "emptyResultsBlockedSitesSubtitle": {
+      "message": "블록에 사이트를 추가하면 여기에서 이를 볼 수 있다."
+   },
+   "emptyResultsBlockedSitesTitle": {
+      "message": "차단된 사이트가 아직 없습니다."
+   },
+   "enableInInPrivateMode": {
+      "message": "개인 모드에서 사용 가능"
+   },
+   "enableInIncognitoMode": {
+      "message": "시크릿 모드에서 활성화"
+   },
+   "enterPasswordToGainAccess": {
+      "message": "액세스하려면 암호를 입력하십시오"
+   },
+   "enterYourEmail": {
+      "message": "이메일을 입력하십시오"
+   },
+   "enterYourPassword": {
+      "message": "암호를 입력하십시오"
+   },
+   "firstSiteAddedUserActionCTA": {
+      "message": "냉각"
+   },
+   "firstSiteAddedUserActionSubTitle": {
+      "message": "당신의 첫 번째 사이트를 추가하는 것에 대한 축하합니다!"
+   },
+   "firstSiteAddedUserActionTitle": {
+      "message": "좋은 스터프!"
+   },
+   "firstTimeFocusModeCTA": {
+      "message": "시작하기"
+   },
+   "firstTimeFocusModeSubtitle": {
+      "message": "초점 모드가 활성화되어 있는 동안 방해 사이트를 차단하고 구역에 머무르십시오."
+   },
+   "firstTimeFocusModeTitle": {
+      "message": "집중해라. 집중해라."
+   },
+   "firstTimeGamblingCategoryUserActionCTA": {
+      "message": "파퓰러스"
+   },
+   "firstTimeGamblingCategoryUserActionSubTitle": {
+      "message": "도박이 막혔다. 지금은 많은 혼란이 없다."
+   },
+   "firstTimeGamblingCategoryUserActionTitle": {
+      "message": "호레이!"
+   },
+   "firstTimeNewsCategoryUserActionCTA": {
+      "message": "파퓰러스"
+   },
+   "firstTimeNewsCategoryUserActionSubTitle": {
+      "message": "뉴스가 막혔다. 지금은 많은 혼란이 없다."
+   },
+   "firstTimeNewsCategoryUserActionTitle": {
+      "message": "호레이!"
+   },
+   "firstTimeScheduleUserActionCTA": {
+      "message": "훌륭한"
+   },
+   "firstTimeScheduleUserActionSubTitle": {
+      "message": "너는 이제 궤도에 있을 수 있을 것이다!"
+   },
+   "firstTimeScheduleUserActionTitle": {
+      "message": "브라보!"
+   },
+   "firstTimeShoppingCategoryUserActionCTA": {
+      "message": "파퓰러스"
+   },
+   "firstTimeShoppingCategoryUserActionSubTitle": {
+      "message": "쇼핑이 막혔다. 지금은 많은 혼란이 없다."
+   },
+   "firstTimeShoppingCategoryUserActionTitle": {
+      "message": "호레이!"
+   },
+   "firstTimeSocialCategoryUserActionCTA": {
+      "message": "파퓰러스"
+   },
+   "firstTimeSocialCategoryUserActionSubTitle": {
+      "message": "사회가 봉쇄되었다. 지금은 많은 혼란이 없다."
+   },
+   "firstTimeSocialCategoryUserActionTitle": {
+      "message": "호레이!"
+   },
+   "firstTimeSportsCategoryUserActionCTA": {
+      "message": "파퓰러스"
+   },
+   "firstTimeSportsCategoryUserActionSubTitle": {
+      "message": "스포츠가 막혔다. 지금은 많은 혼란이 없다."
+   },
+   "firstTimeSportsCategoryUserActionTitle": {
+      "message": "호레이!"
+   },
+   "firstTimeSyncUserActionCTA": {
+      "message": "이해했습니다"
+   },
+   "firstTimeSyncUserActionSubTitle": {
+      "message": "이제 최대 생산성 및#x1F609에 대한 모든 장치를 동기화합니다."
+   },
+   "firstTimeSyncUserActionTitle": {
+      "message": "잘했어!"
+   },
+   "focusModeActionsPause": {
+      "message": "일시 중지"
+   },
+   "focusModeActionsReset": {
+      "message": "초기화"
+   },
+   "focusModeActionsResume": {
+      "message": "재개"
+   },
+   "focusModeAddSiteOnBoardingDescription": {
+      "message": "초점 모드 차단 목록은 우연히 기본 블록 목록과 함께 작동합니다."
+   },
+   "focusModeAddSiteOnBoardingTitle": {
+      "message": "초점 모드 목록에 사이트 추가"
+   },
+   "focusModeAreYouSureBackToSession": {
+      "message": "세션으로 돌아가기"
+   },
+   "focusModeAreYouSureSubtitle": {
+      "message": "시계를 멈출 때가 되었다고 확신하니?"
+   },
+   "focusModeAreYouSureTitle": {
+      "message": "계속 진행할까요?"
+   },
+   "focusModeBreakInterval": {
+      "message": "%MINUTES% 분 동안 중단"
+   },
+   "focusModeBreakText": {
+      "message": "중단 중에 차단된 사이트에 액세스하십시오."
+   },
+   "focusModeBreakTimeLeftText": {
+      "message": "중단 시간까지 $BREAK_TIME_LEFT$ 분",
+      "placeholders": {
+         "break_time_left": {
+            "content": "$1",
+            "example": "25"
+         }
+      }
+   },
+   "focusModeCircleBarTooltip": {
+      "message": "현재 시간 간격으로 남아 있는 시간"
+   },
+   "focusModeCyclesTooltip": {
+      "message": "현재, 완료 및 향후 주기 상태"
+   },
+   "focusModeEnterPassToPauseOrReset": {
+      "message": "%TIMER_ACTION% 으로 암호 입력"
+   },
+   "focusModeFocusInterval": {
+      "message": "%MINUTES% 분 동안 초점"
+   },
+   "focusModeFocusText": {
+      "message": "초점 세션 사이트가 차단됨"
+   },
+   "focusModeHourUnit": {
+      "message": "시간"
+   },
+   "focusModeMinutesUnit": {
+      "message": "최소한의"
+   },
+   "focusModeNoSitesText": {
+      "message": "블록 목록에 있는 사이트가 차단되지 않음"
+   },
+   "focusModeNotificationEndOfCycleMessage": {
+      "message": "$CYCLES_COMPLETED$ $CYCLES$ 사이클 완료. 이제 집중해야 할 시간이다!",
+      "placeholders": {
+         "cycles": {
+            "content": "$2",
+            "example": "2"
+         },
+         "cycles_completed": {
+            "content": "$1",
+            "example": "1"
+         }
+      }
+   },
+   "focusModeNotificationEndOfCycleTitle": {
+      "message": "중단 간격이 끝났다."
+   },
+   "focusModeNotificationEndOfCyclesButton": {
+      "message": "세션 시작"
+   },
+   "focusModeNotificationEndOfCyclesMessage": {
+      "message": "다른 포커스 모드 세션을 시작하시겠습니까?"
+   },
+   "focusModeNotificationEndOfCyclesTitle": {
+      "message": "중단 간격이 끝났다."
+   },
+   "focusModeNotificationEndOfCyclesTitleWithStars": {
+      "message": "브레이크가 끝났다. 너는 $STARS$ 을 얻었다.",
+      "placeholders": {
+         "stars": {
+            "content": "$1",
+            "example": "25"
+         }
+      }
+   },
+   "focusModeNotificationEndOfFocusIntervalMessage": {
+      "message": "휴식할 시간입니다!"
+   },
+   "focusModeNotificationEndOfFocusIntervalTitle": {
+      "message": "포커스 간격이 끝났다."
+   },
+   "focusModeOptionsStartFocusSession": {
+      "message": "포커스 세션 시작"
+   },
+   "focusModeOptionsSubtitle": {
+      "message": "태스크에 초점을 맞추고 보다 생산적인 사용 초점 모드를 사용하여 작업 시간 및 구분 간격을 설정하십시오. 초점 세션 중에 방해가 발생하지 않도록 블록 목록에 사이트를 추가하십시오."
+   },
+   "focusModeOptionsTimerSetup": {
+      "message": "타이머 설정"
+   },
+   "focusModeOptionsTitle": {
+      "message": "포커스 모드"
+   },
+   "focusModeSessionOnBoardingDescription": {
+      "message": "집중 모드 세션을 시작하려면 여기를 클릭하여 해당 태스크를 시작하십시오."
+   },
+   "focusModeSessionOnBoardingTitle": {
+      "message": "타이머 시작하기"
+   },
+   "focusModeSettingsBreakTime": {
+      "message": "휴식 시간"
+   },
+   "focusModeSettingsCycles": {
+      "message": "사이클스"
+   },
+   "focusModeSettingsFocusTime": {
+      "message": "집중 시간"
+   },
+   "focusModeSettingsGoToOptions": {
+      "message": "옵션으로 이동"
+   },
+   "focusModeSettingsMinutes": {
+      "message": "분"
+   },
+   "focusModeSettingsNumberOfCycles": {
+      "message": "사이클 수"
+   },
+   "focusModeSettingsStartSession": {
+      "message": "세션 시작"
+   },
+   "focusModeSettingsSubtitle": {
+      "message": "& 태스크에 집중하는 것이 더 생산적일 수 있습니다."
+   },
+   "focusModeSettingsTitle": {
+      "message": "포커스 모드 타이머"
+   },
+   "focusModeSettingsTooltipFirst": {
+      "message": "원하는 시간을 초점으로 설정합니다. 초점 모드 목록의 사이트가 차단됩니다."
+   },
+   "focusModeSettingsTooltipSecond": {
+      "message": "원하는 구분 시간을 설정하고 목록에서 해당 웹 사이트를 자유롭게 방문하십시오."
+   },
+   "focusModeSettingsTooltipThird": {
+      "message": "자동으로 실행하려는 초점 시간 및 휴식 주기의 수입니다."
+   },
+   "focusModeTab": {
+      "message": "포커스 모드"
+   },
+   "focusModeTimerOnBoardingDescription": {
+      "message": "특정 블록 목록을 블록 사이트 & 으로 설정하면 해당 사이트에 액세스할 수 있게 되면 주기 종료 시에 사용자가 보상을 받을 수 있습니다."
+   },
+   "focusModeTimerOnBoardingTitle": {
+      "message": "포커스 모드 세션 설정"
+   },
+   "focusModeToPauseOrResetEnterPassword": {
+      "message": "암호를 %TIMER_ACTION% 으로 입력하십시오."
+   },
+   "focusModeWrongPassword": {
+      "message": "잘못된 비밀번호"
+   },
+   "focusModesSecondsUnit": {
+      "message": "2 초"
+   },
+   "forgotPassSentOkBtn": {
+      "message": "확인"
+   },
+   "forgotPassSentText": {
+      "message": "암호가 다음으로 전송되었습니다"
+   },
+   "forgotPassSentTitle": {
+      "message": "암호 전송됨"
+   },
+   "forgotPassword": {
+      "message": "암호를 잊으셨습니까?"
+   },
+   "goBack": {
+      "message": "돌아가기"
+   },
+   "goBackToWork": {
+      "message": "작업하러 돌아가기"
+   },
+   "goPremium": {
+      "message": "프리미엄 이동"
+   },
+   "headerGoUnlimited": {
+      "message": "무제한"
+   },
+   "headerLogin": {
+      "message": "로그인"
+   },
+   "headerLogout": {
+      "message": "로그아웃"
+   },
+   "importPopupMerge": {
+      "message": "병합"
+   },
+   "importPopupOverride": {
+      "message": "재정의"
+   },
+   "importPopupTitle": {
+      "message": "현재 목록을 병합하거나 재정의하시겠습니까?"
+   },
+   "insightsCategory_entertainment": {
+      "message": "엔터테인먼트"
+   },
+   "insightsCategory_games": {
+      "message": "게임"
+   },
+   "insightsCategory_news": {
+      "message": "뉴스"
+   },
+   "insightsCategory_other": {
+      "message": "기타"
+   },
+   "insightsCategory_shopping": {
+      "message": "쇼핑"
+   },
+   "insightsCategory_social": {
+      "message": "사회적인"
+   },
+   "insightsCategory_sports": {
+      "message": "스포츠의"
+   },
+   "insightsDescription": {
+      "message": "온라인에서 시간을 더 생산적으로 사용하는 방법을 참조하십시오."
+   },
+   "insightsEmptyDescription": {
+      "message": "우리는 여전히 당신의 통찰력을 계산하고 있습니다. 업데이트 사항이 있기 전에 다시 확인해 보십시오!"
+   },
+   "insightsEmptyTitle": {
+      "message": "아직 통찰력이 없습니다. 24시간 후에 다시 시도해 보세요."
+   },
+   "insightsErrorDescription": {
+      "message": "걱정하지 말아요 ! 우리는 이 문제를 해결하기 위해 열심히 노력하고 있어요. 나중에 다시 해 보세요."
+   },
+   "insightsErrorTitle": {
+      "message": "앗! 뭔가 잘못됐어!"
+   },
+   "insightsPrivacyText": {
+      "message": "블록사이트가 성인 컨텐츠를 사용하여 페이지를 발견하고 차단할 수 있으려면 귀하가 방문하는 사이트의 정보에 액세스할 수 있는 권한이 필요합니다. '동의' 를 클릭하여 이 액세스를 사용 가능하게 하고 이 정보를 사용할 수 있도록 하십시오. "
+   },
+   "insightsPrivacyTitle": {
+      "message": "이런!"
+   },
+   "insightsTimeSaved": {
+      "message": "얼마를 저장했어요?"
+   },
+   "insightsTitle": {
+      "message": "통찰력"
+   },
+   "insightsTopVisit": {
+      "message": "방문한 상위 카테고리"
+   },
+   "invalidPassBlockedPage": {
+      "message": "잘못된 암호입니다. 다시 시도하십시오."
+   },
+   "leaveWithoutSaving": {
+      "message": "저장하지 않고 나가기"
+   },
+   "levelUpCongrats": {
+      "message": "축하해! $POINTS$ 별에 도달했습니다.",
+      "placeholders": {
+         "points": {
+            "content": "$1",
+            "example": "25"
+         }
+      }
+   },
+   "levelUpGainStars": {
+      "message": "더 많은 별을 얻기 위해서는 생산성을 유지해"
+   },
+   "levelUpGotIt": {
+      "message": "이해했습니다"
+   },
+   "levelUpStayProductive": {
+      "message": "생산성을 유지하고, 계속해서 스타를 얻는 것에 초점을 맞추세요."
+   },
+   "levelUpUnlocked": {
+      "message": "잠겨있어!"
+   },
+   "levelUpViewProgress": {
+      "message": "보기 진행"
+   },
+   "levelUpWellDone": {
+      "message": "새로운 단계로 진행되었습니다!"
+   },
+   "limitListBannerCounter": {
+      "message": "블록 목록에 추가할 사이트가 남아 있습니다."
+   },
+   "limitListBannerCounterReached": {
+      "message": "블록 목록 한계에 도달했습니다."
+   },
+   "limitListBannerUpgrade": {
+      "message": "무제한"
+   },
+   "limitListBannerUpgradeTip": {
+      "message": "업그레이드하고 무제한 블록 목록을 사용하려면 여기를 클릭하십시오."
+   },
+   "limitListBannerUpgradeTipPopup": {
+      "message": "앰플을 업그레이드하려면 클릭하십시오. 제한이 없는 블록 목록을 사용하십시오."
+   },
+   "limitListBannerUpgradeTipReachedPopup": {
+      "message": "블록 목록이 최대 사이트 수에 도달했습니다."
+   },
+   "limitListOverlayContentTitle": {
+      "message": "우리의 프리미엄 사용자들은 하루에 한 시간의 귀중한 시간을 절약할 수 있습니다. 모든 고급 기능을 사용하고 오늘 생산성이 향상되기 시작합니다."
+   },
+   "limitListOverlayEditBlockListPopup": {
+      "message": "블록 목록 편집"
+   },
+   "limitListOverlayFeatureFirstSubtitle": {
+      "message": "사용자가 원하는 많은 사이트를 차단합니다."
+   },
+   "limitListOverlayFeatureFirstTitle": {
+      "message": "무제한 블록 리스트"
+   },
+   "limitListOverlayFeatureFourthSubtitle": {
+      "message": "클라우드에 저장된"
+   },
+   "limitListOverlayFeatureFourthTitle": {
+      "message": "확장 사이에 있는 동기화"
+   },
+   "limitListOverlayFeatureSecondSubtitle": {
+      "message": "가장 빠른 방법"
+   },
+   "limitListOverlayFeatureSecondTitle": {
+      "message": "카테고리를 사용하여 대량으로 블록"
+   },
+   "limitListOverlayFeatureThirdSubtitle": {
+      "message": "사용자에게 고유한 이미지 및 텍스트를 선택하십시오."
+   },
+   "limitListOverlayFeatureThirdTitle": {
+      "message": "블록 페이지 사용자 정의"
+   },
+   "limitListOverlayImportTitle": {
+      "message": "도달한 가져오기 한계"
+   },
+   "limitListOverlayMaybeLater": {
+      "message": "아마 나중에"
+   },
+   "limitListOverlaySpecialOfferTitle": {
+      "message": "독점적인 오퍼!"
+   },
+   "limitListOverlaySubtitle": {
+      "message": "자세히 살펴보자. 제한 없는"
+   },
+   "limitListOverlaySubtitlePopup": {
+      "message": "모든 디바이스에서 무제한 사이트를 확보하려면 지금 업그레이드하십시오."
+   },
+   "limitListOverlayTitle": {
+      "message": "블록 목록 사이트 한계 도달"
+   },
+   "limitListOverlayTitlePopup": {
+      "message": "블록 리스트 한계에 도달했습니다!"
+   },
+   "limitListOverlayUpgradeNow": {
+      "message": "무제한"
+   },
+   "limitListOverlayUpgradePopup": {
+      "message": "무제한"
+   },
+   "limitPopupDiscountSpecialOfferSubTitle": {
+      "message": "당사에서 가장 낮은 청약 가격"
+   },
+   "loginSyncGotIt": {
+      "message": "이해했습니다"
+   },
+   "loginSyncLoginToSite": {
+      "message": "확장을 동기화하려면 등록/로그인하십시오."
+   },
+   "loginSyncPleaseLogin": {
+      "message": "동기화하려면 로그인하십시오."
+   },
+   "logoutPopupQuestionApproveText": {
+      "message": "예, Do It"
+   },
+   "logoutPopupQuestionCancelText": {
+      "message": "아니오, 취소"
+   },
+   "logoutPopupQuestionDescription": {
+      "message": "로그아웃하면서 수행된 모든 변경사항은 클라우드와 동기화되지 않습니다."
+   },
+   "logoutPopupQuestionTitle": {
+      "message": "계속 진행할까요?"
+   },
+   "mandatoryConsentAgree": {
+      "message": "동의함"
+   },
+   "mandatoryConsentDisagree": {
+      "message": "동의하지 않음"
+   },
+   "mandatoryConsentDisclaimer": {
+      "message": "‘동의하지 않음’을 클릭해도 BlockSite를 사용할 수는 있지만 성인 차단 기능은 작동하지 않습니다."
+   },
+   "mandatoryConsentPrivacyPolicy": {
+      "message": "개인정보 보호정책"
+   },
+   "mandatoryConsentSubtitle": {
+      "message": "블록사이트가 성인 컨텐츠를 사용하여 페이지를 발견하고 차단할 수 있으려면 귀하가 방문하는 사이트의 정보에 액세스할 수 있는 권한이 필요합니다. '동의' 를 클릭하여 이 액세스를 사용 가능하게 하고 이 정보를 사용할 수 있도록 하십시오."
+   },
+   "mandatoryConsentTitle1": {
+      "message": "다음 사항을 선택하십시오."
+   },
+   "mandatoryConsentTitle2": {
+      "message": "BlockSite (BlockSite) 로 진행하기 위해서."
+   },
+   "motivationalText1": {
+      "message": "잊어버리세요."
+   },
+   "motivationalText10": {
+      "message": "차단했습니다!"
+   },
+   "motivationalText11": {
+      "message": "이런!"
+   },
+   "motivationalText12": {
+      "message": "액세스할 수 없습니다."
+   },
+   "motivationalText2": {
+      "message": "말도 안돼요, Jose."
+   },
+   "motivationalText3": {
+      "message": "좋은 시도였습니다..."
+   },
+   "motivationalText4": {
+      "message": "진심이신가요?"
+   },
+   "motivationalText5": {
+      "message": "지금 뭐하시는 건가요?"
+   },
+   "motivationalText6": {
+      "message": "좀 차분해 지십시오!"
+   },
+   "motivationalText7": {
+      "message": "강아지. 이상한 갈색 사마귀. 저스틴 비버."
+   },
+   "motivationalText8": {
+      "message": "바퀴벌레. 잘린 팔 다리. 존 굿맨."
+   },
+   "motivationalText9": {
+      "message": "할머니. 코비 브라이언트. 수술."
+   },
+   "offTitle": {
+      "message": "Block Site가 현재 꺼져있습니다"
+   },
+   "onBoardingDismiss": {
+      "message": "디미스"
+   },
+   "onBoardingNextStep": {
+      "message": "다음"
+   },
+   "optionMenuBannerCTASignupNow": {
+      "message": "Sign Up Now"
+   },
+   "optionsLockedSubtitle": {
+      "message": "BlockSite 옵션 페이지에 액세스하려면 암호를 입력하십시오"
+   },
+   "optionsLockedTitle": {
+      "message": "BlockSite 옵션이 차단되었습니다"
+   },
+   "optionsMenuAbout": {
+      "message": "소개"
+   },
+   "optionsMenuBannerCTAGoUnlimited": {
+      "message": "무제한"
+   },
+   "optionsMenuBannerCTATryNow": {
+      "message": "지금 해보세요."
+   },
+   "optionsMenuBannerSubtitleCategory": {
+      "message": "한 번의 클릭으로 수천 개의 사이트를 차단하여 더 많은 시간 절약"
+   },
+   "optionsMenuBannerSubtitleCustomizeBlockPage": {
+      "message": "이미지 & 개의 텍스트를 선택하여 직접 작성하십시오."
+   },
+   "optionsMenuBannerSubtitleDesktop": {
+      "message": "에지, 파이어폭스 및 크롬에서 하나의 앱을 사용하여 사이트를 낭비하는 시간을 차단합니다!"
+   },
+   "optionsMenuBannerSubtitleGoUnlimited": {
+      "message": "최신 기능을 처음으로 즐기십시오."
+   },
+   "optionsMenuBannerSubtitleInsights": {
+      "message": "온라인으로 시간을 보내는 방법 & 탐색 경향 탐색 "
+   },
+   "optionsMenuBannerSubtitleMobile": {
+      "message": "QR 코드 & 을 스캔하여 계속 생산하십시오."
+   },
+   "optionsMenuBannerSubtitlePasswordProtection": {
+      "message": "블록 목록에서 사이트를 제거하기 어렵게 만들기"
+   },
+   "optionsMenuBannerSubtitleSignup": {
+      "message": "장치에서 블록 목록을 보상하고 동기화합니다."
+   },
+   "optionsMenuBannerSubtitleSlack": {
+      "message": "초점 모드에서 자동으로 전환 모드 전환 모드"
+   },
+   "optionsMenuBannerSubtitleUnlimitedBlockList": {
+      "message": "블록 목록에 원하는 만큼 많은 사이트를 추가합니다."
+   },
+   "optionsMenuBannerTitleCategory": {
+      "message": "카테고리별 블록"
+   },
+   "optionsMenuBannerTitleCustomizeBlockPage": {
+      "message": "블록 페이지 사용자 정의"
+   },
+   "optionsMenuBannerTitleDesktop": {
+      "message": "Windows BETA용 블록 사이트"
+   },
+   "optionsMenuBannerTitleGoUnlimited": {
+      "message": "자세히 살펴보자. 제한 없는"
+   },
+   "optionsMenuBannerTitleInsights": {
+      "message": "통찰력"
+   },
+   "optionsMenuBannerTitleMobile": {
+      "message": "스마트폰에서 블록 사이트 앱"
+   },
+   "optionsMenuBannerTitlePasswordProtection": {
+      "message": "암호 보호"
+   },
+   "optionsMenuBannerTitleSignup": {
+      "message": "생산성 향상을 위해 등록"
+   },
+   "optionsMenuBannerTitleSlack": {
+      "message": "블록사이트의 슬랙 앱"
+   },
+   "optionsMenuBannerTitleUnlimitedBlockList": {
+      "message": "무제한 블록 리스트"
+   },
+   "optionsMenuBlockByWords": {
+      "message": "단어로 차단"
+   },
+   "optionsMenuBlockSites": {
+      "message": "사이트 차단"
+   },
+   "optionsMenuBlocking": {
+      "message": "차단"
+   },
+   "optionsMenuCategories": {
+      "message": "카테고리"
+   },
+   "optionsMenuCustomizeBlockPage": {
+      "message": "사용자 정의 블록 페이지"
+   },
+   "optionsMenuFocusMode": {
+      "message": "포커스 모드"
+   },
+   "optionsMenuPasswordProtection": {
+      "message": "암호 보호"
+   },
+   "optionsMenuSettings": {
+      "message": "설정"
+   },
+   "optionsMenuSyncWithOtherDevices": {
+      "message": "다른 장치와 동기화"
+   },
+   "optionsMenuSyncedOff": {
+      "message": "사용 불가능"
+   },
+   "optionsMenuSyncedOn": {
+      "message": "사용 가능"
+   },
+   "optionsNotificationEmptyList": {
+      "message": "목록이 비어있습니다! 내보낼 목록이 없습니다."
+   },
+   "optionsNotificationEmptyWord": {
+      "message": "빈 단어를 추가할 수 없음"
+   },
+   "optionsNotificationIncorrectFileStructure": {
+      "message": "파일 구조가 올바르지 않습니다. 현재 목록을 내보내어 필요한 csv 형식을 확인하십시오."
+   },
+   "optionsNotificationIncorrectURL": {
+      "message": "잘못된 URL입니다"
+   },
+   "optionsNotificationListExported": {
+      "message": "목록을 성공적으로 내보냈습니다."
+   },
+   "optionsNotificationListImported": {
+      "message": "목록을 성공적으로 가져왔습니다."
+   },
+   "optionsNotificationSiteAdded": {
+      "message": "사이트 추가됨"
+   },
+   "optionsNotificationURLAlreadyExist": {
+      "message": "URL이 이미 존재함"
+   },
+   "optionsNotificationWordAlreadyExist": {
+      "message": "단어가 이미 존재합니다."
+   },
+   "optionsPageRedirectButton": {
+      "message": "리디렉션"
+   },
+   "optionsPageRedirectOK": {
+      "message": "확인"
+   },
+   "optionsPageRedirectPlaceHolder": {
+      "message": "웹 주소(ex: google.com)"
+   },
+   "optionsPageRedirectRemove": {
+      "message": "제거"
+   },
+   "optionsPageRedirectTitle": {
+      "message": " 차단된 페이지 방향 수정하기"
+   },
+   "optionsPageRedirectTooltipNotSet": {
+      "message": "웹 사이트 리디렉션을 설정하려면 클릭하십시오"
+   },
+   "optionsPageRedirectTooltipSet": {
+      "message": "$URL$(으)로 리디렉션",
+      "placeholders": {
+         "url": {
+            "content": "$1",
+            "example": "https://example.com"
+         }
+      }
+   },
+   "optionsPageScheduleAddInterval": {
+      "message": "기간 추가"
+   },
+   "optionsPageScheduleButton": {
+      "message": "일정"
+   },
+   "optionsPageScheduleClickDay": {
+      "message": "(비활성화할 날짜를 선택하세요)"
+   },
+   "optionsPageScheduleEveryDay": {
+      "message": "매일"
+   },
+   "optionsPageScheduleRemoveSchedule": {
+      "message": "제거"
+   },
+   "optionsPageScheduleSelectDays": {
+      "message": "선택한 날짜"
+   },
+   "optionsPageScheduleSetBlocking": {
+      "message": "차단 일정 설정"
+   },
+   "optionsPageScheduleSetSchedule": {
+      "message": "일정 설정"
+   },
+   "optionsPageScheduleSetTimes": {
+      "message": "시간 설정"
+   },
+   "optionsPageScheduleTo": {
+      "message": "에 대하여"
+   },
+   "passwordProtectionGoUnlimitedButton": {
+      "message": "무제한"
+   },
+   "passwordProtectionHookSubtitle": {
+      "message": "패스코드를 사용하여 설정을 잠그는 방법으로 미루기 어렵게 하십시오."
+   },
+   "passwordProtectionHookTitleRemoveSite": {
+      "message": "사이트를 제거하려고 하지 마십시오! 비밀번호 보호 기능 가져오기"
+   },
+   "passwordProtectionHookTitleToggleOff": {
+      "message": "너 자신을 속이지 말아라! 비밀번호 보호를 받으십시오."
+   },
+   "passwordProtectionLoseAccessApprove": {
+      "message": "예, Do It"
+   },
+   "passwordProtectionLoseAccessCancel": {
+      "message": "아니오, 취소"
+   },
+   "passwordProtectionLoseAccessSubtitle": {
+      "message": "비밀번호 보호 기능은 이제 프리미엄 기능입니다. 충성스러운 사용자로서, 그것은 당신에게 자유입니다. 이러한 방식으로 유지하려면 사용 가능해야 합니다."
+   },
+   "passwordProtectionLoseAccessTitleFirst": {
+      "message": "액세스 권한을 잃게 됩니다."
+   },
+   "passwordProtectionLoseAccessTitleSecond": {
+      "message": "계속 진행할까요?"
+   },
+   "passwordProtectionMaybeLaterButton": {
+      "message": "아마 나중에"
+   },
+   "passwordProtectionNonPremiumCTA": {
+      "message": "비밀번호 보호 기능 가져오기"
+   },
+   "passwordProtectionNonPremiumSubtitle": {
+      "message": "설정을 변경하고 블록 목록에서 사이트를 제거하는 것이 더 어렵게 만들기"
+   },
+   "passwordProtectionNonPremiumTitle": {
+      "message": "암호 보호 기능을 이용하여 생산성 향상"
+   },
+   "passwordProtectionOptionAddChallenge": {
+      "message": "차단된 페이지 푸시 - 블록 해제 페이지에 추가 단계 추가"
+   },
+   "passwordProtectionOptionBlockBlockedPage": {
+      "message": "차단된 사이트에 액세스하려면 암호가 필요합니다"
+   },
+   "passwordProtectionOptionBlockSettings": {
+      "message": "선호하는 BlockSite 옵션 및 $BROWSER$ 확장 페이지를 암호로 보호",
+      "placeholders": {
+         "browser": {
+            "content": "$1"
+         }
+      }
+   },
+   "passwordProtectionOptionNotifyUninstalled": {
+      "message": "BlockSite가 설치 제거된 경우 이메일을 통해 알림을 받습니다"
+   },
+   "passwordProtectionPreferences": {
+      "message": "암호 보호 기본 설정"
+   },
+   "passwordProtectionSetupNowButton": {
+      "message": "지금 설치하기"
+   },
+   "passwordProtectionUnlockButton": {
+      "message": "지금 잠금 해제"
+   },
+   "passwordProtectionUnlockPageSubtitle": {
+      "message": "페이지를 잠금 해제하려면 비밀번호를 입력하십시오."
+   },
+   "passwordProtectionUnlockPageTitle": {
+      "message": "이 페이지는 잠겨 있습니다!"
+   },
+   "passwordProtectionVerificationEmail": {
+      "message": "이메일"
+   },
+   "passwordProtectionVerificationMinimumPass": {
+      "message": "최소 5자"
+   },
+   "passwordProtectionVerificationPassword": {
+      "message": "암호"
+   },
+   "passwordProtectionVerificationRequired": {
+      "message": "검증 필요"
+   },
+   "passwordQuestionBack": {
+      "message": "뒤로"
+   },
+   "passwordQuestionClickBack": {
+      "message": "아래 \"뒤로\" 를 클릭하는 사용자"
+   },
+   "passwordQuestionDontShowAgain": {
+      "message": "다시는 보이지 않는다."
+   },
+   "passwordQuestionPleaseTryAgain": {
+      "message": "틀립니다. 다시 시도해 주세요."
+   },
+   "passwordQuestionReallyToDo": {
+      "message": "정말 그러고 싶어요?"
+   },
+   "passwordQuestionSaveMinutes": {
+      "message": "하루 평균 15분을 아낄 수 있다."
+   },
+   "passwordQuestionToUnlock": {
+      "message": "잠금 해제하려면"
+   },
+   "passwordVerificationWarning": {
+      "message": "비밀번호 보호를 사용할 수 없습니다. 사용 가능하게 하려면, 원래 계정을 설정하는 데 사용한 것과 동일한 브라우저 창에서 이메일의 링크를 여십시오."
+   },
+   "popupHeaderUpgradeNow": {
+      "message": "무제한"
+   },
+   "popupLockedSubtitle": {
+      "message": "확장 설정에 액세스하려면 암호를 입력하십시오"
+   },
+   "popupLockedTitle": {
+      "message": "BlockSite가 잠겨있습니다"
+   },
+   "popupQuestionApprove": {
+      "message": "예"
+   },
+   "popupQuestionCancel": {
+      "message": "아니오"
+   },
+   "premiumBannerCTA": {
+      "message": "무제한"
+   },
+   "premiumBannerNew": {
+      "message": "새 기능!"
+   },
+   "premiumBannerSubtitleA": {
+      "message": "고유한 이미지 및 텍스트를 선택하여 고유한 차단된 페이지를 작성하십시오."
+   },
+   "premiumBannerSubtitleB": {
+      "message": "유격수에 주의를 뺏기지 말아라. 원하는 만큼 사이트를 추가하십시오."
+   },
+   "premiumBannerTitleA": {
+      "message": "고유한 블록 페이지를 만들어라!"
+   },
+   "premiumBannerTitleB": {
+      "message": "무제한 블록 리스트 가져오기!"
+   },
+   "premiumHookCTA": {
+      "message": "무료로 해 보세요."
+   },
+   "premiumHookTitle": {
+      "message": "무제한"
+   },
+   "premiumOverlayCategorySubtitle": {
+      "message": "차단하는 가장 빠른 방법"
+   },
+   "premiumOverlayCategoryTitle": {
+      "message": "카테고리별 블록"
+   },
+   "premiumOverlayCustomizationSubtitle": {
+      "message": "이미지 및 텍스트 설정하기"
+   },
+   "premiumOverlayCustomizationTitle": {
+      "message": "블록 페이지 사용자 정의"
+   },
+   "premiumOverlayGoUnlimited": {
+      "message": "무제한"
+   },
+   "premiumOverlayInsightsSubtitle": {
+      "message": "찾아보기 경향 탐색"
+   },
+   "premiumOverlayInsightsTitle": {
+      "message": "유용한 통찰력"
+   },
+   "premiumOverlayMaybeLater": {
+      "message": "아마 나중에"
+   },
+   "premiumOverlaySubtitle": {
+      "message": "무료로 3일을 시도해 보십시오."
+   },
+   "premiumOverlayTitle": {
+      "message": "블록사이트 ' 무제한 '"
+   },
+   "premiumOverlayUnlimitedSubtitle": {
+      "message": "어디 있나요? 언제든지."
+   },
+   "premiumOverlayUnlimitedTitle": {
+      "message": "무제한 차단 목록"
+   },
+   "privacyIAccept": {
+      "message": "내가 수락합니다"
+   },
+   "privacySettingsPrivacyPolicy": {
+      "message": "개인정보 보호정책"
+   },
+   "privacySettingsSubtitle": {
+      "message": "블록 사이트가 방문한 URL, IP 주소, 운영 체제 및 브라우저 정보에 액세스할 수 있도록 허용 "
+   },
+   "privacySettingsTitle": {
+      "message": "\"카테고리별 블록\" 사용"
+   },
+   "protectionSettingsSaved": {
+      "message": "보호 설정이 저장되었습니다"
+   },
+   "pushToAccountCTA": {
+      "message": "Sign Up Now"
+   },
+   "pushToAccountSubTitle": {
+      "message": "무료 블록 사이트 계정을 작성하여 생산적이고 장치 간에 블록 사이트를 동기화할 수 있는 보상을 얻을 수 있습니다."
+   },
+   "pushToAccountTitle": {
+      "message": "등록된 사용자가 목표를 보다 빠르게 달성"
+   },
+   "pushToBlockListCTA": {
+      "message": "무제한"
+   },
+   "pushToBlockListSubTitle": {
+      "message": "현재 업그레이드하여 블록 목록에 원하는 만큼의 사이트를 추가하십시오."
+   },
+   "pushToBlockListTitle": {
+      "message": "오늘 업그레이드하여 무제한 블록 목록 가져오기"
+   },
+   "pushToCategoriesCTA": {
+      "message": "무제한"
+   },
+   "pushToCategoriesSubTitle": {
+      "message": "한 번의 클릭으로 수천 개의 웹 사이트를 차단하여 시간을 절약하고 초점을 유지합니다."
+   },
+   "pushToCategoriesTitle": {
+      "message": "한 번의 클릭으로 수천 개의 웹 사이트를 차단합니다."
+   },
+   "pushToCustomizedPageSubTitle": {
+      "message": "이미지 및 텍스트를 선택하고 차단된 페이지를 작성합니다."
+   },
+   "pushToCustomizedPageTitle": {
+      "message": "& 을 작성하여 자신의 차단된 페이지 사용자 정의"
+   },
+   "pushToCustomizedPagedCTA": {
+      "message": "무제한"
+   },
+   "pushToDesktopCTA": {
+      "message": "지금 해보세요."
+   },
+   "pushToDesktopOverlayCTAMaybeLater": {
+      "message": "아마 나중에"
+   },
+   "pushToDesktopOverlayCTAUpgrade": {
+      "message": "자세히 알아보기"
+   },
+   "pushToDesktopOverlaySubtitleA": {
+      "message": "이제 하나의 앱으로 에지, Firefox및 Chrome 에서의 모든 방해를 차단할 수 있습니다! 오늘 새 앱 다운로드"
+   },
+   "pushToDesktopOverlaySubtitleB": {
+      "message": "이제 새로운 Windows 데스크탑 애플리케이션을 사용하여 크롬, 파이어폭스, 엣지에 대한 모든 관심을 차단할 수 있습니다."
+   },
+   "pushToDesktopOverlayTitleA": {
+      "message": "다중 브라우저를 통한 블록"
+   },
+   "pushToDesktopOverlayTitleB": {
+      "message": "새로운 윈도우 앱이 이제는 라이브로 제공되었습니다!"
+   },
+   "pushToDesktopSubTitle": {
+      "message": "이제 하나의 앱으로 에지, Firefox및 Chrome 에서의 모든 방해를 차단할 수 있습니다! 오늘 새 앱 다운로드"
+   },
+   "pushToDesktopTitle": {
+      "message": "블록사이트 윈도우 앱 BETA Now Available!"
+   },
+   "pushToGoUnlimitedCTA": {
+      "message": "무제한"
+   },
+   "pushToGoUnlimitedSubTitle": {
+      "message": "프리미엄 사용자는 매일 더 많은 시간을 절약할 수 있습니다. 블록 사이트를 무제한으로 업그레이드할 수도 있습니다."
+   },
+   "pushToGoUnlimitedTitle": {
+      "message": "자세히 살펴보자. 제한 없는"
+   },
+   "pushToInsightsCTA": {
+      "message": "무제한"
+   },
+   "pushToInsightsSubTitle": {
+      "message": "시간에 따른 온라인 찾아보기 경향을 탐색하고 생산성을 향상시키는 방법을 학습합니다."
+   },
+   "pushToInsightsTitle": {
+      "message": "Insights를 사용하여 브라우징 동향을 살펴보자!"
+   },
+   "pushToMobileOverlayCTA": {
+      "message": "아마 나중에"
+   },
+   "pushToMobileOverlaySubtitle": {
+      "message": "모바일을 위한 BlockSite를 얻기 위해 바코드 스캐닝을 통해 생산성을 유지할 수 있다."
+   },
+   "pushToMobileOverlayTitle": {
+      "message": "모바일에서 블록 사이트 가져오기"
+   },
+   "rateUsBlessingStepBtn": {
+      "message": "웹스토어의 요금률"
+   },
+   "rateUsBlessingStepSubTitle": {
+      "message": "선생님의 피드백은 중요합니다. 다른 사용자가 웹 상점에 대한 검토를 수행하여 앱의 이점을 찾을 수 있도록 도움을 줍니다."
+   },
+   "rateUsBlessingStepTitle": {
+      "message": "야호! 우리는 당신이 그것을 좋아하게 되어 기쁩니다."
+   },
+   "rateUsReviewStepBtn": {
+      "message": "피드백 보내기"
+   },
+   "rateUsReviewStepMsgError": {
+      "message": "입력된 문자가 올바르지 않습니다"
+   },
+   "rateUsReviewStepSubTitle": {
+      "message": "우리의 지원과 제품 팀들은 곧 만족을 기대하고 있습니다."
+   },
+   "rateUsReviewStepTextContent": {
+      "message": "여러분의 의견"
+   },
+   "rateUsReviewStepTitleContent": {
+      "message": "어떻게 개선할 수 있을까요?"
+   },
+   "rateUsSReviewStepTitle": {
+      "message": "감사합니다. 당신의 의견은 우리에게 중요합니다."
+   },
+   "rateUsSubmittingStepBtn": {
+      "message": "제출"
+   },
+   "rateUsSubmittingStepSubTitle": {
+      "message": "당신이 생각하는 것을 말하기 위해 별을 누릅니다."
+   },
+   "rateUsSubmittingStepTitle": {
+      "message": "블록 사이트를 평가하려면 어떻게 해야 합니까?"
+   },
+   "redirectOnBoardingDescription": {
+      "message": "차단된 사이트, 키워드 또는 포커스 모드를 사용할 때 경로 재지정할 웹 사이트를 추가하십시오."
+   },
+   "redirectOnBoardingTitle": {
+      "message": "경로 재지정 사이트 설정하기"
+   },
+   "resetPasswordSuccessBtnText": {
+      "message": "확인"
+   },
+   "resetPasswordSuccessSubTitle": {
+      "message": "암호가 다음으로 전송되었습니다. $MAIL$",
+      "placeholders": {
+         "mail": {
+            "content": "$1",
+            "example": "example@mail.com"
+         }
+      }
+   },
+   "resetPasswordSuccessTitle": {
+      "message": "암호 전송됨"
+   },
+   "rewardUnlockCta": {
+      "message": "모든 리워드 찾아보기"
+   },
+   "rewardUnlockDescription": {
+      "message": "잘했어! 당신의 노력은 결실을 맺었고 당신은 그것에 대한 보답을 받았어요! 지금 사용하거나 나중에 저장할 수 있습니다."
+   },
+   "rewardUnlockTitle": {
+      "message": "잠겼어!"
+   },
+   "saveEmailSettings": {
+      "message": "저장"
+   },
+   "scheduleOnBoardingDescription": {
+      "message": "특정 일 및 시간 프레임의 블록 사이트. 사이트는 이러한 시간 프레임 외부에서 차단되지 않습니다."
+   },
+   "scheduleOnBoardingTitle": {
+      "message": "차단 일정 작성"
+   },
+   "setFirstPassProtectUserActionCTA": {
+      "message": "환상적인"
+   },
+   "setFirstPassProtectUserActionSubTitle": {
+      "message": "이제는 방해를 피하는 것이 훨씬 더 쉬울 것입니다."
+   },
+   "setFirstPassProtectUserActionTitle": {
+      "message": "잘했어!"
+   },
+   "setUpEmailAndPass": {
+      "message": "활성화하려면 이메일 및 암호를 설정합니다"
+   },
+   "settingEnableFocusModeFaviconSubtitle": {
+      "message": "확장의 선호 아이콘에 현재 간격으로 남아 있는 시간을 표시하려면 이 옵션을 사용 가능하게 하십시오."
+   },
+   "settingEnableFocusModeFaviconTitle": {
+      "message": "즐겨찾기에 남아 있는 시간 표시"
+   },
+   "settingEnableSyncStatusSubtitle": {
+      "message": "모바일 및/또는 기타 확장과의 동기화를 쉽게 사용/사용 안함으로 설정할 수 있는 단축키를 표시할 수 있습니다."
+   },
+   "settingEnableSyncStatusTitle": {
+      "message": "동기화 옵션 페이지 바로 가기 메뉴 표시"
+   },
+   "settingsChangedTitle1": {
+      "message": "이메일과 암호를 저장하여 추가 보호 기능을 활성화하십시오."
+   },
+   "settingsEnableBlockSiteShortcutSubtitle": {
+      "message": "웹 사이트에서 차단 사이트 메뉴를 마우스 오른쪽 단추로 클릭하고 선택하여 블록 목록 또는 포커스 모드 목록에 사이트를 추가하십시오."
+   },
+   "settingsEnableBlockSiteShortcutTitle": {
+      "message": "마우스 오른쪽 단추 클릭을 사용하여 BlockSite 단축 아이콘 사용하기"
+   },
+   "settingsGeneralHeader": {
+      "message": "일반"
+   },
+   "settingsIntegrationsHeader": {
+      "message": "통합"
+   },
+   "settingsNotSaved": {
+      "message": "설정이 저장되지 않음"
+   },
+   "settingsOptionSubtitle": {
+      "message": ""
+   },
+   "settingsOptionTitle": {
+      "message": "설정"
+   },
+   "settingsShowMotivationalSubtitle": {
+      "message": "이 기능을 사용하면 차단된 사이트에 이미지가 표시됩니다. 사용하지 않으면 흰색 배경이 표시됩니다."
+   },
+   "settingsShowMotivationalTitle": {
+      "message": "차단된 페이지 동기 이미지 표시"
+   },
+   "settingsSlackDNDSubtitle": {
+      "message": "포커스 세션에서 모드를 버리지 않음 모드로 자동 설정"
+   },
+   "settingsSlackDNDTitle": {
+      "message": "포커스 세션 중에 DND 부족"
+   },
+   "settingsSlackDNDTurnOffOverlayNoThanks": {
+      "message": "감사합니다."
+   },
+   "settingsSlackDNDTurnOffOverlaySubtitle": {
+      "message": "블록사이트에 대한 Slack를 끄면 훨씬 더 쉽게 주의를 분산시킬 수 있다. 여전히 슬랙을 해제하시겠습니까?"
+   },
+   "settingsSlackDNDTurnOffOverlayTitle": {
+      "message": "계속 진행할까요?"
+   },
+   "settingsSlackDNDTurnOffOverlayYesPlease": {
+      "message": "예:"
+   },
+   "settingsSlackDNDTurnOnOverlayGoUnlimitedSlackAccount": {
+      "message": "무제한"
+   },
+   "settingsSlackDNDTurnOnOverlayLinkSlackAccount": {
+      "message": "링크 슬랙 계정"
+   },
+   "settingsSlackDNDTurnOnOverlayMaybeLater": {
+      "message": "아마 나중에"
+   },
+   "settingsSlackDNDTurnOnOverlayNotifications": {
+      "message": "자동으로 설정하지 않음 모드를 설정하여 초점 모드 중에 자동 알림 넣기"
+   },
+   "settingsSlackDNDTurnOnOverlayPrivacy": {
+      "message": "참고: BlockSite는 메시지를 비공개로 유지한다. 보내거나 받은 메시지 또는 대화를 저장하거나 볼 수 없습니다."
+   },
+   "settingsSlackDNDTurnOnOverlayTitle": {
+      "message": "Slack with BlockSite를 통합하여 더 많은 방해 방지"
+   },
+   "settingsSlackDNDTurnOnUpgradeOverlayTitle": {
+      "message": "블록사이트와 Slack를 통합하기 위해 무제한으로 업그레이드"
+   },
+   "settingsSlackDNDUpgradeButton": {
+      "message": "무제한"
+   },
+   "settingsSlackSubtitleNonPremium": {
+      "message": "블록 사이트 자동화로 업그레이드하여 Slack를 자동화하여 블록 사이트 자동화로 업그레이드할 수 있습니다."
+   },
+   "settingsSlackSubtitlePremium": {
+      "message": "Slack에 대한 BlockSites 자동화를 사용하여 집중을 강화합니다."
+   },
+   "settingsSyncHeader": {
+      "message": "동기화"
+   },
+   "settingsSyncSubtitle": {
+      "message": "현재 확장의 환경 설정 및 블록 목록을 클라우드로 백업하거나 동일한 사용자 계정으로 서명할 때 Android및/또는 확장 플랫폼에서 최대 4개의 기타 디바이스와 동기화하십시오."
+   },
+   "settingsSyncTitle": {
+      "message": "다른 장치와 동기화"
+   },
+   "settingsViewHeader": {
+      "message": "보기"
+   },
+   "shareFacebookIconTitle": {
+      "message": "페이스북"
+   },
+   "shareLinkedinIconTitle": {
+      "message": "링크드인"
+   },
+   "sharePopupSubTitle": {
+      "message": "블록사이트에 대해 알리도록 하여 다른 사용자에게 도움을 줄 수 있습니다."
+   },
+   "sharePopupTitle": {
+      "message": "생산성과 집중력에 대한 여러분의 사랑을 나누세요."
+   },
+   "shareTwitterIconTitle": {
+      "message": "트위터"
+   },
+   "specialOfferPopupFinePrint": {
+      "message": "매년 청구됩니다. 청구를 반복합니다. 어떠한 이유로 언제라도 취소"
+   },
+   "specialOfferPopupGoMaybeLater": {
+      "message": "아마 나중에"
+   },
+   "specialOfferPopupGoUnlimited": {
+      "message": "무제한"
+   },
+   "specialOfferPopupSave": {
+      "message": "저장"
+   },
+   "specialOfferPopupSubtitle": {
+      "message": " 또한 벌크 블로킹, 비밀번호 보호 등의 기능을 사용할 수 있다. 제한된 시간만!"
+   },
+   "specialOfferPopupTitle": {
+      "message": "$에 대한 제한되지 않은 블로킹 가져오기"
+   },
+   "specialOfferPopupYear": {
+      "message": "해"
+   },
+   "syncOverrideConfirmationApprove": {
+      "message": "예"
+   },
+   "syncOverrideConfirmationCancel": {
+      "message": "아니오"
+   },
+   "syncOverrideConfirmationSubTitle": {
+      "message": "오프라인 모드에서 수행된 모든 변경사항은 다른 디바이스에서 업데이트되지 않으며 유실됩니다."
+   },
+   "syncOverrideConfirmationTitle": {
+      "message": "계속 진행할까요?"
+   },
+   "tagTextLatestNews": {
+      "message": "최근 뉴스"
+   },
+   "tagTextPremium": {
+      "message": "프리미엄 (Premium)"
+   },
+   "tagTextQuickTip": {
+      "message": "빠른 팁"
+   },
+   "tooltipExportList": {
+      "message": "목록 내보내기"
+   },
+   "tooltipImportList": {
+      "message": "목록 가져오기"
+   },
+   "updateEmailAndPassword": {
+      "message": "이메일 및 암호 업데이트"
+   },
+   "updateThemHereLink": {
+      "message": "여기서 업데이트하기"
+   },
+   "userActionStars": {
+      "message": "너는 이미 '스타' 를 얻었다.",
+      "placeholders": {
+         "stars": {
+            "content": "$1",
+            "example": "25"
+         }
+      }
+   },
+   "verificationCheckYourEmail": {
+      "message": "활성화하려면 이메일의 검증 링크를 확인하십시오."
+   },
+   "verificationClickToResend": {
+      "message": "다시 보내려면 여기를 클릭하십시오."
+   },
+   "verificationDidntReceiveEmail": {
+      "message": "이메일을 받지 않았다면"
+   },
+   "verifyResetPasswordAcceptBtn": {
+      "message": "예, 암호 재설정"
+   },
+   "verifyResetPasswordCancelBtn": {
+      "message": "아니오, 취소"
+   },
+   "verifyResetPasswordText": {
+      "message": "비밀번호를 재설정하고 이메일에 새 비밀번호를 보냅니다."
+   },
+   "verifyResetPasswordTitle": {
+      "message": "확실하신가요?"
+   },
+   "viewAccount": {
+      "message": "계정 보기"
+   },
+   "whatsNewFeature1": {
+      "message": "보다 나은 초점을 위해 차단 경험을 개선했으며 이제 차단 스케줄에 카테고리 및 키워드를 추가할 수 있습니다."
+   },
+   "whatsNewGotIt": {
+      "message": "이해했습니다"
+   },
+   "whatsNewSubtitle": {
+      "message": "블록사이트의 새로운 기능은 다음과 같습니다."
+   },
+   "whatsNewTitle": {
+      "message": "환영합니다"
+   },
+   "whiteListRedirectRemovePopupDescription": {
+      "message": "화이트리스트 모드 간 전환 시 경로 재지정 사이트를 지워야 합니다."
+   },
+   "whitelistInfoToolTip": {
+      "message": "화이트리스트에 있는 웹 사이트와 구분된 모든 웹 사이트 차단"
+   },
+   "whitelistModeTitle": {
+      "message": "허용 모드"
+   },
+   "whitelistPopUpDescription": {
+      "message": "목록에 있는 사이트를 제외한 모든 사이트가 차단됩니다"
+   },
+   "whitelistPopUpTitle": {
+      "message": "계속 진행할까요?"
+   },
+   "workModeEnterPassToPauseOrReset": {
+      "message": "%TIMER_ACTION% 으로 암호 입력",
+      "placeholders": {
+         "timer_action": {
+            "content": "$1",
+            "example": "25"
+         }
+      }
+   },
+   "workModeToPauseOrResetEnterPassword": {
+      "message": "암호를 %TIMER_ACTION% 으로 입력하십시오.",
+      "placeholders": {
+         "timer_action": {
+            "content": "$1",
+            "example": "25"
+         }
+      }
+   },
+   "workModeWrongPassword": {
+      "message": "잘못된 비밀번호"
+   },
+   "wrongPassword": {
+      "message": "잘못되었습니다. 다시 시도하십시오."
+   }
+}

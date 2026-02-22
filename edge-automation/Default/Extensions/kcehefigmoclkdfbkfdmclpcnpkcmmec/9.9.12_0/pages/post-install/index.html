@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Welcome to IronVest</title>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <link href="../application.css" rel="stylesheet" />
+    <link href="./style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <img
+      class="image-decoration"
+      src="./assets/decoration.png"
+      width="450px"
+    />
+    <div class="container">
+      <img
+        class="logo"
+        src="./assets/logo.svg"
+        width="213px"
+        height="52px"
+      />
+      <div class="container__content">
+        <h1 class="header">Welcome to IronVest</h1>
+        <h4 class="subheader">Let's protect your accounts.</h4>
+        <div class="content--locked">
+          <a
+            href="https://ironvest.com/app/sign-up"
+            class="btn btn-primary"
+          >
+            Sign Up
+          </a>
+          <a href="https://ironvest.com/app/sign-in" class="btn">
+            I already have an account
+          </a>
+        </div>
+        <div class="content--unlocked">
+          <a
+            href="https://ironvest.com/app"
+            class="btn btn-primary"
+          >
+            Go to your dashboard
+          </a>
+        </div>
+      </div>
+    </div>
+    <div id="popup" class="popup">
+      <div class="popup__content">
+        <img
+          class="logo"
+          src="./assets/logo.svg"
+          width="120px"
+          height="30px"
+        />
+        <div class="description">
+          <div class="description__header">
+            For easy access select
+            <img
+              class="icon"
+              src="./assets/puzzle.svg"
+              width="19px"
+              height="19px"
+            />
+            <br />
+            and pin it
+          </div>
+          <img
+            class="description__image"
+            src="./assets/popup-content.svg"
+          />
+        </div>
+        <button id="close-button" class="btn">Close</button>
+      </div>
+    </div>
+    <script type="application/javascript" src="/jquery-min.js"></script>
+    <script type="application/javascript" src="./post-install.js"></script>
+  </body>
+</html>

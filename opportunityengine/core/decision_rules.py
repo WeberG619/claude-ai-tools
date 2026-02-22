@@ -37,10 +37,10 @@ class Decision:
 # These control autonomous behavior. Conservative to start, loosen as we win.
 
 # Auto-submit without asking if ALL of these are true
-AUTO_SUBMIT_MAX_BID = 500           # Don't auto-bid more than this
-AUTO_SUBMIT_MIN_SCORE = 75          # Must be highly qualified
-AUTO_SUBMIT_MIN_SKILL_SCORE = 60    # Must have strong skill match
-AUTO_SUBMIT_MAX_COMPETITION = 15    # Not too many competitors
+AUTO_SUBMIT_MAX_BID = 1000          # Don't auto-bid more than this
+AUTO_SUBMIT_MIN_SCORE = 65          # Qualified is good enough to act
+AUTO_SUBMIT_MIN_SKILL_SCORE = 50    # Reasonable skill match
+AUTO_SUBMIT_MAX_COMPETITION = 20    # Allow more competitive fields
 
 # Draft but hold for approval
 DRAFT_MIN_SCORE = 60                # Worth drafting a proposal

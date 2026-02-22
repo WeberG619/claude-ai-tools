@@ -154,7 +154,7 @@ class ProposalAgent:
 
     def _build_prompt(self, opp: Opportunity, template: str) -> str:
         """Build the prompt for Claude to draft a proposal."""
-        return f"""Draft a professional freelance proposal for this opportunity.
+        return f"""Draft a winning freelance proposal. This needs to STAND OUT and get hired.
 
 **Job Title:** {opp.title}
 **Platform:** {opp.source}
@@ -167,27 +167,42 @@ class ProposalAgent:
 **Template Style:**
 {template[:2000] if template else 'Write a professional, concise proposal.'}
 
-**Instructions:**
-- Write as Weber Gouin, a BIM/Revit specialist and full-stack developer
-- Highlight relevant experience: 700+ Revit API methods, automation expertise, AEC background
-- Be specific about technical approach for THEIR needs
-- Keep it concise (200-400 words)
-- Professional but personable tone
-- Include a brief mention of timeline
-- Do NOT include pricing (that's handled separately)
-- Do NOT include generic filler - every sentence should add value
-- Match the platform norms ({opp.source})
+**WHO YOU ARE (Weber Gouin):**
+You are NOT a generic freelancer. You are a rare combination:
+- BIM/Revit API expert with 700+ production API methods (C#, Python, pyRevit, Dynamo)
+- Full-stack developer (Python, C#, JavaScript/TypeScript, React, FastAPI)
+- AI/automation specialist who built production autonomous agent systems with Claude API, MCP servers, and tool-use architectures
+- Background in architecture/AEC — you understand the DOMAIN, not just the code
+- You run a system of autonomous agents that operate 24/7
+
+**WRITING RULES (CRITICAL):**
+1. Open with a SPECIFIC observation about THEIR project that proves you read it — reference something concrete from the description
+2. Connect your experience to THEIR exact problem — don't list generic skills
+3. Propose a concrete first step or technical approach — show you've already started thinking about their problem
+4. If BIM/Revit/architecture related: lead with domain expertise, this is your killer differentiator
+5. If AI/automation related: mention you've built production autonomous systems, not demos
+6. If general dev: lead with speed and reliability, mention you deliver working code fast
+7. Keep it 150-300 words. Short, punchy, specific. No filler.
+8. Sound like a senior engineer, not a desperate freelancer. Confident but not arrogant.
+9. End with availability (can start immediately) and a question that moves the conversation forward
+10. Do NOT include pricing
+11. Do NOT use buzzwords or corporate speak
+12. Match platform norms: {"short and direct for Reddit/HN, more professional for Upwork/Freelancer" if opp.source in ("reddit", "hackernews") else "professional but not stiff for " + opp.source}
+13. NEVER start with "I'm interested in your project" — that's what every other freelancer says
 """
 
     def _template_fallback(self, opp: Opportunity, template: str) -> str:
-        """Simple placeholder replacement when AI isn't available."""
+        """Placeholder replacement when AI isn't available — still sell the edge."""
         if not template:
+            skills_text = ', '.join(opp.skills_required[:3]) if opp.skills_required else 'this area'
             return (
                 f"Hi,\n\n"
-                f"I'm interested in your project: {opp.title}\n\n"
-                f"With extensive experience in {', '.join(opp.skills_required[:3]) if opp.skills_required else 'this area'}, "
-                f"I can deliver quality results efficiently.\n\n"
-                f"I'd love to discuss the details.\n\n"
+                f"Your project caught my eye — I work at the intersection of BIM/Revit automation "
+                f"and AI agent development, which is a rare combination.\n\n"
+                f"I've built 700+ Revit API methods in production, full-stack applications in "
+                f"Python/C#/TypeScript, and autonomous AI systems that run 24/7. "
+                f"For {skills_text} work like this, I can typically deliver a working solution fast.\n\n"
+                f"Can we discuss the specifics? I can start immediately.\n\n"
                 f"Best,\nWeber Gouin"
             )
 

@@ -1,0 +1,50 @@
+{
+  "name": "etrakit-mcp",
+  "version": "1.0.0",
+  "description": "eTRAKiT Permit MCP Server - Scrapes CentralSquare eTRAKiT permit portals used by Broward County cities for structured permit data including permit info, inspections, reviews, fees, contacts, conditions, chronology, and status monitoring.",
+  "tools": [
+    "search_permits",
+    "get_permit_details",
+    "get_permit_inspections",
+    "get_permit_comments",
+    "monitor_permit_status"
+  ],
+  "supported_cities": [
+    "coral-springs"
+  ],
+  "planned_cities": [
+    "pompano-beach",
+    "fort-lauderdale",
+    "margate",
+    "coconut-creek",
+    "parkland"
+  ],
+  "portals": {
+    "coral-springs": {
+      "url": "https://etrakit.coralsprings.gov/etrakit/",
+      "search_url": "https://etrakit.coralsprings.gov/etrakit/Search/Permit.aspx",
+      "platform": "CentralSquare eTRAKiT",
+      "search_fields": ["permit_number", "address", "contractor", "folio", "owner", "status", "type"]
+    }
+  },
+  "data_fields": {
+    "search": ["permit_number", "type", "status", "address", "description"],
+    "details": [
+      "permit_info", "site_info", "contacts", "fees",
+      "inspections", "chronology", "conditions", "reviews"
+    ],
+    "inspections": ["date", "type", "result", "inspector", "comments", "status", "requested_date", "scheduled_date"],
+    "comments": ["date", "type", "comment", "reviewer", "status", "source"],
+    "reviews": ["date", "discipline", "reviewer", "status", "cycle", "comments"]
+  },
+  "cache": {
+    "backend": "sqlite",
+    "ttl_minutes": 30,
+    "file": "permit_cache.db"
+  },
+  "browser": {
+    "engine": "playwright-chromium",
+    "headless": true,
+    "rate_limit_seconds": 3
+  }
+}

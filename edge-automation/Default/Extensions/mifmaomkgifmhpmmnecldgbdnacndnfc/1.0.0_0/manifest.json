@@ -1,0 +1,36 @@
+{
+   "action": {
+      "default_icon": {
+         "128": "icon128.png",
+         "32": "icon32.png",
+         "64": "icon64.png"
+      },
+      "default_title": "ChatGPT writer for Email, Essay"
+   },
+   "background": {
+      "service_worker": "background.js"
+   },
+   "content_scripts": [ {
+      "css": [ "content.css" ],
+      "js": [ "content.js" ],
+      "matches": [ "*://mail.google.com/mail/u/0/*" ],
+      "run_at": "document_end"
+   } ],
+   "description": "Effortlessly Write Emails with ChatGPT writer for Email, Essay",
+   "host_permissions": [ "https://*.openai.com/*" ],
+   "icons": {
+      "128": "icon128.png",
+      "32": "icon32.png",
+      "64": "icon64.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAyyOsZ/j6l6yVnU9T+U2smxaSeBmeKCnzLagsHvHMZAfXCsk9HWpsAJUzOCc84RTHE20ExjAo2VhDezciEiYTIOoJLZ7stZc4KFmFvNIQNQdRzSesCr4XsM4oE9n0EEUmtoyg4rIb6N12KYyIoVy3npHNKfhws2X7PT0jyQKJaD3AM9BlqE0FZTbzMjeFkVclWEDUQ9/ZiGYGV37srjT1rwXZIfzgHIKriwxEG3CxoO8oCG4fyj6/O+o5JBBRzWVJqxVNmyilshOfhdOWRT2udMC0UjMAF/uyukI/YpNaoGDKvo0QRO8mPdf34VxAEZaO8GnXskL4bb+1hls9lwMTrQIDAQAB",
+   "manifest_version": 3,
+   "name": "ChatGPT writer for Email, Essay",
+   "permissions": [ "storage", "notifications" ],
+   "update_url": "https://edge.microsoft.com/extensionwebstorebase/v1/crx",
+   "version": "1.0.0",
+   "web_accessible_resources": [ {
+      "matches": [ "http://*/*", "https://*/*" ],
+      "resources": [ "Group.svg", "cancel.svg", "icon128.png", "Vector.svg", "info.svg", "animation.png", "greyStar.svg", "yellowStar.svg" ]
+   } ]
+}

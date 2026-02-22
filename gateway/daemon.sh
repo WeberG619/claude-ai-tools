@@ -34,7 +34,8 @@ SERVICES[telegram-bot]="python3 bot.py"
 SERVICE_DIRS[telegram-bot]="$TOOLS_DIR/telegram-gateway"
 
 # WhatsApp must run on Windows side (Puppeteer needs Windows Chrome)
-SERVICES[whatsapp-gw]="cmd.exe /c node server.js"
+# Use powershell.exe with -WindowStyle Hidden to prevent visible cmd popup on restart loops
+SERVICES[whatsapp-gw]="powershell.exe -WindowStyle Hidden -NoProfile -Command \"node server.js\""
 SERVICE_DIRS[whatsapp-gw]="$TOOLS_DIR/whatsapp-gateway"
 
 SERVICES[web-chat]="python3 server.py"

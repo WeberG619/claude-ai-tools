@@ -1,0 +1,7 @@
+2026/02/15-10:19:51.468 f5c Reusing MANIFEST D:\_CLAUDE-TOOLS\edge-automation\Default\IndexedDB\chrome-extension_lbnblmjlpifpfpefbcgefbhnlcnnjgjk_0.indexeddb.leveldb/MANIFEST-000001
+2026/02/15-10:19:51.470 f5c Recovering log #4
+2026/02/15-10:19:51.470 f5c Reusing old log D:\_CLAUDE-TOOLS\edge-automation\Default\IndexedDB\chrome-extension_lbnblmjlpifpfpefbcgefbhnlcnnjgjk_0.indexeddb.leveldb/000004.log 
+2026/02/15-10:19:51.561 b704 Level-0 table #8: started
+2026/02/15-10:19:51.635 b704 Level-0 table #8: 4621 bytes OK
+2026/02/15-10:19:51.668 b704 Delete type=0 #4
+2026/02/15-10:19:51.669 9f94 Manual compaction at level-0 from '\x00\x04\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x05\x00\x00\x00' @ 0 : 0; will stop at (end)

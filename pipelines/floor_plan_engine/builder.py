@@ -27,6 +27,7 @@ class FloorPlanBuilder:
         self._open_connections: Set[Tuple[str, str]] = set()
         self._footprint_width: float = 0.0
         self._footprint_height: float = 0.0
+        self._footprint_polygon: List[Tuple[float, float]] = []
 
     # -----------------------------------------------------------------
     # Room placement
@@ -51,6 +52,9 @@ class FloorPlanBuilder:
         """Add 4 exterior walls forming a rectangle."""
         self._footprint_width = width
         self._footprint_height = height
+        self._footprint_polygon = [
+            (0, 0), (width, 0), (width, height), (0, height),
+        ]
         self._walls.append(
             WallSegment(0, 0, width, 0, is_exterior=True))       # south
         self._walls.append(
@@ -65,6 +69,7 @@ class FloorPlanBuilder:
         self, points: List[Tuple[float, float]]
     ) -> 'FloorPlanBuilder':
         """Add exterior walls forming an L-shape or custom polygon."""
+        self._footprint_polygon = list(points)
         for i in range(len(points)):
             p1 = points[i]
             p2 = points[(i + 1) % len(points)]
@@ -131,15 +136,8 @@ class FloorPlanBuilder:
                     continue
 
                 # Skip edges on the exterior boundary
-                on_exterior = False
-                if abs(y1) < tol and abs(y2) < tol:
-                    on_exterior = True
-                elif abs(y1 - h) < tol and abs(y2 - h) < tol:
-                    on_exterior = True
-                elif abs(x1) < tol and abs(x2) < tol:
-                    on_exterior = True
-                elif abs(x1 - w) < tol and abs(x2 - w) < tol:
-                    on_exterior = True
+                on_exterior = self._is_on_exterior_boundary(
+                    x1, y1, x2, y2, tol)
 
                 if not on_exterior:
                     seen_edges.add(edge_key)
@@ -147,7 +145,114 @@ class FloorPlanBuilder:
                         x1, y1, x2, y2, is_exterior=False,
                     ))
 
+        # Merge collinear interior segments into continuous walls
+        from .wall_utils import merge_collinear_walls
+        self._walls = merge_collinear_walls(self._walls)
+
         return self
+
+    def merge_collinear_walls(self) -> 'FloorPlanBuilder':
+        """Merge collinear, overlapping wall segments into continuous walls."""
+        from .wall_utils import merge_collinear_walls
+        self._walls = merge_collinear_walls(self._walls)
+        return self
+
+    def auto_boundary_walls(self) -> 'FloorPlanBuilder':
+        """Add interior walls for room edges facing circulation voids.
+
+        For each room edge that is:
+        - NOT on the exterior boundary, AND
+        - NOT shared with another room, AND
+        - Within the footprint polygon (faces interior space)
+        create an interior wall segment.
+
+        Requires a footprint polygon to determine what's "inside".
+        """
+        tol = 0.25
+        existing_edges = set()
+
+        # Collect existing interior wall segments
+        for w in self._walls:
+            if not w.is_exterior:
+                key = (round(min(w.x1, w.x2), 2), round(min(w.y1, w.y2), 2),
+                       round(max(w.x1, w.x2), 2), round(max(w.y1, w.y2), 2))
+                existing_edges.add(key)
+
+        new_walls = []
+        for room in self._rooms:
+            # Check all 4 edges
+            edges = [
+                (room.x, room.y, room.right, room.y),       # south
+                (room.right, room.y, room.right, room.top),  # east
+                (room.x, room.top, room.right, room.top),    # north
+                (room.x, room.y, room.x, room.top),          # west
+            ]
+
+            for x1, y1, x2, y2 in edges:
+                # Skip exterior boundary edges
+                if self._is_on_exterior_boundary(x1, y1, x2, y2, tol):
+                    continue
+
+                # Skip edges shared with another room
+                shared = False
+                for other in self._rooms:
+                    if other.name == room.name:
+                        continue
+                    seg = room.shared_edge_segment(other, tol)
+                    if seg is None:
+                        continue
+                    (sx1, sy1), (sx2, sy2) = seg
+                    # Check if this shared segment covers our edge
+                    if self._segments_overlap(
+                        x1, y1, x2, y2, sx1, sy1, sx2, sy2, tol
+                    ):
+                        shared = True
+                        break
+
+                if shared:
+                    continue
+
+                # Check if edge already exists as a wall
+                key = (round(min(x1, x2), 2), round(min(y1, y2), 2),
+                       round(max(x1, x2), 2), round(max(y1, y2), 2))
+                if key in existing_edges:
+                    continue
+
+                # This edge faces interior space with no room — add wall
+                existing_edges.add(key)
+                new_walls.append(WallSegment(
+                    x1, y1, x2, y2, is_exterior=False,
+                ))
+
+        self._walls.extend(new_walls)
+
+        # Re-merge to consolidate
+        if new_walls:
+            from .wall_utils import merge_collinear_walls
+            self._walls = merge_collinear_walls(self._walls)
+
+        return self
+
+    @staticmethod
+    def _segments_overlap(ax1: float, ay1: float, ax2: float, ay2: float,
+                          bx1: float, by1: float, bx2: float, by2: float,
+                          tol: float) -> bool:
+        """Check if two segments are collinear and overlap significantly."""
+        # Both horizontal
+        if abs(ay1 - ay2) < tol and abs(by1 - by2) < tol and abs(ay1 - by1) < tol:
+            a_lo, a_hi = min(ax1, ax2), max(ax1, ax2)
+            b_lo, b_hi = min(bx1, bx2), max(bx1, bx2)
+            overlap = min(a_hi, b_hi) - max(a_lo, b_lo)
+            return overlap > tol
+
+        # Both vertical
+        if abs(ax1 - ax2) < tol and abs(bx1 - bx2) < tol and abs(ax1 - bx1) < tol:
+            a_lo, a_hi = min(ay1, ay2), max(ay1, ay2)
+            b_lo, b_hi = min(by1, by2), max(by1, by2)
+            overlap = min(a_hi, b_hi) - max(a_lo, b_lo)
+            return overlap > tol
+
+        return False
 
     # -----------------------------------------------------------------
     # Doors
@@ -167,26 +272,32 @@ class FloorPlanBuilder:
         })
         return self
 
-    def add_entry_door(self, wall_side: str,
-                       position: float) -> 'FloorPlanBuilder':
+    def add_entry_door(self, wall_side: str = "",
+                       position: float = 0, *,
+                       at: tuple = None) -> 'FloorPlanBuilder':
         """Add the main entry door on an exterior wall.
 
         Args:
             wall_side: 'south', 'north', 'east', 'west'
             position: distance along the wall for door center (feet)
+            at: Optional (x, y) tuple for exact coordinate placement.
+                When provided, wall_side and position are ignored.
         """
-        w = self._footprint_width or max(
-            (r.right for r in self._rooms), default=0)
-        h = self._footprint_height or max(
-            (r.top for r in self._rooms), default=0)
+        if at is not None:
+            x, y = float(at[0]), float(at[1])
+        else:
+            w = self._footprint_width or max(
+                (r.right for r in self._rooms), default=0)
+            h = self._footprint_height or max(
+                (r.top for r in self._rooms), default=0)
 
-        coords = {
-            "south": (position, 0.0),
-            "north": (position, h),
-            "east":  (w, position),
-            "west":  (0.0, position),
-        }
-        x, y = coords.get(wall_side, (position, 0.0))
+            coords = {
+                "south": (position, 0.0),
+                "north": (position, h),
+                "east":  (w, position),
+                "west":  (0.0, position),
+            }
+            x, y = coords.get(wall_side, (position, 0.0))
 
         room_name = self._find_room_at_boundary(x, y)
 
@@ -296,6 +407,7 @@ class FloorPlanBuilder:
             windows=windows,
             footprint_width=self._footprint_width,
             footprint_height=self._footprint_height,
+            footprint_polygon=list(self._footprint_polygon),
             total_area=sum(r.area for r in self._rooms),
             bedrooms=sum(1 for r in self._rooms
                          if r.room_type in bed_types),
@@ -350,6 +462,11 @@ class FloorPlanBuilder:
         if fp:
             builder._footprint_width = fp.get("width", 0)
             builder._footprint_height = fp.get("height", 0)
+            polygon = fp.get("polygon")
+            if polygon:
+                builder._footprint_polygon = [
+                    (p[0], p[1]) for p in polygon
+                ]
 
         # Auto walls unless disabled
         if data.get("auto_walls", True):
@@ -393,6 +510,28 @@ class FloorPlanBuilder:
     # -----------------------------------------------------------------
     # Internal helpers
     # -----------------------------------------------------------------
+
+    def _is_on_exterior_boundary(self, x1: float, y1: float,
+                                  x2: float, y2: float,
+                                  tol: float = 0.25) -> bool:
+        """Check if a segment lies on any edge of the footprint polygon."""
+        polygon = self._footprint_polygon
+        if not polygon:
+            # Fall back to bounding box check
+            w = self._footprint_width
+            h = self._footprint_height
+            if abs(y1) < tol and abs(y2) < tol:
+                return True
+            if abs(y1 - h) < tol and abs(y2 - h) < tol:
+                return True
+            if abs(x1) < tol and abs(x2) < tol:
+                return True
+            if abs(x1 - w) < tol and abs(x2 - w) < tol:
+                return True
+            return False
+
+        from .wall_utils import is_on_polygon_edge
+        return is_on_polygon_edge(x1, y1, x2, y2, polygon, tol)
 
     def _find_nearest_wall(self, x: float, y: float,
                            max_dist: float = 1.0) -> Optional[WallSegment]:

@@ -1,0 +1,2077 @@
+{
+   "100thSiteAddedUserActionCTA": {
+      "message": "すごい"
+   },
+   "100thSiteAddedUserActionSubTitle": {
+      "message": "100のサイトがブロックリストに追加されました"
+   },
+   "100thSiteAddedUserActionTitle": {
+      "message": "うわー！"
+   },
+   "5thSiteAddedUserActionCTA": {
+      "message": "驚くばかり"
+   },
+   "5thSiteAddedUserActionSubTitle": {
+      "message": "ブロックリストに5つのサイトを追加することでよくできました"
+   },
+   "5thSiteAddedUserActionTitle": {
+      "message": "おっと！"
+   },
+   "InsightsTab": {
+      "message": "インサイト"
+   },
+   "PasswordProtectSecondStepSubtitle": {
+      "message": "下の[キャンセル]をクリックしたユーザーは、1日あたり平均15分余分に節約できます。"
+   },
+   "PasswordProtectSecondStepTitle": {
+      "message": "このページのロックを解除してもよろしいですか？"
+   },
+   "PinToToolBarMessageBtnText": {
+      "message": "OK"
+   },
+   "PinToToolBarMessageText": {
+      "message": "拡張リストをチェックして表示します"
+   },
+   "PinToToolBarMessageTitle": {
+      "message": "BlockSiteを100％生産的にするように固定する"
+   },
+   "aboutBlockCategoriesSubtitle": {
+      "message": "ボタンを切り替えるだけで、カテゴリ全体をすばやくブロックできます。"
+   },
+   "aboutBlockCategoriesTitle": {
+      "message": "ブロックカテゴリ"
+   },
+   "aboutContactSupport": {
+      "message": "サポートへお問い合わせ"
+   },
+   "aboutCreateBlockListsSubtitle": {
+      "message": "ブロックするウェブサイトやページをサイトリストに追加してください。より安全でよりポジティブなサイトに自動的にリダイレクトされます。利用したいサイトのリストを作成しておくと、特定のサイトをブロックするのではなく、特定のサイトのみ動作するように切り替えられます。"
+   },
+   "aboutCreateBlockListsTitle": {
+      "message": "ブロックリストの作成"
+   },
+   "aboutHowToEnableInInPrivateStep1": {
+      "message": "edge：// extensionsに移動します"
+   },
+   "aboutHowToEnableInInPrivateStep2": {
+      "message": "BlockSiteを見つけてクリックします"
+   },
+   "aboutHowToEnableInInPrivateStep3": {
+      "message": "[InPrivateで許可する]チェックボックスをオンにします"
+   },
+   "aboutHowToEnableInInPrivateSubtitle": {
+      "message": "EdgeのInPrivateモードでBlockSiteを有効にするには、次の手順に従います。"
+   },
+   "aboutHowToEnableInInPrivateTitle": {
+      "message": "InPrivateモードを有効にする方法"
+   },
+   "aboutHowToEnableInIncognitoStep1": {
+      "message": "chrome://extensions に移動する"
+   },
+   "aboutHowToEnableInIncognitoStep2": {
+      "message": "Block Site を探す"
+   },
+   "aboutHowToEnableInIncognitoStep3": {
+      "message": "[シークレットモードで許可する] をオンにする"
+   },
+   "aboutHowToEnableInIncognitoSubtitle": {
+      "message": "Chromeのシークレットモードでサイトをブロックするには、次の手順に従います。"
+   },
+   "aboutHowToEnableInIncognitoTitle": {
+      "message": "シークレットモードを有効にする方法"
+   },
+   "aboutIncognitoCTA": {
+      "message": "シークレットモード"
+   },
+   "aboutIncognitoSubtitle": {
+      "message": "Block Site のすべての機能は、シークレットモードでも動作しますが、許可する必要があります。実行するには、以下の手順に従ってください。 "
+   },
+   "aboutIncognitoTitle": {
+      "message": "シークレットモード（Chromeでのみ使用可能）"
+   },
+   "aboutKeepInternetSafeSubtitle": {
+      "message": "拡張機能メニューでアダルトブロックを有効にすると、ワンクリックですべてのアダルトサイトをブロックできます。 "
+   },
+   "aboutKeepInternetSafeTitle": {
+      "message": "インターネットを安全に保つ"
+   },
+   "aboutPasswordSubtitle": {
+      "message": "[設定] ページでパスワードを設定して、Block Site オプションへのアクセスを制限するか、ブロックされたサイトへのパスワードアクセスのオプションを有効にします。"
+   },
+   "aboutPasswordTitle": {
+      "message": "パスワードを設定する"
+   },
+   "aboutPrivacyPolicy": {
+      "message": "個人情報保護方針"
+   },
+   "aboutRateUsSubtitle": {
+      "message": "Block Site を便利だと思った場合は、Chrome ウェブストアで評価してください。ぜひご協力をお願いします。\r\r"
+   },
+   "aboutRateUsTitle": {
+      "message": "気に入っていただけましたか？ぜひ世界中の人に、良さを伝えてください。"
+   },
+   "aboutRightClickMenuSubtitle": {
+      "message": "ウェブサイト上の任意の場所を右クリックすると、クイックアクセスメニューが開きます。怠惰にならず目標に集中するために、数秒でサイトをブロックできます。"
+   },
+   "aboutRightClickMenuTitle": {
+      "message": "右クリックメニュー"
+   },
+   "aboutScheduleSubtitle": {
+      "message": "Block Site を有効にする日数と間隔を選択します。ご自分の勤務スケジュール（例：09：00〜17：00）に基づいてカスタムブロックを設定すれば、仕事中や学校での日中に怠惰に過ごすことがなくなります。"
+   },
+   "aboutScheduleTitle": {
+      "message": "特定の時間にブロック"
+   },
+   "aboutSubtitle": {
+      "message": "Block Site を使用して、集中力を継続させ、生産性を向上しましょう。気を散らすウェブサイトや有害なウェブサイトを簡単にブロックします。意志は必要ありません。"
+   },
+   "aboutTermsOfUse": {
+      "message": "利用規約"
+   },
+   "aboutTitle": {
+      "message": "Block Site について"
+   },
+   "addBlockInputAddButton": {
+      "message": "アイテムを追加"
+   },
+   "addEmailAndPassword": {
+      "message": "メールアドレスとパスワードを追加する"
+   },
+   "addFirstKeywordUserActionCTA": {
+      "message": "万歳"
+   },
+   "addFirstKeywordUserActionSubTitle": {
+      "message": "キーワードをブロックすることで、生産性が大幅に向上します"
+   },
+   "addFirstKeywordUserActionTitle": {
+      "message": "お辞儀をする！"
+   },
+   "addFirstRedirectUserActionCTA": {
+      "message": "優秀な"
+   },
+   "addFirstRedirectUserActionSubTitle": {
+      "message": "ブロックされたサイトがリダイレクトされるようになり、集中力が高まります"
+   },
+   "addFirstRedirectUserActionTitle": {
+      "message": "驚くばかり！"
+   },
+   "addSiteAddModePrimaryButton1": {
+      "message": "ブロックリストに追加"
+   },
+   "addSiteAddModePrimaryButton2": {
+      "message": "ブロックリストに追加"
+   },
+   "addSiteAddModePrimaryButton3": {
+      "message": "ブロックリストに追加"
+   },
+   "addSiteAddModePrimaryButton4": {
+      "message": "ブロックリストに追加"
+   },
+   "addSiteAddModeSecondaryButton1": {
+      "message": "後で"
+   },
+   "addSiteAddModeSecondaryButton2": {
+      "message": "後で"
+   },
+   "addSiteAddModeSecondaryButton3": {
+      "message": "後で"
+   },
+   "addSiteAddModeSecondaryButton4": {
+      "message": "後で"
+   },
+   "addSiteAddModeSubTitle1": {
+      "message": "このWebサイトをブロックして、ゾーンにとどまるようにしてください。"
+   },
+   "addSiteAddModeSubTitle2": {
+      "message": "このサイトをブロックリストに追加して、生産性を向上させます"
+   },
+   "addSiteAddModeSubTitle3": {
+      "message": "このサイトをブロックリストに追加して、生産性を10％向上させます"
+   },
+   "addSiteAddModeSubTitle4": {
+      "message": "時間の浪費サイトが検出されました！今すぐブロックして集中力を維持します。"
+   },
+   "addSiteAddModeTitle1": {
+      "message": "気が散るのをやめなさい！"
+   },
+   "addSiteAddModeTitle2": {
+      "message": "ゾーンにとどまります！"
+   },
+   "addSiteAddModeTitle3": {
+      "message": "時間を節約するために（website.com）を追加してください！"
+   },
+   "addSiteAddModeTitle4": {
+      "message": "ブロック（website.com）して、1日余分な時間を節約しましょう！"
+   },
+   "addSiteAreYouSurePrimaryButton": {
+      "message": "はい、やります"
+   },
+   "addSiteAreYouSureSecondaryButton": {
+      "message": "いいえ、キャンセルします"
+   },
+   "addSiteAreYouSureSubTitle": {
+      "message": "BlockSiteは、気が散るサイトのブロックの提案を停止します。"
+   },
+   "addSiteAreYouSureTitle": {
+      "message": "本当によろしいですか？"
+   },
+   "addSiteReachedLimitPrimaryButton": {
+      "message": "無制限に移動"
+   },
+   "addSiteReachedLimitSecondaryButton": {
+      "message": "後で"
+   },
+   "addSiteReachedLimitSubTitle": {
+      "message": "今すぐアップグレードして、無制限のブロックリストと、生産性を向上させ、時間を節約する多くの機能を入手してください。"
+   },
+   "addSiteReachedLimitTitle": {
+      "message": "ブロックリストの制限に達しました"
+   },
+   "addSiteSuccessPrimaryButton": {
+      "message": "今すぐブロック"
+   },
+   "addSiteSuccessSecondaryButton": {
+      "message": "ブロックリストに移動"
+   },
+   "addSiteSuccessSubTitle": {
+      "message": "（website.com）がブロックリストに追加されました。これは、拡張機能のオプションページで変更できます"
+   },
+   "addSiteSuccessTitle": {
+      "message": "ブロックリストに追加されたサイト"
+   },
+   "appDesc": {
+      "description": "Web ストアに表示されるアプリケーションの説明。",
+      "message": "最高のサイトブロッカーで集中力を維持。気を散らす邪魔を排除しましょう。"
+   },
+   "appName": {
+      "description": "Web ストアに表示されるアプリケーションのタイトル。",
+      "message": "BlockSite：アプリブロックで集中"
+   },
+   "appShortName": {
+      "description": "アプリケーションの短いタイトル",
+      "message": "Block Site"
+   },
+   "backgroundMultiPacksTitle": {
+      "message": "ブロックページのビジュアルとテキスト"
+   },
+   "blockByCategoryTextAdult": {
+      "message": "おっと！ %domain% それはあなたがカテゴリです大人に関連していると利用できない'ブロックされまし。集中してください、あなたはこれを持っています。"
+   },
+   "blockByCategoryTextGambling": {
+      "message": "おっと！ %domain% それはあなたがカテゴリですギャンブルに関連していると利用できない'ブロックされまし。集中してください、あなたはこれを持っています。"
+   },
+   "blockByCategoryTextNewsAndMedia": {
+      "message": "おっと！ %domain% それはあなたがカテゴリですニュースに関連していると利用できない'ブロックされまし。集中してください、あなたはこれを持っています。"
+   },
+   "blockByCategoryTextShopping": {
+      "message": "おっと！ %domain%は、ブロックしたカテゴリであるショッピングに関連しているため、利用できません。集中してください、あなたはこれを持っています。"
+   },
+   "blockByCategoryTextSocialNetworksAndOnlineCommunities": {
+      "message": "おっと！ %domain% あなたがカテゴリである社会的に関係していると利用できない'ブロックされまし。集中してください、あなたはこれを持っています。"
+   },
+   "blockByCategoryTextSports": {
+      "message": "おっと！ %domain% それはあなたがカテゴリですスポーツに関連していると利用できない'ブロックされまし。集中してください、あなたはこれを持っています。"
+   },
+   "blockByCategoryTitleAdult": {
+      "message": "ゴキブリ。切断された四肢。ジョン・グッドマン。"
+   },
+   "blockByCategoryTitleGambling": {
+      "message": "家に常に勝たせないでください。"
+   },
+   "blockByCategoryTitleNewsAndMedia": {
+      "message": "良いニュースはありません。"
+   },
+   "blockByCategoryTitleShopping": {
+      "message": "使われなかったドルは稼いだドルです！"
+   },
+   "blockByCategoryTitleSocialNetworksAndOnlineCommunities": {
+      "message": "投稿も好みもなし、ただの生活。"
+   },
+   "blockByCategoryTitleSports": {
+      "message": "落ち着いて接続を解除してください。"
+   },
+   "blockExtensionsPageSubtitle": {
+      "message": "アクセスするにはパスワードを入力してください"
+   },
+   "blockExtensionsPageTitle": {
+      "message": "$ BROWSER $拡張機能ページ-保護",
+      "placeholders": {
+         "browser": {
+            "content": "$1"
+         }
+      }
+   },
+   "blockMoreDistractingSite": {
+      "message": "邪魔なサイトをさらにブロックする"
+   },
+   "blockSitesBlockSite": {
+      "message": "このサイトをブロックする"
+   },
+   "blockSitesBlockedTitle": {
+      "message": "このサイトは現在ブロックされています"
+   },
+   "blockSitesBlockedTitleNow": {
+      "message": "ブロックリストに追加されたサイト"
+   },
+   "blockSitesEditBlockList": {
+      "message": "ブロックリストの編集"
+   },
+   "blockSitesNotAvailable": {
+      "message": "このページでは使用できません"
+   },
+   "blockSitesOnBoardingDescription": {
+      "message": "ブロックリストに追加されたWebサイトは、リストから削除するかスケジュールを設定するまで、完全にブロックされます。"
+   },
+   "blockSitesOnBoardingTitle": {
+      "message": "ブロックリストにサイトを追加する"
+   },
+   "blockSitesOptionsOnboardingText": {
+      "message": "ブロックしたいサイトをリストに追加してください。"
+   },
+   "blockSitesOptionsSearchBarPlaceholder": {
+      "message": "Web アドレスを入力してください (例: facebook.com)"
+   },
+   "blockSitesOptionsSubtitle": {
+      "message": "サイトを永久に、またはスケジュールに基づいてブロックする"
+   },
+   "blockSitesOptionsTableTitle": {
+      "message": "ブロックされたサイト"
+   },
+   "blockSitesOptionsTitle": {
+      "message": "Block Site"
+   },
+   "blockSitesRefreshPage": {
+      "message": "ページの更新"
+   },
+   "blockSitesTab": {
+      "message": "Block Site"
+   },
+   "blockWordsOnBoardingDescription": {
+      "message": "この特定のキーワードを含むすべてのWebサイトのURLとタイトルがブロックされます（キーワードが数百のサイトをブロックする可能性があります）"
+   },
+   "blockWordsOnBoardingTitle": {
+      "message": "ブロックするキーワードを追加する"
+   },
+   "blockWordsOptionsSearchBarPlaceholder": {
+      "message": "単語または語句を入力してください"
+   },
+   "blockWordsOptionsSubtitle": {
+      "message": "特定の単語を含むURLをブロックする"
+   },
+   "blockWordsOptionsTableTitle": {
+      "message": "ブロックされた単語"
+   },
+   "blockWordsOptionsTitle": {
+      "message": "単語によるブロック"
+   },
+   "blockedHeaderFocusModeMinutes": {
+      "message": "$ BREAK_TIME_LEFT $分",
+      "placeholders": {
+         "break_time_left": {
+            "content": "$1",
+            "example": "25"
+         }
+      }
+   },
+   "blockedHeaderFocusModeUntilBreak": {
+      "message": "休憩時間まで"
+   },
+   "blockedHeaderMenuCustomizeBlockPage": {
+      "message": "ブロックページのカスタマイズ"
+   },
+   "blockedHeaderMenuEdit": {
+      "message": "ブロックリストの編集"
+   },
+   "blockedHeaderMenuPasswordProtection": {
+      "message": "パスワード保護"
+   },
+   "blockedHeaderMenuRedirect": {
+      "message": "リダイレクト"
+   },
+   "blockedHeaderMenuUpgradeButton": {
+      "message": "アップグレード"
+   },
+   "blockedHeaderTitle": {
+      "message": "このサイトは BlockSite によってブロックされました"
+   },
+   "blockedTabMessage1": {
+      "message": "ブロックするサイトのリストに %domain% が追加されています。理由があって追加されたのだと思われます。"
+   },
+   "blockedTabMessage2": {
+      "message": "仕事を終わらせられるよう、%domain% をブロックしました。今すぐ仕事に戻りましょう。"
+   },
+   "blockedTabMessage3": {
+      "message": "さて、これで問題ありません。作業に戻りましょう。"
+   },
+   "blockedTabMessage4": {
+      "message": "%domain% はブロックされています。気を散らすサイトをもっと追加すると、さらに生産性が高まります。"
+   },
+   "blockedTabMessage5": {
+      "message": "単語「%domain%」をブロックしたようです。そのままにしておきましょう"
+   },
+   "blockedTabMessage6": {
+      "message": "このウェブサイトはホワイトリストに登録されていません。おそらく、正当な理由があると思われます。"
+   },
+   "blockedTableApplyButton": {
+      "message": "適用する"
+   },
+   "blockedTableCancelButton": {
+      "message": "キャンセル"
+   },
+   "blocklistOnBoardingDescriptionPrefix": {
+      "message": "訪問"
+   },
+   "blocklistOnBoardingDescriptionSuffix": {
+      "message": "ブロッキングの動作を確認する"
+   },
+   "blocklistOnBoardingTitle": {
+      "message": "これらのサイトは現在ブロックされています"
+   },
+   "bundleImagesDownloadFailedText": {
+      "message": "もう一度お試しください。"
+   },
+   "bundleImagesDownloadFailedTitle": {
+      "message": "画像のダウンロードに失敗しました"
+   },
+   "bundleImagesDownloadInProgressText": {
+      "message": "完了するまでブラウザをシャットダウンしないでください"
+   },
+   "bundleImagesDownloadInProgressTitle": {
+      "message": "画像のダウンロード"
+   },
+   "bundleImagesDownloadSuccessTitle": {
+      "message": "画像が正常にダウンロードされました"
+   },
+   "bundleListPopupCancelButton": {
+      "message": "キャンセル"
+   },
+   "bundleListPopupDoneButton": {
+      "message": "完了"
+   },
+   "bundleListPopupSubTitle": {
+      "message": "ブロックされたページに到達しようとしたときにランダムに表示される[画像マルチパック]を選択します。"
+   },
+   "bundleListPopupTitle": {
+      "message": "このページをカスタマイズする"
+   },
+   "bundleListPopupTooltip": {
+      "message": "選択したマルチパックの画像は、ブロックページが表示されるたびにランダムに表示されます。"
+   },
+   "cannotAddBlockSiteWhichPartOfRedirect": {
+      "message": "リダイレクトとして設定されているサイトをブロックすることはできません"
+   },
+   "cantBlockRedirectWordMsg": {
+      "message": "リダイレクトURLの一部である単語をブロックできません"
+   },
+   "cantRedirectToBlockedSite": {
+      "message": "おっとっと！このリダイレクトサイトはサイトのブロックリストによってブロックされています"
+   },
+   "cantRedirectToBlockedWord": {
+      "message": "おっとっと！このリダイレクトサイトは、単語ブロックリストによってブロックされています"
+   },
+   "cantRedirectToWorkModeBlockedSite": {
+      "message": "おっと！このリダイレクトサイトは、フォーカスモードリストによってブロックされています"
+   },
+   "categoriesAdult": {
+      "message": "アダルト"
+   },
+   "categoriesGambling": {
+      "message": "ギャンブル"
+   },
+   "categoriesGoUnlimitedButton": {
+      "message": "無制限に移動"
+   },
+   "categoriesNewsAndMedia": {
+      "message": "ニュース"
+   },
+   "categoriesOnBoardingDescription": {
+      "message": "カテゴリを選択して、ワンクリックで数千のWebサイトをブロックします"
+   },
+   "categoriesOnBoardingTitle": {
+      "message": "カテゴリ別にWebサイトをブロックする"
+   },
+   "categoriesOptionsSubtitle": {
+      "message": "ブロックするカテゴリを選択してください"
+   },
+   "categoriesOptionsTitle": {
+      "message": "カテゴリ"
+   },
+   "categoriesPrivacyText": {
+      "message": "BlockSiteがカテゴリのブロックを提供できるようにするには、アクセスしたサイトの情報にアクセスするための許可が必要です。このアクセスとこの情報の使用を有効にするには、[同意する]をクリックしてください。 "
+   },
+   "categoriesPrivacyTitle": {
+      "message": "カテゴリでブロック"
+   },
+   "categoriesShopping": {
+      "message": "ショッピング"
+   },
+   "categoriesSocialNetworksAndOnlineCommunities": {
+      "message": "ソーシャル"
+   },
+   "categoriesSports": {
+      "message": "スポーツ"
+   },
+   "categoriesTableTitle": {
+      "message": "ブロックされたカテゴリのリスト"
+   },
+   "clickHereToCheckOut": {
+      "message": "チェックアウトするには、ここをクリックしてください"
+   },
+   "clickingHereLink": {
+      "message": "ここをクリック"
+   },
+   "contextMenusAllowThisLink": {
+      "message": "このリンクを許可する"
+   },
+   "contextMenusAllowThisLinkWorkMode": {
+      "message": "フォーカスモードリストにこのリンクを許可する"
+   },
+   "contextMenusAllowThisSite": {
+      "message": "このサイトを許可する"
+   },
+   "contextMenusAllowThisSiteWorkMode": {
+      "message": "このサイトにフォーカスモードリストを許可する"
+   },
+   "contextMenusBlockThisLink": {
+      "message": "このリンクをブロックする"
+   },
+   "contextMenusBlockThisLinkWorkMode": {
+      "message": "リンクアドレスをフォーカスモードリストに追加"
+   },
+   "contextMenusBlockThisSite": {
+      "message": "このサイトをブロックする"
+   },
+   "contextMenusBlockThisSiteWorkMode": {
+      "message": "フォーカスモードリストにサイトを追加"
+   },
+   "copiedIconTitle": {
+      "message": "コピー済み"
+   },
+   "copyIconTitle": {
+      "message": "コピー"
+   },
+   "customizeBlockPageApplyChangeNo": {
+      "message": "いいえ"
+   },
+   "customizeBlockPageApplyChangeSubTitle": {
+      "message": "[はい]をクリックして、ブロックしたページに加えた変更を適用します。"
+   },
+   "customizeBlockPageApplyChangeTitle": {
+      "message": "変更を適用しますか？"
+   },
+   "customizeBlockPageApplyChangeYes": {
+      "message": "はい"
+   },
+   "customizeBlockPageApplyChanges": {
+      "message": "変更を適用させる"
+   },
+   "customizeBlockPageBlack": {
+      "message": "ブラック"
+   },
+   "customizeBlockPageBlockSiteFunnyImage": {
+      "message": "BlockSite面白い画像"
+   },
+   "customizeBlockPageBlocksiteText": {
+      "message": "BlockSiteのテキスト"
+   },
+   "customizeBlockPageChangesApplied": {
+      "message": "変更が適用されました。"
+   },
+   "customizeBlockPageChangesFailed": {
+      "message": "問題が発生しました。もう一度お試しください。"
+   },
+   "customizeBlockPageCurrentBackground": {
+      "message": "現在の背景"
+   },
+   "customizeBlockPageCustomizeText": {
+      "message": "テキストをカスタマイズする"
+   },
+   "customizeBlockPageNoPremiumCTA": {
+      "message": "カスタムブロックページを取得"
+   },
+   "customizeBlockPageNoPremiumMacbookSubtitle": {
+      "message": "おっと！ site.comは、ブロックしたカテゴリであるソーシャルに関連しているため、利用できません。集中してください、あなたはこれを持っています。"
+   },
+   "customizeBlockPageNoPremiumMacbookTitle": {
+      "message": "投稿も好みもなし、ただの生活。"
+   },
+   "customizeBlockPageNoPremiumSubtitle": {
+      "message": "集中力を維持するために、刺激的または面白くしてください。"
+   },
+   "customizeBlockPageNoPremiumTitle": {
+      "message": "独自のブロックされたページを作成する"
+   },
+   "customizeBlockPagePreviewYourChanges": {
+      "message": "保存する前に変更をプレビュー"
+   },
+   "customizeBlockPageResetImage": {
+      "message": "BlockSite FunnyImagesにリセットします"
+   },
+   "customizeBlockPageResetToDefault": {
+      "message": "デフォルトにリセット"
+   },
+   "customizeBlockPageSetBackground": {
+      "message": "背景画像を設定"
+   },
+   "customizeBlockPageSetPageText": {
+      "message": "ページテキストを設定"
+   },
+   "customizeBlockPageSetSubTitleText": {
+      "message": "字幕テキストを入力してください"
+   },
+   "customizeBlockPageSetTitleText": {
+      "message": "タイトルテキストを入力してください"
+   },
+   "customizeBlockPageSubtitle": {
+      "message": "独自の画像とテキストでブロックページをカスタマイズします。保存する前に、下の画面で変更をリアルタイムで確認してください。"
+   },
+   "customizeBlockPageTextColor": {
+      "message": "テキストの色"
+   },
+   "customizeBlockPageTitle": {
+      "message": "カスタムブロックページ"
+   },
+   "customizeBlockPageUploadImage": {
+      "message": "カスタム画像をアップロードする"
+   },
+   "customizeBlockPageUserCustomImage": {
+      "message": "ユーザーカスタムの背景"
+   },
+   "customizeBlockPageWhite": {
+      "message": "白い"
+   },
+   "customizePage": {
+      "message": "ページをカスタマイズ"
+   },
+   "customizedBlockPageNonPremiumTry": {
+      "message": "BlockSite Unlimitedを無料でお試しください"
+   },
+   "dailyBonusCollect": {
+      "message": "収集する"
+   },
+   "dailyBonusSubTitle": {
+      "message": "BlockSiteはあなたに毎日のボーナスをプレゼントしました！"
+   },
+   "dailyBonusTitle": {
+      "message": "おめでとう"
+   },
+   "doNotShowAgainMessage": {
+      "message": "再び表示しない"
+   },
+   "editYourList": {
+      "message": "リストを編集する"
+   },
+   "emailVerificationCTA": {
+      "message": "了解"
+   },
+   "emailVerificationInstructions": {
+      "message": "BlockSiteがインストールされているのと同じブラウザウィンドウからリンクをクリックしてください。"
+   },
+   "emailVerificationSubTitle": {
+      "message": "24時間有効な確認リンクをメールに送信しました。確認するには、次の受信トレイを確認してください。"
+   },
+   "emailVerificationTitle": {
+      "message": "ほぼ完了しました"
+   },
+   "emailVerificationTitle1": {
+      "message": "BlockSiteは、メールアドレスを確認するためのリンクを記載したメールを送信します。"
+   },
+   "emailVerificationTitle2": {
+      "message": "あなたのメールアドレスは、パスワード保護の目的でのみ使用されます。"
+   },
+   "emptyResultsBlockedKeywordsSubtitle": {
+      "message": "ブロックするキーワードを追加すると、ここに表示されます。"
+   },
+   "emptyResultsBlockedKeywordsTitle": {
+      "message": "ブロックされたキーワードはまだありません"
+   },
+   "emptyResultsBlockedSitesSubtitle": {
+      "message": "ブロックするサイトを追加すると、ここに表示されます。"
+   },
+   "emptyResultsBlockedSitesTitle": {
+      "message": "ブロックされたサイトはまだありません"
+   },
+   "enableInInPrivateMode": {
+      "message": "InPrivateモードで有効にする"
+   },
+   "enableInIncognitoMode": {
+      "message": "シークレットモードを有効にする"
+   },
+   "enterPasswordToGainAccess": {
+      "message": "パスワードを入力してアクセスする"
+   },
+   "enterYourEmail": {
+      "message": "メールアドレスを入力してください"
+   },
+   "enterYourPassword": {
+      "message": "パスワードを入力してください。"
+   },
+   "firstSiteAddedUserActionCTA": {
+      "message": "涼しい"
+   },
+   "firstSiteAddedUserActionSubTitle": {
+      "message": "最初のサイトを追加しておめでとうございます！"
+   },
+   "firstSiteAddedUserActionTitle": {
+      "message": "素晴らしいもの！"
+   },
+   "firstTimeFocusModeCTA": {
+      "message": "開始する"
+   },
+   "firstTimeFocusModeSubtitle": {
+      "message": "気を散らすサイトをブロックし、フォーカスモードがアクティブになっている間はゾーンに留まります。"
+   },
+   "firstTimeFocusModeTitle": {
+      "message": "焦点を当てる。集中してください。"
+   },
+   "firstTimeGamblingCategoryUserActionCTA": {
+      "message": "素晴らしい"
+   },
+   "firstTimeGamblingCategoryUserActionSubTitle": {
+      "message": "ギャンブルはブロックされています。今では気を散らすものがはるかに少なくなっています。"
+   },
+   "firstTimeGamblingCategoryUserActionTitle": {
+      "message": "やったー！"
+   },
+   "firstTimeNewsCategoryUserActionCTA": {
+      "message": "素晴らしい"
+   },
+   "firstTimeNewsCategoryUserActionSubTitle": {
+      "message": "ニュースはブロックされました。今では気を散らすものがはるかに少なくなっています。"
+   },
+   "firstTimeNewsCategoryUserActionTitle": {
+      "message": "やったー！"
+   },
+   "firstTimeScheduleUserActionCTA": {
+      "message": "素晴らしい"
+   },
+   "firstTimeScheduleUserActionSubTitle": {
+      "message": "これで、軌道に乗ることができます。"
+   },
+   "firstTimeScheduleUserActionTitle": {
+      "message": "ブラボー！"
+   },
+   "firstTimeShoppingCategoryUserActionCTA": {
+      "message": "素晴らしい"
+   },
+   "firstTimeShoppingCategoryUserActionSubTitle": {
+      "message": "ショッピングはブロックされました。今では気を散らすものがはるかに少なくなっています。"
+   },
+   "firstTimeShoppingCategoryUserActionTitle": {
+      "message": "やったー！"
+   },
+   "firstTimeSocialCategoryUserActionCTA": {
+      "message": "素晴らしい"
+   },
+   "firstTimeSocialCategoryUserActionSubTitle": {
+      "message": "ソーシャルはブロックされています。今では気を散らすものがはるかに少なくなっています。"
+   },
+   "firstTimeSocialCategoryUserActionTitle": {
+      "message": "やったー！"
+   },
+   "firstTimeSportsCategoryUserActionCTA": {
+      "message": "素晴らしい"
+   },
+   "firstTimeSportsCategoryUserActionSubTitle": {
+      "message": "スポーツはブロックされています。今では気を散らすものがはるかに少なくなっています。"
+   },
+   "firstTimeSportsCategoryUserActionTitle": {
+      "message": "やったー！"
+   },
+   "firstTimeSyncUserActionCTA": {
+      "message": "OK"
+   },
+   "firstTimeSyncUserActionSubTitle": {
+      "message": "生産性を最大化するためにすべてのデバイスを同期します😉"
+   },
+   "firstTimeSyncUserActionTitle": {
+      "message": "よくやった！"
+   },
+   "focusModeActionsPause": {
+      "message": "一時停止"
+   },
+   "focusModeActionsReset": {
+      "message": "リセット"
+   },
+   "focusModeActionsResume": {
+      "message": "履歴書"
+   },
+   "focusModeAddSiteOnBoardingDescription": {
+      "message": "フォーカスモードのブロックリストは、メインのブロックリストと同時に機能します。"
+   },
+   "focusModeAddSiteOnBoardingTitle": {
+      "message": "フォーカスモードリストにサイトを追加する"
+   },
+   "focusModeAreYouSureBackToSession": {
+      "message": "セッションに戻る"
+   },
+   "focusModeAreYouSureSubtitle": {
+      "message": "時計を止める時が来ましたか？"
+   },
+   "focusModeAreYouSureTitle": {
+      "message": "本当によろしいですか？"
+   },
+   "focusModeBreakInterval": {
+      "message": "%MINUTES%分間休憩"
+   },
+   "focusModeBreakText": {
+      "message": "休憩中にブロックされたサイトにアクセスする"
+   },
+   "focusModeBreakTimeLeftText": {
+      "message": "休憩時間まで$ BREAK_TIME_LEFT $分",
+      "placeholders": {
+         "break_time_left": {
+            "content": "$1",
+            "example": "25"
+         }
+      }
+   },
+   "focusModeCircleBarTooltip": {
+      "message": "間隔に残っている現在の時間"
+   },
+   "focusModeCyclesTooltip": {
+      "message": "現在、完了、および将来のサイクルステータス"
+   },
+   "focusModeEnterPassToPauseOrReset": {
+      "message": "%TIMER_ACTION%にパスワードを入力します"
+   },
+   "focusModeFocusInterval": {
+      "message": "%MINUTES%分間フォーカス"
+   },
+   "focusModeFocusText": {
+      "message": "フォーカスセッションサイトがブロックされている"
+   },
+   "focusModeHourUnit": {
+      "message": "時間"
+   },
+   "focusModeMinutesUnit": {
+      "message": "分"
+   },
+   "focusModeNoSitesText": {
+      "message": "ブロックリスト内のサイトはブロックされていません"
+   },
+   "focusModeNotificationEndOfCycleMessage": {
+      "message": "$ CYCLES $サイクルの$ CYCLES_COMPLETED $が完了しました。集中する時が来ました！",
+      "placeholders": {
+         "cycles": {
+            "content": "$ 2",
+            "example": "2"
+         },
+         "cycles_completed": {
+            "content": "$1",
+            "example": "1"
+         }
+      }
+   },
+   "focusModeNotificationEndOfCycleTitle": {
+      "message": "休憩間隔が終わりました。"
+   },
+   "focusModeNotificationEndOfCyclesButton": {
+      "message": "セッションを開始"
+   },
+   "focusModeNotificationEndOfCyclesMessage": {
+      "message": "別のフォーカスモードセッションを開始しますか？"
+   },
+   "focusModeNotificationEndOfCyclesTitle": {
+      "message": "休憩間隔が終わりました。"
+   },
+   "focusModeNotificationEndOfCyclesTitleWithStars": {
+      "message": "休憩は終わりました。 $ STARS $スターを獲得しました。",
+      "placeholders": {
+         "stars": {
+            "content": "$1",
+            "example": "25"
+         }
+      }
+   },
+   "focusModeNotificationEndOfFocusIntervalMessage": {
+      "message": "休憩時間です！"
+   },
+   "focusModeNotificationEndOfFocusIntervalTitle": {
+      "message": "フォーカス間隔が終了しました。"
+   },
+   "focusModeOptionsStartFocusSession": {
+      "message": "フォーカスセッションを開始"
+   },
+   "focusModeOptionsSubtitle": {
+      "message": "タスクに集中して生産性を高めるには、フォーカスモードを使用して作業時間と休憩間隔を設定します。フォーカスセッション中に気が散らないように、ブロックリストにサイトを追加します"
+   },
+   "focusModeOptionsTimerSetup": {
+      "message": "タイマー設定"
+   },
+   "focusModeOptionsTitle": {
+      "message": "フォーカスモード"
+   },
+   "focusModeSessionOnBoardingDescription": {
+      "message": "ここをクリックしてフォーカスモードセッションを開始することにより、これらのタスクの実行を開始します"
+   },
+   "focusModeSessionOnBoardingTitle": {
+      "message": "タイマーを開始します"
+   },
+   "focusModeSettingsBreakTime": {
+      "message": "休憩時間"
+   },
+   "focusModeSettingsCycles": {
+      "message": "サイクル"
+   },
+   "focusModeSettingsFocusTime": {
+      "message": "フォーカスタイム"
+   },
+   "focusModeSettingsGoToOptions": {
+      "message": "オプションに移動"
+   },
+   "focusModeSettingsMinutes": {
+      "message": "議事録"
+   },
+   "focusModeSettingsNumberOfCycles": {
+      "message": "サイクル数"
+   },
+   "focusModeSettingsStartSession": {
+      "message": "セッションを開始"
+   },
+   "focusModeSettingsSubtitle": {
+      "message": "タスクに集中し、生産性を高める"
+   },
+   "focusModeSettingsTitle": {
+      "message": "フォーカスモードタイマー"
+   },
+   "focusModeSettingsTooltipFirst": {
+      "message": "フォーカスする時間を設定します。フォーカスモードリストのサイトはブロックされます。"
+   },
+   "focusModeSettingsTooltipSecond": {
+      "message": "希望の休憩時間を設定し、リストからそれらのWebサイトに自由にアクセスしてください。"
+   },
+   "focusModeSettingsTooltipThird": {
+      "message": "自動的に実行したいフォーカス時間とブレークのサイクル数。"
+   },
+   "focusModeTab": {
+      "message": "フォーカスモード"
+   },
+   "focusModeTimerOnBoardingDescription": {
+      "message": "特定のブロックリストを設定してサイトをブロックし、それらのサイトにアクセスできるようにすることで、サイクルの最後に休憩を取ります。"
+   },
+   "focusModeTimerOnBoardingTitle": {
+      "message": "フォーカスモードセッションを設定する"
+   },
+   "focusModeToPauseOrResetEnterPassword": {
+      "message": "%TIMER_ACTION%パスワードを入力してください"
+   },
+   "focusModeWrongPassword": {
+      "message": "間違ったパスワード"
+   },
+   "focusModesSecondsUnit": {
+      "message": "秒"
+   },
+   "forgotPassSentOkBtn": {
+      "message": "OK"
+   },
+   "forgotPassSentText": {
+      "message": "パスワードは次の宛先に送信されました："
+   },
+   "forgotPassSentTitle": {
+      "message": "パスワードが送信されました"
+   },
+   "forgotPassword": {
+      "message": "パスワードをお忘れですか？"
+   },
+   "goBack": {
+      "message": "戻る"
+   },
+   "goBackToWork": {
+      "message": "仕事に戻る"
+   },
+   "goPremium": {
+      "message": "プレミアムに行く"
+   },
+   "headerGoUnlimited": {
+      "message": "無制限に移動"
+   },
+   "headerLogin": {
+      "message": "ログイン"
+   },
+   "headerLogout": {
+      "message": "ログアウト"
+   },
+   "importPopupMerge": {
+      "message": "マージ"
+   },
+   "importPopupOverride": {
+      "message": "上書き"
+   },
+   "importPopupTitle": {
+      "message": "現在のリストをマージまたは上書きしますか？"
+   },
+   "insightsCategory_entertainment": {
+      "message": "エンターテイメント"
+   },
+   "insightsCategory_games": {
+      "message": "ゲーム"
+   },
+   "insightsCategory_news": {
+      "message": "ニュース"
+   },
+   "insightsCategory_other": {
+      "message": "その他"
+   },
+   "insightsCategory_shopping": {
+      "message": "ショッピング"
+   },
+   "insightsCategory_social": {
+      "message": "ソーシャル"
+   },
+   "insightsCategory_sports": {
+      "message": "スポーツ"
+   },
+   "insightsDescription": {
+      "message": "生産性を高めるためにオンラインでどのように時間を費やしているかを確認する"
+   },
+   "insightsEmptyDescription": {
+      "message": "分析中です。しばらくしてから最新情報をご確認ください。"
+   },
+   "insightsEmptyTitle": {
+      "message": "まだ洞察はありません。 24時間後にもう一度お試しください。"
+   },
+   "insightsErrorDescription": {
+      "message": "心配しないで！この問題の解決に努めておりますので、しばらくしてからもう一度お試しください。"
+   },
+   "insightsErrorTitle": {
+      "message": "おっと！何かがうまくいかなかった！"
+   },
+   "insightsPrivacyText": {
+      "message": "BlockSiteがアダルトコンテンツを含むページを検出してブロックできるようにするには、アクセスしたサイトの情報にアクセスするための許可が必要です。このアクセスとこの情報の使用を有効にするには、[同意する]をクリックしてください。 "
+   },
+   "insightsPrivacyTitle": {
+      "message": "おっと！"
+   },
+   "insightsTimeSaved": {
+      "message": "どのくらいの時間を節約できましたか？"
+   },
+   "insightsTitle": {
+      "message": "インサイト"
+   },
+   "insightsTopVisit": {
+      "message": "よく訪れたカテゴリ"
+   },
+   "invalidPassBlockedPage": {
+      "message": "無効なパスワードです。再度お試しください。"
+   },
+   "leaveWithoutSaving": {
+      "message": "保存せずに終了する"
+   },
+   "levelUpCongrats": {
+      "message": "おめでとうございます！ $ POINTS $の星に到達しました",
+      "placeholders": {
+         "points": {
+            "content": "$1",
+            "example": "25"
+         }
+      }
+   },
+   "levelUpGainStars": {
+      "message": "より多くの星を獲得するために生産性を維持します。"
+   },
+   "levelUpGotIt": {
+      "message": "OK"
+   },
+   "levelUpStayProductive": {
+      "message": "生産性を維持し、集中して進歩を続け、スターを獲得します。"
+   },
+   "levelUpUnlocked": {
+      "message": "ロック解除！"
+   },
+   "levelUpViewProgress": {
+      "message": "進捗状況を表示"
+   },
+   "levelUpWellDone": {
+      "message": "新しいレベルへの進歩でよくやった！"
+   },
+   "limitListBannerCounter": {
+      "message": "ブロックリストに追加するために残されたサイト。"
+   },
+   "limitListBannerCounterReached": {
+      "message": "ブロックリストの制限に達しました。"
+   },
+   "limitListBannerUpgrade": {
+      "message": "無制限に移動"
+   },
+   "limitListBannerUpgradeTip": {
+      "message": "ここをクリックしてアップグレードし、無制限のブロックリストをお楽しみください。"
+   },
+   "limitListBannerUpgradeTipPopup": {
+      "message": "クリックしてアップグレードし、無制限のブロックリストをお楽しみください。"
+   },
+   "limitListBannerUpgradeTipReachedPopup": {
+      "message": "ブロックリストがサイトの最大数に達しました。"
+   },
+   "limitListOverlayContentTitle": {
+      "message": "プレミアムユーザーは、貴重な時間を1日1時間節約できます。すべてのプレミアム機能を入手して、今日より生産性を高めましょう！"
+   },
+   "limitListOverlayEditBlockListPopup": {
+      "message": "ブロックリストの編集"
+   },
+   "limitListOverlayFeatureFirstSubtitle": {
+      "message": "好きなだけサイトをブロック"
+   },
+   "limitListOverlayFeatureFirstTitle": {
+      "message": "無制限のブロックリスト"
+   },
+   "limitListOverlayFeatureFourthSubtitle": {
+      "message": "クラウドに保存"
+   },
+   "limitListOverlayFeatureFourthTitle": {
+      "message": "拡張機能間の同期"
+   },
+   "limitListOverlayFeatureSecondSubtitle": {
+      "message": "ブロックする最速の方法"
+   },
+   "limitListOverlayFeatureSecondTitle": {
+      "message": "カテゴリで一括ブロック"
+   },
+   "limitListOverlayFeatureThirdSubtitle": {
+      "message": "あなたに固有の画像とテキストを選択してください"
+   },
+   "limitListOverlayFeatureThirdTitle": {
+      "message": "ブロックページをカスタマイズする"
+   },
+   "limitListOverlayImportTitle": {
+      "message": "インポート制限に達しました"
+   },
+   "limitListOverlayMaybeLater": {
+      "message": "後で"
+   },
+   "limitListOverlaySpecialOfferTitle": {
+      "message": "特別オファー！"
+   },
+   "limitListOverlaySubtitle": {
+      "message": "多くを得る。無制限に移動"
+   },
+   "limitListOverlaySubtitlePopup": {
+      "message": "すべてのデバイスで無制限のサイトを取得するには、今すぐアップグレードしてください。"
+   },
+   "limitListOverlayTitle": {
+      "message": "ブロックリストサイトの制限に達しました"
+   },
+   "limitListOverlayTitlePopup": {
+      "message": "ブロックリストの制限に達しました！"
+   },
+   "limitListOverlayUpgradeNow": {
+      "message": "無制限に移動"
+   },
+   "limitListOverlayUpgradePopup": {
+      "message": "無制限に移動"
+   },
+   "limitPopupDiscountSpecialOfferSubTitle": {
+      "message": "EVERサブスクリプションの最低価格"
+   },
+   "loginSyncGotIt": {
+      "message": "OK"
+   },
+   "loginSyncLoginToSite": {
+      "message": "拡張機能を同期するには、サインアップ/ログインしてください"
+   },
+   "loginSyncPleaseLogin": {
+      "message": "同期するにはログインしてください"
+   },
+   "logoutPopupQuestionApproveText": {
+      "message": "はい、やります"
+   },
+   "logoutPopupQuestionCancelText": {
+      "message": "いいえ、キャンセルします"
+   },
+   "logoutPopupQuestionDescription": {
+      "message": "ログアウト中に行われた変更は、クラウドと同期されません。"
+   },
+   "logoutPopupQuestionTitle": {
+      "message": "本当によろしいですか？"
+   },
+   "mandatoryConsentAgree": {
+      "message": "同意する"
+   },
+   "mandatoryConsentDisagree": {
+      "message": "同意しない"
+   },
+   "mandatoryConsentDisclaimer": {
+      "message": "[同意しない] をクリックすると BlockSite は引き続きご利用いただけますが、アダルトブロック機能は利用できません。"
+   },
+   "mandatoryConsentPrivacyPolicy": {
+      "message": "個人情報保護方針"
+   },
+   "mandatoryConsentSubtitle": {
+      "message": "BlockSiteがアダルトコンテンツを含むページを検出してブロックできるようにするには、アクセスしたサイトの情報にアクセスするための許可が必要です。このアクセスとこの情報の使用を有効にするには、[同意する]をクリックしてください。"
+   },
+   "mandatoryConsentTitle1": {
+      "message": "で選択してください"
+   },
+   "mandatoryConsentTitle2": {
+      "message": "BlockSiteに進むため。"
+   },
+   "motivationalText1": {
+      "message": "このことは忘れてください。"
+   },
+   "motivationalText10": {
+      "message": "インターセプトされました！"
+   },
+   "motivationalText11": {
+      "message": "申し訳ありません。"
+   },
+   "motivationalText12": {
+      "message": "残念でした。"
+   },
+   "motivationalText2": {
+      "message": "とんでもない！"
+   },
+   "motivationalText3": {
+      "message": "惜しいです…。"
+   },
+   "motivationalText4": {
+      "message": "本当ですか？"
+   },
+   "motivationalText5": {
+      "message": "何をしているんですか？"
+   },
+   "motivationalText6": {
+      "message": "時間を無駄にするのはやめましょう！"
+   },
+   "motivationalText7": {
+      "message": "子犬。変な茶色のほくろ。ジャスティン・ビーバー。"
+   },
+   "motivationalText8": {
+      "message": "ゴキブリ。切断された四肢。ジョン・グッドマン。"
+   },
+   "motivationalText9": {
+      "message": "おばあちゃん。コービー・ブライアント。外科処置。"
+   },
+   "offTitle": {
+      "message": "Block Site は現在停止しています"
+   },
+   "onBoardingDismiss": {
+      "message": "閉じる"
+   },
+   "onBoardingNextStep": {
+      "message": "次へ"
+   },
+   "optionMenuBannerCTASignupNow": {
+      "message": "今すぐサインアップ"
+   },
+   "optionsLockedSubtitle": {
+      "message": "BlockSite オプションページにアクセスするには、パスワードを入力してください"
+   },
+   "optionsLockedTitle": {
+      "message": "BlockSite オプションがロックされています"
+   },
+   "optionsMenuAbout": {
+      "message": "情報"
+   },
+   "optionsMenuBannerCTAGoUnlimited": {
+      "message": "無制限に移動"
+   },
+   "optionsMenuBannerCTATryNow": {
+      "message": "今すぐ体験！"
+   },
+   "optionsMenuBannerSubtitleCategory": {
+      "message": "ワンクリックで何千ものサイトをブロックすることで、より多くの時間を節約できます"
+   },
+   "optionsMenuBannerSubtitleCustomizeBlockPage": {
+      "message": "あなた自身のものにするために画像とテキストを選択してください"
+   },
+   "optionsMenuBannerSubtitleDesktop": {
+      "message": "1つのアプリでEdge、Firefox、Chromeの時間の浪費サイトをブロックしましょう！"
+   },
+   "optionsMenuBannerSubtitleGoUnlimited": {
+      "message": "最新の機能をいち早くお楽しみください"
+   },
+   "optionsMenuBannerSubtitleInsights": {
+      "message": "ブラウジングの傾向とオンラインでの時間をどのように過ごすかを探る "
+   },
+   "optionsMenuBannerSubtitleMobile": {
+      "message": "QRコードをスキャンして、外出先で生産性を維持"
+   },
+   "optionsMenuBannerSubtitlePasswordProtection": {
+      "message": "ブロックリストからサイトを削除するのを難しくします"
+   },
+   "optionsMenuBannerSubtitleSignup": {
+      "message": "報酬を獲得し、デバイス間でブロックリストを同期します"
+   },
+   "optionsMenuBannerSubtitleSlack": {
+      "message": "フォーカスモードでサイレントモードを自動的にオンにする"
+   },
+   "optionsMenuBannerSubtitleUnlimitedBlockList": {
+      "message": "ブロックリストに必要な数のサイトを追加します"
+   },
+   "optionsMenuBannerTitleCategory": {
+      "message": "カテゴリでブロック"
+   },
+   "optionsMenuBannerTitleCustomizeBlockPage": {
+      "message": "ブロックページのカスタマイズ"
+   },
+   "optionsMenuBannerTitleDesktop": {
+      "message": "Windows版のBlockSite"
+   },
+   "optionsMenuBannerTitleGoUnlimited": {
+      "message": "多くを得る。無制限に移動"
+   },
+   "optionsMenuBannerTitleInsights": {
+      "message": "インサイト"
+   },
+   "optionsMenuBannerTitleMobile": {
+      "message": "スマートフォンのBlockSiteアプリ"
+   },
+   "optionsMenuBannerTitlePasswordProtection": {
+      "message": "パスワード保護"
+   },
+   "optionsMenuBannerTitleSignup": {
+      "message": "生産性の向上にサインアップ"
+   },
+   "optionsMenuBannerTitleSlack": {
+      "message": "BlockSiteのSlackアプリ"
+   },
+   "optionsMenuBannerTitleUnlimitedBlockList": {
+      "message": "無制限のブロックリスト"
+   },
+   "optionsMenuBlockByWords": {
+      "message": "単語によるブロック"
+   },
+   "optionsMenuBlockSites": {
+      "message": "Block Site"
+   },
+   "optionsMenuBlocking": {
+      "message": "ブロッキング"
+   },
+   "optionsMenuCategories": {
+      "message": "カテゴリ"
+   },
+   "optionsMenuCustomizeBlockPage": {
+      "message": "カスタムブロックページ"
+   },
+   "optionsMenuFocusMode": {
+      "message": "フォーカスモード"
+   },
+   "optionsMenuPasswordProtection": {
+      "message": "パスワード保護"
+   },
+   "optionsMenuSettings": {
+      "message": "設定"
+   },
+   "optionsMenuSyncWithOtherDevices": {
+      "message": "他のデバイスと同期する"
+   },
+   "optionsMenuSyncedOff": {
+      "message": "無効になっています"
+   },
+   "optionsMenuSyncedOn": {
+      "message": "有効"
+   },
+   "optionsNotificationEmptyList": {
+      "message": "リストが空です。エクスポートするものがありません。"
+   },
+   "optionsNotificationEmptyWord": {
+      "message": "空の単語を追加できません"
+   },
+   "optionsNotificationIncorrectFileStructure": {
+      "message": "ファイル構造が正しくありません。現在のリストをエクスポートして、必要なcsv形式を確認してください。"
+   },
+   "optionsNotificationIncorrectURL": {
+      "message": "URL が正しくありません"
+   },
+   "optionsNotificationListExported": {
+      "message": "リストは正常にエクスポートされました。"
+   },
+   "optionsNotificationListImported": {
+      "message": "リストが正常にインポートされました。"
+   },
+   "optionsNotificationSiteAdded": {
+      "message": "追加されたサイト"
+   },
+   "optionsNotificationURLAlreadyExist": {
+      "message": "URLはすでに存在します"
+   },
+   "optionsNotificationWordAlreadyExist": {
+      "message": "言葉はすでに存在します"
+   },
+   "optionsPageRedirectButton": {
+      "message": "リダイレクト"
+   },
+   "optionsPageRedirectOK": {
+      "message": "OK"
+   },
+   "optionsPageRedirectPlaceHolder": {
+      "message": "Web アドレス (ex: google.com)"
+   },
+   "optionsPageRedirectRemove": {
+      "message": "削除する"
+   },
+   "optionsPageRedirectTitle": {
+      "message": " ブロックされたページをリダイレクトする"
+   },
+   "optionsPageRedirectTooltipNotSet": {
+      "message": "クリックしてリダイレクトのウェブサイトを設定する"
+   },
+   "optionsPageRedirectTooltipSet": {
+      "message": "$URL$ にリダイレクトする",
+      "placeholders": {
+         "url": {
+            "content": "$1",
+            "example": "https://example.com"
+         }
+      }
+   },
+   "optionsPageScheduleAddInterval": {
+      "message": "間隔を追加する"
+   },
+   "optionsPageScheduleButton": {
+      "message": "スケジュール"
+   },
+   "optionsPageScheduleClickDay": {
+      "message": "（無効にする日をクリックしてください）"
+   },
+   "optionsPageScheduleEveryDay": {
+      "message": "毎日"
+   },
+   "optionsPageScheduleRemoveSchedule": {
+      "message": "削除する"
+   },
+   "optionsPageScheduleSelectDays": {
+      "message": "選択した日付"
+   },
+   "optionsPageScheduleSetBlocking": {
+      "message": "ブロックスケジュールを設定する"
+   },
+   "optionsPageScheduleSetSchedule": {
+      "message": "スケジュールを設定する"
+   },
+   "optionsPageScheduleSetTimes": {
+      "message": "時刻を設定する"
+   },
+   "optionsPageScheduleTo": {
+      "message": "に"
+   },
+   "passwordProtectionGoUnlimitedButton": {
+      "message": "無制限に移動"
+   },
+   "passwordProtectionHookSubtitle": {
+      "message": "パスコードで設定をロックして、先延ばしを難しくします"
+   },
+   "passwordProtectionHookTitleRemoveSite": {
+      "message": "サイトを削除しようとするのはやめましょう！パスワード保護を取得する"
+   },
+   "passwordProtectionHookTitleToggleOff": {
+      "message": "自分をだまさないでください！パスワード保護を取得します。"
+   },
+   "passwordProtectionLoseAccessApprove": {
+      "message": "はい、やります"
+   },
+   "passwordProtectionLoseAccessCancel": {
+      "message": "いいえ、キャンセルします"
+   },
+   "passwordProtectionLoseAccessSubtitle": {
+      "message": "パスワード保護はプレミアム機能になりました。忠実なユーザーとして、それはあなたのために無料です。このように維持するには、有効にする必要があります。"
+   },
+   "passwordProtectionLoseAccessTitleFirst": {
+      "message": "アクセスできなくなります。"
+   },
+   "passwordProtectionLoseAccessTitleSecond": {
+      "message": "本当によろしいですか？"
+   },
+   "passwordProtectionMaybeLaterButton": {
+      "message": "後で"
+   },
+   "passwordProtectionNonPremiumCTA": {
+      "message": "パスワード保護を取得する"
+   },
+   "passwordProtectionNonPremiumSubtitle": {
+      "message": "設定の変更やブロックリストからのサイトの削除をさらに難しくします"
+   },
+   "passwordProtectionNonPremiumTitle": {
+      "message": "パスワード保護で生産性を維持"
+   },
+   "passwordProtectionOptionAddChallenge": {
+      "message": "ブロックされたページのチャレンジ-ページのブロックを解除するための追加ステップ"
+   },
+   "passwordProtectionOptionBlockBlockedPage": {
+      "message": "ブロックされたサイトへのアクセスに\u003Cbr>パスワードを要求する"
+   },
+   "passwordProtectionOptionBlockSettings": {
+      "message": "好みのBlockSiteオプションと$ BROWSER $拡張ページをパスワードで保護します",
+      "placeholders": {
+         "browser": {
+            "content": "$1"
+         }
+      }
+   },
+   "passwordProtectionOptionNotifyUninstalled": {
+      "message": "BlockSite がアンインストールされた際に\u003Cbr>メールで通知を受け取る"
+   },
+   "passwordProtectionPreferences": {
+      "message": "パスワード保護の設定"
+   },
+   "passwordProtectionSetupNowButton": {
+      "message": "今すぐセットアップ"
+   },
+   "passwordProtectionUnlockButton": {
+      "message": "アンロックしました"
+   },
+   "passwordProtectionUnlockPageSubtitle": {
+      "message": "ページのロックを解除するには、パスワードを入力してください"
+   },
+   "passwordProtectionUnlockPageTitle": {
+      "message": "このページはロックされています！"
+   },
+   "passwordProtectionVerificationEmail": {
+      "message": "メールアドレス"
+   },
+   "passwordProtectionVerificationMinimumPass": {
+      "message": "最低5文字"
+   },
+   "passwordProtectionVerificationPassword": {
+      "message": "パスワード"
+   },
+   "passwordProtectionVerificationRequired": {
+      "message": "確認が必要です"
+   },
+   "passwordQuestionBack": {
+      "message": "戻る"
+   },
+   "passwordQuestionClickBack": {
+      "message": "下の[戻る]をクリックしたユーザー"
+   },
+   "passwordQuestionDontShowAgain": {
+      "message": "もう一度見せないでください"
+   },
+   "passwordQuestionPleaseTryAgain": {
+      "message": "不正解です。もう一度やり直してください。"
+   },
+   "passwordQuestionReallyToDo": {
+      "message": "本当にやりたいですか？"
+   },
+   "passwordQuestionSaveMinutes": {
+      "message": "1日平均15分節約できます。"
+   },
+   "passwordQuestionToUnlock": {
+      "message": "ロックを解除するには、次のように入力してください"
+   },
+   "passwordVerificationWarning": {
+      "message": "パスワード保護が有効になっていません。 有効にするには、最初にアカウントの設定に使用したのと同じブラウザウィンドウで、電子メールのリンクを開いてください。"
+   },
+   "popupHeaderUpgradeNow": {
+      "message": "無制限に移動"
+   },
+   "popupLockedSubtitle": {
+      "message": "この拡張設定にアクセスするには、パスワードを入力してください。"
+   },
+   "popupLockedTitle": {
+      "message": "BlockSite がロックされています"
+   },
+   "popupQuestionApprove": {
+      "message": "はい"
+   },
+   "popupQuestionCancel": {
+      "message": "いいえ"
+   },
+   "premiumBannerCTA": {
+      "message": "無制限に移動"
+   },
+   "premiumBannerNew": {
+      "message": "新規！"
+   },
+   "premiumBannerSubtitleA": {
+      "message": "独自の画像とテキストを選択して、独自のブロックページを作成します。"
+   },
+   "premiumBannerSubtitleB": {
+      "message": "候補者リストに気を取られないでください。好きなだけサイトを追加します。"
+   },
+   "premiumBannerTitleA": {
+      "message": "自分だけのブロックページを作ろう！"
+   },
+   "premiumBannerTitleB": {
+      "message": "無制限のブロックリストを入手！"
+   },
+   "premiumHookCTA": {
+      "message": "無償版プラットフォームを使う"
+   },
+   "premiumHookTitle": {
+      "message": "無制限に移動"
+   },
+   "premiumOverlayCategorySubtitle": {
+      "message": "ブロックする最速の方法"
+   },
+   "premiumOverlayCategoryTitle": {
+      "message": "カテゴリでブロック"
+   },
+   "premiumOverlayCustomizationSubtitle": {
+      "message": "画像とテキストを設定する"
+   },
+   "premiumOverlayCustomizationTitle": {
+      "message": "ブロックページのカスタマイズ"
+   },
+   "premiumOverlayGoUnlimited": {
+      "message": "無制限に移動"
+   },
+   "premiumOverlayInsightsSubtitle": {
+      "message": "ブラウジングトレンドを探る"
+   },
+   "premiumOverlayInsightsTitle": {
+      "message": "有用な洞察"
+   },
+   "premiumOverlayMaybeLater": {
+      "message": "後で"
+   },
+   "premiumOverlaySubtitle": {
+      "message": "3日間無料でお試しください"
+   },
+   "premiumOverlayTitle": {
+      "message": "BlockSite Unlimited"
+   },
+   "premiumOverlayUnlimitedSubtitle": {
+      "message": "どこでも。どんなときも。"
+   },
+   "premiumOverlayUnlimitedTitle": {
+      "message": "無制限のブロッキングリスト"
+   },
+   "privacyIAccept": {
+      "message": "承諾します"
+   },
+   "privacySettingsPrivacyPolicy": {
+      "message": "個人情報保護方針。"
+   },
+   "privacySettingsSubtitle": {
+      "message": "BlockSiteが訪問したURL、IPアドレス、オペレーティングシステム、およびブラウザ情報にアクセスして、当社の指示に従って使用できるようにします。 "
+   },
+   "privacySettingsTitle": {
+      "message": "「カテゴリによるブロック」ブロックを有効にする"
+   },
+   "protectionSettingsSaved": {
+      "message": "保護設定が保存されました"
+   },
+   "pushToAccountCTA": {
+      "message": "今すぐサインアップ"
+   },
+   "pushToAccountSubTitle": {
+      "message": "無料のBlockSiteアカウントを作成して、生産性を高め、デバイス間でBlockSiteを同期することで報酬を獲得できます"
+   },
+   "pushToAccountTitle": {
+      "message": "サインアップしたユーザーは、目標をより早く達成できます"
+   },
+   "pushToBlockListCTA": {
+      "message": "無制限に移動"
+   },
+   "pushToBlockListSubTitle": {
+      "message": "今すぐアップグレードして、ブロックリストに必要な数のサイトを追加してください"
+   },
+   "pushToBlockListTitle": {
+      "message": "今日アップグレードして無制限のブロックリストを入手"
+   },
+   "pushToCategoriesCTA": {
+      "message": "無制限に移動"
+   },
+   "pushToCategoriesSubTitle": {
+      "message": "ワンクリックで何千ものウェブサイトをブロックすることで、時間を節約し、集中力を維持します。"
+   },
+   "pushToCategoriesTitle": {
+      "message": "ワンクリックで何千ものウェブサイトをブロック！"
+   },
+   "pushToCustomizedPageSubTitle": {
+      "message": "画像とテキストを選択して、独自のブロックされたページを作成します"
+   },
+   "pushToCustomizedPageTitle": {
+      "message": "ブロックされたページを作成してカスタマイズする"
+   },
+   "pushToCustomizedPagedCTA": {
+      "message": "無制限に移動"
+   },
+   "pushToDesktopCTA": {
+      "message": "今すぐ体験！"
+   },
+   "pushToDesktopOverlayCTAMaybeLater": {
+      "message": "後で"
+   },
+   "pushToDesktopOverlayCTAUpgrade": {
+      "message": "英語ブログ"
+   },
+   "pushToDesktopOverlaySubtitleA": {
+      "message": "1つのアプリで、Edge、Firefox、Chromeのすべての気を散らすものをブロックできるようになりました。今すぐ新しいアプリをダウンロードしてください"
+   },
+   "pushToDesktopOverlaySubtitleB": {
+      "message": "新しいWindowsデスクトップアプリを使用して、Chrome、Firefox、Edgeのすべての注意散漫をブロックできるようになりました"
+   },
+   "pushToDesktopOverlayTitleA": {
+      "message": "複数のブラウザ間でブロックする"
+   },
+   "pushToDesktopOverlayTitleB": {
+      "message": "新しいWindowsアプリがライブになりました！"
+   },
+   "pushToDesktopSubTitle": {
+      "message": "1つのアプリで、Edge、Firefox、Chromeのすべての気を散らすものをブロックできるようになりました。今すぐ新しいアプリをダウンロードしてください"
+   },
+   "pushToDesktopTitle": {
+      "message": "BlockSite Windowsアプリベータ\n利用可能になりました！"
+   },
+   "pushToGoUnlimitedCTA": {
+      "message": "無制限に移動"
+   },
+   "pushToGoUnlimitedSubTitle": {
+      "message": "プレミアムユーザーは毎日より多くの時間を節約できます。 BlockSiteUnlimitedにアップグレードすることでもできます。"
+   },
+   "pushToGoUnlimitedTitle": {
+      "message": "多くを得る。無制限に移動"
+   },
+   "pushToInsightsCTA": {
+      "message": "無制限に移動"
+   },
+   "pushToInsightsSubTitle": {
+      "message": "時間の経過に伴うオンラインブラウジングの傾向を調査し、生産性を向上させる方法を学びます"
+   },
+   "pushToInsightsTitle": {
+      "message": "Insightsで\nを探索しましょう！"
+   },
+   "pushToMobileOverlayCTA": {
+      "message": "後で"
+   },
+   "pushToMobileOverlaySubtitle": {
+      "message": "バーコードをスキャンしてモバイル用のBlockSiteを取得することで、外出先での生産性を維持できます"
+   },
+   "pushToMobileOverlayTitle": {
+      "message": "モバイルでBlockSiteを入手"
+   },
+   "rateUsBlessingStepBtn": {
+      "message": "ウェブストアで評価してください"
+   },
+   "rateUsBlessingStepSubTitle": {
+      "message": "あなたのフィードバックは重要です!ウェブストアにレビューを残して、他の人が私たちのアプリの利点を発見できるようにしてください。"
+   },
+   "rateUsBlessingStepTitle": {
+      "message": "わーい！気に入っていただけて嬉しいです！"
+   },
+   "rateUsReviewStepBtn": {
+      "message": "フィードバックを送信"
+   },
+   "rateUsReviewStepMsgError": {
+      "message": "無効な文字が入力されました。"
+   },
+   "rateUsReviewStepSubTitle": {
+      "message": "弊社のサポートチームと製品チームが取り組んでいますので、すぐにご満足いただけることを期待しています。"
+   },
+   "rateUsReviewStepTextContent": {
+      "message": "あなたのフィードバック"
+   },
+   "rateUsReviewStepTitleContent": {
+      "message": "どうすれば改善できるでしょうか?"
+   },
+   "rateUsSReviewStepTitle": {
+      "message": "ありがとうございます。あなたの意見は私たちにとって重要です。"
+   },
+   "rateUsSubmittingStepBtn": {
+      "message": "送信"
+   },
+   "rateUsSubmittingStepSubTitle": {
+      "message": "星をタップしてご意見をお聞かせください"
+   },
+   "rateUsSubmittingStepTitle": {
+      "message": "BlockSite をどのように評価しますか?"
+   },
+   "redirectOnBoardingDescription": {
+      "message": "ブロックされたサイト、キーワードにアクセスしようとしたとき、またはフォーカスモードを使用したときに、リダイレクトするWebサイトを追加します"
+   },
+   "redirectOnBoardingTitle": {
+      "message": "リダイレクトサイトを設定する"
+   },
+   "resetPasswordSuccessBtnText": {
+      "message": "OK"
+   },
+   "resetPasswordSuccessSubTitle": {
+      "message": "パスワードがに送信されました $MAIL$",
+      "placeholders": {
+         "mail": {
+            "content": "$1",
+            "example": "example@mail.com"
+         }
+      }
+   },
+   "resetPasswordSuccessTitle": {
+      "message": "パスワードが送信されました"
+   },
+   "rewardUnlockCta": {
+      "message": "すべてのリワードを閲覧"
+   },
+   "rewardUnlockDescription": {
+      "message": "よくやった！これまでの努力が報われ、報酬を獲得しました!今すぐ使用することも、後で使用するために保存することもできます。"
+   },
+   "rewardUnlockTitle": {
+      "message": "報酬アンロック！"
+   },
+   "saveEmailSettings": {
+      "message": "保存する"
+   },
+   "scheduleOnBoardingDescription": {
+      "message": "特定の曜日と時間枠でサイトをブロックします。これらの時間枠外では、サイトはブロックされません。"
+   },
+   "scheduleOnBoardingTitle": {
+      "message": "ブロッキングスケジュールを作成する"
+   },
+   "setFirstPassProtectUserActionCTA": {
+      "message": "素晴らしい"
+   },
+   "setFirstPassProtectUserActionSubTitle": {
+      "message": "気を散らすことを避けるのがはるかに簡単になります"
+   },
+   "setFirstPassProtectUserActionTitle": {
+      "message": "良くやった！"
+   },
+   "setUpEmailAndPass": {
+      "message": "メールアドレスとパスワードを設定して有効化する"
+   },
+   "settingEnableFocusModeFaviconSubtitle": {
+      "message": "これを有効にすると、拡張機能のファビコンに現在の間隔の残り時間が表示されます。"
+   },
+   "settingEnableFocusModeFaviconTitle": {
+      "message": "ファビコンに残り時間を表示する"
+   },
+   "settingEnableSyncStatusSubtitle": {
+      "message": "モバイルや他の拡張機能との同期を簡単に有効/無効にするショートカットを表示できるようにします。"
+   },
+   "settingEnableSyncStatusTitle": {
+      "message": "同期オプションページのショートカットメニューを表示する"
+   },
+   "settingsChangedTitle1": {
+      "message": "追加の保護機能を有効化するには、メールアドレスとパスワードを保存してください。"
+   },
+   "settingsEnableBlockSiteShortcutSubtitle": {
+      "message": "WebサイトのBlockSiteメニューを右クリックして選択し、ブロックリストまたはフォーカスモードリストにサイトを追加します。"
+   },
+   "settingsEnableBlockSiteShortcutTitle": {
+      "message": "右クリックを使用してBlockSiteショートカットオプションを有効にする"
+   },
+   "settingsGeneralHeader": {
+      "message": "全般"
+   },
+   "settingsIntegrationsHeader": {
+      "message": "連携"
+   },
+   "settingsNotSaved": {
+      "message": "設定は保存されませんでした"
+   },
+   "settingsOptionSubtitle": {
+      "message": ""
+   },
+   "settingsOptionTitle": {
+      "message": "設定"
+   },
+   "settingsShowMotivationalSubtitle": {
+      "message": "これを有効にすると、ブロックされたサイトに画像が表示されます。無効にすると、白い背景が表示されます。"
+   },
+   "settingsShowMotivationalTitle": {
+      "message": "ブロックされたページの動機付けの画像を表示する"
+   },
+   "settingsSlackDNDSubtitle": {
+      "message": "フォーカスセッション中にSlackをサイレントモードに自動的に設定"
+   },
+   "settingsSlackDNDTitle": {
+      "message": "フォーカスセッション中のSlackDND"
+   },
+   "settingsSlackDNDTurnOffOverlayNoThanks": {
+      "message": "結構です"
+   },
+   "settingsSlackDNDTurnOffOverlaySubtitle": {
+      "message": "BlockSiteのSlackをオフにすると、気が散りやすくなります。それでもSlackをオフにしますか？"
+   },
+   "settingsSlackDNDTurnOffOverlayTitle": {
+      "message": "本当によろしいですか？"
+   },
+   "settingsSlackDNDTurnOffOverlayYesPlease": {
+      "message": "はい、お願いします"
+   },
+   "settingsSlackDNDTurnOnOverlayGoUnlimitedSlackAccount": {
+      "message": "無制限に移動"
+   },
+   "settingsSlackDNDTurnOnOverlayLinkSlackAccount": {
+      "message": "LinkSlackアカウント"
+   },
+   "settingsSlackDNDTurnOnOverlayMaybeLater": {
+      "message": "後で"
+   },
+   "settingsSlackDNDTurnOnOverlayNotifications": {
+      "message": "サイレントモードを自動的に設定して、フォーカスモード中に通知をサイレントにします"
+   },
+   "settingsSlackDNDTurnOnOverlayPrivacy": {
+      "message": "注意：BlockSiteはメッセージを非公開にします。送受信されたメッセージやチャットを保存または表示することはありません。"
+   },
+   "settingsSlackDNDTurnOnOverlayTitle": {
+      "message": "SlackをBlockSiteと統合することで、さらに気を散らすことを避けます"
+   },
+   "settingsSlackDNDTurnOnUpgradeOverlayTitle": {
+      "message": "Unlimitedにアップグレードして、SlackをBlockSiteと統合します"
+   },
+   "settingsSlackDNDUpgradeButton": {
+      "message": "無制限に移動"
+   },
+   "settingsSlackSubtitleNonPremium": {
+      "message": "BlockSite Unlimitedにアップグレードして、SlackのBlockSites自動化で集中力を高めます。"
+   },
+   "settingsSlackSubtitlePremium": {
+      "message": "SlackのBlockSites自動化でフォーカスを強化します。"
+   },
+   "settingsSyncHeader": {
+      "message": "同期"
+   },
+   "settingsSyncSubtitle": {
+      "message": "同じユーザーアカウントでサインインすると、現在の拡張機能の設定とブロックリストをクラウドにバックアップするか、Androidや拡張機能プラットフォームから最大4台の他のデバイスと同期します。"
+   },
+   "settingsSyncTitle": {
+      "message": "他のデバイスと同期する"
+   },
+   "settingsViewHeader": {
+      "message": "詳細（英語）"
+   },
+   "shareFacebookIconTitle": {
+      "message": "Facebook"
+   },
+   "shareLinkedinIconTitle": {
+      "message": "Linkedin"
+   },
+   "sharePopupSubTitle": {
+      "message": "BlockSiteについて知らせて他の人を助けてください"
+   },
+   "sharePopupTitle": {
+      "message": "生産性と集中力への愛を分かち合いましょう"
+   },
+   "shareTwitterIconTitle": {
+      "message": "Twitter"
+   },
+   "specialOfferPopupFinePrint": {
+      "message": "毎年請求されます。定期的な請求。理由を問わずいつでもキャンセル"
+   },
+   "specialOfferPopupGoMaybeLater": {
+      "message": "後で"
+   },
+   "specialOfferPopupGoUnlimited": {
+      "message": "無制限に移動"
+   },
+   "specialOfferPopupSave": {
+      "message": "保存"
+   },
+   "specialOfferPopupSubtitle": {
+      "message": " また、一括ブロック、パスワード保護などの機能も利用できます。限られた時間のみ！"
+   },
+   "specialOfferPopupTitle": {
+      "message": "$で無制限のブロッキングを取得"
+   },
+   "specialOfferPopupYear": {
+      "message": "１年"
+   },
+   "syncOverrideConfirmationApprove": {
+      "message": "はい"
+   },
+   "syncOverrideConfirmationCancel": {
+      "message": "いいえ"
+   },
+   "syncOverrideConfirmationSubTitle": {
+      "message": "オフラインモードで行われたすべての変更は、他のデバイスでは更新されず、失われます。"
+   },
+   "syncOverrideConfirmationTitle": {
+      "message": "本当によろしいですか？"
+   },
+   "tagTextLatestNews": {
+      "message": "最新ニュース"
+   },
+   "tagTextPremium": {
+      "message": "プレミアム"
+   },
+   "tagTextQuickTip": {
+      "message": "簡単なヒント"
+   },
+   "tooltipExportList": {
+      "message": "エクスポートリスト"
+   },
+   "tooltipImportList": {
+      "message": "インポートリスト"
+   },
+   "updateEmailAndPassword": {
+      "message": "メールアドレスとパスワードを更新する"
+   },
+   "updateThemHereLink": {
+      "message": "ここで更新してください"
+   },
+   "userActionStars": {
+      "message": "+ $ STARS $スターを獲得しました",
+      "placeholders": {
+         "stars": {
+            "content": "$1",
+            "example": "25"
+         }
+      }
+   },
+   "verificationCheckYourEmail": {
+      "message": "有効にするには、お送りしたメールの確認用リンクをご確認ください。"
+   },
+   "verificationClickToResend": {
+      "message": "再送するにはここをクリックしてください。"
+   },
+   "verificationDidntReceiveEmail": {
+      "message": "メールが届かない場合は、"
+   },
+   "verifyResetPasswordAcceptBtn": {
+      "message": "はい、パスワードをリセットします"
+   },
+   "verifyResetPasswordCancelBtn": {
+      "message": "いいえ、キャンセルします"
+   },
+   "verifyResetPasswordText": {
+      "message": "パスワードをリセットし、新しいパスワードをメールに送信します"
+   },
+   "verifyResetPasswordTitle": {
+      "message": "本当によろしいですか？"
+   },
+   "viewAccount": {
+      "message": "アカウントを表示する"
+   },
+   "whatsNewFeature1": {
+      "message": "より集中できるようにブロック エクスペリエンスを刷新し、ブロック スケジュールにカテゴリとキーワードを追加できるようになりました。"
+   },
+   "whatsNewGotIt": {
+      "message": "OK"
+   },
+   "whatsNewSubtitle": {
+      "message": "これがBlockSiteの新機能です:"
+   },
+   "whatsNewTitle": {
+      "message": "お帰りなさい"
+   },
+   "whiteListRedirectRemovePopupDescription": {
+      "message": "ホワイトリストモードとブラックリストモードを切り替えるときは、リダイレクトサイトをクリアする必要があります"
+   },
+   "whitelistInfoToolTip": {
+      "message": "ホワイトリストに登録されているサイト以外のすべてのウェブサイトをブロックする"
+   },
+   "whitelistModeTitle": {
+      "message": "ホワイトリストモード"
+   },
+   "whitelistPopUpDescription": {
+      "message": "リスト内のサイトを除いて、すべてのサイトがブロックされます。"
+   },
+   "whitelistPopUpTitle": {
+      "message": "本当によろしいですか？"
+   },
+   "workModeEnterPassToPauseOrReset": {
+      "message": "%TIMER_ACTION%にパスワードを入力します",
+      "placeholders": {
+         "timer_action": {
+            "content": "$1",
+            "example": "25"
+         }
+      }
+   },
+   "workModeToPauseOrResetEnterPassword": {
+      "message": "%TIMER_ACTION%パスワードを入力してください",
+      "placeholders": {
+         "timer_action": {
+            "content": "$1",
+            "example": "25"
+         }
+      }
+   },
+   "workModeWrongPassword": {
+      "message": "間違ったパスワード"
+   },
+   "wrongPassword": {
+      "message": "間違っています。もう一度お試しください。"
+   }
+}

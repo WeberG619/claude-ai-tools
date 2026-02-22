@@ -75,9 +75,16 @@ class DaemonWatchdog:
 
             if sys.platform == 'win32':
                 # Use tasklist on Windows to avoid os.kill WinError 6
+                # IMPORTANT: Use CREATE_NO_WINDOW + startupinfo to prevent
+                # visible console window flash every check cycle
+                startupinfo = subprocess.STARTUPINFO()
+                startupinfo.dwFlags |= subprocess.STARTF_USESHOWWINDOW
+                startupinfo.wShowWindow = 0  # SW_HIDE
                 result = subprocess.run(
                     ['tasklist', '/FI', f'PID eq {pid}', '/NH'],
-                    capture_output=True, text=True, timeout=5
+                    capture_output=True, text=True, timeout=5,
+                    creationflags=subprocess.CREATE_NO_WINDOW,
+                    startupinfo=startupinfo
                 )
                 return str(pid) in result.stdout
             else:

@@ -1,0 +1,1 @@
+(function() { window.location.href = "https://console.developers.google.com/apis/api/dns.googleapis.com/overview?project=bim-ops-youtube"; return "navigating"; })();

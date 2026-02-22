@@ -1,512 +1,512 @@
 {
-  "timestamp": "2026-02-15T03:57:09.146590",
+  "timestamp": "2026-02-22T09:53:08.995818",
   "events": [
     {
-      "timestamp": "2026-02-15T01:55:13.328945",
+      "timestamp": "2026-02-22T01:57:32.345856",
+      "type": "app_closed",
+      "details": "chrome: BCS - Search for Permit by Address - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-22T01:57:46.596205",
       "type": "focus_changed",
-      "details": "Mozilla Firefox"
+      "details": "eTRAKiT - Google Chrome"
     },
     {
-      "timestamp": "2026-02-15T01:55:25.662420",
-      "type": "app_opened",
-      "details": "firefox: Library"
-    },
-    {
-      "timestamp": "2026-02-15T01:55:25.944207",
-      "type": "app_closed",
-      "details": "firefox: Mozilla Firefox"
-    },
-    {
-      "timestamp": "2026-02-15T01:55:27.012745",
+      "timestamp": "2026-02-22T01:58:39.117969",
       "type": "focus_changed",
-      "details": "Library"
+      "details": "Phone Link"
     },
     {
-      "timestamp": "2026-02-15T01:55:55.620653",
-      "type": "app_opened",
-      "details": "firefox: ??????? ??????? ???? ????????? ?????? ???????? ??????? - ????? ?? Video Pornohub+ - watch online in Yandex video search - Mozilla Firefox"
-    },
-    {
-      "timestamp": "2026-02-15T01:55:55.927790",
-      "type": "app_closed",
-      "details": "firefox: Library"
-    },
-    {
-      "timestamp": "2026-02-15T01:55:57.009690",
-      "type": "focus_changed",
-      "details": "??????? ??????? ???? ????????? ?????? ???????? ??????? - ????? ?? Video Pornohub+ - watch online in Yandex video search - Mozilla Firefox"
-    },
-    {
-      "timestamp": "2026-02-15T01:56:09.130891",
-      "type": "app_opened",
-      "details": "firefox: ????? ?? ??????? ??? ?????? ???? ? ???? ??????? ?????? - ????? ?? VIDEO PORNOHUB+ - watch online in Yandex video search - Mozilla Firefox"
-    },
-    {
-      "timestamp": "2026-02-15T01:56:09.414540",
-      "type": "app_closed",
-      "details": "firefox: ??????? ??????? ???? ????????? ?????? ???????? ??????? - ????? ?? Video Pornohub+ - watch online in Yandex video search - Mozilla Firefox"
-    },
-    {
-      "timestamp": "2026-02-15T01:56:10.473115",
-      "type": "focus_changed",
-      "details": "????? ?? ??????? ??? ?????? ???? ? ???? ??????? ?????? - ????? ?? VIDEO PORNOHUB+ - watch online in Yandex video search - Mozilla Firefox"
-    },
-    {
-      "timestamp": "2026-02-15T01:57:30.044401",
-      "type": "app_opened",
-      "details": "chrome: Supabase - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-15T01:57:30.321215",
-      "type": "app_closed",
-      "details": "chrome: AI-Powered BIM Automation | BIM Ops Studio | BIM Ops Studio - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-15T01:57:43.954426",
-      "type": "app_opened",
-      "details": "firefox: Library"
-    },
-    {
-      "timestamp": "2026-02-15T01:57:44.224462",
-      "type": "app_closed",
-      "details": "firefox: ????? ?? ??????? ??? ?????? ???? ? ???? ??????? ?????? - ????? ?? VIDEO PORNOHUB+ - watch online in Yandex video search - Mozilla Firefox"
-    },
-    {
-      "timestamp": "2026-02-15T01:57:45.320032",
-      "type": "focus_changed",
-      "details": "Supabase - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-15T01:57:57.484286",
-      "type": "app_closed",
-      "details": "firefox: Library"
-    },
-    {
-      "timestamp": "2026-02-15T01:59:18.019149",
+      "timestamp": "2026-02-22T01:58:55.879891",
       "type": "focus_changed",
       "details": "Welcome - Visual Studio Code"
     },
     {
-      "timestamp": "2026-02-15T01:59:43.201414",
-      "type": "app_closed",
-      "details": "AutoHotkey64: -noninteractive"
+      "timestamp": "2026-02-22T01:59:22.185526",
+      "type": "focus_changed",
+      "details": "eTRAKiT - Google Chrome"
     },
     {
-      "timestamp": "2026-02-15T02:00:11.686150",
+      "timestamp": "2026-02-22T01:59:47.636060",
+      "type": "app_opened",
+      "details": "YourPhoneAppProxy: Weber's S23 Ultra"
+    },
+    {
+      "timestamp": "2026-02-22T01:59:49.244942",
+      "type": "focus_changed",
+      "details": "Weber's S23 Ultra"
+    },
+    {
+      "timestamp": "2026-02-22T02:00:58.933844",
+      "type": "focus_changed",
+      "details": "Welcome - Visual Studio Code"
+    },
+    {
+      "timestamp": "2026-02-22T02:02:07.214079",
+      "type": "app_closed",
+      "details": "YourPhoneAppProxy: Weber's S23 Ultra"
+    },
+    {
+      "timestamp": "2026-02-22T02:02:07.529750",
+      "type": "app_closed",
+      "details": "PhoneExperienceHost: Phone Link"
+    },
+    {
+      "timestamp": "2026-02-22T02:02:20.513507",
+      "type": "app_opened",
+      "details": "Wispr Flow: Status"
+    },
+    {
+      "timestamp": "2026-02-22T02:02:20.841509",
+      "type": "app_closed",
+      "details": "msedge: New tab and 7 more pages - Personal - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-22T02:02:21.108422",
+      "type": "app_closed",
+      "details": "Wispr Flow: Hub"
+    },
+    {
+      "timestamp": "2026-02-22T02:02:22.423179",
+      "type": "focus_changed",
+      "details": "Hub"
+    },
+    {
+      "timestamp": "2026-02-22T09:26:54.572064",
+      "type": "app_opened",
+      "details": "Wispr Flow: Hub"
+    },
+    {
+      "timestamp": "2026-02-22T09:26:54.729157",
+      "type": "app_opened",
+      "details": "chrome: Inbox (2) - [email] - Gmail - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-22T09:26:54.996572",
+      "type": "app_closed",
+      "details": "explorer: 4020 Woodside - Residential Project"
+    },
+    {
+      "timestamp": "2026-02-22T09:26:55.271117",
+      "type": "app_closed",
+      "details": "msedge: Netflix and 7 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-22T09:26:55.545887",
+      "type": "app_closed",
+      "details": "notepad: *Untitled - Notepad"
+    },
+    {
+      "timestamp": "2026-02-22T09:26:55.812984",
+      "type": "app_closed",
+      "details": "CalculatorApp: Calculator"
+    },
+    {
+      "timestamp": "2026-02-22T09:26:56.079973",
+      "type": "app_closed",
+      "details": "Wispr Flow: Status"
+    },
+    {
+      "timestamp": "2026-02-22T09:26:56.421190",
+      "type": "app_closed",
+      "details": "claude: Claude"
+    },
+    {
+      "timestamp": "2026-02-22T09:26:56.679498",
+      "type": "app_closed",
+      "details": "chrome: eTRAKiT - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-22T09:26:57.819512",
+      "type": "focus_changed",
+      "details": "Important: We have disabled your API token - [email] - Gmail - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-22T09:27:01.605356",
+      "type": "alert",
+      "details": "2 new emails need response"
+    },
+    {
+      "timestamp": "2026-02-22T09:27:13.255631",
+      "type": "app_opened",
+      "details": "chrome: New Tab - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-22T09:27:13.526426",
+      "type": "app_closed",
+      "details": "chrome: Inbox (2) - [email] - Gmail - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-22T09:27:14.610326",
+      "type": "focus_changed",
+      "details": "New Tab - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-22T09:27:26.563583",
+      "type": "app_opened",
+      "details": "CalculatorApp: Calculator"
+    },
+    {
+      "timestamp": "2026-02-22T09:27:26.862527",
+      "type": "app_opened",
+      "details": "ApplicationFrameHost: Calculator"
+    },
+    {
+      "timestamp": "2026-02-22T09:27:27.137318",
+      "type": "app_closed",
+      "details": "ApplicationFrameHost: Settings"
+    },
+    {
+      "timestamp": "2026-02-22T09:27:40.800244",
+      "type": "app_opened",
+      "details": "chrome: YouTube - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-22T09:27:41.099783",
       "type": "app_closed",
       "details": "chrome: New Tab - Google Chrome"
     },
     {
-      "timestamp": "2026-02-15T02:00:12.787188",
+      "timestamp": "2026-02-22T09:27:42.190839",
       "type": "focus_changed",
-      "details": "Supabase - Google Chrome"
+      "details": "YouTube - Google Chrome"
     },
     {
-      "timestamp": "2026-02-15T02:04:49.703485",
-      "type": "focus_changed",
-      "details": "Welcome - Visual Studio Code"
-    },
-    {
-      "timestamp": "2026-02-15T02:11:02.590489",
-      "type": "app_opened",
-      "details": "chrome: bim-ops-studio | WeberG619's Org | Supabase - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-15T02:11:28.507214",
-      "type": "focus_changed",
-      "details": "Save password?"
-    },
-    {
-      "timestamp": "2026-02-15T02:11:41.760771",
-      "type": "focus_changed",
-      "details": "Password saved to this device"
-    },
-    {
-      "timestamp": "2026-02-15T02:11:56.744566",
-      "type": "app_opened",
-      "details": "chrome: Integrations | Supabase - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-15T02:11:57.032527",
-      "type": "app_closed",
-      "details": "chrome: bim-ops-studio | WeberG619's Org | Supabase - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-15T02:11:58.126939",
-      "type": "focus_changed",
-      "details": "Integrations | Supabase - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-15T02:14:20.498313",
-      "type": "app_opened",
-      "details": "chrome: General | Supabase - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-15T02:14:20.787740",
-      "type": "app_closed",
-      "details": "chrome: Integrations | Supabase - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-15T02:14:21.848720",
-      "type": "focus_changed",
-      "details": "General | Supabase - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-15T02:14:37.658425",
+      "timestamp": "2026-02-22T09:29:37.541756",
       "type": "focus_changed",
       "details": "Welcome - Visual Studio Code"
     },
     {
-      "timestamp": "2026-02-15T02:15:02.912088",
-      "type": "app_opened",
-      "details": "chrome: Settings | Supabase - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-15T02:15:03.200665",
-      "type": "app_closed",
-      "details": "chrome: General | Supabase - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-15T02:16:10.613747",
+      "timestamp": "2026-02-22T09:33:07.106246",
       "type": "focus_changed",
-      "details": "C:\\WINDOWS\\SYSTEM32\\tasklist.exe"
+      "details": "YouTube - Google Chrome"
     },
     {
-      "timestamp": "2026-02-15T02:16:22.997776",
+      "timestamp": "2026-02-22T09:37:26.062347",
+      "type": "focus_changed",
+      "details": "Welcome - Visual Studio Code"
+    },
+    {
+      "timestamp": "2026-02-22T09:38:07.227354",
+      "type": "focus_changed",
+      "details": "YouTube - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-22T09:38:19.107755",
+      "type": "app_opened",
+      "details": "msedge: New tab and 1 more page - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-22T09:38:20.189968",
+      "type": "focus_changed",
+      "details": "New tab and 1 more page - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-22T09:38:32.057255",
+      "type": "app_opened",
+      "details": "chrome: ??????Her Eyes Definitely Say Something. ???? #comedy #funny #prank - YouTube - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-22T09:38:32.328642",
       "type": "app_closed",
-      "details": "chrome: Supabase - Google Chrome"
+      "details": "chrome: YouTube - Google Chrome"
     },
     {
-      "timestamp": "2026-02-15T02:16:24.107585",
+      "timestamp": "2026-02-22T09:38:33.397645",
+      "type": "focus_changed",
+      "details": "??????Her Eyes Definitely Say Something. ???? #comedy #funny #prank - YouTube - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-22T09:39:27.080307",
+      "type": "app_opened",
+      "details": "chrome: YouTube - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-22T09:39:27.351386",
+      "type": "app_closed",
+      "details": "chrome: ??????Her Eyes Definitely Say Something. ???? #comedy #funny #prank - YouTube - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-22T09:39:28.442667",
+      "type": "focus_changed",
+      "details": "YouTube - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-22T09:39:40.071064",
+      "type": "app_opened",
+      "details": "chrome: ??I recommend you to watch till the end. They ran away #funny - YouTube - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-22T09:39:40.346842",
+      "type": "app_closed",
+      "details": "chrome: YouTube - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-22T09:39:41.489026",
+      "type": "focus_changed",
+      "details": "??I recommend you to watch till the end. They ran away #funny - YouTube - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-22T09:40:06.261670",
+      "type": "app_opened",
+      "details": "chrome: YouTube - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-22T09:40:06.521371",
+      "type": "app_closed",
+      "details": "chrome: ??I recommend you to watch till the end. They ran away #funny - YouTube - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-22T09:40:07.592979",
+      "type": "focus_changed",
+      "details": "YouTube - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-22T09:40:22.552236",
+      "type": "app_opened",
+      "details": "chrome: ??even his girlfriend was shocked #shorts #funny #comedy - YouTube - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-22T09:40:22.849696",
+      "type": "app_closed",
+      "details": "chrome: YouTube - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-22T09:40:23.928751",
+      "type": "focus_changed",
+      "details": "??even his girlfriend was shocked #shorts #funny #comedy - YouTube - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-22T09:40:36.293438",
+      "type": "focus_changed",
+      "details": "Top Barber Moments ??#barber #shortsfeed #shortsviral - YouTube - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-22T09:40:48.409240",
+      "type": "app_closed",
+      "details": "chrome: ??even his girlfriend was shocked #shorts #funny #comedy - YouTube - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-22T09:41:01.142067",
+      "type": "app_opened",
+      "details": "chrome: Top Barber Moments ??#barber #shortsfeed #shortsviral - YouTube - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-22T09:41:13.725695",
+      "type": "app_closed",
+      "details": "chrome: Top Barber Moments ??#barber #shortsfeed #shortsviral - YouTube - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-22T09:41:54.642720",
+      "type": "app_opened",
+      "details": "chrome: YouTube - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-22T09:41:55.690356",
+      "type": "focus_changed",
+      "details": "YouTube - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-22T09:42:20.128786",
+      "type": "app_opened",
+      "details": "chrome: ??crazy girl shocked them! viral reactions #funny #humor #comedy - YouTube - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-22T09:42:20.408217",
+      "type": "app_closed",
+      "details": "chrome: YouTube - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-22T09:42:21.495620",
+      "type": "focus_changed",
+      "details": "??crazy girl shocked them! viral reactions #funny #humor #comedy - YouTube - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-22T09:43:01.508790",
+      "type": "app_opened",
+      "details": "chrome: She sent a picture of herself to the wrong person. I got a shot and reply. - YouTube - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-22T09:43:01.793733",
+      "type": "app_closed",
+      "details": "chrome: ??crazy girl shocked them! viral reactions #funny #humor #comedy - YouTube - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-22T09:43:02.895224",
+      "type": "focus_changed",
+      "details": "She sent a picture of herself to the wrong person. I got a shot and reply. - YouTube - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-22T09:44:58.304032",
+      "type": "app_opened",
+      "details": "chrome: YouTube - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-22T09:44:58.576603",
+      "type": "app_closed",
+      "details": "chrome: She sent a picture of herself to the wrong person. I got a shot and reply. - YouTube - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-22T09:44:59.666929",
+      "type": "focus_changed",
+      "details": "YouTube - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-22T09:45:11.153388",
+      "type": "app_opened",
+      "details": "chrome: Oops ??confused situation ?????? #funny #trynotolaughchallenge #comedy #prankvideo #shortsfeed - YouTube - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-22T09:45:11.420760",
+      "type": "app_closed",
+      "details": "chrome: YouTube - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-22T09:45:12.501750",
+      "type": "focus_changed",
+      "details": "Oops ??confused situation ?????? #funny #trynotolaughchallenge #comedy #prankvideo #shortsfeed - YouTube - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-22T09:45:40.529325",
+      "type": "app_opened",
+      "details": "chrome: YouTube - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-22T09:45:40.828946",
+      "type": "app_closed",
+      "details": "chrome: Oops ??confused situation ?????? #funny #trynotolaughchallenge #comedy #prankvideo #shortsfeed - YouTube - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-22T09:45:41.901653",
+      "type": "focus_changed",
+      "details": "YouTube - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-22T09:45:53.450165",
+      "type": "app_opened",
+      "details": "chrome: his girlfriend got mad ?? crazy girl prank #funny #prankvideo #comedy - YouTube - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-22T09:45:53.757548",
+      "type": "app_closed",
+      "details": "chrome: YouTube - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-22T09:45:54.840318",
+      "type": "focus_changed",
+      "details": "his girlfriend got mad ?? crazy girl prank #funny #prankvideo #comedy - YouTube - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-22T09:46:31.886550",
+      "type": "app_opened",
+      "details": "chrome: YouTube - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-22T09:46:32.168513",
+      "type": "app_closed",
+      "details": "chrome: his girlfriend got mad ?? crazy girl prank #funny #prankvideo #comedy - YouTube - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-22T09:46:33.250448",
+      "type": "focus_changed",
+      "details": "YouTube - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-22T09:47:26.947161",
+      "type": "focus_changed",
+      "details": "Welcome - Visual Studio Code"
+    },
+    {
+      "timestamp": "2026-02-22T09:47:40.596064",
+      "type": "focus_changed",
+      "details": "New tab and 1 more page - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-22T09:48:58.761241",
+      "type": "app_opened",
+      "details": "msedge: Amazon.com. Spend less. Smile more. and 2 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-22T09:48:59.034311",
+      "type": "app_closed",
+      "details": "msedge: New tab and 1 more page - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-22T09:49:00.157531",
+      "type": "focus_changed",
+      "details": "Amazon.com. Spend less. Smile more. and 2 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-22T09:49:11.807259",
+      "type": "app_opened",
+      "details": "msedge: Prime Video: Watch movies, TV shows, sports, and live TV and 2 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-22T09:49:12.079281",
+      "type": "app_closed",
+      "details": "msedge: Amazon.com. Spend less. Smile more. and 2 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-22T09:49:13.154950",
+      "type": "focus_changed",
+      "details": "Prime Video: Watch movies, TV shows, sports, and live TV and 2 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-22T09:49:41.380472",
+      "type": "app_opened",
+      "details": "msedge: Watch The Last Thing He Told Me - Season 2 | Prime Video and 2 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-22T09:49:41.677968",
+      "type": "app_closed",
+      "details": "msedge: Prime Video: Watch movies, TV shows, sports, and live TV and 2 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-22T09:49:42.805672",
+      "type": "focus_changed",
+      "details": "Watch The Last Thing He Told Me - Season 2 | Prime Video and 2 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-22T09:50:07.570582",
+      "type": "app_opened",
+      "details": "msedge: Watch The Last Thing He Told Me - Season 1 | Prime Video and 2 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-22T09:50:07.852040",
+      "type": "app_closed",
+      "details": "msedge: Watch The Last Thing He Told Me - Season 2 | Prime Video and 2 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-22T09:50:08.962112",
+      "type": "focus_changed",
+      "details": "Watch The Last Thing He Told Me - Season 1 | Prime Video and 2 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-22T09:50:21.510025",
       "type": "focus_changed",
       "details": "Program Manager"
     },
     {
-      "timestamp": "2026-02-15T02:16:48.949836",
+      "timestamp": "2026-02-22T09:51:02.467282",
+      "type": "focus_changed",
+      "details": "Watch The Last Thing He Told Me - Season 1 | Prime Video and 2 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-22T09:51:40.241263",
       "type": "focus_changed",
       "details": "Welcome - Visual Studio Code"
     },
     {
-      "timestamp": "2026-02-15T02:17:29.488787",
-      "type": "app_opened",
-      "details": "chrome: bim-ops-studio | WeberG619's Org | Supabase - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-15T02:17:29.748603",
-      "type": "app_closed",
-      "details": "chrome: Settings | Supabase - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-15T02:22:18.880607",
-      "type": "app_opened",
-      "details": "chrome: Authentication | Supabase - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-15T02:22:19.186335",
-      "type": "app_closed",
-      "details": "chrome: bim-ops-studio | WeberG619's Org | Supabase - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-15T02:24:20.015746",
-      "type": "app_opened",
-      "details": "chrome: Access Tokens | Supabase - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-15T02:24:20.277861",
-      "type": "app_closed",
-      "details": "chrome: Authentication | Supabase - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-15T02:26:17.811418",
-      "type": "app_opened",
-      "details": "chrome: Stripe Login | Sign in to the Stripe Dashboard - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-15T02:26:18.118850",
-      "type": "app_closed",
-      "details": "chrome: Access Tokens | Supabase - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-15T02:27:24.857829",
-      "type": "app_opened",
-      "details": "chrome: Sign in - Google Accounts - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-15T02:27:25.136699",
-      "type": "app_closed",
-      "details": "chrome: Stripe Login | Sign in to the Stripe Dashboard - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-15T02:29:13.604437",
-      "type": "app_opened",
-      "details": "chrome: Dashboard - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-15T02:29:13.867764",
-      "type": "app_closed",
-      "details": "chrome: Sign in - Google Accounts - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-15T02:29:26.684564",
-      "type": "app_opened",
-      "details": "chrome: Product catalog - New business - Stripe [Test] - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-15T02:29:26.979615",
-      "type": "app_closed",
-      "details": "chrome: Dashboard - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-15T02:29:52.844822",
-      "type": "app_opened",
-      "details": "chrome: Developers - New business - Stripe [Test] - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-15T02:29:53.103310",
-      "type": "app_closed",
-      "details": "chrome: Product catalog - New business - Stripe [Test] - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-15T02:32:57.351119",
-      "type": "app_opened",
-      "details": "chrome: Customer portal - New business - Stripe [Test] - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-15T02:32:57.652910",
-      "type": "app_closed",
-      "details": "chrome: Developers - New business - Stripe [Test] - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-15T02:33:51.661541",
-      "type": "app_opened",
-      "details": "chrome: Resend - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-15T02:33:51.918813",
-      "type": "app_closed",
-      "details": "chrome: Customer portal - New business - Stripe [Test] - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-15T02:34:33.482791",
-      "type": "app_opened",
-      "details": "chrome: Authorize application - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-15T02:34:33.771790",
-      "type": "app_closed",
-      "details": "chrome: Resend - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-15T02:35:37.456926",
-      "type": "app_opened",
-      "details": "chrome: OAuth application authorized - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-15T02:35:37.738708",
-      "type": "app_closed",
-      "details": "chrome: Authorize application - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-15T02:35:53.866502",
-      "type": "app_opened",
-      "details": "chrome: Resend - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-15T02:35:54.143498",
-      "type": "app_closed",
-      "details": "chrome: OAuth application authorized - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-15T02:39:36.244162",
-      "type": "app_opened",
-      "details": "chrome: Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-15T02:39:37.337097",
+      "timestamp": "2026-02-22T09:52:33.828325",
       "type": "focus_changed",
-      "details": "Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-15T02:44:29.668961",
-      "type": "app_closed",
-      "details": "chrome: Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-15T02:44:30.764671",
-      "type": "focus_changed",
-      "details": "Resend - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-15T02:45:24.656829",
-      "type": "focus_changed",
-      "details": "Restore pages?"
-    },
-    {
-      "timestamp": "2026-02-15T02:46:43.055306",
-      "type": "app_closed",
-      "details": "chrome: Resend - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-15T02:46:44.069889",
-      "type": "focus_changed",
-      "details": "Welcome - Visual Studio Code"
-    },
-    {
-      "timestamp": "2026-02-15T02:46:56.542090",
-      "type": "app_opened",
-      "details": "chrome: Resend - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-15T02:46:57.596933",
-      "type": "focus_changed",
-      "details": "Restore pages?"
-    },
-    {
-      "timestamp": "2026-02-15T02:47:50.782187",
-      "type": "app_opened",
-      "details": "chrome: Sign in to GitHub \u00fa GitHub - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-15T02:47:51.073209",
-      "type": "app_closed",
-      "details": "chrome: Resend - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-15T02:48:29.266368",
-      "type": "app_opened",
-      "details": "chrome: Sign up \u00fa Resend - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-15T02:48:29.534371",
-      "type": "app_closed",
-      "details": "chrome: Sign in to GitHub \u00fa GitHub - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-15T02:58:38.411453",
-      "type": "app_opened",
-      "details": "chrome: Reset password \u00fa Resend - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-15T02:58:38.550708",
-      "type": "app_closed",
-      "details": "chrome: Sign up \u00fa Resend - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-15T03:02:35.996089",
-      "type": "app_opened",
-      "details": "chrome: Resend - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-15T03:02:36.348706",
-      "type": "app_closed",
-      "details": "chrome: Reset password \u00fa Resend - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-15T03:06:33.962151",
-      "type": "app_opened",
-      "details": "chrome: Sign in - Google Accounts - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-15T03:06:34.240017",
-      "type": "app_closed",
-      "details": "chrome: Resend - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-15T03:07:12.314866",
-      "type": "app_opened",
-      "details": "chrome: Resend - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-15T03:07:12.591949",
-      "type": "app_closed",
-      "details": "chrome: Sign in - Google Accounts - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-15T03:07:25.882917",
-      "type": "app_opened",
-      "details": "chrome: Emails \u00fa Resend - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-15T03:07:26.178013",
-      "type": "app_closed",
-      "details": "chrome: Resend - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-15T03:07:54.651972",
-      "type": "app_opened",
-      "details": "chrome: API Keys \u00fa Resend - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-15T03:07:54.952803",
-      "type": "app_closed",
-      "details": "chrome: Emails \u00fa Resend - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-15T03:11:24.787122",
-      "type": "app_opened",
-      "details": "chrome: Domains \u00fa Resend - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-15T03:11:25.093806",
-      "type": "app_closed",
-      "details": "chrome: API Keys \u00fa Resend - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-15T03:13:00.833682",
-      "type": "app_opened",
-      "details": "chrome: Resend - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-15T03:13:01.095236",
-      "type": "app_closed",
-      "details": "chrome: Domains \u00fa Resend - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-15T03:30:06.904285",
-      "type": "focus_changed",
-      "details": "C:\\WINDOWS\\SYSTEM32\\tasklist.exe"
-    },
-    {
-      "timestamp": "2026-02-15T03:30:19.286899",
-      "type": "focus_changed",
-      "details": "Restore pages?"
-    },
-    {
-      "timestamp": "2026-02-15T03:31:37.843959",
-      "type": "focus_changed",
-      "details": "C:\\WINDOWS\\SYSTEM32\\tasklist.exe"
-    },
-    {
-      "timestamp": "2026-02-15T03:31:50.827433",
-      "type": "focus_changed",
-      "details": "Restore pages?"
-    },
-    {
-      "timestamp": "2026-02-15T03:34:40.315634",
-      "type": "focus_changed",
-      "details": "C:\\WINDOWS\\SYSTEM32\\tasklist.exe"
-    },
-    {
-      "timestamp": "2026-02-15T03:34:52.713998",
-      "type": "focus_changed",
-      "details": "Restore pages?"
-    },
-    {
-      "timestamp": "2026-02-15T03:36:11.351983",
-      "type": "focus_changed",
-      "details": "C:\\WINDOWS\\SYSTEM32\\tasklist.exe"
-    },
-    {
-      "timestamp": "2026-02-15T03:36:24.290483",
-      "type": "focus_changed",
-      "details": "Restore pages?"
+      "details": "Program Manager"
     }
   ],
   "stats": {
     "started_at": "2025-12-04T10:13:59.664371",
-    "updates": 9930,
-    "errors": 0,
-    "restarts": 5
+    "updates": 44010,
+    "errors": 8,
+    "restarts": 21
   },
   "previous_apps": [
     [
@@ -518,36 +518,32 @@
       "Microsoft Text Input Application"
     ],
     [
-      "ms-teams",
-      "Chat | Bruce Davis | BD Architect llc | weber@bdarchitect.net | Microsoft Teams"
-    ],
-    [
-      "chrome",
-      "Resend - Google Chrome"
+      "msedge",
+      "Watch The Last Thing He Told Me - Season 1 | Prime Video and 2 more pages - Profile 1 - Microsoft? Edge"
     ],
     [
       "ApplicationFrameHost",
-      "Settings"
-    ],
-    [
-      "SystemSettings",
-      "Settings"
+      "Calculator"
     ],
     [
       "Wispr Flow",
       "Hub"
     ],
     [
+      "ms-teams",
+      "Chat | Paola Gomez | BD Architect llc | weber@bdarchitect.net | Microsoft Teams"
+    ],
+    [
+      "SystemSettings",
+      "Settings"
+    ],
+    [
       "CalculatorApp",
       "Calculator"
     ],
     [
-      "POWERPNT",
-      "AI_System_Showcase - PowerPoint"
-    ],
-    [
-      "EXCEL",
-      "Q1_Expense_Dashboard - Excel"
+      "chrome",
+      "YouTube - Google Chrome"
     ]
   ]
 }

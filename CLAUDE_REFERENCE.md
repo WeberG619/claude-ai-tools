@@ -9,7 +9,8 @@
 |--------|---------|-------------|
 | **claude-memory** | Persistent memory | Always - every session |
 | **floor-plan-vision** | PDF floor plan extraction | When processing architectural PDFs |
-| **playwright** | Browser automation | Web scraping, testing web apps |
+| **cdp-browser** | Browser automation (Chrome+Edge) | Web scraping, form filling, testing — PRIMARY browser tool |
+| **windows-browser** | Desktop automation (screenshots, keys) | Non-browser apps (Bluebeam, Excel, Revit), monitor screenshots |
 | **sqlite-server** | Database operations | Data storage, queries |
 | **Aider (x3)** | AI code editing | Multi-file refactoring |
 | **excel-mcp** | Excel automation | Spreadsheet operations |
@@ -28,12 +29,19 @@
 3. mcp__floor-plan-vision__build_revit_spec - Generate Revit spec
 ```
 
-### Playwright for Web Tasks
+### CDP for Browser Automation (PRIMARY)
 ```
-1. mcp__playwright__browser_navigate - Go to URL
-2. mcp__playwright__browser_snapshot - Capture state
-3. mcp__playwright__browser_click/type - Interact
+1. mcp__cdp-browser__cdp_launch_chrome/edge - Launch with CDP
+2. mcp__cdp-browser__cdp_navigate - Go to URL (supports tabs, both browsers)
+3. mcp__cdp-browser__cdp_fill / cdp_click / cdp_check / cdp_select - Form interaction
+4. mcp__cdp-browser__cdp_evaluate - Run JavaScript
+5. mcp__cdp-browser__cdp_screenshot - Visual verification
+6. mcp__cdp-browser__cdp_get_text / cdp_get_html - Read page content
+7. mcp__cdp-browser__cdp_wait - Wait for elements/text
 ```
+Note: Playwright was REMOVED (broken in WSL, no X server). CDP connects
+directly to Windows Chrome (port 9222) and Edge (port 9226) via DevTools Protocol.
+Use windows-browser MCP only for non-browser desktop tasks (screenshots, send_keys to native apps).
 
 ---
 

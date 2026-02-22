@@ -1,0 +1,110 @@
+{
+  "edition": "2023 FBC",
+  "full_name": "Florida Building Code 2023 (8th Edition)",
+  "publisher": "Florida Building Commission",
+  "base_code": "2021 IBC with Florida-specific amendments",
+  "effective_date": "2024-01-01",
+  "note": "Simplified reference summaries. The FBC incorporates the IBC with Florida-specific amendments. Non-amended sections follow IBC 2021. For full code text, consult https://floridabuilding.org/ or https://codes.iccsafe.org/",
+  "sections": {
+    "FL_ADMIN": {
+      "title": "Florida Administrative Amendments",
+      "summary": "Florida-specific administrative provisions that override IBC Chapter 1. Includes permit requirements, inspection procedures, and local jurisdiction authority.",
+      "subsections": {
+        "FL101.1": "Title - Florida Building Code, Building",
+        "FL101.2": "Scope - All buildings and structures in Florida except exempt structures per FS 553.73",
+        "FL104": "Building official duties and qualifications per Florida Statute",
+        "FL105.1": "Permits required - Building permits required for all construction except minor exempt work",
+        "FL105.2": "Work exempt from permit - Ordinary repairs not exceeding $5,000, painting, carpeting, one-story detached accessory structures ≤200 sq ft",
+        "FL107": "Plans and specifications - Signed and sealed by Florida-licensed architect or engineer for non-exempt buildings",
+        "FL110": "Inspections - Foundation, framing, sheathing, insulation, lath/gypsum, final. Threshold buildings require special inspector"
+      }
+    },
+    "FL1609": {
+      "title": "Wind Loads (Florida Amendments)",
+      "summary": "Enhanced wind load requirements specific to Florida. More stringent than base IBC due to hurricane exposure. Includes High-Velocity Hurricane Zone (HVHZ) provisions for Miami-Dade and Broward counties.",
+      "subsections": {
+        "FL1609.1": "Applications - Design wind loads per ASCE 7 or Florida-specific provisions",
+        "FL1609.2": "Protection of openings - Impact-resistant glazing or shutters required in wind-borne debris regions (within 1 mile of coast where V ≥ 130 mph, or entire HVHZ)",
+        "FL1609.3": "Wind speed map - Florida-specific wind speed map per Figure 1609.3. Ultimate design wind speeds range from 115-190 mph depending on location and risk category",
+        "FL1609.4": "Exposure category - Exposure B (urban), C (open terrain), D (coastal/flat open). Most coastal FL is Exposure C or D",
+        "FL1609.5": "Roof deck attachment - Enhanced fastening schedules for Florida. 8d ring-shank nails at 6 in. OC edges typical for high-wind areas"
+      }
+    },
+    "FL1612": {
+      "title": "Flood Loads (Florida Amendments)",
+      "summary": "Enhanced flood load requirements for Florida's extensive coastal and flood-prone areas.",
+      "subsections": {
+        "FL1612.1": "General - Design for flood loads per ASCE 7, ASCE 24, and FBC floodplain management",
+        "FL1612.2": "Definitions - Coastal construction control line (CCCL), coastal A zones, V zones",
+        "FL1612.4": "Design and construction - Lowest floor elevated above BFE. A zones: BFE +1ft min. V zones: bottom of lowest horizontal structural member at or above BFE",
+        "FL1612.5": "Flood-resistant materials - Below BFE, use flood damage-resistant materials per FEMA TB-2",
+        "FL1612.6": "Manufactured homes - Must comply with HUD standards and local floodplain regulations"
+      }
+    },
+    "FL_HVHZ": {
+      "title": "High-Velocity Hurricane Zone (HVHZ)",
+      "summary": "Special requirements for Miami-Dade and Broward counties. HVHZ has the most stringent wind requirements in the US, requiring product approval via Testing Application Standards (TAS).",
+      "subsections": {
+        "HVHZ_scope": "Applicability - Miami-Dade and Broward counties only. All products must have a Florida Product Approval (FPA) or Miami-Dade NOA",
+        "TAS_201": "TAS 201 - Impact Test Procedures for Wind Resistive Components (large and small missile)",
+        "TAS_202": "TAS 202 - Criteria for Testing Impact/Cycle Loading of Windows and Shutters (9 lb 2x4 at 34 fps large missile for residential, 50 fps for commercial)",
+        "TAS_203": "TAS 203 - Criteria for Testing Products Subject to Cyclic Wind Pressure Loading",
+        "HVHZ_roofing": "Roofing - Enhanced roof attachment, secondary water barrier required, roof-to-wall continuous load path connections",
+        "HVHZ_openings": "Openings - All glazed openings must be impact-resistant or protected by approved shutters. Large missile test required",
+        "HVHZ_structural": "Structural - Continuous load path from roof to foundation. All connections designed for uplift and lateral loads",
+        "HVHZ_product_approval": "Product Approval - Products must be approved via Florida Product Approval system or local NOA (Notice of Acceptance). Search at https://floridabuilding.org/pr/pr_default.aspx"
+      }
+    },
+    "FL_MOISTURE": {
+      "title": "Florida Moisture Protection",
+      "summary": "Florida-specific moisture barrier and waterproofing requirements for the hot-humid climate zone.",
+      "subsections": {
+        "FL_moisture_1": "Building envelope - Continuous water-resistive barrier required. Must address vapor drive from exterior to interior (opposite of cold climates)",
+        "FL_moisture_2": "Vapor retarder - Vapor retarder on exterior of insulation NOT interior (hot-humid climate). Do not install vapor barrier on interior side in Florida",
+        "FL_moisture_3": "Stucco systems - 2 layers of 60-minute Grade D building paper or equivalent WRB required behind stucco. Weep screed at base",
+        "FL_moisture_4": "Window and door flashing - Pan flashing with end dams, sill flashing integrated with WRB, drainage capability required"
+      }
+    },
+    "FL_ENERGY": {
+      "title": "Florida Energy Code Amendments",
+      "summary": "Florida-specific energy efficiency requirements. Florida is Climate Zones 1 and 2 (hot-humid).",
+      "subsections": {
+        "FL_energy_1": "Climate zones - Zone 1 (Keys and south Florida), Zone 2 (central and north Florida)",
+        "FL_energy_2": "Envelope - Roof R-38, wall R-13 (or R-13+5 continuous), floor R-13 min per Table C402.1.3",
+        "FL_energy_3": "HVAC efficiency - Minimum SEER2 15.0 for split systems, 14.3 for package units (FL exceeds federal minimum)",
+        "FL_energy_4": "Cool roof - Required for low-slope roofs in Climate Zones 1 and 2. Min initial SRI 78 (aged SRI 60)",
+        "FL_energy_5": "Solar ready - New residential construction shall comply with solar-ready provisions per FL statute 553.894"
+      }
+    },
+    "FL_TERMITE": {
+      "title": "Florida Termite Protection",
+      "summary": "Termite protection requirements for Florida (very heavy termite hazard).",
+      "subsections": {
+        "FL_termite_1": "Subterranean termite protection - Soil treatment, physical barriers, or pressure-treated wood required for all structures",
+        "FL_termite_2": "Methods - Soil chemical barrier (per NPMA), borate-treated wood, physical termite barriers, or approved monitoring systems",
+        "FL_termite_3": "Drywood termites - South Florida requires additional drywood termite prevention measures"
+      }
+    },
+    "FL_ACCESSIBILITY": {
+      "title": "Florida Accessibility",
+      "summary": "Florida accessibility requirements per Florida Statute 553.504 and the Florida Accessibility Code.",
+      "subsections": {
+        "FL_access_1": "Scope - Florida Accessibility Code applies to all public buildings and multi-family residential (4+ units)",
+        "FL_access_2": "Vertical accessibility - Elevator required in multi-story buildings (with exemptions for <3 stories and <3,000 sq ft/floor)",
+        "FL_access_3": "Fair housing - Multi-family housing with 4+ units and elevator OR ground floor units must comply with FHA accessibility requirements"
+      }
+    },
+    "_cross_reference": {
+      "title": "IBC 2021 Cross-Reference",
+      "summary": "For sections not specifically amended by Florida, refer to the IBC 2021 edition.",
+      "subsections": {
+        "note_1": "Chapters 2-6 (Use/Occupancy, Heights/Areas, Construction Types) - Generally follow IBC 2021 with minor FL amendments",
+        "note_2": "Chapter 7 (Fire/Smoke Protection) - Follows IBC 2021",
+        "note_3": "Chapter 9 (Fire Protection Systems) - Follows IBC 2021 with FL fire marshal requirements",
+        "note_4": "Chapter 10 (Means of Egress) - Follows IBC 2021",
+        "note_5": "Chapters 19-23 (Concrete, Aluminum, Masonry, Steel, Wood) - Follow IBC 2021 with FL amendments for high-wind construction",
+        "note_6": "Chapter 33 (Safeguards During Construction) - Follows IBC 2021"
+      }
+    }
+  }
+}

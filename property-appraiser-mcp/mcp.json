@@ -1,0 +1,33 @@
+{
+  "name": "property-appraiser-mcp",
+  "version": "1.0.0",
+  "description": "Property Appraiser MCP Server - Scrapes Broward County (BCPA) and Miami-Dade County property appraiser websites for structured property data including ownership, assessed values, building characteristics, and sales history.",
+  "tools": [
+    "search_property",
+    "get_property_details",
+    "get_sales_history"
+  ],
+  "supported_counties": [
+    "broward",
+    "miami-dade"
+  ],
+  "data_fields": {
+    "search": ["folio", "address", "owner_name", "assessed_value"],
+    "details": [
+      "owner_name", "mailing_address", "property_address", "legal_description",
+      "land_use_code", "zoning", "lot_size_sf", "lot_dimensions",
+      "assessed_value", "market_value", "taxable_value", "exemptions",
+      "building_info", "sales_history"
+    ],
+    "sales": ["date", "price", "buyer", "seller", "qualified", "book_page"]
+  },
+  "cache": {
+    "backend": "sqlite",
+    "ttl_days": 7,
+    "file": "property_cache.db"
+  },
+  "browser": {
+    "engine": "playwright-chromium",
+    "headless": true
+  }
+}

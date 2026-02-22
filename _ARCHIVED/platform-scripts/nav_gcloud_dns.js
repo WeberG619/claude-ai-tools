@@ -1,0 +1,1 @@
+(function() { window.location.href = "https://console.cloud.google.com/net-services/dns/zones"; return "navigating"; })();

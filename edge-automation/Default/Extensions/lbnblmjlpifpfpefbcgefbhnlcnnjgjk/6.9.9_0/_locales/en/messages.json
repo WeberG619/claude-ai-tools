@@ -1,0 +1,3004 @@
+{
+   "100thSiteAddedUserActionCTA": {
+      "message": "Great"
+   },
+   "100thSiteAddedUserActionSubTitle": {
+      "message": "100 sites have been added to your block list"
+   },
+   "100thSiteAddedUserActionTitle": {
+      "message": "Wow!"
+   },
+   "5thSiteAddedUserActionCTA": {
+      "message": "Awesome"
+   },
+   "5thSiteAddedUserActionSubTitle": {
+      "message": "Well done on adding 5 sites to your block list"
+   },
+   "5thSiteAddedUserActionTitle": {
+      "message": "Whoo!"
+   },
+   "InsightsTab": {
+      "message": "Insights"
+   },
+   "PasswordProtectSecondStepSubtitle": {
+      "message": "Users who click ‘Cancel’ below save on average an extra 15 minutes per day."
+   },
+   "PasswordProtectSecondStepTitle": {
+      "message": "Are you sure you want to unlock this page?"
+   },
+   "PinToToolBarMessageBtnText": {
+      "message": "Got It"
+   },
+   "PinToToolBarMessageText": {
+      "message": "Check Extension List to make it visible"
+   },
+   "PinToToolBarMessageTitle": {
+      "message": "Pin BlockSite to be 100% productive"
+   },
+   "QRSubTitle": {
+      "message": "Scan the QR code to download BlockSite on your mobile device"
+   },
+   "QRTitle": {
+      "message": "Get BlockSite App"
+   },
+   "TermsConfirmationOverlayFooterText1": {
+      "message": "Please see our"
+   },
+   "TermsConfirmationOverlayFooterText2": {
+      "message": "Privacy Policy"
+   },
+   "TermsConfirmationOverlayFooterText3": {
+      "message": "for information on how we process your personal data."
+   },
+   "TermsConfirmationOverlayPrimaryButton": {
+      "message": "I Accept"
+   },
+   "TermsConfirmationOverlaySecondaryButton": {
+      "message": "Maybe Later"
+   },
+   "TermsConfirmationOverlaySubTitle": {
+      "message": "Opting in enhances your browsing with advanced features through our affiliates' technologies. This helps us improve and personalize your experience, though it involves sharing some data. You're always in control and can adjust your settings anytime. Opt in for full benefits and features! You may opt-out at any time through “Your Privacy Choices” within the settings menu. If you opt out, features that rely on these technologies will no longer work."
+   },
+   "TermsConfirmationOverlayTitle": {
+      "message": "Get the Most from BlockSite!"
+   },
+   "aboutBlockCategoriesSubtitle": {
+      "message": "Quickly block a whole category with a toggle of a button."
+   },
+   "aboutBlockCategoriesTitle": {
+      "message": "Block Categories"
+   },
+   "aboutContactSupport": {
+      "message": "Contact Support"
+   },
+   "aboutCreateBlockListsSubtitle": {
+      "message": "Add the websites or pages you want to block to your Site List and get automatically redirected to safer, more positive sites. You can also create a list of friendly sites, and switch from blocking specific sites to only allowing certain sites to work."
+   },
+   "aboutCreateBlockListsTitle": {
+      "message": "Create Block Lists"
+   },
+   "aboutHowToEnableInInPrivateStep1": {
+      "message": "Navigate to edge://extensions"
+   },
+   "aboutHowToEnableInInPrivateStep2": {
+      "message": "Find and click on BlockSite"
+   },
+   "aboutHowToEnableInInPrivateStep3": {
+      "message": "Check the box \"Allow in InPrivate\""
+   },
+   "aboutHowToEnableInInPrivateSubtitle": {
+      "message": "To enable BlockSite in Edge's InPrivate mode, follow these steps:"
+   },
+   "aboutHowToEnableInInPrivateTitle": {
+      "message": "How to enable InPrivate mode"
+   },
+   "aboutHowToEnableInIncognitoStep1": {
+      "message": "Go to chrome://extensions"
+   },
+   "aboutHowToEnableInIncognitoStep2": {
+      "message": "Find Block Site"
+   },
+   "aboutHowToEnableInIncognitoStep3": {
+      "message": "Check 'Allow in Incognito'"
+   },
+   "aboutHowToEnableInIncognitoSubtitle": {
+      "message": "To enable Block Site in Chrome’s Incognito Mode, follow these steps:"
+   },
+   "aboutHowToEnableInIncognitoTitle": {
+      "message": "How to enable in Incognito"
+   },
+   "aboutIncognitoCTA": {
+      "message": "Incognito Mode"
+   },
+   "aboutIncognitoSubtitle": {
+      "message": "All the Block Site functionality can also work in the incognito mode, you just need to allow it. Follow these instructions to see how it is done: "
+   },
+   "aboutIncognitoTitle": {
+      "message": "Incognito mode(Available only on Chrome)"
+   },
+   "aboutKeepInternetSafeSubtitle": {
+      "message": "Activate Adult Block via the extension menu to block all adult sites in a single click. "
+   },
+   "aboutKeepInternetSafeTitle": {
+      "message": "Keep Your Internet Safe"
+   },
+   "aboutPasswordSubtitle": {
+      "message": "Set Up a password in the Settings page to limit the access to Block Site Options, or to enable the option to access blocked sites with a password."
+   },
+   "aboutPasswordTitle": {
+      "message": "Set Up Password"
+   },
+   "aboutPrivacyPolicy": {
+      "message": "Privacy Policy"
+   },
+   "aboutRateUsSubtitle": {
+      "message": "If you find Block Site useful, please rate it in the Chrome Webstore. We would highly appreciate it."
+   },
+   "aboutRateUsTitle": {
+      "message": "Like us? Let The World Know."
+   },
+   "aboutRightClickMenuSubtitle": {
+      "message": "Right click anywhere on any website to open the quick access menu. Block sites in seconds to avoid procrastination and stay on target."
+   },
+   "aboutRightClickMenuTitle": {
+      "message": "Right Click Menu"
+   },
+   "aboutScheduleSubtitle": {
+      "message": "Choose days and intervals in which you want Block Site to be active. Set up custom blocks based on your work schedule (for example: 09:00 - 17:00), so you won’t procrastinate during the day, when at work or at school."
+   },
+   "aboutScheduleTitle": {
+      "message": "Block For Specific Times"
+   },
+   "aboutSubtitle": {
+      "message": "Block Site enables you to stay focused and improve your productivity. You can easily block any distracting or harmful website. No willpower necessary."
+   },
+   "aboutTermsOfUse": {
+      "message": "Terms of Use"
+   },
+   "aboutTitle": {
+      "message": "About Block Site"
+   },
+   "addBlockInputAddButton": {
+      "message": "Add Item"
+   },
+   "addEmailAndPassword": {
+      "message": "Add Email and Password"
+   },
+   "addFirstKeywordUserActionCTA": {
+      "message": "Hurrah"
+   },
+   "addFirstKeywordUserActionSubTitle": {
+      "message": "By blocking Keywords you’ll be much more productive"
+   },
+   "addFirstKeywordUserActionTitle": {
+      "message": "Take a Bow!"
+   },
+   "addFirstRedirectUserActionCTA": {
+      "message": "Excellent"
+   },
+   "addFirstRedirectUserActionSubTitle": {
+      "message": "Blocked sites will now be redirected so you are more focused"
+   },
+   "addFirstRedirectUserActionTitle": {
+      "message": "Awesome!"
+   },
+   "addSiteAddModePrimaryButton1": {
+      "message": "Add to Block List"
+   },
+   "addSiteAddModePrimaryButton2": {
+      "message": "Add to Block List"
+   },
+   "addSiteAddModePrimaryButton3": {
+      "message": "Add to Block List"
+   },
+   "addSiteAddModePrimaryButton4": {
+      "message": "Add to Block List"
+   },
+   "addSiteAddModeSecondaryButton1": {
+      "message": "Maybe Later"
+   },
+   "addSiteAddModeSecondaryButton2": {
+      "message": "Maybe Later"
+   },
+   "addSiteAddModeSecondaryButton3": {
+      "message": "Maybe Later"
+   },
+   "addSiteAddModeSecondaryButton4": {
+      "message": "Maybe Later"
+   },
+   "addSiteAddModeSubTitle1": {
+      "message": "Block this website to make sure you stay in the zone!"
+   },
+   "addSiteAddModeSubTitle2": {
+      "message": "Improve your productivity by adding this site to your block list"
+   },
+   "addSiteAddModeSubTitle3": {
+      "message": "Increase your productivity by 10% by adding this site to your block list"
+   },
+   "addSiteAddModeSubTitle4": {
+      "message": "Time wasting site detected! Block now to stay focused."
+   },
+   "addSiteAddModeTitle1": {
+      "message": "Stop getting distracted!"
+   },
+   "addSiteAddModeTitle2": {
+      "message": "Stay in the zone!"
+   },
+   "addSiteAddModeTitle3": {
+      "message": "Add (website.com) to save time!"
+   },
+   "addSiteAddModeTitle4": {
+      "message": "Block (website.com) to save an extra hour a day!"
+   },
+   "addSiteAreYouSurePrimaryButton": {
+      "message": "Yes, Do It"
+   },
+   "addSiteAreYouSureSecondaryButton": {
+      "message": "No, Cancel"
+   },
+   "addSiteAreYouSureSubTitle": {
+      "message": "BlockSite will stop suggesting blocking distracting sites."
+   },
+   "addSiteAreYouSureTitle": {
+      "message": "Are you Sure?"
+   },
+   "addSiteReachedLimitPrimaryButton": {
+      "message": "Go Unlimited"
+   },
+   "addSiteReachedLimitSecondaryButton": {
+      "message": "Maybe Later"
+   },
+   "addSiteReachedLimitSubTitle": {
+      "message": "Upgrade now to get an UNLIMITED block list and lots more features that will improve your productivity and save you time!"
+   },
+   "addSiteReachedLimitTitle": {
+      "message": "You’ve reached your block list limit"
+   },
+   "addSiteSuccessPrimaryButton": {
+      "message": "Block Now"
+   },
+   "addSiteSuccessSecondaryButton": {
+      "message": "Go to Block List"
+   },
+   "addSiteSuccessSubTitle": {
+      "message": "(website.com) has been added to your blocklist. You can change this in your extension’s options page"
+   },
+   "addSiteSuccessTitle": {
+      "message": "Site Added to Block List"
+   },
+   "appDesc": {
+      "description": "The description of the application, displayed in the web store.",
+      "message": "Stay focused and boost productivity: Custom blocklist, Scheduled site blocking, and Password protection."
+   },
+   "appName": {
+      "description": "The title of the application, displayed in the web store.",
+      "message": "BlockSite Block Websites & Stay Focused"
+   },
+   "appShortName": {
+      "description": "The short title of the application",
+      "message": "Block Site"
+   },
+   "backgroundMultiPacksTitle": {
+      "message": "Blockpage visual and text"
+   },
+   "blockByCategoryTextAdult": {
+      "message": "Oops! %domain% is unavailable as it is related to adult which is a category you've blocked. Stay focused, you’ve got this."
+   },
+   "blockByCategoryTextGambling": {
+      "message": "Oops! %domain% is unavailable as it is related to gambling which is a category you've blocked. Stay focused, you’ve got this."
+   },
+   "blockByCategoryTextNewsAndMedia": {
+      "message": "Oops! %domain% is unavailable as it is related to news which is a category you've blocked. Stay focused, you’ve got this."
+   },
+   "blockByCategoryTextShopping": {
+      "message": "Oops! %domain% is unavailable as it is related to shopping which is a category you've blocked. Stay focused, you’ve got this."
+   },
+   "blockByCategoryTextSocialNetworksAndOnlineCommunities": {
+      "message": "Oops! %domain% is unavailable as it is related to social which is a category you've blocked. Stay focused, you’ve got this."
+   },
+   "blockByCategoryTextSports": {
+      "message": "Oops! %domain% is unavailable as it is related to sports which is a category you've blocked. Stay focused, you’ve got this."
+   },
+   "blockByCategoryTitleAdult": {
+      "message": "Cockroaches. Severed Limbs. John Goodman."
+   },
+   "blockByCategoryTitleGambling": {
+      "message": "Don’t let the house always win."
+   },
+   "blockByCategoryTitleNewsAndMedia": {
+      "message": "No news is good news."
+   },
+   "blockByCategoryTitleShopping": {
+      "message": "A dollar not spent is a dollar earned!"
+   },
+   "blockByCategoryTitleSocialNetworksAndOnlineCommunities": {
+      "message": "No posting, no liking, just living."
+   },
+   "blockByCategoryTitleSports": {
+      "message": "Keep calm and disconnect."
+   },
+   "blockExtensionsPageSubtitle": {
+      "message": "Please enter your password for access"
+   },
+   "blockExtensionsPageTitle": {
+      "message": "$BROWSER$ Extensions Page - Protected",
+      "placeholders": {
+         "browser": {
+            "content": "$1"
+         }
+      }
+   },
+   "blockMoreDistractingSite": {
+      "message": "Block More Distracting Sites"
+   },
+   "blockSitesBlockSite": {
+      "message": "Block this site"
+   },
+   "blockSitesBlockedTitle": {
+      "message": "This site is currently blocked"
+   },
+   "blockSitesBlockedTitleNow": {
+      "message": "Site added to your blocklist"
+   },
+   "blockSitesEditBlockList": {
+      "message": "Edit block list"
+   },
+   "blockSitesNotAvailable": {
+      "message": "Not available on this page"
+   },
+   "blockSitesOnBoardingDescription": {
+      "message": "Websites added to your block list will be permanently blocked until you remove them from your list or set a schedule."
+   },
+   "blockSitesOnBoardingTitle": {
+      "message": "Add sites to your block list"
+   },
+   "blockSitesOptionsOnboardingText": {
+      "message": "Start adding sites you want to block to your list."
+   },
+   "blockSitesOptionsSearchBarPlaceholder": {
+      "message": "Enter a web address (ex: facebook.com)"
+   },
+   "blockSitesOptionsSubtitle": {
+      "message": "Block sites permanently or by schedule"
+   },
+   "blockSitesOptionsTableTitle": {
+      "message": "BLOCKED SITES"
+   },
+   "blockSitesOptionsTitle": {
+      "message": "Block Sites"
+   },
+   "blockSitesRefreshPage": {
+      "message": "Refresh page"
+   },
+   "blockSitesTab": {
+      "message": "Block Sites"
+   },
+   "blockWordsOnBoardingDescription": {
+      "message": "All website URL’s and titles containing this specific keyword will be blocked (a keyword might block hundreds of sites)"
+   },
+   "blockWordsOnBoardingTitle": {
+      "message": "Add keywords to block"
+   },
+   "blockWordsOptionsSearchBarPlaceholder": {
+      "message": "Enter a word or phrase"
+   },
+   "blockWordsOptionsSubtitle": {
+      "message": "Block URLs containing specific words"
+   },
+   "blockWordsOptionsTableTitle": {
+      "message": "BLOCKED WORDS"
+   },
+   "blockWordsOptionsTitle": {
+      "message": "Block by Words"
+   },
+   "blockedHeaderFocusModeMinutes": {
+      "message": "$BREAK_TIME_LEFT$ minutes",
+      "placeholders": {
+         "break_time_left": {
+            "content": "$1",
+            "example": "25"
+         }
+      }
+   },
+   "blockedHeaderFocusModeUntilBreak": {
+      "message": "until break time"
+   },
+   "blockedHeaderMenuCustomizeBlockPage": {
+      "message": "Customize Block Page"
+   },
+   "blockedHeaderMenuEdit": {
+      "message": "Edit Block List"
+   },
+   "blockedHeaderMenuPasswordProtection": {
+      "message": "Password Protection"
+   },
+   "blockedHeaderMenuRedirect": {
+      "message": "Redirect"
+   },
+   "blockedHeaderMenuUpgradeButton": {
+      "message": "Upgrade"
+   },
+   "blockedHeaderTitle": {
+      "message": "This site is blocked by BlockSite"
+   },
+   "blockedTabMessage1": {
+      "message": "You put %domain% in your Block Sites list. It’s probably there for a reason."
+   },
+   "blockedTabMessage2": {
+      "message": "You blocked %domain% so you can get stuff done. Now get back to work."
+   },
+   "blockedTabMessage3": {
+      "message": "Whew, all better now. Go back to what you were doing."
+   },
+   "blockedTabMessage4": {
+      "message": "%domain% has been blocked. Add more distracting sites to become even more productive."
+   },
+   "blockedTabMessage5": {
+      "message": "It looks like you blocked the word \"%domain%\". Let’s keep it that way."
+   },
+   "blockedTabMessage6": {
+      "message": "This website isn't on your whitelist. Probably for good reason too."
+   },
+   "blockedTableApplyButton": {
+      "message": "Apply"
+   },
+   "blockedTableCancelButton": {
+      "message": "Cancel"
+   },
+   "blocklistOnBoardingDescriptionPrefix": {
+      "message": "Visit"
+   },
+   "blocklistOnBoardingDescriptionSuffix": {
+      "message": "to see blocking in action"
+   },
+   "blocklistOnBoardingTitle": {
+      "message": "These sites are now blocked"
+   },
+   "bundleImagesDownloadFailedText": {
+      "message": "Please try again"
+   },
+   "bundleImagesDownloadFailedTitle": {
+      "message": "Images failed to download"
+   },
+   "bundleImagesDownloadInProgressText": {
+      "message": "Please do not shut down browser until completed"
+   },
+   "bundleImagesDownloadInProgressTitle": {
+      "message": "Downloading images"
+   },
+   "bundleImagesDownloadSuccessTitle": {
+      "message": "Images downloaded successfully"
+   },
+   "bundleListPopupCancelButton": {
+      "message": "Cancel"
+   },
+   "bundleListPopupDoneButton": {
+      "message": "Done"
+   },
+   "bundleListPopupSubTitle": {
+      "message": "Select Image multi pack to be shown at random when you try to reach a blocked page."
+   },
+   "bundleListPopupTitle": {
+      "message": "Customize this page"
+   },
+   "bundleListPopupTooltip": {
+      "message": "Images from the selected multi pack will show up at random every time a block page is shown."
+   },
+   "cannotAddBlockSiteWhichPartOfRedirect": {
+      "message": "Can`t block a site that is set as redirect"
+   },
+   "cantBlockRedirectWordMsg": {
+      "message": "Cannot block a word that is part of the redirect URL"
+   },
+   "cantRedirectToBlockedSite": {
+      "message": "Oops! This redirect site is blocked by your Block Sites list"
+   },
+   "cantRedirectToBlockedWord": {
+      "message": "Oops! This redirect site is blocked by your Block By Words list"
+   },
+   "cantRedirectToWorkModeBlockedSite": {
+      "message": "Oops! This redirect site is blocked by your Focus Mode list"
+   },
+   "categoriesAdult": {
+      "message": "Adult"
+   },
+   "categoriesGambling": {
+      "message": "Gambling"
+   },
+   "categoriesGoUnlimitedButton": {
+      "message": "Go Unlimited"
+   },
+   "categoriesNewsAndMedia": {
+      "message": "News"
+   },
+   "categoriesOnBoardingDescription": {
+      "message": "Select categories to block thousands of websites in one click"
+   },
+   "categoriesOnBoardingTitle": {
+      "message": "Block websites by category"
+   },
+   "categoriesOptionsSubtitle": {
+      "message": "Please select which categories to block"
+   },
+   "categoriesOptionsTitle": {
+      "message": "Categories"
+   },
+   "categoriesPrivacyText": {
+      "message": "For BlockSite to be able to provide you with category blocking we need your permission to access information on the sites you visit. Please click ‘I accept’ to enable this access and the use of this information as described in our "
+   },
+   "categoriesPrivacyTitle": {
+      "message": "Block By Category"
+   },
+   "categoriesShopping": {
+      "message": "Shopping"
+   },
+   "categoriesSocialNetworksAndOnlineCommunities": {
+      "message": "Social"
+   },
+   "categoriesSports": {
+      "message": "Sports"
+   },
+   "categoriesTableTitle": {
+      "message": "Blocked categories list"
+   },
+   "clickHereToCheckOut": {
+      "message": "Click here to check out"
+   },
+   "clickingHereLink": {
+      "message": "clicking here"
+   },
+   "contextMenusAllowThisLink": {
+      "message": "Allow this link"
+   },
+   "contextMenusAllowThisLinkWorkMode": {
+      "message": "Allow this link for focus mode list"
+   },
+   "contextMenusAllowThisSite": {
+      "message": "Allow this site"
+   },
+   "contextMenusAllowThisSiteWorkMode": {
+      "message": "Allow this site for focus mode list"
+   },
+   "contextMenusBlockThisLink": {
+      "message": "Block this link"
+   },
+   "contextMenusBlockThisLinkWorkMode": {
+      "message": "Add link address to focus mode list"
+   },
+   "contextMenusBlockThisSite": {
+      "message": "Block this site"
+   },
+   "contextMenusBlockThisSiteWorkMode": {
+      "message": "Add site to focus mode list"
+   },
+   "copiedIconTitle": {
+      "message": "Copied"
+   },
+   "copyIconTitle": {
+      "message": "Copy"
+   },
+   "customizeBlockPageApplyChangeNo": {
+      "message": "No"
+   },
+   "customizeBlockPageApplyChangeSubTitle": {
+      "message": "Apply the changes you made to your blocked page by clicking yes."
+   },
+   "customizeBlockPageApplyChangeTitle": {
+      "message": "Apply Changes?"
+   },
+   "customizeBlockPageApplyChangeYes": {
+      "message": "Yes"
+   },
+   "customizeBlockPageApplyChanges": {
+      "message": "APPLY CHANGES"
+   },
+   "customizeBlockPageBlack": {
+      "message": "Black"
+   },
+   "customizeBlockPageBlockSiteFunnyImage": {
+      "message": "BlockSite Funny Images"
+   },
+   "customizeBlockPageBlocksiteText": {
+      "message": "BlockSite’s text"
+   },
+   "customizeBlockPageChangesApplied": {
+      "message": "Your changes have been applied."
+   },
+   "customizeBlockPageChangesFailed": {
+      "message": "Something went wrong. Please try again."
+   },
+   "customizeBlockPageCurrentBackground": {
+      "message": "Current Background"
+   },
+   "customizeBlockPageCustomizeText": {
+      "message": "Customize text"
+   },
+   "customizeBlockPageNoPremiumCTA": {
+      "message": "Get Custom Block Page"
+   },
+   "customizeBlockPageNoPremiumMacbookSubtitle": {
+      "message": "Oops! site.com is unavailable as it is related to social which is a category you blocked. Stay focused, you've got this."
+   },
+   "customizeBlockPageNoPremiumMacbookTitle": {
+      "message": "No posting, no liking, just living."
+   },
+   "customizeBlockPageNoPremiumSubtitle": {
+      "message": "Make it inspiring or funny, to help keep your focus."
+   },
+   "customizeBlockPageNoPremiumTitle": {
+      "message": "Create your own blocked page"
+   },
+   "customizeBlockPagePreviewYourChanges": {
+      "message": "Preview your changes before saving"
+   },
+   "customizeBlockPageResetImage": {
+      "message": "Reset back to BlockSite Funny Images"
+   },
+   "customizeBlockPageResetToDefault": {
+      "message": "RESET TO DEFAULT"
+   },
+   "customizeBlockPageSetBackground": {
+      "message": "SET BACKGROUND IMAGE"
+   },
+   "customizeBlockPageSetPageText": {
+      "message": "SET PAGE TEXT"
+   },
+   "customizeBlockPageSetSubTitleText": {
+      "message": "Enter subtitle text"
+   },
+   "customizeBlockPageSetTitleText": {
+      "message": "Enter title text"
+   },
+   "customizeBlockPageSubtitle": {
+      "message": "Customize your block pages with images and text of your own. Check out the changes on the screen below in real time before saving!"
+   },
+   "customizeBlockPageTextColor": {
+      "message": "Text color"
+   },
+   "customizeBlockPageTitle": {
+      "message": "Custom Block Page"
+   },
+   "customizeBlockPageUploadImage": {
+      "message": "UPLOAD CUSTOM IMAGE"
+   },
+   "customizeBlockPageUserCustomImage": {
+      "message": "User Custom Background"
+   },
+   "customizeBlockPageWhite": {
+      "message": "White"
+   },
+   "customizePage": {
+      "message": "Customize Page"
+   },
+   "customizedBlockPageNonPremiumTry": {
+      "message": "Try BlockSite Unlimited for FREE"
+   },
+   "dailyBonusCollect": {
+      "message": "Collect"
+   },
+   "dailyBonusSubTitle": {
+      "message": "BlockSite has gifted you a daily bonus!"
+   },
+   "dailyBonusTitle": {
+      "message": "Congratulations"
+   },
+   "disabledBlockingRuleOverlayDescription": {
+      "message": "URL is not blocked anymore"
+   },
+   "doNotShowAgainMessage": {
+      "message": "Don't show it again"
+   },
+   "editYourList": {
+      "message": "Edit your list"
+   },
+   "emailVerificationCTA": {
+      "message": "Got it"
+   },
+   "emailVerificationInstructions": {
+      "message": "Please click the link from the same browser window BlockSite is installed on."
+   },
+   "emailVerificationSubTitle": {
+      "message": "We’ve sent a verification link to your mail, valid for 24 hours. To verify please check your inbox at"
+   },
+   "emailVerificationTitle": {
+      "message": "Almost done"
+   },
+   "emailVerificationTitle1": {
+      "message": "BlockSite will send you an email with a link to verify your email address."
+   },
+   "emailVerificationTitle2": {
+      "message": "Your email address will only be used for the purpose of purpose of Password Protection."
+   },
+   "emptyResultsBlockedKeywordsSubtitle": {
+      "message": "When you add keywords to block, you’ll see it here."
+   },
+   "emptyResultsBlockedKeywordsTitle": {
+      "message": "No blocked keywords yet"
+   },
+   "emptyResultsBlockedSitesSubtitle": {
+      "message": "When you add sites to block, you’ll see it here."
+   },
+   "emptyResultsBlockedSitesTitle": {
+      "message": "No blocked sites yet"
+   },
+   "enableInInPrivateMode": {
+      "message": "Enable in InPrivate Mode"
+   },
+   "enableInIncognitoMode": {
+      "message": "Enable in Incognito Mode"
+   },
+   "enterPasswordToGainAccess": {
+      "message": "Enter password to gain access"
+   },
+   "enterYourEmail": {
+      "message": "Enter your email"
+   },
+   "enterYourPassword": {
+      "message": "Enter your password"
+   },
+   "firstSiteAddedUserActionCTA": {
+      "message": "Cool"
+   },
+   "firstSiteAddedUserActionSubTitle": {
+      "message": "Congrats on adding your first site!"
+   },
+   "firstSiteAddedUserActionTitle": {
+      "message": "Great Stuff!"
+   },
+   "firstTimeFocusModeCTA": {
+      "message": "Get Started"
+   },
+   "firstTimeFocusModeSubtitle": {
+      "message": "Block distracting sites and stay in the zone while focus mode is activated."
+   },
+   "firstTimeFocusModeTitle": {
+      "message": "Get Focused. Stay Focused."
+   },
+   "firstTimeGamblingCategoryUserActionCTA": {
+      "message": "Fabulous"
+   },
+   "firstTimeGamblingCategoryUserActionSubTitle": {
+      "message": "Gambling has been blocked. A lot less distractions now."
+   },
+   "firstTimeGamblingCategoryUserActionTitle": {
+      "message": "Hooray!"
+   },
+   "firstTimeNewsCategoryUserActionCTA": {
+      "message": "Fabulous"
+   },
+   "firstTimeNewsCategoryUserActionSubTitle": {
+      "message": "News has been blocked. A lot less distractions now."
+   },
+   "firstTimeNewsCategoryUserActionTitle": {
+      "message": "Hooray!"
+   },
+   "firstTimeScheduleUserActionCTA": {
+      "message": "Wonderful"
+   },
+   "firstTimeScheduleUserActionSubTitle": {
+      "message": "You’ll now be able to stay on track!"
+   },
+   "firstTimeScheduleUserActionTitle": {
+      "message": "Bravo!"
+   },
+   "firstTimeShoppingCategoryUserActionCTA": {
+      "message": "Fabulous"
+   },
+   "firstTimeShoppingCategoryUserActionSubTitle": {
+      "message": "Shopping has been blocked. A lot less distractions now."
+   },
+   "firstTimeShoppingCategoryUserActionTitle": {
+      "message": "Hooray!"
+   },
+   "firstTimeSocialCategoryUserActionCTA": {
+      "message": "Fabulous"
+   },
+   "firstTimeSocialCategoryUserActionSubTitle": {
+      "message": "Social has been blocked. A lot less distractions now."
+   },
+   "firstTimeSocialCategoryUserActionTitle": {
+      "message": "Hooray!"
+   },
+   "firstTimeSportsCategoryUserActionCTA": {
+      "message": "Fabulous"
+   },
+   "firstTimeSportsCategoryUserActionSubTitle": {
+      "message": "Sports has been blocked. A lot less distractions now."
+   },
+   "firstTimeSportsCategoryUserActionTitle": {
+      "message": "Hooray!"
+   },
+   "firstTimeSyncUserActionCTA": {
+      "message": "Got It"
+   },
+   "firstTimeSyncUserActionSubTitle": {
+      "message": "Now sync all devices for maximum productivity 😉"
+   },
+   "firstTimeSyncUserActionTitle": {
+      "message": "Well done!"
+   },
+   "floatingBannerTermsAndConditionsBtn": {
+      "message": "Turn On"
+   },
+   "floatingBannerTermsAndConditionsText": {
+      "message": "Some features are currently inactive."
+   },
+   "floatingBannerTermsAndConditionsTooltipText": {
+      "message": "By opting in, you ensure access to all the features and benefits that rely on these technologies."
+   },
+   "floatingTrialDetailsText": {
+      "message": "$DAYS$ days left for trial",
+      "placeholders": {
+         "days": {
+            "content": "$1"
+         }
+      }
+   },
+   "floatingTrialDetailsTooltip_expiredTheme": {
+      "message": "You’re on the Free plan and your productivity is at risk. Get it back with Unlimited Plan"
+   },
+   "floatingTrialDetailsTooltip_expiresSoonTheme": {
+      "message": "All premium features will be lost soon. Save your productivity and money with our special offer"
+   },
+   "floatingTrialDetailsTooltip_startedTheme": {
+      "message": "For a limited time take advantage of this opportunity to fully explore everything that BlockSite has to offer."
+   },
+   "floatingTrialDetailsTrialEndedText": {
+      "message": "Your trial has expired"
+   },
+   "focusModeActionsPause": {
+      "message": "Pause"
+   },
+   "focusModeActionsReset": {
+      "message": "Reset"
+   },
+   "focusModeActionsResume": {
+      "message": "Resume"
+   },
+   "focusModeAddSiteOnBoardingDescription": {
+      "message": "The focus mode blocklist works coincidentally with your main block list."
+   },
+   "focusModeAddSiteOnBoardingTitle": {
+      "message": "Add sites to your focus mode list"
+   },
+   "focusModeAreYouSureBackToSession": {
+      "message": "Back to session"
+   },
+   "focusModeAreYouSureSubtitle": {
+      "message": "Are you sure it’s time to stop the clock?"
+   },
+   "focusModeAreYouSureTitle": {
+      "message": "Are you sure?"
+   },
+   "focusModeBreakInterval": {
+      "message": "Break for %MINUTES% minutes"
+   },
+   "focusModeBreakText": {
+      "message": "Access your blocked sites while on break"
+   },
+   "focusModeBreakTimeLeftText": {
+      "message": "$BREAK_TIME_LEFT$ minutes until break time",
+      "placeholders": {
+         "break_time_left": {
+            "content": "$1",
+            "example": "25"
+         }
+      }
+   },
+   "focusModeCircleBarTooltip": {
+      "message": "Current time left in interval"
+   },
+   "focusModeCyclesTooltip": {
+      "message": "Current, complete and future cycles statuses"
+   },
+   "focusModeEnterPassToPauseOrReset": {
+      "message": "To %TIMER_ACTION% enter your password"
+   },
+   "focusModeFocusInterval": {
+      "message": "Focus for %MINUTES% minutes"
+   },
+   "focusModeFocusText": {
+      "message": "Focus session sites are blocked"
+   },
+   "focusModeHourUnit": {
+      "message": "hr"
+   },
+   "focusModeMinutesUnit": {
+      "message": "min"
+   },
+   "focusModeNoSitesText": {
+      "message": "No sites in block list blocked"
+   },
+   "focusModeNotificationEndOfCycleMessage": {
+      "message": "$CYCLES_COMPLETED$ of $CYCLES$ cycles completed. It`s time to focus!",
+      "placeholders": {
+         "cycles": {
+            "content": "$2",
+            "example": "2"
+         },
+         "cycles_completed": {
+            "content": "$1",
+            "example": "1"
+         }
+      }
+   },
+   "focusModeNotificationEndOfCycleTitle": {
+      "message": "Break interval is over."
+   },
+   "focusModeNotificationEndOfCyclesButton": {
+      "message": "Start Session"
+   },
+   "focusModeNotificationEndOfCyclesMessage": {
+      "message": "Start another Focus Mode Session?"
+   },
+   "focusModeNotificationEndOfCyclesTitle": {
+      "message": "Break interval is over."
+   },
+   "focusModeNotificationEndOfCyclesTitleWithStars": {
+      "message": "Break is over. You've earned $STARS$ stars.",
+      "placeholders": {
+         "stars": {
+            "content": "$1",
+            "example": "25"
+         }
+      }
+   },
+   "focusModeNotificationEndOfFocusIntervalMessage": {
+      "message": "It’s time for a break!"
+   },
+   "focusModeNotificationEndOfFocusIntervalTitle": {
+      "message": "Focus interval is over."
+   },
+   "focusModeOptionsStartFocusSession": {
+      "message": "Start Focus Session"
+   },
+   "focusModeOptionsSubtitle": {
+      "message": "To focus on a task and be more productive use focus mode to set your work time and break intervals. Add sites to your block list to avoid distractions during a focus session"
+   },
+   "focusModeOptionsTimerSetup": {
+      "message": "TIMER SETUP"
+   },
+   "focusModeOptionsTitle": {
+      "message": "Focus Mode"
+   },
+   "focusModeSessionOnBoardingDescription": {
+      "message": "Begin getting those tasks done by clicking here to start your focus mode session"
+   },
+   "focusModeSessionOnBoardingTitle": {
+      "message": "Start your timer"
+   },
+   "focusModeSettingsBreakTime": {
+      "message": "Break time"
+   },
+   "focusModeSettingsCycles": {
+      "message": "Cycles"
+   },
+   "focusModeSettingsFocusTime": {
+      "message": "Focus time"
+   },
+   "focusModeSettingsGoToOptions": {
+      "message": "Go to options"
+   },
+   "focusModeSettingsMinutes": {
+      "message": "Minutes"
+   },
+   "focusModeSettingsNumberOfCycles": {
+      "message": "Number of cycles"
+   },
+   "focusModeSettingsStartSession": {
+      "message": "Start Session"
+   },
+   "focusModeSettingsSubtitle": {
+      "message": "Focus on a task & be more productive"
+   },
+   "focusModeSettingsTitle": {
+      "message": "Focus Mode Timer"
+   },
+   "focusModeSettingsTooltipFirst": {
+      "message": "Set the desired time to focus. Sites in your focus mode list will be blocked."
+   },
+   "focusModeSettingsTooltipSecond": {
+      "message": "Set the desired break time and freely visit those websites from your list."
+   },
+   "focusModeSettingsTooltipThird": {
+      "message": "The number of cycles of focus time and breaks you wish to run automatically."
+   },
+   "focusModeTab": {
+      "message": "Focus Mode"
+   },
+   "focusModeTimerOnBoardingDescription": {
+      "message": "Set a specific block list to block sites & reward yourself with a break at the end of any cycle by being able to access those sites."
+   },
+   "focusModeTimerOnBoardingTitle": {
+      "message": "Setup a focus mode session"
+   },
+   "focusModeToPauseOrResetEnterPassword": {
+      "message": "Enter password to %TIMER_ACTION%"
+   },
+   "focusModeWrongPassword": {
+      "message": "Wrong Password"
+   },
+   "focusModesSecondsUnit": {
+      "message": "sec"
+   },
+   "forgotPassSentOkBtn": {
+      "message": "OK"
+   },
+   "forgotPassSentText": {
+      "message": "Your password has been sent to"
+   },
+   "forgotPassSentTitle": {
+      "message": "Password Sent"
+   },
+   "forgotPassword": {
+      "message": "Forgot Password?"
+   },
+   "getSpecialOffer": {
+      "message": "Get Special Offer"
+   },
+   "goBack": {
+      "message": "Go Back"
+   },
+   "goBackToWork": {
+      "message": "Go Back to Work"
+   },
+   "goPremium": {
+      "message": "Go Premium"
+   },
+   "headerGoUnlimited": {
+      "message": "Go Unlimited"
+   },
+   "headerLogin": {
+      "message": "Login"
+   },
+   "headerLogout": {
+      "message": "Logout"
+   },
+   "importPopupMerge": {
+      "message": "Merge"
+   },
+   "importPopupOverride": {
+      "message": "Override"
+   },
+   "importPopupTitle": {
+      "message": "Would you like to merge or override your current list?"
+   },
+   "insightsCategory_entertainment": {
+      "message": "Entertainment"
+   },
+   "insightsCategory_games": {
+      "message": "Games"
+   },
+   "insightsCategory_news": {
+      "message": "News"
+   },
+   "insightsCategory_other": {
+      "message": "Other"
+   },
+   "insightsCategory_shopping": {
+      "message": "Shopping"
+   },
+   "insightsCategory_social": {
+      "message": "Social"
+   },
+   "insightsCategory_sports": {
+      "message": "Sports"
+   },
+   "insightsDescription": {
+      "message": "See how you spend your time online to be more productive"
+   },
+   "insightsEmptyDescription": {
+      "message": "We’re still calculating your insights, please check back soon for updates!"
+   },
+   "insightsEmptyTitle": {
+      "message": "No insights yet. Try again in 24 hours."
+   },
+   "insightsErrorDescription": {
+      "message": "Don’t worry! we’re working hard to resolve this issue so please try again later."
+   },
+   "insightsErrorTitle": {
+      "message": "Oops! Something went wrong!"
+   },
+   "insightsPrivacyText": {
+      "message": "For BlockSite to be able to detect and block pages with adult content, we need your permission to access information on the sites you visit. Please click ‘Agree’ to enable this access and the use of this information as described in our "
+   },
+   "insightsPrivacyTitle": {
+      "message": "Oops!"
+   },
+   "insightsTimeSaved": {
+      "message": "How much time have I saved?"
+   },
+   "insightsTitle": {
+      "message": "Insights"
+   },
+   "insightsTopVisit": {
+      "message": "Top Visited Categories"
+   },
+   "invalidPassBlockedPage": {
+      "message": "Invalid Password. Try again."
+   },
+   "leaveWithoutSaving": {
+      "message": "Leave without saving"
+   },
+   "levelUpCongrats": {
+      "message": "Congrats! You’ve reached $POINTS$ stars",
+      "placeholders": {
+         "points": {
+            "content": "$1",
+            "example": "25"
+         }
+      }
+   },
+   "levelUpGainStars": {
+      "message": "Stay productive to gain more stars."
+   },
+   "levelUpGotIt": {
+      "message": "Got It"
+   },
+   "levelUpStayProductive": {
+      "message": "Stay productive and focused to continue progressing and gaining stars."
+   },
+   "levelUpUnlocked": {
+      "message": "Unlocked!"
+   },
+   "levelUpViewProgress": {
+      "message": "View Progress"
+   },
+   "levelUpWellDone": {
+      "message": "Well done on progressing to a new level!"
+   },
+   "limitListBannerCounter": {
+      "message": "sites left to add to your block list."
+   },
+   "limitListBannerCounterReached": {
+      "message": "You’ve reached your block list limit."
+   },
+   "limitListBannerUpgrade": {
+      "message": "Go Unlimited"
+   },
+   "limitListBannerUpgradeTip": {
+      "message": "Click here to upgrade and enjoy an unlimited block list."
+   },
+   "limitListBannerUpgradeTipPopup": {
+      "message": "Click to upgrade & enjoy an unlimited block list."
+   },
+   "limitListBannerUpgradeTipReachedPopup": {
+      "message": "Your block list has reached its max number of sites."
+   },
+   "limitListOverlayContentTitle": {
+      "message": "Our premium users save an hour a day of valuable time. Get all premium features and start becoming more productive today!"
+   },
+   "limitListOverlayEditBlockListPopup": {
+      "message": "Edit Block List"
+   },
+   "limitListOverlayFeatureFirstSubtitle": {
+      "message": "Block however many sites you like"
+   },
+   "limitListOverlayFeatureFirstTitle": {
+      "message": "Unlimited block list"
+   },
+   "limitListOverlayFeatureFourthSubtitle": {
+      "message": "Stored in the cloud"
+   },
+   "limitListOverlayFeatureFourthTitle": {
+      "message": "Sync between extensions"
+   },
+   "limitListOverlayFeatureSecondSubtitle": {
+      "message": "The fastest way to block"
+   },
+   "limitListOverlayFeatureSecondTitle": {
+      "message": "Block in bulk with categories"
+   },
+   "limitListOverlayFeatureThirdSubtitle": {
+      "message": "Choose images and text unique to you"
+   },
+   "limitListOverlayFeatureThirdTitle": {
+      "message": "Customize your block page"
+   },
+   "limitListOverlayImportTitle": {
+      "message": "Import Limit Reached"
+   },
+   "limitListOverlayMaybeLater": {
+      "message": "Maybe Later"
+   },
+   "limitListOverlaySpecialOfferTitle": {
+      "message": "Exclusive Offer!"
+   },
+   "limitListOverlaySubtitle": {
+      "message": "Get More. Go Unlimited"
+   },
+   "limitListOverlaySubtitlePopup": {
+      "message": "Upgrade now to get unlimited sites on all devices."
+   },
+   "limitListOverlayTitle": {
+      "message": "Block List Site Limit Reached"
+   },
+   "limitListOverlayTitlePopup": {
+      "message": "You’ve reached your block list limit!"
+   },
+   "limitListOverlayUpgradeNow": {
+      "message": "Go Unlimited"
+   },
+   "limitListOverlayUpgradePopup": {
+      "message": "Go Unlimited"
+   },
+   "limitPopupDiscountSpecialOfferSubTitle": {
+      "message": "Our lowest EVER subscription price"
+   },
+   "loginSyncGotIt": {
+      "message": "Got It"
+   },
+   "loginSyncLoginToSite": {
+      "message": "In order to sync the extension, please signup / login"
+   },
+   "loginSyncPleaseLogin": {
+      "message": "Please login to sync"
+   },
+   "logoutPopupQuestionApproveText": {
+      "message": "Yes, Do It"
+   },
+   "logoutPopupQuestionCancelText": {
+      "message": "No, Cancel"
+   },
+   "logoutPopupQuestionDescription": {
+      "message": "Any changes done while logged out will not be synced with the cloud."
+   },
+   "logoutPopupQuestionTitle": {
+      "message": "Are you sure?"
+   },
+   "mandatoryConsentAgree": {
+      "message": "Agree"
+   },
+   "mandatoryConsentDisagree": {
+      "message": "Disagree"
+   },
+   "mandatoryConsentDisclaimer": {
+      "message": "If you click ‘Disagree’ you can still use BlockSite, however the adult blocking feature will not be available."
+   },
+   "mandatoryConsentPrivacyPolicy": {
+      "message": "Privacy Policy"
+   },
+   "mandatoryConsentSubtitle": {
+      "message": "For BlockSite to be able to detect and block pages with adult content, we need your permission to access information on the sites you visit. Please click ‘Agree’ to enable this access and the use of this information as described in our"
+   },
+   "mandatoryConsentTitle1": {
+      "message": "Please make a selection in"
+   },
+   "mandatoryConsentTitle2": {
+      "message": "order to proceed to BlockSite."
+   },
+   "maybeLaterOverlayPrimaryButton": {
+      "message": "Yes, Do It"
+   },
+   "maybeLaterOverlaySecondaryButton": {
+      "message": "No, Cancel"
+   },
+   "maybeLaterOverlaySubTitle": {
+      "message": "Choosing 'Later' or turning off means BlockSite won't work for you."
+   },
+   "maybeLaterOverlayTitle": {
+      "message": "Are you sure?"
+   },
+   "motivationalText1": {
+      "message": "Forget about it."
+   },
+   "motivationalText10": {
+      "message": "Intercepted!"
+   },
+   "motivationalText11": {
+      "message": "Uh Oh!"
+   },
+   "motivationalText12": {
+      "message": "Nice Try, Kid."
+   },
+   "motivationalText2": {
+      "message": "No way, Jose."
+   },
+   "motivationalText3": {
+      "message": "Nice try..."
+   },
+   "motivationalText4": {
+      "message": "Are you serious?"
+   },
+   "motivationalText5": {
+      "message": "What do you think you’re doing?"
+   },
+   "motivationalText6": {
+      "message": "Stop horsing around!"
+   },
+   "motivationalText7": {
+      "message": "Puppies. Weird Brown Moles. Justin Bieber."
+   },
+   "motivationalText8": {
+      "message": "Cockroaches. Severed Limbs. John Goodman."
+   },
+   "motivationalText9": {
+      "message": "Grandma. Kobe Bryant. Surgical Procedures."
+   },
+   "offTitle": {
+      "message": "BlockSite is currently off"
+   },
+   "onBoardingDismiss": {
+      "message": "Dismiss"
+   },
+   "onBoardingNextStep": {
+      "message": "Next"
+   },
+   "optionMenuBannerCTASignupNow": {
+      "message": "Sign Up Now"
+   },
+   "optionsLockedSubtitle": {
+      "message": "Please enter your password to access the BlockSite options page"
+   },
+   "optionsLockedTitle": {
+      "message": "BlockSite Options Locked"
+   },
+   "optionsMenuAbout": {
+      "message": "About"
+   },
+   "optionsMenuBannerCTAGoUnlimited": {
+      "message": "Go Unlimited"
+   },
+   "optionsMenuBannerCTATryNow": {
+      "message": "Try Now"
+   },
+   "optionsMenuBannerSubtitleCategory": {
+      "message": "Save more time by blocking thousands of sites in a single click"
+   },
+   "optionsMenuBannerSubtitleCustomizeBlockPage": {
+      "message": "Choose images & texts to make it your own"
+   },
+   "optionsMenuBannerSubtitleDesktop": {
+      "message": "Block time wasting sites on Edge, Firefox and Chrome with one app!"
+   },
+   "optionsMenuBannerSubtitleGoUnlimited": {
+      "message": "Be the first to enjoy our latest features"
+   },
+   "optionsMenuBannerSubtitleInsights": {
+      "message": "Explore your browsing trends & how you spend your time online "
+   },
+   "optionsMenuBannerSubtitleMobile": {
+      "message": "Scan the QR Code & stay productive on the go"
+   },
+   "optionsMenuBannerSubtitlePasswordProtection": {
+      "message": "Make it harder to remove sites from your block list"
+   },
+   "optionsMenuBannerSubtitleSignup": {
+      "message": "Earn rewards and sync your block list across devices"
+   },
+   "optionsMenuBannerSubtitleSlack": {
+      "message": "Automatically turn on Do Not Disturb mode in focus mode"
+   },
+   "optionsMenuBannerSubtitleUnlimitedBlockList": {
+      "message": "Add as many sites as you like to your block list"
+   },
+   "optionsMenuBannerTitleCategory": {
+      "message": "Block By Category"
+   },
+   "optionsMenuBannerTitleCustomizeBlockPage": {
+      "message": "Customize Block Page"
+   },
+   "optionsMenuBannerTitleDesktop": {
+      "message": "BlockSite for Windows BETA"
+   },
+   "optionsMenuBannerTitleGoUnlimited": {
+      "message": "Get more. Go Unlimited"
+   },
+   "optionsMenuBannerTitleInsights": {
+      "message": "Insights"
+   },
+   "optionsMenuBannerTitleMobile": {
+      "message": "BlockSite App on your Smartphone"
+   },
+   "optionsMenuBannerTitlePasswordProtection": {
+      "message": "Password Protection"
+   },
+   "optionsMenuBannerTitleSignup": {
+      "message": "Sign up for more productivity"
+   },
+   "optionsMenuBannerTitleSlack": {
+      "message": "BlockSite's Slack App"
+   },
+   "optionsMenuBannerTitleUnlimitedBlockList": {
+      "message": "Unlimited Block List"
+   },
+   "optionsMenuBlockByWords": {
+      "message": "Block by Words"
+   },
+   "optionsMenuBlockSites": {
+      "message": "Block Sites"
+   },
+   "optionsMenuBlocking": {
+      "message": "Blocking"
+   },
+   "optionsMenuCategories": {
+      "message": "Categories"
+   },
+   "optionsMenuCustomizeBlockPage": {
+      "message": "Custom Block Page"
+   },
+   "optionsMenuFocusMode": {
+      "message": "Focus Mode"
+   },
+   "optionsMenuPasswordProtection": {
+      "message": "Password Protection"
+   },
+   "optionsMenuSettings": {
+      "message": "Settings"
+   },
+   "optionsMenuSyncWithOtherDevices": {
+      "message": "Sync with other devices"
+   },
+   "optionsMenuSyncedOff": {
+      "message": "Disabled"
+   },
+   "optionsMenuSyncedOn": {
+      "message": "Enabled"
+   },
+   "optionsNotificationEmptyList": {
+      "message": "Your list is empty! Nothing to export."
+   },
+   "optionsNotificationEmptyWord": {
+      "message": "Cannot add empty word"
+   },
+   "optionsNotificationIncorrectFileStructure": {
+      "message": "Incorrect file structure. Please try to export your current list to see the required csv format."
+   },
+   "optionsNotificationIncorrectURL": {
+      "message": "Incorrect URL"
+   },
+   "optionsNotificationListExported": {
+      "message": "Your list was successfully exported."
+   },
+   "optionsNotificationListImported": {
+      "message": "Your list was successfully imported."
+   },
+   "optionsNotificationSiteAdded": {
+      "message": "Site Added"
+   },
+   "optionsNotificationURLAlreadyExist": {
+      "message": "URL already exist"
+   },
+   "optionsNotificationWordAlreadyExist": {
+      "message": "Word already exist"
+   },
+   "optionsPageRedirectButton": {
+      "message": "Redirect"
+   },
+   "optionsPageRedirectOK": {
+      "message": "OK"
+   },
+   "optionsPageRedirectPlaceHolder": {
+      "message": "Web Address (ex: google.com)"
+   },
+   "optionsPageRedirectRemove": {
+      "message": "Remove"
+   },
+   "optionsPageRedirectTitle": {
+      "message": " Redirect your blocked pages"
+   },
+   "optionsPageRedirectTooltipNotSet": {
+      "message": "Click to set redirection website"
+   },
+   "optionsPageRedirectTooltipSet": {
+      "message": "Redirect to $URL$",
+      "placeholders": {
+         "url": {
+            "content": "$1",
+            "example": "https://example.com"
+         }
+      }
+   },
+   "optionsPageScheduleAddInterval": {
+      "message": "Add interval"
+   },
+   "optionsPageScheduleButton": {
+      "message": "Schedule"
+   },
+   "optionsPageScheduleClickDay": {
+      "message": "(Click a day to deactivate)"
+   },
+   "optionsPageScheduleEveryDay": {
+      "message": "Every Day"
+   },
+   "optionsPageScheduleRemoveSchedule": {
+      "message": "Remove"
+   },
+   "optionsPageScheduleSelectDays": {
+      "message": "SELECTED DAYS"
+   },
+   "optionsPageScheduleSetBlocking": {
+      "message": "Set up blocking schedule"
+   },
+   "optionsPageScheduleSetSchedule": {
+      "message": "Set Schedule"
+   },
+   "optionsPageScheduleSetTimes": {
+      "message": "SET TIMES"
+   },
+   "optionsPageScheduleTo": {
+      "message": "to"
+   },
+   "passwordProtectionGoUnlimitedButton": {
+      "message": "Go Unlimited"
+   },
+   "passwordProtectionHookSubtitle": {
+      "message": "Make it harder to procrastinate by locking your settings with a passcode"
+   },
+   "passwordProtectionHookTitleRemoveSite": {
+      "message": "Stop trying to remove sites! Get Password Protection"
+   },
+   "passwordProtectionHookTitleToggleOff": {
+      "message": "Don't cheat yourself! Get password protection."
+   },
+   "passwordProtectionLoseAccessApprove": {
+      "message": "Yes, Do It"
+   },
+   "passwordProtectionLoseAccessCancel": {
+      "message": "No, Cancel"
+   },
+   "passwordProtectionLoseAccessSubtitle": {
+      "message": "Password Protection is now a premium feature. As a loyal user, it’s free for you. To keep it this way, it must be enabled."
+   },
+   "passwordProtectionLoseAccessTitleFirst": {
+      "message": "You are about to lose access."
+   },
+   "passwordProtectionLoseAccessTitleSecond": {
+      "message": "Are you sure?"
+   },
+   "passwordProtectionMaybeLaterButton": {
+      "message": "Maybe Later"
+   },
+   "passwordProtectionNonPremiumCTA": {
+      "message": "Get Password Protection"
+   },
+   "passwordProtectionNonPremiumSubtitle": {
+      "message": "Make it even harder to change your settings and remove sites from your block list"
+   },
+   "passwordProtectionNonPremiumTitle": {
+      "message": "Stay Productive with Password Protection"
+   },
+   "passwordProtectionOptionAddChallenge": {
+      "message": "Blocked page challenge - add extra step to unblock page"
+   },
+   "passwordProtectionOptionBlockBlockedPage": {
+      "message": "Require password to access blocked sites"
+   },
+   "passwordProtectionOptionBlockSettings": {
+      "message": "Protect your preferred BlockSite options and the $BROWSER$ extension page with a password",
+      "placeholders": {
+         "browser": {
+            "content": "$1"
+         }
+      }
+   },
+   "passwordProtectionOptionNotifyUninstalled": {
+      "message": "Get notified via email when BlockSite is uninstalled"
+   },
+   "passwordProtectionPreferences": {
+      "message": "Password Protection Preferences"
+   },
+   "passwordProtectionSetupNowButton": {
+      "message": "Setup Now"
+   },
+   "passwordProtectionUnlockButton": {
+      "message": "Unlock now"
+   },
+   "passwordProtectionUnlockPageSubtitle": {
+      "message": "Please enter your password to unlock the page"
+   },
+   "passwordProtectionUnlockPageTitle": {
+      "message": "This page is locked!"
+   },
+   "passwordProtectionVerificationEmail": {
+      "message": "Email"
+   },
+   "passwordProtectionVerificationMinimumPass": {
+      "message": "Minimum 5 characters"
+   },
+   "passwordProtectionVerificationPassword": {
+      "message": "Password"
+   },
+   "passwordProtectionVerificationRequired": {
+      "message": "Verification Required"
+   },
+   "passwordQuestionBack": {
+      "message": "BACK"
+   },
+   "passwordQuestionClickBack": {
+      "message": "Users that click `BACK` below"
+   },
+   "passwordQuestionDontShowAgain": {
+      "message": "DON`T SHOW IT AGAIN"
+   },
+   "passwordQuestionPleaseTryAgain": {
+      "message": "Incorrect. Please try again."
+   },
+   "passwordQuestionReallyToDo": {
+      "message": "Do you really want to do that?"
+   },
+   "passwordQuestionSaveMinutes": {
+      "message": "save 15 minutes a day on average."
+   },
+   "passwordQuestionToUnlock": {
+      "message": "To unlock please type"
+   },
+   "passwordVerificationWarning": {
+      "message": "Password protection is not enabled. To enable, please open the link in the email in the same browser window that you originally used to setup your account."
+   },
+   "popupHeaderUpgradeNow": {
+      "message": "Go Unlimited"
+   },
+   "popupLockedSubtitle": {
+      "message": "Enter your password to access extension settings"
+   },
+   "popupLockedTitle": {
+      "message": "BlockSite is Locked"
+   },
+   "popupQuestionApprove": {
+      "message": "Yes"
+   },
+   "popupQuestionCancel": {
+      "message": "No"
+   },
+   "premiumBannerCTA": {
+      "message": "Go Unlimited"
+   },
+   "premiumBannerNew": {
+      "message": "NEW!"
+   },
+   "premiumBannerSubtitleA": {
+      "message": "Choose your own image and text to create a unique blocked page."
+   },
+   "premiumBannerSubtitleB": {
+      "message": "Don't get distracted by shortlisting. Add as many sites as you like."
+   },
+   "premiumBannerTitleA": {
+      "message": "Make your own block page!"
+   },
+   "premiumBannerTitleB": {
+      "message": "Get unlimited block list!"
+   },
+   "premiumHookCTA": {
+      "message": "Try for free"
+   },
+   "premiumHookTitle": {
+      "message": "Go Unlimited"
+   },
+   "premiumOverlayCategorySubtitle": {
+      "message": "Fastest way to block"
+   },
+   "premiumOverlayCategoryTitle": {
+      "message": "Block by Category"
+   },
+   "premiumOverlayCustomizationSubtitle": {
+      "message": "Set images & text"
+   },
+   "premiumOverlayCustomizationTitle": {
+      "message": "Customize Block Page"
+   },
+   "premiumOverlayGoUnlimited": {
+      "message": "Go Unlimited"
+   },
+   "premiumOverlayInsightsSubtitle": {
+      "message": "Explore browsing trends"
+   },
+   "premiumOverlayInsightsTitle": {
+      "message": "Useful Insights"
+   },
+   "premiumOverlayMaybeLater": {
+      "message": "Maybe Later"
+   },
+   "premiumOverlaySubtitle": {
+      "message": "Try 3 days for FREE"
+   },
+   "premiumOverlayTitle": {
+      "message": "BlockSite Unlimited"
+   },
+   "premiumOverlayUnlimitedSubtitle": {
+      "message": "Anywhere. Anytime."
+   },
+   "premiumOverlayUnlimitedTitle": {
+      "message": "Unlimited Blocking List"
+   },
+   "privacyIAccept": {
+      "message": "I Accept"
+   },
+   "privacySettingsPrivacyPolicy": {
+      "message": "Privacy Policy."
+   },
+   "privacySettingsSubtitle": {
+      "message": "Allows BlockSite to access your visited URLs, IP address, operating system, and browser information, for use as directed in our "
+   },
+   "privacySettingsTitle": {
+      "message": "Enable \"Block By Category\" Blocking"
+   },
+   "productivityInsightPopupBlocksCounterTitle": {
+      "message": "distractions blocked"
+   },
+   "productivityInsightPopupQuotesTitle": {
+      "message": "Use this time"
+   },
+   "productivityInsightPopupRecommendationsStartingPointTitle": {
+      "message": "How to start?"
+   },
+   "productivityInsightPopupRecommendationsTitle": {
+      "message": "Boost your efficiency even more"
+   },
+   "productivityInsightPopupSavedHoursTitle": {
+      "message": "hours saved"
+   },
+   "productivityInsightPopupSavedHoursTooltipText": {
+      "message": "Total time saved by using BlockSite over the past 7 days"
+   },
+   "productivityInsightPopupTitle": {
+      "message": "Your Productivity"
+   },
+   "productivityInsightPopupTrialExpiredText": {
+      "message": "Your BlockSite Trial Has Expired!"
+   },
+   "productivityInsightsBtnDisabledTooltip": {
+      "message": "It looks like you don't have any saved data yet. No worries! Take some time to explore and use the BlockSite app. Come back later to check your progress and see how you're reclaiming your time."
+   },
+   "productivityInsightsBtnEnabledTooltip": {
+      "message": "Explore how BlockSite works for you"
+   },
+   "productivityInsights_quotes_0_0": {
+      "message": "You haven't saved hours yet, now is the perfect time to give it a try. Saving hours can be a great way to reclaim your time, focus on what matters most to you, and explore new activities or interests."
+   },
+   "productivityInsights_quotes_10_0": {
+      "message": "Plan a day of exploring local trails on a bike, enjoying a scenic bike ride through parks, nature reserves, or countryside paths."
+   },
+   "productivityInsights_quotes_10_1": {
+      "message": "Take a day trip to a nearby waterfall or natural hot spring, where you can soak in the healing waters and bask in the beauty of the surroundings."
+   },
+   "productivityInsights_quotes_10_10": {
+      "message": "Plan a day of relaxation and self-care at a wellness retreat, indulging in spa treatments, yoga classes, and guided meditation sessions."
+   },
+   "productivityInsights_quotes_10_11": {
+      "message": "Take a day trip to a nearby amusement park and enjoy thrilling rides, games, and entertainment for a day of fun and excitement."
+   },
+   "productivityInsights_quotes_10_12": {
+      "message": "Plan a day of learning a new skill or hobby, such as playing a musical instrument, painting, coding, or learning a foreign language."
+   },
+   "productivityInsights_quotes_10_13": {
+      "message": "Spend the day visiting local art galleries and exhibitions, immersing yourself in the world of art and discovering new artists and styles."
+   },
+   "productivityInsights_quotes_10_14": {
+      "message": "Plan a day of exploring local cuisine by visiting food markets, trying out new restaurants, or even taking a cooking class to learn how to prepare a unique dish.ursue."
+   },
+   "productivityInsights_quotes_10_2": {
+      "message": "Visit a nearby science museum or interactive exhibit and spend the day learning about fascinating scientific concepts through hands-on experiences."
+   },
+   "productivityInsights_quotes_10_3": {
+      "message": "Plan a day of adventure by trying out activities like skydiving, bungee jumping, or paragliding for an exhilarating and unforgettable experience."
+   },
+   "productivityInsights_quotes_10_4": {
+      "message": "Spend the day immersing yourself in a good book or starting a new series, creating your own cozy reading nook and enjoying uninterrupted reading time."
+   },
+   "productivityInsights_quotes_10_5": {
+      "message": "Organize a day-long gaming tournament or board game marathon with friends, testing your skills and engaging in friendly competition."
+   },
+   "productivityInsights_quotes_10_6": {
+      "message": "Take a day trip to a nearby historical village or reenactment site, stepping back in time and experiencing life as it was in a different era."
+   },
+   "productivityInsights_quotes_10_7": {
+      "message": "Plan a day of volunteering at a local community garden, helping with planting, weeding, or harvesting fresh produce for a worthy cause."
+   },
+   "productivityInsights_quotes_10_8": {
+      "message": "Attend a full-day photography workshop or seminar focused on a specific genre or technique, refining your skills and expanding your creative vision."
+   },
+   "productivityInsights_quotes_10_9": {
+      "message": "Spend the day exploring a nearby nature reserve or wildlife sanctuary, observing and photographing birds, mammals, and other fascinating creatures."
+   },
+   "productivityInsights_quotes_11_0": {
+      "message": "Plan a day of exploring local architecture by visiting historic buildings, modern landmarks, and unique architectural structures in your city."
+   },
+   "productivityInsights_quotes_11_1": {
+      "message": "Take a day trip to a nearby botanical or sculpture garden, immersing yourself in the beauty of nature or the artistry of sculptures."
+   },
+   "productivityInsights_quotes_11_10": {
+      "message": "Plan a day of adventure and adrenaline by participating in outdoor activities like zip-lining, rock climbing, rappelling, or off-road ATV riding."
+   },
+   "productivityInsights_quotes_11_11": {
+      "message": "Take a day trip to a nearby historical battlefield or monument, learning about significant events and paying tribute to the past."
+   },
+   "productivityInsights_quotes_11_12": {
+      "message": "Spend the day visiting local artisan workshops and studios, witnessing traditional craftsmanship and even trying your hand at pottery, glassblowing, or woodworking."
+   },
+   "productivityInsights_quotes_11_13": {
+      "message": "Plan a day of exploring local hiking trails with a photography focus, capturing stunning nature shots and practicing your photography skills."
+   },
+   "productivityInsights_quotes_11_14": {
+      "message": "Take a day trip to a nearby coastal area and enjoy water sports like surfing, paddleboarding, snorkeling, or simply sunbathing on the beach."
+   },
+   "productivityInsights_quotes_11_2": {
+      "message": "Attend a full-day outdoor music festival or concert, enjoying live performances by your favorite artists or discovering new musical talents."
+   },
+   "productivityInsights_quotes_11_3": {
+      "message": "Plan a day of exploring local street art and murals, taking a walking tour or creating your own route to discover vibrant urban artwork."
+   },
+   "productivityInsights_quotes_11_4": {
+      "message": "Spend the day volunteering at an animal shelter or pet adoption center, helping care for animals, and assisting in finding them loving homes."
+   },
+   "productivityInsights_quotes_11_5": {
+      "message": "Organize a day-long DIY home spa experience, creating a relaxing ambiance with scented candles, soothing music, and pampering yourself with facials, massages, and a bubble bath."
+   },
+   "productivityInsights_quotes_11_6": {
+      "message": "Take a day trip to a nearby farm and participate in activities like fruit picking, farm tours, or even milking cows, experiencing rural life firsthand."
+   },
+   "productivityInsights_quotes_11_7": {
+      "message": "Plan a day of cultural immersion by attending cultural festivals, trying different ethnic cuisines, watching traditional performances, and engaging in cultural activities."
+   },
+   "productivityInsights_quotes_11_8": {
+      "message": "Spend the day exploring a nearby national forest or wilderness area, going on a long hike or backpacking adventure amidst nature's serenity."
+   },
+   "productivityInsights_quotes_11_9": {
+      "message": "Attend a full-day writing or storytelling workshop, honing your writing skills, and unleashing your creativity through various writing exercises and prompts."
+   },
+   "productivityInsights_quotes_12_0": {
+      "message": "Plan a day of exploring nearby caves or caverns, joining guided tours to discover fascinating geological formations and underground wonders."
+   },
+   "productivityInsights_quotes_12_1": {
+      "message": "Take a day trip to a nearby vineyard or winery and participate in a wine tasting tour, learning about different varietals and enjoying the scenic vineyard views."
+   },
+   "productivityInsights_quotes_12_10": {
+      "message": "Plan a day of exploring local history by visiting museums, historical sites, or heritage buildings, and learning about the unique stories and traditions of your area."
+   },
+   "productivityInsights_quotes_12_11": {
+      "message": "Take a day trip to a nearby amusement park or water park, enjoying thrilling rides, water slides, and family-friendly entertainment."
+   },
+   "productivityInsights_quotes_12_12": {
+      "message": "Spend the day attending a sports event or participating in a sports tournament, engaging in your favorite sport or cheering for your local team."
+   },
+   "productivityInsights_quotes_12_13": {
+      "message": "Plan a day of volunteering at a community center or shelter, helping with activities like teaching classes, organizing events, or serving meals to those in need."
+   },
+   "productivityInsights_quotes_12_14": {
+      "message": "Take a day trip to a nearby mountain or hilltop, going on a scenic hike or enjoying outdoor activities like skiing, snowboarding, or mountain biking, depending on the season."
+   },
+   "productivityInsights_quotes_12_2": {
+      "message": "Attend a full-day meditation or mindfulness retreat, immersing yourself in a peaceful environment and deepening your practice of self-reflection and relaxation."
+   },
+   "productivityInsights_quotes_12_3": {
+      "message": "Spend the day visiting local art studios and galleries, engaging with artists, and learning about their creative processes and inspirations."
+   },
+   "productivityInsights_quotes_12_4": {
+      "message": "Plan a day of learning and personal development by attending a seminar or workshop on topics like personal finance, leadership, or personal growth."
+   },
+   "productivityInsights_quotes_12_5": {
+      "message": "Take a day trip to a nearby natural hot spring or spa resort, indulging in thermal baths, rejuvenating treatments, and relaxation therapies."
+   },
+   "productivityInsights_quotes_12_6": {
+      "message": "Organize a day-long charity event or fundraiser, rallying friends and family to support a cause you care about and making a positive impact in your community."
+   },
+   "productivityInsights_quotes_12_7": {
+      "message": "Plan a day of exploring local food culture by visiting farmers' markets, specialty food stores, and trying out new recipes or restaurants."
+   },
+   "productivityInsights_quotes_12_8": {
+      "message": "Spend the day volunteering at an environmental conservation project, participating in activities like beach cleanups, tree planting, or wildlife habitat restoration."
+   },
+   "productivityInsights_quotes_12_9": {
+      "message": "Attend a full-day photography excursion or workshop in a scenic location, capturing stunning landscapes, wildlife, or cultural scenes under the guidance of experienced photographers."
+   },
+   "productivityInsights_quotes_13_0": {
+      "message": "Plan a day of exploring local architecture by visiting historic buildings, modern landmarks, and unique architectural structures in your city."
+   },
+   "productivityInsights_quotes_13_1": {
+      "message": "Take a day trip to a nearby botanical or sculpture garden, immersing yourself in the beauty of nature or the artistry of sculptures."
+   },
+   "productivityInsights_quotes_13_10": {
+      "message": "Plan a day of adventure and adrenaline by participating in outdoor activities like zip-lining, rock climbing, rappelling, or off-road ATV riding."
+   },
+   "productivityInsights_quotes_13_11": {
+      "message": "Take a day trip to a nearby historical battlefield or monument, learning about significant events and paying tribute to the past."
+   },
+   "productivityInsights_quotes_13_12": {
+      "message": "Spend the day visiting local artisan workshops and studios, witnessing traditional craftsmanship and even trying your hand at pottery, glassblowing, or woodworking."
+   },
+   "productivityInsights_quotes_13_13": {
+      "message": "Plan a day of exploring local hiking trails with a photography focus, capturing stunning nature shots and practicing your photography skills."
+   },
+   "productivityInsights_quotes_13_14": {
+      "message": "Take a day trip to a nearby coastal area and enjoy water sports like surfing, paddleboarding, snorkeling, or simply sunbathing on the beach."
+   },
+   "productivityInsights_quotes_13_2": {
+      "message": "Attend a full-day outdoor music festival or concert, enjoying live performances by your favorite artists or discovering new musical talents."
+   },
+   "productivityInsights_quotes_13_3": {
+      "message": "Plan a day of exploring local street art and murals, taking a walking tour or creating your own route to discover vibrant urban artwork."
+   },
+   "productivityInsights_quotes_13_4": {
+      "message": "Spend the day volunteering at an animal shelter or pet adoption center, helping care for animals, and assisting in finding them loving homes."
+   },
+   "productivityInsights_quotes_13_5": {
+      "message": "Organize a day-long DIY home spa experience, creating a relaxing ambiance with scented candles, soothing music, and pampering yourself with facials, massages, and a bubble bath."
+   },
+   "productivityInsights_quotes_13_6": {
+      "message": "Take a day trip to a nearby farm and participate in activities like fruit picking, farm tours, or even milking cows, experiencing rural life firsthand."
+   },
+   "productivityInsights_quotes_13_7": {
+      "message": "Plan a day of cultural immersion by attending cultural festivals, trying different ethnic cuisines, watching traditional performances, and engaging in cultural activities."
+   },
+   "productivityInsights_quotes_13_8": {
+      "message": "Spend the day exploring a nearby national forest or wilderness area, going on a long hike or backpacking adventure amidst nature's serenity."
+   },
+   "productivityInsights_quotes_13_9": {
+      "message": "Attend a full-day writing or storytelling workshop, honing your writing skills, and unleashing your creativity through various writing exercises and prompts."
+   },
+   "productivityInsights_quotes_14_0": {
+      "message": "Plan a day of exploring local underground attractions, such as caves, tunnels, or catacombs, for an intriguing and adventurous experience."
+   },
+   "productivityInsights_quotes_14_1": {
+      "message": "Take a day trip to a nearby wildlife sanctuary or nature reserve, where you can go on a guided safari or nature walk to observe and learn about local flora and fauna."
+   },
+   "productivityInsights_quotes_14_10": {
+      "message": "Plan a day of self-exploration and reflection by engaging in activities like journaling, meditation, mindfulness exercises, and nature walks."
+   },
+   "productivityInsights_quotes_14_11": {
+      "message": "Spend the day visiting local historical gardens or botanical parks, appreciating the beauty of nature and learning about different plant species and garden designs."
+   },
+   "productivityInsights_quotes_14_12": {
+      "message": "Attend a full-day film festival or film screening event, immersing yourself in a wide range of movies and celebrating the art of filmmaking."
+   },
+   "productivityInsights_quotes_14_13": {
+      "message": "Plan a day of visiting local landmarks and iconic sites in your city, capturing photos and learning about the history and significance of each location."
+   },
+   "productivityInsights_quotes_14_14": {
+      "message": "Take a day trip to a nearby adventure park or obstacle course, challenging yourself with activities like zip-lining, rope courses, and team-building challenges."
+   },
+   "productivityInsights_quotes_14_2": {
+      "message": "Attend a full-day music or dance festival, immersing yourself in live performances, workshops, and the vibrant atmosphere of the event."
+   },
+   "productivityInsights_quotes_14_3": {
+      "message": "Spend the day practicing a new physical activity or sport, such as rock climbing, martial arts, aerial yoga, or trampoline jumping, for a fun and energizing workout."
+   },
+   "productivityInsights_quotes_14_4": {
+      "message": "Plan a day of exploring local street markets and flea markets, searching for unique treasures, vintage finds, and delicious street food."
+   },
+   "productivityInsights_quotes_14_5": {
+      "message": "Take a day trip to a nearby historical town or village known for its architecture, cobblestone streets, and cultural heritage, and immerse yourself in its charming atmosphere."
+   },
+   "productivityInsights_quotes_14_6": {
+      "message": "Organize a day-long creative retreat, dedicating time to work on personal projects like writing, painting, crafting, or photography."
+   },
+   "productivityInsights_quotes_14_7": {
+      "message": "Plan a day of volunteering at an animal rehabilitation center, helping care for injured or orphaned wildlife and contributing to their rehabilitation and release."
+   },
+   "productivityInsights_quotes_14_8": {
+      "message": "Spend the day attending a cultural workshop or class, such as traditional cooking, pottery, calligraphy, or traditional dance, to learn about and experience different cultural practices."
+   },
+   "productivityInsights_quotes_14_9": {
+      "message": "Take a day trip to a nearby coastal area and try out water activities like kayaking, paddleboarding, or sailing, enjoying the beauty of the sea and the thrill of water sports."
+   },
+   "productivityInsights_quotes_15_0": {
+      "message": "Visit a nearby science center or planetarium, where you can engage in interactive exhibits, learn about space, technology, and scientific discoveries."
+   },
+   "productivityInsights_quotes_15_1": {
+      "message": "Take a day trip to a botanical garden with a butterfly house, where you can witness the beauty of various butterfly species up close."
+   },
+   "productivityInsights_quotes_15_10": {
+      "message": "Attend a live theater performance, such as a play, musical, or comedy show, and immerse yourself in the world of performing arts."
+   },
+   "productivityInsights_quotes_15_11": {
+      "message": "Visit a local indoor water park or amusement center, where you can enjoy thrilling water slides, wave pools, and other exciting attractions."
+   },
+   "productivityInsights_quotes_15_12": {
+      "message": "Take a day trip to a nearby botanical or horticultural society's garden, where you can admire beautiful flower displays and learn about different plant species."
+   },
+   "productivityInsights_quotes_15_13": {
+      "message": "Explore a local history museum or historical society, discovering artifacts, stories, and exhibits that depict the rich heritage of your region."
+   },
+   "productivityInsights_quotes_15_14": {
+      "message": "Plan a day of exploring street food vendors and food trucks in your city, indulging in a variety of delicious and unique culinary experiences."
+   },
+   "productivityInsights_quotes_15_2": {
+      "message": "Explore a local farm or orchard that offers pick-your-own fruits or vegetables, enjoying a day of harvesting fresh produce and connecting with nature."
+   },
+   "productivityInsights_quotes_15_3": {
+      "message": "Plan a visit to an indoor trampoline park or adventure park, where you can bounce, climb, and challenge yourself with various obstacle courses."
+   },
+   "productivityInsights_quotes_15_4": {
+      "message": "Spend the day visiting a local aquarium, observing marine life, and attending feeding shows or educational presentations."
+   },
+   "productivityInsights_quotes_15_5": {
+      "message": "Take a guided tour of a historic mansion or castle in your area, immersing yourself in the grandeur and history of the building and its surroundings."
+   },
+   "productivityInsights_quotes_15_6": {
+      "message": "Plan a day of indoor rock climbing at a local climbing gym, testing your skills on different routes and challenging yourself physically."
+   },
+   "productivityInsights_quotes_15_7": {
+      "message": "Visit a local pottery studio or ceramics workshop, where you can try your hand at creating pottery under the guidance of skilled artists."
+   },
+   "productivityInsights_quotes_15_8": {
+      "message": "Take a day trip to a nearby farm or ranch that offers horseback riding, enjoying a scenic trail ride or even taking riding lessons."
+   },
+   "productivityInsights_quotes_15_9": {
+      "message": "Explore a local escape room, where you and your friends can solve puzzles, uncover clues, and work together to escape within a given time limit."
+   },
+   "productivityInsights_quotes_16_0": {
+      "message": "Plan a day of outdoor adventure by going on a zip-lining tour, taking a scenic hot air balloon ride, or trying out a thrilling water sport like jet skiing or parasailing."
+   },
+   "productivityInsights_quotes_16_1": {
+      "message": "Take a day trip to a nearby historical site or landmark, exploring the rich history and cultural significance of the location through guided tours or self-guided exploration."
+   },
+   "productivityInsights_quotes_16_10": {
+      "message": "Plan a day of self-care and relaxation by indulging in a spa day at home, complete with face masks, bubble baths, aromatherapy, and soothing music."
+   },
+   "productivityInsights_quotes_16_11": {
+      "message": "Take a day trip to a nearby farm or orchard and participate in activities like apple picking, berry picking, or pumpkin carving, depending on the season."
+   },
+   "productivityInsights_quotes_16_12": {
+      "message": "Spend the day exploring local hiking trails or nature reserves, enjoying the tranquility of nature and taking in scenic views."
+   },
+   "productivityInsights_quotes_16_13": {
+      "message": "Plan a day of trying out new recipes or cooking techniques, challenging yourself to prepare a gourmet meal or bake a batch of delicious treats."
+   },
+   "productivityInsights_quotes_16_14": {
+      "message": "Take a day trip to a nearby historical battlefield or monument, learning about the significant events and heroes of the past."
+   },
+   "productivityInsights_quotes_16_2": {
+      "message": "Spend the day volunteering at a local community organization or charity, contributing your time and skills to make a positive impact on those in need."
+   },
+   "productivityInsights_quotes_16_3": {
+      "message": "Attend a full-day wellness retreat or spa day, pampering yourself with rejuvenating treatments, yoga classes, and relaxation activities."
+   },
+   "productivityInsights_quotes_16_4": {
+      "message": "Plan a day of exploring local street art and murals, taking a self-guided walking tour to discover vibrant and thought-provoking urban art."
+   },
+   "productivityInsights_quotes_16_5": {
+      "message": "Take a day trip to a nearby beach or lake, enjoying sunbathing, swimming, and picnicking in a scenic waterfront setting."
+   },
+   "productivityInsights_quotes_16_6": {
+      "message": "Spend the day attending a cultural festival or event in your area, immersing yourself in music, dance, food, and traditions from different cultures."
+   },
+   "productivityInsights_quotes_16_7": {
+      "message": "Plan a day of DIY projects at home, such as repurposing old furniture, creating artwork, or starting a garden, allowing your creativity to flourish."
+   },
+   "productivityInsights_quotes_16_8": {
+      "message": "Take a day trip to a nearby scenic town or village, exploring local shops, boutiques, and cafes, and immersing yourself in the unique charm of the area."
+   },
+   "productivityInsights_quotes_16_9": {
+      "message": "Spend the day practicing outdoor photography, capturing beautiful landscapes, wildlife, or street scenes in your local area."
+   },
+   "productivityInsights_quotes_17_0": {
+      "message": "Attend a full-day workshop or conference: Look for full-day workshops or conferences related to your interests, industry, or personal development, and immerse yourself in a day of learning and networking."
+   },
+   "productivityInsights_quotes_1_0": {
+      "message": "Read a book: Use the time to immerse yourself in a captivating novel or learn something new from a non-fiction book."
+   },
+   "productivityInsights_quotes_1_1": {
+      "message": "Take a walk or exercise: Go for a brisk walk or engage in a short workout session to get your body moving and boost your energy levels."
+   },
+   "productivityInsights_quotes_1_10": {
+      "message": "Start a passion project: Begin working on a personal project that aligns with your passions, such as starting a blog, writing a short story, or designing a website."
+   },
+   "productivityInsights_quotes_1_11": {
+      "message": "Practice self-care: Pamper yourself with a relaxing bath, practice yoga, or do something that makes you feel good and rejuvenated."
+   },
+   "productivityInsights_quotes_1_12": {
+      "message": "Explore a new music genre: Take this hour to discover and listen to music from a genre you haven't explored before."
+   },
+   "productivityInsights_quotes_1_13": {
+      "message": "Organize and declutter: Use the time to tidy up a specific area of your home, decluttering and organizing your belongings."
+   },
+   "productivityInsights_quotes_1_14": {
+      "message": "Engage in a brain-stimulating activity: Solve puzzles, play brain games, or do crossword or Sudoku puzzles to challenge your mind and improve cognitive abilities."
+   },
+   "productivityInsights_quotes_1_2": {
+      "message": "Meditate or practice mindfulness: Set aside some time for relaxation and mental rejuvenation through meditation or mindfulness exercises."
+   },
+   "productivityInsights_quotes_1_3": {
+      "message": "Learn a new skill: Take an online course or watch tutorial videos to acquire a new skill or enhance existing ones, such as painting, cooking, coding, or playing a musical instrument."
+   },
+   "productivityInsights_quotes_1_4": {
+      "message": "Write in a journal: Spend time reflecting on your thoughts and experiences by writing in a journal. It can help clarify your mind and foster self-awareness."
+   },
+   "productivityInsights_quotes_1_5": {
+      "message": "Practice a hobby: Engage in a creative hobby you enjoy, such as drawing, knitting, playing chess, or solving puzzles."
+   },
+   "productivityInsights_quotes_1_6": {
+      "message": "Connect with loved ones: Use the hour to call or video chat with friends or family members you haven't caught up with in a while."
+   },
+   "productivityInsights_quotes_1_7": {
+      "message": "Explore nature: If possible, head outdoors and explore a nearby park, hike a trail, or simply enjoy the beauty of nature."
+   },
+   "productivityInsights_quotes_1_8": {
+      "message": "Listen to a podcast or audiobook: Choose an interesting podcast or audiobook on a topic you find intriguing and enjoy it during your saved hour."
+   },
+   "productivityInsights_quotes_1_9": {
+      "message": "Volunteer or do a random act of kindness: Use the time to give back to your community by volunteering at a local organization or performing a random act of kindness for someone in need."
+   },
+   "productivityInsights_quotes_2_0": {
+      "message": "Start a new hobby: Dedicate time to learn and engage in a new hobby that has piqued your interest, such as gardening, woodworking, photography, or playing a sport."
+   },
+   "productivityInsights_quotes_2_1": {
+      "message": "Cook or bake a new recipe: Challenge yourself in the kitchen by trying out a new recipe or experimenting with ingredients to create a delicious meal or dessert."
+   },
+   "productivityInsights_quotes_2_10": {
+      "message": "Volunteer for a longer duration: Find a local charity or organization and commit to volunteering for a couple of hours. It could involve assisting at a food bank, animal shelter, or community center."
+   },
+   "productivityInsights_quotes_2_11": {
+      "message": "Plan and prepare meals for the week: Spend time meal planning, creating a grocery list, and prepping meals for the upcoming week. It can save time and make your weekdays more organized."
+   },
+   "productivityInsights_quotes_2_12": {
+      "message": "Start a personal blog or website: Use the two hours to set up a personal blog or website where you can share your thoughts, experiences, or showcase your work."
+   },
+   "productivityInsights_quotes_2_13": {
+      "message": "Engage in a digital detox: Disconnect from technology for a while and use the time to engage in offline activities like painting, reading, or spending quality time with loved ones."
+   },
+   "productivityInsights_quotes_2_14": {
+      "message": "Engage in a longer workout or fitness routine: If you enjoy exercise, dedicate the two-hour block to a longer workout session, try a new fitness class, or engage in an activity like cycling, swimming, or hiking."
+   },
+   "productivityInsights_quotes_2_2": {
+      "message": "Explore a nearby town or neighborhood: Take a mini adventure and explore a new area near your location. Visit local attractions, try out new cafes or restaurants, or simply enjoy a change of scenery."
+   },
+   "productivityInsights_quotes_2_3": {
+      "message": "Plan a day trip or weekend getaway: Utilize the two-hour block to research and plan a day trip or weekend getaway to a nearby destination. Make a list of attractions to visit, accommodations, and travel arrangements."
+   },
+   "productivityInsights_quotes_2_4": {
+      "message": "Watch a movie or binge-watch a TV series: Settle in and enjoy a movie or indulge in a TV series you've been wanting to watch. Prepare some snacks and make it a cozy viewing experience."
+   },
+   "productivityInsights_quotes_2_5": {
+      "message": "Create art or craft: Let your creativity flow by spending time on art projects such as painting, drawing, sculpting, or crafting. Express yourself and enjoy the process."
+   },
+   "productivityInsights_quotes_2_6": {
+      "message": "Complete a home improvement project: Tackle a home improvement task you've been meaning to do, like painting a room, organizing a closet, or redecorating a living space."
+   },
+   "productivityInsights_quotes_2_7": {
+      "message": "Take a longer nature hike: If you enjoy the outdoors, find a scenic trail or park where you can spend a couple of hours hiking, observing wildlife, and enjoying the fresh air."
+   },
+   "productivityInsights_quotes_2_8": {
+      "message": "Attend a local workshop or class: Check for workshops or classes happening in your area and sign up for one that aligns with your interests. It could be a cooking class, painting workshop, dance lesson, or anything that catches your attention."
+   },
+   "productivityInsights_quotes_2_9": {
+      "message": "Engage in deep work or study session: If you have a project or task that requires focused attention, dedicate the two hours to deep work or intensive study to make significant progress."
+   },
+   "productivityInsights_quotes_3_0": {
+      "message": "Explore a new city or tourist attraction: Take advantage of the extended time to visit a nearby city or popular tourist attraction that you've been wanting to explore."
+   },
+   "productivityInsights_quotes_3_1": {
+      "message": "Go on a long bike ride: Plan a scenic bike route and enjoy a longer ride, taking in the fresh air and beautiful surroundings."
+   },
+   "productivityInsights_quotes_3_10": {
+      "message": "Go on a photography expedition: Grab your camera and explore a scenic location to capture stunning photographs. Experiment with different techniques and try to capture unique shots."
+   },
+   "productivityInsights_quotes_3_11": {
+      "message": "Take a day trip to a nearby historical site: Visit a historical landmark or archaeological site in your region and immerse yourself in the rich history and cultural heritage."
+   },
+   "productivityInsights_quotes_3_12": {
+      "message": "Engage in an outdoor adventure activity: Plan and participate in an outdoor adventure like rock climbing, zip-lining, kayaking, or paddleboarding. Push your limits and enjoy an adrenaline-filled experience."
+   },
+   "productivityInsights_quotes_3_13": {
+      "message": "Start a home garden or revamp your existing one: Spend time planning and setting up a home garden, or if you already have one, revamp it by adding new plants, creating a seating area, or building raised beds."
+   },
+   "productivityInsights_quotes_3_14": {
+      "message": "Organize a picnic with friends or family: Invite your loved ones for a leisurely picnic in a scenic park or by a lake. Prepare delicious snacks, play games, and enjoy quality time together."
+   },
+   "productivityInsights_quotes_3_2": {
+      "message": "Plan and cook a multi-course meal: Challenge your culinary skills by planning and preparing a multi-course meal from scratch. Experiment with different flavors and techniques."
+   },
+   "productivityInsights_quotes_3_3": {
+      "message": "Visit a museum or art gallery: Spend the afternoon immersing yourself in art, history, or culture by visiting a local museum or art gallery. Take your time to appreciate the exhibits and learn something new."
+   },
+   "productivityInsights_quotes_3_4": {
+      "message": "Attend a live performance or concert: Check for local theater performances, live music events, or concerts happening in your area and book tickets to enjoy an entertaining evening."
+   },
+   "productivityInsights_quotes_3_5": {
+      "message": "Take a day trip to a nearby natural attraction: If there's a national park, beach, or any other natural attraction within reach, plan a day trip to explore its beauty and engage in outdoor activities like hiking, swimming, or picnicking."
+   },
+   "productivityInsights_quotes_3_6": {
+      "message": "Learn to play a musical instrument: Dedicate the three-hour block to practicing and learning to play a musical instrument of your choice. There are plenty of online tutorials and resources available to guide you."
+   },
+   "productivityInsights_quotes_3_7": {
+      "message": "Plan and execute a home DIY project: Take on a larger DIY project, such as building a piece of furniture, remodeling a room, or creating a unique home decor item."
+   },
+   "productivityInsights_quotes_3_8": {
+      "message": "Attend a workshop or seminar: Look for workshops or seminars related to your interests or professional development. It could be a photography workshop, personal finance seminar, or a writing masterclass."
+   },
+   "productivityInsights_quotes_3_9": {
+      "message": "Volunteer for an extended period: Find an organization or charity that allows volunteers for longer durations and dedicate your three hours to helping others and making a positive impact in your community."
+   },
+   "productivityInsights_quotes_4_0": {
+      "message": "Plan and take a day trip to a nearby city: Use the extra time to explore a new city, visit landmarks, try local cuisine, and immerse yourself in the culture and attractions."
+   },
+   "productivityInsights_quotes_4_1": {
+      "message": "Embark on a scenic hike or nature trail: Choose a longer hiking trail or nature reserve and spend the four hours surrounded by nature, enjoying breathtaking views and getting some exercise."
+   },
+   "productivityInsights_quotes_4_10": {
+      "message": "Take a long scenic drive: Plan a road trip along scenic routes or through countryside areas, enjoying the changing landscapes and making stops at interesting landmarks along the way."
+   },
+   "productivityInsights_quotes_4_11": {
+      "message": "Attend a live sports event: Check for sports events happening in your area and spend the four hours cheering for your favorite team and immersing yourself in the excitement of the game."
+   },
+   "productivityInsights_quotes_4_12": {
+      "message": "Start a personal creative project: Use the time to start a creative project like writing a short story, composing music, creating a digital artwork, or designing a website."
+   },
+   "productivityInsights_quotes_4_13": {
+      "message": "Visit a spa or wellness retreat: Treat yourself to a few hours of relaxation and self-care at a spa or wellness retreat, indulging in massages, facials, or other rejuvenating treatments."
+   },
+   "productivityInsights_quotes_4_14": {
+      "message": "Plan and execute a home renovation project: If you have a larger home renovation project in mind, use the four hours to plan, gather materials, and make significant progress in transforming a room or area of your home."
+   },
+   "productivityInsights_quotes_4_2": {
+      "message": "Have a movie marathon: Settle in for an extended movie marathon and watch a series of films from your favorite genre, a director's filmography, or a movie franchise."
+   },
+   "productivityInsights_quotes_4_3": {
+      "message": "Take a cooking or baking class: Sign up for a cooking or baking class that spans a few hours, allowing you to learn new techniques and create delicious dishes or desserts."
+   },
+   "productivityInsights_quotes_4_4": {
+      "message": "Explore a theme park or amusement park: Dedicate the four hours to visiting a theme park or amusement park, riding thrilling attractions, and having fun with friends or family."
+   },
+   "productivityInsights_quotes_4_5": {
+      "message": "Take a leisurely bike ride to a scenic destination: Plan a longer bike ride to a picturesque location, enjoy the journey, and spend some time soaking in the beauty of the surroundings."
+   },
+   "productivityInsights_quotes_4_6": {
+      "message": "Attend a creative workshop or art retreat: Look for workshops or art retreats focused on painting, writing, photography, or any other creative pursuit you're interested in."
+   },
+   "productivityInsights_quotes_4_7": {
+      "message": "Plan a beach day: Spend a relaxing day at the beach, soaking up the sun, swimming in the ocean, and enjoying beach activities like volleyball or building sandcastles."
+   },
+   "productivityInsights_quotes_4_8": {
+      "message": "Explore local markets and shops: Visit local markets, boutiques, or flea markets and indulge in shopping for unique items, artisan crafts, or delicious local produce."
+   },
+   "productivityInsights_quotes_4_9": {
+      "message": "Plan and host a themed gathering or party: Organize a themed gathering at your home or a chosen venue, complete with decorations, games, and activities related to the theme."
+   },
+   "productivityInsights_quotes_5_0": {
+      "message": "Plan and go on a day-long hiking adventure: Choose a challenging hiking trail or plan a series of hikes to explore different scenic spots and spend the day surrounded by nature."
+   },
+   "productivityInsights_quotes_5_1": {
+      "message": "Take a day trip to a nearby beach or lake: Enjoy a longer visit to a beach or lake destination, where you can relax, swim, have a picnic, and soak up the sun."
+   },
+   "productivityInsights_quotes_5_10": {
+      "message": "Explore a nearby city's cultural sites and landmarks: Take a day to explore a nearby city, visit its iconic landmarks, explore museums, and soak in the cultural experiences it has to offer."
+   },
+   "productivityInsights_quotes_5_11": {
+      "message": "Plan and execute a home renovation or redecoration project: Use the five-hour block to work on a larger home renovation project, such as remodeling a room or giving your living space a fresh look with new decor and furniture."
+   },
+   "productivityInsights_quotes_5_12": {
+      "message": "Take a day-long educational tour: Look for educational tours that cover a wide range of topics, such as historical sites, architectural wonders, or ecological hotspots, and spend the day learning and exploring."
+   },
+   "productivityInsights_quotes_5_13": {
+      "message": "Plan and enjoy a full day of outdoor adventure activities: Engage in a combination of outdoor activities like rock climbing, zip-lining, kayaking, hiking, or cycling, and make the most of your time in nature."
+   },
+   "productivityInsights_quotes_5_14": {
+      "message": "Dedicate the day to a personal passion project: Utilize the five hours to work on a personal passion project that requires your full focus and dedication, such as writing a book, creating a short film, or designing a prototype."
+   },
+   "productivityInsights_quotes_5_2": {
+      "message": "Volunteer for a community service project: Dedicate the five hours to volunteering for a community service project or participating in a local initiative that contributes to a cause you care about."
+   },
+   "productivityInsights_quotes_5_3": {
+      "message": "Attend a full-day workshop or conference: Look for full-day workshops or conferences related to your interests, industry, or personal development, and immerse yourself in a day of learning and networking."
+   },
+   "productivityInsights_quotes_5_4": {
+      "message": "Explore a nearby national park: If there's a national park within reach, spend the day exploring its trails, taking photographs of stunning landscapes, and appreciating the beauty of nature."
+   },
+   "productivityInsights_quotes_5_5": {
+      "message": "Plan and host a themed party or gathering with friends: Organize a more elaborate themed party at your home or a chosen venue, complete with decorations, costumes, themed activities, and delicious food."
+   },
+   "productivityInsights_quotes_5_6": {
+      "message": "Visit multiple art galleries or museums: Plan a curated art tour by visiting multiple art galleries or museums in your area, allowing you to immerse yourself in various forms of art and culture."
+   },
+   "productivityInsights_quotes_5_7": {
+      "message": "Take a day-long photography excursion: Pack your camera gear and venture out on a day-long photography expedition, capturing stunning images at different locations, from urban landscapes to natural settings."
+   },
+   "productivityInsights_quotes_5_8": {
+      "message": "Plan a road trip to a distant attraction: Use the five hours to embark on a road trip to a destination that requires a longer journey, such as a famous landmark, a natural wonder, or a cultural hotspot."
+   },
+   "productivityInsights_quotes_5_9": {
+      "message": "Attend a day-long wellness retreat or spa experience: Treat yourself to a full day of relaxation and self-care at a wellness retreat or spa, indulging in various treatments, yoga classes, and healthy meals."
+   },
+   "productivityInsights_quotes_6_0": {
+      "message": "Plan and host a themed cooking or baking party with friends: Choose a culinary theme and spend the five hours cooking or baking together, trying out new recipes, and enjoying the delicious results."
+   },
+   "productivityInsights_quotes_6_1": {
+      "message": "Take a day trip to a nearby historical site: Visit a nearby historical landmark, castle, or archaeological site, and spend the time exploring its rich history and cultural significance."
+   },
+   "productivityInsights_quotes_6_10": {
+      "message": "Plan and go on a biking or cycling adventure: Map out a scenic bike route and spend the time cycling through picturesque landscapes, exploring new areas, and enjoying the thrill of riding."
+   },
+   "productivityInsights_quotes_6_11": {
+      "message": "Visit a nearby theme park or amusement park: Indulge your inner child by spending the five hours at a theme park or amusement park, enjoying thrilling rides and entertaining attractions."
+   },
+   "productivityInsights_quotes_6_12": {
+      "message": "Take a day-long art workshop or painting retreat: Immerse yourself in creativity by attending a day-long art workshop or retreat, focusing on painting, sketching, or another art form you enjoy."
+   },
+   "productivityInsights_quotes_6_13": {
+      "message": "Plan a day of self-care and relaxation: Create a spa-like atmosphere at home with soothing music, aromatherapy, and self-care activities like taking a long bath, practicing mindfulness, or indulging in a spa treatment."
+   },
+   "productivityInsights_quotes_6_14": {
+      "message": "Organize a board game or game night with friends: Invite friends over for a fun-filled afternoon or evening of board games, card games, or video games, enjoying friendly competition and quality time together."
+   },
+   "productivityInsights_quotes_6_2": {
+      "message": "Attend a live theater performance or musical: Book tickets for a matinee or evening performance and immerse yourself in the world of live theater or music for a few hours."
+   },
+   "productivityInsights_quotes_6_3": {
+      "message": "Engage in an extended yoga or meditation session: Dedicate the time to deepening your yoga or meditation practice, allowing yourself to relax, find inner peace, and rejuvenate."
+   },
+   "productivityInsights_quotes_6_4": {
+      "message": "Explore a local botanical garden or arboretum: Visit a nearby botanical garden or arboretum, strolling through the lush greenery, admiring the beautiful flora, and enjoying the serene atmosphere."
+   },
+   "productivityInsights_quotes_6_5": {
+      "message": "Take a photography workshop or photo walk: Sign up for a photography workshop or join a guided photo walk to improve your photography skills and capture stunning images during the five hours."
+   },
+   "productivityInsights_quotes_6_6": {
+      "message": "Plan a picnic in a scenic park: Pack a delicious picnic lunch and spend the time enjoying a leisurely meal in a picturesque park, surrounded by nature and fresh air."
+   },
+   "productivityInsights_quotes_6_7": {
+      "message": "Visit a nearby zoo or wildlife sanctuary: Spend the five hours exploring a zoo or wildlife sanctuary, observing fascinating animals and learning about their habitats and conservation efforts."
+   },
+   "productivityInsights_quotes_6_8": {
+      "message": "Plan and execute a DIY home decor project: Choose a home decor project you've been wanting to tackle and use the five hours to bring it to life, whether it's painting a mural, creating a gallery wall, or building a piece of furniture."
+   },
+   "productivityInsights_quotes_6_9": {
+      "message": "Learn a new dance style: Enroll in a dance class or watch online tutorials to learn a new dance style that interests you, and spend the five hours practicing and perfecting your moves."
+   },
+   "productivityInsights_quotes_7_0": {
+      "message": "Take a day trip to a nearby hiking destination: Choose a scenic hiking trail that takes approximately seven hours to complete, allowing you to immerse yourself in nature and enjoy a longer trek."
+   },
+   "productivityInsights_quotes_7_1": {
+      "message": "Explore a nearby city's cultural attractions: Spend the day visiting museums, art galleries, historical sites, and other cultural landmarks in a nearby city, taking in the rich heritage and vibrant atmosphere."
+   },
+   "productivityInsights_quotes_7_10": {
+      "message": "Take a full-day cooking class or culinary workshop: Sign up for an immersive cooking class or culinary workshop that spans the entire day, allowing you to learn new techniques and prepare a multi-course meal."
+   },
+   "productivityInsights_quotes_7_11": {
+      "message": "Explore a nearby national park and go camping: Choose a national park within reach and spend the day hiking its trails, observing wildlife, and end the adventure with a camping experience under the stars."
+   },
+   "productivityInsights_quotes_7_12": {
+      "message": "Plan a day of adventure sports: Engage in thrilling activities like rock climbing, zip-lining, white-water rafting, or bungee jumping, experiencing an adrenaline rush and pushing your limits."
+   },
+   "productivityInsights_quotes_7_13": {
+      "message": "Take a day-long road trip to multiple scenic destinations: Plan a road trip route that includes visiting multiple scenic spots or landmarks, enjoying the journey and making memories along the way."
+   },
+   "productivityInsights_quotes_7_14": {
+      "message": "Organize and host a day-long sports tournament or game day: Gather friends or colleagues for a friendly sports tournament or a day filled with various sports activities, encouraging teamwork and friendly competition."
+   },
+   "productivityInsights_quotes_7_2": {
+      "message": "Plan and host a backyard BBQ or outdoor gathering: Invite friends and family over for a leisurely afternoon of grilling, socializing, and enjoying outdoor games and activities."
+   },
+   "productivityInsights_quotes_7_3": {
+      "message": "Attend a full-day workshop or training session: Look for workshops or training programs that span the course of a day, focusing on a topic of interest or professional development."
+   },
+   "productivityInsights_quotes_7_4": {
+      "message": "Volunteer for a full-day community service project: Dedicate the seven hours to volunteering for a community organization or participating in a service project that makes a positive impact in your community."
+   },
+   "productivityInsights_quotes_7_5": {
+      "message": "Plan and execute a day of home renovation or decluttering: Use the time to tackle a larger home renovation project or declutter and organize your living space, transforming it into a more functional and inviting environment."
+   },
+   "productivityInsights_quotes_7_6": {
+      "message": "Take a day-long photography excursion to multiple locations: Plan a photography itinerary that takes you to different picturesque spots, allowing you to capture a variety of scenes and practice your photography skills."
+   },
+   "productivityInsights_quotes_7_7": {
+      "message": "Visit a nearby winery or brewery: Spend the day visiting a local winery or brewery, taking a tour, learning about the production process, and enjoying tastings of their finest beverages."
+   },
+   "productivityInsights_quotes_7_8": {
+      "message": "Attend a day-long music or arts festival: Look for music or arts festivals happening in your area and spend the day enjoying live performances, art installations, and a vibrant festival atmosphere."
+   },
+   "productivityInsights_quotes_7_9": {
+      "message": "Plan a beach or lake day with water activities: Head to a nearby beach or lake and spend the day swimming, sunbathing, kayaking, paddleboarding, or participating in other water-based activities."
+   },
+   "productivityInsights_quotes_8_0": {
+      "message": "Take a day trip to a nearby outdoor adventure park: Spend the day at an adventure park that offers activities like ziplining, rope courses, rock climbing, and more, providing an adrenaline-filled experience."
+   },
+   "productivityInsights_quotes_8_1": {
+      "message": "Plan a full-day sightseeing tour of a nearby city: Explore a nearby city's top attractions, landmarks, and hidden gems by creating an itinerary that allows you to immerse yourself in the local culture and history."
+   },
+   "productivityInsights_quotes_8_10": {
+      "message": "Take a day-long photography workshop or photo walk: Join a photography workshop or organize a photo walk with fellow photography enthusiasts, honing your skills and capturing captivating images throughout the day."
+   },
+   "productivityInsights_quotes_8_11": {
+      "message": "Plan a day of cultural exploration through food: Explore a specific cuisine or food culture by visiting different restaurants, markets, or food festivals, indulging in delicious dishes and expanding your culinary horizons."
+   },
+   "productivityInsights_quotes_8_12": {
+      "message": "Visit a nearby theme park or amusement park for a full day: Enjoy a day of thrilling rides, entertaining shows, and delicious treats at a nearby theme park, creating a memorable experience."
+   },
+   "productivityInsights_quotes_8_13": {
+      "message": "Plan and execute a day-long DIY home improvement project: Use the time to tackle a significant home improvement project, such as remodeling a room, creating a garden oasis, or building a DIY furniture piece."
+   },
+   "productivityInsights_quotes_8_14": {
+      "message": "Attend a full-day music festival or concert: Look for music festivals or concerts happening in your area and spend the day immersing yourself in live music performances and a festive atmosphere."
+   },
+   "productivityInsights_quotes_8_2": {
+      "message": "Attend a full-day wellness retreat or spa getaway: Treat yourself to a day of relaxation and rejuvenation at a wellness retreat or spa, indulging in various treatments, yoga or meditation sessions, and healthy meals."
+   },
+   "productivityInsights_quotes_8_3": {
+      "message": "Volunteer for a full-day environmental conservation project: Join a conservation organization for a day of meaningful work, such as tree planting, beach cleanups, or habitat restoration, contributing to the preservation of the environment."
+   },
+   "productivityInsights_quotes_8_4": {
+      "message": "Plan and execute a full-day DIY craft or art project: Dedicate the time to a creative endeavor like painting a mural, designing and building a piece of furniture, or creating handmade crafts."
+   },
+   "productivityInsights_quotes_8_5": {
+      "message": "Take a day-long scenic train ride or boat cruise: Embark on a journey by train or boat that offers stunning views, allowing you to relax and appreciate the beauty of the surrounding landscapes."
+   },
+   "productivityInsights_quotes_8_6": {
+      "message": "Plan a day of cultural immersion in a different neighborhood or town: Choose a neighborhood or town that you haven't explored before and spend the day immersing yourself in its culture, visiting local shops, cafes, and museums."
+   },
+   "productivityInsights_quotes_8_7": {
+      "message": "Attend a full-day personal development workshop or seminar: Look for workshops or seminars that focus on personal growth, leadership, or self-improvement, and spend the day investing in your personal development."
+   },
+   "productivityInsights_quotes_8_8": {
+      "message": "Organize and host a day-long sports tournament with friends: Gather a group of friends and engage in a day filled with various sports activities, such as soccer, basketball, volleyball, or tennis, fostering friendly competition and camaraderie."
+   },
+   "productivityInsights_quotes_8_9": {
+      "message": "Plan a full-day road trip to a scenic destination further away: Choose a picturesque location that requires a longer journey and spend the day road tripping, exploring new places, and creating lasting memories."
+   },
+   "productivityInsights_quotes_9_0": {
+      "message": "Take a day trip to a nearby botanical garden and enjoy a leisurely stroll among beautiful flowers and plants, taking in the serene atmosphere."
+   },
+   "productivityInsights_quotes_9_1": {
+      "message": "Plan and embark on a scenic bike ride, exploring bike trails or cycling through picturesque routes in your area."
+   },
+   "productivityInsights_quotes_9_10": {
+      "message": "Plan a day of water activities, such as kayaking, paddleboarding, or canoeing, on a nearby lake or river."
+   },
+   "productivityInsights_quotes_9_11": {
+      "message": "Take a day trip to a nearby winery or vineyard, enjoying wine tastings, tours, and picturesque views of the vineyards."
+   },
+   "productivityInsights_quotes_9_12": {
+      "message": "Attend a full-day fitness or wellness retreat, participating in yoga, meditation, and fitness classes to enhance your physical and mental well-being."
+   },
+   "productivityInsights_quotes_9_13": {
+      "message": "Plan a day of exploring local trails and parks, going on nature walks and discovering hidden gems in your area."
+   },
+   "productivityInsights_quotes_9_14": {
+      "message": "Dedicate the day to a personal passion project, whether it's writing, painting, coding, or any other creative endeavor that you've been meaning to pursue."
+   },
+   "productivityInsights_quotes_9_2": {
+      "message": "Visit a nearby wildlife sanctuary or nature reserve, spending the day observing and learning about various species of animals and plants."
+   },
+   "productivityInsights_quotes_9_3": {
+      "message": "Plan a day of pampering at a luxury spa, indulging in massages, facials, and other relaxing treatments to rejuvenate your mind and body."
+   },
+   "productivityInsights_quotes_9_4": {
+      "message": "Attend a full-day creative workshop, such as painting, pottery, or photography, and immerse yourself in a day of artistic expression."
+   },
+   "productivityInsights_quotes_9_5": {
+      "message": "Organize a day-long hiking and picnic adventure with friends, choosing a trail that leads to a scenic spot where you can enjoy a picnic lunch."
+   },
+   "productivityInsights_quotes_9_6": {
+      "message": "Take a day trip to a nearby coastal town or beach destination, spending the day relaxing on the sandy shores and taking refreshing dips in the sea."
+   },
+   "productivityInsights_quotes_9_7": {
+      "message": "Plan a day of exploring local markets and shops, indulging in some retail therapy and discovering unique items and local products."
+   },
+   "productivityInsights_quotes_9_8": {
+      "message": "Attend a day-long music or dance festival, immersing yourself in live performances, workshops, and cultural experiences."
+   },
+   "productivityInsights_quotes_9_9": {
+      "message": "Visit a nearby historical site or museum and spend the day delving into the rich history and heritage of the location."
+   },
+   "productivityInsights_recommendation_0_0": {
+      "message": "Add items to your blocklist depends on digital distractions you have"
+   },
+   "productivityInsights_recommendation_10_0": {
+      "message": "Add another category to blocklist"
+   },
+   "productivityInsights_recommendation_11_0": {
+      "message": "Pin BlockSite extension to your browser to better control your focus sessions"
+   },
+   "productivityInsights_recommendation_12_0": {
+      "message": "Trying out the custom block page option and make it your own"
+   },
+   "productivityInsights_recommendation_13_0": {
+      "message": "Syncing your preferences with other devices"
+   },
+   "productivityInsights_recommendation_14_0": {
+      "message": "Set your ‘Weekly digest’ on so we can send you a weekly summary of your insights"
+   },
+   "productivityInsights_recommendation_15_0": {
+      "message": "Pin BlockSite extension to your browser to better control your focus sessions"
+   },
+   "productivityInsights_recommendation_16_0": {
+      "message": "Pin BlockSite extension to your browser to better control your focus sessions"
+   },
+   "productivityInsights_recommendation_17_0": {
+      "message": "Block at least 9 items that distracts you"
+   },
+   "productivityInsights_recommendation_17_1": {
+      "message": "Add another category to blocklist"
+   },
+   "productivityInsights_recommendation_1_0": {
+      "message": "Block at least 9 items that distracts you"
+   },
+   "productivityInsights_recommendation_2_0": {
+      "message": "Use the keyword block to get full coverage"
+   },
+   "productivityInsights_recommendation_3_0": {
+      "message": "Activate password protection"
+   },
+   "productivityInsights_recommendation_4_0": {
+      "message": "Activating our suggestion wizard to discover which sites your visit most"
+   },
+   "productivityInsights_recommendation_5_0": {
+      "message": "Creating dedicated schedules to when you should avoid distractions."
+   },
+   "productivityInsights_recommendation_6_0": {
+      "message": "Start your first focus session"
+   },
+   "productivityInsights_recommendation_7_0": {
+      "message": "Setting a redirect link that will prompt instead a website you want to avoid."
+   },
+   "productivityInsights_recommendation_8_0": {
+      "message": "Download BlockSite app to better engage with your mobile habits and avoid distracting apps"
+   },
+   "productivityInsights_recommendation_9_0": {
+      "message": "Checking our insights report to better understand you’re spending your time online"
+   },
+   "protectionSettingsSaved": {
+      "message": "Protection settings saved"
+   },
+   "pushToAccountCTA": {
+      "message": "Sign Up Now"
+   },
+   "pushToAccountSubTitle": {
+      "message": "Create a free BlockSite account to earn rewards for being productive and to sync BlockSite across devices"
+   },
+   "pushToAccountTitle": {
+      "message": "Signed-up users achieve their goals quicker"
+   },
+   "pushToBlockListCTA": {
+      "message": "Go Unlimited"
+   },
+   "pushToBlockListSubTitle": {
+      "message": "Upgrade today to add as many sites as you like to your block list"
+   },
+   "pushToBlockListTitle": {
+      "message": "Get an unlimited block list by upgrading today"
+   },
+   "pushToCategoriesCTA": {
+      "message": "Go Unlimited"
+   },
+   "pushToCategoriesSubTitle": {
+      "message": "Save time and stay focused by blocking thousands of websites in a single click."
+   },
+   "pushToCategoriesTitle": {
+      "message": "Block thousands of websites in one click!"
+   },
+   "pushToCustomizedPageSubTitle": {
+      "message": "Choose images and texts and create your own blocked page"
+   },
+   "pushToCustomizedPageTitle": {
+      "message": "Create & customize your own\nblocked pages"
+   },
+   "pushToCustomizedPagedCTA": {
+      "message": "Go Unlimited"
+   },
+   "pushToDesktopCTA": {
+      "message": "Try Now"
+   },
+   "pushToDesktopOverlayCTAMaybeLater": {
+      "message": "Maybe Later"
+   },
+   "pushToDesktopOverlayCTAUpgrade": {
+      "message": "Learn More"
+   },
+   "pushToDesktopOverlaySubtitleA": {
+      "message": "You can now block all distractions on Edge, Firefox and Chrome with one app! Download the brand new app today"
+   },
+   "pushToDesktopOverlaySubtitleB": {
+      "message": "You can now block all distraction on Chrome, Firefox and Edge with our new Windows desktop app"
+   },
+   "pushToDesktopOverlayTitleA": {
+      "message": "Block Across Multiple Browsers"
+   },
+   "pushToDesktopOverlayTitleB": {
+      "message": "New Windows app is now LIVE!"
+   },
+   "pushToDesktopSubTitle": {
+      "message": "You can now block all distractions on Edge, Firefox and Chrome with one app! Download the brand new app today"
+   },
+   "pushToDesktopTitle": {
+      "message": "BlockSite Windows App BETA\nNow Available!"
+   },
+   "pushToGoUnlimitedCTA": {
+      "message": "Go Unlimited"
+   },
+   "pushToGoUnlimitedSubTitle": {
+      "message": "Premium users save more time every day. You can too by upgrading to BlockSite Unlimited."
+   },
+   "pushToGoUnlimitedTitle": {
+      "message": "Get more. Go Unlimited"
+   },
+   "pushToInsightsCTA": {
+      "message": "Go Unlimited"
+   },
+   "pushToInsightsSubTitle": {
+      "message": "Explore your online browsing trends over time and learn how to improve your productivity"
+   },
+   "pushToInsightsTitle": {
+      "message": "Explore your browsing trends\nwith Insights!"
+   },
+   "pushToMobileOverlayCTA": {
+      "message": "Maybe Later"
+   },
+   "pushToMobileOverlaySubtitle": {
+      "message": "Stay productive on the go by scanning the barcode to get the BlockSite for mobile"
+   },
+   "pushToMobileOverlayTitle": {
+      "message": "Get BlockSite on Mobile"
+   },
+   "rateUsBlessingStepBtn": {
+      "message": "Rate Us on Webstore"
+   },
+   "rateUsBlessingStepSubTitle": {
+      "message": "Your feedback matters! Help others discover the benefits of our app by leaving a review on the web store."
+   },
+   "rateUsBlessingStepTitle": {
+      "message": "YAY! We’re glad you liked it!"
+   },
+   "rateUsReviewStepBtn": {
+      "message": "Send Feedback"
+   },
+   "rateUsReviewStepMsgError": {
+      "message": "Invalid characters entered."
+   },
+   "rateUsReviewStepSubTitle": {
+      "message": "Our support and product teams are on it, expect satisfaction soon."
+   },
+   "rateUsReviewStepTextContent": {
+      "message": "Your feedback"
+   },
+   "rateUsReviewStepTitleContent": {
+      "message": "How can we improve?"
+   },
+   "rateUsSReviewStepTitle": {
+      "message": "Thank you, your opinion is important to us!"
+   },
+   "rateUsSubmittingStepBtn": {
+      "message": "Submit"
+   },
+   "rateUsSubmittingStepSubTitle": {
+      "message": "Tap the stars to tell us what you think"
+   },
+   "rateUsSubmittingStepTitle": {
+      "message": "How Would You Rate BlockSite?"
+   },
+   "redirectOnBoardingDescription": {
+      "message": "Add a website you’d like to be redirected to when trying to access a blocked site, keyword or when using focus mode"
+   },
+   "redirectOnBoardingTitle": {
+      "message": "Set redirect site"
+   },
+   "resetPasswordSuccessBtnText": {
+      "message": "OK"
+   },
+   "resetPasswordSuccessSubTitle": {
+      "message": "Your password has been sent to $MAIL$",
+      "placeholders": {
+         "mail": {
+            "content": "$1",
+            "example": "example@mail.com"
+         }
+      }
+   },
+   "resetPasswordSuccessTitle": {
+      "message": "Password Sent"
+   },
+   "reverseTrialStartBtn": {
+      "message": "Start My Free Trial"
+   },
+   "reverseTrialSubTitleA": {
+      "message": "No Credit card needed"
+   },
+   "reverseTrialSubTitleB": {
+      "message": "Enjoy $DURATION$-days free of BlockSite Premium. Upgrade at the end of the trial or continue basic features, free to you forever.",
+      "placeholders": {
+         "duration": {
+            "content": "$1"
+         }
+      }
+   },
+   "reverseTrialTitleAPartA": {
+      "message": "Gift!"
+   },
+   "reverseTrialTitleAPartB": {
+      "message": "FREE $DURATION$-Day Trial",
+      "placeholders": {
+         "duration": {
+            "content": "$1"
+         }
+      }
+   },
+   "reverseTrialTitleAPartC": {
+      "message": "BlockSite Premium"
+   },
+   "reverseTrialTitleB": {
+      "message": "Block Distractions. Save Time."
+   },
+   "rewardUnlockCta": {
+      "message": "Browse All Rewards"
+   },
+   "rewardUnlockDescription": {
+      "message": "Well done! Your hard work has paid off and you’ve won a reward for it! You can use it now or save it for later."
+   },
+   "rewardUnlockTitle": {
+      "message": "Reward Unlocked!"
+   },
+   "saveEmailSettings": {
+      "message": "Save"
+   },
+   "scheduleOnBoardingDescription": {
+      "message": "Block sites on specific days and time frames. Sites will not be blocked outside these time frames."
+   },
+   "scheduleOnBoardingTitle": {
+      "message": "Create a blocking schedule"
+   },
+   "setFirstPassProtectUserActionCTA": {
+      "message": "Fantastic"
+   },
+   "setFirstPassProtectUserActionSubTitle": {
+      "message": "It will now be much easier to avoid distractions"
+   },
+   "setFirstPassProtectUserActionTitle": {
+      "message": "Nice Job!"
+   },
+   "setUpEmailAndPass": {
+      "message": "Set up email and password to activate"
+   },
+   "settingEnableFocusModeFaviconSubtitle": {
+      "message": "Enable this to show the time left in current interval on the extension's favicon."
+   },
+   "settingEnableFocusModeFaviconTitle": {
+      "message": "Show remaining time on favicon"
+   },
+   "settingEnableSyncStatusSubtitle": {
+      "message": "Enable to show a shortcut to easily enable/disable syncing with mobile and/or other extensions."
+   },
+   "settingEnableSyncStatusTitle": {
+      "message": "Show sync options page shortcut menu"
+   },
+   "settingsChangedTitle1": {
+      "message": "Please save your email and password to activate the extra protection features."
+   },
+   "settingsEnableBlockSiteShortcutSubtitle": {
+      "message": "Add sites to your block list or your focus mode list by right-clicking and selecting the BlockSite menu on a website."
+   },
+   "settingsEnableBlockSiteShortcutTitle": {
+      "message": "Enable BlockSite shortcut option using right-click"
+   },
+   "settingsGeneralHeader": {
+      "message": "General"
+   },
+   "settingsIntegrationsHeader": {
+      "message": "Integrations"
+   },
+   "settingsNotSaved": {
+      "message": "Settings Not Saved"
+   },
+   "settingsOptionSubtitle": {
+      "message": ""
+   },
+   "settingsOptionTitle": {
+      "message": "Settings"
+   },
+   "settingsShowMotivationalSubtitle": {
+      "message": "Enabling this will show images on a blocked site. Disabling will show a white background."
+   },
+   "settingsShowMotivationalTitle": {
+      "message": "Show blocked page motivational images"
+   },
+   "settingsSlackDNDSubtitle": {
+      "message": "Automatically set Slack to Do Not Disturb mode when in a focus session"
+   },
+   "settingsSlackDNDTitle": {
+      "message": "Slack DND during focus session"
+   },
+   "settingsSlackDNDTurnOffOverlayNoThanks": {
+      "message": "No Thanks"
+   },
+   "settingsSlackDNDTurnOffOverlaySubtitle": {
+      "message": "If you turn off Slack for BlockSite,  you’ll be much more easily distracted. Do you still want to turn off Slack?"
+   },
+   "settingsSlackDNDTurnOffOverlayTitle": {
+      "message": "Are you sure?"
+   },
+   "settingsSlackDNDTurnOffOverlayYesPlease": {
+      "message": "Yes Please"
+   },
+   "settingsSlackDNDTurnOnOverlayGoUnlimitedSlackAccount": {
+      "message": "Go Unlimited"
+   },
+   "settingsSlackDNDTurnOnOverlayLinkSlackAccount": {
+      "message": "Link Slack account"
+   },
+   "settingsSlackDNDTurnOnOverlayMaybeLater": {
+      "message": "Maybe Later"
+   },
+   "settingsSlackDNDTurnOnOverlayNotifications": {
+      "message": "Put notifications on silent during focus mode by automatically setting Do Not Disturb mode"
+   },
+   "settingsSlackDNDTurnOnOverlayPrivacy": {
+      "message": "Please Note: BlockSite keeps your messages private. We do not store or see any messages or chats that are sent or received."
+   },
+   "settingsSlackDNDTurnOnOverlayTitle": {
+      "message": "Avoid even more distractions by integrating Slack with BlockSite"
+   },
+   "settingsSlackDNDTurnOnUpgradeOverlayTitle": {
+      "message": "Upgrade to Unlimited to integrate Slack with BlockSite"
+   },
+   "settingsSlackDNDUpgradeButton": {
+      "message": "Go Unlimited"
+   },
+   "settingsSlackSubtitleNonPremium": {
+      "message": "Upgrade to BlockSite Unlimited to empower your focus with BlockSites automations for Slack."
+   },
+   "settingsSlackSubtitlePremium": {
+      "message": "Empower your focus with BlockSites automations for Slack."
+   },
+   "settingsSyncHeader": {
+      "message": "Sync"
+   },
+   "settingsSyncSubtitle": {
+      "message": "Backup your current extension's preferences and block list to the cloud or sync with up to 4 other devices from our Android and/or Extension platforms when signed in under the same user account."
+   },
+   "settingsSyncTitle": {
+      "message": "Sync with other devices"
+   },
+   "settingsViewHeader": {
+      "message": "View"
+   },
+   "shareFacebookIconTitle": {
+      "message": "Facebook"
+   },
+   "shareLinkedinIconTitle": {
+      "message": "Linkedin"
+   },
+   "sharePopupSubTitle": {
+      "message": "Help others by letting them know about BlockSite"
+   },
+   "sharePopupTitle": {
+      "message": "Share your love for productivity and focus"
+   },
+   "shareTwitterIconTitle": {
+      "message": "Twitter"
+   },
+   "snooze": {
+      "message": "Snooze"
+   },
+   "specialOfferPopupFinePrint": {
+      "message": "Billed annually. Recurring billing. Cancel anytime for any reason"
+   },
+   "specialOfferPopupGoMaybeLater": {
+      "message": "Maybe Later"
+   },
+   "specialOfferPopupGoUnlimited": {
+      "message": "Go Unlimited"
+   },
+   "specialOfferPopupSave": {
+      "message": "SAVE"
+   },
+   "specialOfferPopupSubtitle": {
+      "message": " You’ll also get features like bulk blocking, password protection, and more. Limited time only!"
+   },
+   "specialOfferPopupTitle": {
+      "message": "Get Unlimited Blocking for $"
+   },
+   "specialOfferPopupYear": {
+      "message": "YEAR"
+   },
+   "syncOverrideConfirmationApprove": {
+      "message": "Yes"
+   },
+   "syncOverrideConfirmationCancel": {
+      "message": "No"
+   },
+   "syncOverrideConfirmationSubTitle": {
+      "message": "All changes that were done in offline mode will NOT be updated on other devices and will be lost."
+   },
+   "syncOverrideConfirmationTitle": {
+      "message": "Are you sure?"
+   },
+   "tagTextLatestNews": {
+      "message": "LATEST NEWS"
+   },
+   "tagTextPremium": {
+      "message": "PREMIUM"
+   },
+   "tagTextQuickTip": {
+      "message": "QUICK TIP"
+   },
+   "tooltipExportList": {
+      "message": "Export list"
+   },
+   "tooltipImportList": {
+      "message": "Import list"
+   },
+   "updateEmailAndPassword": {
+      "message": "Update Email and Password"
+   },
+   "updateThemHereLink": {
+      "message": "Update them here"
+   },
+   "upgrade": {
+      "message": "Upgrade"
+   },
+   "upgradeNow": {
+      "message": "Upgrade Now"
+   },
+   "userActionStars": {
+      "message": "You've earned +$STARS$ stars",
+      "placeholders": {
+         "stars": {
+            "content": "$1",
+            "example": "25"
+         }
+      }
+   },
+   "verificationCheckYourEmail": {
+      "message": "To enable, please check your email for the verification link."
+   },
+   "verificationClickToResend": {
+      "message": "please click here to resend."
+   },
+   "verificationDidntReceiveEmail": {
+      "message": "If you didn't receive the email,"
+   },
+   "verifyResetPasswordAcceptBtn": {
+      "message": "Yes, reset password"
+   },
+   "verifyResetPasswordCancelBtn": {
+      "message": "No, Cancel"
+   },
+   "verifyResetPasswordText": {
+      "message": "We'll reset your password and send a new one to your email"
+   },
+   "verifyResetPasswordTitle": {
+      "message": "Are You Sure?"
+   },
+   "viewAccount": {
+      "message": "View Account"
+   },
+   "whatsNewFeature1": {
+      "message": "We’ve revamped your blocking experience for better focus and now you can add categories and keywords to your blocking schedule."
+   },
+   "whatsNewGotIt": {
+      "message": "Got It"
+   },
+   "whatsNewSubtitle": {
+      "message": "Here is what’s new on BlockSite:"
+   },
+   "whatsNewTitle": {
+      "message": "Welcome Back"
+   },
+   "whiteListRedirectRemovePopupDescription": {
+      "message": "When switching between white and black list modes we must clear your redirect site"
+   },
+   "whitelistInfoToolTip": {
+      "message": "Block all websites apart from those in your whitelist"
+   },
+   "whitelistModeTitle": {
+      "message": "Whitelist mode"
+   },
+   "whitelistPopUpDescription": {
+      "message": "All sites will be blocked except the ones in the list"
+   },
+   "whitelistPopUpTitle": {
+      "message": "Are you sure?"
+   },
+   "workModeEnterPassToPauseOrReset": {
+      "message": "To %TIMER_ACTION% enter your password",
+      "placeholders": {
+         "timer_action": {
+            "content": "$1",
+            "example": "25"
+         }
+      }
+   },
+   "workModeToPauseOrResetEnterPassword": {
+      "message": "Enter password to %TIMER_ACTION%",
+      "placeholders": {
+         "timer_action": {
+            "content": "$1",
+            "example": "25"
+         }
+      }
+   },
+   "workModeWrongPassword": {
+      "message": "Wrong Password"
+   },
+   "wrongPassword": {
+      "message": "Oops! That's not it. Please try again."
+   }
+}

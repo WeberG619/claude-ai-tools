@@ -3,11 +3,12 @@
 Government Data MCP Server - Building Permits, Code Violations, Zoning & More
 
 Data Sources:
-- Miami-Dade County ArcGIS Open Data (building permits, violations, zoning)
-- Socrata SODA API (SF, NYC, Chicago, LA open data portals)
+- ArcGIS Open Data (Miami-Dade, Palm Beach, Pinellas, Jacksonville, Portland, Atlanta, FL state)
+- Socrata SODA API (SF, NYC, Chicago, LA, Orlando, Houston, Dallas, Austin, Seattle, Denver, Phoenix, Philadelphia, Boston, DC)
+- Reference portals (Broward, Coral Springs, Hillsborough, FL DBPR)
 - Census Bureau Building Permits Survey (aggregate statistics)
 - OSHA Enforcement Data (construction inspections)
-- IBC/IRC Building Code Reference (local lookup)
+- Building Code Reference (IBC 2021, IRC 2021, FBC 2023, FBC Residential 2023)
 
 Tools:
 1. search_permits - Search building permits by address, type, status
@@ -17,7 +18,8 @@ Tools:
 5. search_contractors - Search licensed contractors
 6. get_building_permits_stats - Aggregate permit statistics
 7. search_osha_inspections - OSHA construction inspections
-8. lookup_building_code - IBC/IRC code section reference
+8. lookup_building_code - IBC/IRC/FBC code section reference
+9. list_jurisdictions - List all supported jurisdictions with filtering
 """
 
 import json
@@ -38,6 +40,18 @@ import requests
 # Paths
 SCRIPT_DIR = Path(__file__).parent
 JURISDICTIONS_FILE = SCRIPT_DIR / "jurisdictions.json"
+BUILDING_CODES_DIR = SCRIPT_DIR / "building_codes"
+
+# Mapping from edition names to JSON files
+BUILDING_CODE_FILES = {
+    "2021 IBC": "ibc_2021.json",
+    "2021 IRC": "irc_2021.json",
+    "2023 FBC": "fbc_2023.json",
+    "2023 FBC Residential": "fbc_residential_2023.json",
+}
+
+# Cache for loaded building code JSON files
+_building_code_cache: dict[str, dict] = {}
 
 # API Keys (optional, from environment)
 CENSUS_API_KEY = os.environ.get("CENSUS_API_KEY", "")
@@ -118,33 +132,84 @@ def safe_request(url: str, params: dict = None, timeout: int = 30,
         )
 
 
+def format_epoch_date(value) -> str:
+    """Convert epoch milliseconds to readable date string, or return as-is."""
+    if value is None:
+        return ""
+    if isinstance(value, (int, float)) and value > 1000000000:
+        try:
+            dt = datetime.fromtimestamp(value / 1000)
+            return dt.strftime("%Y-%m-%d")
+        except (ValueError, OSError):
+            pass
+    return str(value).strip()
+
+
 def format_permit(permit: dict, jurisdiction: str) -> str:
     """Format a single permit record for display."""
     lines = []
     # Try common field names across different platforms
+    # MDC uses: PROCNUM, ADDRESS/STNDADDR, TYPE, BPSTATUS, ISSUDATE, DESC1, ESTVALUE, CONTRNAME, CONTRNUM
     permit_num = (permit.get("permit_number") or permit.get("PERMIT_NUM")
                   or permit.get("permit_no") or permit.get("PERMITNUMBER")
                   or permit.get("application_number") or permit.get("JOB_NUMBER")
+                  or permit.get("PROCNUM")  # Miami-Dade
                   or permit.get("OBJECTID", "N/A"))
     address = (permit.get("address") or permit.get("ADDRESS")
                or permit.get("street_address") or permit.get("SITE_ADDRESS")
+               or permit.get("STNDADDR")  # Miami-Dade standardized address
                or permit.get("location") or permit.get("LOCATION", "N/A"))
     permit_type = (permit.get("permit_type") or permit.get("PERMIT_TYPE")
                    or permit.get("type") or permit.get("WORK_TYPE")
+                   or permit.get("TYPE")  # Miami-Dade
                    or permit.get("permit_type_definition", "N/A"))
     status = (permit.get("status") or permit.get("STATUS")
               or permit.get("current_status") or permit.get("PERMIT_STATUS")
+              or permit.get("BPSTATUS")  # Miami-Dade
               or permit.get("status_current", "N/A"))
     issued = (permit.get("issue_date") or permit.get("ISSUE_DATE")
               or permit.get("issued_date") or permit.get("ISSUEDDATE")
+              or permit.get("ISSUDATE")  # Miami-Dade (epoch ms)
               or permit.get("filed_date", ""))
     description = (permit.get("description") or permit.get("DESCRIPTION")
                    or permit.get("work_description")
-                   or permit.get("JOB_DESCRIPTION", ""))
+                   or permit.get("JOB_DESCRIPTION")
+                   or permit.get("DESC1")  # Miami-Dade primary description
+                   or "")
     contractor = (permit.get("contractor") or permit.get("CONTRACTOR_NAME")
-                  or permit.get("contractor_name", ""))
+                  or permit.get("contractor_name")
+                  or permit.get("CONTRNAME")  # Miami-Dade
+                  or "")
     value = (permit.get("estimated_cost") or permit.get("ESTIMATED_COST")
-             or permit.get("project_value") or permit.get("TOTAL_FEE", ""))
+             or permit.get("project_value") or permit.get("TOTAL_FEE")
+             or permit.get("ESTVALUE")  # Miami-Dade
+             or "")
+
+    # MDC-specific extras
+    folio = permit.get("FOLIO", "")
+    contractor_num = permit.get("CONTRNUM", "")
+    app_type = permit.get("APPTYPE", "")
+    prop_use = permit.get("PROPUSE", "")
+
+    # Format epoch dates
+    issued = format_epoch_date(issued)
+
+    # Clean up MDC estimated value (strip leading zeros)
+    if isinstance(value, str) and value.isdigit():
+        value = str(int(value))
+
+    # Decode MDC status codes
+    mdc_status_map = {
+        "A": "Active",
+        "C": "Closed/Complete",
+        "E": "Expired",
+        "F": "Finaled",
+        "I": "In Review",
+        "P": "Pending",
+        "V": "Void",
+    }
+    if status in mdc_status_map:
+        status = f"{mdc_status_map[status]} ({status})"
 
     lines.append(f"  Permit #: {permit_num}")
     lines.append(f"  Address: {address}")
@@ -153,41 +218,101 @@ def format_permit(permit: dict, jurisdiction: str) -> str:
     if issued:
         lines.append(f"  Issued: {issued}")
     if description:
-        lines.append(f"  Description: {description[:200]}")
+        lines.append(f"  Description: {str(description)[:200].strip()}")
     if contractor:
-        lines.append(f"  Contractor: {contractor}")
-    if value:
+        contractor_str = str(contractor).strip()
+        if contractor_num:
+            contractor_str += f" (Lic# {str(contractor_num).strip()})"
+        lines.append(f"  Contractor: {contractor_str}")
+    if value and str(value) != "0":
         lines.append(f"  Estimated Cost: ${value}")
+    if folio:
+        lines.append(f"  Folio: {folio}")
+    if app_type:
+        lines.append(f"  Application Type: {app_type}")
+    if prop_use:
+        lines.append(f"  Property Use: {prop_use}")
     return "\n".join(lines)
 
 
 def format_violation(violation: dict) -> str:
     """Format a single violation record for display."""
     lines = []
+    # MDC BuildingViolation_gdb uses: CASE_NUM, CASE_TYPE, PROP_ADDR, OPEN_DATE, CLOSED_DATE, VIOL_NAME
+    # MDC EnergovCodeCase uses: CASENUMBER, TYPE, STATUS, ADDRESSLINE1, OPENEDDATE, CLOSEDDATE, DESCRIPTION
+    # MDC CodeCompliance uses: CASE_NUM, CASE_DATE, CASE_STATUS, ADDRESS, PROBLEM, PROBLEM_DESC
     case_num = (violation.get("case_number") or violation.get("CASE_NUMBER")
-                or violation.get("case_no") or violation.get("OBJECTID", "N/A"))
+                or violation.get("case_no")
+                or violation.get("CASE_NUM")  # MDC violations & code compliance
+                or violation.get("CASENUMBER")  # MDC Energov
+                or violation.get("OBJECTID", "N/A"))
     address = (violation.get("address") or violation.get("ADDRESS")
                or violation.get("violation_address")
+               or violation.get("PROP_ADDR")  # MDC BuildingViolation
+               or violation.get("ADDRESSLINE1")  # MDC Energov
                or violation.get("LOCATION", "N/A"))
     vtype = (violation.get("violation_type") or violation.get("VIOLATION_TYPE")
-             or violation.get("type") or violation.get("CASE_TYPE", "N/A"))
+             or violation.get("type") or violation.get("TYPE")
+             or violation.get("CASE_TYPE")  # MDC violations
+             or violation.get("PROBLEM")  # MDC code compliance
+             or "N/A")
     status = (violation.get("status") or violation.get("STATUS")
               or violation.get("case_status")
-              or violation.get("CASE_STATUS", "N/A"))
+              or violation.get("CASE_STATUS")  # MDC code compliance
+              or violation.get("STAT_DESC")  # MDC code compliance description
+              or "N/A")
     date = (violation.get("date") or violation.get("DATE")
             or violation.get("violation_date")
-            or violation.get("OPENED_DATE", ""))
+            or violation.get("OPENED_DATE")
+            or violation.get("OPENEDDATE")  # MDC Energov
+            or violation.get("OPEN_DATE")  # MDC BuildingViolation
+            or violation.get("CASE_DATE")  # MDC code compliance
+            or "")
+    closed_date = (violation.get("CLOSED_DATE")
+                   or violation.get("CLOSEDDATE")
+                   or violation.get("closed_date", ""))
     description = (violation.get("description") or violation.get("DESCRIPTION")
-                   or violation.get("violation_description", ""))
+                   or violation.get("violation_description")
+                   or violation.get("PROBLEM_DESC")  # MDC code compliance
+                   or "")
+
+    # MDC-specific extras
+    owner_name = violation.get("VIOL_NAME", "")  # MDC violations owner name
+    folio = (violation.get("FOLIO")
+             or violation.get("PARCELNUMBER", ""))
+    permit_num = violation.get("PERMIT_NUM", "")
+    last_activity = violation.get("LAST_ACTV", "")
+    city = violation.get("CITY", "")
+
+    # Format epoch dates
+    date = format_epoch_date(date)
+    closed_date = format_epoch_date(closed_date)
+
+    # Decode MDC status codes (code compliance uses numeric codes)
+    mdc_compliance_status = {"1": "Open", "2": "Closed", "3": "Pending"}
+    if status in mdc_compliance_status:
+        status = mdc_compliance_status[status]
 
     lines.append(f"  Case #: {case_num}")
-    lines.append(f"  Address: {address}")
+    lines.append(f"  Address: {str(address).strip()}")
+    if city:
+        lines[-1] += f", {city}"
     lines.append(f"  Type: {vtype}")
     lines.append(f"  Status: {status}")
     if date:
-        lines.append(f"  Date: {date}")
+        lines.append(f"  Opened: {date}")
+    if closed_date:
+        lines.append(f"  Closed: {closed_date}")
     if description:
-        lines.append(f"  Description: {description[:200]}")
+        lines.append(f"  Description: {str(description)[:200].strip()}")
+    if owner_name:
+        lines.append(f"  Owner/Violator: {str(owner_name).strip()}")
+    if folio:
+        lines.append(f"  Folio: {folio}")
+    if permit_num and str(permit_num).strip():
+        lines.append(f"  Related Permit: {permit_num}")
+    if last_activity:
+        lines.append(f"  Last Activity: {str(last_activity).strip()}")
     return "\n".join(lines)
 
 
@@ -214,6 +339,15 @@ def query_arcgis(endpoint_url: str, where_clause: str = "1=1",
         data = resp.json()
         if "error" in data:
             err = data["error"]
+            # If order_by caused the error, retry without it
+            if order_by and err.get("code") == 400:
+                params_retry = dict(params)
+                params_retry.pop("orderByFields", None)
+                resp2 = safe_request(endpoint_url, params=params_retry)
+                data2 = resp2.json()
+                if "error" not in data2:
+                    features = data2.get("features", [])
+                    return [f.get("attributes", f) for f in features]
             raise ValueError(
                 f"ArcGIS API error {err.get('code', '?')}: "
                 f"{err.get('message', 'Unknown error')}"
@@ -282,25 +416,35 @@ def fetch_permits(jurisdiction: str, address: str = None,
 
     if platform == "arcgis":
         clauses = []
+        # Use endpoint metadata to determine field names, with fallbacks
+        addr_field = endpoint.get("address_field", "ADDRESS")
+        addr_field_alt = endpoint.get("address_field_alt", "SITE_ADDRESS")
+        status_field = endpoint.get("status_field", "STATUS")
+        type_field = endpoint.get("type_field", "PERMIT_TYPE")
+        date_field = endpoint.get("date_field", "ISSUE_DATE")
+
         if address:
             clauses.append(
-                f"(UPPER(ADDRESS) LIKE '%{address.upper()}%' OR "
-                f"UPPER(SITE_ADDRESS) LIKE '%{address.upper()}%')"
+                f"(UPPER({addr_field}) LIKE '%{address.upper()}%' OR "
+                f"UPPER({addr_field_alt}) LIKE '%{address.upper()}%')"
             )
         if permit_type:
             clauses.append(
-                f"UPPER(PERMIT_TYPE) LIKE '%{permit_type.upper()}%'"
+                f"UPPER({type_field}) LIKE '%{permit_type.upper()}%'"
             )
         if status:
-            clauses.append(f"UPPER(STATUS) LIKE '%{status.upper()}%'")
+            clauses.append(
+                f"UPPER({status_field}) LIKE '%{status.upper()}%'"
+            )
         if date_from:
-            clauses.append(f"ISSUE_DATE >= '{date_from}'")
+            clauses.append(f"{date_field} >= '{date_from}'")
         if date_to:
-            clauses.append(f"ISSUE_DATE <= '{date_to}'")
+            clauses.append(f"{date_field} <= '{date_to}'")
 
         where = " AND ".join(clauses) if clauses else "1=1"
+        order_by = f"{date_field} DESC" if date_field else ""
         return query_arcgis(endpoint["url"], where_clause=where,
-                            max_records=limit)
+                            max_records=limit, order_by=order_by)
 
     elif platform == "socrata":
         params = {}
@@ -328,6 +472,9 @@ def fetch_permits(jurisdiction: str, address: str = None,
         params["$order"] = "issued_date DESC"
         return query_socrata(endpoint["url"], params=params, limit=limit)
 
+    elif platform == "reference":
+        return format_reference_response(jurisdiction, endpoint, address)
+
     else:
         raise ValueError(f"Unknown platform type: {platform}")
 
@@ -348,24 +495,37 @@ def fetch_violations(jurisdiction: str, address: str = None,
 
     if platform == "arcgis":
         clauses = []
+        # Use endpoint metadata to determine field names, with fallbacks
+        addr_field = endpoint.get("address_field", "ADDRESS")
+        type_field = endpoint.get("type_field", "CASE_TYPE")
+        status_field = endpoint.get("status_field", "STATUS")
+        date_field = endpoint.get("date_field", "OPEN_DATE")
+
         if address:
-            clauses.append(
-                f"(UPPER(ADDRESS) LIKE '%{address.upper()}%' OR "
-                f"UPPER(LOCATION) LIKE '%{address.upper()}%')"
+            # Use the configured address field; only add fallbacks if
+            # key_fields metadata lists them (avoids querying non-existent fields)
+            key_fields = endpoint.get("key_fields", [])
+            addr_fields = [addr_field]
+            # Add common fallback fields only if they exist in this layer
+            for fallback in ["ADDRESS", "LOCATION"]:
+                if fallback != addr_field and fallback in key_fields:
+                    addr_fields.append(fallback)
+            addr_clauses = " OR ".join(
+                f"UPPER({f}) LIKE '%{address.upper()}%'" for f in addr_fields
             )
+            clauses.append(f"({addr_clauses})")
         if violation_type:
             clauses.append(
-                f"UPPER(VIOLATION_TYPE) LIKE '%{violation_type.upper()}%' OR "
-                f"UPPER(CASE_TYPE) LIKE '%{violation_type.upper()}%'"
+                f"(UPPER({type_field}) LIKE '%{violation_type.upper()}%')"
             )
         if status:
             clauses.append(
-                f"UPPER(STATUS) LIKE '%{status.upper()}%' OR "
-                f"UPPER(CASE_STATUS) LIKE '%{status.upper()}%'"
+                f"(UPPER({status_field}) LIKE '%{status.upper()}%')"
             )
         where = " AND ".join(clauses) if clauses else "1=1"
+        order_by = f"{date_field} DESC" if date_field else ""
         return query_arcgis(endpoint["url"], where_clause=where,
-                            max_records=limit)
+                            max_records=limit, order_by=order_by)
 
     elif platform == "socrata":
         params = {}
@@ -386,6 +546,9 @@ def fetch_violations(jurisdiction: str, address: str = None,
             params["$where"] = " AND ".join(where_parts)
         return query_socrata(endpoint["url"], params=params, limit=limit)
 
+    elif platform == "reference":
+        return format_reference_response(jurisdiction, endpoint, address)
+
     else:
         raise ValueError(f"Unknown platform type: {platform}")
 
@@ -405,11 +568,29 @@ def fetch_zoning(jurisdiction: str, address: str = "") -> list[dict]:
     if platform == "arcgis":
         where = "1=1"
         if address:
-            where = (
-                f"UPPER(ADDRESS) LIKE '%{address.upper()}%' OR "
-                f"UPPER(LOCATION) LIKE '%{address.upper()}%' OR "
-                f"UPPER(ZONE_DESC) LIKE '%{address.upper()}%'"
-            )
+            # Check endpoint key_fields to determine which fields exist
+            key_fields = endpoint.get("key_fields", [])
+            addr_parts = []
+            # Try address-like fields
+            for field in ["ADDRESS", "LOCATION", "SITE_ADDRESS"]:
+                if not key_fields or field in key_fields:
+                    addr_parts.append(
+                        f"UPPER({field}) LIKE '%{address.upper()}%'"
+                    )
+            # Try description/zone fields
+            for field in ["ZONE_DESC", "PZDESC", "DESCRIPTION"]:
+                if not key_fields or field in key_fields:
+                    addr_parts.append(
+                        f"UPPER({field}) LIKE '%{address.upper()}%'"
+                    )
+            if addr_parts:
+                where = " OR ".join(addr_parts)
+            else:
+                # Fallback: search PZDESC and DESCRIPTION for MDC
+                where = (
+                    f"UPPER(PZDESC) LIKE '%{address.upper()}%' OR "
+                    f"UPPER(DESCRIPTION) LIKE '%{address.upper()}%'"
+                )
         return query_arcgis(endpoint["url"], where_clause=where,
                             max_records=10)
 
@@ -421,8 +602,59 @@ def fetch_zoning(jurisdiction: str, address: str = "") -> list[dict]:
             )
         return query_socrata(endpoint["url"], params=params, limit=10)
 
+    elif platform == "reference":
+        return format_reference_response(jurisdiction, endpoint, address)
+
     else:
         raise ValueError(f"Unknown platform type: {platform}")
+
+
+def format_reference_response(jurisdiction: str, endpoint: dict,
+                              address: str = None) -> list[dict]:
+    """Format a response for reference-only jurisdictions (no REST API)."""
+    jur_data = load_jurisdictions().get(jurisdiction, {})
+    portal_url = endpoint.get("portal_url", jur_data.get("portal_url", "N/A"))
+    description = endpoint.get("description", "")
+    instructions = endpoint.get("instructions", "Visit the portal URL to search.")
+
+    result = {
+        "type": "reference",
+        "jurisdiction": jurisdiction,
+        "jurisdiction_name": jur_data.get("name", jurisdiction),
+        "portal_url": portal_url,
+        "description": description,
+        "instructions": instructions,
+        "note": "This jurisdiction does not have a public REST API. Use the portal URL to search manually.",
+    }
+    if address:
+        result["search_address"] = address
+    if jur_data.get("building_code"):
+        result["building_code"] = jur_data["building_code"]
+    if jur_data.get("hvhz"):
+        result["hvhz"] = "Yes - High-Velocity Hurricane Zone (Miami-Dade/Broward)"
+    return [result]
+
+
+def format_reference_text(ref: dict) -> str:
+    """Format a reference-type response for display."""
+    lines = [
+        f"=== {ref.get('jurisdiction_name', ref.get('jurisdiction', 'Unknown'))} ===",
+        f"Platform: Reference only (no public REST API)",
+        f"Portal URL: {ref.get('portal_url', 'N/A')}",
+        f"Description: {ref.get('description', 'N/A')}",
+        f"Instructions: {ref.get('instructions', 'Visit the portal URL to search.')}",
+    ]
+    if ref.get("search_address"):
+        lines.append(f"\nSearch for: {ref['search_address']}")
+    if ref.get("building_code"):
+        lines.append(f"Building Code: {ref['building_code']}")
+    if ref.get("hvhz"):
+        lines.append(f"HVHZ: {ref['hvhz']}")
+    lines.append(
+        "\nNote: This jurisdiction does not expose a public REST API. "
+        "Visit the portal URL above to search, or use a browser automation tool."
+    )
+    return "\n".join(lines)
 
 
 def fetch_census_permits_stats(state: str = None, period: str = "monthly",
@@ -521,218 +753,38 @@ def list_supported_jurisdictions(endpoint_type: str = None) -> list[str]:
 
 # ============== BUILDING CODE REFERENCE ==============
 
-# Common IBC/IRC sections for quick reference
-# This is a simplified reference - full code text requires ICC subscription
-BUILDING_CODE_REFERENCE = {
-    "2021 IBC": {
-        "101": {
-            "title": "Scope and Administration",
-            "summary": "General scope of the IBC, applicability, and administrative provisions.",
-            "subsections": {
-                "101.1": "Title - International Building Code",
-                "101.2": "Scope - Applies to construction, alteration, relocation, enlargement, replacement, repair, equipment, use and occupancy, location, maintenance, removal and demolition of every building or structure",
-                "101.3": "Intent - To establish minimum requirements to provide a reasonable level of safety, public health and general welfare"
-            }
-        },
-        "202": {
-            "title": "Definitions",
-            "summary": "Definitions of terms used throughout the IBC.",
-            "key_terms": [
-                "BUILDING - Any structure used for support or shelter",
-                "DWELLING UNIT - Single unit providing complete independent living facilities",
-                "FIRE AREA - Aggregate floor area enclosed and bounded by fire walls",
-                "STORY - Portion of a building between upper surface of a floor and upper surface of floor next above"
-            ]
-        },
-        "302": {
-            "title": "Classification of Occupancy",
-            "summary": "Building use classifications including Assembly (A), Business (B), Educational (E), Factory (F), High-Hazard (H), Institutional (I), Mercantile (M), Residential (R), Storage (S), and Utility (U).",
-            "subsections": {
-                "302.1": "Occupancy Classification - Buildings shall be classified by occupancy group",
-                "303": "Assembly Group A - A-1 through A-5",
-                "304": "Business Group B",
-                "305": "Educational Group E",
-                "306": "Factory Group F - F-1 (Moderate-hazard), F-2 (Low-hazard)",
-                "307": "High-Hazard Group H - H-1 through H-5",
-                "308": "Institutional Group I - I-1 through I-4",
-                "309": "Mercantile Group M",
-                "310": "Residential Group R - R-1 through R-4",
-                "311": "Storage Group S - S-1 (Moderate-hazard), S-2 (Low-hazard)",
-                "312": "Utility and Miscellaneous Group U"
-            }
-        },
-        "403": {
-            "title": "High-Rise Buildings",
-            "summary": "Special requirements for buildings with occupied floors more than 75 feet above the lowest level of fire department vehicle access.",
-            "subsections": {
-                "403.1": "Applicability - Buildings with occupied floor more than 75 ft above lowest fire dept access",
-                "403.2": "Reduction in fire-resistance rating",
-                "403.3": "Automatic sprinkler system requirements",
-                "403.4": "Fire alarm and detection systems",
-                "403.5": "Means of egress provisions",
-                "403.6": "Emergency systems (standby power, emergency lighting)"
-            }
-        },
-        "503": {
-            "title": "General Building Height and Area Limitations",
-            "summary": "Tables and requirements for maximum building height and floor area based on occupancy and construction type.",
-            "subsections": {
-                "503.1": "General height and area - See Table 504.3, 504.4, 506.2",
-                "504": "Building height in feet and stories",
-                "506": "Building area modifications (frontage and sprinkler increases)"
-            }
-        },
-        "602": {
-            "title": "Construction Classification",
-            "summary": "Five types of construction: Type I (Fire-Resistive), Type II (Non-Combustible), Type III (Ordinary), Type IV (Heavy Timber), Type V (Wood Frame).",
-            "subsections": {
-                "602.1": "General - Buildings classified by construction type",
-                "602.2": "Type I - Noncombustible structural elements, fire-resistive",
-                "602.3": "Type II - Noncombustible structural elements",
-                "602.4": "Type III - Exterior walls noncombustible, interior any material",
-                "602.5": "Type IV - Exterior walls noncombustible, interior heavy timber",
-                "602.6": "Type V - Structural elements any material permitted by code"
-            }
-        },
-        "903": {
-            "title": "Automatic Sprinkler Systems",
-            "summary": "Requirements for when automatic sprinkler systems must be installed.",
-            "subsections": {
-                "903.2": "Where required - Group A, B, E, F, H, I, M, R, S occupancies",
-                "903.2.1": "Group A - Assembly occupancies",
-                "903.2.7": "Group M - Mercantile occupancies over 12,000 sq ft",
-                "903.2.8": "Group R - Residential occupancies",
-                "903.3": "Installation requirements - NFPA 13, 13R, 13D"
-            }
-        },
-        "1003": {
-            "title": "Means of Egress - General",
-            "summary": "General requirements for means of egress including exit access, exits, and exit discharge.",
-            "subsections": {
-                "1003.1": "Applicability",
-                "1004": "Occupant load calculation",
-                "1005": "Means of egress sizing",
-                "1006": "Number of exits and exit access doorways",
-                "1009": "Accessible means of egress",
-                "1010": "Doors, gates, and turnstiles",
-                "1011": "Stairways",
-                "1017": "Exit access travel distance"
-            }
-        },
-        "1607": {
-            "title": "Live Loads",
-            "summary": "Minimum uniformly distributed and concentrated live loads for buildings.",
-            "subsections": {
-                "1607.1": "General - Live loads per Table 1607.1",
-                "Table 1607.1": "Minimum uniformly distributed and concentrated live loads (offices 50 psf, residential 40 psf, corridors 100 psf, assembly 100 psf, storage 125-250 psf)"
-            }
-        },
-        "1609": {
-            "title": "Wind Loads",
-            "summary": "Minimum design wind loads for buildings and structures per ASCE 7.",
-            "subsections": {
-                "1609.1": "Applications - Design per ASCE 7",
-                "1609.2": "Definitions",
-                "1609.3": "Basic design wind speed - Per Figure 1609.3",
-                "1609.4": "Exposure category"
-            }
-        },
-        "1612": {
-            "title": "Flood Loads",
-            "summary": "Requirements for buildings in flood hazard areas.",
-            "subsections": {
-                "1612.1": "General - Comply with ASCE 7 and ASCE 24",
-                "1612.3": "Establishment of flood hazard areas",
-                "1612.4": "Design and construction"
-            }
-        }
-    },
-    "2021 IRC": {
-        "R101": {
-            "title": "Scope and Administration",
-            "summary": "The IRC applies to one- and two-family dwellings and townhouses not more than three stories above grade plane.",
-            "subsections": {
-                "R101.1": "Title - International Residential Code",
-                "R101.2": "Scope - Detached one- and two-family dwellings, townhouses not more than 3 stories"
-            }
-        },
-        "R301": {
-            "title": "Design Criteria",
-            "summary": "General design criteria for residential construction including wind, seismic, snow loads.",
-            "subsections": {
-                "R301.1": "Application - Buildings shall be constructed per design criteria",
-                "R301.2": "Climatic and geographic design criteria",
-                "R301.3": "Story height limitations",
-                "R301.5": "Live load requirements (40 psf habitable, 30 psf sleeping)"
-            }
-        },
-        "R302": {
-            "title": "Fire-Resistant Construction",
-            "summary": "Fire separation requirements between dwelling units, garages, and lot lines.",
-            "subsections": {
-                "R302.1": "Exterior walls - Fire-resistance ratings based on lot line distance",
-                "R302.2": "Townhouse separation - 1-hour fire-resistance-rated wall",
-                "R302.5": "Dwelling/garage separation - 1/2 inch gypsum board minimum",
-                "R302.6": "Dwelling/garage opening protection - Self-closing door"
-            }
-        },
-        "R311": {
-            "title": "Means of Egress",
-            "summary": "Exit requirements for residential buildings including doors, hallways, and stairways.",
-            "subsections": {
-                "R311.2": "Door type and size - 3 ft wide, 6 ft 8 in. high minimum",
-                "R311.3": "Floors and landings - Required at exterior doors",
-                "R311.7": "Stairways - Min 36 in. width, max 7-3/4 in. riser, min 10 in. tread"
-            }
-        },
-        "R403": {
-            "title": "Footings",
-            "summary": "Foundation footing requirements including minimum dimensions and frost depth.",
-            "subsections": {
-                "R403.1": "General - Footings shall be supported on undisturbed natural soils or engineered fill",
-                "R403.1.1": "Minimum size - 12 in. wide for 1-story, based on soil bearing capacity",
-                "R403.1.4": "Minimum depth - Below frost line per Table R301.2(1)"
-            }
-        },
-        "R502": {
-            "title": "Wood Floor Framing",
-            "summary": "Requirements for wood floor joists, beams, and girders.",
-            "subsections": {
-                "R502.1": "Identification - Lumber grade marking",
-                "R502.3": "Allowable joist spans - Per Tables R502.3.1(1) and R502.3.1(2)",
-                "R502.6": "Bearing requirements"
-            }
-        },
-        "R602": {
-            "title": "Wood Wall Framing",
-            "summary": "Requirements for wood-framed walls including stud size, spacing, and bracing.",
-            "subsections": {
-                "R602.1": "Identification and grade - Lumber standards",
-                "R602.3": "Design and construction - Studs 2x4 at 16 in. OC or 2x6 at 24 in. OC",
-                "R602.3.1": "Stud size, height, and spacing",
-                "R602.10": "Wall bracing"
-            }
-        },
-        "R802": {
-            "title": "Wood Roof Framing",
-            "summary": "Requirements for rafters, ceiling joists, and roof trusses.",
-            "subsections": {
-                "R802.1": "Identification and grade",
-                "R802.4": "Allowable rafter spans",
-                "R802.5": "Allowable ceiling joist spans",
-                "R802.10": "Roof trusses"
-            }
-        }
-    }
-}
+def load_building_code(edition: str) -> dict | None:
+    """Load building code sections from JSON file. Returns the sections dict or None."""
+    if edition in _building_code_cache:
+        return _building_code_cache[edition]
+
+    filename = BUILDING_CODE_FILES.get(edition)
+    if not filename:
+        return None
+
+    filepath = BUILDING_CODES_DIR / filename
+    if not filepath.exists():
+        return None
+
+    with open(filepath) as f:
+        data = json.load(f)
+
+    sections = data.get("sections", {})
+    _building_code_cache[edition] = sections
+    return sections
+
+
+def get_available_editions() -> list[str]:
+    """Return list of available building code editions."""
+    return list(BUILDING_CODE_FILES.keys())
 
 
 def lookup_code(code_section: str = None, keyword: str = None,
                 code_edition: str = "2021 IBC") -> str:
     """Look up a building code section or search by keyword."""
-    code_data = BUILDING_CODE_REFERENCE.get(code_edition)
+    code_data = load_building_code(code_edition)
     if not code_data:
-        available = list(BUILDING_CODE_REFERENCE.keys())
+        available = get_available_editions()
         return (f"Code edition '{code_edition}' not found. "
                 f"Available: {', '.join(available)}")
 
@@ -914,7 +966,7 @@ async def list_tools() -> list[Tool]:
         # === PERMITS ===
         Tool(
             name="search_permits",
-            description="Search building permits in Miami-Dade, SF, NYC, Chicago, or LA. Returns permit number, address, type, status, dates, and contractor info.",
+            description="Search building permits across 25+ US jurisdictions. Use list_jurisdictions to see all supported cities/counties. Returns permit number, address, type, status, dates, and contractor info. For reference-only jurisdictions (no API), returns portal URL and instructions.",
             inputSchema={
                 "type": "object",
                 "properties": {
@@ -940,7 +992,7 @@ async def list_tools() -> list[Tool]:
                     },
                     "jurisdiction": {
                         "type": "string",
-                        "description": "Jurisdiction to search (miami-dade, san-francisco, new-york, chicago, los-angeles). Default: miami-dade",
+                        "description": "Jurisdiction slug (e.g., 'miami-dade', 'orlando', 'broward', 'houston', 'seattle'). Use list_jurisdictions to see all options. Default: miami-dade",
                         "default": "miami-dade"
                     }
                 },
@@ -950,7 +1002,7 @@ async def list_tools() -> list[Tool]:
 
         Tool(
             name="get_permit_details",
-            description="Get full details of a specific building permit by permit number.",
+            description="Get full details of a specific building permit by permit number. Works with ArcGIS and Socrata jurisdictions.",
             inputSchema={
                 "type": "object",
                 "properties": {
@@ -960,7 +1012,7 @@ async def list_tools() -> list[Tool]:
                     },
                     "jurisdiction": {
                         "type": "string",
-                        "description": "Jurisdiction (miami-dade, san-francisco, new-york, chicago, los-angeles). Default: miami-dade",
+                        "description": "Jurisdiction slug. Use list_jurisdictions to see options. Default: miami-dade",
                         "default": "miami-dade"
                     }
                 },
@@ -971,7 +1023,7 @@ async def list_tools() -> list[Tool]:
         # === VIOLATIONS ===
         Tool(
             name="search_code_violations",
-            description="Search building code violations by address or area. Returns case number, violation type, status, and details.",
+            description="Search building code violations by address or area. Returns case number, violation type, status, and details. For reference-only jurisdictions, returns portal URL.",
             inputSchema={
                 "type": "object",
                 "properties": {
@@ -989,7 +1041,7 @@ async def list_tools() -> list[Tool]:
                     },
                     "jurisdiction": {
                         "type": "string",
-                        "description": "Jurisdiction (miami-dade, san-francisco, new-york, chicago). Default: miami-dade",
+                        "description": "Jurisdiction slug. Use list_jurisdictions to see options. Default: miami-dade",
                         "default": "miami-dade"
                     }
                 },
@@ -1010,7 +1062,7 @@ async def list_tools() -> list[Tool]:
                     },
                     "jurisdiction": {
                         "type": "string",
-                        "description": "Jurisdiction (miami-dade, san-francisco, new-york). Default: miami-dade",
+                        "description": "Jurisdiction slug. Use list_jurisdictions to see options. Default: miami-dade",
                         "default": "miami-dade"
                     }
                 },
@@ -1099,22 +1151,46 @@ async def list_tools() -> list[Tool]:
         # === BUILDING CODE ===
         Tool(
             name="lookup_building_code",
-            description="Reference IBC/IRC building code sections. Look up by section number or search by keyword. Covers occupancy classifications, construction types, fire safety, egress, structural loads, and more.",
+            description="Reference IBC/IRC/FBC building code sections. Look up by section number or search by keyword. Covers 4 editions: IBC 2021 (25+ sections), IRC 2021 (20+ sections), FBC 2023 with HVHZ/wind/flood amendments, and FBC Residential 2023. Covers occupancy, construction types, fire/smoke protection, egress, structural loads, FL wind/flood, and more.",
             inputSchema={
                 "type": "object",
                 "properties": {
                     "code_section": {
                         "type": "string",
-                        "description": "Code section number (e.g., '302', '903', 'R311', 'R602')"
+                        "description": "Code section number (e.g., '302', '903', 'R311', 'R602', 'FL1609', 'FL_HVHZ')"
                     },
                     "keyword": {
                         "type": "string",
-                        "description": "Keyword to search for (e.g., 'sprinkler', 'egress', 'fire', 'stairway', 'occupancy')"
+                        "description": "Keyword to search for (e.g., 'sprinkler', 'egress', 'fire', 'wind', 'hurricane', 'HVHZ', 'flood')"
                     },
                     "code_edition": {
                         "type": "string",
-                        "description": "Code edition: '2021 IBC' or '2021 IRC'. Default: 2021 IBC",
+                        "description": "Code edition: '2021 IBC', '2021 IRC', '2023 FBC', '2023 FBC Residential'. Default: 2021 IBC",
                         "default": "2021 IBC"
+                    }
+                },
+                "required": []
+            }
+        ),
+
+        # === LIST JURISDICTIONS ===
+        Tool(
+            name="list_jurisdictions",
+            description="List all supported jurisdictions. Filter by state, data type, or platform. Shows jurisdiction name, state, platform type, available data endpoints, and building code edition.",
+            inputSchema={
+                "type": "object",
+                "properties": {
+                    "state": {
+                        "type": "string",
+                        "description": "Filter by state abbreviation (e.g., 'FL', 'CA', 'TX', 'NY')"
+                    },
+                    "data_type": {
+                        "type": "string",
+                        "description": "Filter by data type: 'building_permits', 'building_violations', 'zoning', 'parcels', 'wetlands', etc."
+                    },
+                    "platform": {
+                        "type": "string",
+                        "description": "Filter by platform: 'arcgis', 'socrata', 'reference'"
                     }
                 },
                 "required": []
@@ -1147,6 +1223,10 @@ async def call_tool(name: str, arguments: dict[str, Any]) -> list[TextContent]:
                 date_from=date_from,
                 date_to=date_to,
             )
+
+            # Check for reference-type response
+            if permits and isinstance(permits[0], dict) and permits[0].get("type") == "reference":
+                return [TextContent(type="text", text=format_reference_text(permits[0]))]
 
             if not permits:
                 filters = []
@@ -1196,12 +1276,20 @@ async def call_tool(name: str, arguments: dict[str, Any]) -> list[TextContent]:
             jurisdictions = load_jurisdictions()
             platform = jurisdictions[jurisdiction].get("data_platform", "socrata")
 
-            if platform == "arcgis":
-                where = (
-                    f"PERMIT_NUM = '{permit_number}' OR "
-                    f"PERMITNUMBER = '{permit_number}' OR "
-                    f"APPLICATION_NUMBER = '{permit_number}'"
-                )
+            if platform == "reference":
+                ref = format_reference_response(jurisdiction, endpoint, permit_number)
+                return [TextContent(type="text", text=format_reference_text(ref[0]))]
+            elif platform == "arcgis":
+                # Build WHERE clause using endpoint metadata for permit number field
+                pn_field = endpoint.get("permit_number_field", "")
+                where_parts = []
+                if pn_field:
+                    where_parts.append(f"{pn_field} = '{permit_number}'")
+                # Also try common field names as fallback
+                for field in ["PERMIT_NUM", "PERMITNUMBER", "APPLICATION_NUMBER", "PROCNUM"]:
+                    if field != pn_field:
+                        where_parts.append(f"{field} = '{permit_number}'")
+                where = " OR ".join(where_parts)
                 results = query_arcgis(endpoint["url"], where_clause=where,
                                        max_records=1)
             elif platform == "socrata":
@@ -1252,6 +1340,10 @@ async def call_tool(name: str, arguments: dict[str, Any]) -> list[TextContent]:
                 status=status,
             )
 
+            # Check for reference-type response
+            if violations and isinstance(violations[0], dict) and violations[0].get("type") == "reference":
+                return [TextContent(type="text", text=format_reference_text(violations[0]))]
+
             if not violations:
                 return [TextContent(
                     type="text",
@@ -1276,6 +1368,10 @@ async def call_tool(name: str, arguments: dict[str, Any]) -> list[TextContent]:
             jurisdiction = arguments.get("jurisdiction", "miami-dade")
 
             results = fetch_zoning(jurisdiction, address)
+
+            # Check for reference-type response
+            if results and isinstance(results[0], dict) and results[0].get("type") == "reference":
+                return [TextContent(type="text", text=format_reference_text(results[0]))]
 
             if not results:
                 return [TextContent(
@@ -1424,6 +1520,62 @@ async def call_tool(name: str, arguments: dict[str, Any]) -> list[TextContent]:
                 code_edition=code_edition,
             )
             return [TextContent(type="text", text=result)]
+
+        # === LIST JURISDICTIONS ===
+        elif name == "list_jurisdictions":
+            state_filter = arguments.get("state", "").upper()
+            data_type_filter = arguments.get("data_type", "")
+            platform_filter = arguments.get("platform", "")
+
+            jurisdictions = load_jurisdictions()
+            lines = ["=== Supported Jurisdictions ===\n"]
+            filters_desc = []
+            if state_filter:
+                filters_desc.append(f"state={state_filter}")
+            if data_type_filter:
+                filters_desc.append(f"data_type={data_type_filter}")
+            if platform_filter:
+                filters_desc.append(f"platform={platform_filter}")
+            if filters_desc:
+                lines.append(f"Filters: {', '.join(filters_desc)}\n")
+
+            count = 0
+            for key, value in sorted(jurisdictions.items()):
+                if key.startswith("_"):
+                    continue
+                if not isinstance(value, dict) or "name" not in value:
+                    continue
+
+                # Apply filters
+                if state_filter and value.get("state", "").upper() != state_filter:
+                    continue
+                if platform_filter and value.get("data_platform", "") != platform_filter:
+                    continue
+                if data_type_filter:
+                    if data_type_filter not in value.get("endpoints", {}):
+                        continue
+
+                count += 1
+                platform = value.get("data_platform", "unknown")
+                state = value.get("state", "")
+                name = value.get("name", key)
+                endpoints = list(value.get("endpoints", {}).keys())
+                code = value.get("building_code", "")
+                hvhz = " [HVHZ]" if value.get("hvhz") else ""
+
+                lines.append(f"  {key}")
+                lines.append(f"    Name: {name}")
+                lines.append(f"    State: {state} | Platform: {platform}{hvhz}")
+                if code:
+                    lines.append(f"    Building Code: {code}")
+                lines.append(f"    Data: {', '.join(endpoints)}")
+                lines.append("")
+
+            lines.insert(1, f"Total: {count} jurisdiction(s)\n")
+            lines.append(
+                f"Building code editions available: {', '.join(get_available_editions())}"
+            )
+            return [TextContent(type="text", text="\n".join(lines))]
 
         else:
             return [TextContent(

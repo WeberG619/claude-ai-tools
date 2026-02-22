@@ -1,0 +1,5 @@
+2026/02/15-10:16:32.228 8188 Creating DB D:\_CLAUDE-TOOLS\edge-automation\Default\Local Storage\leveldb since it was missing.
+2026/02/15-10:16:33.264 8188 Reusing MANIFEST D:\_CLAUDE-TOOLS\edge-automation\Default\Local Storage\leveldb/MANIFEST-000001
+2026/02/15-10:17:15.696 84d8 Level-0 table #5: started
+2026/02/15-10:17:16.168 84d8 Level-0 table #5: 30086 bytes OK
+2026/02/15-10:17:16.514 84d8 Delete type=0 #3

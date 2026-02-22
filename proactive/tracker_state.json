@@ -17,11 +17,11 @@
   },
   "cooldowns": {
     "test": "2026-02-12T13:17:42.830317",
-    "smart_revit_opened": "2026-02-13T08:48:47.527556",
+    "smart_revit_opened": "2026-02-15T14:30:34.108871",
     "health_alert_email-watcher": "2026-02-12T13:46:41.629304"
   },
-  "last_briefing_date": "2026-02-13",
-  "last_evening_date": "2026-02-12",
+  "last_briefing_date": "2026-02-15",
+  "last_evening_date": "2026-02-15",
   "last_weekly_overview_date": null,
   "last_weekly_recap_date": null
 }

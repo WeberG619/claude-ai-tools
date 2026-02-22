@@ -1,25 +1,17 @@
 Hi,
 
-I build AI-powered automation systems professionally - from custom Claude/LLM agents to full workflow automation pipelines. Your project aligns well with what I do daily.
+{{description}}
 
-**Relevant expertise:**
-- Built production autonomous agents with Claude API, MCP servers, and tool-use patterns
-- Experience with {{skills}}
-- Deep understanding of prompt engineering, agent architectures, and reliable AI integration
-- Background in both software engineering and domain-specific automation
+I build production AI systems — not demos. I've architected autonomous agent pipelines that run 24/7 with Claude API, custom MCP servers, multi-agent orchestration, and tool-use patterns.
+
+**Concrete examples:**
+- Built a multi-agent system with 66 MCP tools that handles market analysis, opportunity scanning, and automated decision-making
+- Production Claude API integrations with structured outputs, retry logic, cost optimization, and monitoring
+- Built desktop automation that orchestrates Revit, Excel, browsers, and AI models together — real workflow automation, not chatbot wrappers
 
 **For {{title}}:**
-I can architect and build an AI solution that's practical and reliable - not a demo, but something that handles edge cases and works in production. I focus on:
-- Clear agent design with appropriate guardrails
-- Structured outputs and error handling
-- Cost-efficient API usage
-- Monitoring and observability
+The key to reliable AI automation is knowing where to use AI and where to use deterministic code. I'd design an architecture that's robust, cost-efficient, and handles edge cases — then iterate quickly with you on the output quality.
 
-I've built systems that run 24/7 autonomously, so I understand the reliability requirements.
+Available to start immediately. What's the most important capability you need working first?
 
-**I can start immediately** and typically have a working prototype within days.
-
-Let's discuss the specifics.
-
-Best,
 Weber Gouin

@@ -1,0 +1,101 @@
+{
+   "author": "eyeo GmbH",
+   "background": {
+      "persistent": true,
+      "scripts": [ "polyfill.js", "background.js" ]
+   },
+   "browser_action": {
+      "default_icon": {
+         "16": "icons/abp-16.png",
+         "20": "icons/abp-20.png",
+         "32": "icons/abp-32.png",
+         "40": "icons/abp-40.png"
+      },
+      "default_popup": "popup.html",
+      "default_title": "__MSG_name__"
+   },
+   "content_scripts": [ {
+      "all_frames": true,
+      "js": [ "vendor/@eyeo/webext-ad-filtering-solution/content.js", "polyfill.js", "composer.preload.js", "bypass.preload.js" ],
+      "match_about_blank": true,
+      "matches": [ "http://*/*", "https://*/*" ],
+      "run_at": "document_start"
+   }, {
+      "all_frames": true,
+      "js": [ "vendor/@eyeo/webext-ad-filtering-solution/content-main.js" ],
+      "match_about_blank": true,
+      "matches": [ "http://*/*", "https://*/*" ],
+      "run_at": "document_start",
+      "world": "MAIN"
+   }, {
+      "js": [ "polyfill.js", "onpage-dialog.preload.js" ],
+      "matches": [ "http://*/*", "https://*/*" ],
+      "run_at": "document_start"
+   }, {
+      "all_frames": true,
+      "js": [ "polyfill.js", "onpage-dialog-ui.preload.js" ],
+      "match_about_blank": true,
+      "matches": [ "http://*/*", "https://*/*" ],
+      "run_at": "document_start"
+   }, {
+      "js": [ "polyfill.js", "yt-auto-allowlist.preload.js" ],
+      "matches": [ "*://*.youtube.com/*" ],
+      "run_at": "document_start"
+   }, {
+      "js": [ "polyfill.js", "premium.preload.js", "premium-onboarding.preload.js" ],
+      "matches": [ "https://accounts.adblockplus.org/*", "https://*.myaccount.adblockplus.org/*" ],
+      "run_at": "document_start"
+   }, {
+      "js": [ "polyfill.js", "info-injector.preload.js" ],
+      "matches": [ "https://adblockplus.org/*", "https://new.adblockplus.org/*", "https://welcome.adblockplus.org/*", "https://accounts.adblockplus.org/*", "https://*.myaccount.adblockplus.org/*", "https://getadblock.com/*", "https://vpn.getadblock.com/*", "https://*.myaccount.getadblock.com/*" ],
+      "run_at": "document_start"
+   }, {
+      "js": [ "polyfill.js", "options.preload.js" ],
+      "matches": [ "https://adblockplus.org/*", "https://welcome.adblockplus.org/*", "https://*.myaccount.adblockplus.org/*" ],
+      "run_at": "document_idle"
+   }, {
+      "all_frames": true,
+      "js": [ "polyfill.js", "public-api.preload.js" ],
+      "matches": [ "https://btloader.com/trustedIframe.html?o=*" ],
+      "run_at": "document_start"
+   }, {
+      "js": [ "polyfill.js", "conflict-detection.preload.js" ],
+      "matches": [ "*://*.youtube.com/*", "*://*.facebook.com/*" ],
+      "run_at": "document_start"
+   }, {
+      "all_frames": true,
+      "js": [ "polyfill.js", "cookie-banner-detection.preload.js" ],
+      "matches": [ "http://*/*", "https://*/*" ],
+      "run_at": "document_start"
+   } ],
+   "default_locale": "en_US",
+   "description": "__MSG_description__",
+   "devtools_page": "devtools.html",
+   "externally_connectable": {
+      "ids": [ "cfhdojbkjhnklbpkdaibdccddilifddb", "gighmmpiobklfepjocnamgkkbiglidom", "gmgoamodcdcjnbaobigkjelfplakmdhh", "ndcileolkflehcjpmjnfbnaibdcgglog", "oidhhegpmlfpoeialbgcdocjalghfpkp" ]
+   },
+   "icons": {
+      "128": "icons/logo/abp-128.png",
+      "16": "icons/abp-16.png",
+      "32": "icons/abp-32.png",
+      "48": "icons/logo/abp-48.png",
+      "64": "icons/logo/abp-64.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA1CqU705GSyMkB/bUyOjKT7Oq6X1PmhbINoLLjrivGc44mADdk7Ug9BZ+kBErSfKE8clLh0JjZWtKwxppzR8ASyWtUcDmKwV8PupYP1i1uYdXJAcd+aLYPw21kzXdvEbKBDL3fZO1ARCN2Hp38qEfcmmChTgy57pxdZwlyAyognoIqMps6vWaOQY/3MccQEG7iV+UWEclY/yISg+e1EfMQxVUEKGGN6oopjA0+CMarNnaN+4bWAnUd9s4nJjinMF8Kh3z7Tewl77Qd262iceMZWbjJ3eYg+K3qnmw4vus6/6A1ZaavXyOFB0NFC01Vt6ie9k9kJAutubBW623N2Kv7wIDAQAB",
+   "manifest_version": 2,
+   "minimum_chrome_version": "79.0",
+   "minimum_opera_version": "66.0",
+   "name": "__MSG_name_releasebuild__",
+   "optional_permissions": [ "contentSettings", "management" ],
+   "options_ui": {
+      "open_in_tab": true,
+      "page": "options.html"
+   },
+   "permissions": [ "\u003Call_urls>", "alarms", "contextMenus", "notifications", "storage", "tabs", "unlimitedStorage", "webNavigation", "webRequest", "webRequestBlocking" ],
+   "short_name": "__MSG_name__",
+   "storage": {
+      "managed_schema": "managed-storage-schema.json"
+   },
+   "update_url": "https://edge.microsoft.com/extensionwebstorebase/v1/crx",
+   "version": "4.34.0"
+}

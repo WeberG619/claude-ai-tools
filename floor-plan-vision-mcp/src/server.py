@@ -23,7 +23,7 @@ from pathlib import Path
 from typing import List, Optional, Dict, Any
 import logging
 
-# Add FloorPlanTracer to path
+# Add FloorPlanTracer to path (fallback if not pip-installed)
 FLOORPLAN_TRACER_PATH = Path("/mnt/d/FloorPlanTracer")
 sys.path.insert(0, str(FLOORPLAN_TRACER_PATH))
 
@@ -79,15 +79,25 @@ def get_tracer():
     global _tracer
     if _tracer is None:
         try:
-            from src.pipeline import FloorPlanTracer
-            from src.models.data_types import ProcessingConfig
+            from floorplantracer.engine import FloorPlanEngine
+            from floorplantracer.models.data_types import ProcessingConfig
             _tracer = {
-                'FloorPlanTracer': FloorPlanTracer,
+                'FloorPlanEngine': FloorPlanEngine,
                 'ProcessingConfig': ProcessingConfig
             }
-        except ImportError as e:
-            logger.error(f"Failed to import FloorPlanTracer: {e}")
-            return None
+        except ImportError:
+            try:
+                # Fallback to old import path
+                from src.pipeline import FloorPlanTracer
+                from src.models.data_types import ProcessingConfig
+                _tracer = {
+                    'FloorPlanEngine': None,
+                    'FloorPlanTracer': FloorPlanTracer,
+                    'ProcessingConfig': ProcessingConfig
+                }
+            except ImportError as e:
+                logger.error(f"Failed to import FloorPlanTracer: {e}")
+                return None
     return _tracer
 
 

@@ -1,0 +1,35 @@
+{
+   "background": {
+      "scripts": [ "socket-io-min.js", "almond-min.js", "jquery-min.js", "underscore-min.js", "api-background.js", "cognito-min.js", "common.js", "background.js" ]
+   },
+   "browser_action": {
+      "default_icon": "images/icons/b-icon-40.png",
+      "default_title": "IronVest v9.9.12"
+   },
+   "content_scripts": [ {
+      "all_frames": false,
+      "js": [ "almond-min.js", "jquery-min.js", "underscore-min.js", "backbone-min.js", "common.js", "common-content.js", "content.js" ],
+      "matches": [ "http://*/*", "https://*/*" ],
+      "run_at": "document_start"
+   }, {
+      "all_frames": true,
+      "js": [ "iframe_content.js" ],
+      "matches": [ "http://*/*", "https://*/*" ],
+      "run_at": "document_idle"
+   } ],
+   "content_security_policy": "script-src 'self' 'wasm-eval'; object-src 'self'",
+   "description": "Protect your Passwords, Payments, and Privacy.",
+   "icons": {
+      "128": "images/icons/b-icon-128.png",
+      "16": "images/icons/b-icon-16.png",
+      "48": "images/icons/b-icon-48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA6REc31lyDmdBkYcs3Mc5iCRiVMldlY1lDsTAVr/VTQjnvCfpOJ71syDFbde8mAIYLoJzZx36CR5wKDAQpiwajOIf/JdLp8tFtF2sP4vrf+G4eBk9kFLdGImtHhTS7lQpwxC4NZHlRnavpx5BWtRf/WmSbK3cVAYNRkabnBTnCMfm3Fu47XM0+Z5y8Kshtv6jxaNZM5mheSk28NvFntXh7GQtfwiBAs7pjLsIJk5EODTcnTx7KrVmOAARlrQLyd7OpEnFFT+i/x3qZRg8iNQwUodhcAEWydSvMIDxpWOnqy/64qz3fY5/0GsDL13mv/AkA5tBp+ZUdQdan4AcsRiDNQIDAQAB",
+   "manifest_version": 2,
+   "name": "IronVest",
+   "optional_permissions": [ "privacy" ],
+   "permissions": [ "webRequest", "webRequestBlocking", "tabs", "\u003Call_urls>", "contextMenus", "clipboardWrite", "storage" ],
+   "update_url": "https://edge.microsoft.com/extensionwebstorebase/v1/crx",
+   "version": "9.9.12",
+   "web_accessible_resources": [ "biometrics.html", "panel.html", "pages/images/dnt-field-icon.png" ]
+}

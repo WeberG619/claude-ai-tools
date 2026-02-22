@@ -32,11 +32,16 @@ def _pid_alive(pid: int) -> bool:
         return psutil.pid_exists(pid)
     except ImportError:
         pass
-    # Fallback: Windows tasklist
+    # Fallback: Windows tasklist (hidden to prevent console flash)
     try:
+        startupinfo = subprocess.STARTUPINFO()
+        startupinfo.dwFlags |= subprocess.STARTF_USESHOWWINDOW
+        startupinfo.wShowWindow = 0  # SW_HIDE
         result = subprocess.run(
             ["tasklist", "/FI", f"PID eq {pid}", "/NH"],
-            capture_output=True, text=True, timeout=5
+            capture_output=True, text=True, timeout=5,
+            creationflags=0x08000000,  # CREATE_NO_WINDOW
+            startupinfo=startupinfo
         )
         return str(pid) in result.stdout
     except Exception:
@@ -71,9 +76,14 @@ def kill_stale_watcher():
         try:
             pid = int(PID_FILE.read_text().strip())
             if _pid_alive(pid):
+                startupinfo = subprocess.STARTUPINFO()
+                startupinfo.dwFlags |= subprocess.STARTF_USESHOWWINDOW
+                startupinfo.wShowWindow = 0  # SW_HIDE
                 subprocess.run(
                     ["taskkill", "/PID", str(pid), "/F"],
-                    capture_output=True, timeout=5
+                    capture_output=True, timeout=5,
+                    creationflags=0x08000000,  # CREATE_NO_WINDOW
+                    startupinfo=startupinfo
                 )
                 log(f"Killed stale watcher (PID {pid})")
         except Exception as e:

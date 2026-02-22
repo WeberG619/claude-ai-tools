@@ -221,17 +221,29 @@ class ProactiveScheduler:
                 pass
 
     def _email_loop(self):
-        """Email monitor loop (60s interval)."""
+        """Email monitor loop (60s interval). Also triggers auto-drafting."""
         logger.info("Email monitor thread started")
         while self.running:
             try:
                 self.email_monitor.check()
+                # Auto-draft responses for known-contact emails
+                self._run_auto_drafter()
             except Exception as e:
                 logger.error(f"Email monitor error: {e}")
             try:
                 time.sleep(EMAIL_INTERVAL)
             except InterruptedError:
                 pass
+
+    def _run_auto_drafter(self):
+        """Run the email auto-drafter to generate draft responses."""
+        try:
+            import sys as _sys
+            _sys.path.insert(0, "/mnt/d/_CLAUDE-TOOLS/email-watcher")
+            from auto_drafter import run_drafts
+            run_drafts()
+        except Exception as e:
+            logger.error(f"Auto-drafter error: {e}")
 
     def _health_loop(self):
         """Health check loop (5 min interval)."""

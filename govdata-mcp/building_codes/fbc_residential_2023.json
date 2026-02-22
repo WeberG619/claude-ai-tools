@@ -1,0 +1,110 @@
+{
+  "edition": "2023 FBC Residential",
+  "full_name": "Florida Building Code, Residential 2023 (8th Edition)",
+  "publisher": "Florida Building Commission",
+  "base_code": "2021 IRC with Florida-specific amendments",
+  "effective_date": "2024-01-01",
+  "note": "Simplified reference summaries. The FBC Residential incorporates the IRC with Florida-specific amendments. Non-amended sections follow IRC 2021. For full code text, consult https://floridabuilding.org/",
+  "sections": {
+    "FL_R301.2": {
+      "title": "Florida Climatic and Geographic Design Criteria",
+      "summary": "Florida-specific design criteria table. All of Florida is in seismic design category A or B. Wind speeds range from 115-195 mph ultimate. No frost depth or snow load. Extremely heavy termite hazard statewide.",
+      "subsections": {
+        "FL_R301.2.1": "Wind design criteria - Ultimate design wind speed per ASCE 7 Figure 1609.3. Risk Category II ranges from 115 mph (panhandle) to 195 mph (HVHZ Keys). Exposure C typical for coastal, D for Keys and barrier islands",
+        "FL_R301.2.2": "Seismic design - SDC A or B for all Florida locations. No special seismic detailing required",
+        "FL_R301.2.3": "Frost depth - 0 inches for all Florida locations (no frost line requirement)",
+        "FL_R301.2.4": "Termite - Very heavy hazard for entire state. Subterranean and drywood termite protection required",
+        "FL_R301.2.5": "Weathering - Negligible to moderate concrete weathering",
+        "FL_R301.2.6": "Flood - FEMA flood maps and coastal construction control lines govern",
+        "FL_R301.2.7": "Design wind speed examples - Orlando: 130 mph, Jacksonville: 130 mph, Tampa: 140 mph, Fort Lauderdale: 175 mph (HVHZ), Miami: 180 mph (HVHZ), Key West: 195 mph"
+      }
+    },
+    "FL_R322": {
+      "title": "Flood-Resistant Construction (Florida Amendments)",
+      "summary": "Enhanced flood-resistant construction requirements for Florida's extensive coastal areas and flood zones.",
+      "subsections": {
+        "FL_R322.1": "General - Buildings in flood hazard areas shall be designed per ASCE 24 and local floodplain ordinance",
+        "FL_R322.2": "Flood hazard areas (A Zones) - Lowest floor elevated to BFE +1 ft minimum (freeboard). Enclosures below BFE limited to parking, access, storage",
+        "FL_R322.3": "Coastal high-hazard areas (V Zones) - Pile/column foundations, open foundation below BFE, bottom of lowest structural member at or above BFE",
+        "FL_R322.3.2": "Coastal A zones - Treated as V zones when wave heights may exceed 1.5 ft. CCCL determines coastal construction standards",
+        "FL_R322.4": "Manufactured homes - HUD standards plus local floodplain management",
+        "FL_R322.5": "Breakaway walls - Below BFE in V zones, walls must be designed to break away under flood loads (max 20 psf)"
+      }
+    },
+    "FL_R609": {
+      "title": "Wall Bracing for Hurricane Regions",
+      "summary": "Florida amendments to wall bracing requirements for high-wind regions.",
+      "subsections": {
+        "FL_R609.1": "General - Wall bracing per IRC Section R602.10 with Florida amendments for wind speeds exceeding 130 mph",
+        "FL_R609.2": "Braced wall panels - Continuous structural panel sheathing (wood structural panels) required for wind speeds >130 mph",
+        "FL_R609.3": "Connections - Hold-down anchors at braced wall panel ends for uplift resistance",
+        "FL_R609.4": "HVHZ requirements - Engineered wall bracing required in Miami-Dade and Broward counties"
+      }
+    },
+    "FL_R610": {
+      "title": "Wall Anchorage for High Wind",
+      "summary": "Florida-specific wall anchorage requirements for hurricane-prone regions.",
+      "subsections": {
+        "FL_R610.1": "General - Continuous load path from roof to foundation required",
+        "FL_R610.2": "Anchor bolts - 1/2 in. anchor bolts at 4 ft OC max (more stringent than IRC 6 ft OC)",
+        "FL_R610.3": "Strap connections - Approved metal connectors (hurricane straps/clips) at all roof-to-wall, wall-to-floor, and floor-to-foundation connections",
+        "FL_R610.4": "HVHZ - All connections engineered and product-approved for HVHZ design wind speed"
+      }
+    },
+    "FL_R802": {
+      "title": "Enhanced Roof Framing for High Wind",
+      "summary": "Florida amendments to roof framing for hurricane resistance.",
+      "subsections": {
+        "FL_R802.1": "Roof-to-wall connections - Hurricane clips/straps required at every rafter/truss-to-wall connection. Toe-nailing alone not permitted in HVHZ",
+        "FL_R802.2": "Roof sheathing attachment - 8d ring-shank nails at 6 in. OC edges and 6 in. OC field for wind speeds ≥130 mph. Enhanced schedules for higher wind speeds",
+        "FL_R802.3": "Secondary water barrier - Required in HVHZ. Self-adhering polymer-modified bitumen or approved equivalent over entire roof deck",
+        "FL_R802.4": "Roof covering attachment - Enhanced fastening per manufacturer and TAS 101/102/107 in HVHZ",
+        "FL_R802.5": "Gable end bracing - Required for all gable roofs in wind speeds ≥130 mph. Retrofit bracing required per FL Statute 553.844"
+      }
+    },
+    "FL_R803": {
+      "title": "Roof Sheathing for High Wind",
+      "summary": "Florida-specific roof sheathing requirements for wind resistance.",
+      "subsections": {
+        "FL_R803.1": "Minimum sheathing thickness - 15/32 in. (or 7/16 in. OSB) min for wind speeds ≥130 mph",
+        "FL_R803.2": "Sheathing attachment - Per Table R803.1 based on design wind speed. Ring-shank or deformed-shank nails required for ≥130 mph",
+        "FL_R803.3": "Edge support - Panel edges shall be supported by blocking, H-clips, or tongue-and-groove edges"
+      }
+    },
+    "FL_POOL": {
+      "title": "Florida Swimming Pool Safety",
+      "summary": "Florida-specific pool barrier and safety requirements per Florida Statute 515.",
+      "subsections": {
+        "FL_pool_1": "Pool barriers - Residential pools must have at least one approved barrier (screen enclosure counts in FL)",
+        "FL_pool_2": "Screen enclosures - May serve as pool barrier if self-closing, self-latching, minimum 48 in. high",
+        "FL_pool_3": "Door alarms - Required on doors providing direct access from dwelling to pool area if no screen enclosure",
+        "FL_pool_4": "Suction entrapment prevention - Compliant drain covers per Virginia Graeme Baker Act"
+      }
+    },
+    "FL_ROOFING": {
+      "title": "Florida Roofing Requirements",
+      "summary": "Florida-specific roofing material and installation requirements for high-wind regions.",
+      "subsections": {
+        "FL_roof_1": "Product approval - All roofing products must have Florida Product Approval or Miami-Dade NOA (in HVHZ)",
+        "FL_roof_2": "Asphalt shingles - ASTM D3462, wind resistance per ASTM D7158 Class H (150 mph) for most FL locations. TAS 107 for HVHZ",
+        "FL_roof_3": "Metal roofing - Must be tested per TAS 125/UL 580. Exposed fastener panels limited in HVHZ",
+        "FL_roof_4": "Tile roofing - Mechanically attached per high-wind requirements. Mortar-set limited based on wind speed",
+        "FL_roof_5": "Underlayment - Self-adhering modified bitumen or 2 layers of ASTM D226 Type II. Enhanced underlayment in HVHZ",
+        "FL_roof_6": "Existing roofs - FL limits re-cover to 1 additional layer. Complete tear-off required when existing materials are wet, deteriorated, or 2 layers exist"
+      }
+    },
+    "_cross_reference": {
+      "title": "IRC 2021 Cross-Reference",
+      "summary": "For sections not specifically amended by Florida, refer to the IRC 2021 edition.",
+      "subsections": {
+        "note_1": "R302 (Fire-Resistant Construction) - Follows IRC 2021",
+        "note_2": "R303-R305 (Light, Ventilation, Room Areas, Ceiling Heights) - Follows IRC 2021",
+        "note_3": "R311 (Means of Egress) - Follows IRC 2021",
+        "note_4": "R313 (Fire Sprinklers) - Florida allows local jurisdiction to decide enforcement",
+        "note_5": "R401-R404 (Foundations) - Follows IRC 2021 (no frost depth requirement in FL)",
+        "note_6": "R502-R602 (Floor/Wall Framing) - Follows IRC 2021 with enhanced connection requirements",
+        "note_7": "R703 (Exterior Covering) - Follows IRC 2021 with FL moisture/wind amendments"
+      }
+    }
+  }
+}

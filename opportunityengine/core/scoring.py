@@ -55,10 +55,69 @@ def score_opportunity(opp: Opportunity) -> tuple[int, dict]:
         + strat_score * SCORING_WEIGHTS["strategic_fit"]
     )
 
+    # Apply job type modifier — penalize manual drafting, boost development/automation
+    type_mod, type_detail = _job_type_modifier(opp)
+    total += type_mod
+    if type_mod != 0:
+        breakdown["job_type"] = {"score": type_mod, "detail": type_detail}
+
     total_score = min(100, max(0, round(total)))
     breakdown["total"] = total_score
 
     return total_score, breakdown
+
+
+# ── Drafting vs Development filter ──────────────────────────────────
+
+# Keywords that signal manual drafting/design work (low value, not our niche)
+_DRAFTING_SIGNALS = [
+    "draw ", "drawing ", "draft ", "drafting", "draftsman", "draftsperson",
+    "floor plan design", "house plan", "residential design", "home design",
+    "architectural design needed", "create plans", "design a house",
+    "design a building", "architectural drawing", "permit drawing",
+    "need architect", "licensed architect", "architectural plans",
+    "building design", "create architectural", "2d drawing",
+    "cad drawing", "need plans", "design for permit",
+    "stamped", "stamp", "architect of record",
+]
+
+# Keywords that signal development/automation work (high value, our niche)
+_DEV_SIGNALS = [
+    "plugin", "add-in", "addin", "script", "automate", "automation",
+    "api", "integrate", "integration", "develop", "build a tool",
+    "custom tool", "workflow", "pipeline", "bot", "agent",
+    "mcp", "claude", "llm", "ai system", "machine learning",
+    "data extract", "scraping", "web app", "dashboard",
+    "python script", "c# develop", "software", "program",
+]
+
+
+def _job_type_modifier(opp: Opportunity) -> tuple[int, str]:
+    """Penalize manual drafting jobs, boost development/automation jobs."""
+    text = f"{opp.title} {opp.description}".lower()
+
+    drafting_hits = sum(1 for kw in _DRAFTING_SIGNALS if kw in text)
+    dev_hits = sum(1 for kw in _DEV_SIGNALS if kw in text)
+
+    # If it's clearly a drafting job with no dev component
+    if drafting_hits >= 2 and dev_hits == 0:
+        return -30, f"Manual drafting/design job ({drafting_hits} signals) — not our niche"
+
+    if drafting_hits >= 1 and dev_hits == 0:
+        return -15, f"Likely manual drafting ({drafting_hits} signals)"
+
+    # If it's clearly a development/automation job
+    if dev_hits >= 3:
+        return 15, f"Development/automation job ({dev_hits} signals) — our sweet spot"
+
+    if dev_hits >= 1 and drafting_hits == 0:
+        return 8, f"Development work ({dev_hits} signals)"
+
+    # Mixed signals — could be either
+    if dev_hits >= 1 and drafting_hits >= 1:
+        return 0, f"Mixed signals (dev={dev_hits}, drafting={drafting_hits})"
+
+    return 0, "Neutral"
 
 
 def _score_skill_match(opp: Opportunity) -> tuple[int, str]:

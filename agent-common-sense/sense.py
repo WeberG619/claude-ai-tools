@@ -607,6 +607,21 @@ class CommonSense:
         except ImportError:
             return ""
 
+    # ─── GOAL-AWARE CONTEXT ───────────────────────────────────
+
+    def get_active_goal_context(self) -> str:
+        """Get context about active goals for goal-aware correction matching.
+
+        Returns a summary of active goals that can be used to improve
+        correction relevance by knowing what the user is working toward.
+        """
+        try:
+            from goals import GoalEngine
+            ge = GoalEngine(db_path=self.db_path)
+            return ge.to_memory_summary()
+        except (ImportError, Exception):
+            return ""
+
     # ─── WORKFLOW RECORDING ────────────────────────────────────
 
     def start_workflow(self, name: str, description: str = "",

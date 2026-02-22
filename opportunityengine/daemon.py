@@ -27,28 +27,30 @@ from core.config import (
 )
 from core.decision_rules import decide, Action, Decision
 from core.models import Opportunity, OpportunityStatus, ProposalStatus
+import threading
 from scouts.github_scout import GitHubScout
 from scouts.freelancer_scout import FreelancerScout
 from scouts.reddit_scout import RedditScout
 from scouts.hn_scout import HNScout
 from scouts.remoteok_scout import RemoteOKScout
+from scouts.upwork_scout import UpworkScout
 from agents.qualifier import Qualifier
 from agents.proposal_agent import ProposalAgent
 from agents.tracker import Tracker
 from agents.submitter import submit_proposal, get_submitter
 from agents.response_monitor import ResponseMonitor
 
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s [%(name)s] %(levelname)s: %(message)s",
-    handlers=[
-        logging.StreamHandler(),
-        logging.FileHandler(
-            os.path.join(os.path.dirname(os.path.abspath(__file__)), "daemon.log")
-        ),
-    ],
-)
+_log_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "daemon.log")
 logger = logging.getLogger("opportunityengine.daemon")
+if not logger.handlers:
+    logger.setLevel(logging.INFO)
+    fmt = logging.Formatter("%(asctime)s [%(name)s] %(levelname)s: %(message)s")
+    sh = logging.StreamHandler()
+    sh.setFormatter(fmt)
+    fh = logging.FileHandler(_log_file)
+    fh.setFormatter(fmt)
+    logger.addHandler(sh)
+    logger.addHandler(fh)
 
 RUNNING = True
 
@@ -71,14 +73,16 @@ class OpportunityDaemon:
 
     def __init__(self):
         self.db = Database(DB_PATH)
-        # API-based scouts run in daemon; CDP-based scouts (freelancer) skipped
-        # to avoid hanging on browser automation timeouts
+        # All scouts — CDP-based ones (upwork) run with timeout protection
         self.scouts = {
             "github": GitHubScout(self.db),
             "reddit": RedditScout(self.db),
             "hackernews": HNScout(self.db),
             "remoteok": RemoteOKScout(self.db),
+            "upwork": UpworkScout(self.db),
         }
+        # CDP-based scouts need timeout wrapping to prevent daemon hangs
+        self._cdp_scouts = {"upwork"}
         self.qualifier = Qualifier(self.db)
         self.proposal_agent = ProposalAgent(self.db)
         self.tracker = Tracker(self.db)
@@ -173,7 +177,17 @@ class OpportunityDaemon:
             if last is None or (now - last).total_seconds() >= interval * 60:
                 logger.info(f"Scanning {source}...")
                 try:
-                    log = scout.scan()
+                    # CDP-based scouts get a hard timeout to prevent daemon hangs
+                    if source in self._cdp_scouts:
+                        log = self._run_scout_with_timeout(scout, timeout=180)
+                    else:
+                        log = scout.scan()
+
+                    if log is None:
+                        logger.warning(f"  {source}: scan timed out")
+                        self.last_scan[source] = now
+                        continue
+
                     self.last_scan[source] = now
                     self.session_stats["scans"] += 1
                     self.session_stats["opportunities_found"] += log.new_opportunities
@@ -334,6 +348,21 @@ class OpportunityDaemon:
         for proposal in approved:
             if not RUNNING:
                 break
+
+            # Track retry attempts — stop after 3 failures
+            retry_key = f"submit_retries_{proposal.id}"
+            retries = getattr(self, retry_key, 0)
+            if retries >= 3:
+                logger.warning(
+                    f"  Giving up on proposal [{proposal.id}] for opp [{proposal.opportunity_id}] "
+                    f"after {retries} failed attempts — marking as submitted (manual needed)"
+                )
+                self.db.update_proposal(proposal.id, status="submitted",
+                                        lessons_learned="Auto-submission failed after 3 retries. Manual submission needed.")
+                self.db.update_opportunity(proposal.opportunity_id, status="submitted",
+                                           notes="Proposal needs manual submission")
+                continue
+
             try:
                 result = submit_proposal(self.db, proposal.opportunity_id)
                 if result["success"]:
@@ -344,11 +373,14 @@ class OpportunityDaemon:
                         f"{result['message']}"
                     )
                 else:
+                    setattr(self, retry_key, retries + 1)
                     logger.warning(
-                        f"  Submit failed for opp [{proposal.opportunity_id}]: {result['message']}"
+                        f"  Submit failed for opp [{proposal.opportunity_id}] "
+                        f"(attempt {retries + 1}/3): {result['message']}"
                     )
             except Exception as e:
-                logger.error(f"Submit failed for proposal [{proposal.id}]: {e}")
+                setattr(self, retry_key, retries + 1)
+                logger.error(f"Submit failed for proposal [{proposal.id}] (attempt {retries + 1}/3): {e}")
 
     # ── Phase 3: Response Monitoring ────────────────────────────────────
 
@@ -532,6 +564,52 @@ class OpportunityDaemon:
             logger.error(f"Digest failed: {e}")
 
     # ── Helpers ─────────────────────────────────────────────────────────
+
+    def _run_scout_with_timeout(self, scout, timeout: int = 180):
+        """Run a CDP scout in a separate process to avoid SQLite thread issues."""
+        import subprocess as sp
+        import json as _json
+
+        source = scout.source_name
+        oe_dir = os.path.dirname(os.path.abspath(__file__))
+
+        # Run the scout in a child process with its own DB connection
+        script = (
+            f"import sys, os, json; "
+            f"sys.path.insert(0, '{oe_dir}'); "
+            f"from core.database import Database; "
+            f"from core.config import DB_PATH; "
+            f"from scouts.{source}_scout import {source.title()}Scout; "
+            f"db = Database(DB_PATH); "
+            f"scout = {source.title()}Scout(db); "
+            f"log = scout.scan(); "
+            f"print(json.dumps({{'new': log.new_opportunities, 'total': log.opportunities_found}})); "
+            f"db.close()"
+        )
+        try:
+            r = sp.run(
+                ["python3", "-c", script],
+                capture_output=True, text=True, timeout=timeout,
+                cwd=oe_dir,
+            )
+            if r.returncode == 0 and r.stdout.strip():
+                for line in r.stdout.strip().split("\n"):
+                    line = line.strip()
+                    if line.startswith("{"):
+                        data = _json.loads(line)
+                        class _Log:
+                            new_opportunities = data.get("new", 0)
+                            opportunities_found = data.get("total", 0)
+                        return _Log()
+            if r.stderr:
+                logger.warning(f"Scout {source} subprocess stderr: {r.stderr[:300]}")
+            return None
+        except sp.TimeoutExpired:
+            logger.warning(f"Scout {source} timed out after {timeout}s")
+            return None
+        except Exception as e:
+            logger.error(f"Scout {source} subprocess error: {e}")
+            return None
 
     def _get_interval(self, source: str, now: datetime) -> int:
         base = SCAN_INTERVALS.get(source, 60)

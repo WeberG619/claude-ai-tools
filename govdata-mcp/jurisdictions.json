@@ -3,32 +3,132 @@
     "name": "Miami-Dade County",
     "state": "FL",
     "data_platform": "arcgis",
-    "base_url": "https://gisweb.miamidade.gov/arcgis/rest/services",
-    "open_data_url": "https://opendata.miamidade.gov",
+    "base_url": "https://services.arcgis.com/8Pc9XBTAsYuxx9Ny/arcgis/rest/services",
+    "open_data_url": "https://gis-mdc.opendata.arcgis.com",
+    "building_code": "2023 FBC",
+    "hvhz": true,
+    "arcgis_org_id": "8Pc9XBTAsYuxx9Ny",
     "endpoints": {
       "building_permits": {
-        "url": "https://gisweb.miamidade.gov/arcgis/rest/services/MD_LandInformation/MapServer/1/query",
+        "url": "https://services.arcgis.com/8Pc9XBTAsYuxx9Ny/arcgis/rest/services/BuildingPermit_gdb/FeatureServer/0/query",
         "type": "arcgis",
-        "description": "County Building Permits (MD_LandInformation Layer 1)"
+        "description": "Miami-Dade County building permits (894+ services). Fields: PROCNUM (permit#), ADDRESS, STNDADDR, TYPE, BPSTATUS, ISSUDATE, DESC1-DESC10, ESTVALUE, CONTRNAME, CONTRNUM, FOLIO, APPTYPE, PROPUSE, CLUC.",
+        "address_field": "ADDRESS",
+        "address_field_alt": "STNDADDR",
+        "permit_number_field": "PROCNUM",
+        "status_field": "BPSTATUS",
+        "type_field": "TYPE",
+        "date_field": "ISSUDATE",
+        "key_fields": ["PROCNUM", "ADDRESS", "STNDADDR", "TYPE", "BPSTATUS", "ISSUDATE", "DESC1", "ESTVALUE", "CONTRNAME", "CONTRNUM", "FOLIO", "APPTYPE", "PROPUSE"]
+      },
+      "building_permits_by_polygon": {
+        "url": "https://services.arcgis.com/8Pc9XBTAsYuxx9Ny/arcgis/rest/services/Permit_by_Polygon/FeatureServer/0/query",
+        "type": "arcgis",
+        "description": "Permits mapped to property boundaries (polygon geometry for spatial queries)."
       },
       "building_violations": {
-        "url": "https://gisweb.miamidade.gov/arcgis/rest/services/MD_EAMSCodeEnforcement/MapServer/0/query",
+        "url": "https://services.arcgis.com/8Pc9XBTAsYuxx9Ny/arcgis/rest/services/BuildingViolation_gdb/FeatureServer/0/query",
         "type": "arcgis",
-        "description": "Code enforcement violations"
+        "description": "Miami-Dade building violations (all). Fields: CASE_NUM, CASE_TYPE, FOLIO, PROP_ADDR, VIOL_NAME (owner), PERMIT_NUM, OPEN_DATE, CLOSED_DATE.",
+        "address_field": "PROP_ADDR",
+        "case_number_field": "CASE_NUM",
+        "type_field": "CASE_TYPE",
+        "date_field": "OPEN_DATE",
+        "key_fields": ["CASE_NUM", "CASE_TYPE", "FOLIO", "PROP_ADDR", "VIOL_NAME", "PERMIT_NUM", "OPEN_DATE", "CLOSED_DATE"]
+      },
+      "building_violations_citation": {
+        "url": "https://services.arcgis.com/8Pc9XBTAsYuxx9Ny/arcgis/rest/services/BuildingViolationCitation/FeatureServer/0/query",
+        "type": "arcgis",
+        "description": "Building violation citations."
+      },
+      "building_violations_lien": {
+        "url": "https://services.arcgis.com/8Pc9XBTAsYuxx9Ny/arcgis/rest/services/BuildingViolationLien/FeatureServer/0/query",
+        "type": "arcgis",
+        "description": "Building violations with liens."
+      },
+      "code_enforcement": {
+        "url": "https://services.arcgis.com/8Pc9XBTAsYuxx9Ny/arcgis/rest/services/EnergovCodeCasePublicView/FeatureServer/0/query",
+        "type": "arcgis",
+        "description": "Energov code enforcement cases. Fields: CASENUMBER, TYPE, STATUS, ADDRESSLINE1, PARCELNUMBER (folio), DESCRIPTION, OPENEDDATE, CLOSEDDATE, CITY, POSTALCODE.",
+        "address_field": "ADDRESSLINE1",
+        "case_number_field": "CASENUMBER",
+        "type_field": "TYPE",
+        "status_field": "STATUS",
+        "date_field": "OPENEDDATE",
+        "key_fields": ["CASENUMBER", "TYPE", "STATUS", "ADDRESSLINE1", "PARCELNUMBER", "DESCRIPTION", "OPENEDDATE", "CLOSEDDATE", "CITY", "POSTALCODE"]
+      },
+      "code_compliance_open": {
+        "url": "https://services.arcgis.com/8Pc9XBTAsYuxx9Ny/arcgis/rest/services/CodeComplianceViolation_Open_View/FeatureServer/0/query",
+        "type": "arcgis",
+        "description": "Open code compliance violations. Fields: CASE_NUM, CASE_DATE, CASE_STATUS, ADDRESS, FOLIO, PROBLEM, PROBLEM_DESC, LAST_ACTV, LN_RFRL, SR_NUMBER.",
+        "address_field": "ADDRESS",
+        "case_number_field": "CASE_NUM",
+        "status_field": "CASE_STATUS",
+        "date_field": "CASE_DATE",
+        "key_fields": ["CASE_NUM", "CASE_DATE", "CASE_STATUS", "ADDRESS", "FOLIO", "PROBLEM", "PROBLEM_DESC", "LAST_ACTV", "SR_NUMBER"]
+      },
+      "code_compliance_lien": {
+        "url": "https://services.arcgis.com/8Pc9XBTAsYuxx9Ny/arcgis/rest/services/CodeComplianceViolation_Lien_View/FeatureServer/0/query",
+        "type": "arcgis",
+        "description": "Code compliance violations with liens."
+      },
+      "code_compliance_civil": {
+        "url": "https://services.arcgis.com/8Pc9XBTAsYuxx9Ny/arcgis/rest/services/CodeComplianceViolation_Civil_View/FeatureServer/0/query",
+        "type": "arcgis",
+        "description": "Civil code compliance violations."
       },
       "zoning": {
-        "url": "https://gisweb.miamidade.gov/arcgis/rest/services/MD_LandInformation/MapServer/18/query",
+        "url": "https://services.arcgis.com/8Pc9XBTAsYuxx9Ny/arcgis/rest/services/PAExclZoningPrimary_gdb/FeatureServer/0/query",
         "type": "arcgis",
-        "description": "County Zoning (MD_LandInformation Layer 18)"
+        "description": "Miami-Dade primary zoning designations. Fields: PZDESC (zoning description). Polygon-based — use spatial queries or cross-reference with parcel folio.",
+        "key_fields": ["PZDESC"]
+      },
+      "land_use": {
+        "url": "https://services.arcgis.com/8Pc9XBTAsYuxx9Ny/arcgis/rest/services/Landuse_gdb/FeatureServer/0/query",
+        "type": "arcgis",
+        "description": "CDMP Future Land Use designations. Fields: DESCRIPTION (land use category), ACREAGE. Categories include residential densities, commercial, industrial, parks, agriculture, environmental protection.",
+        "key_fields": ["DESCRIPTION", "ACREAGE", "SOURCE"]
+      },
+      "parcels": {
+        "url": "https://services.arcgis.com/8Pc9XBTAsYuxx9Ny/arcgis/rest/services/Parcelpoly_gdb/FeatureServer/0/query",
+        "type": "arcgis",
+        "description": "Parcel polygon boundaries. Fields: FOLIO, TTRRSS, PID, CONDOFLG, PARCEL_STRAP. Polygon geometry for spatial lookups.",
+        "key_fields": ["FOLIO", "TTRRSS", "PID", "CONDOFLG", "PARCEL", "PARCEL_STRAP"]
+      },
+      "property": {
+        "url": "https://services.arcgis.com/8Pc9XBTAsYuxx9Ny/arcgis/rest/services/PaParcelView_gdb/FeatureServer/0/query",
+        "type": "arcgis",
+        "description": "Property Appraiser parcel view with owner/value data. Fields: FOLIO, TRUE_SITE_ADDR, TRUE_OWNER1, DOR_DESC, YEAR_BUILT, ASSESSED_VAL_CUR, BEDROOM_COUNT, BATHROOM_COUNT, BUILDING_HEATED_AREA, LOT_SIZE, SUBDIVISION, LEGAL.",
+        "address_field": "TRUE_SITE_ADDR",
+        "key_fields": ["FOLIO", "TRUE_SITE_ADDR", "TRUE_SITE_CITY", "TRUE_SITE_ZIP_CODE", "TRUE_OWNER1", "TRUE_OWNER2", "DOR_CODE_CUR", "DOR_DESC", "YEAR_BUILT", "ASSESSED_VAL_CUR", "BEDROOM_COUNT", "BATHROOM_COUNT", "BUILDING_HEATED_AREA", "LOT_SIZE", "SUBDIVISION", "LEGAL"]
+      },
+      "flood_zones": {
+        "url": "https://services.arcgis.com/8Pc9XBTAsYuxx9Ny/arcgis/rest/services/FEMAFloodZone_gdb/FeatureServer/0/query",
+        "type": "arcgis",
+        "description": "FEMA flood zone designations for Miami-Dade. Fields: FZONE (flood zone code, e.g. AE, AH, VE, X), ZONESUBTY (zone subtype), ELEV (base flood elevation). Polygon geometry.",
+        "key_fields": ["FZONE", "ZONESUBTY", "ELEV"]
+      },
+      "county_flood": {
+        "url": "https://services.arcgis.com/8Pc9XBTAsYuxx9Ny/arcgis/rest/services/CountyFloodCriteria_gdb/FeatureServer/0/query",
+        "type": "arcgis",
+        "description": "County-specific flood criteria (may differ from FEMA zones)."
+      },
+      "addresses": {
+        "url": "https://services.arcgis.com/8Pc9XBTAsYuxx9Ny/arcgis/rest/services/Address_view/FeatureServer/0/query",
+        "type": "arcgis",
+        "description": "Address points with permit IDs. Fields: ADDRESS, ZIP_CODE, PERMITID.",
+        "address_field": "ADDRESS",
+        "key_fields": ["ADDRESS", "ZIP_CODE", "PERMITID"]
       }
     },
-    "notes": "Miami-Dade uses ArcGIS Hub. Some endpoints may require discovery via the open data portal."
+    "notes": "Miami-Dade uses ArcGIS Hub (org: 8Pc9XBTAsYuxx9Ny) with 894+ public FeatureServer services. HVHZ jurisdiction — all products require Miami-Dade NOA or Florida Product Approval. Key field patterns: PROCNUM=permit#, BPSTATUS=status, PROP_ADDR=address (violations), CASE_NUM=violation case#, FOLIO=parcel ID."
   },
   "san-francisco": {
     "name": "City of San Francisco",
     "state": "CA",
     "data_platform": "socrata",
     "base_url": "https://data.sfgov.org",
+    "building_code": "2021 IBC",
     "endpoints": {
       "building_permits": {
         "url": "https://data.sfgov.org/resource/i98e-djp9.json",
@@ -53,6 +153,7 @@
     "state": "NY",
     "data_platform": "socrata",
     "base_url": "https://data.cityofnewyork.us",
+    "building_code": "2021 IBC",
     "endpoints": {
       "building_permits": {
         "url": "https://data.cityofnewyork.us/resource/ipu4-2vj7.json",
@@ -77,6 +178,7 @@
     "state": "IL",
     "data_platform": "socrata",
     "base_url": "https://data.cityofchicago.org",
+    "building_code": "2021 IBC",
     "endpoints": {
       "building_permits": {
         "url": "https://data.cityofchicago.org/resource/ydr8-5enu.json",
@@ -96,6 +198,7 @@
     "state": "CA",
     "data_platform": "socrata",
     "base_url": "https://data.lacity.org",
+    "building_code": "2021 IBC",
     "endpoints": {
       "building_permits": {
         "url": "https://data.lacity.org/resource/yv23-pmwf.json",
@@ -105,6 +208,392 @@
     },
     "notes": "Los Angeles uses Socrata SODA API."
   },
+
+  "broward": {
+    "name": "Broward County",
+    "state": "FL",
+    "data_platform": "reference",
+    "building_code": "2023 FBC",
+    "hvhz": true,
+    "portal_url": "https://epermits.broward.org",
+    "endpoints": {
+      "building_permits": {
+        "portal_url": "https://epermits.broward.org/CitizenAccess/",
+        "description": "Broward County ePermits (Accela Citizen Access). Search permits online — no public REST API available.",
+        "instructions": "Visit the portal URL and search by address, permit number, or contractor name."
+      },
+      "building_violations": {
+        "portal_url": "https://epermits.broward.org/CitizenAccess/",
+        "description": "Code enforcement cases via ePermits portal.",
+        "instructions": "Select 'Code Enforcement' module in the portal to search violations."
+      },
+      "zoning": {
+        "portal_url": "https://www.broward.org/Planning/Pages/Zoning.aspx",
+        "description": "Broward County zoning information and maps.",
+        "instructions": "Use the Broward County GIS viewer or contact Planning Division."
+      }
+    },
+    "notes": "Broward County is in the HVHZ. Uses Accela ePermits — no public REST API. All products require Miami-Dade NOA or Florida Product Approval."
+  },
+  "coral-springs": {
+    "name": "City of Coral Springs",
+    "state": "FL",
+    "data_platform": "reference",
+    "building_code": "2023 FBC",
+    "hvhz": true,
+    "portal_url": "https://etrakit.coralsprings.gov",
+    "endpoints": {
+      "building_permits": {
+        "portal_url": "https://etrakit.coralsprings.gov/eTRAKiT/",
+        "description": "Coral Springs eTRAKiT permit search. Search by address, permit number, or contractor.",
+        "instructions": "Visit eTRAKiT portal and use 'Permits' tab to search. Select 'Building' department."
+      },
+      "building_violations": {
+        "portal_url": "https://etrakit.coralsprings.gov/eTRAKiT/",
+        "description": "Code enforcement via eTRAKiT portal.",
+        "instructions": "Use 'Code Cases' tab in eTRAKiT to search code violations."
+      }
+    },
+    "notes": "Coral Springs is in Broward County (HVHZ). Uses eTRAKiT — no public REST API."
+  },
+  "palm-beach": {
+    "name": "Palm Beach County",
+    "state": "FL",
+    "data_platform": "arcgis",
+    "base_url": "https://opendata2-pbcgov.opendata.arcgis.com",
+    "open_data_url": "https://opendata2-pbcgov.opendata.arcgis.com",
+    "building_code": "2023 FBC",
+    "hvhz": false,
+    "endpoints": {
+      "building_permits": {
+        "url": "https://services1.arcgis.com/MoGaoaOLunJ5NNMQ/arcgis/rest/services/Permits/FeatureServer/0/query",
+        "type": "arcgis",
+        "description": "Palm Beach County building permits via ArcGIS Open Data. Layer URL may need discovery — check open data portal if query fails."
+      },
+      "zoning": {
+        "url": "https://services1.arcgis.com/MoGaoaOLunJ5NNMQ/arcgis/rest/services/Zoning/FeatureServer/0/query",
+        "type": "arcgis",
+        "description": "Palm Beach County zoning data. Layer URL may need discovery."
+      }
+    },
+    "notes": "Palm Beach County open data via ArcGIS Hub. Not in HVHZ but high wind speeds (150-170 mph). Endpoint URLs may need verification via the open data portal."
+  },
+  "orlando": {
+    "name": "City of Orlando",
+    "state": "FL",
+    "data_platform": "socrata",
+    "base_url": "https://data.cityoforlando.net",
+    "building_code": "2023 FBC",
+    "endpoints": {
+      "building_permits": {
+        "url": "https://data.cityoforlando.net/resource/ryhf-m453.json",
+        "type": "socrata",
+        "description": "City of Orlando building permits"
+      }
+    },
+    "notes": "Orlando uses Socrata open data portal. Wind speed ~130 mph."
+  },
+  "hillsborough": {
+    "name": "Hillsborough County",
+    "state": "FL",
+    "data_platform": "reference",
+    "building_code": "2023 FBC",
+    "portal_url": "https://aca-prod.accela.com/HILLSBOROUGH/",
+    "endpoints": {
+      "building_permits": {
+        "portal_url": "https://aca-prod.accela.com/HILLSBOROUGH/",
+        "description": "Hillsborough County (Tampa area) Accela Citizen Access portal for permits.",
+        "instructions": "Visit the portal URL, select 'Building' from the module dropdown, and search by address or permit number."
+      }
+    },
+    "notes": "Hillsborough County (includes Tampa) uses Accela — no public REST API. Wind speed ~140 mph."
+  },
+  "pinellas": {
+    "name": "Pinellas County",
+    "state": "FL",
+    "data_platform": "arcgis",
+    "base_url": "https://new-pinellas-egis.opendata.arcgis.com",
+    "open_data_url": "https://new-pinellas-egis.opendata.arcgis.com",
+    "building_code": "2023 FBC",
+    "endpoints": {
+      "building_permits": {
+        "url": "https://egis.pinellas.gov/arcgis/rest/services/PlanDev/Permits/MapServer/0/query",
+        "type": "arcgis",
+        "description": "Pinellas County building permits via ArcGIS. Layer URL may need discovery."
+      },
+      "zoning": {
+        "url": "https://egis.pinellas.gov/arcgis/rest/services/PlanDev/Zoning/MapServer/0/query",
+        "type": "arcgis",
+        "description": "Pinellas County zoning. Layer URL may need discovery."
+      }
+    },
+    "notes": "Pinellas County (St. Petersburg/Clearwater area) ArcGIS services. Wind speed ~150 mph coastal."
+  },
+  "jacksonville": {
+    "name": "City of Jacksonville / Duval County",
+    "state": "FL",
+    "data_platform": "arcgis",
+    "base_url": "https://maps.coj.net",
+    "open_data_url": "https://maps.coj.net/arcgis/rest/services",
+    "building_code": "2023 FBC",
+    "endpoints": {
+      "building_permits": {
+        "url": "https://maps.coj.net/arcgis/rest/services/Permits/MapServer/0/query",
+        "type": "arcgis",
+        "description": "Jacksonville/Duval County building permits. Layer URL may need discovery."
+      }
+    },
+    "notes": "Jacksonville consolidated city-county. ArcGIS services. Wind speed ~130 mph."
+  },
+
+  "florida-geo": {
+    "name": "Florida Geographic Data (Statewide)",
+    "state": "FL",
+    "data_platform": "arcgis",
+    "base_url": "https://geodata.floridagio.gov",
+    "open_data_url": "https://geodata.floridagio.gov",
+    "endpoints": {
+      "parcels": {
+        "url": "https://services1.arcgis.com/O1JpcwDW8sjYuddV/arcgis/rest/services/Florida_Parcels/FeatureServer/0/query",
+        "type": "arcgis",
+        "description": "Statewide Florida parcel data. Search by owner, address, or parcel ID."
+      },
+      "flood_zones": {
+        "url": "https://services1.arcgis.com/O1JpcwDW8sjYuddV/arcgis/rest/services/FEMA_NFHL/FeatureServer/0/query",
+        "type": "arcgis",
+        "description": "FEMA National Flood Hazard Layer for Florida. Layer URL may need discovery."
+      }
+    },
+    "notes": "Florida GIO statewide GIS data. Parcel and flood zone layers. Some endpoints may require discovery via the portal."
+  },
+  "florida-dep": {
+    "name": "Florida DEP (Environmental)",
+    "state": "FL",
+    "data_platform": "arcgis",
+    "base_url": "https://geodata.dep.state.fl.us",
+    "open_data_url": "https://geodata.dep.state.fl.us/",
+    "endpoints": {
+      "wetlands": {
+        "url": "https://ca.dep.state.fl.us/arcgis/rest/services/OpenData/WETLANDS/MapServer/0/query",
+        "type": "arcgis",
+        "description": "Florida wetlands data from DEP."
+      },
+      "environmental_permits": {
+        "url": "https://ca.dep.state.fl.us/arcgis/rest/services/OpenData/ERP_PERMITS/MapServer/0/query",
+        "type": "arcgis",
+        "description": "Environmental Resource Permits (ERP). Layer URL may need discovery."
+      }
+    },
+    "notes": "Florida Department of Environmental Protection GIS data. Wetlands, environmental permits, contamination sites."
+  },
+  "florida-dot": {
+    "name": "Florida DOT (Transportation)",
+    "state": "FL",
+    "data_platform": "arcgis",
+    "base_url": "https://gis-fdot.opendata.arcgis.com",
+    "open_data_url": "https://gis-fdot.opendata.arcgis.com",
+    "endpoints": {
+      "roads": {
+        "url": "https://services1.arcgis.com/O1JpcwDW8sjYuddV/arcgis/rest/services/FDOT_Road_Network/FeatureServer/0/query",
+        "type": "arcgis",
+        "description": "FDOT road network data. Layer URL may need discovery."
+      },
+      "traffic": {
+        "url": "https://services1.arcgis.com/O1JpcwDW8sjYuddV/arcgis/rest/services/FDOT_AADT/FeatureServer/0/query",
+        "type": "arcgis",
+        "description": "Annual Average Daily Traffic (AADT) counts. Layer URL may need discovery."
+      }
+    },
+    "notes": "Florida DOT open data. Roads, traffic counts, crash data. Some layers may require discovery."
+  },
+  "florida-dbpr": {
+    "name": "Florida DBPR (Contractor Licensing)",
+    "state": "FL",
+    "data_platform": "reference",
+    "portal_url": "https://www.myfloridalicense.com",
+    "endpoints": {
+      "contractor_license": {
+        "portal_url": "https://www.myfloridalicense.com/wl11.asp?mode=0&SID=&bession_id=&page=1",
+        "description": "Florida DBPR contractor license verification. Search by name, license number, or business.",
+        "instructions": "Visit the portal URL and enter the contractor name or license number. Verify license status, discipline history, and workers comp coverage."
+      }
+    },
+    "notes": "Florida DBPR does not have a public REST API. Use the web portal for license verification."
+  },
+
+  "houston": {
+    "name": "City of Houston",
+    "state": "TX",
+    "data_platform": "socrata",
+    "base_url": "https://data.houstontx.gov",
+    "building_code": "2021 IBC",
+    "endpoints": {
+      "building_permits": {
+        "url": "https://data.houstontx.gov/resource/djbf-l4t6.json",
+        "type": "socrata",
+        "description": "Houston building permits"
+      }
+    },
+    "notes": "Houston uses Socrata. Houston has no zoning — only deed restrictions and building codes."
+  },
+  "dallas": {
+    "name": "City of Dallas",
+    "state": "TX",
+    "data_platform": "socrata",
+    "base_url": "https://www.dallasopendata.com",
+    "building_code": "2021 IBC",
+    "endpoints": {
+      "building_permits": {
+        "url": "https://www.dallasopendata.com/resource/mxhw-4bwp.json",
+        "type": "socrata",
+        "description": "Dallas building permits"
+      }
+    },
+    "notes": "Dallas uses Socrata open data."
+  },
+  "austin": {
+    "name": "City of Austin",
+    "state": "TX",
+    "data_platform": "socrata",
+    "base_url": "https://data.austintexas.gov",
+    "building_code": "2021 IBC",
+    "endpoints": {
+      "building_permits": {
+        "url": "https://data.austintexas.gov/resource/3syk-w9eu.json",
+        "type": "socrata",
+        "description": "Austin issued construction permits"
+      }
+    },
+    "notes": "Austin uses Socrata SODA API."
+  },
+  "seattle": {
+    "name": "City of Seattle",
+    "state": "WA",
+    "data_platform": "socrata",
+    "base_url": "https://data.seattle.gov",
+    "building_code": "2021 IBC",
+    "endpoints": {
+      "building_permits": {
+        "url": "https://data.seattle.gov/resource/76t5-zuj6.json",
+        "type": "socrata",
+        "description": "Seattle building permits"
+      }
+    },
+    "notes": "Seattle uses Socrata SODA API."
+  },
+  "portland": {
+    "name": "City of Portland",
+    "state": "OR",
+    "data_platform": "arcgis",
+    "base_url": "https://gis-pdx.opendata.arcgis.com",
+    "open_data_url": "https://gis-pdx.opendata.arcgis.com",
+    "building_code": "2021 IBC",
+    "endpoints": {
+      "building_permits": {
+        "url": "https://services.arcgis.com/quVN97tn06YNGj9s/arcgis/rest/services/Permits/FeatureServer/0/query",
+        "type": "arcgis",
+        "description": "Portland building permits. Layer URL may need discovery via open data portal."
+      }
+    },
+    "notes": "Portland uses ArcGIS open data hub."
+  },
+  "denver": {
+    "name": "City of Denver",
+    "state": "CO",
+    "data_platform": "socrata",
+    "base_url": "https://www.denvergov.org/opendata",
+    "building_code": "2021 IBC",
+    "endpoints": {
+      "building_permits": {
+        "url": "https://data.denvergov.org/resource/p2qa-miya.json",
+        "type": "socrata",
+        "description": "Denver building permits"
+      }
+    },
+    "notes": "Denver uses Socrata SODA API."
+  },
+  "phoenix": {
+    "name": "City of Phoenix",
+    "state": "AZ",
+    "data_platform": "socrata",
+    "base_url": "https://www.phoenixopendata.com",
+    "building_code": "2021 IBC",
+    "endpoints": {
+      "building_permits": {
+        "url": "https://www.phoenixopendata.com/resource/fmvt-bfhe.json",
+        "type": "socrata",
+        "description": "Phoenix building permits"
+      }
+    },
+    "notes": "Phoenix uses Socrata open data."
+  },
+  "philadelphia": {
+    "name": "City of Philadelphia",
+    "state": "PA",
+    "data_platform": "socrata",
+    "base_url": "https://www.opendataphilly.org",
+    "building_code": "2021 IBC",
+    "endpoints": {
+      "building_permits": {
+        "url": "https://phl.carto.com/api/v2/sql?q=SELECT * FROM permits",
+        "type": "socrata",
+        "description": "Philadelphia building permits via Carto/Socrata. Query format may differ."
+      }
+    },
+    "notes": "Philadelphia uses a mix of platforms. Permit data via Carto SQL API."
+  },
+  "boston": {
+    "name": "City of Boston",
+    "state": "MA",
+    "data_platform": "socrata",
+    "base_url": "https://data.boston.gov",
+    "building_code": "2021 IBC",
+    "endpoints": {
+      "building_permits": {
+        "url": "https://data.boston.gov/resource/hfgw-p5wb.json",
+        "type": "socrata",
+        "description": "Boston building permits"
+      },
+      "building_violations": {
+        "url": "https://data.boston.gov/resource/800a-9ux4.json",
+        "type": "socrata",
+        "description": "Boston code enforcement violations"
+      }
+    },
+    "notes": "Boston uses Socrata/CKAN open data."
+  },
+  "atlanta": {
+    "name": "City of Atlanta",
+    "state": "GA",
+    "data_platform": "arcgis",
+    "base_url": "https://gis-atl.opendata.arcgis.com",
+    "open_data_url": "https://gis-atl.opendata.arcgis.com",
+    "building_code": "2021 IBC",
+    "endpoints": {
+      "building_permits": {
+        "url": "https://services3.arcgis.com/Et5Qfajgiyosiw4d/arcgis/rest/services/Permits/FeatureServer/0/query",
+        "type": "arcgis",
+        "description": "Atlanta building permits. Layer URL may need discovery."
+      }
+    },
+    "notes": "Atlanta uses ArcGIS open data hub."
+  },
+  "washington-dc": {
+    "name": "District of Columbia",
+    "state": "DC",
+    "data_platform": "socrata",
+    "base_url": "https://opendata.dc.gov",
+    "building_code": "2021 IBC",
+    "endpoints": {
+      "building_permits": {
+        "url": "https://opendata.dc.gov/resource/awxf-bnh7.json",
+        "type": "socrata",
+        "description": "DC building permits"
+      }
+    },
+    "notes": "Washington DC uses Socrata open data."
+  },
+
   "_federal": {
     "census_bps": {
       "url": "https://api.census.gov/data/timeseries/bps",

@@ -1,17 +1,27 @@
 """
 FloorPlanEngine — Architecturally Intelligent Layout Generation
 
-4-stage pipeline:
-  Natural Language → [Program] → [Layout] → [Reasoning] → [Revit] → Complete Model
+v4: Wall-first architecture. Walls are primary, rooms are derived.
 
-Usage:
-    from floor_plan_engine import generate_floor_plan
+Pipelines:
+  Image/PDF → [Vision v2]    → WallPlan → [Revit] → Model
+  Text Desc → [Wall Layout]  → WallPlan → [Revit] → Model
+  Direct    → [WallPlan JSON] → WallPlan → [Revit] → Model
+
+Legacy (v3) pipeline still available:
+  Natural Language → [Program] → [Layout] → [Reasoning] → [Revit] → Model
+
+Usage (v4 — recommended):
+    from floor_plan_engine import build_floor_plan
+    result = build_floor_plan(description="3-bed, 2-bath, L-shaped, 1200sf")
+
+    from floor_plan_engine import WallPlan, execute_wall_plan
+    plan = WallPlan.from_dict(json_data)
+    execute_wall_plan(plan)
+
+Usage (v3 — legacy):
+    from floor_plan_engine import generate_floor_plan, execute_in_revit
     plan = generate_floor_plan(total_area=1200, bedrooms=2, analyze=True)
-    print(plan.ascii_preview())
-    print(plan.analyze().critique)
-
-    # Execute in Revit:
-    from floor_plan_engine import execute_in_revit
     result = execute_in_revit(plan)
 """
 
@@ -27,6 +37,13 @@ from .reasoning import think_through, critique, narrate_walkthrough, build_conne
 from .builder import FloorPlanBuilder
 from .improve import improve
 from .vision import extract_from_image, parse_response
+
+# v4: Wall-first architecture
+from .wall_model import WallPlan, Wall, Opening, RoomLabel
+from .wall_revit_bridge import execute_wall_plan
+from .wall_layout import generate_wall_plan
+from .vision_v2 import extract_wall_plan, validate_wall_plan
+from .agent import build_floor_plan
 
 from typing import Optional, List, Dict, Any, Union, Tuple
 
@@ -137,4 +154,14 @@ __all__ = [
     # v3: Vision pipeline
     "extract_from_image",
     "parse_response",
+    # v4: Wall-first architecture
+    "WallPlan",
+    "Wall",
+    "Opening",
+    "RoomLabel",
+    "execute_wall_plan",
+    "generate_wall_plan",
+    "extract_wall_plan",
+    "validate_wall_plan",
+    "build_floor_plan",
 ]

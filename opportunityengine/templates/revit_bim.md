@@ -1,20 +1,17 @@
 Hi,
 
-I read through your project requirements and this is right in my wheelhouse - I specialize in Revit API development and BIM automation with deep experience building custom tools that save teams hundreds of hours.
-
-**Why I'm a strong fit:**
-- Built 700+ Revit API methods across production tools (C# add-ins, pyRevit, Dynamo)
-- Extensive experience with {{skills}} workflows
-- Background in AEC means I understand the domain, not just the code
-
-**My approach for {{title}}:**
 {{description}}
 
-I'd tackle this by first understanding your current workflow, then building a targeted solution that integrates cleanly with your existing Revit environment. I focus on delivering tools that your team can actually use day-to-day, not just proof-of-concepts.
+That's exactly what I build. I'm a Revit API developer with 700+ production methods across C# add-ins, pyRevit extensions, and Dynamo scripts — plus an architecture background, so I understand the BIM workflows these tools need to support, not just the code.
 
-**Timeline:** I can start immediately and typically deliver initial results within the first week.
+**What sets me apart:**
+- Production experience with Revit 2024-2026, including custom MCP integrations for real-time model manipulation from external tools
+- Built automation that handles wall creation, sheet setup, CD assembly, and BIM validation — the repetitive stuff that eats hours
+- I work in {{skills}} daily, not as side skills
 
-Happy to discuss the specifics on a quick call.
+**For {{title}}:**
+I'd start by reviewing your current model/workflow to understand the constraints, then build a targeted solution you can use immediately — not a proof-of-concept that needs another developer to finish.
 
-Best,
+I can start today. What does your current workflow look like?
+
 Weber Gouin

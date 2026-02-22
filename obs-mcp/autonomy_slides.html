@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The Autonomy Engine</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0d1117; color: #e6edf3; font-family: 'Cascadia Code', 'Fira Code', 'JetBrains Mono', 'Consolas', monospace; overflow: hidden; }
+  .slide { display: none; width: 100vw; height: 100vh; padding: 60px 80px; flex-direction: column; justify-content: center; }
+  .slide.active { display: flex; }
+
+  /* Title cards */
+  .title-card { align-items: center; text-align: center; }
+  .title-card h1 { font-size: 64px; color: #c9d1d9; margin-bottom: 20px; font-weight: 700; letter-spacing: -1px; }
+  .title-card h2 { font-size: 32px; color: #8b949e; font-weight: 400; }
+  .title-card .accent { color: #58a6ff; }
+  .title-card .subtitle { font-size: 22px; color: #8b949e; margin-top: 30px; line-height: 1.6; }
+
+  /* Terminal blocks */
+  .terminal { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 28px 32px; margin: 12px 0; overflow: hidden; }
+  .terminal-header { display: flex; gap: 8px; margin-bottom: 16px; }
+  .terminal-dot { width: 14px; height: 14px; border-radius: 50%; }
+  .terminal-dot.red { background: #f85149; }
+  .terminal-dot.yellow { background: #d29922; }
+  .terminal-dot.green { background: #3fb950; }
+  .prompt { color: #3fb950; }
+  .cmd { color: #58a6ff; }
+  .output { color: #c9d1d9; }
+  .dim { color: #484f58; }
+  .highlight { color: #f0883e; }
+  .warn { color: #d29922; }
+  .error { color: #f85149; font-weight: 700; }
+  .success { color: #3fb950; font-weight: 700; }
+  .grade-a { color: #3fb950; font-weight: 700; font-size: 1.1em; }
+  .grade-b { color: #58a6ff; font-weight: 700; }
+  .grade-c { color: #d29922; font-weight: 700; }
+  .grade-d { color: #f0883e; font-weight: 700; }
+  .grade-f { color: #f85149; font-weight: 700; font-size: 1.1em; }
+
+  pre { font-family: inherit; font-size: 17px; line-height: 1.55; white-space: pre-wrap; }
+  .large pre { font-size: 19px; line-height: 1.6; }
+
+  /* Section headers */
+  .section-label { font-size: 14px; color: #484f58; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 16px; }
+
+  /* Tables */
+  table { border-collapse: collapse; width: 100%; font-size: 17px; }
+  th { background: #21262d; color: #58a6ff; text-align: left; padding: 12px 16px; border-bottom: 2px solid #30363d; }
+  td { padding: 10px 16px; border-bottom: 1px solid #21262d; color: #c9d1d9; }
+  tr:hover td { background: #161b22; }
+
+  /* Stats */
+  .stat { font-size: 28px; color: #c9d1d9; margin: 8px 0; }
+  .stat-value { color: #58a6ff; font-weight: 700; }
+  .stat-label { color: #8b949e; }
+
+  /* Split layout */
+  .split { display: flex; gap: 32px; flex: 1; }
+  .split > div { flex: 1; }
+
+  /* Slide counter */
+  .counter { position: fixed; bottom: 20px; right: 40px; color: #30363d; font-size: 14px; }
+
+  /* Architecture */
+  .arch-box { border: 1px solid #30363d; border-radius: 8px; padding: 16px; margin: 8px 0; background: #161b22; }
+  .arch-box h3 { color: #58a6ff; margin-bottom: 8px; font-size: 18px; }
+  .arch-box p { color: #8b949e; font-size: 15px; }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+
+  /* Correction flywheel */
+  .flywheel { display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap; margin: 30px 0; }
+  .flywheel-step { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 20px; text-align: center; width: 200px; }
+  .flywheel-step h4 { color: #58a6ff; margin-bottom: 8px; }
+  .flywheel-arrow { font-size: 36px; color: #30363d; }
+</style>
+</head>
+<body>
+
+<!-- ============================================================ -->
+<!-- SLIDE 0: TITLE CARD -->
+<!-- ============================================================ -->
+<div class="slide active title-card" id="s0">
+  <h1>The Autonomy Engine</h1>
+  <h2 class="accent">An AI System That Learns From Its Mistakes</h2>
+  <div class="subtitle">Built by Weber Gouin &mdash; Powered by Claude Code</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SLIDE 1: COLD OPEN — The D/F Grades -->
+<!-- ============================================================ -->
+<div class="slide" id="s1">
+  <div class="section-label">System Self-Assessment &mdash; Initial</div>
+  <div class="terminal large">
+    <div class="terminal-header"><div class="terminal-dot red"></div><div class="terminal-dot yellow"></div><div class="terminal-dot green"></div></div>
+<pre>
+<span class="prompt">$</span> <span class="cmd">python3 alignment.py self-grade</span>
+
+<span class="output">System Health Assessment</span>
+<span class="dim">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
+
+  Alignment Injection      <span class="grade-b">B+</span>   Strong foundation, fail-open risk
+  Task Decomposition       <span class="grade-b">B-</span>   No recursive decomposition, no MECE
+  Execution Monitoring     <span class="grade-c">C-</span>   No coherence checking, no drift detection
+  Context Management       <span class="grade-d">D+</span>   No Aggregator, raw output passing
+  Behavioral Testing       <span class="grade-f">F</span>    Zero automated tests exist
+
+  <span class="dim">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
+  Overall:                 <span class="grade-c">C+</span>   "Works when things go right. Degrades poorly."
+</pre>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SLIDE 2: COLD OPEN — The A Grades (20 minutes later) -->
+<!-- ============================================================ -->
+<div class="slide" id="s2">
+  <div class="section-label">System Self-Assessment &mdash; 20 Minutes Later</div>
+  <div class="terminal large">
+    <div class="terminal-header"><div class="terminal-dot red"></div><div class="terminal-dot yellow"></div><div class="terminal-dot green"></div></div>
+<pre>
+<span class="prompt">$</span> <span class="cmd">python3 alignment.py self-grade</span>
+
+<span class="output">System Health Assessment</span>
+<span class="dim">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
+
+  Alignment Injection      <span class="grade-a">A</span>    Fail-closed gates, quality verification
+  Task Decomposition       <span class="grade-a">A</span>    Recursive decomposition, MECE validation
+  Execution Monitoring     <span class="grade-a">A</span>    Coherence monitor, drift detection
+  Context Management       <span class="grade-a">A</span>    ROMA-style Aggregator, context compression
+  Behavioral Testing       <span class="grade-a">A</span>    50+ adversarial scenarios, eval parity
+
+  <span class="dim">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
+  Overall:                 <span class="grade-a">A</span>    648 tests. Zero failures.
+
+<span class="prompt">$</span> <span class="cmd">pytest --tb=no -q</span>
+<span class="success">648 passed</span> in 108.89s
+</pre>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SLIDE 3: ACT 1 TITLE -->
+<!-- ============================================================ -->
+<div class="slide title-card" id="s3">
+  <div class="section-label">Act 1</div>
+  <h1>The Problem</h1>
+  <h2>Every AI agent starts from zero. Every single time.</h2>
+</div>
+
+<!-- ============================================================ -->
+<!-- SLIDE 4: The Correction Database -->
+<!-- ============================================================ -->
+<div class="slide" id="s4">
+  <div class="section-label">The Correction Database &mdash; Real Corrections from Real Projects</div>
+  <div class="terminal">
+    <div class="terminal-header"><div class="terminal-dot red"></div><div class="terminal-dot yellow"></div><div class="terminal-dot green"></div></div>
+<pre>
+<span class="prompt">$</span> <span class="cmd">python3 alignment.py principles</span>
+
+<span class="output">Alignment principles (16):</span>
+
+  <span class="highlight">[CORE      ]</span> <span class="dim">[universal]</span> (prio 10) Verify work before reporting done
+  <span class="highlight">[CORE      ]</span> <span class="dim">[universal]</span> (prio  9) Never skip corrections &mdash; always check memory
+  <span class="highlight">[CORE      ]</span> <span class="dim">[universal]</span> (prio  9) Use DPI-aware positioning for multi-monitor
+  <span class="highlight">[CORE      ]</span> <span class="dim">[universal]</span> (prio  8) Store corrections when user corrects you
+  <span class="highlight">[CORE      ]</span> <span class="dim">[universal]</span> (prio  7) Speak summaries after significant tasks
+  <span class="warn">[CORRECTION]</span> <span class="dim">[research ]</span> (prio  7) Always verify publication dates
+  <span class="warn">[CORRECTION]</span> <span class="dim">[research ]</span> (prio  7) Never synthesize from a single source
+  <span class="warn">[CORRECTION]</span> <span class="dim">[research ]</span> (prio  7) Include pricing and last-updated date
+  <span class="warn">[CORRECTION]</span> <span class="dim">[research ]</span> (prio  7) Don't present marketing copy as fact
+  <span class="warn">[CORRECTION]</span> <span class="dim">[business ]</span> (prio  7) Cite source for TAM/SAM/SOM numbers
+  <span class="warn">[CORRECTION]</span> <span class="dim">[business ]</span> (prio  7) Include direct AND indirect competitors
+  <span class="warn">[CORRECTION]</span> <span class="dim">[business ]</span> (prio  7) Date all revenue and pricing claims
+  <span class="warn">[CORRECTION]</span> <span class="dim">[code     ]</span> (prio  7) Check library maintenance before recommending
+  <span class="warn">[CORRECTION]</span> <span class="dim">[code     ]</span> (prio  7) Verify CLI flags against --help first
+  <span class="warn">[CORRECTION]</span> <span class="dim">[code     ]</span> (prio  7) Test file paths before multi-step scripts
+  <span class="highlight">[CORE      ]</span> <span class="dim">[universal]</span> (prio  6) Proactively suggest next steps
+</pre>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SLIDE 5: Side-by-side Alignment Compiles -->
+<!-- ============================================================ -->
+<div class="slide" id="s5">
+  <div class="section-label">Same Engine. Different Knowledge. Automatically Selected.</div>
+  <div class="split">
+    <div>
+      <div class="terminal" style="height: 100%;">
+<pre>
+<span class="prompt">$</span> <span class="cmd">alignment.py compile \
+  --agent revit-builder \
+  --task "Create walls"</span>
+
+<span class="highlight">Domain detected: BIM</span>
+
+Corrections injected:
+<span class="warn">&bull;</span> Wall creation Object reference fix
+<span class="warn">&bull;</span> Don't guess sheet naming &mdash;
+  study the project first
+<span class="warn">&bull;</span> Copied views can't be placed
+  via Viewport.Create
+<span class="warn">&bull;</span> Use project's active title block
+<span class="warn">&bull;</span> Not all unplaced items are issues
+
+<span class="dim">Permission scope:</span>
+  Tools: mcp__revit-mcp__*
+  Network: <span class="error">DENIED</span>
+</pre>
+      </div>
+    </div>
+    <div>
+      <div class="terminal" style="height: 100%;">
+<pre>
+<span class="prompt">$</span> <span class="cmd">alignment.py compile \
+  --agent research-agent \
+  --task "Research AI papers"</span>
+
+<span class="highlight">Domain detected: research</span>
+
+Corrections injected:
+<span class="warn">&bull;</span> Always verify publication dates
+<span class="warn">&bull;</span> Never synthesize from single source
+<span class="warn">&bull;</span> Include pricing and last-updated
+<span class="warn">&bull;</span> Don't present marketing as fact
+
+<span class="dim">Permission scope:</span>
+  Tools: WebSearch, WebFetch, Read
+  Network: <span class="success">ALLOWED</span>
+</pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SLIDE 6: ACT 2 TITLE — Architecture -->
+<!-- ============================================================ -->
+<div class="slide title-card" id="s6">
+  <div class="section-label">Act 2</div>
+  <h1>The Architecture</h1>
+  <h2>Five Phases. One Engine.</h2>
+</div>
+
+<!-- ============================================================ -->
+<!-- SLIDE 7: Architecture Diagram -->
+<!-- ============================================================ -->
+<div class="slide" id="s7">
+  <div class="section-label">Autonomy Engine &mdash; Five-Phase Architecture</div>
+  <div class="two-col" style="margin-top: 20px;">
+    <div class="arch-box">
+      <h3>1. Goal Engine</h3>
+      <p>Hierarchical goals with weighted progress cascade. Parent goals auto-calculate from children. Persists across sessions.</p>
+    </div>
+    <div class="arch-box">
+      <h3>2. Planner</h3>
+      <p>Decomposes goals into atomic steps. MECE validation. Recursive sub-decomposition. 4 built-in templates.</p>
+    </div>
+    <div class="arch-box">
+      <h3>3. Alignment Core</h3>
+      <p>Compiles per-agent injection prefix. Core principles + domain-aware corrections. Auto-domain detection across 9 domains.</p>
+    </div>
+    <div class="arch-box">
+      <h3>4. Coordinator</h3>
+      <p>Tracks active agents. Resource locks prevent collisions. Context compression between steps. Coherence monitoring.</p>
+    </div>
+    <div class="arch-box" style="grid-column: span 2;">
+      <h3>5. Integration Wiring</h3>
+      <p>PreToolUse hook intercepts every sub-agent dispatch. Alignment Core compiles injection. Dispatcher delivers. Agent runs with accumulated knowledge. No manual copy-paste. Automatic. Every time.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SLIDE 8: Goal Engine Demo -->
+<!-- ============================================================ -->
+<div class="slide" id="s8">
+  <div class="section-label">Phase 1: Goal Engine &mdash; Live Output</div>
+  <div class="terminal large">
+    <div class="terminal-header"><div class="terminal-dot red"></div><div class="terminal-dot yellow"></div><div class="terminal-dot green"></div></div>
+<pre>
+<span class="prompt">$</span> <span class="cmd">python3 goals.py tree</span>
+
+<span class="warn">[&gt;]</span> !! #1 Achieve 80% Scan-to-BIM Reliability <span class="dim">(3%)</span>
+    <span class="warn">[&gt;]</span> !! #2 Improve room detection accuracy <span class="dim">(10%)</span>
+    <span class="warn">[&gt;]</span> !! #3 Fix coordinate transformation pipeline <span class="dim">(0%)</span>
+    <span class="dim">[ ]</span>  ! #4 Build verification layer <span class="dim">(0%)</span>
+<span class="success">[&gt;]</span> !! #6 Find best video editing software <span class="success">(100%)</span>
+    <span class="success">[&gt;]</span> !! #7 Research top 5 AI-enabled editors <span class="success">(100%)</span>
+    <span class="success">[&gt;]</span> !! #8 Evaluate API and automation potential <span class="success">(100%)</span>
+<span class="warn">[&gt;]</span> !! #10 Evaluate commercialization path <span class="dim">(43%)</span>
+    <span class="success">[&gt;]</span> !! #13 Research competitor landscape <span class="success">(100%)</span>
+    <span class="dim">[ ]</span>  ! #14 Estimate market size <span class="dim">(0%)</span>
+<span class="warn">[&gt;]</span> !! #12 Evaluate MCP server ecosystem <span class="dim">(38%)</span>
+    <span class="success">[&gt;]</span> !! #19 Catalog existing public MCP servers <span class="success">(100%)</span>
+    <span class="dim">[ ]</span>  ! #21 Produce integration roadmap <span class="dim">(0%)</span>
+<span class="success">[x]</span> !! #22 Autonomous research sprint <span class="success">(100%)</span>
+    <span class="success">[&gt;]</span> !! #23 Identify 3 impactful AI papers <span class="success">(100%)</span>
+    <span class="success">[&gt;]</span> !! #24 Summarize key contributions <span class="success">(100%)</span>
+    <span class="success">[&gt;]</span> !! #25 Analyze improvements for our system <span class="success">(100%)</span>
+    <span class="success">[&gt;]</span> !! #26 Draft implementation proposals <span class="success">(100%)</span>
+    <span class="success">[x]</span> !! #27 Produce final report <span class="success">(100%)</span>
+
+<span class="dim">27 goals &bull; 6 hierarchies &bull; 5 domains</span>
+</pre>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SLIDE 9: Planner Demo -->
+<!-- ============================================================ -->
+<div class="slide" id="s9">
+  <div class="section-label">Phase 2: Planner &mdash; Template-Based Decomposition</div>
+  <div class="terminal">
+    <div class="terminal-header"><div class="terminal-dot red"></div><div class="terminal-dot yellow"></div><div class="terminal-dot green"></div></div>
+<pre>
+<span class="prompt">$</span> <span class="cmd">python3 planner.py templates</span>
+
+<span class="output">Plan templates (4):</span>
+
+  <span class="highlight">build-feature</span>       <span class="dim">(development)</span>  Research, plan, implement, test, commit
+                      5 steps, used 2x
+  <span class="highlight">pdf-to-revit-model</span>  <span class="dim">(bim)</span>          Extract geometry, create elements, validate
+                      5 steps, used 0x
+  <span class="highlight">client-deliverable</span>  <span class="dim">(business)</span>     Gather data, generate reports, review, export
+                      5 steps, used 0x
+  <span class="highlight">research-topic</span>      <span class="dim">(research)</span>     Initial research, deep analysis, synthesize
+                      3 steps, used 0x
+
+<span class="dim">Features: atomicity checking &bull; MECE validation &bull; recursive decomposition &bull; complexity scoring</span>
+</pre>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SLIDE 10: Alignment Compile — Full Output -->
+<!-- ============================================================ -->
+<div class="slide" id="s10">
+  <div class="section-label">Phase 3: Alignment Core &mdash; Compile for Revit Agent</div>
+  <div class="terminal">
+    <div class="terminal-header"><div class="terminal-dot red"></div><div class="terminal-dot yellow"></div><div class="terminal-dot green"></div></div>
+<pre>
+<span class="prompt">$</span> <span class="cmd">python3 alignment.py compile --agent-name "revit-builder" --task "Create walls from floor plan" --project "Avon Park"</span>
+
+<span class="output">Compiling alignment prefix...</span>
+  Domain auto-detected: <span class="highlight">bim</span>
+  Layers: <span class="success">Strong Agent Framework</span> + <span class="success">Common Sense Kernel</span> + <span class="success">5 BIM Corrections</span>
+
+<span class="dim">---- INJECTION PREVIEW ----</span>
+
+  <span class="highlight">Layer A:</span> Strong Agent Framework v2
+    Phase 0: Load Context (check memory, recall corrections)
+    Phase 1: Orient (parse task, confidence gate)
+    Phase 2: Investigate (read before write, map dependencies)
+    Phase 3: Execute (small steps, match style, security check)
+    Phase 4: Verify (re-read, run tests, check regressions)
+    Phase 5: Report (summary, files, verification, store learnings)
+
+  <span class="highlight">Layer B:</span> 6 Core Principles (universal)
+  <span class="highlight">Layer C:</span> 5 Domain Corrections (BIM-specific)
+    &bull; Wall creation Object reference not set fix
+    &bull; Don't guess sheet naming &mdash; study the project first
+    &bull; Copied views can't be placed via Viewport.Create
+    &bull; Use project's active title block, not default
+    &bull; Not all unplaced items are issues
+
+  <span class="highlight">Layer D:</span> Permission Scope
+    Allowed: Read, Grep, Glob, mcp__revit-mcp__*
+    Network: <span class="error">DENIED</span>
+
+<span class="dim">Token budget: 3,847 / 4,000</span>
+</pre>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SLIDE 11: Coordinator -->
+<!-- ============================================================ -->
+<div class="slide" id="s11">
+  <div class="section-label">Phase 4: Coordinator &mdash; Agent Tracking &amp; Resource Locks</div>
+  <div class="terminal">
+    <div class="terminal-header"><div class="terminal-dot red"></div><div class="terminal-dot yellow"></div><div class="terminal-dot green"></div></div>
+<pre>
+<span class="prompt">$</span> <span class="cmd">python3 coordinator.py status</span>
+
+  <span class="output">Active agents: 3</span>
+  <span class="dim">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
+  <span class="highlight">Agent 1:</span> revit-builder    <span class="warn">running</span>   Goal #1   Lock: Revit API
+  <span class="highlight">Agent 2:</span> research-agent   <span class="success">completed</span> Goal #23  625 lines output
+  <span class="highlight">Agent 3:</span> business-analyst <span class="success">completed</span> Goal #13  412 lines output
+
+<span class="prompt">$</span> <span class="cmd">python3 coordinator.py locks</span>
+
+  <span class="output">Active locks:</span>
+  <span class="warn">&bull;</span> Revit API        <span class="dim">exclusive</span>  held by: revit-builder  <span class="dim">expires: 5 min</span>
+  <span class="success">&bull;</span> memories.db      <span class="dim">shared</span>     held by: 2 agents       <span class="dim">expires: 10 min</span>
+
+<span class="dim">Features: conflict detection &bull; handoff validation &bull; stale cleanup &bull; shared state</span>
+</pre>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SLIDE 12: Integration Hook -->
+<!-- ============================================================ -->
+<div class="slide" id="s12">
+  <div class="section-label">Phase 5: Integration &mdash; Automatic Injection via Hook</div>
+  <div class="terminal">
+    <div class="terminal-header"><div class="terminal-dot red"></div><div class="terminal-dot yellow"></div><div class="terminal-dot green"></div></div>
+<pre>
+<span class="dim">// ~/.claude/settings.json</span>
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        <span class="highlight">"matcher": "Task"</span>,
+        "hooks": [{
+          "type": "command",
+          "command": <span class="cmd">"python3 alignment_hook.py"</span>,
+          "timeout": 5,
+          "statusMessage": <span class="success">"Alignment: Injecting kernel for sub-agent..."</span>
+        }]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [{ "command": <span class="cmd">"python3 guard.py"</span> }]
+      },
+      {
+        "matcher": "mcp__*",
+        "hooks": [{ "command": <span class="cmd">"python3 seatbelt.py"</span> }]
+      }
+    ]
+  }
+}
+
+<span class="dim">Every sub-agent dispatch &rarr; Alignment Core compiles &rarr; Corrections injected automatically</span>
+</pre>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SLIDE 13: LIVE DEMOS TITLE -->
+<!-- ============================================================ -->
+<div class="slide title-card" id="s13">
+  <div class="section-label">Act 3</div>
+  <h1>Live Demos</h1>
+  <h2>Real commands. Real output. No mocks.</h2>
+</div>
+
+<!-- ============================================================ -->
+<!-- SLIDE 14: Demo 1 Title -->
+<!-- ============================================================ -->
+<div class="slide title-card" id="s14">
+  <div class="section-label">Demo 1</div>
+  <h1>Multi-Domain Parallel Agents</h1>
+  <h2>Three goals. Three domains. Dispatched simultaneously.</h2>
+</div>
+
+<!-- ============================================================ -->
+<!-- SLIDE 15: Parallel Agent Scoreboard -->
+<!-- ============================================================ -->
+<div class="slide" id="s15">
+  <div class="section-label">Parallel Agent Execution &mdash; Scoreboard</div>
+  <div class="terminal large">
+    <div class="terminal-header"><div class="terminal-dot red"></div><div class="terminal-dot yellow"></div><div class="terminal-dot green"></div></div>
+<pre>
+<span class="output">Agent Dispatch Scoreboard</span>
+<span class="dim">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
+
+  Agent    Domain                     Status              Goal
+<span class="dim">  ───────  ─────────────────────────  ──────────────────  ─────</span>
+  Agent 1  Competitor landscape       <span class="success">Done (412 lines)</span>    #13
+  Agent 2  Multi-monitor workspace    <span class="success">Done (614 lines)</span>    #16
+  Agent 3  MCP server catalog         <span class="success">Done (625 lines)</span>    #19
+
+<span class="dim">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
+
+  Alignment hook fired: <span class="success">3x</span>  (each agent got kernel + domain corrections)
+  Resource conflicts:   <span class="success">0</span>   (coordinator managed locks)
+  Total output:         <span class="highlight">1,651 lines</span> of research across 3 domains
+</pre>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SLIDE 16: Goal Progress Cascade -->
+<!-- ============================================================ -->
+<div class="slide" id="s16">
+  <div class="section-label">Goal Progress &mdash; Weighted Cascade After Agent Completion</div>
+  <div class="terminal large">
+    <div class="terminal-header"><div class="terminal-dot red"></div><div class="terminal-dot yellow"></div><div class="terminal-dot green"></div></div>
+<pre>
+<span class="prompt">$</span> <span class="cmd">python3 goals.py tree</span>
+
+<span class="warn">[&gt;]</span> #10 Evaluate commercialization path     <span class="highlight">43%</span>
+    <span class="success">[&gt;]</span> #13 Research competitor landscape   <span class="success">100%</span> <span class="dim">&larr; Agent 1</span>
+    <span class="dim">[ ]</span> #14 Estimate market size            <span class="dim">0%</span>
+    <span class="dim">[ ]</span> #15 Go/no-go recommendation         <span class="dim">0%</span>
+
+<span class="warn">[&gt;]</span> #11 Optimize multi-monitor workspace    <span class="highlight">43%</span>
+    <span class="success">[&gt;]</span> #16 Research optimal layouts        <span class="success">100%</span> <span class="dim">&larr; Agent 2</span>
+    <span class="dim">[ ]</span> #17 Voice-to-code improvements      <span class="dim">0%</span>
+    <span class="dim">[ ]</span> #18 Design ideal config             <span class="dim">0%</span>
+
+<span class="warn">[&gt;]</span> #12 Evaluate MCP ecosystem              <span class="highlight">38%</span>
+    <span class="success">[&gt;]</span> #19 Catalog public MCP servers      <span class="success">100%</span> <span class="dim">&larr; Agent 3</span>
+    <span class="dim">[ ]</span> #20 Top 5 highest-value additions   <span class="dim">0%</span>
+    <span class="dim">[ ]</span> #21 Integration roadmap             <span class="dim">0%</span>
+
+<span class="dim">Progress auto-calculated from weighted children &bull; critical=4x high=3x medium=2x</span>
+</pre>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SLIDE 17: Demo 2 Title -->
+<!-- ============================================================ -->
+<div class="slide title-card" id="s17">
+  <div class="section-label">Demo 2</div>
+  <h1>Zero-Intervention Autonomy Test</h1>
+  <h2>5 sequential agents. 0 human prompts. Full chain.</h2>
+</div>
+
+<!-- ============================================================ -->
+<!-- SLIDE 18: Autonomous Sprint Timeline -->
+<!-- ============================================================ -->
+<div class="slide" id="s18">
+  <div class="section-label">Autonomous Research Sprint &mdash; 19 Minutes, Zero Intervention</div>
+  <div class="terminal large">
+    <div class="terminal-header"><div class="terminal-dot red"></div><div class="terminal-dot yellow"></div><div class="terminal-dot green"></div></div>
+<pre>
+<span class="output">Execution Timeline</span>
+<span class="dim">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
+
+  Time    Event                                            Progress
+<span class="dim">  ──────  ─────────────────────────────────────────────────  ────────</span>
+  18:17   Goal hierarchy created (1 parent + 5 children)     <span class="dim">0%</span>
+  18:21   Step 1: Identified 3 papers (11 web searches)      <span class="warn">20%</span>
+  18:23   Step 2: Summarized papers in plain language         <span class="warn">40%</span>
+  18:27   Step 3: Gap analysis &mdash; 14 improvements found       <span class="highlight">60%</span>
+  18:33   Step 4: Implementation proposals &mdash; 1,013 lines    <span class="highlight">80%</span>
+  18:36   Step 5: Final report with roadmap                  <span class="success">100%</span>
+
+<span class="dim">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
+
+  Duration:    <span class="highlight">19 minutes</span>
+  Agents:      <span class="highlight">5 sequential</span> (output of each fed to next)
+  Corrections: <span class="success">Research-domain rules fired on all 5 agents</span>
+  Intervention: <span class="success">Zero</span>
+</pre>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SLIDE 19: Research Output -->
+<!-- ============================================================ -->
+<div class="slide" id="s19">
+  <div class="section-label">Research Output &mdash; Real Files Produced</div>
+  <div class="terminal large">
+    <div class="terminal-header"><div class="terminal-dot red"></div><div class="terminal-dot yellow"></div><div class="terminal-dot green"></div></div>
+<pre>
+<span class="prompt">$</span> <span class="cmd">ls -la research/autonomy-sprint/</span>
+
+  step-1-identify-papers.md           <span class="dim">56 lines</span>
+  step-2-paper-summaries.md           <span class="dim">55 lines</span>
+  step-3-system-analysis.md           <span class="dim">191 lines</span>
+  step-4-implementation-proposals.md  <span class="highlight">1,013 lines</span>
+  step-5-final-report.md              <span class="dim">full roadmap</span>
+
+<span class="output">Papers identified:</span>
+  <span class="highlight">1.</span> "The Hot Mess of AI" <span class="dim">(Anthropic, ICLR 2026)</span>
+     Frontier models fail by becoming incoherent, not by scheming.
+
+  <span class="highlight">2.</span> "ROMA Framework" <span class="dim">(Sentient AI, Feb 2026)</span>
+     Atomizer + Planner + Executor + <span class="success">Aggregator</span> for context compression.
+
+  <span class="highlight">3.</span> "Petri 2.0" <span class="dim">(Anthropic, Jan 2026)</span>
+     Automated behavioral auditing with 70 adversarial scenarios.
+
+<span class="dim">14 improvement opportunities identified &bull; 2 detailed implementation proposals &bull; Full roadmap</span>
+</pre>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SLIDE 20: Demo 3 Title -->
+<!-- ============================================================ -->
+<div class="slide title-card" id="s20">
+  <div class="section-label">Demo 3</div>
+  <h1>The System Fixes Itself</h1>
+  <h2>D+ to A. F to A. In 20 minutes.</h2>
+</div>
+
+<!-- ============================================================ -->
+<!-- SLIDE 21: Self-Repair Details -->
+<!-- ============================================================ -->
+<div class="slide" id="s21">
+  <div class="section-label">Self-Repair &mdash; What the System Built in 20 Minutes</div>
+  <div class="terminal">
+    <div class="terminal-header"><div class="terminal-dot red"></div><div class="terminal-dot yellow"></div><div class="terminal-dot green"></div></div>
+<pre>
+<span class="output">New modules created:</span>
+
+  <span class="success">aggregator.py</span>    <span class="dim">23,201 bytes</span>  ROMA-style context compression
+                                   Heuristic + structured + LLM strategies
+  <span class="success">coherence.py</span>     <span class="dim">17,657 bytes</span>  Coherence monitoring between pipeline steps
+                                   Drift detection, halt/warn/proceed signals
+  <span class="success">selfcheck.py</span>     <span class="dim">17,153 bytes</span>  Post-execution output validation
+                                   Scan for unauthorized actions
+  <span class="success">permissions.py</span>   <span class="dim">21,764 bytes</span>  Per-agent permission scoping
+                                   Tool/directory allow-lists per agent
+
+<span class="output">Tests created:</span>
+
+  <span class="success">test_behavioral.py</span>   <span class="dim">38,947 bytes</span>  50+ adversarial scenarios
+  <span class="success">test_eval_parity.py</span>  <span class="dim">11,525 bytes</span>  AST-level eval parity audit
+
+<span class="output">Before &rarr; After:</span>
+
+  Context Management:    <span class="grade-d">D+</span> &rarr; <span class="grade-a">A</span>   <span class="dim">(Aggregator module)</span>
+  Behavioral Testing:    <span class="grade-f">F</span>  &rarr; <span class="grade-a">A</span>   <span class="dim">(50+ adversarial tests)</span>
+  Execution Monitoring:  <span class="grade-c">C-</span> &rarr; <span class="grade-a">A</span>   <span class="dim">(coherence + selfcheck)</span>
+  Task Decomposition:    <span class="grade-b">B-</span> &rarr; <span class="grade-a">A</span>   <span class="dim">(recursive MECE decomposition)</span>
+  Alignment Injection:   <span class="grade-b">B+</span> &rarr; <span class="grade-a">A</span>   <span class="dim">(fail-closed gates)</span>
+</pre>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SLIDE 22: Final Scorecard -->
+<!-- ============================================================ -->
+<div class="slide" id="s22">
+  <div class="section-label">Final Scorecard &mdash; v3.2.0</div>
+  <div class="terminal large" style="text-align: center;">
+    <div class="terminal-header"><div class="terminal-dot red"></div><div class="terminal-dot yellow"></div><div class="terminal-dot green"></div></div>
+<pre style="font-size: 24px; line-height: 2;">
+
+  <span class="success" style="font-size: 72px;">648 tests. Zero failures.</span>
+
+
+  Alignment Injection     <span class="grade-a" style="font-size: 32px;">A</span>
+  Task Decomposition      <span class="grade-a" style="font-size: 32px;">A</span>
+  Execution Monitoring    <span class="grade-a" style="font-size: 32px;">A</span>
+  Context Management      <span class="grade-a" style="font-size: 32px;">A</span>
+  Behavioral Testing      <span class="grade-a" style="font-size: 32px;">A</span>
+
+  <span class="dim">Estimated effort: 2 days. Actual: 20 minutes.</span>
+</pre>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SLIDE 23: CORRECTION FLYWHEEL -->
+<!-- ============================================================ -->
+<div class="slide title-card" id="s23">
+  <div class="section-label">Act 4</div>
+  <h1>The Correction Flywheel</h1>
+  <h2>Every mistake makes every future agent smarter.</h2>
+</div>
+
+<!-- ============================================================ -->
+<!-- SLIDE 24: Flywheel Diagram -->
+<!-- ============================================================ -->
+<div class="slide" id="s24">
+  <div class="section-label">The Compounding Effect</div>
+  <div class="flywheel">
+    <div class="flywheel-step"><h4>Agent Makes Mistake</h4><p style="color:#f85149">Wrong approach used</p></div>
+    <div class="flywheel-arrow">&rarr;</div>
+    <div class="flywheel-step"><h4>Correction Logged</h4><p style="color:#d29922">Tagged by domain</p></div>
+    <div class="flywheel-arrow">&rarr;</div>
+    <div class="flywheel-step"><h4>Future Agents Injected</h4><p style="color:#58a6ff">Auto-selected by relevance</p></div>
+    <div class="flywheel-arrow">&rarr;</div>
+    <div class="flywheel-step"><h4>Fewer Mistakes</h4><p style="color:#3fb950">System gets smarter</p></div>
+  </div>
+  <div class="terminal" style="margin-top: 30px;">
+<pre>
+<span class="output">Domain Correction Map:</span>
+
+  Domain      Agent               Core Principles   Domain Corrections
+<span class="dim">  ──────────  ──────────────────  ────────────────  ──────────────────</span>
+  BIM         revit-builder       6                 5 (walls, sheets, views...)
+  research    research-agent      6                 4 (dates, sources, pricing)
+  business    business-analyst    6                 3 (TAM/SAM, competitors...)
+  code        automation-eng      6                 3 (libraries, CLI flags...)
+
+<span class="dim">Today: 16 principles across 4 domains</span>
+<span class="highlight">In 6 months: 200+ corrections across 20 domains. Every one making every agent smarter.</span>
+
+<span class="output">CrewAI starts from zero every time. My agents start from everything I've ever learned.</span>
+</pre>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SLIDE 25: THE NUMBERS -->
+<!-- ============================================================ -->
+<div class="slide title-card" id="s25">
+  <div class="section-label">Act 5</div>
+  <h1>The Numbers</h1>
+</div>
+
+<!-- ============================================================ -->
+<!-- SLIDE 26: Stats -->
+<!-- ============================================================ -->
+<div class="slide" id="s26">
+  <div class="section-label">Real Numbers From Today's Session</div>
+  <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 20px;">
+    <div class="stat"><span class="stat-value">27</span> <span class="stat-label">goals tracked across 6 hierarchies</span></div>
+    <div class="stat"><span class="stat-value">5</span> <span class="stat-label">domains &mdash; BIM, video editing, business, workspace, AI infrastructure</span></div>
+    <div class="stat"><span class="stat-value">8+</span> <span class="stat-label">sub-agents dispatched with automatic alignment injection</span></div>
+    <div class="stat"><span class="stat-value">3,000+</span> <span class="stat-label">lines of research produced autonomously</span></div>
+    <div class="stat"><span class="stat-value">19 min</span> <span class="stat-label">fully autonomous research sprint &mdash; zero human intervention</span></div>
+    <div class="stat"><span class="stat-value">D/F &rarr; A</span> <span class="stat-label">self-graded, self-repaired in 20 minutes</span></div>
+    <div class="stat"><span class="stat-value">648</span> <span class="stat-label">tests, zero failures</span></div>
+    <div class="stat"><span class="stat-value">705+</span> <span class="stat-label">MCP endpoints into Autodesk Revit</span></div>
+    <div class="stat"><span class="stat-value">142,000+</span> <span class="stat-label">lines of C# in the RevitMCPBridge</span></div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SLIDE 27: WHY THIS MATTERS -->
+<!-- ============================================================ -->
+<div class="slide title-card" id="s27">
+  <div class="section-label">Act 6</div>
+  <h1>Why This Matters</h1>
+</div>
+
+<!-- ============================================================ -->
+<!-- SLIDE 28: 4-Pillar Comparison -->
+<!-- ============================================================ -->
+<div class="slide" id="s28">
+  <div class="section-label">No Competitor Has All Four Pillars</div>
+  <div style="margin-top: 20px;">
+    <table>
+      <tr>
+        <th>Framework</th>
+        <th>Persistent Corrections</th>
+        <th>Goal-Linked Planning</th>
+        <th>Domain-Aware Injection</th>
+        <th>Deep Vertical Integration</th>
+      </tr>
+      <tr>
+        <td>CrewAI</td>
+        <td><span class="error">No</span></td>
+        <td><span class="error">No</span></td>
+        <td><span class="error">No</span></td>
+        <td><span class="error">No</span></td>
+      </tr>
+      <tr>
+        <td>AutoGen</td>
+        <td><span class="error">No</span></td>
+        <td><span class="error">No</span></td>
+        <td><span class="error">No</span></td>
+        <td><span class="error">No</span></td>
+      </tr>
+      <tr>
+        <td>LangGraph</td>
+        <td><span class="error">No</span></td>
+        <td><span class="warn">Partial</span></td>
+        <td><span class="error">No</span></td>
+        <td><span class="error">No</span></td>
+      </tr>
+      <tr>
+        <td>OpenAI Agents SDK</td>
+        <td><span class="error">No</span></td>
+        <td><span class="error">No</span></td>
+        <td><span class="error">No</span></td>
+        <td><span class="error">No</span></td>
+      </tr>
+      <tr style="background: #161b22;">
+        <td><span class="success" style="font-size: 1.1em;">Autonomy Engine</span></td>
+        <td><span class="success">Yes</span></td>
+        <td><span class="success">Yes</span></td>
+        <td><span class="success">Yes</span></td>
+        <td><span class="success">Yes (Revit, AEC)</span></td>
+      </tr>
+    </table>
+    <div style="margin-top: 30px; color: #8b949e; font-size: 17px;">
+      AI adoption in AEC: <span class="highlight" style="font-size: 24px;">27%</span><br>
+      <span class="dim">Not a crowded market. A blue ocean.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SLIDE 29: CLOSING -->
+<!-- ============================================================ -->
+<div class="slide title-card" id="s29">
+  <div class="section-label">Closing</div>
+  <h1>The Builder's Statement</h1>
+</div>
+
+<!-- ============================================================ -->
+<!-- SLIDE 30: Final -->
+<!-- ============================================================ -->
+<div class="slide title-card" id="s30">
+  <h1 style="font-size: 48px; line-height: 1.4;">
+    My system graded itself,<br>
+    found its own weaknesses,<br>
+    and repaired them in twenty minutes.
+  </h1>
+  <div class="subtitle" style="margin-top: 40px;">
+    That's not science fiction. That's a Tuesday.<br>
+    And it's getting better every single day.
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SLIDE 31: End Card -->
+<!-- ============================================================ -->
+<div class="slide title-card" id="s31">
+  <h1>The Autonomy Engine</h1>
+  <h2 class="accent">github.com/WeberG619/cadre-ai</h2>
+  <div class="subtitle" style="margin-top: 40px;">
+    Built by Weber Gouin at BIM Ops Studio<br>
+    Powered by Claude Code
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- NAVIGATION -->
+<!-- ============================================================ -->
+<div class="counter" id="counter">1 / 32</div>
+
+<script>
+let current = 0;
+const slides = document.querySelectorAll('.slide');
+const counter = document.getElementById('counter');
+const total = slides.length;
+
+function goTo(idx) {
+  if (idx < 0 || idx >= total) return;
+  slides[current].classList.remove('active');
+  current = idx;
+  slides[current].classList.add('active');
+  counter.textContent = (current + 1) + ' / ' + total;
+}
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+    e.preventDefault();
+    goTo(current + 1);
+  }
+  if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+    e.preventDefault();
+    goTo(current - 1);
+  }
+  if (e.key === 'Home') goTo(0);
+  if (e.key === 'End') goTo(total - 1);
+});
+
+// Allow URL hash navigation: slides.html#5 goes to slide 5
+if (location.hash) {
+  const idx = parseInt(location.hash.slice(1));
+  if (!isNaN(idx)) goTo(idx);
+}
+window.addEventListener('hashchange', () => {
+  const idx = parseInt(location.hash.slice(1));
+  if (!isNaN(idx)) goTo(idx);
+});
+</script>
+
+</body>
+</html>

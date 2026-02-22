@@ -1,23 +1,17 @@
 Hi,
 
-I'm a full-stack developer with strong experience in {{skills}} and a track record of delivering clean, maintainable solutions.
+{{description}}
 
-**What I bring:**
-- Python, C#, JavaScript/TypeScript across web and desktop applications
-- API design and integration (REST, GraphQL, WebSockets)
-- Database architecture and optimization
-- Production deployment and CI/CD experience
+I'm a full-stack developer working across Python, C#, and TypeScript daily — building everything from REST APIs and database systems to desktop applications and automation pipelines.
+
+**What I deliver:**
+- Clean, tested code with proactive communication — no surprises
+- Experience with {{skills}} in production environments
+- Fast turnaround — I typically have a working first version within days, not weeks
 
 **For {{title}}:**
-I'll focus on understanding your existing architecture first, then implement a solution that fits your codebase conventions and is easy to maintain long-term. I write tested, documented code and communicate proactively about progress and any blockers.
+I'd start with a quick technical review of your requirements and existing code, then propose a concrete approach before writing a line. I focus on solutions that are easy to maintain after handoff.
 
-**My process:**
-1. Quick technical review of requirements + existing code
-2. Propose approach with timeline estimate
-3. Iterative delivery with check-ins
-4. Clean handoff with documentation
+Can start immediately. What's the current state of the codebase I'd be working with?
 
-Available to start immediately. Happy to do a brief technical discussion to align on approach.
-
-Best,
 Weber Gouin

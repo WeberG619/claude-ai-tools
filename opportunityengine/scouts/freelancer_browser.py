@@ -14,28 +14,28 @@ import json
 import sys
 from urllib.parse import quote_plus
 
-CDP_PORTS = [9222, 9224, 9225, 9223, 9229]
-CDP_TIMEOUT = 8000
+CDP_HOST = "localhost"
+CDP_PORT = 9225
+CDP_URL = f"http://{CDP_HOST}:{CDP_PORT}"
+CDP_TIMEOUT = 15000
 
 
 async def connect_cdp():
-    """Connect to an existing Chrome CDP session."""
+    """Connect to Edge CDP session on localhost:9225."""
     from playwright.async_api import async_playwright
     pw = await async_playwright().start()
 
-    for port in CDP_PORTS:
-        for host in ["localhost", "127.0.0.1", "[::1]"]:
-            try:
-                browser = await pw.chromium.connect_over_cdp(
-                    f"http://{host}:{port}", timeout=CDP_TIMEOUT
-                )
-                print(f"Connected to CDP on {host}:{port}", file=sys.stderr)
-                return pw, browser, port
-            except Exception:
-                continue
-
-    await pw.stop()
-    raise RuntimeError(f"No Chrome CDP found on ports {CDP_PORTS}")
+    try:
+        browser = await pw.chromium.connect_over_cdp(CDP_URL, timeout=CDP_TIMEOUT)
+        print(f"Connected to Edge CDP on {CDP_HOST}:{CDP_PORT}", file=sys.stderr)
+        return pw, browser, CDP_PORT
+    except Exception as e:
+        await pw.stop()
+        raise RuntimeError(
+            f"Edge CDP not responding on {CDP_URL}. "
+            f"Launch Edge with: msedge.exe --remote-debugging-port={CDP_PORT} --restore-last-session\n"
+            f"Error: {e}"
+        )
 
 
 async def scrape_freelancer(search_term: str) -> list:

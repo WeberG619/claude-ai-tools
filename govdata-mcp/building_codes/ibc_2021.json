@@ -1,0 +1,438 @@
+{
+  "edition": "2021 IBC",
+  "full_name": "International Building Code 2021",
+  "publisher": "International Code Council (ICC)",
+  "note": "Simplified reference summaries. For full code text, consult ICC at https://codes.iccsafe.org/",
+  "sections": {
+    "101": {
+      "title": "Scope and Administration",
+      "summary": "General scope of the IBC, applicability, and administrative provisions.",
+      "subsections": {
+        "101.1": "Title - International Building Code",
+        "101.2": "Scope - Applies to construction, alteration, relocation, enlargement, replacement, repair, equipment, use and occupancy, location, maintenance, removal and demolition of every building or structure",
+        "101.3": "Intent - To establish minimum requirements to provide a reasonable level of safety, public health and general welfare"
+      }
+    },
+    "202": {
+      "title": "Definitions",
+      "summary": "Definitions of terms used throughout the IBC.",
+      "key_terms": [
+        "BUILDING - Any structure used for support or shelter",
+        "DWELLING UNIT - Single unit providing complete independent living facilities",
+        "FIRE AREA - Aggregate floor area enclosed and bounded by fire walls",
+        "STORY - Portion of a building between upper surface of a floor and upper surface of floor next above",
+        "GRADE PLANE - Reference plane for measuring building height",
+        "HIGH-RISE BUILDING - Building with occupied floor more than 75 ft above fire dept access"
+      ]
+    },
+    "302": {
+      "title": "Classification of Occupancy",
+      "summary": "Building use classifications including Assembly (A), Business (B), Educational (E), Factory (F), High-Hazard (H), Institutional (I), Mercantile (M), Residential (R), Storage (S), and Utility (U).",
+      "subsections": {
+        "302.1": "Occupancy Classification - Buildings shall be classified by occupancy group",
+        "303": "Assembly Group A - A-1 through A-5",
+        "304": "Business Group B",
+        "305": "Educational Group E",
+        "306": "Factory Group F - F-1 (Moderate-hazard), F-2 (Low-hazard)",
+        "307": "High-Hazard Group H - H-1 through H-5",
+        "308": "Institutional Group I - I-1 through I-4",
+        "309": "Mercantile Group M",
+        "310": "Residential Group R - R-1 through R-4",
+        "311": "Storage Group S - S-1 (Moderate-hazard), S-2 (Low-hazard)",
+        "312": "Utility and Miscellaneous Group U"
+      }
+    },
+    "403": {
+      "title": "High-Rise Buildings",
+      "summary": "Special requirements for buildings with occupied floors more than 75 feet above the lowest level of fire department vehicle access.",
+      "subsections": {
+        "403.1": "Applicability - Buildings with occupied floor more than 75 ft above lowest fire dept access",
+        "403.2": "Reduction in fire-resistance rating",
+        "403.3": "Automatic sprinkler system requirements",
+        "403.4": "Fire alarm and detection systems",
+        "403.5": "Means of egress provisions",
+        "403.6": "Emergency systems (standby power, emergency lighting)"
+      }
+    },
+    "405": {
+      "title": "Underground Buildings",
+      "summary": "Special requirements for underground buildings with occupied floors more than 30 feet below the lowest level of exit discharge.",
+      "subsections": {
+        "405.1": "Applicability - Buildings with floor level used for human occupancy more than 30 ft below exit discharge",
+        "405.2": "Construction type - Type I construction required",
+        "405.3": "Compartmentation - Max 1,500 sq ft smoke compartments required",
+        "405.4": "Fire suppression - NFPA 13 automatic sprinklers required",
+        "405.5": "Smoke exhaust/ventilation system required",
+        "405.7": "Standby power required for smokeproof enclosures, ventilation, fire alarm, elevators",
+        "405.8": "Emergency power required for emergency lighting, exit signs"
+      }
+    },
+    "406": {
+      "title": "Motor-Vehicle-Related Occupancies",
+      "summary": "Requirements for parking garages, repair garages, and motor fuel-dispensing facilities.",
+      "subsections": {
+        "406.1": "Private garages and carports",
+        "406.2": "Parking garages - Open and enclosed",
+        "406.3": "Repair garages - Classification and requirements",
+        "406.4": "Parking garages - Height and area increases for open parking",
+        "406.5": "Motor fuel-dispensing facilities",
+        "406.6": "Hydrogen motor fuel-dispensing and generation facilities"
+      }
+    },
+    "503": {
+      "title": "General Building Height and Area Limitations",
+      "summary": "Tables and requirements for maximum building height and floor area based on occupancy and construction type.",
+      "subsections": {
+        "503.1": "General height and area - See Table 504.3, 504.4, 506.2",
+        "504": "Building height in feet and stories",
+        "506": "Building area modifications (frontage and sprinkler increases)"
+      }
+    },
+    "602": {
+      "title": "Construction Classification",
+      "summary": "Five types of construction: Type I (Fire-Resistive), Type II (Non-Combustible), Type III (Ordinary), Type IV (Heavy Timber/Mass Timber), Type V (Wood Frame).",
+      "subsections": {
+        "602.1": "General - Buildings classified by construction type",
+        "602.2": "Type I - Noncombustible structural elements, fire-resistive",
+        "602.3": "Type II - Noncombustible structural elements",
+        "602.4": "Type III - Exterior walls noncombustible, interior any material",
+        "602.5": "Type IV - Heavy Timber and Mass Timber (IV-A, IV-B, IV-C, IV-HT)",
+        "602.6": "Type V - Structural elements any material permitted by code"
+      }
+    },
+    "702": {
+      "title": "Fire-Resistance-Rated Construction - Definitions",
+      "summary": "Definitions related to fire-resistance-rated construction elements.",
+      "subsections": {
+        "702.1": "Definitions - Fire barrier, fire partition, fire wall, shaft enclosure, horizontal assembly, smoke barrier, smoke partition"
+      }
+    },
+    "703": {
+      "title": "Fire-Resistance Ratings and Fire Tests",
+      "summary": "Methods for determining fire-resistance ratings of building elements.",
+      "subsections": {
+        "703.1": "Alternative methods - Testing (ASTM E119), calculations, prescriptive design",
+        "703.2": "Fire-resistance ratings - Based on ASTM E119 standard fire test",
+        "703.3": "Restrained and unrestrained classifications",
+        "703.4": "Nonsymmetrical protection - Rating based on weaker side"
+      }
+    },
+    "706": {
+      "title": "Fire Walls",
+      "summary": "Requirements for fire walls used to create separate buildings for height and area purposes.",
+      "subsections": {
+        "706.1": "General - Fire walls create separate buildings",
+        "706.2": "Structural stability - Independent structural frame each side",
+        "706.4": "Fire-resistance rating - 2hr to 4hr depending on occupancy",
+        "706.5": "Horizontal continuity - Extend to exterior walls",
+        "706.6": "Vertical continuity - Extend from foundation to or through roof"
+      }
+    },
+    "707": {
+      "title": "Fire Barriers",
+      "summary": "Requirements for fire barriers used to separate occupancies, exit enclosures, and other fire-rated separations.",
+      "subsections": {
+        "707.1": "General - Fire barriers limit spread of fire",
+        "707.2": "Materials - Noncombustible or limited-combustible",
+        "707.3": "Fire-resistance rating - Per Table 707.3.10",
+        "707.5": "Continuity - Floor to underside of floor or roof deck above",
+        "707.6": "Openings - Protected per Section 716"
+      }
+    },
+    "903": {
+      "title": "Automatic Sprinkler Systems",
+      "summary": "Requirements for when automatic sprinkler systems must be installed.",
+      "subsections": {
+        "903.2": "Where required - Group A, B, E, F, H, I, M, R, S occupancies",
+        "903.2.1": "Group A - Assembly occupancies",
+        "903.2.7": "Group M - Mercantile occupancies over 12,000 sq ft",
+        "903.2.8": "Group R - Residential occupancies",
+        "903.3": "Installation requirements - NFPA 13, 13R, 13D"
+      }
+    },
+    "905": {
+      "title": "Standpipe Systems",
+      "summary": "Requirements for standpipe systems in buildings.",
+      "subsections": {
+        "905.1": "General - Installation per NFPA 14",
+        "905.2": "Installation standard - NFPA 14",
+        "905.3": "Required installations - Buildings 3+ stories, stages, underground buildings, malls",
+        "905.3.1": "Height - Required when floor level is more than 30 ft above or below fire dept access",
+        "905.4": "Location of Class I standpipe hose connections - In stairways, horizontal exits, malls",
+        "905.5": "Location of Class II standpipe hose connections",
+        "905.6": "Location of Class III standpipe hose connections"
+      }
+    },
+    "907": {
+      "title": "Fire Alarm and Detection Systems",
+      "summary": "Requirements for fire alarm systems, smoke detection, and notification.",
+      "subsections": {
+        "907.1": "General - Fire alarm per NFPA 72",
+        "907.2": "Where required - Manual and automatic fire alarm systems by occupancy",
+        "907.2.1": "Group A - Assembly occupancies exceeding 300 occupants",
+        "907.2.2": "Group B - Ambulatory care facilities",
+        "907.2.6": "Group I - Institutional occupancies",
+        "907.2.9": "Group R-1 - Hotels and motels",
+        "907.2.11": "Special amusement buildings",
+        "907.4": "Initiating devices - Manual pull stations",
+        "907.5": "Notification appliances - Audible and visible alarms"
+      }
+    },
+    "909": {
+      "title": "Smoke Control Systems",
+      "summary": "Requirements for engineered smoke control systems in specific building types.",
+      "subsections": {
+        "909.1": "Scope and purpose - Control smoke migration in means of egress",
+        "909.2": "General design requirements - Rational analysis required",
+        "909.4": "Stack effect - Evaluation required",
+        "909.5": "Temperature effect of fire",
+        "909.6": "Wind effect - Evaluation required",
+        "909.8": "Exhaust method - Min 6 air changes/hour",
+        "909.10": "Equipment - Smoke control equipment and installation",
+        "909.11": "Power systems - Standby power required",
+        "909.12": "Detection and control systems"
+      }
+    },
+    "1003": {
+      "title": "Means of Egress - General",
+      "summary": "General requirements for means of egress including exit access, exits, and exit discharge.",
+      "subsections": {
+        "1003.1": "Applicability",
+        "1003.2": "Ceiling height - Min 7 ft 6 in. in means of egress",
+        "1003.3": "Protruding objects - Max 4 in. projection into path when between 27 in. and 80 in. AFF",
+        "1003.4": "Floor surface - Slip-resistant required in means of egress",
+        "1003.5": "Elevation change - Ramp or stairway required for elevation changes exceeding 1/4 in."
+      }
+    },
+    "1004": {
+      "title": "Occupant Load",
+      "summary": "Calculation of occupant load for determining egress requirements.",
+      "subsections": {
+        "1004.1": "Design occupant load - Per Table 1004.5 or actual, whichever is greater",
+        "1004.2": "Areas without fixed seating - Calculated by floor area / occupant load factor",
+        "1004.3": "Posting of occupant load - Required for assembly occupancies",
+        "1004.5": "Table 1004.5 - Maximum floor area allowances per occupant (assembly 15 net sf, business 150 gross sf, educational 20 net sf, mercantile 60 gross sf)"
+      }
+    },
+    "1006": {
+      "title": "Number of Exits and Exit Access Doorways",
+      "summary": "Minimum number of exits based on occupant load.",
+      "subsections": {
+        "1006.2": "Minimum number of exits - 1 exit for OL ≤49 (with sprinklers in some cases), 2 exits for OL 1-500, 3 exits for OL 501-1000, 4 exits for OL >1000",
+        "1006.2.1": "Single exit - Conditions allowing a single exit",
+        "1006.3": "Exit access doorways - Number required from individual spaces"
+      }
+    },
+    "1010": {
+      "title": "Doors, Gates, and Turnstiles",
+      "summary": "Requirements for doors in means of egress.",
+      "subsections": {
+        "1010.1": "Doors - Size, type, and swing requirements",
+        "1010.1.1": "Size of doors - Min 32 in. clear width, min 80 in. height",
+        "1010.1.2": "Door swing - Direction of exit travel when serving OL ≥50",
+        "1010.1.3": "Floor level at doors - Max 1/2 in. threshold height",
+        "1010.1.4": "Landings at doors - Landing each side of door, length = door width"
+      }
+    },
+    "1011": {
+      "title": "Stairways",
+      "summary": "Requirements for stairways in means of egress.",
+      "subsections": {
+        "1011.2": "Width and capacity - Min 44 in. (36 in. if OL <50)",
+        "1011.3": "Headroom - Min 6 ft 8 in. measured vertically from tread nosing",
+        "1011.5": "Stairway risers and treads - Max 7 in. riser, min 11 in. tread",
+        "1011.7": "Stairway landings - Required at top and bottom, length = width",
+        "1011.11": "Handrails - Required on both sides, 34-38 in. height"
+      }
+    },
+    "1017": {
+      "title": "Exit Access Travel Distance",
+      "summary": "Maximum travel distance from any occupied point to the nearest exit.",
+      "subsections": {
+        "1017.1": "General - Max distance per Table 1017.2",
+        "1017.2": "Table 1017.2 exit access travel distance - Without sprinklers: A/B/E/F/M/S/U = 200 ft, H-1 = 75 ft, H-2 = 100 ft, I-3 = 200 ft, R = 200 ft. With sprinklers: A/B/E/F/M/S/U = 250 ft, H = varies, I = 200-250 ft, R = 250 ft"
+      }
+    },
+    "1020": {
+      "title": "Corridors",
+      "summary": "Requirements for corridors used as exit access components.",
+      "subsections": {
+        "1020.1": "Construction - Fire-resistance rating per Table 1020.1",
+        "1020.2": "Width - Min 44 in. (36 in. if OL <50), 72 in. for Group I-2",
+        "1020.3": "Dead-end corridors - Max 20 ft (50 ft with sprinklers)"
+      }
+    },
+    "1401": {
+      "title": "Exterior Walls - General",
+      "summary": "General provisions for exterior wall coverings and assemblies.",
+      "subsections": {
+        "1401.1": "Scope - Provisions governing exterior walls, wall coverings, and components",
+        "1401.2": "Performance requirements - Weather resistance, structural, fire"
+      }
+    },
+    "1403": {
+      "title": "Exterior Wall Coverings - Performance Requirements",
+      "summary": "Weather protection and performance requirements for exterior wall coverings.",
+      "subsections": {
+        "1403.1": "Performance requirements - Weather protection",
+        "1403.2": "Weather resistance - Water-resistive barrier required behind exterior wall covering",
+        "1403.5": "Combustible materials on Type I and II construction - Limitations"
+      }
+    },
+    "1405": {
+      "title": "Exterior Wall Coverings - Installation",
+      "summary": "Installation requirements for various exterior wall covering materials.",
+      "subsections": {
+        "1405.1": "General installation requirements",
+        "1405.2": "Metal - Approved corrosion-resistant metals",
+        "1405.4": "Masonry veneer - Anchored or adhered",
+        "1405.5": "Stone veneer - Natural or manufactured",
+        "1405.6": "Wood veneer",
+        "1405.11": "Fiber cement siding",
+        "1405.14": "Vinyl siding"
+      }
+    },
+    "1503": {
+      "title": "Roof Drainage",
+      "summary": "Requirements for roof drainage systems.",
+      "subsections": {
+        "1503.1": "General - Roof drainage systems designed per applicable plumbing code",
+        "1503.2": "Gutters - Size per plumbing code",
+        "1503.3": "Leaders and conductors",
+        "1503.4": "Roof drainage overflow - Secondary drainage or scuppers required"
+      }
+    },
+    "1507": {
+      "title": "Roof Covering Materials and Application",
+      "summary": "Requirements for roof covering materials and their installation.",
+      "subsections": {
+        "1507.1": "Scope and general requirements",
+        "1507.2": "Asphalt shingles - ASTM D3462, slope 2:12 minimum",
+        "1507.3": "Clay and concrete tile",
+        "1507.4": "Metal roof panels",
+        "1507.5": "Metal roof shingles",
+        "1507.8": "Slate shingles",
+        "1507.10": "Built-up roofs",
+        "1507.11": "Modified bitumen roofing",
+        "1507.12": "Thermoset single-ply roofing (EPDM)",
+        "1507.13": "Thermoplastic single-ply roofing (TPO, PVC)"
+      }
+    },
+    "1607": {
+      "title": "Live Loads",
+      "summary": "Minimum uniformly distributed and concentrated live loads for buildings.",
+      "subsections": {
+        "1607.1": "General - Live loads per Table 1607.1",
+        "Table 1607.1": "Minimum uniformly distributed and concentrated live loads (offices 50 psf, residential 40 psf, corridors 100 psf, assembly 100 psf, storage 125-250 psf)"
+      }
+    },
+    "1608": {
+      "title": "Snow Loads",
+      "summary": "Design snow loads for buildings and structures per ASCE 7.",
+      "subsections": {
+        "1608.1": "General - Design per ASCE 7",
+        "1608.2": "Ground snow loads - Per Figure 1608.2 or site-specific study",
+        "1608.3": "Design snow loads - Flat roof, sloped roof, drift, unbalanced per ASCE 7"
+      }
+    },
+    "1609": {
+      "title": "Wind Loads",
+      "summary": "Minimum design wind loads for buildings and structures per ASCE 7.",
+      "subsections": {
+        "1609.1": "Applications - Design per ASCE 7",
+        "1609.2": "Definitions",
+        "1609.3": "Basic design wind speed - Per Figure 1609.3",
+        "1609.4": "Exposure category"
+      }
+    },
+    "1611": {
+      "title": "Rain Loads",
+      "summary": "Design rain loads for roofs considering ponding and drainage.",
+      "subsections": {
+        "1611.1": "Design rain loads - Based on static head depth to inlet of secondary drainage",
+        "1611.2": "Ponding instability - Susceptible bays must be investigated for progressive deflection",
+        "1611.3": "Controlled drainage - Roof designed for full depth of water to the inlet of secondary drainage"
+      }
+    },
+    "1612": {
+      "title": "Flood Loads",
+      "summary": "Requirements for buildings in flood hazard areas.",
+      "subsections": {
+        "1612.1": "General - Comply with ASCE 7 and ASCE 24",
+        "1612.3": "Establishment of flood hazard areas",
+        "1612.4": "Design and construction"
+      }
+    },
+    "1613": {
+      "title": "Earthquake Loads",
+      "summary": "Seismic design requirements for buildings and structures.",
+      "subsections": {
+        "1613.1": "Scope - Every structure and portion thereof shall be designed per ASCE 7",
+        "1613.2": "Definitions - Seismic Design Category, Base Shear, Importance Factor",
+        "1613.2.1": "Mapped acceleration parameters - Ss and S1 from USGS maps",
+        "1613.2.5": "Site class - Based on soil properties (A through F)",
+        "1613.3": "Seismic Design Category determination - Based on SDS, SD1, Risk Category, and site class"
+      }
+    },
+    "1704": {
+      "title": "Special Inspections",
+      "summary": "General requirements for special inspections and testing during construction.",
+      "subsections": {
+        "1704.1": "General - Special inspections per this section and Section 1705",
+        "1704.2": "Special inspector qualifications - ICC certified or PE/RA",
+        "1704.3": "Statement of special inspections - Submitted by RDP before permit issuance",
+        "1704.4": "Report requirements",
+        "1704.5": "Contractor responsibility - Provide access to work"
+      }
+    },
+    "1705": {
+      "title": "Required Special Inspections and Tests",
+      "summary": "Specific construction activities requiring special inspections.",
+      "subsections": {
+        "1705.1": "Special inspections and tests - General",
+        "1705.2": "Steel construction - Welding, bolting, details",
+        "1705.3": "Concrete construction - Reinforcement, placement, PT",
+        "1705.4": "Masonry construction - Grout, mortar, placement",
+        "1705.5": "Wood construction - High-load diaphragms, metal-plate trusses",
+        "1705.6": "Soils - Fill placement, compaction testing",
+        "1705.7": "Driven deep foundations",
+        "1705.8": "Cast-in-place deep foundations (drilled shafts, auger piles)",
+        "1705.11": "Sprayed fire-resistant materials",
+        "1705.12": "Exterior insulation and finish systems (EIFS)",
+        "1705.13": "Special inspections for seismic resistance",
+        "1705.14": "Special inspections for wind resistance"
+      }
+    },
+    "1803": {
+      "title": "Geotechnical Investigations",
+      "summary": "When geotechnical investigations (soil reports) are required.",
+      "subsections": {
+        "1803.1": "General - Geotechnical investigation required where indicated",
+        "1803.2": "Investigations required - Where Table 1809.7 soil capacity presumed values not used, questionable soil, fill, special design conditions",
+        "1803.3": "Report requirements - Boring logs, recommended bearing, lateral pressure, settlement estimate, groundwater depth",
+        "1803.4": "Liquefaction study - Required for SDC D, E, F",
+        "1803.5": "Expansive soils - Investigation for presence"
+      }
+    },
+    "1808": {
+      "title": "Foundations",
+      "summary": "General foundation design requirements.",
+      "subsections": {
+        "1808.1": "General - Foundation design per geotechnical investigation and structural analysis",
+        "1808.2": "Design for capacity - Designed for the most unfavorable load effects",
+        "1808.3": "Foundation walls - Per Section 1807.1.5",
+        "1808.4": "Retaining walls"
+      }
+    },
+    "1809": {
+      "title": "Shallow Foundations",
+      "summary": "Requirements for spread footings, mat foundations, and shallow foundations.",
+      "subsections": {
+        "1809.1": "General - Shallow foundations bear on competent soil or engineered fill",
+        "1809.4": "Depth of footings - Min 12 in. below undisturbed ground, below frost line",
+        "1809.5": "Footing size - Based on soil bearing capacity, min 12 in. width",
+        "1809.7": "Table 1809.7 - Presumptive load-bearing values: rock 12,000 psf, gravel 3,000 psf, sand 2,000 psf, clay 1,500 psf, fill = engineering required"
+      }
+    }
+  }
+}

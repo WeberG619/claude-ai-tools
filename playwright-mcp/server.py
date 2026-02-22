@@ -35,9 +35,17 @@ server = Server("playwright-browser")
 CDP_PORT = 9222
 CDP_URL = f"http://127.0.0.1:{CDP_PORT}"
 
-# Chrome paths
-CHROME_PATH = r"C:\Program Files\Google\Chrome\Application\chrome.exe"
+# Browser paths (Chrome and Edge)
+BROWSER_PATHS = {
+    "chrome": r"C:\Program Files\Google\Chrome\Application\chrome.exe",
+    "edge": r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe",
+}
+# Fallback: check both locations for Edge
+if not os.path.exists(BROWSER_PATHS["edge"]):
+    BROWSER_PATHS["edge"] = r"C:\Program Files\Microsoft\Edge\Application\msedge.exe"
+
 CHROME_USER_DATA = os.path.join(os.environ.get("LOCALAPPDATA", ""), "Google", "Chrome", "User Data")
+EDGE_USER_DATA = os.path.join(os.environ.get("LOCALAPPDATA", ""), "Microsoft", "Edge", "User Data")
 CDP_PROFILE_DIR = os.path.join(os.environ.get("TEMP", ""), "chrome-pw-cdp")
 
 # Global state
@@ -105,14 +113,62 @@ def _copy_session_to_cdp_profile(source_profile: str):
             shutil.copy2(fpath, os.path.join(net_dst, fname))
 
 
-def _launch_chrome_cdp():
-    """Launch Chrome with CDP using a dedicated profile directory."""
+def _detect_running_browser() -> str:
+    """Detect which browser is currently running (chrome or edge)."""
+    try:
+        result = subprocess.run(
+            ["tasklist", "/FI", "IMAGENAME eq chrome.exe", "/NH"],
+            capture_output=True, text=True, timeout=5
+        )
+        if "chrome.exe" in result.stdout.lower():
+            return "chrome"
+    except Exception:
+        pass
+    try:
+        result = subprocess.run(
+            ["tasklist", "/FI", "IMAGENAME eq msedge.exe", "/NH"],
+            capture_output=True, text=True, timeout=5
+        )
+        if "msedge.exe" in result.stdout.lower():
+            return "edge"
+    except Exception:
+        pass
+    return "chrome"  # default
+
+
+def _get_browser_process_name(browser: str) -> str:
+    return "msedge.exe" if browser == "edge" else "chrome.exe"
+
+
+def _get_user_data_dir(browser: str) -> str:
+    return EDGE_USER_DATA if browser == "edge" else CHROME_USER_DATA
+
+
+def _launch_browser_cdp(browser: str = None):
+    """Launch Chrome or Edge with CDP using a dedicated profile directory."""
+    if browser is None:
+        browser = _detect_running_browser()
+
+    browser_path = BROWSER_PATHS.get(browser, BROWSER_PATHS["chrome"])
+    if not os.path.exists(browser_path):
+        # Fallback to whichever exists
+        for name, path in BROWSER_PATHS.items():
+            if os.path.exists(path):
+                browser_path = path
+                browser = name
+                break
+
     # Ensure CDP profile has current session cookies
-    profile = _find_chrome_profile()
-    _copy_session_to_cdp_profile(profile)
+    user_data = _get_user_data_dir(browser)
+    if os.path.exists(user_data):
+        try:
+            profile = _find_chrome_profile()
+            _copy_session_to_cdp_profile(profile)
+        except Exception:
+            pass  # Non-fatal: proceed without session copy
 
     subprocess.Popen([
-        CHROME_PATH,
+        browser_path,
         f"--remote-debugging-port={CDP_PORT}",
         f"--user-data-dir={CDP_PROFILE_DIR}",
         "about:blank",
@@ -120,45 +176,65 @@ def _launch_chrome_cdp():
 
 
 async def _ensure_browser() -> Page:
-    """Connect to Chrome via CDP, starting it with CDP if needed."""
+    """Connect to Chrome/Edge via CDP, starting browser with CDP if needed.
+
+    Handles reconnection if the browser was closed or CDP dropped.
+    """
     global _playwright, _browser, _context, _page
 
+    # Fast path: existing page is still alive
     if _page and not _page.is_closed():
-        return _page
+        try:
+            await _page.title()  # Quick liveness check
+            return _page
+        except Exception:
+            _page = None  # Page died, fall through to reconnect
 
     if _playwright is None:
         _playwright = await async_playwright().start()
 
-    # Try connecting to existing CDP
-    try:
-        _browser = await _playwright.chromium.connect_over_cdp(CDP_URL, timeout=3000)
-        contexts = _browser.contexts
-        if contexts:
-            _context = contexts[0]
-            pages = _context.pages
-            if pages:
-                _page = pages[0]
-                return _page
-        if _context is None:
-            _context = await _browser.new_context()
-        _page = await _context.new_page()
-        return _page
-    except Exception:
-        pass
+    # Try connecting to existing CDP endpoint
+    for attempt in range(2):
+        try:
+            if _browser:
+                try:
+                    _browser.close()
+                except Exception:
+                    pass
+            _browser = await _playwright.chromium.connect_over_cdp(CDP_URL, timeout=5000)
+            contexts = _browser.contexts
+            if contexts:
+                _context = contexts[0]
+                pages = _context.pages
+                if pages:
+                    _page = pages[0]
+                    return _page
+            if _context is None:
+                _context = await _browser.new_context()
+            _page = await _context.new_page()
+            return _page
+        except Exception:
+            if attempt == 0:
+                await asyncio.sleep(1)
 
-    # Kill existing Chrome (regular Chrome without CDP)
+    # CDP not available — need to launch a browser with CDP
+    browser_type = _detect_running_browser()
+    proc_name = _get_browser_process_name(browser_type)
+
+    # Kill existing browser (it's running without CDP)
     try:
-        subprocess.run(["taskkill", "/F", "/IM", "chrome.exe"],
+        subprocess.run(["taskkill", "/F", "/IM", proc_name],
                        capture_output=True, timeout=10)
     except Exception:
         pass
     await asyncio.sleep(3)
 
     # Launch with CDP
-    _launch_chrome_cdp()
+    _launch_browser_cdp(browser_type)
     await asyncio.sleep(5)
 
     # Connect with retries
+    last_error = None
     for attempt in range(10):
         try:
             _browser = await _playwright.chromium.connect_over_cdp(CDP_URL, timeout=5000)
@@ -173,10 +249,11 @@ async def _ensure_browser() -> Page:
                 _context = await _browser.new_context()
             _page = await _context.new_page()
             return _page
-        except Exception:
+        except Exception as e:
+            last_error = e
             await asyncio.sleep(1)
 
-    raise RuntimeError("Failed to connect to Chrome via CDP")
+    raise RuntimeError(f"Failed to connect to {browser_type} via CDP after 10 retries: {last_error}")
 
 
 async def _get_page_by_url_or_title(url_pattern: str = None, title_pattern: str = None) -> Optional[Page]:
@@ -504,12 +581,25 @@ async def call_tool(name: str, arguments: dict) -> list:
             await page.bring_to_front()
             url = arguments["url"]
             wait_for = arguments.get("wait_for", "")
-            await page.goto(url, wait_until="domcontentloaded", timeout=30000)
+            response = None
+            try:
+                response = await page.goto(url, wait_until="domcontentloaded", timeout=30000)
+            except Exception as nav_err:
+                err_str = str(nav_err)
+                # Handle HTTP error codes (404, 500, etc.) — page still loaded
+                if "net::ERR_HTTP_RESPONSE_CODE_FAILURE" in err_str:
+                    pass  # Page loaded but returned error status — that's OK
+                elif "net::ERR_ABORTED" in err_str:
+                    pass  # Download or redirect interruption — page may still be usable
+                else:
+                    raise
             if wait_for:
                 await page.wait_for_selector(wait_for, timeout=10000)
+            status = response.status if response else "unknown"
             return [TextContent(type="text", text=json.dumps({
                 "url": page.url,
-                "title": await page.title()
+                "title": await page.title(),
+                "status": status
             }))]
 
         if name == "pw_list_tabs":
@@ -677,12 +767,14 @@ async def call_tool(name: str, arguments: dict) -> list:
             page = await _ensure_browser()
             full_page = arguments.get("full_page", False)
             selector = arguments.get("selector")
+            # Full-page screenshots of large pages need more time
+            ss_timeout = 60000 if full_page else 30000
 
             if selector:
                 el = page.locator(selector)
-                screenshot_bytes = await el.screenshot()
+                screenshot_bytes = await el.screenshot(timeout=ss_timeout)
             else:
-                screenshot_bytes = await page.screenshot(full_page=full_page)
+                screenshot_bytes = await page.screenshot(full_page=full_page, timeout=ss_timeout)
 
             b64 = base64.b64encode(screenshot_bytes).decode()
             return [ImageContent(type="image", data=b64, mimeType="image/png")]

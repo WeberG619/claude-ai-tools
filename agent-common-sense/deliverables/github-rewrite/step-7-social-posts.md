@@ -1,179 +1,155 @@
-# Social Announcement Posts
-
-## LinkedIn Posts
+# Social Posts — Deep Web Framing (In Weber's Voice)
 
 ---
 
-### LinkedIn Post 1: The Self-Repair Story
+## LINKEDIN POST 1 — The Big One (Lead With This)
 
-**I built an AI system that went from D/F grades to straight A's in 20 minutes. Here's how.**
+Everyone's building AI agents for the surface web. I built one that navigates the other 90%.
 
-Last month I ran an experiment. I gave my AI agent system a complex task: set up a full Revit construction document set — sheets, views, annotations, schedules. Hundreds of operations.
+Here's what I mean.
 
-The first run was rough. Wrong sheet numbering. Views placed off-center. Annotations overlapping. If I were grading it, maybe a D.
+Google indexes about 10% of the internet. The rest — your private databases, your internal tools, your proprietary software — that's the deep web. Not the dark web. The boring deep web. Your email. Your Revit models. Your company's SQL databases. Your Slack history.
 
-But here's what happened next.
+That's where the valuable data lives. And no AI assistant can touch it.
 
-Every mistake got captured. Not just "this failed" — the full context. What went wrong, what the correct approach was, and a detection pattern so the system recognizes the situation before it happens again.
+I spent the last year building a system that can. It's called the Autonomy Engine, and it works through MCP — Model Context Protocol. Every MCP server is a doorway into a data silo that Google will never index. Revit models. GitHub repos. Google Workspace. Notion databases. Internal APIs.
 
-Second run: B+. Third run: A-. Fourth run: A.
+Right now my system has 705+ endpoints into Autodesk Revit alone. AI agents can read, create, and modify building models with zero manual steps. But Revit is just the first silo.
 
-The agent didn't get "smarter." It got *corrected*. And those corrections persist across sessions. The agent that runs tomorrow inherits every lesson from today.
+The part that makes this different from every other agent framework: my agents learn. Every mistake gets stored as a correction, tagged to a domain, and automatically injected into every future agent working in that domain. The first agent to hit an undocumented API edge case is the last. That pattern transfers across silos.
 
-I call it the Correction Flywheel:
-- Agent makes mistake → correction stored with domain tag
-- Future agent in same domain → correction auto-injected
-- Mistake avoided → outcome tracked → signal strengthened
+Day one with a new integration: raw. Day thirty: it's inherited hundreds of navigation patterns from every previous integration. Nobody starting from scratch can match that.
 
-This is the core of what I've been building for the past year: the Autonomy Engine. 663 tests. 8 domain correction packs. 5-phase architecture (Goals → Planner → Alignment → Coordinator → Execution).
+The surface web AI race is crowded. The deep web is wide open.
 
-It's not another agent framework. It's a system that makes agents learn.
+Open source: github.com/WeberG619/claude-ai-tools
 
-Open source. Link in comments.
-
-#AI #AIAgents #SoftwareEngineering #BuildInPublic #AEC
+#AI #BuildInPublic #DeepWeb #AEC #SoloDev
 
 ---
 
-### LinkedIn Post 2: The Correction Flywheel
+## LINKEDIN POST 2 — The Builder's Story
 
-**Every AI agent framework has the same fatal flaw: agents start from zero every session.**
+I'm a solo developer. No team. No funding. Here's what I shipped this year.
 
-Think about it. Your AI assistant helps you with a complex task. Makes a mistake. You correct it. It does better. Session ends.
+A system where AI agents don't start from zero. They inherit every correction from every agent that came before them. Domain-aware. Automatic. Compounding.
 
-Next session? Same agent. Same mistake. Zero memory of what happened yesterday.
+Yesterday I watched my system grade its own architecture. It gave itself D's and F's in three categories. I pointed an agent at fixing them. Twenty minutes later — straight A's. 407 tests passing. That was supposed to take two days.
 
-This is the problem I set out to solve 12 months ago.
+Then I ran three agents in parallel across completely different domains — business strategy, workspace optimization, and technical infrastructure. 1,400+ lines of research produced. All tracked by hierarchical goals with progress cascading automatically.
 
-The solution is what I call the Correction Flywheel:
+Then I ran a fully autonomous 5-step research sprint. Zero human intervention. Nineteen minutes. The system found recent AI papers, summarized them, analyzed which findings could improve its own architecture, drafted implementation proposals, and produced a final report. By itself.
 
-1. Agent makes a mistake
-2. Correction is stored with full context (what went wrong, what's right, how to detect it)
-3. Correction is tagged to a domain (git, BIM, desktop, filesystem)
-4. Future agents working in that domain receive the correction automatically
-5. The correction includes a detection pattern — agents recognize the situation BEFORE it happens
-6. Outcome tracking measures if the correction actually helped
+The engine behind all of this: 663 tests. 8 domain correction packs. 5-phase architecture. Goals, planning, alignment injection, coordination, and integration wiring.
 
-The first agent to make a mistake is the last. Every subsequent agent in that domain inherits the fix.
+I've been building in silence for a year. The repos are now public.
 
-This isn't theoretical. It runs in production every day. 705+ Revit API endpoints. Desktop automation across 3 monitors. Multi-agent development sprints.
+Autonomy Engine: github.com/WeberG619/claude-ai-tools
+RevitMCPBridge (705+ AI-to-Revit endpoints): github.com/WeberG619/RevitMCPBridge2026
 
-The system has 663 tests, 8 domain correction packs, and a 5-phase architecture that handles everything from goal decomposition to cross-agent coordination.
+The deep web — private databases, proprietary APIs, internal tools — is where the real value is. My system navigates it autonomously and gets better every day.
 
-I'm open sourcing it today. It's called the Autonomy Engine.
-
-If you're building AI agents and frustrated that they keep making the same mistakes — this might be what you're looking for.
-
-#AI #MachineLearning #AgentFramework #OpenSource #BuildInPublic
+#AI #BuildInPublic #OpenSource #SoloDev
 
 ---
 
-### LinkedIn Post 3: Solo Dev, Serious Infrastructure
+## LINKEDIN POST 3 — The AEC Angle
 
-**I'm one developer. Here's what I shipped this year.**
+The AEC industry is a $13 trillion market running on software from 2004. AI adoption is at 27%. That's not a problem — that's an opportunity.
 
-Autonomy Engine:
-- 663 tests passing
-- 8 domain correction packs
-- 5-phase architecture (Goals → Planner → Alignment → Coordinator → Execution)
-- Hierarchical goal tracking with dependency graphs
-- Adaptive planning with MECE validation
-- Domain-aware alignment injection
-- Cross-agent coordination with resource locking
+Every architecture firm uses Revit. None of them have AI that can actually DO anything in it. When an architect asks ChatGPT for help with their model, they get a list of manual steps to follow. Click here. Type this. Repeat 50 times.
 
-RevitMCPBridge:
-- 705+ MCP endpoints
-- 146 C# files, 13,000+ lines
-- 113 knowledge files of architectural domain expertise
-- 5 levels of AI autonomy
-- The first open-source bridge connecting AI to Autodesk Revit
+I built a bridge. 705+ MCP endpoints that give AI full read-write access to Revit. Create walls. Place doors. Generate sheet sets. Check code compliance. All programmatically. Zero manual steps.
 
-Both open source. Both in production.
+Before: "Create a sheet set for 12 floor plans" → AI gives you a tutorial.
+After: AI creates 12 sheets, places the views, adds title blocks. Done in seconds.
 
-I'm not a team. I'm not VC-funded. I'm an architect who taught himself to code because the tools I needed didn't exist.
+But the bridge is just the access layer. Behind it sits the Autonomy Engine — a system that tracks goals, decomposes them into plans, and dispatches agents that carry domain-specific corrections from every previous run.
 
-The AEC industry (Architecture, Engineering, Construction) is a $13 trillion global market that runs on software from 2004. Revit has no native AI integration. No API that agents can talk to. No way for AI to actually DO things in a building model.
+The 113 knowledge files built into the system — building codes, room standards, material specs, MEP systems — that's institutional knowledge that doesn't exist in structured form anywhere on the internet. I turned 20 years of architectural practice into a machine-readable knowledge base.
 
-So I built one. 705 endpoints worth.
+Every correction logged on a hospital project makes the next hospital project better. Every mistake on a floor plan conversion makes the next conversion more accurate. The system compounds.
 
-And then I built the system that makes the agents using those endpoints actually learn from their mistakes.
+If you're in AEC and you're waiting for Autodesk to build AI into Revit — you'll be waiting a while. This is here now.
 
-Building in public. Shipping daily. One person, serious infrastructure.
+Open source: github.com/WeberG619/RevitMCPBridge2026
 
-If you're interested in AI + AEC, follow along. The best is coming.
-
-#BuildInPublic #SoloDev #AI #AEC #Architecture #OpenSource
+#AEC #Architecture #Revit #AI #BIM #BuildInPublic
 
 ---
 
-## Twitter/X Posts
+## TWITTER/X POST 1 — The Hook
+
+Everyone's building AI for the surface web.
+
+I built one that navigates the other 90%.
+
+705+ endpoints into Revit. Agents that learn from every mistake. Corrections that compound across every integration.
+
+The deep web isn't dark or scary. It's your databases, your APIs, your proprietary tools. That's where the value is.
+
+Open source: github.com/WeberG619/claude-ai-tools
 
 ---
 
-### Tweet 1: The Self-Repair Hook
+## TWITTER/X POST 2 — The Self-Repair
 
-I built an AI agent system that went from D/F to straight A's in 20 minutes.
+My AI system graded itself yesterday.
 
-Not by making the model smarter. By making mistakes permanent lessons.
+Context Management: D+
+Execution Monitoring: D
+Behavioral Testing: F
 
-Every correction gets stored, domain-tagged, and auto-injected into future agents. The first agent to fail is the last.
+I pointed an agent at fixing them.
 
-663 tests. 8 domains. Open source today.
+20 minutes later: all A's. 407 tests. Zero failures.
 
-It's called the Autonomy Engine.
+That was estimated as a 2-day job.
 
-github.com/BIMOpsStudio/autonomy-engine
+The system didn't get smarter. It got corrected. And those corrections are permanent.
 
----
-
-### Tweet 2: The Flywheel Concept
-
-The biggest problem with AI agents: they start from zero every session.
-
-Your agent makes a mistake. You correct it. Next session? Same mistake.
-
-I built a correction flywheel:
-→ Mistake stored with context
-→ Domain-tagged (git, BIM, desktop...)
-→ Future agents get it auto-injected
-→ Outcome tracked to measure signal
-
-One person's mistake becomes every agent's lesson.
-
-Open source: github.com/BIMOpsStudio/autonomy-engine
+github.com/WeberG619/claude-ai-tools
 
 ---
 
-### Tweet 3: The Solo Dev Narrative
+## TWITTER/X POST 3 — The Solo Dev
 
-What one developer shipped this year:
+What I shipped this year as one developer:
 
-Autonomy Engine:
-• 663 tests
-• 8 domain correction packs
-• 5-phase architecture
-• Agents that learn from every mistake
+Autonomy Engine — agents that never make the same mistake twice (663 tests, 8 domains)
 
-RevitMCPBridge:
-• 705+ API endpoints
-• 13,000+ lines of C#
-• 113 knowledge files
-• First AI-to-Revit bridge ever built
+RevitMCPBridge — 705+ endpoints giving AI full access to Autodesk Revit (first ever built)
 
-Not a team. Not funded. Just an architect who needed tools that didn't exist.
+113 knowledge files of architectural domain expertise
 
 Both open source. Both in production daily.
 
-github.com/BIMOpsStudio
+No team. No funding. Just an architect who needed tools that didn't exist.
 
 ---
 
-## Usage Notes
+## POSTING STRATEGY
 
-- Each post is standalone — they can be published in any order, any day
-- LinkedIn posts are 150-250 words (optimal for engagement)
-- Twitter posts are under 280 characters per paragraph (thread-friendly but designed as singles)
-- Hashtags are at the end of LinkedIn posts only
-- GitHub links should be updated to actual repo URLs before publishing
-- Consider adding a screenshot or diagram to each LinkedIn post for higher engagement
-- Best posting times: Tuesday-Thursday, 8-10am EST for LinkedIn; same days, 12-2pm for Twitter
+**Order:**
+1. LinkedIn Post 1 (Deep Web framing) — this is the category-defining post
+2. Twitter Post 2 (Self-repair) — highest engagement potential, pure hook
+3. LinkedIn Post 3 (AEC angle) — targets your core industry audience
+4. Twitter Post 1 (Deep Web hook) — reinforces the framing
+5. LinkedIn Post 2 (Builder's story) — personal narrative
+6. Twitter Post 3 (Solo dev) — stats and credibility
+
+**Timing:**
+- One post per day, Tuesday through Friday
+- LinkedIn: 8-10am EST
+- Twitter: 12-2pm EST
+- Don't post both platforms same day — spread the reach
+
+**Before posting:**
+- Read each one out loud. If it doesn't sound like you, change the words until it does.
+- Add one screenshot to each LinkedIn post (terminal output, goal tree, or the grade table)
+- Update all GitHub links to your actual repo URLs
+
+**After posting:**
+- Every comment you get is data. If someone asks a question, that's a gap in your messaging.
+- Log what works and what doesn't. Those become corrections for your marketing agent later.
+- Reply to every comment in the first 2 hours — the algorithm rewards engagement.

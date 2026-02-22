@@ -1,0 +1,209 @@
+{
+  "edition": "2021 IRC",
+  "full_name": "International Residential Code 2021",
+  "publisher": "International Code Council (ICC)",
+  "note": "Simplified reference summaries. Applies to one- and two-family dwellings and townhouses not more than 3 stories. For full code text, consult ICC at https://codes.iccsafe.org/",
+  "sections": {
+    "R101": {
+      "title": "Scope and Administration",
+      "summary": "The IRC applies to one- and two-family dwellings and townhouses not more than three stories above grade plane.",
+      "subsections": {
+        "R101.1": "Title - International Residential Code",
+        "R101.2": "Scope - Detached one- and two-family dwellings, townhouses not more than 3 stories"
+      }
+    },
+    "R301": {
+      "title": "Design Criteria",
+      "summary": "General design criteria for residential construction including wind, seismic, snow loads.",
+      "subsections": {
+        "R301.1": "Application - Buildings shall be constructed per design criteria",
+        "R301.2": "Climatic and geographic design criteria - Wind speed, seismic design category, frost depth, termite, weathering",
+        "R301.3": "Story height limitations",
+        "R301.5": "Live load requirements (40 psf habitable, 30 psf sleeping, 10 psf attic without storage)"
+      }
+    },
+    "R302": {
+      "title": "Fire-Resistant Construction",
+      "summary": "Fire separation requirements between dwelling units, garages, and lot lines.",
+      "subsections": {
+        "R302.1": "Exterior walls - Fire-resistance ratings based on lot line distance (1-hr if <3ft, 0-hr if ≥5ft)",
+        "R302.2": "Townhouse separation - 1-hour fire-resistance-rated wall or 2-hour common wall",
+        "R302.5": "Dwelling/garage separation - 1/2 inch gypsum board minimum on garage side",
+        "R302.6": "Dwelling/garage opening protection - Self-closing, tight-fitting door (not into sleeping room)"
+      }
+    },
+    "R303": {
+      "title": "Light, Ventilation, and Heating",
+      "summary": "Minimum natural light and ventilation requirements for habitable rooms.",
+      "subsections": {
+        "R303.1": "Habitable rooms - Min 8% of floor area glazing for natural light",
+        "R303.2": "Adjoining rooms - Rooms may borrow light/ventilation from adjoining rooms",
+        "R303.3": "Bathrooms - Mechanical ventilation (50 cfm intermittent or 20 cfm continuous) or openable window",
+        "R303.4": "Mechanical ventilation - Outdoor air per IRC M1505",
+        "R303.7": "Required heating - Must maintain 68°F at 3 ft above floor"
+      }
+    },
+    "R304": {
+      "title": "Minimum Room Areas",
+      "summary": "Minimum floor area and dimension requirements for habitable rooms.",
+      "subsections": {
+        "R304.1": "Minimum area - Every dwelling unit shall have at least one habitable room of not less than 120 sq ft",
+        "R304.2": "Other rooms - Min 70 sq ft, min dimension 7 ft (except kitchens)",
+        "R304.3": "Minimum dimensions - Not less than 7 ft in any horizontal dimension (except kitchens)",
+        "R304.4": "Height effect on room area - Portions of room with ceiling height <5 ft not counted"
+      }
+    },
+    "R305": {
+      "title": "Ceiling Height",
+      "summary": "Minimum ceiling height requirements for habitable spaces.",
+      "subsections": {
+        "R305.1": "Minimum height - 7 ft for habitable spaces, hallways, bathrooms, toilet rooms, laundry rooms",
+        "R305.1.1": "Basements - 6 ft 8 in. minimum under beams, girders, ducts (7 ft otherwise)",
+        "R305.2": "Furred ceilings - Furred ceiling spaces not considered habitable"
+      }
+    },
+    "R309": {
+      "title": "Garages and Carports",
+      "summary": "Requirements for attached and detached garages and carports.",
+      "subsections": {
+        "R309.1": "Opening protection - Openings between garage and residence must be protected",
+        "R309.2": "Separation required - 1/2 in. gypsum board or equivalent on garage side of walls and ceilings",
+        "R309.3": "Floor surface - Approved noncombustible material",
+        "R309.5": "Fire sprinklers - Not required in garages when separated per R302.5 and R302.6"
+      }
+    },
+    "R311": {
+      "title": "Means of Egress",
+      "summary": "Exit requirements for residential buildings including doors, hallways, and stairways.",
+      "subsections": {
+        "R311.2": "Door type and size - 3 ft wide, 6 ft 8 in. high minimum",
+        "R311.3": "Floors and landings - Required at exterior doors, landing length = door width or 36 in.",
+        "R311.7": "Stairways - Min 36 in. width, max 7-3/4 in. riser, min 10 in. tread",
+        "R311.7.5": "Handrails - Required on at least one side, 34-38 in. height",
+        "R311.7.8": "Illumination - Stairways shall be illuminated"
+      }
+    },
+    "R313": {
+      "title": "Automatic Fire Sprinkler Systems",
+      "summary": "Requirements for fire sprinkler systems in residential dwellings.",
+      "subsections": {
+        "R313.1": "Townhouse automatic fire sprinkler systems - Required in townhouses per NFPA 13D or IRC P2904",
+        "R313.2": "One- and two-family dwellings - Required per NFPA 13D or IRC P2904",
+        "R313.3": "Exempt locations - Garages, open attached porches, detached structures, attics, crawl spaces"
+      }
+    },
+    "R322": {
+      "title": "Flood-Resistant Construction",
+      "summary": "Requirements for buildings located in flood hazard areas.",
+      "subsections": {
+        "R322.1": "General - Buildings in flood hazard areas shall comply with this section and ASCE 24",
+        "R322.1.2": "Establishment of flood hazard areas - Per FEMA flood maps",
+        "R322.2": "Flood hazard areas (non-coastal) - Lowest floor elevated to or above BFE",
+        "R322.3": "Coastal high-hazard areas (V Zones) - Elevated on pilings or columns, bottom of lowest horizontal structural member at or above BFE"
+      }
+    },
+    "R401": {
+      "title": "Foundation General",
+      "summary": "General provisions for residential foundations.",
+      "subsections": {
+        "R401.1": "Application - Foundation design per geotechnical conditions",
+        "R401.2": "Requirements - Foundations shall be designed per accepted engineering practice or prescriptive requirements",
+        "R401.3": "Drainage - Ground shall slope away from foundation walls min 6 in. in first 10 ft"
+      }
+    },
+    "R403": {
+      "title": "Footings",
+      "summary": "Foundation footing requirements including minimum dimensions and frost depth.",
+      "subsections": {
+        "R403.1": "General - Footings shall be supported on undisturbed natural soils or engineered fill",
+        "R403.1.1": "Minimum size - 12 in. wide for 1-story, 15 in. for 2-story, 18 in. for 3-story (2,000 psf soil)",
+        "R403.1.4": "Minimum depth - Below frost line per Table R301.2(1)",
+        "R403.1.6": "Foundation anchorage - 1/2 in. anchor bolts at 6 ft OC, min 7 in. embedment"
+      }
+    },
+    "R404": {
+      "title": "Foundation and Retaining Walls",
+      "summary": "Requirements for foundation walls including concrete, masonry, and wood.",
+      "subsections": {
+        "R404.1": "Concrete and masonry foundation walls",
+        "R404.1.1": "Design of concrete foundation walls - Plain or reinforced per this section",
+        "R404.1.2": "Design of masonry foundation walls",
+        "R404.1.3": "Design lateral support - Foundation walls laterally supported at top and bottom",
+        "R404.2": "Wood foundation walls (permanent wood foundation)",
+        "R404.3": "Wood sill plates - Treated, anchored per R403.1.6"
+      }
+    },
+    "R502": {
+      "title": "Wood Floor Framing",
+      "summary": "Requirements for wood floor joists, beams, and girders.",
+      "subsections": {
+        "R502.1": "Identification - Lumber grade marking",
+        "R502.3": "Allowable joist spans - Per Tables R502.3.1(1) and R502.3.1(2)",
+        "R502.6": "Bearing requirements - Min 1-1/2 in. on wood/metal, 3 in. on masonry/concrete"
+      }
+    },
+    "R602": {
+      "title": "Wood Wall Framing",
+      "summary": "Requirements for wood-framed walls including stud size, spacing, and bracing.",
+      "subsections": {
+        "R602.1": "Identification and grade - Lumber standards",
+        "R602.3": "Design and construction - Studs 2x4 at 16 in. OC or 2x6 at 24 in. OC",
+        "R602.3.1": "Stud size, height, and spacing per Table R602.3(5)",
+        "R602.6": "Drilling and notching - Max bored hole 40% of depth, max notch 25% of depth",
+        "R602.10": "Wall bracing - Braced wall panels per Table R602.10.3(3)"
+      }
+    },
+    "R703": {
+      "title": "Exterior Covering",
+      "summary": "Requirements for exterior wall coverings and water-resistive barriers.",
+      "subsections": {
+        "R703.1": "General - Exterior walls shall provide weather protection",
+        "R703.1.1": "Water-resistive barrier - Required behind exterior wall covering (WRB, housewrap)",
+        "R703.2": "Flashing - Required at exterior wall openings, intersections, changes in material",
+        "R703.4": "Wood, hardboard, and wood structural panel siding",
+        "R703.7": "Stone and masonry veneer - Anchored per Section R703.7",
+        "R703.11": "Fiber cement siding",
+        "R703.15": "Exterior insulation finish systems (EIFS)"
+      }
+    },
+    "R802": {
+      "title": "Wood Roof Framing",
+      "summary": "Requirements for rafters, ceiling joists, and roof trusses.",
+      "subsections": {
+        "R802.1": "Identification and grade",
+        "R802.4": "Allowable rafter spans - Per Tables R802.4.1(1) through (8)",
+        "R802.5": "Allowable ceiling joist spans",
+        "R802.10": "Roof trusses - Designed per TPI 1",
+        "R802.11": "Roof tie-down - Uplift resistance per Table R802.11"
+      }
+    },
+    "R806": {
+      "title": "Roof Ventilation",
+      "summary": "Requirements for ventilation of attic and roof spaces.",
+      "subsections": {
+        "R806.1": "Ventilation required - Enclosed attics and rafter spaces shall be ventilated",
+        "R806.2": "Minimum vent area - 1/150 of ventilated space area (1/300 with balanced vents or vapor retarder)",
+        "R806.3": "Vent and insulation clearance - Min 1 in. between insulation and roof sheathing",
+        "R806.4": "Conditioned attic assemblies - Exception to ventilation with air-impermeable insulation",
+        "R806.5": "Unvented attic and unvented enclosed rafter assemblies - Conditions for unvented attics"
+      }
+    },
+    "R905": {
+      "title": "Roofing Materials and Installation",
+      "summary": "Requirements for various roofing materials and their installation.",
+      "subsections": {
+        "R905.1": "Roofing application - Per manufacturer instructions and code requirements",
+        "R905.2": "Asphalt shingles - ASTM D3462 or D7158, min slope 2:12, underlayment required",
+        "R905.3": "Clay and concrete tile - ASTM C1167 or C1492, min slope 2.5:12",
+        "R905.4": "Metal roof shingles - UL 1897",
+        "R905.5": "Metal roof panels - ASTM E1592 or UL 580",
+        "R905.7": "Slate shingles - ASTM C406",
+        "R905.8": "Wood shingles - Min slope 3:12",
+        "R905.10": "Built-up roofing - ASTM D226 or D4869",
+        "R905.11": "Modified bitumen roofing",
+        "R905.12": "Thermoset single-ply roofing (EPDM)",
+        "R905.13": "Thermoplastic single-ply roofing (TPO, PVC)"
+      }
+    }
+  }
+}

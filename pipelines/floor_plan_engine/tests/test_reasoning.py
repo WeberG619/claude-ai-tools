@@ -65,7 +65,11 @@ def open_plan():
 
 @pytest.fixture
 def edrawmax():
-    """Approximate EdrawMax 1200sf plan."""
+    """Approximate EdrawMax 1200sf plan with L-shape footprint."""
+    L_SHAPE = [
+        (19, 0), (44, 0), (44, 30), (0, 30),
+        (0, 6), (19, 6),
+    ]
     return (FloorPlanBuilder("EdrawMax")
         .add_room("Great Room", RoomType.LIVING, 19, 0, 15, 19)
         .add_room("Dining", RoomType.DINING, 19, 19, 15, 11)
@@ -78,8 +82,9 @@ def edrawmax():
         .add_room("Master Bedroom", RoomType.MASTER_BEDROOM, 8, 7, 11, 13)
         .add_room("Wardrobe", RoomType.WALK_IN_CLOSET, 0, 6, 8, 7)
         .connect_open_plan("Dining", "Great Room")
+        .add_exterior_walls_L(L_SHAPE)
         .auto_interior_walls()
-        .add_entry_door("south", 26)
+        .add_entry_door(at=(14, 6))
         .add_door(19, 15, "Master Bedroom", "Great Room")
         .add_door(8, 18, "Bath 2", "Master Bedroom")
         .add_door(8, 10, "Wardrobe", "Master Bedroom")
@@ -159,7 +164,9 @@ class TestCirculation:
     def test_entry_detected(self, edrawmax):
         graph = build_connectivity_graph(edrawmax)
         circ = analyze_circulation(edrawmax, graph)
-        assert circ["entry_room"] == "Great Room"
+        # Entry door at (14,6) on L-notch south wall;
+        # nearest room is Master Bedroom (center 13.5, 13.5)
+        assert circ["entry_room"] == "Master Bedroom"
 
 
 # ---------------------------------------------------------------------------

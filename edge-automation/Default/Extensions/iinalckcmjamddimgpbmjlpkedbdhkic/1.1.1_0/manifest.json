@@ -1,0 +1,48 @@
+{
+   "action": {
+      "default_icon": {
+         "128": "icons/128.png",
+         "16": "icons/16.png",
+         "300": "icons/300.png",
+         "48": "icons/48.png"
+      },
+      "default_popup": "html/popup.html",
+      "default_title": "__MSG_extName__"
+   },
+   "background": {
+      "service_worker": "js/background.js",
+      "type": "module"
+   },
+   "commands": {
+      "_execute_action": {
+         "suggested_key": {
+            "chromeos": "Ctrl+Shift+K",
+            "linux": "Ctrl+Shift+K",
+            "mac": "MacCtrl+Shift+K",
+            "windows": "Ctrl+Shift+K"
+         }
+      }
+   },
+   "default_locale": "en",
+   "description": "__MSG_extShortDesc__",
+   "host_permissions": [ "\u003Call_urls>" ],
+   "icons": {
+      "128": "icons/128.png",
+      "16": "icons/16.png",
+      "300": "icons/300.png",
+      "48": "icons/48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsHZKXGoAIZ/TBhCpQlyjIQAbbMs/ZPhGkuWkk/V7icnxqMu5dJ2r7ItaQt/2UzTn6+dzVBkkxw6pDWetCk+goON4ZAeFAZj205GLtQgbFHyTNVKZPwkk2veKKFCc6FbNmJvFCphAEHqA4bUqi3eH5B+zatz8mMgjx770TysItif9+04w/jh+XdfjyMxiPlzdS93C7OYR83BNedfCjQeyWDIbAtqKrzt+saCOv4W5dhu6Yihumrjx884uiR3e22L05MgQ0InlWUdXn+Fl03mTO7GmVM32A0NsQ1dyEl061iuHkTkjjuJ93Vwa9qOkvh6s7AznJJOQVPp0+xe/RqOqSwIDAQAB",
+   "manifest_version": 3,
+   "name": "__MSG_extName__",
+   "omnibox": {
+      "keyword": "gpt"
+   },
+   "permissions": [ "alarms", "contextMenus", "declarativeNetRequest", "scripting", "storage" ],
+   "update_url": "https://edge.microsoft.com/extensionwebstorebase/v1/crx",
+   "version": "1.1.1",
+   "web_accessible_resources": [ {
+      "matches": [ "\u003Call_urls>" ],
+      "resources": [ "images/*", "css/content-script.css" ]
+   } ]
+}

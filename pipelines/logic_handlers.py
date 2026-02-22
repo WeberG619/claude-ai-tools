@@ -531,6 +531,40 @@ def resolve_sheet_ids(variables: Dict, params: Dict, context: LogicContext) -> D
 
 
 # =============================================================================
+# FLOOR PLAN GENERATION HANDLER
+# =============================================================================
+
+def generate_floor_plan_handler(variables: Dict, params: Dict, context: LogicContext) -> Dict:
+    """Generate an architecturally intelligent floor plan layout."""
+    from floor_plan_engine import generate_floor_plan, validate_floor_plan
+
+    total_area = params.get("total_area", 1200)
+    bedrooms = params.get("bedrooms", 2)
+    bathrooms = params.get("bathrooms")
+    extra_rooms = params.get("extra_rooms")
+
+    plan = generate_floor_plan(
+        total_area=total_area,
+        bedrooms=bedrooms,
+        bathrooms=bathrooms,
+        extra_rooms=extra_rooms,
+    )
+
+    report = validate_floor_plan(plan)
+
+    return {
+        "success": report["valid"],
+        "floor_plan": plan,
+        "building_program": plan.to_building_program(),
+        "validation": report,
+        "room_count": len(plan.rooms),
+        "wall_count": len(plan.walls),
+        "door_count": len(plan.doors),
+        "window_count": len(plan.windows),
+    }
+
+
+# =============================================================================
 # HANDLER REGISTRY
 # =============================================================================
 
@@ -543,6 +577,7 @@ LOGIC_HANDLERS = {
     "generate_sheet_index": generate_sheet_index,
     "run_bim_validator": run_bim_validator,
     "resolve_sheet_ids": resolve_sheet_ids,
+    "generate_floor_plan": generate_floor_plan_handler,
 }
 
 

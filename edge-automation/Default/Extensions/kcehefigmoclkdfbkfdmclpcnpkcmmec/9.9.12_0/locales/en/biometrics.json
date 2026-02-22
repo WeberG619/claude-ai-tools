@@ -1,0 +1,67 @@
+{
+  "common": {
+    "tryAnotherMethod": "Try Another Method"
+  },
+  "views": {
+    "fallback": {
+      "title": "Try Using Another Method",
+      "description": "Having issues with biometrics? Try using another method",
+      "actions": {
+        "tryAgain": "Try Again with Biometrics",
+        "getMobileAppVerification": "Get Mobile App Verification",
+        "sendMobileAppVerification": "Send Mobile Verification",
+        "otpVerification": "Send Email OTP Verification",
+        "accountPassword": "Use My Account Password"
+      }
+    },
+    "appDownload": {
+      "title": "Please log in to the mobile app to verify. Install it if needed."
+    },
+    "otpVerification": {
+      "title": "Confirm Your Identity",
+      "description": "We sent a 5 digit verification code to your email {{email}}. Go find it and enter it below to verify yourself.",
+      "retryButtonLabel": "Go back",
+      "incorrectHash": "Missing required data, please go back and try again.",
+      "otpForm": {
+        "otpCode": "One-Time Passcode",
+        "resendCodeHint": "Didn't receive a code from us? <hintLink>Resend Code</hintLink>",
+        "submit": "Verify & AutoFill",
+        "error": "Something went wrong when verifying One-Time Passcode. Please try again."
+      }
+    },
+    "passwordVerification": {
+      "title": "Confirm Your Identity",
+      "description": "Complete your autofill by entering your master password",
+      "passwordForm": {
+        "password": "Master Password",
+        "submit": "Submit & AutoFill"
+      }
+    },
+    "mobileVerification": {
+      "title": "Confirm Your Identity",
+      "description": "We sent a push notification to your mobile device. Find it and complete the verification.",
+      "retryButtonLabel": "Resend Mobile Verification",
+      "error": {
+        "title": "Mobile Verification Failed",
+        "description": "Looks like we couldn't verify it was you, please try again."
+      },
+      "mobileVerificationStatus": {
+        "error": "Try again...",
+        "loading": "Please wait",
+        "errorTypeSuffix": "Failed",
+        "type": {
+          "face_id": "Face ID",
+          "touch_id": "Touch ID",
+          "pin_code": "Mobile App Pin Code",
+          "android_face": "Android Biometrics",
+          "android_fingerprint": "Android Fingerprint"
+        }
+      }
+    },
+    "success": {
+      "title": "Identity Confirmed!",
+      "actionTitle": "Verification Complete",
+      "actionDescription": "Autofilling your data..."
+    }
+  }
+}

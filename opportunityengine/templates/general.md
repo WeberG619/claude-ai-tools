@@ -1,18 +1,14 @@
 Hi,
 
-I'm interested in your project: **{{title}}**
+{{description}}
 
-I'm a full-stack developer and automation specialist with experience across Python, C#, JavaScript/TypeScript, and modern web technologies. I deliver clean, maintainable code with a focus on getting the job done efficiently.
+I'm a developer and automation specialist — Python, C#, TypeScript, with deep experience in API development, data processing, and building systems that run reliably without babysitting.
 
-**Relevant experience:**
-- Python (Django, Flask, FastAPI) + JavaScript/TypeScript (React, Node.js)
-- API development, database design, and system integration
-- Automation, scripting, and process optimization
-- AI/LLM integration and agent development
+I've shipped production tools used by architecture and engineering teams, built autonomous AI agent systems, and delivered full-stack web applications. I work fast and communicate clearly.
 
-I'd like to understand your requirements in more detail and provide a concrete plan of action. I'm responsive, communicate proactively, and deliver on time.
+**For {{title}}:**
+I'd like to understand the specifics so I can give you a concrete plan. I can start immediately and typically deliver working results within the first few days.
 
-Let's discuss the specifics.
+What's the most critical piece you need done first?
 
-Best,
 Weber Gouin

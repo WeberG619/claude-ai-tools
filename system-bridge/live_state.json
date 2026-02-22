@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-02-15T04:00:09.977560",
+  "generated_at": "2026-02-22T09:59:09.038073",
   "source": {
     "daemon_version": "2.1.0",
     "hostname": "DESKTOP-01CMLA9",
-    "pid": 35836
+    "pid": 53388
   },
-  "timestamp": "2026-02-15T04:00:03.824259",
-  "active_window": "C:\\WINDOWS\\system32\\wsl.exe",
+  "timestamp": "2026-02-22T09:59:06.131095",
+  "active_window": "Watch The Last Thing He Told Me - Season 1 | Prime Video and 2 more pages - Profile 1 - Microsoft? Edge",
   "monitors": {
     "screens": [
       {
@@ -57,44 +57,44 @@
     "cpu_percent": 0,
     "memory_percent": 42,
     "memory_total_gb": 64,
-    "memory_used_gb": 27.1
+    "memory_used_gb": 26.8
   },
-  "clipboard_preview": "1. Create Supabase project and run 001_initial_schema.sql\n  2. Enable email+password auth + Google O...",
+  "clipboard_preview": "",
   "recent_files": [
-    "Presentations",
-    "AI_System_Showcase",
-    "Spreadsheets",
-    "Q1_Expense_Dashboard",
-    "Documents",
-    "AI_System_Proposal",
     "The Internet (2)",
-    "ms-settingssound (3)",
     "msteamssystem-initiated (141)",
-    "edited",
-    "cli",
-    "shortcuts",
-    "DaVinci_Resolve_20.3.2_Windows",
-    "obs-mcp",
-    "_demo_finance"
+    "03 Drawings (2)",
+    "R25 MSMC MIAMI SHORES",
+    "Working FIles (D) (6)",
+    "NVDA_vs_AMD_vs_INTC_DeepDive_2026-02-20",
+    "04 SD - DD",
+    "2026.02.16 MIAMI SHORES_ARCH_MARKUPS-DESKTOP-01CMLA9",
+    "2025-12-18 - FIRE_MARKUPS",
+    "CODE REVIEW",
+    "MSMC MIAMI SHORES_LS MARKUPS",
+    "2026.02.16 MIAMI SHORES_ARCH_MARKUPS",
+    "Support Files",
+    "2-144 KEYNOTES",
+    "recordings"
   ],
   "applications": [
     {
-      "Id": 17500,
+      "Id": 23084,
       "ProcessName": "ApplicationFrameHost",
       "MonitorIndex": 0,
       "Monitor": "right",
-      "MainWindowTitle": "Settings",
+      "MainWindowTitle": "Calculator",
       "Position": {
-        "Left": -7,
-        "Bottom": 1408,
-        "Top": -7,
-        "Right": 2568,
-        "Height": 1415,
-        "Width": 2575
+        "Left": 1221,
+        "Bottom": 879,
+        "Top": 339,
+        "Right": 1556,
+        "Height": 540,
+        "Width": 335
       }
     },
     {
-      "Id": 5092,
+      "Id": 32392,
       "ProcessName": "CalculatorApp",
       "MonitorIndex": 0,
       "Monitor": "right",
@@ -109,22 +109,22 @@
       }
     },
     {
-      "Id": 43960,
+      "Id": 22160,
       "ProcessName": "chrome",
       "MonitorIndex": 0,
       "Monitor": "right",
-      "MainWindowTitle": "Resend - Google Chrome",
+      "MainWindowTitle": "YouTube - Google Chrome",
       "Position": {
-        "Left": 10,
-        "Bottom": 1390,
-        "Top": 10,
-        "Right": 1275,
-        "Height": 1380,
-        "Width": 1265
+        "Left": -7,
+        "Bottom": 1408,
+        "Top": -7,
+        "Right": 2568,
+        "Height": 1415,
+        "Width": 2575
       }
     },
     {
-      "Id": 33180,
+      "Id": 53468,
       "ProcessName": "Code",
       "MonitorIndex": 2,
       "Monitor": "left",
@@ -139,52 +139,37 @@
       }
     },
     {
-      "Id": 4848,
-      "ProcessName": "EXCEL",
-      "MonitorIndex": -1,
-      "Monitor": "unknown",
-      "MainWindowTitle": "Q1_Expense_Dashboard - Excel",
+      "Id": 34224,
+      "ProcessName": "msedge",
+      "MonitorIndex": 0,
+      "Monitor": "right",
+      "MainWindowTitle": "Watch The Last Thing He Told Me - Season 1 | Prime Video and 2 more pages - Profile 1 - Microsoft? Edge",
       "Position": {
-        "Left": -21333,
-        "Bottom": -21307,
-        "Top": -21333,
-        "Right": -21175,
-        "Height": 26,
-        "Width": 158
-      }
-    },
-    {
-      "Id": 18544,
-      "ProcessName": "ms-teams",
-      "MonitorIndex": -1,
-      "Monitor": "unknown",
-      "MainWindowTitle": "Chat | Bruce Davis | BD Architect llc | weber@bdarchitect.net | Microsoft Teams",
-      "Position": {
-        "Left": -21333,
-        "Bottom": -21307,
-        "Top": -21333,
-        "Right": -21175,
-        "Height": 26,
-        "Width": 158
-      }
-    },
-    {
-      "Id": 10232,
-      "ProcessName": "POWERPNT",
-      "MonitorIndex": 1,
-      "Monitor": "center",
-      "MainWindowTitle": "AI_System_Showcase - PowerPoint",
-      "Position": {
-        "Left": -2567,
+        "Left": -7,
         "Bottom": 1408,
         "Top": -7,
-        "Right": 8,
+        "Right": 2568,
         "Height": 1415,
         "Width": 2575
       }
     },
     {
-      "Id": 33092,
+      "Id": 26272,
+      "ProcessName": "ms-teams",
+      "MonitorIndex": -1,
+      "Monitor": "unknown",
+      "MainWindowTitle": "Chat | Paola Gomez | BD Architect llc | weber@bdarchitect.net | Microsoft Teams",
+      "Position": {
+        "Left": -21333,
+        "Bottom": -21307,
+        "Top": -21333,
+        "Right": -21175,
+        "Height": 26,
+        "Width": 158
+      }
+    },
+    {
+      "Id": 37512,
       "ProcessName": "SystemSettings",
       "MonitorIndex": 0,
       "Monitor": "right",
@@ -199,7 +184,7 @@
       }
     },
     {
-      "Id": 15764,
+      "Id": 19172,
       "ProcessName": "TextInputHost",
       "MonitorIndex": 0,
       "Monitor": "right",
@@ -214,33 +199,18 @@
       }
     },
     {
-      "Id": 18168,
+      "Id": 36900,
       "ProcessName": "Wispr Flow",
-      "MonitorIndex": 0,
-      "Monitor": "right",
+      "MonitorIndex": -1,
+      "Monitor": "unknown",
       "MainWindowTitle": "Hub",
       "Position": {
-        "Left": 604,
-        "Bottom": 1125,
-        "Top": 274,
-        "Right": 1955,
-        "Height": 851,
-        "Width": 1351
-      }
-    },
-    {
-      "Id": 44376,
-      "ProcessName": "wsl",
-      "MonitorIndex": 0,
-      "Monitor": "right",
-      "MainWindowTitle": "C:\\WINDOWS\\system32\\wsl.exe",
-      "Position": {
-        "Left": 177,
-        "Bottom": 694,
-        "Top": 177,
-        "Right": 1089,
-        "Height": 517,
-        "Width": 912
+        "Left": -21333,
+        "Bottom": -21307,
+        "Top": -21333,
+        "Right": -21175,
+        "Height": 26,
+        "Width": 158
       }
     }
   ],
@@ -253,119 +223,148 @@
   },
   "email": {
     "monitoring": true,
-    "last_check": "2026-02-15T03:59:46.863910",
+    "last_check": "2026-02-22T09:55:48.385773",
     "unread_count": 0,
     "urgent_count": 0,
-    "needs_response_count": 0,
-    "alerts": []
+    "needs_response_count": 2,
+    "alerts": [
+      {
+        "id": "549de6ff201c520714176fcd7025778f",
+        "account": "Personal",
+        "account_email": "weberg619@gmail.com",
+        "subject": "[WeberG619/claude-ai-tools] Telegram Bot Token exposed on GitHub",
+        "from": "GitGuardian <security@getgitguardian.com>",
+        "date": "Sun, 22 Feb 2026 05:21:31 +0000",
+        "category": "needs_response",
+        "reason": "Unknown sender - may need review",
+        "suggested_action": "Review to determine importance",
+        "preview": "<!DOCTYPE html\r\n    PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\r\n<html xmlns=\"http://www.w3.org/1999/xhtml\" style=\"font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; box-sizing: border-box; margin: 0\">\r\n\r\n<head>\r\n    <meta name",
+        "classified_at": "2026-02-21T21:23:01.592526",
+        "method": "default"
+      },
+      {
+        "id": "81b653336ffabed391f96321dc8cd81f",
+        "account": "Personal",
+        "account_email": "weberg619@gmail.com",
+        "subject": "Check out DEV Challenges!",
+        "from": "DEV Community Onboarding <yo@dev.to>",
+        "date": "Sun, 22 Feb 2026 06:37:43 +0000 (UTC)",
+        "category": "needs_response",
+        "reason": "Unknown sender - may need review",
+        "suggested_action": "Review to determine importance",
+        "preview": "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\" \"http://www.w3.org/TR/REC-html40/loose.dtd\">\r\n<html>\r\n  <body style='font-family: \"HelveticaNeue-Light\", \"Helvetica Neue Light\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;background:#fcfcfc;padding: 1% 0;'>\r\n    <table style=\"width:1",
+        "classified_at": "2026-02-21T22:38:32.797692",
+        "method": "default"
+      }
+    ]
   },
   "recent_events": [
     {
-      "timestamp": "2026-02-15T03:07:12.314866",
-      "type": "app_opened",
-      "details": "chrome: Resend - Google Chrome"
+      "timestamp": "2026-02-22T09:47:26.947161",
+      "type": "focus_changed",
+      "details": "Welcome - Visual Studio Code"
     },
     {
-      "timestamp": "2026-02-15T03:07:12.591949",
+      "timestamp": "2026-02-22T09:47:40.596064",
+      "type": "focus_changed",
+      "details": "New tab and 1 more page - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-22T09:48:58.761241",
+      "type": "app_opened",
+      "details": "msedge: Amazon.com. Spend less. Smile more. and 2 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-22T09:48:59.034311",
       "type": "app_closed",
-      "details": "chrome: Sign in - Google Accounts - Google Chrome"
+      "details": "msedge: New tab and 1 more page - Profile 1 - Microsoft? Edge"
     },
     {
-      "timestamp": "2026-02-15T03:07:25.882917",
+      "timestamp": "2026-02-22T09:49:00.157531",
+      "type": "focus_changed",
+      "details": "Amazon.com. Spend less. Smile more. and 2 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-22T09:49:11.807259",
       "type": "app_opened",
-      "details": "chrome: Emails \u00fa Resend - Google Chrome"
+      "details": "msedge: Prime Video: Watch movies, TV shows, sports, and live TV and 2 more pages - Profile 1 - Microsoft? Edge"
     },
     {
-      "timestamp": "2026-02-15T03:07:26.178013",
+      "timestamp": "2026-02-22T09:49:12.079281",
       "type": "app_closed",
-      "details": "chrome: Resend - Google Chrome"
+      "details": "msedge: Amazon.com. Spend less. Smile more. and 2 more pages - Profile 1 - Microsoft? Edge"
     },
     {
-      "timestamp": "2026-02-15T03:07:54.651972",
+      "timestamp": "2026-02-22T09:49:13.154950",
+      "type": "focus_changed",
+      "details": "Prime Video: Watch movies, TV shows, sports, and live TV and 2 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-22T09:49:41.380472",
       "type": "app_opened",
-      "details": "chrome: API Keys \u00fa Resend - Google Chrome"
+      "details": "msedge: Watch The Last Thing He Told Me - Season 2 | Prime Video and 2 more pages - Profile 1 - Microsoft? Edge"
     },
     {
-      "timestamp": "2026-02-15T03:07:54.952803",
+      "timestamp": "2026-02-22T09:49:41.677968",
       "type": "app_closed",
-      "details": "chrome: Emails \u00fa Resend - Google Chrome"
+      "details": "msedge: Prime Video: Watch movies, TV shows, sports, and live TV and 2 more pages - Profile 1 - Microsoft? Edge"
     },
     {
-      "timestamp": "2026-02-15T03:11:24.787122",
+      "timestamp": "2026-02-22T09:49:42.805672",
+      "type": "focus_changed",
+      "details": "Watch The Last Thing He Told Me - Season 2 | Prime Video and 2 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-22T09:50:07.570582",
       "type": "app_opened",
-      "details": "chrome: Domains \u00fa Resend - Google Chrome"
+      "details": "msedge: Watch The Last Thing He Told Me - Season 1 | Prime Video and 2 more pages - Profile 1 - Microsoft? Edge"
     },
     {
-      "timestamp": "2026-02-15T03:11:25.093806",
+      "timestamp": "2026-02-22T09:50:07.852040",
       "type": "app_closed",
-      "details": "chrome: API Keys \u00fa Resend - Google Chrome"
+      "details": "msedge: Watch The Last Thing He Told Me - Season 2 | Prime Video and 2 more pages - Profile 1 - Microsoft? Edge"
     },
     {
-      "timestamp": "2026-02-15T03:13:00.833682",
-      "type": "app_opened",
-      "details": "chrome: Resend - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-15T03:13:01.095236",
-      "type": "app_closed",
-      "details": "chrome: Domains \u00fa Resend - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-15T03:30:06.904285",
+      "timestamp": "2026-02-22T09:50:08.962112",
       "type": "focus_changed",
-      "details": "C:\\WINDOWS\\SYSTEM32\\tasklist.exe"
+      "details": "Watch The Last Thing He Told Me - Season 1 | Prime Video and 2 more pages - Profile 1 - Microsoft? Edge"
     },
     {
-      "timestamp": "2026-02-15T03:30:19.286899",
+      "timestamp": "2026-02-22T09:50:21.510025",
       "type": "focus_changed",
-      "details": "Restore pages?"
+      "details": "Program Manager"
     },
     {
-      "timestamp": "2026-02-15T03:31:37.843959",
+      "timestamp": "2026-02-22T09:51:02.467282",
       "type": "focus_changed",
-      "details": "C:\\WINDOWS\\SYSTEM32\\tasklist.exe"
+      "details": "Watch The Last Thing He Told Me - Season 1 | Prime Video and 2 more pages - Profile 1 - Microsoft? Edge"
     },
     {
-      "timestamp": "2026-02-15T03:31:50.827433",
+      "timestamp": "2026-02-22T09:51:40.241263",
       "type": "focus_changed",
-      "details": "Restore pages?"
+      "details": "Welcome - Visual Studio Code"
     },
     {
-      "timestamp": "2026-02-15T03:34:40.315634",
+      "timestamp": "2026-02-22T09:52:33.828325",
       "type": "focus_changed",
-      "details": "C:\\WINDOWS\\SYSTEM32\\tasklist.exe"
+      "details": "Program Manager"
     },
     {
-      "timestamp": "2026-02-15T03:34:52.713998",
+      "timestamp": "2026-02-22T09:57:36.877228",
       "type": "focus_changed",
-      "details": "Restore pages?"
+      "details": "Welcome - Visual Studio Code"
     },
     {
-      "timestamp": "2026-02-15T03:36:11.351983",
+      "timestamp": "2026-02-22T09:58:55.938631",
       "type": "focus_changed",
-      "details": "C:\\WINDOWS\\SYSTEM32\\tasklist.exe"
-    },
-    {
-      "timestamp": "2026-02-15T03:36:24.290483",
-      "type": "focus_changed",
-      "details": "Restore pages?"
-    },
-    {
-      "timestamp": "2026-02-15T04:00:05.466597",
-      "type": "app_opened",
-      "details": "wsl: C:\\WINDOWS\\system32\\wsl.exe"
-    },
-    {
-      "timestamp": "2026-02-15T04:00:06.414026",
-      "type": "focus_changed",
-      "details": "C:\\WINDOWS\\system32\\wsl.exe"
+      "details": "Watch The Last Thing He Told Me - Season 1 | Prime Video and 2 more pages - Profile 1 - Microsoft? Edge"
     }
   ],
   "daemon_stats": {
     "started_at": "2025-12-04T10:13:59.664371",
-    "updates": 9943,
-    "errors": 0,
-    "restarts": 5
+    "updates": 44037,
+    "errors": 8,
+    "restarts": 21
   },
-  "hash": "9130c18dd2dcfe4a"
+  "hash": "7ba94d2166d253ce"
 }

@@ -1,0 +1,2077 @@
+{
+   "100thSiteAddedUserActionCTA": {
+      "message": "大"
+   },
+   "100thSiteAddedUserActionSubTitle": {
+      "message": "100个站点已添加到您的阻止列表"
+   },
+   "100thSiteAddedUserActionTitle": {
+      "message": "哇！"
+   },
+   "5thSiteAddedUserActionCTA": {
+      "message": "太棒了"
+   },
+   "5thSiteAddedUserActionSubTitle": {
+      "message": "将5个网站添加到您的阻止列表中做得很好"
+   },
+   "5thSiteAddedUserActionTitle": {
+      "message": "Who！"
+   },
+   "InsightsTab": {
+      "message": "见解"
+   },
+   "PasswordProtectSecondStepSubtitle": {
+      "message": "'点击下方'取消'的用户平均每天可额外节省 15 分钟。"
+   },
+   "PasswordProtectSecondStepTitle": {
+      "message": "您确定要解锁此页面吗？"
+   },
+   "PinToToolBarMessageBtnText": {
+      "message": "明白了"
+   },
+   "PinToToolBarMessageText": {
+      "message": "检查扩展列表以使其可见"
+   },
+   "PinToToolBarMessageTitle": {
+      "message": "将 BlockSite 固定为 100% 的生产力"
+   },
+   "aboutBlockCategoriesSubtitle": {
+      "message": "按下按钮即可快速阻止整个类别。"
+   },
+   "aboutBlockCategoriesTitle": {
+      "message": "块类别"
+   },
+   "aboutContactSupport": {
+      "message": "联系支持人员"
+   },
+   "aboutCreateBlockListsSubtitle": {
+      "message": "将您要拦截的网站或网页添加到站点列表中，自动重定向到更安全、更有益的网站。您还可以创建友好网站列表，从拦截特定网站切换为只允许某些站点运行。"
+   },
+   "aboutCreateBlockListsTitle": {
+      "message": "创建拦截列表"
+   },
+   "aboutHowToEnableInInPrivateStep1": {
+      "message": "导航到 edge://extensions"
+   },
+   "aboutHowToEnableInInPrivateStep2": {
+      "message": "找到并点击 BlockSite"
+   },
+   "aboutHowToEnableInInPrivateStep3": {
+      "message": "选中“允许 InPrivate”框"
+   },
+   "aboutHowToEnableInInPrivateSubtitle": {
+      "message": "要在 Edge 的 InPrivate 模式下启用 BlockSite，请执行以下步骤："
+   },
+   "aboutHowToEnableInInPrivateTitle": {
+      "message": "如何启用 InPrivate 模式"
+   },
+   "aboutHowToEnableInIncognitoStep1": {
+      "message": "转到 chrome://extensions"
+   },
+   "aboutHowToEnableInIncognitoStep2": {
+      "message": "查看 Block Site"
+   },
+   "aboutHowToEnableInIncognitoStep3": {
+      "message": "勾选“隐身时允许”"
+   },
+   "aboutHowToEnableInIncognitoSubtitle": {
+      "message": "要在Chrome的隐身模式下启用阻止网站，请按照以下步骤操作："
+   },
+   "aboutHowToEnableInIncognitoTitle": {
+      "message": "如何在隐身中启用"
+   },
+   "aboutIncognitoCTA": {
+      "message": "隐身模式"
+   },
+   "aboutIncognitoSubtitle": {
+      "message": "所有 Block Site 功能在隐身模式下也能正常运作，只需得到您的允许。按照以下说明，了解如何执行此操作： "
+   },
+   "aboutIncognitoTitle": {
+      "message": "隐身模式（仅在Chrome上可用）"
+   },
+   "aboutKeepInternetSafeSubtitle": {
+      "message": "通过扩展菜单激活成人内容拦截功能，一次单击即可拦截所有成人站点。 "
+   },
+   "aboutKeepInternetSafeTitle": {
+      "message": "保持互联网安全"
+   },
+   "aboutPasswordSubtitle": {
+      "message": "在“设置”页面中设置密码，以限制对 Block Site 选项的访问，或启用使用密码访问被拦截站点的选项。"
+   },
+   "aboutPasswordTitle": {
+      "message": "设置密码"
+   },
+   "aboutPrivacyPolicy": {
+      "message": "隐私政策"
+   },
+   "aboutRateUsSubtitle": {
+      "message": "如果您认为 Block Site 有用，请在 Chrome 网上应用店为其评分。我们对此将不胜感激。\r\r"
+   },
+   "aboutRateUsTitle": {
+      "message": "喜欢我们吗？让全世界知晓。"
+   },
+   "aboutRightClickMenuSubtitle": {
+      "message": "右键单击任何网站上的任意位置即可打开快速访问菜单。几秒钟内即可拦截网站，避免耽误时间，并可专注目标。\r\r"
+   },
+   "aboutRightClickMenuTitle": {
+      "message": "右键单击菜单"
+   },
+   "aboutScheduleSubtitle": {
+      "message": "选择您要启用 Block Site 功能的日期和间隔时间。根据您的工作定时安排自定义拦截（例如：09:00 -17:00），这样您在白天、工作或在学校时就不会耽误时间。"
+   },
+   "aboutScheduleTitle": {
+      "message": "特定时间拦截"
+   },
+   "aboutSubtitle": {
+      "message": "Block Site 让您能够保持专注，提高工作效率。您可以轻松拦截任何令人分心或有害的网站。无需意志力。"
+   },
+   "aboutTermsOfUse": {
+      "message": "使用条款"
+   },
+   "aboutTitle": {
+      "message": "关于 Block Site"
+   },
+   "addBlockInputAddButton": {
+      "message": "添加项目"
+   },
+   "addEmailAndPassword": {
+      "message": "添加电子邮件和密码"
+   },
+   "addFirstKeywordUserActionCTA": {
+      "message": "欢呼"
+   },
+   "addFirstKeywordUserActionSubTitle": {
+      "message": "通过屏蔽关键字，您将提高工作效率"
+   },
+   "addFirstKeywordUserActionTitle": {
+      "message": "谢幕！"
+   },
+   "addFirstRedirectUserActionCTA": {
+      "message": "优秀的"
+   },
+   "addFirstRedirectUserActionSubTitle": {
+      "message": "现在将重定向被阻止的网站，以便您更加专注"
+   },
+   "addFirstRedirectUserActionTitle": {
+      "message": "太棒了！"
+   },
+   "addSiteAddModePrimaryButton1": {
+      "message": "添加到阻止列表"
+   },
+   "addSiteAddModePrimaryButton2": {
+      "message": "添加到阻止列表"
+   },
+   "addSiteAddModePrimaryButton3": {
+      "message": "添加到阻止列表"
+   },
+   "addSiteAddModePrimaryButton4": {
+      "message": "添加到阻止列表"
+   },
+   "addSiteAddModeSecondaryButton1": {
+      "message": "也许以后"
+   },
+   "addSiteAddModeSecondaryButton2": {
+      "message": "也许以后"
+   },
+   "addSiteAddModeSecondaryButton3": {
+      "message": "也许以后"
+   },
+   "addSiteAddModeSecondaryButton4": {
+      "message": "也许以后"
+   },
+   "addSiteAddModeSubTitle1": {
+      "message": "阻止此网站以确保您留在该区域！"
+   },
+   "addSiteAddModeSubTitle2": {
+      "message": "通过将此站点添加到您的阻止列表来提高您的工作效率"
+   },
+   "addSiteAddModeSubTitle3": {
+      "message": "通过将此站点添加到您的阻止列表，将您的工作效率提高 10%"
+   },
+   "addSiteAddModeSubTitle4": {
+      "message": "检测到浪费时间的网站！立即阻止以保持专注。"
+   },
+   "addSiteAddModeTitle1": {
+      "message": "别再分心了！"
+   },
+   "addSiteAddModeTitle2": {
+      "message": "留在区域内！"
+   },
+   "addSiteAddModeTitle3": {
+      "message": "添加（website.com）以节省时间！"
+   },
+   "addSiteAddModeTitle4": {
+      "message": "阻止（website.com）每天节省一个额外的小时！"
+   },
+   "addSiteAreYouSurePrimaryButton": {
+      "message": "做吧"
+   },
+   "addSiteAreYouSureSecondaryButton": {
+      "message": "不，取消"
+   },
+   "addSiteAreYouSureSubTitle": {
+      "message": "BlockSite 将停止建议阻止分散注意力的网站。"
+   },
+   "addSiteAreYouSureTitle": {
+      "message": "您确定吗？"
+   },
+   "addSiteReachedLimitPrimaryButton": {
+      "message": "无限前进"
+   },
+   "addSiteReachedLimitSecondaryButton": {
+      "message": "也许以后"
+   },
+   "addSiteReachedLimitSubTitle": {
+      "message": "立即升级以获得无限的阻止列表和更多功能，这些功能将提高您的工作效率并节省您的时间！"
+   },
+   "addSiteReachedLimitTitle": {
+      "message": "您已达到阻止列表限制"
+   },
+   "addSiteSuccessPrimaryButton": {
+      "message": "立即阻止"
+   },
+   "addSiteSuccessSecondaryButton": {
+      "message": "转到阻止列表"
+   },
+   "addSiteSuccessSubTitle": {
+      "message": "(website.com) 已添加到您的阻止列表中。您可以在扩展程序的选项页面中更改此设置"
+   },
+   "addSiteSuccessTitle": {
+      "message": "站点添加到阻止列表"
+   },
+   "appDesc": {
+      "description": "网络商店中显示的应用程序说明。",
+      "message": "使用我们的主要功能保持专注并提高生产力：自定义阻止列表、计划的站点阻止和密码保护"
+   },
+   "appName": {
+      "description": "网络商店中显示的应用程序标题。",
+      "message": "BlockSite：阻止网站并保持专注"
+   },
+   "appShortName": {
+      "description": "应用程序的短标题",
+      "message": "BlockSite"
+   },
+   "backgroundMultiPacksTitle": {
+      "message": "块页面视觉和文本"
+   },
+   "blockByCategoryTextAdult": {
+      "message": "糟糕！ %domain% 不可用，因为它与成人有关，这是您'年前阻止的类别。保持专注，你已经明白了。"
+   },
+   "blockByCategoryTextGambling": {
+      "message": "糟糕！ %domain% 是不可用的，因为它与赌博有关，这是您'阻止的类别。保持专注，你已经明白了。"
+   },
+   "blockByCategoryTextNewsAndMedia": {
+      "message": "糟糕！ %domain% 是不可用的，因为它关系到的新闻是你的类别'已经封锁。保持专注，你已经明白了。"
+   },
+   "blockByCategoryTextShopping": {
+      "message": "哎呀！ %domain%不可用，因为它与您已屏蔽的类别购物有关。保持专注，你有这个。"
+   },
+   "blockByCategoryTextSocialNetworksAndOnlineCommunities": {
+      "message": "糟糕！ %domain% 是不可用的，因为它涉及到社会这是你的类别'已经封锁。保持专注，你已经明白了。"
+   },
+   "blockByCategoryTextSports": {
+      "message": "糟糕！ %domain% 是不可用的，因为它关系到体育这是你的类别'已经封锁。保持专注，你已经明白了。"
+   },
+   "blockByCategoryTitleAdult": {
+      "message": "蟑螂。断肢。John Goodman。"
+   },
+   "blockByCategoryTitleGambling": {
+      "message": "不要让房子总是赢。"
+   },
+   "blockByCategoryTitleNewsAndMedia": {
+      "message": "没有消息就是好消息。"
+   },
+   "blockByCategoryTitleShopping": {
+      "message": "不花一元就是赚一元！"
+   },
+   "blockByCategoryTitleSocialNetworksAndOnlineCommunities": {
+      "message": "没有张贴，没有喜欢，只是生活。"
+   },
+   "blockByCategoryTitleSports": {
+      "message": "保持冷静并断开连接。"
+   },
+   "blockExtensionsPageSubtitle": {
+      "message": "请输入您的密码以进行访问"
+   },
+   "blockExtensionsPageTitle": {
+      "message": "$ BROWSER $扩展页面-受保护",
+      "placeholders": {
+         "browser": {
+            "content": "$1"
+         }
+      }
+   },
+   "blockMoreDistractingSite": {
+      "message": "拦截更多令人分心的站点"
+   },
+   "blockSitesBlockSite": {
+      "message": "拦截此站点"
+   },
+   "blockSitesBlockedTitle": {
+      "message": "此站点当前已被拦截"
+   },
+   "blockSitesBlockedTitleNow": {
+      "message": "网站已添加到您的阻止列表"
+   },
+   "blockSitesEditBlockList": {
+      "message": "编辑阻止列表"
+   },
+   "blockSitesNotAvailable": {
+      "message": "在此页面上不可用"
+   },
+   "blockSitesOnBoardingDescription": {
+      "message": "添加到您的阻止列表的网站将被永久阻止，直到您将它们从列表中删除或设置时间表。"
+   },
+   "blockSitesOnBoardingTitle": {
+      "message": "将网站添加到您的阻止列表"
+   },
+   "blockSitesOptionsOnboardingText": {
+      "message": "开始将您想要拦截的站点添加到列表。"
+   },
+   "blockSitesOptionsSearchBarPlaceholder": {
+      "message": "输入网址（例如：facebook.com）"
+   },
+   "blockSitesOptionsSubtitle": {
+      "message": "永久拦截或按定时安排拦截"
+   },
+   "blockSitesOptionsTableTitle": {
+      "message": "拦截的站点"
+   },
+   "blockSitesOptionsTitle": {
+      "message": "Block Site"
+   },
+   "blockSitesRefreshPage": {
+      "message": "刷新页面"
+   },
+   "blockSitesTab": {
+      "message": "Block Site"
+   },
+   "blockWordsOnBoardingDescription": {
+      "message": "包含此特定关键字的所有网站 URL 和标题都将被阻止（一个关键字可能会阻止数百个网站）"
+   },
+   "blockWordsOnBoardingTitle": {
+      "message": "添加关键字以阻止"
+   },
+   "blockWordsOptionsSearchBarPlaceholder": {
+      "message": "输入单词或短语"
+   },
+   "blockWordsOptionsSubtitle": {
+      "message": "阻止包含特定字词的网址"
+   },
+   "blockWordsOptionsTableTitle": {
+      "message": "被拦截单词"
+   },
+   "blockWordsOptionsTitle": {
+      "message": "按单词拦截"
+   },
+   "blockedHeaderFocusModeMinutes": {
+      "message": "$BREAK_TIME_LEFT$ 分钟",
+      "placeholders": {
+         "break_time_left": {
+            "content": "$1",
+            "example": "25"
+         }
+      }
+   },
+   "blockedHeaderFocusModeUntilBreak": {
+      "message": "直到休息时间"
+   },
+   "blockedHeaderMenuCustomizeBlockPage": {
+      "message": "自定义阻止页面"
+   },
+   "blockedHeaderMenuEdit": {
+      "message": "编辑阻止列表"
+   },
+   "blockedHeaderMenuPasswordProtection": {
+      "message": "密码保护"
+   },
+   "blockedHeaderMenuRedirect": {
+      "message": "重定向"
+   },
+   "blockedHeaderMenuUpgradeButton": {
+      "message": "升级"
+   },
+   "blockedHeaderTitle": {
+      "message": "此站点被 BlockSite 拦截"
+   },
+   "blockedTabMessage1": {
+      "message": "您将 %domain% 加入到您的 Block Sites 列表中。它在那里很可能是有原因的。"
+   },
+   "blockedTabMessage2": {
+      "message": "您拦截了 %domain%，以便于您完成工作。快继续工作吧。"
+   },
+   "blockedTabMessage3": {
+      "message": "哟，现在好多了。继续做您之前在做的事情。"
+   },
+   "blockedTabMessage4": {
+      "message": "%domain% 已被拦截。添加更多令人分心的站点，提高工作效率。"
+   },
+   "blockedTabMessage5": {
+      "message": "您似乎阻止了字词“%domain%”。让我们保持现状。"
+   },
+   "blockedTabMessage6": {
+      "message": "此网站不在您的白名单上。这可能也出于很好的理由。"
+   },
+   "blockedTableApplyButton": {
+      "message": "应用"
+   },
+   "blockedTableCancelButton": {
+      "message": "取消"
+   },
+   "blocklistOnBoardingDescriptionPrefix": {
+      "message": "访问"
+   },
+   "blocklistOnBoardingDescriptionSuffix": {
+      "message": "看到阻塞在行动"
+   },
+   "blocklistOnBoardingTitle": {
+      "message": "这些网站现已被屏蔽"
+   },
+   "bundleImagesDownloadFailedText": {
+      "message": "请重试"
+   },
+   "bundleImagesDownloadFailedTitle": {
+      "message": "图片下载失败"
+   },
+   "bundleImagesDownloadInProgressText": {
+      "message": "完成前请勿关闭浏览器"
+   },
+   "bundleImagesDownloadInProgressTitle": {
+      "message": "下载图像"
+   },
+   "bundleImagesDownloadSuccessTitle": {
+      "message": "图片下载成功"
+   },
+   "bundleListPopupCancelButton": {
+      "message": "取消"
+   },
+   "bundleListPopupDoneButton": {
+      "message": "完成"
+   },
+   "bundleListPopupSubTitle": {
+      "message": "当您尝试访问被阻止的页面时，选择要随机显示的图像多包。"
+   },
+   "bundleListPopupTitle": {
+      "message": "自定义此页面"
+   },
+   "bundleListPopupTooltip": {
+      "message": "每次显示块页面时，都会随机显示所选多包中的图像。"
+   },
+   "cannotAddBlockSiteWhichPartOfRedirect": {
+      "message": "无法拦截设置为重定向的站点"
+   },
+   "cantBlockRedirectWordMsg": {
+      "message": "无法阻止属于重定向网址的单词"
+   },
+   "cantRedirectToBlockedSite": {
+      "message": "哎呀！阻止站点列表会阻止此重定向站点"
+   },
+   "cantRedirectToBlockedWord": {
+      "message": "哎呀！您的重定向站点被Block By Words列表阻止"
+   },
+   "cantRedirectToWorkModeBlockedSite": {
+      "message": "糟糕！您的“焦点模式”列表阻止了此重定向网站"
+   },
+   "categoriesAdult": {
+      "message": "成人"
+   },
+   "categoriesGambling": {
+      "message": "赌博"
+   },
+   "categoriesGoUnlimitedButton": {
+      "message": "无限前进"
+   },
+   "categoriesNewsAndMedia": {
+      "message": "新闻"
+   },
+   "categoriesOnBoardingDescription": {
+      "message": "选择类别，一键屏蔽数千个网站"
+   },
+   "categoriesOnBoardingTitle": {
+      "message": "按类别阻止网站"
+   },
+   "categoriesOptionsSubtitle": {
+      "message": "请选择要阻止的类别"
+   },
+   "categoriesOptionsTitle": {
+      "message": "分类目录"
+   },
+   "categoriesPrivacyText": {
+      "message": "为了使BlockSite能够为您提供类别屏蔽，我们需要您的许可才能访问您访问的网站上的信息。请点击“我接受”以启用访问权限，并按照我们的说明使用此信息 "
+   },
+   "categoriesPrivacyTitle": {
+      "message": "按类别阻止"
+   },
+   "categoriesShopping": {
+      "message": "购物"
+   },
+   "categoriesSocialNetworksAndOnlineCommunities": {
+      "message": "社交"
+   },
+   "categoriesSports": {
+      "message": "体育"
+   },
+   "categoriesTableTitle": {
+      "message": "阻止的类别列表"
+   },
+   "clickHereToCheckOut": {
+      "message": "点击这里查看"
+   },
+   "clickingHereLink": {
+      "message": "点击这里"
+   },
+   "contextMenusAllowThisLink": {
+      "message": "允许此链接"
+   },
+   "contextMenusAllowThisLinkWorkMode": {
+      "message": "允许此链接显示对焦模式列表"
+   },
+   "contextMenusAllowThisSite": {
+      "message": "允许此站点"
+   },
+   "contextMenusAllowThisSiteWorkMode": {
+      "message": "允许此网站显示焦点模式列表"
+   },
+   "contextMenusBlockThisLink": {
+      "message": "拦截此链接"
+   },
+   "contextMenusBlockThisLinkWorkMode": {
+      "message": "将链接地址添加到焦点模式列表"
+   },
+   "contextMenusBlockThisSite": {
+      "message": "拦截此站点"
+   },
+   "contextMenusBlockThisSiteWorkMode": {
+      "message": "将站点添加到焦点模式列表"
+   },
+   "copiedIconTitle": {
+      "message": "已复制"
+   },
+   "copyIconTitle": {
+      "message": "复制"
+   },
+   "customizeBlockPageApplyChangeNo": {
+      "message": "否"
+   },
+   "customizeBlockPageApplyChangeSubTitle": {
+      "message": "通过单击“是”将对所做的更改应用到被阻止的页面。"
+   },
+   "customizeBlockPageApplyChangeTitle": {
+      "message": "应用更改？"
+   },
+   "customizeBlockPageApplyChangeYes": {
+      "message": "是"
+   },
+   "customizeBlockPageApplyChanges": {
+      "message": "应用更改"
+   },
+   "customizeBlockPageBlack": {
+      "message": "黑色"
+   },
+   "customizeBlockPageBlockSiteFunnyImage": {
+      "message": "BlockSite搞笑图片"
+   },
+   "customizeBlockPageBlocksiteText": {
+      "message": "BlockSite的文字"
+   },
+   "customizeBlockPageChangesApplied": {
+      "message": "您的更改已应用。"
+   },
+   "customizeBlockPageChangesFailed": {
+      "message": "出了些问题。请再试一次。"
+   },
+   "customizeBlockPageCurrentBackground": {
+      "message": "当前背景"
+   },
+   "customizeBlockPageCustomizeText": {
+      "message": "自订文字"
+   },
+   "customizeBlockPageNoPremiumCTA": {
+      "message": "获取自定义块页面"
+   },
+   "customizeBlockPageNoPremiumMacbookSubtitle": {
+      "message": "哎呀！ site.com 不可用，因为它与社交有关，这是您阻止的类别。保持专注，你有这个。"
+   },
+   "customizeBlockPageNoPremiumMacbookTitle": {
+      "message": "没有张贴，没有喜欢，只是生活。"
+   },
+   "customizeBlockPageNoPremiumSubtitle": {
+      "message": "让它鼓舞人心或有趣，以帮助您保持专注。"
+   },
+   "customizeBlockPageNoPremiumTitle": {
+      "message": "创建您自己的屏蔽页面"
+   },
+   "customizeBlockPagePreviewYourChanges": {
+      "message": "保存之前预览更改"
+   },
+   "customizeBlockPageResetImage": {
+      "message": "重设回BlockSite搞笑图片"
+   },
+   "customizeBlockPageResetToDefault": {
+      "message": "重置为默认"
+   },
+   "customizeBlockPageSetBackground": {
+      "message": "设置背景图像"
+   },
+   "customizeBlockPageSetPageText": {
+      "message": "设定页面文字"
+   },
+   "customizeBlockPageSetSubTitleText": {
+      "message": "输入字幕文本"
+   },
+   "customizeBlockPageSetTitleText": {
+      "message": "输入标题文本"
+   },
+   "customizeBlockPageSubtitle": {
+      "message": "使用您自己的图像和文本来自定义阻止页面。保存之前，请实时查看以下屏幕上的更改！"
+   },
+   "customizeBlockPageTextColor": {
+      "message": "文字颜色"
+   },
+   "customizeBlockPageTitle": {
+      "message": "自定义块页面"
+   },
+   "customizeBlockPageUploadImage": {
+      "message": "上传自定义图像"
+   },
+   "customizeBlockPageUserCustomImage": {
+      "message": "用户自定义背景"
+   },
+   "customizeBlockPageWhite": {
+      "message": "白色"
+   },
+   "customizePage": {
+      "message": "自定义页面"
+   },
+   "customizedBlockPageNonPremiumTry": {
+      "message": "免费试用BlockSite Unlimited"
+   },
+   "dailyBonusCollect": {
+      "message": "收藏"
+   },
+   "dailyBonusSubTitle": {
+      "message": "BlockSite给了您每日奖励！"
+   },
+   "dailyBonusTitle": {
+      "message": "恭喜啦"
+   },
+   "doNotShowAgainMessage": {
+      "message": "不再显示"
+   },
+   "editYourList": {
+      "message": "编辑您的列表"
+   },
+   "emailVerificationCTA": {
+      "message": "明白了"
+   },
+   "emailVerificationInstructions": {
+      "message": "请从安装了BlockSite的浏览器窗口中单击链接。"
+   },
+   "emailVerificationSubTitle": {
+      "message": "我们已将验证链接发送到您的邮件，有效期为24小时。要进行验证，请在以下位置检查您的收件箱"
+   },
+   "emailVerificationTitle": {
+      "message": "快完成了"
+   },
+   "emailVerificationTitle1": {
+      "message": "BlockSite将向您发送一封包含链接的电子邮件，以验证您的电子邮件地址。"
+   },
+   "emailVerificationTitle2": {
+      "message": "您的电子邮件地址仅用于密码保护目的。"
+   },
+   "emptyResultsBlockedKeywordsSubtitle": {
+      "message": "当您添加要阻止的关键字时，您会在此处看到它。"
+   },
+   "emptyResultsBlockedKeywordsTitle": {
+      "message": "还没有被屏蔽的关键字"
+   },
+   "emptyResultsBlockedSitesSubtitle": {
+      "message": "当您添加要阻止的网站时，您会在此处看到它。"
+   },
+   "emptyResultsBlockedSitesTitle": {
+      "message": "还没有被屏蔽的网站"
+   },
+   "enableInInPrivateMode": {
+      "message": "在 InPrivate 模式下启用"
+   },
+   "enableInIncognitoMode": {
+      "message": "在隐身模式下启用"
+   },
+   "enterPasswordToGainAccess": {
+      "message": "输入密码以获取访问权限"
+   },
+   "enterYourEmail": {
+      "message": "输入您的电子邮件"
+   },
+   "enterYourPassword": {
+      "message": "输入您的密码"
+   },
+   "firstSiteAddedUserActionCTA": {
+      "message": "凉"
+   },
+   "firstSiteAddedUserActionSubTitle": {
+      "message": "恭喜您添加了第一个网站！"
+   },
+   "firstSiteAddedUserActionTitle": {
+      "message": "好东西！"
+   },
+   "firstTimeFocusModeCTA": {
+      "message": "开始使用"
+   },
+   "firstTimeFocusModeSubtitle": {
+      "message": "激活聚焦模式时，阻止分散注意力的站点并留在该区域内。"
+   },
+   "firstTimeFocusModeTitle": {
+      "message": "集中注意力。保持专注。"
+   },
+   "firstTimeGamblingCategoryUserActionCTA": {
+      "message": "极好"
+   },
+   "firstTimeGamblingCategoryUserActionSubTitle": {
+      "message": "赌博已被阻止。现在分心的事情要少得多了。"
+   },
+   "firstTimeGamblingCategoryUserActionTitle": {
+      "message": "万岁！"
+   },
+   "firstTimeNewsCategoryUserActionCTA": {
+      "message": "极好"
+   },
+   "firstTimeNewsCategoryUserActionSubTitle": {
+      "message": "新闻已被屏蔽。现在分心的事情要少得多了。"
+   },
+   "firstTimeNewsCategoryUserActionTitle": {
+      "message": "万岁！"
+   },
+   "firstTimeScheduleUserActionCTA": {
+      "message": "精彩"
+   },
+   "firstTimeScheduleUserActionSubTitle": {
+      "message": "现在，您将可以继续前进！"
+   },
+   "firstTimeScheduleUserActionTitle": {
+      "message": "太棒了！"
+   },
+   "firstTimeShoppingCategoryUserActionCTA": {
+      "message": "极好"
+   },
+   "firstTimeShoppingCategoryUserActionSubTitle": {
+      "message": "购物已被封锁。现在干扰少了很多。"
+   },
+   "firstTimeShoppingCategoryUserActionTitle": {
+      "message": "万岁！"
+   },
+   "firstTimeSocialCategoryUserActionCTA": {
+      "message": "极好"
+   },
+   "firstTimeSocialCategoryUserActionSubTitle": {
+      "message": "社交已被屏蔽。现在分心的事情要少得多了。"
+   },
+   "firstTimeSocialCategoryUserActionTitle": {
+      "message": "万岁！"
+   },
+   "firstTimeSportsCategoryUserActionCTA": {
+      "message": "极好"
+   },
+   "firstTimeSportsCategoryUserActionSubTitle": {
+      "message": "体育已被封锁。现在分心的事情要少得多了。"
+   },
+   "firstTimeSportsCategoryUserActionTitle": {
+      "message": "万岁！"
+   },
+   "firstTimeSyncUserActionCTA": {
+      "message": "明白了"
+   },
+   "firstTimeSyncUserActionSubTitle": {
+      "message": "现在同步所有设备以提高工作效率😉"
+   },
+   "firstTimeSyncUserActionTitle": {
+      "message": "做得好！"
+   },
+   "focusModeActionsPause": {
+      "message": "暂停"
+   },
+   "focusModeActionsReset": {
+      "message": "重置配置"
+   },
+   "focusModeActionsResume": {
+      "message": "恢复"
+   },
+   "focusModeAddSiteOnBoardingDescription": {
+      "message": "焦点模式阻止列表与您的主阻止列表同时工作。"
+   },
+   "focusModeAddSiteOnBoardingTitle": {
+      "message": "将网站添加到您的焦点模式列表"
+   },
+   "focusModeAreYouSureBackToSession": {
+      "message": "返回会议"
+   },
+   "focusModeAreYouSureSubtitle": {
+      "message": "您确定是时候停止时钟了吗？"
+   },
+   "focusModeAreYouSureTitle": {
+      "message": "您确定吗？"
+   },
+   "focusModeBreakInterval": {
+      "message": "休息%MINUTES%分钟"
+   },
+   "focusModeBreakText": {
+      "message": "休息时访问被阻止的站点"
+   },
+   "focusModeBreakTimeLeftText": {
+      "message": "休息时间前$ BREAK_TIME_LEFT $分钟",
+      "placeholders": {
+         "break_time_left": {
+            "content": "$1",
+            "example": "25"
+         }
+      }
+   },
+   "focusModeCircleBarTooltip": {
+      "message": "间隔当前剩余时间"
+   },
+   "focusModeCyclesTooltip": {
+      "message": "当前，完整和将来的周期状态"
+   },
+   "focusModeEnterPassToPauseOrReset": {
+      "message": "要%TIMER_ACTION%输入密码"
+   },
+   "focusModeFocusInterval": {
+      "message": "专注%MINUTES%分钟"
+   },
+   "focusModeFocusText": {
+      "message": "焦点会议站点被阻止"
+   },
+   "focusModeHourUnit": {
+      "message": "小时"
+   },
+   "focusModeMinutesUnit": {
+      "message": "分"
+   },
+   "focusModeNoSitesText": {
+      "message": "阻止列表中没有站点被阻止"
+   },
+   "focusModeNotificationEndOfCycleMessage": {
+      "message": "已完成$ CYCLES $个周期中的$ CYCLES_COMPLETED $个。现在该集中精力了！",
+      "placeholders": {
+         "cycles": {
+            "content": "2美元",
+            "example": "2"
+         },
+         "cycles_completed": {
+            "content": "$1",
+            "example": "1"
+         }
+      }
+   },
+   "focusModeNotificationEndOfCycleTitle": {
+      "message": "休息时间结束。"
+   },
+   "focusModeNotificationEndOfCyclesButton": {
+      "message": "开始会议"
+   },
+   "focusModeNotificationEndOfCyclesMessage": {
+      "message": "开始另一个聚焦模式会话？"
+   },
+   "focusModeNotificationEndOfCyclesTitle": {
+      "message": "休息时间结束。"
+   },
+   "focusModeNotificationEndOfCyclesTitleWithStars": {
+      "message": "休息结束了。您已赢得$ STARS $颗星。",
+      "placeholders": {
+         "stars": {
+            "content": "$1",
+            "example": "25"
+         }
+      }
+   },
+   "focusModeNotificationEndOfFocusIntervalMessage": {
+      "message": "是时候休息了！"
+   },
+   "focusModeNotificationEndOfFocusIntervalTitle": {
+      "message": "聚焦间隔结束。"
+   },
+   "focusModeOptionsStartFocusSession": {
+      "message": "开始焦点会议"
+   },
+   "focusModeOptionsSubtitle": {
+      "message": "要专注于一项任务并提高工作效率，请使用聚焦模式来设置您的工作时间和休息时间间隔。将站点添加到阻止列表中，以避免在焦点会议期间分散注意力"
+   },
+   "focusModeOptionsTimerSetup": {
+      "message": "计时器设定"
+   },
+   "focusModeOptionsTitle": {
+      "message": "对焦模式"
+   },
+   "focusModeSessionOnBoardingDescription": {
+      "message": "单击此处开始您的专注模式会话，开始完成这些任务"
+   },
+   "focusModeSessionOnBoardingTitle": {
+      "message": "启动你的计时器"
+   },
+   "focusModeSettingsBreakTime": {
+      "message": "休息时间"
+   },
+   "focusModeSettingsCycles": {
+      "message": "周期数"
+   },
+   "focusModeSettingsFocusTime": {
+      "message": "聚焦时间"
+   },
+   "focusModeSettingsGoToOptions": {
+      "message": "转到选项"
+   },
+   "focusModeSettingsMinutes": {
+      "message": "分钟"
+   },
+   "focusModeSettingsNumberOfCycles": {
+      "message": "循环数"
+   },
+   "focusModeSettingsStartSession": {
+      "message": "开始会议"
+   },
+   "focusModeSettingsSubtitle": {
+      "message": "专注于一项任务并提高工作效率"
+   },
+   "focusModeSettingsTitle": {
+      "message": "对焦模式计时器"
+   },
+   "focusModeSettingsTooltipFirst": {
+      "message": "设置所需的聚焦时间。焦点模式列表中的网站将被阻止。"
+   },
+   "focusModeSettingsTooltipSecond": {
+      "message": "设置所需的休息时间，然后从列表中自由访问那些网站。"
+   },
+   "focusModeSettingsTooltipThird": {
+      "message": "您希望自动运行的聚焦时间和休息时间的循环数。"
+   },
+   "focusModeTab": {
+      "message": "对焦模式"
+   },
+   "focusModeTimerOnBoardingDescription": {
+      "message": "设置一个特定的阻止列表来阻止站点并通过能够访问这些站点来奖励自己在任何周期结束时休息。"
+   },
+   "focusModeTimerOnBoardingTitle": {
+      "message": "设置焦点模式会话"
+   },
+   "focusModeToPauseOrResetEnterPassword": {
+      "message": "输入密码至%TIMER_ACTION%"
+   },
+   "focusModeWrongPassword": {
+      "message": "密码错误"
+   },
+   "focusModesSecondsUnit": {
+      "message": "秒"
+   },
+   "forgotPassSentOkBtn": {
+      "message": "确定"
+   },
+   "forgotPassSentText": {
+      "message": "您的密码已发送至 "
+   },
+   "forgotPassSentTitle": {
+      "message": "密码已发送"
+   },
+   "forgotPassword": {
+      "message": "忘记密码？"
+   },
+   "goBack": {
+      "message": "后退"
+   },
+   "goBackToWork": {
+      "message": "继续工作"
+   },
+   "goPremium": {
+      "message": "去高级"
+   },
+   "headerGoUnlimited": {
+      "message": "无限前进"
+   },
+   "headerLogin": {
+      "message": "登录"
+   },
+   "headerLogout": {
+      "message": "注销"
+   },
+   "importPopupMerge": {
+      "message": "合并"
+   },
+   "importPopupOverride": {
+      "message": "覆盖"
+   },
+   "importPopupTitle": {
+      "message": "是否合并或覆盖当前列表？"
+   },
+   "insightsCategory_entertainment": {
+      "message": "娱乐"
+   },
+   "insightsCategory_games": {
+      "message": "游戏"
+   },
+   "insightsCategory_news": {
+      "message": "新闻"
+   },
+   "insightsCategory_other": {
+      "message": "其他"
+   },
+   "insightsCategory_shopping": {
+      "message": "购物"
+   },
+   "insightsCategory_social": {
+      "message": "社交"
+   },
+   "insightsCategory_sports": {
+      "message": "体育"
+   },
+   "insightsDescription": {
+      "message": "看看您如何花时间上网以提高工作效率"
+   },
+   "insightsEmptyDescription": {
+      "message": "我们仍在计算您的见解，请稍后再回来查看更新！"
+   },
+   "insightsEmptyTitle": {
+      "message": "尚无见解。请在24小时后再试一次。"
+   },
+   "insightsErrorDescription": {
+      "message": "不用担心我们正在努力解决此问题，因此请稍后重试。"
+   },
+   "insightsErrorTitle": {
+      "message": "糟糕！出了些问题！"
+   },
+   "insightsPrivacyText": {
+      "message": "为了使BlockSite能够检测和阻止包含成人内容的页面，我们需要您的许可才能访问您访问的网站上的信息。请点击“同意”以启用访问权限，并按照我们的说明使用此信息 "
+   },
+   "insightsPrivacyTitle": {
+      "message": "糟糕！"
+   },
+   "insightsTimeSaved": {
+      "message": "我节省了多少时间？"
+   },
+   "insightsTitle": {
+      "message": "见解"
+   },
+   "insightsTopVisit": {
+      "message": "热门访问类别"
+   },
+   "invalidPassBlockedPage": {
+      "message": "密码无效。再试一次。"
+   },
+   "leaveWithoutSaving": {
+      "message": "不保存就退出"
+   },
+   "levelUpCongrats": {
+      "message": "恭喜！您已达到 $POINTS$ 颗星",
+      "placeholders": {
+         "points": {
+            "content": "$1",
+            "example": "25"
+         }
+      }
+   },
+   "levelUpGainStars": {
+      "message": "保持生产力以获得更多的星星。"
+   },
+   "levelUpGotIt": {
+      "message": "明白了"
+   },
+   "levelUpStayProductive": {
+      "message": "保持生产力，专注于继续进步并赢得新星。"
+   },
+   "levelUpUnlocked": {
+      "message": "解锁！"
+   },
+   "levelUpViewProgress": {
+      "message": "查看进度"
+   },
+   "levelUpWellDone": {
+      "message": "在迈上新台阶方面做得很好！"
+   },
+   "limitListBannerCounter": {
+      "message": "剩下的网站要添加到您的阻止列表中。"
+   },
+   "limitListBannerCounterReached": {
+      "message": "您已达到屏蔽列表的限制。"
+   },
+   "limitListBannerUpgrade": {
+      "message": "无限前进"
+   },
+   "limitListBannerUpgradeTip": {
+      "message": "单击此处升级并享受无限的黑名单。"
+   },
+   "limitListBannerUpgradeTipPopup": {
+      "message": "单击升级并享受无限的阻止列表。"
+   },
+   "limitListBannerUpgradeTipReachedPopup": {
+      "message": "您的阻止列表已达到其最大站点数。"
+   },
+   "limitListOverlayContentTitle": {
+      "message": "我们的高级用户每天可节省一个小时的宝贵时间。获取所有高级功能，立即开始提高生产力！"
+   },
+   "limitListOverlayEditBlockListPopup": {
+      "message": "编辑阻止列表"
+   },
+   "limitListOverlayFeatureFirstSubtitle": {
+      "message": "封锁任何您喜欢的网站"
+   },
+   "limitListOverlayFeatureFirstTitle": {
+      "message": "无限阻止列表"
+   },
+   "limitListOverlayFeatureFourthSubtitle": {
+      "message": "储存在云端"
+   },
+   "limitListOverlayFeatureFourthTitle": {
+      "message": "扩展之间的同步"
+   },
+   "limitListOverlayFeatureSecondSubtitle": {
+      "message": "最快的封锁方式"
+   },
+   "limitListOverlayFeatureSecondTitle": {
+      "message": "按类别批量屏蔽"
+   },
+   "limitListOverlayFeatureThirdSubtitle": {
+      "message": "选择您独有的图像和文字"
+   },
+   "limitListOverlayFeatureThirdTitle": {
+      "message": "自定义您的阻止页面"
+   },
+   "limitListOverlayImportTitle": {
+      "message": "达到进口限制"
+   },
+   "limitListOverlayMaybeLater": {
+      "message": "也许以后"
+   },
+   "limitListOverlaySpecialOfferTitle": {
+      "message": "独家提供！"
+   },
+   "limitListOverlaySubtitle": {
+      "message": "获得更多。无限前进"
+   },
+   "limitListOverlaySubtitlePopup": {
+      "message": "立即升级以在所有设备上获得无限的站点。"
+   },
+   "limitListOverlayTitle": {
+      "message": "达到阻止列表站点限制"
+   },
+   "limitListOverlayTitlePopup": {
+      "message": "您已达到屏蔽列表的限制！"
+   },
+   "limitListOverlayUpgradeNow": {
+      "message": "无限前进"
+   },
+   "limitListOverlayUpgradePopup": {
+      "message": "无限前进"
+   },
+   "limitPopupDiscountSpecialOfferSubTitle": {
+      "message": "我们最低的订阅价格"
+   },
+   "loginSyncGotIt": {
+      "message": "明白了"
+   },
+   "loginSyncLoginToSite": {
+      "message": "为了同步扩展，请注册/登录"
+   },
+   "loginSyncPleaseLogin": {
+      "message": "请登录以同步"
+   },
+   "logoutPopupQuestionApproveText": {
+      "message": "做吧"
+   },
+   "logoutPopupQuestionCancelText": {
+      "message": "不，取消"
+   },
+   "logoutPopupQuestionDescription": {
+      "message": "注销时所做的任何更改都不会与云同步。"
+   },
+   "logoutPopupQuestionTitle": {
+      "message": "您确定吗？"
+   },
+   "mandatoryConsentAgree": {
+      "message": "同意"
+   },
+   "mandatoryConsentDisagree": {
+      "message": "不同意"
+   },
+   "mandatoryConsentDisclaimer": {
+      "message": "如果您单击“不同意”，您仍然可以使用 BlockSite，但成人拦截功能将不可用。"
+   },
+   "mandatoryConsentPrivacyPolicy": {
+      "message": "隐私政策"
+   },
+   "mandatoryConsentSubtitle": {
+      "message": "为了使BlockSite能够检测和阻止包含成人内容的页面，我们需要您的许可才能访问您访问的网站上的信息。请点击“同意”以启用访问权限，并按照我们的说明使用此信息"
+   },
+   "mandatoryConsentTitle1": {
+      "message": "请选择"
+   },
+   "mandatoryConsentTitle2": {
+      "message": "为了继续进入BlockSite。"
+   },
+   "motivationalText1": {
+      "message": "算了吧。"
+   },
+   "motivationalText10": {
+      "message": "已拦截！"
+   },
+   "motivationalText11": {
+      "message": "哎呀！"
+   },
+   "motivationalText12": {
+      "message": "做的不错，孩子。"
+   },
+   "motivationalText2": {
+      "message": "没门，Jose。"
+   },
+   "motivationalText3": {
+      "message": "不错的尝试..."
+   },
+   "motivationalText4": {
+      "message": "你是当真的吗？"
+   },
+   "motivationalText5": {
+      "message": "你这是在干什么？"
+   },
+   "motivationalText6": {
+      "message": "别胡闹了！"
+   },
+   "motivationalText7": {
+      "message": "小狗。奇怪的褐色痣。Justin Bieber。"
+   },
+   "motivationalText8": {
+      "message": "蟑螂。断肢。John Goodman。"
+   },
+   "motivationalText9": {
+      "message": "奶奶。Kobe Bryant。外科手术。"
+   },
+   "offTitle": {
+      "message": "Block Site 当前关闭"
+   },
+   "onBoardingDismiss": {
+      "message": "忽略"
+   },
+   "onBoardingNextStep": {
+      "message": "下一步"
+   },
+   "optionMenuBannerCTASignupNow": {
+      "message": "立即注册"
+   },
+   "optionsLockedSubtitle": {
+      "message": "请输入您的密码以访问 BlockSite 选项页面"
+   },
+   "optionsLockedTitle": {
+      "message": "BlockSite 选项已锁定"
+   },
+   "optionsMenuAbout": {
+      "message": "关于"
+   },
+   "optionsMenuBannerCTAGoUnlimited": {
+      "message": "无限前进"
+   },
+   "optionsMenuBannerCTATryNow": {
+      "message": "立即试用"
+   },
+   "optionsMenuBannerSubtitleCategory": {
+      "message": "通过单击阻止数千个站点来节省更多时间"
+   },
+   "optionsMenuBannerSubtitleCustomizeBlockPage": {
+      "message": "选择图像和文字，让它成为你自己的"
+   },
+   "optionsMenuBannerSubtitleDesktop": {
+      "message": "使用一款应用阻止在 Edge、Firefox 和 Chrome 上浪费时间的网站！"
+   },
+   "optionsMenuBannerSubtitleGoUnlimited": {
+      "message": "成为第一个享受我们最新功能的人"
+   },
+   "optionsMenuBannerSubtitleInsights": {
+      "message": "探索您的浏览趋势以及您如何在网上度过时光 "
+   },
+   "optionsMenuBannerSubtitleMobile": {
+      "message": "扫描二维码，随时随地保持高效"
+   },
+   "optionsMenuBannerSubtitlePasswordProtection": {
+      "message": "更难从阻止列表中删除网站"
+   },
+   "optionsMenuBannerSubtitleSignup": {
+      "message": "赚取奖励并跨设备同步您的黑名单"
+   },
+   "optionsMenuBannerSubtitleSlack": {
+      "message": "对焦模式下自动开启勿扰模式"
+   },
+   "optionsMenuBannerSubtitleUnlimitedBlockList": {
+      "message": "将任意数量的网站添加到您的阻止列表中"
+   },
+   "optionsMenuBannerTitleCategory": {
+      "message": "按类别阻止"
+   },
+   "optionsMenuBannerTitleCustomizeBlockPage": {
+      "message": "自定义阻止页面"
+   },
+   "optionsMenuBannerTitleDesktop": {
+      "message": "BlockSite for Windows 测试版"
+   },
+   "optionsMenuBannerTitleGoUnlimited": {
+      "message": "获得更多。无限前进"
+   },
+   "optionsMenuBannerTitleInsights": {
+      "message": "见解"
+   },
+   "optionsMenuBannerTitleMobile": {
+      "message": "智能手机上的 BlockSite 应用程序"
+   },
+   "optionsMenuBannerTitlePasswordProtection": {
+      "message": "密码保护"
+   },
+   "optionsMenuBannerTitleSignup": {
+      "message": "注册以提高生产力"
+   },
+   "optionsMenuBannerTitleSlack": {
+      "message": "BlockSite 的 Slack 应用程序"
+   },
+   "optionsMenuBannerTitleUnlimitedBlockList": {
+      "message": "无限阻止列表"
+   },
+   "optionsMenuBlockByWords": {
+      "message": "按单词拦截"
+   },
+   "optionsMenuBlockSites": {
+      "message": "Block Site"
+   },
+   "optionsMenuBlocking": {
+      "message": "封锁"
+   },
+   "optionsMenuCategories": {
+      "message": "分类目录"
+   },
+   "optionsMenuCustomizeBlockPage": {
+      "message": "自定义块页面"
+   },
+   "optionsMenuFocusMode": {
+      "message": "对焦模式"
+   },
+   "optionsMenuPasswordProtection": {
+      "message": "密码保护"
+   },
+   "optionsMenuSettings": {
+      "message": "设置"
+   },
+   "optionsMenuSyncWithOtherDevices": {
+      "message": "与其他设备同步"
+   },
+   "optionsMenuSyncedOff": {
+      "message": "已禁用"
+   },
+   "optionsMenuSyncedOn": {
+      "message": "启用"
+   },
+   "optionsNotificationEmptyList": {
+      "message": "您的列表为空！没有要导入出的内容。"
+   },
+   "optionsNotificationEmptyWord": {
+      "message": "不能添加空字"
+   },
+   "optionsNotificationIncorrectFileStructure": {
+      "message": "文件结构不正确。请尝试导出当前列表以查看所需的csv格式。"
+   },
+   "optionsNotificationIncorrectURL": {
+      "message": "URL 错误"
+   },
+   "optionsNotificationListExported": {
+      "message": "您的列表已成功导出。"
+   },
+   "optionsNotificationListImported": {
+      "message": "您的列表已成功导入。"
+   },
+   "optionsNotificationSiteAdded": {
+      "message": "站点已添加"
+   },
+   "optionsNotificationURLAlreadyExist": {
+      "message": "网址已存在"
+   },
+   "optionsNotificationWordAlreadyExist": {
+      "message": "单词已经存在"
+   },
+   "optionsPageRedirectButton": {
+      "message": "重定向"
+   },
+   "optionsPageRedirectOK": {
+      "message": "确定"
+   },
+   "optionsPageRedirectPlaceHolder": {
+      "message": "网址（例如：google.com）"
+   },
+   "optionsPageRedirectRemove": {
+      "message": "删除"
+   },
+   "optionsPageRedirectTitle": {
+      "message": " 重定向被阻止的页面"
+   },
+   "optionsPageRedirectTooltipNotSet": {
+      "message": "单击设置重定向网站"
+   },
+   "optionsPageRedirectTooltipSet": {
+      "message": "重定向至 $URL$",
+      "placeholders": {
+         "url": {
+            "content": "$1",
+            "example": "https://example.com"
+         }
+      }
+   },
+   "optionsPageScheduleAddInterval": {
+      "message": "添加间隔"
+   },
+   "optionsPageScheduleButton": {
+      "message": "定时安排"
+   },
+   "optionsPageScheduleClickDay": {
+      "message": "（单击一天以停用）"
+   },
+   "optionsPageScheduleEveryDay": {
+      "message": "每天"
+   },
+   "optionsPageScheduleRemoveSchedule": {
+      "message": "删除"
+   },
+   "optionsPageScheduleSelectDays": {
+      "message": "选定的日子"
+   },
+   "optionsPageScheduleSetBlocking": {
+      "message": "设置拦截定时安排"
+   },
+   "optionsPageScheduleSetSchedule": {
+      "message": "设置定时安排"
+   },
+   "optionsPageScheduleSetTimes": {
+      "message": "设置时间"
+   },
+   "optionsPageScheduleTo": {
+      "message": "至"
+   },
+   "passwordProtectionGoUnlimitedButton": {
+      "message": "无限前进"
+   },
+   "passwordProtectionHookSubtitle": {
+      "message": "使用密码锁定您的设置，让您更难拖延"
+   },
+   "passwordProtectionHookTitleRemoveSite": {
+      "message": "停止尝试删除网站！获得密码保护"
+   },
+   "passwordProtectionHookTitleToggleOff": {
+      "message": "不要欺骗自己！获得密码保护。"
+   },
+   "passwordProtectionLoseAccessApprove": {
+      "message": "做吧"
+   },
+   "passwordProtectionLoseAccessCancel": {
+      "message": "不，取消"
+   },
+   "passwordProtectionLoseAccessSubtitle": {
+      "message": "密码保护现在是一项高级功能。作为忠实的用户，它对您免费。为了保持这种方式，必须将其启用。"
+   },
+   "passwordProtectionLoseAccessTitleFirst": {
+      "message": "您将失去访问权限。"
+   },
+   "passwordProtectionLoseAccessTitleSecond": {
+      "message": "您确定吗？"
+   },
+   "passwordProtectionMaybeLaterButton": {
+      "message": "也许以后"
+   },
+   "passwordProtectionNonPremiumCTA": {
+      "message": "获得密码保护"
+   },
+   "passwordProtectionNonPremiumSubtitle": {
+      "message": "使其更难更改设置并将站点从阻止列表中删除"
+   },
+   "passwordProtectionNonPremiumTitle": {
+      "message": "通过密码保护保持高效"
+   },
+   "passwordProtectionOptionAddChallenge": {
+      "message": "阻止页面挑战-添加额外的步骤来取消阻止页面"
+   },
+   "passwordProtectionOptionBlockBlockedPage": {
+      "message": "需要密码才能访问被拦截的站点"
+   },
+   "passwordProtectionOptionBlockSettings": {
+      "message": "使用密码保护您首选的BlockSite选项和$ BROWSER $扩展页面",
+      "placeholders": {
+         "browser": {
+            "content": "$1"
+         }
+      }
+   },
+   "passwordProtectionOptionNotifyUninstalled": {
+      "message": "在卸载 BlockSite 时通过电子邮件收到通知"
+   },
+   "passwordProtectionPreferences": {
+      "message": "密码保护首选项"
+   },
+   "passwordProtectionSetupNowButton": {
+      "message": "立即设置"
+   },
+   "passwordProtectionUnlockButton": {
+      "message": "现在解锁"
+   },
+   "passwordProtectionUnlockPageSubtitle": {
+      "message": "请输入您的密码以解锁页面"
+   },
+   "passwordProtectionUnlockPageTitle": {
+      "message": "此页面已锁定！"
+   },
+   "passwordProtectionVerificationEmail": {
+      "message": "电子邮件"
+   },
+   "passwordProtectionVerificationMinimumPass": {
+      "message": "最少 5 个字符"
+   },
+   "passwordProtectionVerificationPassword": {
+      "message": "密码"
+   },
+   "passwordProtectionVerificationRequired": {
+      "message": "需要验证"
+   },
+   "passwordQuestionBack": {
+      "message": "后退"
+   },
+   "passwordQuestionClickBack": {
+      "message": "在下方点击“返回”的用户"
+   },
+   "passwordQuestionDontShowAgain": {
+      "message": "不要再显示"
+   },
+   "passwordQuestionPleaseTryAgain": {
+      "message": "不正确请再试一次。"
+   },
+   "passwordQuestionReallyToDo": {
+      "message": "您真的要这么做吗？"
+   },
+   "passwordQuestionSaveMinutes": {
+      "message": "平均每天节省15分钟。"
+   },
+   "passwordQuestionToUnlock": {
+      "message": "要解锁，请输入"
+   },
+   "passwordVerificationWarning": {
+      "message": "密码保护未启用。 要启用此功能，请在最初用于设置帐户的同一浏览器窗口中打开电子邮件中的链接。"
+   },
+   "popupHeaderUpgradeNow": {
+      "message": "无限前进"
+   },
+   "popupLockedSubtitle": {
+      "message": "输入您的密码以访问扩展设置"
+   },
+   "popupLockedTitle": {
+      "message": "BlockSite 已锁定"
+   },
+   "popupQuestionApprove": {
+      "message": "是"
+   },
+   "popupQuestionCancel": {
+      "message": "否"
+   },
+   "premiumBannerCTA": {
+      "message": "无限前进"
+   },
+   "premiumBannerNew": {
+      "message": "新增功能！"
+   },
+   "premiumBannerSubtitleA": {
+      "message": "选择您自己的图像和文本以创建唯一的阻止页面。"
+   },
+   "premiumBannerSubtitleB": {
+      "message": "不要因为入围而分心。添加任意数量的网站。"
+   },
+   "premiumBannerTitleA": {
+      "message": "制作自己的阻止页面！"
+   },
+   "premiumBannerTitleB": {
+      "message": "获取无限的阻止列表！"
+   },
+   "premiumHookCTA": {
+      "message": "免费试用"
+   },
+   "premiumHookTitle": {
+      "message": "无限前进"
+   },
+   "premiumOverlayCategorySubtitle": {
+      "message": "最快的封锁方式"
+   },
+   "premiumOverlayCategoryTitle": {
+      "message": "按类别阻止"
+   },
+   "premiumOverlayCustomizationSubtitle": {
+      "message": "设置图像和文字"
+   },
+   "premiumOverlayCustomizationTitle": {
+      "message": "自定义阻止页面"
+   },
+   "premiumOverlayGoUnlimited": {
+      "message": "无限前进"
+   },
+   "premiumOverlayInsightsSubtitle": {
+      "message": "探索浏览趋势"
+   },
+   "premiumOverlayInsightsTitle": {
+      "message": "有用的见解"
+   },
+   "premiumOverlayMaybeLater": {
+      "message": "也许以后"
+   },
+   "premiumOverlaySubtitle": {
+      "message": "免费试用3天"
+   },
+   "premiumOverlayTitle": {
+      "message": "BlockSite Unlimited"
+   },
+   "premiumOverlayUnlimitedSubtitle": {
+      "message": "任何地方。任何时候。"
+   },
+   "premiumOverlayUnlimitedTitle": {
+      "message": "无限阻止列表"
+   },
+   "privacyIAccept": {
+      "message": "我接受"
+   },
+   "privacySettingsPrivacyPolicy": {
+      "message": "隐私政策。"
+   },
+   "privacySettingsSubtitle": {
+      "message": "允许BlockSite访问您访问的URL，IP地址，操作系统和浏览器信息，以按照我们的指示使用 "
+   },
+   "privacySettingsTitle": {
+      "message": "启用“按类别阻止”阻止"
+   },
+   "protectionSettingsSaved": {
+      "message": "保护设置已保存"
+   },
+   "pushToAccountCTA": {
+      "message": "立即注册"
+   },
+   "pushToAccountSubTitle": {
+      "message": "创建一个免费的 BlockSite 帐户，以获得高效的奖励并跨设备同步 BlockSite"
+   },
+   "pushToAccountTitle": {
+      "message": "注册用户更快地实现目标"
+   },
+   "pushToBlockListCTA": {
+      "message": "无限前进"
+   },
+   "pushToBlockListSubTitle": {
+      "message": "立即升级以将任意数量的网站添加到阻止列表中"
+   },
+   "pushToBlockListTitle": {
+      "message": "立即升级即可获得无限阻止列表"
+   },
+   "pushToCategoriesCTA": {
+      "message": "无限前进"
+   },
+   "pushToCategoriesSubTitle": {
+      "message": "一次单击即可阻止数千个网站，从而节省时间并保持专注。"
+   },
+   "pushToCategoriesTitle": {
+      "message": "一键阻止数千个网站！"
+   },
+   "pushToCustomizedPageSubTitle": {
+      "message": "选择图像和文字并创建自己的阻止页面"
+   },
+   "pushToCustomizedPageTitle": {
+      "message": "创建和自定义您自己的\n被阻止的页面"
+   },
+   "pushToCustomizedPagedCTA": {
+      "message": "无限前进"
+   },
+   "pushToDesktopCTA": {
+      "message": "立即试用"
+   },
+   "pushToDesktopOverlayCTAMaybeLater": {
+      "message": "也许以后"
+   },
+   "pushToDesktopOverlayCTAUpgrade": {
+      "message": "了解更多"
+   },
+   "pushToDesktopOverlaySubtitleA": {
+      "message": "现在，您可以使用一个应用程序阻止Edge，Firefox和Chrome上的所有干扰！立即下载全新的应用程序"
+   },
+   "pushToDesktopOverlaySubtitleB": {
+      "message": "您现在可以使用我们新的 Windows 桌面应用程序阻止 Chrome、Firefox 和 Edge 上的所有干扰"
+   },
+   "pushToDesktopOverlayTitleA": {
+      "message": "跨多个浏览器阻止"
+   },
+   "pushToDesktopOverlayTitleB": {
+      "message": "新的 Windows 应用程序现已上线！"
+   },
+   "pushToDesktopSubTitle": {
+      "message": "现在，您可以使用一个应用程序阻止Edge，Firefox和Chrome上的所有干扰！立即下载全新的应用程序"
+   },
+   "pushToDesktopTitle": {
+      "message": "BlockSite Windows应用测试版\n现已可用！"
+   },
+   "pushToGoUnlimitedCTA": {
+      "message": "无限前进"
+   },
+   "pushToGoUnlimitedSubTitle": {
+      "message": "高级用户每天节省更多时间。您也可以通过升级到BlockSite Unlimited。"
+   },
+   "pushToGoUnlimitedTitle": {
+      "message": "获得更多。无限前进"
+   },
+   "pushToInsightsCTA": {
+      "message": "无限前进"
+   },
+   "pushToInsightsSubTitle": {
+      "message": "随时间探索您的在线浏览趋势，并学习如何提高工作效率"
+   },
+   "pushToInsightsTitle": {
+      "message": "借助Insights探索您的浏览趋势"
+   },
+   "pushToMobileOverlayCTA": {
+      "message": "也许以后"
+   },
+   "pushToMobileOverlaySubtitle": {
+      "message": "通过扫描条形码以获取移动版BlockSite来保持生产效率"
+   },
+   "pushToMobileOverlayTitle": {
+      "message": "在手机上获取BlockSite"
+   },
+   "rateUsBlessingStepBtn": {
+      "message": "在网上商店给我们评分"
+   },
+   "rateUsBlessingStepSubTitle": {
+      "message": "您的反馈很重要！通过在网上商店留下评论来帮助其他人发现我们应用程序的好处。"
+   },
+   "rateUsBlessingStepTitle": {
+      "message": "耶！我们很高兴你喜欢它！"
+   },
+   "rateUsReviewStepBtn": {
+      "message": "发送反馈"
+   },
+   "rateUsReviewStepMsgError": {
+      "message": "输入的字符无效。"
+   },
+   "rateUsReviewStepSubTitle": {
+      "message": "我们的支持和产品团队正在努力，希望尽快满意。"
+   },
+   "rateUsReviewStepTextContent": {
+      "message": "您的反馈"
+   },
+   "rateUsReviewStepTitleContent": {
+      "message": "我们如何改进？"
+   },
+   "rateUsSReviewStepTitle": {
+      "message": "谢谢，您的意见对我们很重要！"
+   },
+   "rateUsSubmittingStepBtn": {
+      "message": "提交"
+   },
+   "rateUsSubmittingStepSubTitle": {
+      "message": "点击星星告诉我们你的想法"
+   },
+   "rateUsSubmittingStepTitle": {
+      "message": "您如何评价 BlockSite？"
+   },
+   "redirectOnBoardingDescription": {
+      "message": "添加您希望在尝试访问被阻止的网站、关键字或使用焦点模式时重定向到的网站"
+   },
+   "redirectOnBoardingTitle": {
+      "message": "设置重定向站点"
+   },
+   "resetPasswordSuccessBtnText": {
+      "message": "确定"
+   },
+   "resetPasswordSuccessSubTitle": {
+      "message": "您的密码已发送至 $MAIL$",
+      "placeholders": {
+         "mail": {
+            "content": "$1",
+            "example": "example@mail.com"
+         }
+      }
+   },
+   "resetPasswordSuccessTitle": {
+      "message": "密码已发送"
+   },
+   "rewardUnlockCta": {
+      "message": "浏览所有奖励"
+   },
+   "rewardUnlockDescription": {
+      "message": "做得好！您的辛勤工作得到了回报，您也因此获得了回报！您可以立即使用它或保存以备后用。"
+   },
+   "rewardUnlockTitle": {
+      "message": "奖励解锁！"
+   },
+   "saveEmailSettings": {
+      "message": "保存"
+   },
+   "scheduleOnBoardingDescription": {
+      "message": "在特定日期和时间范围内阻止网站。在这些时间范围之外，网站不会被阻止。"
+   },
+   "scheduleOnBoardingTitle": {
+      "message": "创建阻止计划"
+   },
+   "setFirstPassProtectUserActionCTA": {
+      "message": "太棒了"
+   },
+   "setFirstPassProtectUserActionSubTitle": {
+      "message": "现在，避免分心会更容易"
+   },
+   "setFirstPassProtectUserActionTitle": {
+      "message": "不错的工作！"
+   },
+   "setUpEmailAndPass": {
+      "message": "设置电子邮件和密码以激活"
+   },
+   "settingEnableFocusModeFaviconSubtitle": {
+      "message": "启用此选项可显示扩展程序图标上当前间隔中剩余的时间。"
+   },
+   "settingEnableFocusModeFaviconTitle": {
+      "message": "在网站图示上显示剩余时间"
+   },
+   "settingEnableSyncStatusSubtitle": {
+      "message": "启用显示快捷方式，以轻松启用/禁用与手机和/或其他扩展程序的同步。"
+   },
+   "settingEnableSyncStatusTitle": {
+      "message": "显示同步选项页面快捷菜单"
+   },
+   "settingsChangedTitle1": {
+      "message": "请保存您的电子邮件和密码以激活额外的保护功能。"
+   },
+   "settingsEnableBlockSiteShortcutSubtitle": {
+      "message": "通过右键单击并选择网站上的BlockSite菜单，将站点添加到阻止列表或焦点模式列表中。"
+   },
+   "settingsEnableBlockSiteShortcutTitle": {
+      "message": "右键单击启用BlockSite快捷方式选项"
+   },
+   "settingsGeneralHeader": {
+      "message": "一般"
+   },
+   "settingsIntegrationsHeader": {
+      "message": "整合方式"
+   },
+   "settingsNotSaved": {
+      "message": "设置未保存"
+   },
+   "settingsOptionSubtitle": {
+      "message": ""
+   },
+   "settingsOptionTitle": {
+      "message": "设置"
+   },
+   "settingsShowMotivationalSubtitle": {
+      "message": "启用此选项将在被阻止的站点上显示图像。禁用将显示白色背景。"
+   },
+   "settingsShowMotivationalTitle": {
+      "message": "显示被阻止的页面励志图片"
+   },
+   "settingsSlackDNDSubtitle": {
+      "message": "在焦点会议中自动将“松弛”设置为“请勿打扰”模式"
+   },
+   "settingsSlackDNDTitle": {
+      "message": "焦点会议期间DND松弛"
+   },
+   "settingsSlackDNDTurnOffOverlayNoThanks": {
+      "message": "不用了，谢谢"
+   },
+   "settingsSlackDNDTurnOffOverlaySubtitle": {
+      "message": "如果您为 BlockSite 关闭 Slack，您将更容易分心。是否仍要关闭 Slack？"
+   },
+   "settingsSlackDNDTurnOffOverlayTitle": {
+      "message": "您确定吗？"
+   },
+   "settingsSlackDNDTurnOffOverlayYesPlease": {
+      "message": "是的，请"
+   },
+   "settingsSlackDNDTurnOnOverlayGoUnlimitedSlackAccount": {
+      "message": "无限前进"
+   },
+   "settingsSlackDNDTurnOnOverlayLinkSlackAccount": {
+      "message": "连结Slack帐户"
+   },
+   "settingsSlackDNDTurnOnOverlayMaybeLater": {
+      "message": "也许以后"
+   },
+   "settingsSlackDNDTurnOnOverlayNotifications": {
+      "message": "通过自动设置“请勿打扰”模式，在对焦模式下将通知置于静音状态"
+   },
+   "settingsSlackDNDTurnOnOverlayPrivacy": {
+      "message": "请注意：BlockSite 将您的消息保密。我们不会存储或查看任何发送或接收的消息或聊天。"
+   },
+   "settingsSlackDNDTurnOnOverlayTitle": {
+      "message": "通过将Slack与BlockSite集成来避免更多的干扰"
+   },
+   "settingsSlackDNDTurnOnUpgradeOverlayTitle": {
+      "message": "升级到无限版以将Slack与BlockSite集成"
+   },
+   "settingsSlackDNDUpgradeButton": {
+      "message": "无限前进"
+   },
+   "settingsSlackSubtitleNonPremium": {
+      "message": "升级到BlockSite Unlimited，利用针对Slack的BlockSites自动化功能，将精力集中在您身上。"
+   },
+   "settingsSlackSubtitlePremium": {
+      "message": "利用针对Slack的BlockSites自动化功能增强您的注意力。"
+   },
+   "settingsSyncHeader": {
+      "message": "同步"
+   },
+   "settingsSyncSubtitle": {
+      "message": "使用同一用户帐户登录时，将当前扩展程序的首选项和阻止列表备份到云中，或与我们的Android和/或扩展程序平台上的多达4个其他设备同步。"
+   },
+   "settingsSyncTitle": {
+      "message": "与其他设备同步"
+   },
+   "settingsViewHeader": {
+      "message": "查看"
+   },
+   "shareFacebookIconTitle": {
+      "message": "Facebook"
+   },
+   "shareLinkedinIconTitle": {
+      "message": "Linkedin"
+   },
+   "sharePopupSubTitle": {
+      "message": "通过让他人了解 BlockSite 来帮助他人"
+   },
+   "sharePopupTitle": {
+      "message": "分享您对生产力和专注的热爱"
+   },
+   "shareTwitterIconTitle": {
+      "message": "Twitter"
+   },
+   "specialOfferPopupFinePrint": {
+      "message": "每年计费。定期计费。以任何理由随时取消"
+   },
+   "specialOfferPopupGoMaybeLater": {
+      "message": "也许以后"
+   },
+   "specialOfferPopupGoUnlimited": {
+      "message": "无限前进"
+   },
+   "specialOfferPopupSave": {
+      "message": "保存"
+   },
+   "specialOfferPopupSubtitle": {
+      "message": " 您还将获得批量阻止、密码保护等功能。时间不多了！"
+   },
+   "specialOfferPopupTitle": {
+      "message": "以 $ 获得无限阻止"
+   },
+   "specialOfferPopupYear": {
+      "message": "年"
+   },
+   "syncOverrideConfirmationApprove": {
+      "message": "是"
+   },
+   "syncOverrideConfirmationCancel": {
+      "message": "否"
+   },
+   "syncOverrideConfirmationSubTitle": {
+      "message": "在离线模式下完成的所有更改都不会在其他设备上更新，并且将丢失。"
+   },
+   "syncOverrideConfirmationTitle": {
+      "message": "您确定吗？"
+   },
+   "tagTextLatestNews": {
+      "message": "最新消息"
+   },
+   "tagTextPremium": {
+      "message": "额外费用"
+   },
+   "tagTextQuickTip": {
+      "message": "小建议"
+   },
+   "tooltipExportList": {
+      "message": "导出列表"
+   },
+   "tooltipImportList": {
+      "message": "导入列表"
+   },
+   "updateEmailAndPassword": {
+      "message": "更新电子邮件和密码"
+   },
+   "updateThemHereLink": {
+      "message": "在这里更新它们"
+   },
+   "userActionStars": {
+      "message": "您已获得 +$STARS$ 颗星",
+      "placeholders": {
+         "stars": {
+            "content": "$1",
+            "example": "25"
+         }
+      }
+   },
+   "verificationCheckYourEmail": {
+      "message": "如要启用，请查看电子邮件中的验证链接。"
+   },
+   "verificationClickToResend": {
+      "message": "请单击此处重新发送。"
+   },
+   "verificationDidntReceiveEmail": {
+      "message": "如果您没有收到电子邮件，"
+   },
+   "verifyResetPasswordAcceptBtn": {
+      "message": "是的，重置密码"
+   },
+   "verifyResetPasswordCancelBtn": {
+      "message": "不，取消"
+   },
+   "verifyResetPasswordText": {
+      "message": "我们将重置您的密码并将新密码发送到您的电子邮箱"
+   },
+   "verifyResetPasswordTitle": {
+      "message": "您确定吗？"
+   },
+   "viewAccount": {
+      "message": "浏览账户"
+   },
+   "whatsNewFeature1": {
+      "message": "我们改进了您的屏蔽体验以更好地集中注意力，现在您可以将类别和关键字添加到您的屏蔽计划中。"
+   },
+   "whatsNewGotIt": {
+      "message": "明白了"
+   },
+   "whatsNewSubtitle": {
+      "message": "以下是 BlockSite 的新功能::"
+   },
+   "whatsNewTitle": {
+      "message": "欢迎回来"
+   },
+   "whiteListRedirectRemovePopupDescription": {
+      "message": "在白名单和黑名单模式之间切换时，我们必须清除您的重定向站点"
+   },
+   "whitelistInfoToolTip": {
+      "message": "阻止除白名单中的所有网站之外的所有网站"
+   },
+   "whitelistModeTitle": {
+      "message": "白名单模式"
+   },
+   "whitelistPopUpDescription": {
+      "message": "除了列表中的站点外，所有站点都会被拦截"
+   },
+   "whitelistPopUpTitle": {
+      "message": "您确定吗？"
+   },
+   "workModeEnterPassToPauseOrReset": {
+      "message": "要%TIMER_ACTION%输入密码",
+      "placeholders": {
+         "timer_action": {
+            "content": "$1",
+            "example": "25"
+         }
+      }
+   },
+   "workModeToPauseOrResetEnterPassword": {
+      "message": "输入密码至%TIMER_ACTION%",
+      "placeholders": {
+         "timer_action": {
+            "content": "$1",
+            "example": "25"
+         }
+      }
+   },
+   "workModeWrongPassword": {
+      "message": "密码错误"
+   },
+   "wrongPassword": {
+      "message": "糟糕！不是这样子。请重试。"
+   }
+}
