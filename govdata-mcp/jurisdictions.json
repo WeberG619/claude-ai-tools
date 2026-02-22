@@ -1,0 +1,134 @@
+{
+  "miami-dade": {
+    "name": "Miami-Dade County",
+    "state": "FL",
+    "data_platform": "arcgis",
+    "base_url": "https://gisweb.miamidade.gov/arcgis/rest/services",
+    "open_data_url": "https://opendata.miamidade.gov",
+    "endpoints": {
+      "building_permits": {
+        "url": "https://gisweb.miamidade.gov/arcgis/rest/services/MD_LandInformation/MapServer/1/query",
+        "type": "arcgis",
+        "description": "County Building Permits (MD_LandInformation Layer 1)"
+      },
+      "building_violations": {
+        "url": "https://gisweb.miamidade.gov/arcgis/rest/services/MD_EAMSCodeEnforcement/MapServer/0/query",
+        "type": "arcgis",
+        "description": "Code enforcement violations"
+      },
+      "zoning": {
+        "url": "https://gisweb.miamidade.gov/arcgis/rest/services/MD_LandInformation/MapServer/18/query",
+        "type": "arcgis",
+        "description": "County Zoning (MD_LandInformation Layer 18)"
+      }
+    },
+    "notes": "Miami-Dade uses ArcGIS Hub. Some endpoints may require discovery via the open data portal."
+  },
+  "san-francisco": {
+    "name": "City of San Francisco",
+    "state": "CA",
+    "data_platform": "socrata",
+    "base_url": "https://data.sfgov.org",
+    "endpoints": {
+      "building_permits": {
+        "url": "https://data.sfgov.org/resource/i98e-djp9.json",
+        "type": "socrata",
+        "description": "Building permits filed and issued"
+      },
+      "building_violations": {
+        "url": "https://data.sfgov.org/resource/nbtm-fbw5.json",
+        "type": "socrata",
+        "description": "Housing code violations"
+      },
+      "zoning": {
+        "url": "https://data.sfgov.org/resource/8kqp-6q3h.json",
+        "type": "socrata",
+        "description": "Zoning districts"
+      }
+    },
+    "notes": "San Francisco uses Socrata SODA API. No API key required for low-volume queries."
+  },
+  "new-york": {
+    "name": "City of New York",
+    "state": "NY",
+    "data_platform": "socrata",
+    "base_url": "https://data.cityofnewyork.us",
+    "endpoints": {
+      "building_permits": {
+        "url": "https://data.cityofnewyork.us/resource/ipu4-2vj7.json",
+        "type": "socrata",
+        "description": "DOB NOW: Build job applications and permits"
+      },
+      "building_violations": {
+        "url": "https://data.cityofnewyork.us/resource/3h2n-5cm9.json",
+        "type": "socrata",
+        "description": "DOB violations"
+      },
+      "zoning": {
+        "url": "https://data.cityofnewyork.us/resource/8hkz-k5q4.json",
+        "type": "socrata",
+        "description": "NYC zoning features"
+      }
+    },
+    "notes": "NYC uses Socrata SODA API via NYC Open Data."
+  },
+  "chicago": {
+    "name": "City of Chicago",
+    "state": "IL",
+    "data_platform": "socrata",
+    "base_url": "https://data.cityofchicago.org",
+    "endpoints": {
+      "building_permits": {
+        "url": "https://data.cityofchicago.org/resource/ydr8-5enu.json",
+        "type": "socrata",
+        "description": "Building permits issued"
+      },
+      "building_violations": {
+        "url": "https://data.cityofchicago.org/resource/22u3-xenr.json",
+        "type": "socrata",
+        "description": "Building code violations"
+      }
+    },
+    "notes": "Chicago uses Socrata SODA API."
+  },
+  "los-angeles": {
+    "name": "City of Los Angeles",
+    "state": "CA",
+    "data_platform": "socrata",
+    "base_url": "https://data.lacity.org",
+    "endpoints": {
+      "building_permits": {
+        "url": "https://data.lacity.org/resource/yv23-pmwf.json",
+        "type": "socrata",
+        "description": "Building and safety permit information"
+      }
+    },
+    "notes": "Los Angeles uses Socrata SODA API."
+  },
+  "_federal": {
+    "census_bps": {
+      "url": "https://api.census.gov/data/timeseries/bps",
+      "description": "Census Bureau Building Permits Survey",
+      "requires_key": true,
+      "key_env_var": "CENSUS_API_KEY"
+    },
+    "osha_inspections": {
+      "url": "https://enforcedata.dol.gov/views/data_summary.php",
+      "api_url": "https://enforcedata.dol.gov/api",
+      "description": "OSHA enforcement and inspection data"
+    }
+  },
+  "_contractors": {
+    "FL": {
+      "url": "https://www.myfloridalicense.com/wl11.asp",
+      "api_url": null,
+      "scrape_note": "Florida DBPR does not have a public API; data must be searched via web form",
+      "description": "Florida Department of Business and Professional Regulation"
+    },
+    "CA": {
+      "url": "https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/CheckLicense.aspx",
+      "api_url": null,
+      "description": "California Contractors State License Board"
+    }
+  }
+}

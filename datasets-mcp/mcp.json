@@ -1,0 +1,20 @@
+{
+  "name": "datasets-mcp",
+  "version": "1.0.0",
+  "description": "HuggingFace Datasets MCP Server - Search, explore, preview, and download datasets from the HuggingFace Hub",
+  "tools": [
+    "search_datasets",
+    "get_dataset_info",
+    "list_dataset_files",
+    "get_dataset_splits",
+    "preview_dataset",
+    "download_dataset",
+    "find_similar_datasets",
+    "search_for_training_data"
+  ],
+  "categories": {
+    "search": ["search_datasets", "search_for_training_data", "find_similar_datasets"],
+    "explore": ["get_dataset_info", "list_dataset_files", "get_dataset_splits", "preview_dataset"],
+    "download": ["download_dataset"]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "name": "govdata-mcp",
+  "version": "1.0.0",
+  "description": "Government Data MCP Server - Building permits, code violations, zoning, OSHA inspections, and contractor licensing across multiple US jurisdictions",
+  "tools": [
+    "search_permits",
+    "get_permit_details",
+    "search_code_violations",
+    "lookup_zoning",
+    "search_contractors",
+    "get_building_permits_stats",
+    "search_osha_inspections",
+    "lookup_building_code"
+  ],
+  "categories": {
+    "permits": ["search_permits", "get_permit_details", "get_building_permits_stats"],
+    "violations": ["search_code_violations", "search_osha_inspections"],
+    "zoning": ["lookup_zoning"],
+    "contractors": ["search_contractors"],
+    "codes": ["lookup_building_code"]
+  },
+  "supported_jurisdictions": [
+    "miami-dade",
+    "san-francisco",
+    "new-york",
+    "chicago",
+    "los-angeles"
+  ],
+  "env_vars": {
+    "CENSUS_API_KEY": "Optional - Census Bureau API key for building permit statistics",
+    "SOCRATA_APP_TOKEN": "Optional - Socrata app token for higher rate limits"
+  }
+}

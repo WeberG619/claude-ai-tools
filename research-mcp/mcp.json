@@ -1,0 +1,31 @@
+{
+  "name": "research-mcp",
+  "version": "1.0.0",
+  "description": "Academic Research MCP Server - Search papers, explore citations, get recommendations using Semantic Scholar and arXiv APIs",
+  "tools": [
+    "search_papers",
+    "get_paper_details",
+    "search_arxiv",
+    "get_citations",
+    "get_references",
+    "get_recommendations",
+    "search_by_topic"
+  ],
+  "categories": {
+    "search": ["search_papers", "search_arxiv", "search_by_topic"],
+    "paper_info": ["get_paper_details"],
+    "graph": ["get_citations", "get_references", "get_recommendations"]
+  },
+  "data_sources": {
+    "semantic_scholar": {
+      "url": "https://api.semanticscholar.org",
+      "auth": "optional API key via SEMANTIC_SCHOLAR_API_KEY env var",
+      "rate_limit": "1 req/sec without key, 10 req/sec with key"
+    },
+    "arxiv": {
+      "url": "http://export.arxiv.org/api/query",
+      "auth": "none required",
+      "rate_limit": "no strict limit, be reasonable"
+    }
+  }
+}
