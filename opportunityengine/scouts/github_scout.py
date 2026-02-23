@@ -86,6 +86,14 @@ class GitHubScout(BaseScout):
 
         return opportunities
 
+    # Repos/keywords that indicate crypto/blockchain spam or irrelevant bounties
+    _SPAM_KEYWORDS = [
+        "crypto", "blockchain", "web3", "solidity", "defi", "nft",
+        "token", "ethereum", "solana", "smart contract", "dao",
+        "airdrop", "staking", "mining", "ledger", "wallet",
+        "hackerone",  # Bug bounties for security, not dev work
+    ]
+
     def _issue_to_opportunity(self, issue: dict) -> Optional[Opportunity]:
         """Convert a GitHub issue to an Opportunity."""
         repo = issue.get("repository", {})
@@ -94,6 +102,11 @@ class GitHubScout(BaseScout):
         title = issue.get("title", "")
         body = issue.get("body", "") or ""
         labels = [l.get("name", "") if isinstance(l, dict) else str(l) for l in issue.get("labels", [])]
+
+        # Skip crypto/blockchain/spam issues
+        check_text = f"{repo_name} {title} {body[:500]} {' '.join(labels)}".lower()
+        if any(kw in check_text for kw in self._SPAM_KEYWORDS):
+            return None
 
         # Extract bounty amount from labels or body
         bounty_amount = self._extract_bounty_amount(labels, body, title)

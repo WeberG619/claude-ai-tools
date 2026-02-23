@@ -54,6 +54,7 @@ logger = logging.getLogger("scheduler")
 
 # Schedule configuration
 BRIEFING_TIME = "07:00"
+INTELLIGENCE_TIME = "08:00"    # Daily intelligence report
 EVENING_TIME = "18:00"
 WEEKLY_OVERVIEW_TIME = "07:15"  # Monday
 WEEKLY_RECAP_TIME = "17:00"    # Friday
@@ -121,6 +122,23 @@ class ProactiveScheduler:
             logger.info("Evening summary sent successfully")
         except Exception as e:
             logger.error(f"Evening summary failed: {e}")
+
+    def run_intelligence_report(self):
+        """Run the daily intelligence report at 8:00 AM."""
+        if self.tracker.already_ran_today("last_intel_date"):
+            logger.info("Intelligence report already ran today, skipping")
+            return
+
+        logger.info("Running intelligence report...")
+        try:
+            from intelligence_report import generate_intelligence_report
+            report = generate_intelligence_report()
+            from notify_channels import notify_telegram_only
+            notify_telegram_only(report)
+            self.tracker.set_last_date("last_intel_date")
+            logger.info("Intelligence report sent successfully")
+        except Exception as e:
+            logger.error(f"Intelligence report failed: {e}")
 
     # ---- Weekly routines ----
 
@@ -273,6 +291,10 @@ class ProactiveScheduler:
                 if current_time == BRIEFING_TIME:
                     self.run_morning_briefing()
 
+                # Daily: intelligence report at 8:00
+                if current_time == INTELLIGENCE_TIME:
+                    self.run_intelligence_report()
+
                 # Daily: evening summary at 18:00
                 if current_time == EVENING_TIME:
                     self.run_evening_summary()
@@ -351,6 +373,7 @@ def main():
     parser.add_argument("--test-calendar", action="store_true", help="Run one calendar monitor cycle")
     parser.add_argument("--test-email", action="store_true", help="Run one email monitor cycle")
     parser.add_argument("--test-evening", action="store_true", help="Run evening summary now")
+    parser.add_argument("--test-intel", action="store_true", help="Run intelligence report now")
     parser.add_argument("--test-health", action="store_true", help="Run one health check cycle")
     parser.add_argument("--test-weekly", choices=["overview", "recap"], help="Run weekly routine")
     parser.add_argument("--test", action="store_true", help="Run one smart notify cycle")
@@ -387,6 +410,15 @@ def main():
         print(summary)
         from notify_channels import notify_telegram_only
         notify_telegram_only(summary)
+        tracker.save()
+        return
+
+    if args.test_intel:
+        from intelligence_report import generate_intelligence_report
+        report = generate_intelligence_report()
+        print(report)
+        from notify_channels import notify_telegram_only
+        notify_telegram_only(report)
         tracker.save()
         return
 

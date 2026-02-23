@@ -100,7 +100,21 @@ def decide(opp: Opportunity, daily_submissions: int = 0) -> Decision:
 
     if can_auto:
         bid = _calculate_bid(opp)
-        if bid and bid <= AUTO_SUBMIT_MAX_BID:
+        # Sources that don't require monetary bids (respond-only platforms)
+        no_bid_sources = {
+            "reddit", "hackernews", "github", "remoteok", "property",
+            "samgov", "dynamobim", "autodesk_forum", "govuk", "cadcrowd", "archinect",
+        }
+        if opp.source in no_bid_sources:
+            # Auto-submit with no bid — these are response-based, not bid-based
+            return Decision(
+                action=Action.AUTO_PROPOSE,
+                reason=f"Score {score}, auto-responding on {opp.source}",
+                confidence=0.75,
+                auto_bid_amount=bid,  # May be None, that's fine
+                priority=7,
+            )
+        elif bid and bid <= AUTO_SUBMIT_MAX_BID:
             return Decision(
                 action=Action.AUTO_PROPOSE,
                 reason=f"High score ({score}), strong skill match, bid ${bid:.0f}",

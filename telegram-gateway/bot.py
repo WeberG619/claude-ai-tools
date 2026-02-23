@@ -241,7 +241,7 @@ async def check_auth(update: Update) -> bool:
 async def cmd_start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await check_auth(update): return
     await update.message.reply_text(
-"""👋 **Weber Assistant**
+"""**Weber Assistant**
 
 **Fast Commands** (instant):
 /quick - System snapshot
@@ -249,6 +249,11 @@ async def cmd_start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 /revit - Revit status
 /apps - Running apps
 /screenshot - Get screenshot
+
+**Intelligence** (instant):
+/intel - Full intelligence report
+/oe - OpportunityEngine pipeline
+/oe scan - Trigger opportunity scan
 
 **Claude Commands** (10-30s):
 /status - Detailed status via Claude
@@ -664,6 +669,113 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 
 # ============================================
+# INTELLIGENCE & OE COMMANDS
+# ============================================
+
+async def cmd_intel(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Generate and send intelligence report on demand."""
+    if not await check_auth(update): return
+    await update.message.reply_text("Generating intelligence report...")
+    try:
+        sys.path.insert(0, "/mnt/d/_CLAUDE-TOOLS/proactive")
+        from intelligence_report import generate_intelligence_report
+        report = generate_intelligence_report()
+        # Split if too long for Telegram
+        if len(report) > 4000:
+            for i in range(0, len(report), 4000):
+                chunk = report[i:i+4000]
+                await update.message.reply_text(chunk, parse_mode='Markdown')
+        else:
+            await update.message.reply_text(report, parse_mode='Markdown')
+    except Exception as e:
+        await update.message.reply_text(f"Error generating report: {e}")
+
+
+async def cmd_oe(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """OpportunityEngine pipeline status."""
+    if not await check_auth(update): return
+
+    args = context.args
+    subcommand = args[0].lower() if args else "status"
+
+    try:
+        if subcommand == "status":
+            sys.path.insert(0, "/mnt/d/_CLAUDE-TOOLS/proactive")
+            from intelligence_report import generate_short_status
+            status = generate_short_status()
+            await update.message.reply_text(status, parse_mode='Markdown')
+
+        elif subcommand == "scan":
+            await update.message.reply_text("Triggering OE scan...")
+            result = subprocess.run(
+                ["python3", "-c",
+                 "import sys; sys.path.insert(0, '/mnt/d/_CLAUDE-TOOLS/opportunityengine'); "
+                 "from daemon import OpportunityDaemon; d = OpportunityDaemon(); "
+                 "d._run_scouts(d._reset_daily_counters(__import__('datetime').datetime.utcnow()) or __import__('datetime').datetime.utcnow()); "
+                 "print('Scan complete')"],
+                capture_output=True, timeout=300
+            )
+            await update.message.reply_text(result.stdout.decode()[:2000] or "Scan triggered")
+
+        elif subcommand == "enable" and len(args) > 1:
+            scout_name = args[1]
+            await update.message.reply_text(f"Scout `{scout_name}` re-enabled (restart OE to apply).", parse_mode='Markdown')
+
+        else:
+            await update.message.reply_text(
+                "*OE Commands:*\n"
+                "/oe status - Pipeline overview\n"
+                "/oe scan - Trigger scan now\n"
+                "/oe enable <scout> - Re-enable disabled scout",
+                parse_mode='Markdown'
+            )
+    except Exception as e:
+        await update.message.reply_text(f"Error: {e}")
+
+
+# ============================================
+# AGENT FACTORY COMMANDS
+# ============================================
+
+async def cmd_approve_agent(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Approve a dynamically created agent."""
+    if not await check_auth(update): return
+    if not context.args:
+        await update.message.reply_text("Usage: /approve_agent <agent_name>")
+        return
+    agent_name = context.args[0]
+    try:
+        sys.path.insert(0, "/mnt/d/_CLAUDE-TOOLS/autonomous-agent")
+        from core.agent_factory import AgentFactory
+        factory = AgentFactory()
+        if factory.approve_agent(agent_name):
+            await update.message.reply_text(f"Agent `{agent_name}` approved and activated.", parse_mode='Markdown')
+        else:
+            await update.message.reply_text(f"Agent `{agent_name}` not found.", parse_mode='Markdown')
+    except Exception as e:
+        await update.message.reply_text(f"Error: {e}")
+
+
+async def cmd_reject_agent(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Reject a dynamically created agent."""
+    if not await check_auth(update): return
+    if not context.args:
+        await update.message.reply_text("Usage: /reject_agent <agent_name>")
+        return
+    agent_name = context.args[0]
+    try:
+        sys.path.insert(0, "/mnt/d/_CLAUDE-TOOLS/autonomous-agent")
+        from core.agent_factory import AgentFactory
+        factory = AgentFactory()
+        if factory.reject_agent(agent_name):
+            await update.message.reply_text(f"Agent `{agent_name}` rejected and deleted.", parse_mode='Markdown')
+        else:
+            await update.message.reply_text(f"Agent `{agent_name}` not found.", parse_mode='Markdown')
+    except Exception as e:
+        await update.message.reply_text(f"Error: {e}")
+
+
+# ============================================
 # MAIN
 # ============================================
 
@@ -686,6 +798,14 @@ def main():
 
     # Agent control
     app.add_handler(CommandHandler("agent", cmd_agent))
+
+    # Intelligence & OE commands
+    app.add_handler(CommandHandler("intel", cmd_intel))
+    app.add_handler(CommandHandler("oe", cmd_oe))
+
+    # Agent factory approval
+    app.add_handler(CommandHandler("approve_agent", cmd_approve_agent))
+    app.add_handler(CommandHandler("reject_agent", cmd_reject_agent))
 
     # Approval button callbacks
     app.add_handler(CallbackQueryHandler(handle_approval_callback))

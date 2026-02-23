@@ -10,6 +10,7 @@ high-value ones for human approval via Telegram.
 
 from __future__ import annotations
 
+import json
 import logging
 import os
 import signal
@@ -19,6 +20,16 @@ from datetime import datetime, timedelta
 
 # Ensure package imports work
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+# Auto-load .env if not already loaded (handles manual restarts)
+_env_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".env")
+if os.path.exists(_env_file) and not os.environ.get("TELEGRAM_BOT_TOKEN"):
+    with open(_env_file) as f:
+        for line in f:
+            line = line.strip()
+            if line and not line.startswith("#") and "=" in line:
+                key, _, val = line.partition("=")
+                os.environ.setdefault(key.strip(), val.strip())
 
 from core.database import Database
 from core.config import (
@@ -34,6 +45,13 @@ from scouts.reddit_scout import RedditScout
 from scouts.hn_scout import HNScout
 from scouts.remoteok_scout import RemoteOKScout
 from scouts.upwork_scout import UpworkScout
+from scouts.property_scout import PropertyScout
+from scouts.samgov_scout import SAMGovScout
+from scouts.dynamobim_scout import DynamoBIMScout
+from scouts.autodesk_forum_scout import AutodeskForumScout
+from scouts.govuk_scout import GovUKScout
+from scouts.cadcrowd_scout import CADCrowdScout
+from scouts.archinect_scout import ArchinectScout
 from agents.qualifier import Qualifier
 from agents.proposal_agent import ProposalAgent
 from agents.tracker import Tracker
@@ -80,9 +98,18 @@ class OpportunityDaemon:
             "hackernews": HNScout(self.db),
             "remoteok": RemoteOKScout(self.db),
             "upwork": UpworkScout(self.db),
+            "freelancer": FreelancerScout(self.db),
+            "property": PropertyScout(self.db),
+            # ── Niche / low-competition scouts ──
+            "samgov": SAMGovScout(self.db, api_key=os.environ.get("SAM_GOV_API_KEY", "")),
+            "dynamobim": DynamoBIMScout(self.db),
+            "autodesk_forum": AutodeskForumScout(self.db),
+            "govuk": GovUKScout(self.db),
+            "cadcrowd": CADCrowdScout(self.db),
+            "archinect": ArchinectScout(self.db),
         }
         # CDP-based scouts need timeout wrapping to prevent daemon hangs
-        self._cdp_scouts = {"upwork"}
+        self._cdp_scouts = {"upwork", "freelancer", "property"}
         self.qualifier = Qualifier(self.db)
         self.proposal_agent = ProposalAgent(self.db)
         self.tracker = Tracker(self.db)
@@ -100,6 +127,11 @@ class OpportunityDaemon:
         self.daily_submissions = 0
         self.daily_drafts = 0
         self.counter_date = datetime.utcnow().date()
+
+        # Circuit breaker state: consecutive failures per scout
+        self._scout_failures: dict[str, int] = {}
+        self._scout_disabled: set[str] = set()
+        self._scout_backoff: dict[str, datetime] = {}  # next allowed scan time
 
         # Stats for this session
         self.session_stats = {
@@ -169,8 +201,17 @@ class OpportunityDaemon:
     # ── Phase 1: Scanning ──────────────────────────────────────────────
 
     def _run_scouts(self, now: datetime):
-        """Run scouts based on their intervals."""
+        """Run scouts based on their intervals, with circuit breaker protection."""
         for source, scout in self.scouts.items():
+            # Circuit breaker: skip disabled scouts
+            if source in self._scout_disabled:
+                continue
+
+            # Backoff: check if we should wait longer before retrying
+            backoff_until = self._scout_backoff.get(source)
+            if backoff_until and now < backoff_until:
+                continue
+
             interval = self._get_interval(source, now)
             last = self.last_scan.get(source)
 
@@ -184,9 +225,14 @@ class OpportunityDaemon:
                         log = scout.scan()
 
                     if log is None:
-                        logger.warning(f"  {source}: scan timed out")
+                        self._record_scout_failure(source, "scan timed out")
                         self.last_scan[source] = now
                         continue
+
+                    # Success — reset failure counter
+                    self._scout_failures[source] = 0
+                    if source in self._scout_backoff:
+                        del self._scout_backoff[source]
 
                     self.last_scan[source] = now
                     self.session_stats["scans"] += 1
@@ -202,7 +248,45 @@ class OpportunityDaemon:
                         if qualified:
                             logger.info(f"  {len(qualified)} newly qualified")
                 except Exception as e:
-                    logger.error(f"Scout {source} failed: {e}")
+                    self._record_scout_failure(source, str(e))
+
+    def _record_scout_failure(self, source: str, error: str):
+        """Record scout failure and apply circuit breaker logic."""
+        failures = self._scout_failures.get(source, 0) + 1
+        self._scout_failures[source] = failures
+        logger.error(f"Scout {source} failed (attempt {failures}/3): {error}")
+
+        now = datetime.utcnow()
+
+        if failures >= 3:
+            # Disable scout entirely
+            self._scout_disabled.add(source)
+            logger.error(f"CIRCUIT BREAKER: Scout {source} disabled after {failures} consecutive failures")
+            self._notify(
+                f"Scout Disabled: {source}",
+                f"Scout '{source}' has failed {failures} consecutive times and is now disabled.\n"
+                f"Last error: {error[:200]}\n\n"
+                f"Re-enable via: /oe enable {source}",
+                priority="high",
+            )
+        elif failures == 2:
+            # Exponential backoff: 15 minutes
+            self._scout_backoff[source] = now + timedelta(minutes=15)
+            logger.warning(f"Scout {source} backing off for 15 minutes")
+        elif failures == 1:
+            # Short backoff: 5 minutes
+            self._scout_backoff[source] = now + timedelta(minutes=5)
+
+    def enable_scout(self, source: str) -> bool:
+        """Re-enable a disabled scout (called via Telegram /oe enable)."""
+        if source in self._scout_disabled:
+            self._scout_disabled.discard(source)
+            self._scout_failures[source] = 0
+            if source in self._scout_backoff:
+                del self._scout_backoff[source]
+            logger.info(f"Scout {source} re-enabled")
+            return True
+        return False
 
     # ── Phase 2: Decision + Action Pipeline ────────────────────────────
 
@@ -461,7 +545,7 @@ class OpportunityDaemon:
     # ── Notification & Memory ──────────────────────────────────────────
 
     def _notify(self, title: str, message: str, priority: str = "medium"):
-        """Send notification via log + voice TTS for high priority."""
+        """Send notification via Telegram + log + voice TTS for high priority."""
         import subprocess
 
         # Always log the notification
@@ -480,6 +564,10 @@ class OpportunityDaemon:
         except Exception:
             pass
 
+        # Telegram for medium and high priority
+        if priority in ("medium", "high"):
+            self._send_telegram(f"*[OE] {title}*\n\n{message}")
+
         # Voice TTS for high priority
         if priority == "high":
             try:
@@ -490,6 +578,39 @@ class OpportunityDaemon:
                 )
             except Exception:
                 pass
+
+    def _send_telegram(self, text: str):
+        """Send message to Weber's Telegram via bot API."""
+        import urllib.request
+        import urllib.parse
+
+        token = os.environ.get("TELEGRAM_BOT_TOKEN", "")
+        chat_id = os.environ.get("TELEGRAM_CHAT_ID", "")
+        if not token or not chat_id:
+            logger.warning("Telegram credentials not set, skipping notification")
+            return
+
+        url = f"https://api.telegram.org/bot{token}/sendMessage"
+        # Truncate to Telegram's 4096 char limit
+        if len(text) > 4000:
+            text = text[:4000] + "\n...(truncated)"
+
+        for parse_mode in ("Markdown", None):
+            try:
+                params = {"chat_id": chat_id, "text": text}
+                if parse_mode:
+                    params["parse_mode"] = parse_mode
+                data = urllib.parse.urlencode(params).encode()
+                req = urllib.request.Request(url, data=data, method="POST")
+                with urllib.request.urlopen(req, timeout=10) as resp:
+                    result = json.loads(resp.read())
+                    if result.get("ok"):
+                        logger.debug("Telegram notification sent")
+                        return
+            except Exception as e:
+                if parse_mode:
+                    continue  # retry without Markdown
+                logger.error(f"Telegram send failed: {e}")
 
     def _alert_hot(self, hot_opps: list):
         """Send alerts for hot opportunities."""

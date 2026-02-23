@@ -59,11 +59,17 @@ class HNScout(BaseScout):
 
     def _search_hn(self, query: str) -> list[Opportunity]:
         """Search HN via Algolia API for hiring thread comments."""
+        import time
+
+        # Only fetch threads from the last 90 days
+        cutoff = int(time.time()) - (90 * 24 * 3600)
+
         # First, find the most recent thread
         thread_url = (
             f"https://hn.algolia.com/api/v1/search?"
             f"query={urllib.request.quote(query)}"
             f"&tags=story"
+            f"&numericFilters=created_at_i>{cutoff}"
             f"&hitsPerPage=3"
         )
 

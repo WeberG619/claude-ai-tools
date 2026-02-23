@@ -1,528 +1,524 @@
 {
-  "timestamp": "2026-02-22T09:53:08.995818",
+  "timestamp": "2026-02-23T03:58:30.513590",
   "events": [
     {
-      "timestamp": "2026-02-22T01:57:32.345856",
-      "type": "app_closed",
-      "details": "chrome: BCS - Search for Permit by Address - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-22T01:57:46.596205",
+      "timestamp": "2026-02-23T01:07:30.866194",
       "type": "focus_changed",
-      "details": "eTRAKiT - Google Chrome"
+      "details": "MSMC MIAMI SHORES_LS MARKUPS - Bluebeam Revu x64"
     },
     {
-      "timestamp": "2026-02-22T01:58:39.117969",
+      "timestamp": "2026-02-23T01:07:53.799756",
       "type": "focus_changed",
-      "details": "Phone Link"
+      "details": "MSMC MIAMI SHORES_LS MARKUPS - Bluebeam Revu x64"
     },
     {
-      "timestamp": "2026-02-22T01:58:55.879891",
+      "timestamp": "2026-02-23T01:07:57.345267",
+      "type": "info",
+      "details": "Revit MCP connected"
+    },
+    {
+      "timestamp": "2026-02-23T01:08:10.690472",
       "type": "focus_changed",
-      "details": "Welcome - Visual Studio Code"
+      "details": "Autodesk Revit 2025.4 - [R25 MSMC MIAMI SHORES - Sheet: LS101 - LIFE SAFETY PLAN]"
     },
     {
-      "timestamp": "2026-02-22T01:59:22.185526",
+      "timestamp": "2026-02-23T01:10:27.718983",
       "type": "focus_changed",
-      "details": "eTRAKiT - Google Chrome"
+      "details": "Autodesk Revit 2025.4 - [R25 MSMC MIAMI SHORES - Sheet: LS101 - LIFE SAFETY PLAN]"
     },
     {
-      "timestamp": "2026-02-22T01:59:47.636060",
+      "timestamp": "2026-02-23T01:10:31.061291",
+      "type": "info",
+      "details": "Revit MCP connected"
+    },
+    {
+      "timestamp": "2026-02-23T01:13:02.168399",
+      "type": "focus_changed",
+      "details": "2026.02.16 MIAMI SHORES_ARCH_MARKUPS-DESKTOP-01CMLA9 - Bluebeam Revu x64"
+    },
+    {
+      "timestamp": "2026-02-23T01:13:05.636036",
+      "type": "info",
+      "details": "Revit MCP connected"
+    },
+    {
+      "timestamp": "2026-02-23T01:13:30.906821",
+      "type": "focus_changed",
+      "details": "Autodesk Revit 2025.4 - [R25 MSMC MIAMI SHORES - Sheet: A101 - ROOF PLAN - DEMOLITION]"
+    },
+    {
+      "timestamp": "2026-02-23T01:13:44.860433",
+      "type": "focus_changed",
+      "details": "2026.02.16 MIAMI SHORES_ARCH_MARKUPS-DESKTOP-01CMLA9* - Bluebeam Revu x64"
+    },
+    {
+      "timestamp": "2026-02-23T01:14:10.090074",
+      "type": "focus_changed",
+      "details": "Autodesk Revit 2025.4 - [R25 MSMC MIAMI SHORES - Sheet: A102 - FLOOR PLAN - NEW WORK]"
+    },
+    {
+      "timestamp": "2026-02-23T01:15:05.220871",
+      "type": "focus_changed",
+      "details": "Name"
+    },
+    {
+      "timestamp": "2026-02-23T01:15:18.317400",
+      "type": "focus_changed",
+      "details": "Autodesk Revit 2025.4 - [R25 MSMC MIAMI SHORES - Sheet: A102 - FLOOR PLAN - NEW WORK]"
+    },
+    {
+      "timestamp": "2026-02-23T01:16:07.052091",
+      "type": "focus_changed",
+      "details": "Autodesk Revit 2025.4 - [R25 MSMC MIAMI SHORES - Sheet: A102 - FLOOR PLAN - NEW WORK]"
+    },
+    {
+      "timestamp": "2026-02-23T01:16:26.480442",
+      "type": "info",
+      "details": "Revit MCP connected"
+    },
+    {
+      "timestamp": "2026-02-23T01:19:11.680354",
+      "type": "focus_changed",
+      "details": "Autodesk Revit 2025.4 - [R25 MSMC MIAMI SHORES - Sheet: A102 - FLOOR PLAN - NEW WORK]"
+    },
+    {
+      "timestamp": "2026-02-23T01:19:15.106520",
+      "type": "info",
+      "details": "Revit MCP connected"
+    },
+    {
+      "timestamp": "2026-02-23T01:19:54.203252",
+      "type": "focus_changed",
+      "details": "Visibility/Graphic Overrides for Architectural Plan"
+    },
+    {
+      "timestamp": "2026-02-23T01:20:07.624874",
+      "type": "focus_changed",
+      "details": "Autodesk Revit 2025.4 - [R25 MSMC MIAMI SHORES - Sheet: A102 - FLOOR PLAN - NEW WORK]"
+    },
+    {
+      "timestamp": "2026-02-23T01:21:46.647385",
+      "type": "focus_changed",
+      "details": "Autodesk Revit 2025.4 - [R25 MSMC MIAMI SHORES - Sheet: A102 - FLOOR PLAN - NEW WORK]"
+    },
+    {
+      "timestamp": "2026-02-23T01:21:50.376952",
+      "type": "info",
+      "details": "Revit MCP connected"
+    },
+    {
+      "timestamp": "2026-02-23T01:24:21.580864",
+      "type": "focus_changed",
+      "details": "Autodesk Revit 2025.4 - [R25 MSMC MIAMI SHORES - Sheet: A102 - FLOOR PLAN - NEW WORK]"
+    },
+    {
+      "timestamp": "2026-02-23T01:24:25.033677",
+      "type": "info",
+      "details": "Revit MCP connected"
+    },
+    {
+      "timestamp": "2026-02-23T01:24:37.622993",
+      "type": "focus_changed",
+      "details": "2026.02.16 MIAMI SHORES_ARCH_MARKUPS-DESKTOP-01CMLA9* - Bluebeam Revu x64"
+    },
+    {
+      "timestamp": "2026-02-23T01:24:50.719795",
+      "type": "focus_changed",
+      "details": "Autodesk Revit 2025.4 - [R25 MSMC MIAMI SHORES - Sheet: A102-A - FLOOR PLAN - NEW WORK AREA A]"
+    },
+    {
+      "timestamp": "2026-02-23T01:26:56.088632",
+      "type": "focus_changed",
+      "details": "Autodesk Revit 2025.4 - [R25 MSMC MIAMI SHORES - Sheet: A102-A - FLOOR PLAN - NEW WORK AREA A]"
+    },
+    {
+      "timestamp": "2026-02-23T01:26:59.873565",
+      "type": "info",
+      "details": "Revit MCP connected"
+    },
+    {
+      "timestamp": "2026-02-23T01:27:51.523099",
+      "type": "focus_changed",
+      "details": "Autodesk Revit 2025.4 - [R25 MSMC MIAMI SHORES - Sheet: A102-B - FLOOR PLAN - NEW WORK AREA B]"
+    },
+    {
+      "timestamp": "2026-02-23T01:28:33.945486",
+      "type": "focus_changed",
+      "details": "2026.02.16 MIAMI SHORES_ARCH_MARKUPS-DESKTOP-01CMLA9* - Bluebeam Revu x64"
+    },
+    {
+      "timestamp": "2026-02-23T01:29:30.752337",
+      "type": "focus_changed",
+      "details": "2026.02.16 MIAMI SHORES_ARCH_MARKUPS-DESKTOP-01CMLA9* - Bluebeam Revu x64"
+    },
+    {
+      "timestamp": "2026-02-23T01:29:34.279218",
+      "type": "info",
+      "details": "Revit MCP connected"
+    },
+    {
+      "timestamp": "2026-02-23T01:29:47.156107",
+      "type": "focus_changed",
+      "details": "Autodesk Revit 2025.4 - [R25 MSMC MIAMI SHORES - Sheet: A103 - ROOF PLAN]"
+    },
+    {
+      "timestamp": "2026-02-23T01:30:02.084458",
+      "type": "focus_changed",
+      "details": "Autodesk Revit 2025.4 - [R25 MSMC MIAMI SHORES - Sheet: A105-A - FINISHES PLAN AREA A]"
+    },
+    {
+      "timestamp": "2026-02-23T01:30:15.610968",
+      "type": "focus_changed",
+      "details": "Autodesk Revit 2025.4 - [R25 MSMC MIAMI SHORES - Sheet: A106-A - EQUIPMENT PLAN - AREA A]"
+    },
+    {
+      "timestamp": "2026-02-23T01:30:28.938371",
+      "type": "focus_changed",
+      "details": "Autodesk Revit 2025.4 - [R25 MSMC MIAMI SHORES - Sheet: A000 - COVER AND PROJECT INFORMATION]"
+    },
+    {
+      "timestamp": "2026-02-23T01:31:11.801730",
+      "type": "focus_changed",
+      "details": "2026.02.16 MIAMI SHORES_ARCH_MARKUPS-DESKTOP-01CMLA9 - Bluebeam Revu x64"
+    },
+    {
+      "timestamp": "2026-02-23T01:31:24.810702",
+      "type": "focus_changed",
+      "details": "Autodesk Revit 2025.4 - [R25 MSMC MIAMI SHORES - Sheet: A000 - COVER AND PROJECT INFORMATION]"
+    },
+    {
+      "timestamp": "2026-02-23T01:31:38.338284",
+      "type": "focus_changed",
+      "details": "04 SD - DD"
+    },
+    {
+      "timestamp": "2026-02-23T01:31:51.558090",
+      "type": "focus_changed",
+      "details": "AgentForge_Overview  -  Last saved by user - Word"
+    },
+    {
+      "timestamp": "2026-02-23T01:32:05.301344",
+      "type": "focus_changed",
+      "details": "AgentForge_Overview  -  Last saved by user - Word"
+    },
+    {
+      "timestamp": "2026-02-23T01:32:08.833077",
+      "type": "info",
+      "details": "Revit MCP connected"
+    },
+    {
+      "timestamp": "2026-02-23T01:32:22.733116",
+      "type": "focus_changed",
+      "details": "20260211 - Weekly - Invoice 034 - Word"
+    },
+    {
+      "timestamp": "2026-02-23T01:32:35.371382",
+      "type": "focus_changed",
+      "details": "4,525:10:09 \u0007 Timesheet \u0007 Clockify - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-23T01:32:48.525021",
+      "type": "focus_changed",
+      "details": "20260211 - Weekly - Invoice 034 - Word"
+    },
+    {
+      "timestamp": "2026-02-23T01:33:13.772393",
+      "type": "focus_changed",
+      "details": "Save As"
+    },
+    {
+      "timestamp": "2026-02-23T01:34:08.799097",
+      "type": "focus_changed",
+      "details": "4,525:11:43 \u0007 Timesheet \u0007 Clockify - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-23T01:34:21.542084",
+      "type": "focus_changed",
+      "details": "4,525:11:55 \u0007 Timesheet \u0007 Clockify - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-23T01:34:39.933407",
+      "type": "focus_changed",
+      "details": "4,525:12:14 \u0007 Timesheet \u0007 Clockify - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-23T01:34:43.377201",
+      "type": "info",
+      "details": "Revit MCP connected"
+    },
+    {
+      "timestamp": "2026-02-23T01:34:56.105062",
+      "type": "focus_changed",
+      "details": "4,525:12:30 \u0007 Timesheet \u0007 Clockify - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-23T01:35:08.599801",
+      "type": "focus_changed",
+      "details": "Save As"
+    },
+    {
+      "timestamp": "2026-02-23T01:35:46.904443",
+      "type": "focus_changed",
+      "details": "20260211 - Weekly - Invoice 034 - Word"
+    },
+    {
+      "timestamp": "2026-02-23T01:36:00.482397",
+      "type": "focus_changed",
+      "details": "20260222 - Weekly - Invoice 035 - Word"
+    },
+    {
+      "timestamp": "2026-02-23T01:36:16.654290",
+      "type": "focus_changed",
+      "details": "4,525:13:50 \u0007 Timesheet \u0007 Clockify - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-23T01:36:30.031318",
+      "type": "focus_changed",
+      "details": "20260222 - Weekly - Invoice 035 - Word"
+    },
+    {
+      "timestamp": "2026-02-23T01:37:14.904702",
+      "type": "focus_changed",
+      "details": "4,525:14:49 \u0007 Timesheet \u0007 Clockify - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-23T01:37:18.458153",
+      "type": "info",
+      "details": "Revit MCP connected"
+    },
+    {
+      "timestamp": "2026-02-23T01:37:31.757815",
+      "type": "focus_changed",
+      "details": "20260222 - Weekly - Invoice 035 - Word"
+    },
+    {
+      "timestamp": "2026-02-23T01:38:11.185569",
+      "type": "focus_changed",
+      "details": "4,525:15:45 \u0007 Timesheet \u0007 Clockify - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-23T01:38:24.634234",
+      "type": "focus_changed",
+      "details": "20260222 - Weekly - Invoice 035 - Word"
+    },
+    {
+      "timestamp": "2026-02-23T01:39:49.357857",
+      "type": "focus_changed",
+      "details": "20260222 - Weekly - Invoice 035 - Word"
+    },
+    {
+      "timestamp": "2026-02-23T01:39:52.802395",
+      "type": "info",
+      "details": "Revit MCP connected"
+    },
+    {
+      "timestamp": "2026-02-23T01:40:18.387789",
+      "type": "focus_changed",
+      "details": "4,525:17:52 \u0007 Timesheet \u0007 Clockify - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-23T01:40:32.165750",
+      "type": "focus_changed",
+      "details": "4,525:18:06 \u0007 Timesheet \u0007 Clockify - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-23T01:40:45.507269",
+      "type": "focus_changed",
+      "details": "20260222 - Weekly - Invoice 035 - Word"
+    },
+    {
+      "timestamp": "2026-02-23T01:41:53.209554",
+      "type": "focus_changed",
+      "details": "Connecting to printer."
+    },
+    {
+      "timestamp": "2026-02-23T01:42:05.817829",
+      "type": "focus_changed",
+      "details": "20260222 - Weekly - Invoice 035 - Word"
+    },
+    {
+      "timestamp": "2026-02-23T01:42:24.332017",
+      "type": "focus_changed",
+      "details": "20260222 - Weekly - Invoice 035 - Word"
+    },
+    {
+      "timestamp": "2026-02-23T01:42:27.779507",
+      "type": "info",
+      "details": "Revit MCP connected"
+    },
+    {
+      "timestamp": "2026-02-23T01:42:40.534420",
+      "type": "focus_changed",
+      "details": "Working FIles (D:)"
+    },
+    {
+      "timestamp": "2026-02-23T01:42:53.115277",
+      "type": "focus_changed",
+      "details": "001 - PROJECTS"
+    },
+    {
+      "timestamp": "2026-02-23T01:43:06.330039",
+      "type": "focus_changed",
+      "details": "01 - CLIENT PROJECTS"
+    },
+    {
+      "timestamp": "2026-02-23T01:43:31.716775",
+      "type": "focus_changed",
+      "details": "02 - BRUCE DAVIS ARCHITECT"
+    },
+    {
+      "timestamp": "2026-02-23T01:43:45.140548",
+      "type": "focus_changed",
+      "details": "TIMESHEETS"
+    },
+    {
+      "timestamp": "2026-02-23T01:44:01.211560",
+      "type": "focus_changed",
+      "details": "20260222 - Weekly - Invoice 035 - Bluebeam Revu x64"
+    },
+    {
+      "timestamp": "2026-02-23T01:44:28.181480",
+      "type": "focus_changed",
+      "details": "Inbox - [email] - Outlook"
+    },
+    {
+      "timestamp": "2026-02-23T01:44:41.524383",
+      "type": "focus_changed",
+      "details": "Untitled - Message (HTML)"
+    },
+    {
+      "timestamp": "2026-02-23T01:44:58.862989",
+      "type": "focus_changed",
+      "details": "Untitled - Message (HTML)"
+    },
+    {
+      "timestamp": "2026-02-23T01:45:02.375858",
+      "type": "info",
+      "details": "Revit MCP connected"
+    },
+    {
+      "timestamp": "2026-02-23T01:45:15.331003",
+      "type": "focus_changed",
+      "details": "Weber's Invoice # 035 - Message (HTML)"
+    },
+    {
+      "timestamp": "2026-02-23T01:45:42.256256",
+      "type": "focus_changed",
+      "details": "Insert File"
+    },
+    {
+      "timestamp": "2026-02-23T01:46:22.684272",
+      "type": "focus_changed",
+      "details": "Weber's Invoice # 035 - Message (HTML)"
+    },
+    {
+      "timestamp": "2026-02-23T01:46:39.468479",
+      "type": "focus_changed",
+      "details": "Inbox - [email] - Outlook"
+    },
+    {
+      "timestamp": "2026-02-23T01:46:52.497786",
+      "type": "focus_changed",
+      "details": "4,525:24:26 \u0007 Timesheet \u0007 Clockify - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-23T01:47:05.217261",
       "type": "app_opened",
-      "details": "YourPhoneAppProxy: Weber's S23 Ultra"
+      "details": "WINWORD: 20260222 - Weekly - Invoice 035 - Word"
     },
     {
-      "timestamp": "2026-02-22T01:59:49.244942",
-      "type": "focus_changed",
-      "details": "Weber's S23 Ultra"
-    },
-    {
-      "timestamp": "2026-02-22T02:00:58.933844",
-      "type": "focus_changed",
-      "details": "Welcome - Visual Studio Code"
-    },
-    {
-      "timestamp": "2026-02-22T02:02:07.214079",
-      "type": "app_closed",
-      "details": "YourPhoneAppProxy: Weber's S23 Ultra"
-    },
-    {
-      "timestamp": "2026-02-22T02:02:07.529750",
-      "type": "app_closed",
-      "details": "PhoneExperienceHost: Phone Link"
-    },
-    {
-      "timestamp": "2026-02-22T02:02:20.513507",
+      "timestamp": "2026-02-23T01:47:05.372124",
       "type": "app_opened",
-      "details": "Wispr Flow: Status"
+      "details": "TextInputHost: Microsoft Text Input Application"
     },
     {
-      "timestamp": "2026-02-22T02:02:20.841509",
-      "type": "app_closed",
-      "details": "msedge: New tab and 7 more pages - Personal - Microsoft? Edge"
-    },
-    {
-      "timestamp": "2026-02-22T02:02:21.108422",
-      "type": "app_closed",
-      "details": "Wispr Flow: Hub"
-    },
-    {
-      "timestamp": "2026-02-22T02:02:22.423179",
-      "type": "focus_changed",
-      "details": "Hub"
-    },
-    {
-      "timestamp": "2026-02-22T09:26:54.572064",
+      "timestamp": "2026-02-23T01:47:05.655530",
       "type": "app_opened",
-      "details": "Wispr Flow: Hub"
+      "details": "ms-teams: Chat | Bruce Davis | BD Architect llc | [email] | Microsoft Teams"
     },
     {
-      "timestamp": "2026-02-22T09:26:54.729157",
+      "timestamp": "2026-02-23T01:47:05.913838",
       "type": "app_opened",
-      "details": "chrome: Inbox (2) - [email] - Gmail - Google Chrome"
+      "details": "Revu: 20260222 - Weekly - Invoice 035 - Bluebeam Revu x64"
     },
     {
-      "timestamp": "2026-02-22T09:26:54.996572",
-      "type": "app_closed",
-      "details": "explorer: 4020 Woodside - Residential Project"
+      "timestamp": "2026-02-23T01:47:06.172295",
+      "type": "app_opened",
+      "details": "WhatsApp.Root: WhatsApp"
     },
     {
-      "timestamp": "2026-02-22T09:26:55.271117",
-      "type": "app_closed",
-      "details": "msedge: Netflix and 7 more pages - Profile 1 - Microsoft? Edge"
-    },
-    {
-      "timestamp": "2026-02-22T09:26:55.545887",
-      "type": "app_closed",
-      "details": "notepad: *Untitled - Notepad"
-    },
-    {
-      "timestamp": "2026-02-22T09:26:55.812984",
-      "type": "app_closed",
+      "timestamp": "2026-02-23T01:47:06.477335",
+      "type": "app_opened",
       "details": "CalculatorApp: Calculator"
     },
     {
-      "timestamp": "2026-02-22T09:26:56.079973",
-      "type": "app_closed",
-      "details": "Wispr Flow: Status"
-    },
-    {
-      "timestamp": "2026-02-22T09:26:56.421190",
-      "type": "app_closed",
-      "details": "claude: Claude"
-    },
-    {
-      "timestamp": "2026-02-22T09:26:56.679498",
-      "type": "app_closed",
-      "details": "chrome: eTRAKiT - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-22T09:26:57.819512",
-      "type": "focus_changed",
-      "details": "Important: We have disabled your API token - [email] - Gmail - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-22T09:27:01.605356",
-      "type": "alert",
-      "details": "2 new emails need response"
-    },
-    {
-      "timestamp": "2026-02-22T09:27:13.255631",
+      "timestamp": "2026-02-23T01:47:06.764691",
       "type": "app_opened",
-      "details": "chrome: New Tab - Google Chrome"
+      "details": "Wispr Flow: Hub"
     },
     {
-      "timestamp": "2026-02-22T09:27:13.526426",
-      "type": "app_closed",
-      "details": "chrome: Inbox (2) - [email] - Gmail - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-22T09:27:14.610326",
-      "type": "focus_changed",
-      "details": "New Tab - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-22T09:27:26.563583",
-      "type": "app_opened",
-      "details": "CalculatorApp: Calculator"
-    },
-    {
-      "timestamp": "2026-02-22T09:27:26.862527",
+      "timestamp": "2026-02-23T01:47:07.039283",
       "type": "app_opened",
       "details": "ApplicationFrameHost: Calculator"
     },
     {
-      "timestamp": "2026-02-22T09:27:27.137318",
-      "type": "app_closed",
-      "details": "ApplicationFrameHost: Settings"
-    },
-    {
-      "timestamp": "2026-02-22T09:27:40.800244",
+      "timestamp": "2026-02-23T01:47:07.297569",
       "type": "app_opened",
-      "details": "chrome: YouTube - Google Chrome"
+      "details": "Revit: Autodesk Revit 2025.4 - [R25 MSMC MIAMI SHORES - Sheet: A000 - COVER AND PROJECT INFORMATION]"
     },
     {
-      "timestamp": "2026-02-22T09:27:41.099783",
+      "timestamp": "2026-02-23T01:47:07.579632",
+      "type": "app_opened",
+      "details": "SystemSettings: Settings"
+    },
+    {
+      "timestamp": "2026-02-23T01:47:07.871740",
+      "type": "app_opened",
+      "details": "OUTLOOK: Inbox - [email] - Outlook"
+    },
+    {
+      "timestamp": "2026-02-23T01:47:08.172191",
+      "type": "app_opened",
+      "details": "Code: Welcome - Visual Studio Code"
+    },
+    {
+      "timestamp": "2026-02-23T01:47:20.976186",
       "type": "app_closed",
-      "details": "chrome: New Tab - Google Chrome"
+      "details": "Revu: 20260222 - Weekly - Invoice 035 - Bluebeam Revu x64"
     },
     {
-      "timestamp": "2026-02-22T09:27:42.190839",
-      "type": "focus_changed",
-      "details": "YouTube - Google Chrome"
+      "timestamp": "2026-02-23T01:47:21.275655",
+      "type": "app_closed",
+      "details": "WINWORD: 20260222 - Weekly - Invoice 035 - Word"
     },
     {
-      "timestamp": "2026-02-22T09:29:37.541756",
+      "timestamp": "2026-02-23T01:47:22.394046",
       "type": "focus_changed",
       "details": "Welcome - Visual Studio Code"
     },
     {
-      "timestamp": "2026-02-22T09:33:07.106246",
-      "type": "focus_changed",
-      "details": "YouTube - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-22T09:37:26.062347",
-      "type": "focus_changed",
-      "details": "Welcome - Visual Studio Code"
-    },
-    {
-      "timestamp": "2026-02-22T09:38:07.227354",
-      "type": "focus_changed",
-      "details": "YouTube - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-22T09:38:19.107755",
-      "type": "app_opened",
-      "details": "msedge: New tab and 1 more page - Profile 1 - Microsoft? Edge"
-    },
-    {
-      "timestamp": "2026-02-22T09:38:20.189968",
-      "type": "focus_changed",
-      "details": "New tab and 1 more page - Profile 1 - Microsoft? Edge"
-    },
-    {
-      "timestamp": "2026-02-22T09:38:32.057255",
-      "type": "app_opened",
-      "details": "chrome: ??????Her Eyes Definitely Say Something. ???? #comedy #funny #prank - YouTube - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-22T09:38:32.328642",
+      "timestamp": "2026-02-23T01:47:34.415472",
       "type": "app_closed",
-      "details": "chrome: YouTube - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-22T09:38:33.397645",
-      "type": "focus_changed",
-      "details": "??????Her Eyes Definitely Say Something. ???? #comedy #funny #prank - YouTube - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-22T09:39:27.080307",
-      "type": "app_opened",
-      "details": "chrome: YouTube - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-22T09:39:27.351386",
-      "type": "app_closed",
-      "details": "chrome: ??????Her Eyes Definitely Say Something. ???? #comedy #funny #prank - YouTube - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-22T09:39:28.442667",
-      "type": "focus_changed",
-      "details": "YouTube - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-22T09:39:40.071064",
-      "type": "app_opened",
-      "details": "chrome: ??I recommend you to watch till the end. They ran away #funny - YouTube - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-22T09:39:40.346842",
-      "type": "app_closed",
-      "details": "chrome: YouTube - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-22T09:39:41.489026",
-      "type": "focus_changed",
-      "details": "??I recommend you to watch till the end. They ran away #funny - YouTube - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-22T09:40:06.261670",
-      "type": "app_opened",
-      "details": "chrome: YouTube - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-22T09:40:06.521371",
-      "type": "app_closed",
-      "details": "chrome: ??I recommend you to watch till the end. They ran away #funny - YouTube - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-22T09:40:07.592979",
-      "type": "focus_changed",
-      "details": "YouTube - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-22T09:40:22.552236",
-      "type": "app_opened",
-      "details": "chrome: ??even his girlfriend was shocked #shorts #funny #comedy - YouTube - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-22T09:40:22.849696",
-      "type": "app_closed",
-      "details": "chrome: YouTube - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-22T09:40:23.928751",
-      "type": "focus_changed",
-      "details": "??even his girlfriend was shocked #shorts #funny #comedy - YouTube - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-22T09:40:36.293438",
-      "type": "focus_changed",
-      "details": "Top Barber Moments ??#barber #shortsfeed #shortsviral - YouTube - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-22T09:40:48.409240",
-      "type": "app_closed",
-      "details": "chrome: ??even his girlfriend was shocked #shorts #funny #comedy - YouTube - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-22T09:41:01.142067",
-      "type": "app_opened",
-      "details": "chrome: Top Barber Moments ??#barber #shortsfeed #shortsviral - YouTube - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-22T09:41:13.725695",
-      "type": "app_closed",
-      "details": "chrome: Top Barber Moments ??#barber #shortsfeed #shortsviral - YouTube - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-22T09:41:54.642720",
-      "type": "app_opened",
-      "details": "chrome: YouTube - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-22T09:41:55.690356",
-      "type": "focus_changed",
-      "details": "YouTube - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-22T09:42:20.128786",
-      "type": "app_opened",
-      "details": "chrome: ??crazy girl shocked them! viral reactions #funny #humor #comedy - YouTube - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-22T09:42:20.408217",
-      "type": "app_closed",
-      "details": "chrome: YouTube - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-22T09:42:21.495620",
-      "type": "focus_changed",
-      "details": "??crazy girl shocked them! viral reactions #funny #humor #comedy - YouTube - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-22T09:43:01.508790",
-      "type": "app_opened",
-      "details": "chrome: She sent a picture of herself to the wrong person. I got a shot and reply. - YouTube - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-22T09:43:01.793733",
-      "type": "app_closed",
-      "details": "chrome: ??crazy girl shocked them! viral reactions #funny #humor #comedy - YouTube - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-22T09:43:02.895224",
-      "type": "focus_changed",
-      "details": "She sent a picture of herself to the wrong person. I got a shot and reply. - YouTube - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-22T09:44:58.304032",
-      "type": "app_opened",
-      "details": "chrome: YouTube - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-22T09:44:58.576603",
-      "type": "app_closed",
-      "details": "chrome: She sent a picture of herself to the wrong person. I got a shot and reply. - YouTube - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-22T09:44:59.666929",
-      "type": "focus_changed",
-      "details": "YouTube - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-22T09:45:11.153388",
-      "type": "app_opened",
-      "details": "chrome: Oops ??confused situation ?????? #funny #trynotolaughchallenge #comedy #prankvideo #shortsfeed - YouTube - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-22T09:45:11.420760",
-      "type": "app_closed",
-      "details": "chrome: YouTube - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-22T09:45:12.501750",
-      "type": "focus_changed",
-      "details": "Oops ??confused situation ?????? #funny #trynotolaughchallenge #comedy #prankvideo #shortsfeed - YouTube - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-22T09:45:40.529325",
-      "type": "app_opened",
-      "details": "chrome: YouTube - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-22T09:45:40.828946",
-      "type": "app_closed",
-      "details": "chrome: Oops ??confused situation ?????? #funny #trynotolaughchallenge #comedy #prankvideo #shortsfeed - YouTube - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-22T09:45:41.901653",
-      "type": "focus_changed",
-      "details": "YouTube - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-22T09:45:53.450165",
-      "type": "app_opened",
-      "details": "chrome: his girlfriend got mad ?? crazy girl prank #funny #prankvideo #comedy - YouTube - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-22T09:45:53.757548",
-      "type": "app_closed",
-      "details": "chrome: YouTube - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-22T09:45:54.840318",
-      "type": "focus_changed",
-      "details": "his girlfriend got mad ?? crazy girl prank #funny #prankvideo #comedy - YouTube - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-22T09:46:31.886550",
-      "type": "app_opened",
-      "details": "chrome: YouTube - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-22T09:46:32.168513",
-      "type": "app_closed",
-      "details": "chrome: his girlfriend got mad ?? crazy girl prank #funny #prankvideo #comedy - YouTube - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-22T09:46:33.250448",
-      "type": "focus_changed",
-      "details": "YouTube - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-22T09:47:26.947161",
-      "type": "focus_changed",
-      "details": "Welcome - Visual Studio Code"
-    },
-    {
-      "timestamp": "2026-02-22T09:47:40.596064",
-      "type": "focus_changed",
-      "details": "New tab and 1 more page - Profile 1 - Microsoft? Edge"
-    },
-    {
-      "timestamp": "2026-02-22T09:48:58.761241",
-      "type": "app_opened",
-      "details": "msedge: Amazon.com. Spend less. Smile more. and 2 more pages - Profile 1 - Microsoft? Edge"
-    },
-    {
-      "timestamp": "2026-02-22T09:48:59.034311",
-      "type": "app_closed",
-      "details": "msedge: New tab and 1 more page - Profile 1 - Microsoft? Edge"
-    },
-    {
-      "timestamp": "2026-02-22T09:49:00.157531",
-      "type": "focus_changed",
-      "details": "Amazon.com. Spend less. Smile more. and 2 more pages - Profile 1 - Microsoft? Edge"
-    },
-    {
-      "timestamp": "2026-02-22T09:49:11.807259",
-      "type": "app_opened",
-      "details": "msedge: Prime Video: Watch movies, TV shows, sports, and live TV and 2 more pages - Profile 1 - Microsoft? Edge"
-    },
-    {
-      "timestamp": "2026-02-22T09:49:12.079281",
-      "type": "app_closed",
-      "details": "msedge: Amazon.com. Spend less. Smile more. and 2 more pages - Profile 1 - Microsoft? Edge"
-    },
-    {
-      "timestamp": "2026-02-22T09:49:13.154950",
-      "type": "focus_changed",
-      "details": "Prime Video: Watch movies, TV shows, sports, and live TV and 2 more pages - Profile 1 - Microsoft? Edge"
-    },
-    {
-      "timestamp": "2026-02-22T09:49:41.380472",
-      "type": "app_opened",
-      "details": "msedge: Watch The Last Thing He Told Me - Season 2 | Prime Video and 2 more pages - Profile 1 - Microsoft? Edge"
-    },
-    {
-      "timestamp": "2026-02-22T09:49:41.677968",
-      "type": "app_closed",
-      "details": "msedge: Prime Video: Watch movies, TV shows, sports, and live TV and 2 more pages - Profile 1 - Microsoft? Edge"
-    },
-    {
-      "timestamp": "2026-02-22T09:49:42.805672",
-      "type": "focus_changed",
-      "details": "Watch The Last Thing He Told Me - Season 2 | Prime Video and 2 more pages - Profile 1 - Microsoft? Edge"
-    },
-    {
-      "timestamp": "2026-02-22T09:50:07.570582",
-      "type": "app_opened",
-      "details": "msedge: Watch The Last Thing He Told Me - Season 1 | Prime Video and 2 more pages - Profile 1 - Microsoft? Edge"
-    },
-    {
-      "timestamp": "2026-02-22T09:50:07.852040",
-      "type": "app_closed",
-      "details": "msedge: Watch The Last Thing He Told Me - Season 2 | Prime Video and 2 more pages - Profile 1 - Microsoft? Edge"
-    },
-    {
-      "timestamp": "2026-02-22T09:50:08.962112",
-      "type": "focus_changed",
-      "details": "Watch The Last Thing He Told Me - Season 1 | Prime Video and 2 more pages - Profile 1 - Microsoft? Edge"
-    },
-    {
-      "timestamp": "2026-02-22T09:50:21.510025",
-      "type": "focus_changed",
-      "details": "Program Manager"
-    },
-    {
-      "timestamp": "2026-02-22T09:51:02.467282",
-      "type": "focus_changed",
-      "details": "Watch The Last Thing He Told Me - Season 1 | Prime Video and 2 more pages - Profile 1 - Microsoft? Edge"
-    },
-    {
-      "timestamp": "2026-02-22T09:51:40.241263",
-      "type": "focus_changed",
-      "details": "Welcome - Visual Studio Code"
-    },
-    {
-      "timestamp": "2026-02-22T09:52:33.828325",
-      "type": "focus_changed",
-      "details": "Program Manager"
+      "details": "WhatsApp.Root: WhatsApp"
     }
   ],
   "stats": {
     "started_at": "2025-12-04T10:13:59.664371",
-    "updates": 44010,
-    "errors": 8,
-    "restarts": 21
+    "updates": 48840,
+    "errors": 11,
+    "restarts": 48
   },
   "previous_apps": [
-    [
-      "Code",
-      "Welcome - Visual Studio Code"
-    ],
     [
       "TextInputHost",
       "Microsoft Text Input Application"
     ],
     [
-      "msedge",
-      "Watch The Last Thing He Told Me - Season 1 | Prime Video and 2 more pages - Profile 1 - Microsoft? Edge"
+      "ms-teams",
+      "Chat | Bruce Davis | BD Architect llc | weber@bdarchitect.net | Microsoft Teams"
     ],
     [
-      "ApplicationFrameHost",
+      "CalculatorApp",
       "Calculator"
     ],
     [
@@ -530,20 +526,24 @@
       "Hub"
     ],
     [
-      "ms-teams",
-      "Chat | Paola Gomez | BD Architect llc | weber@bdarchitect.net | Microsoft Teams"
+      "ApplicationFrameHost",
+      "Calculator"
+    ],
+    [
+      "Revit",
+      "Autodesk Revit 2025.4 - [R25 MSMC MIAMI SHORES - Sheet: A000 - COVER AND PROJECT INFORMATION]"
     ],
     [
       "SystemSettings",
       "Settings"
     ],
     [
-      "CalculatorApp",
-      "Calculator"
+      "OUTLOOK",
+      "Inbox - weber@bdarchitect.net - Outlook"
     ],
     [
-      "chrome",
-      "YouTube - Google Chrome"
+      "Code",
+      "Welcome - Visual Studio Code"
     ]
   ]
 }

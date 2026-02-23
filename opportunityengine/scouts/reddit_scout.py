@@ -137,6 +137,23 @@ class RedditScout(BaseScout):
         if not is_hiring:
             return None
 
+        # Skip irrelevant roles — these consistently don't match Weber's skills
+        skip_roles = [
+            r"\b(?:sales|marketing|seo|social media manager|video editor|content writer)\b",
+            r"\b(?:virtual assistant|data entry|transcription|bookkeeper)\b",
+            r"\b(?:graphic design|illustration|3d model(?:ing)?|game art)\b",
+            r"\b(?:ios only|android only|swift developer|kotlin developer)\b",
+            r"\b(?:wordpress theme|shopify)\b",
+        ]
+        for pattern in skip_roles:
+            if re.search(pattern, full_text):
+                return None
+
+        # Skip posts older than 30 days
+        import time
+        if created_utc and (time.time() - created_utc) > 30 * 24 * 3600:
+            return None
+
         # Extract budget
         budget = self._extract_budget(full_text)
 

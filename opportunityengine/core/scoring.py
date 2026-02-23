@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import re
+from datetime import datetime
 from typing import Optional
 
 from core.config import (
@@ -61,6 +62,24 @@ def score_opportunity(opp: Opportunity) -> tuple[int, dict]:
     if type_mod != 0:
         breakdown["job_type"] = {"score": type_mod, "detail": type_detail}
 
+    # Apply scam/gimmick filter — hard penalty for red flags
+    scam_mod, scam_detail = _scam_filter(opp)
+    total += scam_mod
+    if scam_mod != 0:
+        breakdown["scam_filter"] = {"score": scam_mod, "detail": scam_detail}
+
+    # Apply freshness penalty — old posts are likely filled/dead
+    fresh_mod, fresh_detail = _freshness_modifier(opp)
+    total += fresh_mod
+    if fresh_mod != 0:
+        breakdown["freshness"] = {"score": fresh_mod, "detail": fresh_detail}
+
+    # Apply not-hiring filter — SEEKING WORK posts from other devs, [OFFER] posts
+    nothire_mod, nothire_detail = _not_hiring_filter(opp)
+    total += nothire_mod
+    if nothire_mod != 0:
+        breakdown["not_hiring"] = {"score": nothire_mod, "detail": nothire_detail}
+
     total_score = min(100, max(0, round(total)))
     breakdown["total"] = total_score
 
@@ -118,6 +137,167 @@ def _job_type_modifier(opp: Opportunity) -> tuple[int, str]:
         return 0, f"Mixed signals (dev={dev_hits}, drafting={drafting_hits})"
 
     return 0, "Neutral"
+
+
+# ── Not-Hiring Filter ─────────────────────────────────────────────
+# Detect posts from other people OFFERING their services (not hiring).
+# These get scraped from HN "Who's Hiring?" threads, Reddit /r/forhire, etc.
+
+_NOT_HIRING_SIGNALS = [
+    r"(?:^|\b)seeking\s+work\b",
+    r"(?:^|\b)seeking\s+freelanc",
+    r"(?:^|\b)available\s+for\s+(?:hire|work|freelance|contract)",
+    r"\[offer\]",
+    r"(?:^|\b)i(?:'m|\s+am)\s+(?:looking\s+for|seeking)\s+(?:work|projects|clients|gigs|opportunities)",
+    r"(?:^|\b)i\s+can\s+help\s+you\s+with\b",
+    r"(?:^|\b)(?:my|our)\s+(?:services|skills|portfolio|expertise)\b.*\b(?:available|hire|contact)\b",
+    r"(?:^|\b)(?:freelance|contract)\s+(?:developer|designer|engineer|consultant)\s+(?:available|here|looking)",
+    r"(?:^|\b)open\s+(?:to|for)\s+(?:new\s+)?(?:opportunities|projects|work|freelance)",
+    r"(?:^|\b)contact\s+me\s+at\b.*@",  # "Contact me at email@..." — offering services
+]
+
+_HIRING_SIGNALS = [
+    r"\[hiring\]",
+    r"(?:^|\b)hiring\b",
+    r"(?:^|\b)(?:we|i)\s+(?:are|need|want)\s+(?:looking\s+for|hiring|seeking)\s+(?:a\s+)?(?:developer|engineer|freelancer|consultant)",
+    r"(?:^|\b)looking\s+for\s+(?:a\s+)?(?:developer|engineer|freelancer|consultant|programmer|coder)",
+    r"(?:^|\b)(?:job|position|role)\s+(?:available|opening|posted)",
+    r"(?:^|\b)(?:help\s+(?:me|us)\s+(?:build|create|develop|automate))",
+]
+
+
+def _not_hiring_filter(opp: Opportunity) -> tuple[int, str]:
+    """Detect posts from OTHER people offering services (not actual job postings)."""
+    text = f"{opp.title} {opp.description}".lower()
+
+    not_hiring_hits = sum(1 for p in _NOT_HIRING_SIGNALS if re.search(p, text))
+    hiring_hits = sum(1 for p in _HIRING_SIGNALS if re.search(p, text))
+
+    # Clear not-hiring signal with no hiring signal
+    if not_hiring_hits >= 2 and hiring_hits == 0:
+        return -60, f"Not a job post — someone offering their services ({not_hiring_hits} signals)"
+    if not_hiring_hits >= 1 and hiring_hits == 0:
+        return -30, f"Likely not hiring — appears to be someone offering services"
+
+    # Mixed signals — slight penalty
+    if not_hiring_hits >= 1 and hiring_hits >= 1:
+        return -5, "Mixed hiring/offering signals"
+
+    return 0, "Appears to be a real opportunity"
+
+
+# ── Freshness Filter ───────────────────────────────────────────────
+
+# HN item ID -> approximate date mapping for age estimation.
+# HN item IDs are roughly sequential. These are known anchor points.
+_HN_ID_ANCHORS = [
+    (8_000_000, datetime(2014, 8, 1)),
+    (10_000_000, datetime(2015, 7, 1)),
+    (12_000_000, datetime(2016, 7, 1)),
+    (15_000_000, datetime(2017, 9, 1)),
+    (18_000_000, datetime(2018, 10, 1)),
+    (21_000_000, datetime(2019, 10, 1)),
+    (25_000_000, datetime(2020, 12, 1)),
+    (30_000_000, datetime(2022, 2, 1)),
+    (35_000_000, datetime(2023, 4, 1)),
+    (38_000_000, datetime(2024, 1, 1)),
+    (42_000_000, datetime(2025, 1, 1)),
+    (44_000_000, datetime(2025, 8, 1)),
+    (46_000_000, datetime(2026, 2, 1)),
+]
+
+
+def _estimate_hn_age_days(opp: Opportunity) -> Optional[int]:
+    """Estimate age of a HackerNews post from its item ID."""
+    if opp.source != "hackernews":
+        return None
+
+    # Try to extract item ID from source_id or raw_data URL
+    item_id = None
+    raw = opp.raw_data or {}
+    url = raw.get("url", raw.get("link", ""))
+    if "item?id=" in url:
+        try:
+            item_id = int(url.split("item?id=")[1].split("&")[0])
+        except (ValueError, IndexError):
+            pass
+    if item_id is None and opp.source_id:
+        try:
+            item_id = int(opp.source_id)
+        except (ValueError, TypeError):
+            pass
+
+    if item_id is None:
+        return None
+
+    # Interpolate between anchor points
+    for i in range(len(_HN_ID_ANCHORS) - 1):
+        id_lo, date_lo = _HN_ID_ANCHORS[i]
+        id_hi, date_hi = _HN_ID_ANCHORS[i + 1]
+        if id_lo <= item_id <= id_hi:
+            frac = (item_id - id_lo) / (id_hi - id_lo)
+            estimated_date = date_lo + (date_hi - date_lo) * frac
+            return (datetime.utcnow() - estimated_date).days
+
+    # Below lowest anchor
+    if item_id < _HN_ID_ANCHORS[0][0]:
+        return (datetime.utcnow() - _HN_ID_ANCHORS[0][1]).days + 365  # older than oldest anchor
+
+    # Above highest anchor — very recent
+    return 0
+
+
+def _freshness_modifier(opp: Opportunity) -> tuple[int, str]:
+    """Penalize old posts — they're likely filled or abandoned."""
+    age_days = None
+
+    # Try to get age from raw_data timestamps
+    raw = opp.raw_data or {}
+    for key in ("created_at", "post_time", "pub_date", "posted_date", "published_date"):
+        ts = raw.get(key, "")
+        if ts and isinstance(ts, str) and len(ts) > 8:
+            try:
+                # Handle various ISO formats
+                clean = ts.split("+")[0].split("Z")[0].rstrip(".")
+                dt = datetime.fromisoformat(clean)
+                age_days = (datetime.utcnow() - dt).days
+                break
+            except (ValueError, TypeError):
+                continue
+
+    # HN-specific: estimate age from item ID if no timestamp
+    if age_days is None:
+        hn_age = _estimate_hn_age_days(opp)
+        if hn_age is not None:
+            age_days = hn_age
+
+    # Fallback: use discovered_at
+    if age_days is None:
+        try:
+            dt = datetime.fromisoformat(opp.discovered_at)
+            # If discovered today, assume it's fresh
+            discovered_days = (datetime.utcnow() - dt).days
+            if discovered_days <= 1:
+                return 0, "Just discovered"
+        except (ValueError, TypeError):
+            pass
+        return 0, "Age unknown"
+
+    # Fresh posts get a boost, stale posts get penalized
+    if age_days <= 3:
+        return 10, f"{age_days}d old — very fresh"
+    elif age_days <= 14:
+        return 5, f"{age_days}d old — fresh"
+    elif age_days <= 30:
+        return 0, f"{age_days}d old — recent"
+    elif age_days <= 90:
+        return -10, f"{age_days}d old — aging"
+    elif age_days <= 180:
+        return -20, f"{age_days}d old — stale"
+    elif age_days <= 365:
+        return -30, f"{age_days}d old — likely dead"
+    else:
+        return -40, f"{age_days}d old — ancient, almost certainly filled"
 
 
 def _score_skill_match(opp: Opportunity) -> tuple[int, str]:
@@ -270,6 +450,98 @@ def _score_strategic_fit(opp: Opportunity) -> tuple[int, str]:
         reasons.append("learning value")
 
     return min(100, score), "; ".join(reasons) if reasons else "Standard fit"
+
+
+# ── Scam / Gimmick Filter ──────────────────────────────────────────
+
+# Hard red flags — almost certainly a scam or waste of time
+_SCAM_HARD = [
+    r"earn\s+\$?\d+.*(?:per|a)\s*(?:day|hour|week)",
+    r"make\s+\$?\d+.*(?:per|a)\s*(?:day|hour|week)",
+    r"guaranteed\s+(?:income|earnings|profit)",
+    r"(?:passive|residual)\s+income",
+    r"(?:mlm|multi.?level|network\s+marketing|pyramid)",
+    r"(?:forex|binary\s+option|crypto\s+trad)",
+    r"(?:click\s+farm|click\s+worker|captcha\s+solv)",
+    r"(?:money\s+mule|money\s+transfer|wire\s+transfer.*personal)",
+    r"(?:send|share)\s+(?:your|personal)\s+(?:bank|account|ssn|id)",
+    r"(?:advance|upfront)\s+(?:fee|payment|deposit).*(?:before|first)",
+    r"(?:nigerian|lottery|inheritance).*(?:claim|won|prince)",
+    r"(?:too\s+good\s+to\s+be\s+true)",
+    r"no\s+(?:experience|skills?)\s+(?:needed|required|necessary)",
+    r"(?:unlimited\s+earning|sky.?s\s+the\s+limit)",
+    r"(?:work\s+from\s+(?:home|anywhere).*\$\d{3,}.*(?:day|hour))",
+]
+
+# Soft red flags — suspicious but not necessarily a scam
+_SCAM_SOFT = [
+    r"(?:just\s+)?(?:need|want)\s+(?:information|details|data)\s+(?:about|on|from)",
+    r"(?:research|gather|collect)\s+(?:information|data|details)\s+(?:only|just)",
+    r"(?:free|unpaid|volunteer|no\s+pay|exposure|equity\s+only)",
+    r"(?:spec\s+work|on\s+spec|speculative)",
+    r"(?:contest|competition).*(?:submit|design|logo)",
+    r"(?:test|trial)\s+(?:project|task).*(?:unpaid|free)",
+    r"(?:pay\s+(?:later|after|upon).*(?:success|results|sales))",
+    r"(?:revenue\s+shar|profit\s+shar|commission\s+only)",
+    r"(?:need\s+(?:asap|urgently|immediately).*(?:cheap|low\s+cost|budget))",
+    r"(?:copy|clone|replicate)\s+(?:this\s+)?(?:website|app|software)",
+    r"(?:scrape|hack|crack|bypass|exploit)\s+(?:website|security|password)",
+    r"(?:fake|dummy|phishing|spoof)",
+    r"(?:unlimited\s+revisions|until\s+(?:i|we)\s+(?:am|are)\s+satisfied)",
+]
+
+# Profitability red flags — jobs that can't be profitable
+_UNPROFITABLE = [
+    r"\$[0-5]\b",  # Budget under $5
+    r"budget.*\$[0-9]{1,2}\b",  # Budget under $100 mentioned explicitly
+    r"(?:quick|simple|easy)\s+(?:task|job).*\$[0-9]{1,2}\b",
+]
+
+
+def _scam_filter(opp: Opportunity) -> tuple[int, str]:
+    """Detect scams, gimmicks, and unprofitable opportunities."""
+    text = f"{opp.title} {opp.description}".lower()
+    reasons = []
+
+    hard_hits = 0
+    for pattern in _SCAM_HARD:
+        if re.search(pattern, text):
+            hard_hits += 1
+            m = re.search(pattern, text)
+            reasons.append(f"SCAM: '{m.group()[:40]}'")
+
+    soft_hits = 0
+    for pattern in _SCAM_SOFT:
+        if re.search(pattern, text):
+            soft_hits += 1
+            m = re.search(pattern, text)
+            reasons.append(f"flag: '{m.group()[:40]}'")
+
+    unprofit_hits = 0
+    for pattern in _UNPROFITABLE:
+        if re.search(pattern, text):
+            unprofit_hits += 1
+            reasons.append("unprofitable")
+
+    # Hard scam signals — nuke the score
+    if hard_hits >= 2:
+        return -80, f"Scam ({hard_hits} hard flags): {'; '.join(reasons[:3])}"
+    if hard_hits >= 1:
+        return -50, f"Likely scam: {'; '.join(reasons[:3])}"
+
+    # Soft flags stack up
+    if soft_hits >= 3:
+        return -30, f"Multiple red flags ({soft_hits}): {'; '.join(reasons[:3])}"
+    if soft_hits >= 2:
+        return -15, f"Suspicious ({soft_hits} flags): {'; '.join(reasons[:3])}"
+    if soft_hits >= 1:
+        return -5, f"Minor flag: {'; '.join(reasons[:1])}"
+
+    # Unprofitable
+    if unprofit_hits >= 1:
+        return -20, f"Unprofitable: {'; '.join(reasons[:2])}"
+
+    return 0, "Clean"
 
 
 def _estimate_hours(opp: Opportunity) -> Optional[float]:

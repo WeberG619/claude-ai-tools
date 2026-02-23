@@ -91,10 +91,12 @@ FREELANCER_SEARCH_TERMS = [
 ]
 
 GITHUB_SEARCH_TERMS = [
-    "bounty",
-    "reward",
-    "paid",
-    "sponsored",
+    "bounty label:bounty",
+    "algora bounty",
+    "paid issue",
+    "sponsored issue",
+    "bounty python",
+    "bounty typescript",
 ]
 
 GITHUB_LANGUAGES = [
@@ -138,6 +140,14 @@ SCAN_INTERVALS = {
     "hackernews": 360,   # HN threads update monthly, check every 6h
     "remoteok": 180,     # New jobs posted a few times daily
     "linkedin": 180,
+    "property": 360,     # Permits don't change fast, check every 6h
+    # ── Niche / low-competition sources ──
+    "samgov": 720,           # Federal contracts update slowly, check every 12h
+    "dynamobim": 120,        # Forum posts — check every 2h, speed matters here
+    "autodesk_forum": 180,   # Forum posts — check every 3h
+    "govuk": 720,            # UK gov tenders, check every 12h
+    "cadcrowd": 240,         # Marketplace — check every 4h
+    "archinect": 360,        # Job board — check every 6h
 }
 
 # Peak hours (UTC) - scan more frequently
@@ -178,6 +188,10 @@ TEMPLATE_CATEGORIES = {
         "file": "general.md",
         "match_skills": ["python", "javascript", "api_development", "database", "automation"],
     },
+    "property_local": {
+        "file": "property_local.md",
+        "match_skills": ["revit", "bim", "construction_documents", "architecture"],
+    },
 }
 
 # ── Strategic Priorities ─────────────────────────────────────────────
@@ -192,3 +206,23 @@ PORTFOLIO_PRIORITIES = [
 # Preferred budget ranges (sweet spot)
 PREFERRED_BUDGET_MIN = 500
 PREFERRED_BUDGET_MAX = 10000
+
+# ── Property/Permit Scout Config ────────────────────────────────────
+
+PROPERTY_SEARCH_CITIES = [
+    "coral-springs",
+    # Future: "pompano-beach", "fort-lauderdale", "margate", "coconut-creek"
+]
+
+PROPERTY_SEARCH_COUNTIES = [
+    "broward",
+    "miami-dade",
+]
+
+PROPERTY_PERMIT_TYPES = [
+    "commercial",
+    "mixed-use",
+    "multi-family",
+]
+
+PROPERTY_MIN_VALUE = 100_000  # Minimum construction value / sale price
