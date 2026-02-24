@@ -1,0 +1,19 @@
+{
+  "name": "code_change",
+  "description": "Validates output from code modification agents",
+  "schema": {
+    "type": "object",
+    "required": ["summary", "files_changed"],
+    "properties": {
+      "summary": {"type": "string"},
+      "files_changed": {"type": "array"},
+      "verification": {"type": "object"}
+    }
+  },
+  "text_assertions": [
+    {"pattern": "files? (changed|modified|created|updated)", "required": true, "case_insensitive": true},
+    {"pattern": "(TODO|FIXME|HACK)(?!.*removed|.*fixed|.*resolved)", "fail_if_present": true, "case_insensitive": false},
+    {"pattern": "summary|what was done|changes made", "required": true, "case_insensitive": true}
+  ],
+  "max_retries": 2
+}

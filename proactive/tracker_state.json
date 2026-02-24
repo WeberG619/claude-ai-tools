@@ -12,11 +12,12 @@
   },
   "cooldowns": {
     "test": "2026-02-12T13:17:42.830317",
-    "smart_revit_opened": "2026-02-23T01:47:10.767090",
+    "smart_revit_opened": "2026-02-24T00:47:24.496472",
     "health_alert_email-watcher": "2026-02-12T13:46:41.629304"
   },
-  "last_briefing_date": "2026-02-15",
-  "last_evening_date": "2026-02-22",
-  "last_weekly_overview_date": null,
-  "last_weekly_recap_date": null
+  "last_briefing_date": "2026-02-23",
+  "last_evening_date": "2026-02-23",
+  "last_weekly_overview_date": "2026-02-23",
+  "last_weekly_recap_date": null,
+  "last_intel_date": "2026-02-23"
 }

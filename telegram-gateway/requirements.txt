@@ -1,1 +1,5 @@
 python-telegram-bot>=20.0
+anthropic>=0.72.0
+psutil
+numpy
+soundfile

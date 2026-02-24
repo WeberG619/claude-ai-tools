@@ -114,60 +114,124 @@ PATH_PATTERN = re.compile(r"(?:/[a-zA-Z0-9._-]+){2,}")
 
 
 # ─── DEFAULT SCOPES ───────────────────────────────────────────
+#
+# NOTE: DEFAULT_SCOPES is the legacy fallback. The authoritative source is
+# tool_profiles.yaml loaded by tool_scoping.py. get_scope_for_agent() tries
+# tool_scoping.py first and only falls back to DEFAULT_SCOPES if that fails.
+#
+# To add a new agent: add it to tool_profiles.yaml (preferred), OR add an
+# entry here as a legacy fallback.
+
+_READ_ONLY_TOOLS = ["Read", "Grep", "Glob", "WebSearch", "WebFetch",
+                    "mcp__claude-memory__*", "mcp__voice__speak"]
+_DENIED_WRITE = ["Edit", "Write", "Bash", "NotebookEdit"]
+
+_EDITOR_TOOLS = ["Read", "Grep", "Glob", "Edit", "Write", "Bash",
+                 "WebFetch", "WebSearch", "mcp__claude-memory__*", "mcp__voice__speak"]
+
+_REVIT_READ_TOOLS = ["Read", "Grep", "Glob", "mcp__revit-mcp__*",
+                     "mcp__claude-memory__*", "mcp__voice__speak"]
+_REVIT_EDITOR_TOOLS = ["Read", "Grep", "Glob", "Edit", "Write",
+                       "mcp__revit-mcp__*", "mcp__claude-memory__*", "mcp__voice__speak"]
+_FULL_TOOLS: list[str] = []   # empty = no restriction
+
+_REVIT_CONSTRAINTS = [
+    "Only use RevitMCP read methods (get*, list*, query*, detect*, check*, export*)",
+    "Never call RevitMCP create*, modify*, delete*, set*, update*, or enable* methods",
+]
 
 DEFAULT_SCOPES: dict[str, PermissionScope] = {
+    # ── Research & Analysis (read-only) ─────────────────────────────────────
     "tech-scout": PermissionScope(
-        allowed_tools=["Read", "Grep", "Glob", "WebSearch", "WebFetch"],
-        denied_tools=["Edit", "Write", "Bash", "NotebookEdit"],
+        allowed_tools=_READ_ONLY_TOOLS,
+        denied_tools=_DENIED_WRITE,
         write_access=False,
         execute_access=False,
         network_access=True,
     ),
     "market-analyst": PermissionScope(
-        allowed_tools=["Read", "Grep", "Glob", "WebSearch", "WebFetch"],
-        denied_tools=["Edit", "Write", "Bash", "NotebookEdit"],
+        allowed_tools=_READ_ONLY_TOOLS,
+        denied_tools=_DENIED_WRITE,
         write_access=False,
         execute_access=False,
         network_access=True,
     ),
     "code-architect": PermissionScope(
-        allowed_tools=["Read", "Grep", "Glob", "WebSearch"],
-        denied_tools=["Edit", "Write", "Bash", "NotebookEdit"],
+        allowed_tools=_READ_ONLY_TOOLS,
+        denied_tools=_DENIED_WRITE,
         write_access=False,
         execute_access=False,
         network_access=True,
     ),
-    "floor-plan-processor": PermissionScope(
-        allowed_tools=["Read", "Grep", "Glob", "Bash"],
-        denied_tools=[],
-        allowed_directories=["/mnt/d/Projects"],
-        write_access=True,
-        execute_access=True,
-        network_access=False,
-    ),
-    "excel-reporter": PermissionScope(
-        allowed_tools=["Read", "Grep", "Glob", "mcp__excel-mcp__*"],
-        denied_tools=["Bash", "NotebookEdit"],
-        write_access=True,
+    "prompt-engineer": PermissionScope(
+        allowed_tools=_READ_ONLY_TOOLS,
+        denied_tools=_DENIED_WRITE,
+        write_access=False,
         execute_access=False,
-        network_access=False,
+        network_access=True,
     ),
-    "revit-builder": PermissionScope(
-        allowed_tools=["Read", "Grep", "Glob", "mcp__revit-mcp__*"],
-        denied_tools=[],
-        write_access=True,
-        execute_access=True,
-        network_access=False,
-    ),
-    "bim-validator": PermissionScope(
-        allowed_tools=["Read", "Grep", "Glob", "mcp__revit-mcp__*"],
-        denied_tools=["Edit", "Write", "Bash"],
+    "learning-agent": PermissionScope(
+        allowed_tools=_READ_ONLY_TOOLS,
+        denied_tools=["Edit", "Write", "Bash", "NotebookEdit"],
         write_access=False,
         execute_access=False,
         network_access=False,
     ),
+    "project-librarian": PermissionScope(
+        allowed_tools=["Read", "Grep", "Glob", "mcp__claude-memory__*"],
+        denied_tools=_DENIED_WRITE,
+        write_access=False,
+        execute_access=False,
+        network_access=False,
+    ),
+    # ── Editor agents ───────────────────────────────────────────────────────
+    "code-simplifier": PermissionScope(
+        allowed_tools=_EDITOR_TOOLS,
+        denied_tools=[],
+        write_access=True,
+        execute_access=False,
+        network_access=False,
+    ),
+    "code-analyzer": PermissionScope(
+        allowed_tools=_EDITOR_TOOLS,
+        denied_tools=[],
+        write_access=True,
+        execute_access=False,
+        network_access=True,
+        allowed_file_patterns=["*.md", "*.txt", "*.json"],
+    ),
+    "doc-scraper": PermissionScope(
+        allowed_tools=["Read", "Grep", "Glob", "Write", "WebFetch", "WebSearch"],
+        denied_tools=["Bash"],
+        write_access=True,
+        execute_access=False,
+        network_access=True,
+        allowed_file_patterns=["*.md", "*.txt", "*.html", "*.json"],
+    ),
+    "fullstack-dev": PermissionScope(
+        allowed_tools=_EDITOR_TOOLS,
+        denied_tools=[],
+        write_access=True,
+        execute_access=True,
+        network_access=True,
+    ),
+    "python-engineer": PermissionScope(
+        allowed_tools=_EDITOR_TOOLS,
+        denied_tools=[],
+        allowed_directories=["/mnt/d/_CLAUDE-TOOLS", "/mnt/d/Projects"],
+        write_access=True,
+        execute_access=True,
+        network_access=False,
+    ),
+    "ml-engineer": PermissionScope(
+        allowed_tools=_EDITOR_TOOLS,
+        denied_tools=[],
+        write_access=True,
+        execute_access=True,
+        network_access=True,
+    ),
     "client-liaison": PermissionScope(
-        allowed_tools=["Read", "Grep", "Glob", "WebSearch"],
+        allowed_tools=_EDITOR_TOOLS,
         denied_tools=["Bash"],
         write_access=True,
         execute_access=False,
@@ -175,27 +239,293 @@ DEFAULT_SCOPES: dict[str, PermissionScope] = {
         custom_constraints=["Never send emails without user approval"],
     ),
     "invoice-tracker": PermissionScope(
-        allowed_tools=["Read", "Grep", "Glob", "mcp__excel-mcp__*"],
+        allowed_tools=["Read", "Grep", "Glob", "Edit", "Write",
+                       "mcp__excel-mcp__*", "mcp__claude-memory__*"],
         denied_tools=["Bash", "NotebookEdit"],
         write_access=True,
         execute_access=False,
         network_access=False,
     ),
+    "project-manager": PermissionScope(
+        allowed_tools=_EDITOR_TOOLS,
+        denied_tools=[],
+        write_access=True,
+        execute_access=False,
+        network_access=False,
+    ),
     "proposal-writer": PermissionScope(
-        allowed_tools=["Read", "Grep", "Glob", "Write", "WebSearch"],
+        allowed_tools=["Read", "Grep", "Glob", "Write", "Edit", "WebSearch", "WebFetch"],
         denied_tools=["Bash"],
         write_access=True,
         execute_access=False,
         network_access=True,
-        allowed_file_patterns=["*.md", "*.txt", "*.docx"],
+        allowed_file_patterns=["*.md", "*.txt"],
     ),
-    "python-engineer": PermissionScope(
-        allowed_tools=["Read", "Grep", "Glob", "Write", "Edit", "Bash"],
+    "test-runner": PermissionScope(
+        allowed_tools=["Read", "Grep", "Glob", "Bash", "Write"],
         denied_tools=[],
-        allowed_directories=["/mnt/d/_CLAUDE-TOOLS", "/mnt/d/Projects"],
         write_access=True,
         execute_access=True,
         network_access=False,
+    ),
+    # ── C# / .NET developer ────────────────────────────────────────────────
+    "csharp-developer": PermissionScope(
+        allowed_tools=_EDITOR_TOOLS,
+        denied_tools=[],
+        allowed_directories=["/mnt/d/Projects", "/mnt/c/Users", "/mnt/d/_CLAUDE-TOOLS"],
+        write_access=True,
+        execute_access=True,
+        network_access=False,
+    ),
+    "revit-developer": PermissionScope(
+        allowed_tools=_EDITOR_TOOLS,
+        denied_tools=[],
+        allowed_directories=["/mnt/d/Projects", "/mnt/c/Users"],
+        write_access=True,
+        execute_access=True,
+        network_access=False,
+    ),
+    # ── Revit Read-Only ────────────────────────────────────────────────────
+    "bim-validator": PermissionScope(
+        allowed_tools=_REVIT_READ_TOOLS,
+        denied_tools=["Edit", "Write", "Bash"],
+        write_access=False,
+        execute_access=False,
+        network_access=False,
+        custom_constraints=_REVIT_CONSTRAINTS,
+    ),
+    "clash-detection-agent": PermissionScope(
+        allowed_tools=_REVIT_READ_TOOLS,
+        denied_tools=["Edit", "Write", "Bash"],
+        write_access=False,
+        execute_access=False,
+        network_access=False,
+        custom_constraints=_REVIT_CONSTRAINTS,
+    ),
+    "code-compliance-agent": PermissionScope(
+        allowed_tools=_REVIT_READ_TOOLS,
+        denied_tools=["Edit", "Write", "Bash"],
+        write_access=False,
+        execute_access=False,
+        network_access=False,
+        custom_constraints=_REVIT_CONSTRAINTS,
+    ),
+    "qc-agent": PermissionScope(
+        allowed_tools=_REVIT_READ_TOOLS,
+        denied_tools=["Edit", "Write", "Bash"],
+        write_access=False,
+        execute_access=False,
+        network_access=False,
+        custom_constraints=_REVIT_CONSTRAINTS,
+    ),
+    "quantity-takeoff-agent": PermissionScope(
+        allowed_tools=_REVIT_READ_TOOLS,
+        denied_tools=["Edit", "Write", "Bash"],
+        write_access=False,
+        execute_access=False,
+        network_access=False,
+        custom_constraints=_REVIT_CONSTRAINTS,
+    ),
+    "cd-reviewer": PermissionScope(
+        allowed_tools=_REVIT_READ_TOOLS,
+        denied_tools=["Edit", "Write", "Bash"],
+        write_access=False,
+        execute_access=False,
+        network_access=False,
+        custom_constraints=_REVIT_CONSTRAINTS,
+    ),
+    # ── Revit Editors ──────────────────────────────────────────────────────
+    "revit-builder": PermissionScope(
+        allowed_tools=_REVIT_EDITOR_TOOLS,
+        denied_tools=["Bash"],
+        write_access=True,
+        execute_access=False,
+        network_access=False,
+    ),
+    "annotation-agent": PermissionScope(
+        allowed_tools=_REVIT_EDITOR_TOOLS,
+        denied_tools=["Bash"],
+        write_access=True,
+        execute_access=False,
+        network_access=False,
+    ),
+    "detail-agent": PermissionScope(
+        allowed_tools=_REVIT_EDITOR_TOOLS,
+        denied_tools=["Bash"],
+        write_access=True,
+        execute_access=False,
+        network_access=False,
+    ),
+    "dimensioning-agent": PermissionScope(
+        allowed_tools=_REVIT_EDITOR_TOOLS,
+        denied_tools=["Bash"],
+        write_access=True,
+        execute_access=False,
+        network_access=False,
+    ),
+    "export-agent": PermissionScope(
+        allowed_tools=_REVIT_EDITOR_TOOLS,
+        denied_tools=["Bash"],
+        write_access=True,
+        execute_access=False,
+        network_access=False,
+    ),
+    "family-agent": PermissionScope(
+        allowed_tools=_REVIT_EDITOR_TOOLS,
+        denied_tools=["Bash"],
+        write_access=True,
+        execute_access=False,
+        network_access=False,
+    ),
+    "floor-ceiling-agent": PermissionScope(
+        allowed_tools=_REVIT_EDITOR_TOOLS,
+        denied_tools=["Bash"],
+        write_access=True,
+        execute_access=False,
+        network_access=False,
+    ),
+    "legend-agent": PermissionScope(
+        allowed_tools=_REVIT_EDITOR_TOOLS,
+        denied_tools=["Bash"],
+        write_access=True,
+        execute_access=False,
+        network_access=False,
+    ),
+    "link-agent": PermissionScope(
+        allowed_tools=_REVIT_EDITOR_TOOLS,
+        denied_tools=["Bash"],
+        write_access=True,
+        execute_access=False,
+        network_access=False,
+    ),
+    "material-agent": PermissionScope(
+        allowed_tools=_REVIT_EDITOR_TOOLS,
+        denied_tools=["Bash"],
+        write_access=True,
+        execute_access=False,
+        network_access=False,
+    ),
+    "mep-agent": PermissionScope(
+        allowed_tools=_REVIT_EDITOR_TOOLS,
+        denied_tools=["Bash"],
+        write_access=True,
+        execute_access=False,
+        network_access=False,
+    ),
+    "phase-agent": PermissionScope(
+        allowed_tools=_REVIT_EDITOR_TOOLS,
+        denied_tools=["Bash"],
+        write_access=True,
+        execute_access=False,
+        network_access=False,
+    ),
+    "roof-agent": PermissionScope(
+        allowed_tools=_REVIT_EDITOR_TOOLS,
+        denied_tools=["Bash"],
+        write_access=True,
+        execute_access=False,
+        network_access=False,
+    ),
+    "schedule-builder": PermissionScope(
+        allowed_tools=_REVIT_EDITOR_TOOLS,
+        denied_tools=["Bash"],
+        write_access=True,
+        execute_access=False,
+        network_access=False,
+    ),
+    "sheet-layout": PermissionScope(
+        allowed_tools=_REVIT_EDITOR_TOOLS,
+        denied_tools=["Bash"],
+        write_access=True,
+        execute_access=False,
+        network_access=False,
+    ),
+    "site-agent": PermissionScope(
+        allowed_tools=_REVIT_EDITOR_TOOLS,
+        denied_tools=["Bash"],
+        write_access=True,
+        execute_access=False,
+        network_access=False,
+    ),
+    "stair-railing-agent": PermissionScope(
+        allowed_tools=_REVIT_EDITOR_TOOLS,
+        denied_tools=["Bash"],
+        write_access=True,
+        execute_access=False,
+        network_access=False,
+    ),
+    "structural-agent": PermissionScope(
+        allowed_tools=_REVIT_EDITOR_TOOLS,
+        denied_tools=["Bash"],
+        write_access=True,
+        execute_access=False,
+        network_access=False,
+    ),
+    "view-agent": PermissionScope(
+        allowed_tools=_REVIT_EDITOR_TOOLS,
+        denied_tools=["Bash"],
+        write_access=True,
+        execute_access=False,
+        network_access=False,
+    ),
+    # ── Revit Admin ────────────────────────────────────────────────────────
+    "workset-agent": PermissionScope(
+        allowed_tools=_REVIT_EDITOR_TOOLS,
+        denied_tools=["Bash"],
+        write_access=True,
+        execute_access=False,
+        network_access=False,
+        custom_constraints=[
+            "Worksharing operations (enable, compact, sync) affect ALL team members — confirm before executing",
+            "Never enable worksharing on a file that hasn't been backed up",
+        ],
+    ),
+    # ── Special Domain ─────────────────────────────────────────────────────
+    "floor-plan-processor": PermissionScope(
+        allowed_tools=["Read", "Grep", "Glob", "Bash", "Edit", "Write",
+                       "mcp__revit-mcp__*", "mcp__windows-browser__*"],
+        denied_tools=[],
+        allowed_directories=["/mnt/d/Projects", "/tmp"],
+        write_access=True,
+        execute_access=True,
+        network_access=False,
+    ),
+    "excel-reporter": PermissionScope(
+        allowed_tools=["Read", "Grep", "Glob", "mcp__excel-mcp__*", "mcp__claude-memory__*"],
+        denied_tools=["Bash", "NotebookEdit"],
+        write_access=True,
+        execute_access=False,
+        network_access=False,
+    ),
+    # ── Full / Admin ───────────────────────────────────────────────────────
+    "orchestrator": PermissionScope(
+        allowed_tools=_FULL_TOOLS,
+        denied_tools=[],
+        write_access=True,
+        execute_access=True,
+        network_access=True,
+        custom_constraints=[
+            "Prefer delegating implementation to specialist agents rather than implementing directly",
+        ],
+    ),
+    "agent-builder": PermissionScope(
+        allowed_tools=_FULL_TOOLS,
+        denied_tools=[],
+        allowed_directories=["/home/weber/.claude/agents", "/mnt/d/_CLAUDE-TOOLS"],
+        write_access=True,
+        execute_access=True,
+        network_access=False,
+    ),
+    "devops-agent": PermissionScope(
+        allowed_tools=_FULL_TOOLS,
+        denied_tools=[],
+        write_access=True,
+        execute_access=True,
+        network_access=True,
+        custom_constraints=[
+            "Never force-push to main/master without explicit user approval",
+            "Confirm before any irreversible deployment operations",
+        ],
     ),
 }
 
@@ -213,7 +543,16 @@ _RESTRICTIVE_DEFAULT = PermissionScope(
 # ─── FUNCTIONS ─────────────────────────────────────────────────
 
 def get_scope_for_agent(agent_name: str) -> PermissionScope:
-    """Get the permission scope for an agent. Unknown agents get restrictive defaults."""
+    """
+    Get the permission scope for an agent.
+
+    Resolution order:
+      1. tool_scoping.py (loads tool_profiles.yaml — authoritative source)
+      2. DEFAULT_SCOPES dict (legacy fallback for any agents not in YAML)
+      3. _RESTRICTIVE_DEFAULT (read-only fallback for completely unknown agents)
+
+    Unknown agents always get restrictive defaults.
+    """
     if not agent_name or not isinstance(agent_name, str):
         return PermissionScope(
             allowed_tools=["Read", "Grep", "Glob"],
@@ -223,7 +562,22 @@ def get_scope_for_agent(agent_name: str) -> PermissionScope:
             network_access=False,
             custom_constraints=["Invalid agent name — restricted to read-only operations"],
         )
-    return DEFAULT_SCOPES.get(agent_name, _RESTRICTIVE_DEFAULT)
+
+    # 1. Try tool_scoping.py first (YAML-backed, authoritative)
+    try:
+        from tool_scoping import to_permission_scope
+        scope = to_permission_scope(agent_name)
+        if scope is not None:
+            return scope
+    except Exception:
+        pass  # tool_scoping unavailable or error — fall through
+
+    # 2. Legacy DEFAULT_SCOPES dict
+    if agent_name in DEFAULT_SCOPES:
+        return DEFAULT_SCOPES[agent_name]
+
+    # 3. Restrictive fallback
+    return _RESTRICTIVE_DEFAULT
 
 
 def compile_permission_prompt(scope: PermissionScope, agent_name: str = "") -> str:

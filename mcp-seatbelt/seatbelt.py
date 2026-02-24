@@ -25,6 +25,12 @@ from validator import Validator, ValidationResult
 from risk_scorer import RiskScorer
 from audit_logger import AuditLogger
 
+try:
+    from tier_classifier import TierClassifier
+    _tier_available = True
+except ImportError:
+    _tier_available = False
+
 # Fail-open: If seatbelt has internal errors, allow the call rather than break Claude
 FAIL_OPEN = True
 
@@ -63,6 +69,22 @@ def main():
         risk_scorer = RiskScorer()
         audit = AuditLogger()
 
+        # ── Tier classification (fast-pass for read-only) ──
+        tier_result = None
+        if _tier_available:
+            try:
+                # Load tier overrides from policy YAML if available
+                policy_overrides = {}
+                tier_classifier = TierClassifier(policy_overrides)
+                tier_result = tier_classifier.classify(tool_name)
+
+                # Tier 1 (FREE): Skip full pipeline for read-only ops
+                if tier_result.tier == 1:
+                    audit.log_fast(tool_name, tier_result, session_id)
+                    sys.exit(0)
+            except Exception:
+                pass  # Tier classifier errors never block
+
         # Get applicable policy for this tool
         policy = policy_engine.get_policy(tool_name)
 
@@ -73,13 +95,19 @@ def main():
         risk_score = risk_scorer.calculate(tool_name, tool_input, policy, result)
         result.risk_score = risk_score
 
-        # Log to audit trail
+        # ── Tier 3 escalation: destructive ops get warn even if log_only ──
+        if tier_result and tier_result.tier == 3 and result.action == 'log_only':
+            result.action = 'warn'
+            result.message = (result.message or "") + f" [Tier 3 escalation: {tier_result.reason}]"
+
+        # Log to audit trail (with tier info)
         audit.log(
             tool_name=tool_name,
             result=result,
             policy=policy,
             tool_input=tool_input,
-            session_id=session_id
+            session_id=session_id,
+            tier_result=tier_result,
         )
 
         # Determine action based on result

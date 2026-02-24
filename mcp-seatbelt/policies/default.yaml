@@ -32,6 +32,7 @@ tools:
   mcp__excel-mcp__run_macro_tool:
     risk: 10
     action: block
+    tier: 3
     description: "VBA macro execution blocked - too dangerous"
 
   # --------------------------------------------------------
@@ -142,18 +143,21 @@ tools:
   mcp__voice__*:
     risk: 2
     action: log_only
+    tier: 1
     description: "Voice TTS operations"
 
   # Memory operations - internal, low risk
   mcp__claude-memory__*:
     risk: 2
     action: log_only
+    tier: 1
     description: "Claude memory operations"
 
   # Financial data - read only, low risk
   mcp__financial-mcp__get_*:
     risk: 2
     action: log_only
+    tier: 1
     description: "Financial data queries"
 
   mcp__financial-mcp__*:
@@ -165,6 +169,7 @@ tools:
   mcp__youtube-mcp__*:
     risk: 2
     action: log_only
+    tier: 1
     description: "YouTube data queries"
 
   # Floor plan vision - read only

@@ -20,6 +20,59 @@ from pre_flight_check import check_operation as fuzzy_check, format_warning_bann
 from context_detector import detect_operation, should_check
 from rule_engine import check_operation as rule_check, get_stats
 
+# Cognitive compiled rules integration
+COGNITIVE_RULES_FILE = "/mnt/d/_CLAUDE-TOOLS/cognitive-core/compiled_rules.md"
+
+
+def _check_cognitive_rules(tool_name: str, params: dict) -> str:
+    """Check cognitive compiled rules for relevant BLOCKING warnings.
+
+    Reads compiled_rules.md and does keyword matching against the
+    current operation. Returns warning text or empty string.
+    """
+    import re
+    rules_path = COGNITIVE_RULES_FILE
+    try:
+        with open(rules_path) as f:
+            content = f.read()
+    except FileNotFoundError:
+        return ""
+
+    # Build context string from operation
+    context = f"{tool_name} {json.dumps(params)}".lower()
+
+    # Extract BLOCKING rules
+    blocking_rules = re.findall(
+        r'\*\*\[BLOCKING\]\*\*\s*(.*?)(?=\n\s*\n|\n-\s*\*\*\[|\Z)',
+        content, re.DOTALL
+    )
+
+    matched = []
+    # Check rules relevant to current operation
+    for rule in blocking_rules:
+        rule_lower = rule.lower()
+        # Extract meaningful keywords (5+ chars, not common words)
+        stopwords = {"which", "should", "would", "could", "about", "after",
+                     "before", "their", "there", "these", "those", "other",
+                     "wrong", "correction", "record", "claude"}
+        keywords = [w for w in re.findall(r'\b\w{5,}\b', rule_lower)
+                    if w not in stopwords][:20]
+        # Count how many rule keywords appear in context
+        hits = sum(1 for kw in keywords if kw in context)
+        # Need at least 2 specific keyword matches
+        if hits >= 2:
+            first_line = rule.strip().split('\n')[0][:120]
+            matched.append(first_line)
+
+    if matched:
+        lines = ["╔══ COGNITIVE COMPILED RULES ══╗"]
+        for m in matched[:3]:
+            lines.append(f"║ ⚠ {m[:70]}")
+        lines.append("╚═════════════════════════════╝")
+        return "\n".join(lines)
+
+    return ""
+
 
 def run_hook(tool_name: str = "", params: str = "") -> int:
     """
@@ -53,6 +106,16 @@ def run_hook(tool_name: str = "", params: str = "") -> int:
     if rule_message:
         # Rule violation with WARN severity - show warning but allow
         print(rule_message, file=sys.stderr)
+
+    # =========================================================================
+    # PHASE 1.5: Cognitive Compiled Rules (keyword match from compiled_rules.md)
+    # =========================================================================
+    try:
+        cognitive_warning = _check_cognitive_rules(tool_name, param_dict)
+        if cognitive_warning:
+            print(cognitive_warning, file=sys.stderr)
+    except Exception:
+        pass  # Never block due to cognitive rule check failure
 
     # =========================================================================
     # PHASE 2: Fuzzy Correction Check (Warns only)

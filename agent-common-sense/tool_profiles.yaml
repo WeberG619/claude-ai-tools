@@ -1,0 +1,432 @@
+# tool_profiles.yaml — Per-Agent Tool Scoping Configuration
+# Generated: 2026-02-23
+# Covers all 48 agents in /home/weber/.claude/agents/
+#
+# Profiles define which tools each tier of agent may use.
+# Agents are mapped to profiles below; overrides can add extra constraints.
+#
+# Tool naming conventions:
+#   Core tools: Read, Grep, Glob, Edit, Write, Bash, WebFetch, WebSearch, Task, NotebookEdit
+#   MCP tools:  mcp__revit-mcp__*, mcp__excel-mcp__*, mcp__bluebeam__*, mcp__voice__*,
+#               mcp__claude-memory__*, mcp__windows-browser__*, mcp__playwright__*
+
+# ─── PROFILE DEFINITIONS ──────────────────────────────────────────────────────
+
+profiles:
+
+  read-only:
+    description: Research, analysis, and review agents — no file writes, no code execution
+    tools:
+      - Read
+      - Grep
+      - Glob
+      - WebFetch
+      - WebSearch
+      - mcp__claude-memory__*
+      - mcp__voice__speak
+    bash_allowed: false
+    write_access: false
+    execute_access: false
+    network_access: true
+
+  editor:
+    description: Implementation and build agents — can write files and run safe commands
+    tools:
+      - Read
+      - Grep
+      - Glob
+      - Edit
+      - Write
+      - Bash
+      - WebFetch
+      - WebSearch
+      - mcp__claude-memory__*
+      - mcp__voice__speak
+    bash_allowed: true
+    bash_safe_patterns:
+      - "python*"
+      - "pip*"
+      - "npm *"
+      - "node *"
+      - "dotnet *"
+      - "git status"
+      - "git diff*"
+      - "git log*"
+      - "git add*"
+      - "git commit*"
+      - "ls *"
+      - "cat *"
+      - "find *"
+      - "mkdir *"
+      - "cp *"
+      - "mv *"
+    bash_denied_patterns:
+      - "git push --force*"
+      - "rm -rf /*"
+      - "sudo *"
+      - "chmod 777*"
+    write_access: true
+    execute_access: true
+    network_access: true
+
+  full:
+    description: Admin, DevOps, and orchestration agents — unrestricted tool access
+    tools:
+      - Read
+      - Grep
+      - Glob
+      - Edit
+      - Write
+      - Bash
+      - WebFetch
+      - WebSearch
+      - Task
+      - NotebookEdit
+      - mcp__claude-memory__*
+      - mcp__voice__speak
+      - mcp__windows-browser__*
+      - mcp__playwright__*
+    bash_allowed: true
+    write_access: true
+    execute_access: true
+    network_access: true
+    note: Full access tier — use for orchestrators, devops, and admin agents only
+
+  domain-revit-read:
+    description: Revit query agents — read RevitMCP data, no model modifications
+    extends: read-only
+    additional_tools:
+      - mcp__revit-mcp__*
+    bash_allowed: false
+    write_access: false
+    execute_access: false
+    network_access: false
+    custom_constraints:
+      - "Only use RevitMCP methods that READ data (get*, list*, query*, detect*, check*, export*)"
+      - "Never call RevitMCP create*, modify*, delete*, set*, update*, or enable* methods"
+
+  domain-revit-editor:
+    description: Revit creation/modification agents — full RevitMCP + file editing
+    extends: editor
+    additional_tools:
+      - mcp__revit-mcp__*
+    denied_tools:
+      - Bash
+    bash_allowed: false
+    write_access: true
+    execute_access: false
+    network_access: false
+    custom_constraints:
+      - "Only modify elements within the active Revit model via RevitMCPBridge"
+      - "Never run arbitrary Bash commands — use RevitMCP tools for all model operations"
+
+  domain-revit-admin:
+    description: Revit worksharing/admin — destructive Revit operations allowed
+    extends: editor
+    additional_tools:
+      - mcp__revit-mcp__*
+    denied_tools:
+      - Bash
+    bash_allowed: false
+    write_access: true
+    execute_access: false
+    network_access: false
+    custom_constraints:
+      - "Worksharing operations (enable, compact, sync) affect ALL team members — confirm before executing"
+      - "Never enable worksharing on a file that hasn't been backed up"
+
+  domain-excel:
+    description: Excel reporting agents — Excel MCP only, no general file writes
+    extends: read-only
+    additional_tools:
+      - mcp__excel-mcp__*
+    bash_allowed: false
+    write_access: true
+    execute_access: false
+    network_access: false
+
+  domain-floor-plan:
+    description: Floor plan processor — PDF extraction + Revit creation, vision MCP
+    extends: editor
+    additional_tools:
+      - mcp__revit-mcp__*
+      - mcp__windows-browser__*
+    bash_allowed: true
+    write_access: true
+    execute_access: true
+    network_access: false
+    allowed_directories:
+      - /mnt/d/Projects
+      - /tmp
+
+  domain-csharp:
+    description: C# / Revit add-in developer — builds DLLs, runs MSBuild/dotnet
+    extends: editor
+    bash_allowed: true
+    bash_safe_patterns:
+      - "dotnet *"
+      - "msbuild *"
+      - "git *"
+      - "ls *"
+      - "cat *"
+    write_access: true
+    execute_access: true
+    network_access: false
+    allowed_directories:
+      - /mnt/d/Projects
+      - /mnt/c/Users
+      - /mnt/d/_CLAUDE-TOOLS
+
+  domain-devops:
+    description: DevOps / deployment agent — Docker, SSH, cloud, git push allowed
+    extends: full
+    bash_allowed: true
+    write_access: true
+    execute_access: true
+    network_access: true
+    custom_constraints:
+      - "Never force-push to main/master without explicit user approval"
+      - "Confirm before any irreversible deployment operations"
+
+
+# ─── AGENT → PROFILE MAPPING ──────────────────────────────────────────────────
+
+agents:
+
+  # ── Research & Analysis (read-only) ─────────────────────────────────────────
+  tech-scout:
+    profile: read-only
+    notes: Web research only, no file writes
+
+  market-analyst:
+    profile: read-only
+    notes: Business/market analysis, web research only
+
+  code-architect:
+    profile: read-only
+    notes: System design and planning only — implementation delegated to other agents
+
+  prompt-engineer:
+    profile: read-only
+    notes: Analyzes and designs prompts, no file editing
+
+  learning-agent:
+    profile: read-only
+    notes: Reads patterns and stores to mcp__claude-memory__ only
+    additional_allowed:
+      - mcp__claude-memory__*
+
+  project-librarian:
+    profile: read-only
+    notes: Memory search and retrieval only
+    additional_allowed:
+      - mcp__claude-memory__*
+
+  # ── Editors (write + bash) ───────────────────────────────────────────────────
+  code-simplifier:
+    profile: editor
+    notes: Refactors existing code files — Edit and Write only, no new file creation
+
+  code-analyzer:
+    profile: editor
+    notes: Writes analysis reports to files — uses Write for output
+    allowed_file_patterns:
+      - "*.md"
+      - "*.txt"
+      - "*.json"
+
+  doc-scraper:
+    profile: editor
+    notes: Scrapes web docs and writes to local files
+    allowed_file_patterns:
+      - "*.md"
+      - "*.txt"
+      - "*.html"
+      - "*.json"
+
+  fullstack-dev:
+    profile: editor
+    notes: Full-stack web development (React, FastAPI, etc.)
+
+  python-engineer:
+    profile: editor
+    notes: Python scripting and automation
+    allowed_directories:
+      - /mnt/d/_CLAUDE-TOOLS
+      - /mnt/d/Projects
+
+  ml-engineer:
+    profile: editor
+    notes: ML model training and data pipelines
+
+  client-liaison:
+    profile: editor
+    notes: Drafts client communications
+    custom_constraints:
+      - "Never send emails or messages without explicit user approval"
+
+  invoice-tracker:
+    profile: editor
+    additional_allowed:
+      - mcp__excel-mcp__*
+    notes: Tracks invoices, creates financial documents
+
+  project-manager:
+    profile: editor
+    notes: Project plans, status reports, task coordination
+
+  proposal-writer:
+    profile: editor
+    notes: Business proposals and SOW documents
+    allowed_file_patterns:
+      - "*.md"
+      - "*.txt"
+
+  test-runner:
+    profile: editor
+    notes: Runs test suites via Bash — needs execute access to run pytest/jest/etc.
+
+  # ── C# / .NET developer ──────────────────────────────────────────────────────
+  csharp-developer:
+    profile: domain-csharp
+    notes: Builds C# code, runs dotnet/msbuild, deploys DLLs to Revit addins folder
+
+  revit-developer:
+    profile: domain-csharp
+    notes: C# Revit add-in development — builds against Revit API, deploys DLLs
+
+  # ── Revit Read-Only (domain-revit-read) ──────────────────────────────────────
+  bim-validator:
+    profile: domain-revit-read
+    notes: Queries Revit model for validation — never modifies elements
+
+  clash-detection-agent:
+    profile: domain-revit-read
+    notes: Detects clashes, exports reports — no model modifications
+
+  code-compliance-agent:
+    profile: domain-revit-read
+    notes: Runs compliance checks via RevitMCP read methods only
+
+  qc-agent:
+    profile: domain-revit-read
+    notes: Model health and standards auditing — read only
+
+  quantity-takeoff-agent:
+    profile: domain-revit-read
+    notes: Extracts quantities from Revit model, generates takeoff reports
+
+  cd-reviewer:
+    profile: domain-revit-read
+    notes: Reviews construction documents in Revit — read only
+    additional_allowed:
+      - mcp__voice__speak
+
+  # ── Revit Editors (domain-revit-editor) ─────────────────────────────────────
+  revit-builder:
+    profile: domain-revit-editor
+    notes: General Revit element creation and modification (98 MCP methods)
+
+  annotation-agent:
+    profile: domain-revit-editor
+    notes: Creates and manages annotations in Revit (tags, text, symbols)
+
+  detail-agent:
+    profile: domain-revit-editor
+    notes: Creates detail views and detail components
+
+  dimensioning-agent:
+    profile: domain-revit-editor
+    notes: Creates dimensions and constraints in Revit
+
+  export-agent:
+    profile: domain-revit-editor
+    notes: Exports from Revit to DWG, IFC, PDF, NWC
+
+  family-agent:
+    profile: domain-revit-editor
+    notes: Creates and modifies Revit families
+
+  floor-ceiling-agent:
+    profile: domain-revit-editor
+    notes: Creates floor and ceiling elements
+
+  legend-agent:
+    profile: domain-revit-editor
+    notes: Creates legend views and legend components
+
+  link-agent:
+    profile: domain-revit-editor
+    notes: Manages linked Revit and CAD files
+
+  material-agent:
+    profile: domain-revit-editor
+    notes: Creates and assigns materials in Revit
+
+  mep-agent:
+    profile: domain-revit-editor
+    notes: Places MEP fixtures, equipment, and systems
+
+  phase-agent:
+    profile: domain-revit-editor
+    notes: Manages construction phases and phase assignments
+
+  roof-agent:
+    profile: domain-revit-editor
+    notes: Creates roof elements (flat, gable, hip, shed)
+
+  schedule-builder:
+    profile: domain-revit-editor
+    notes: Creates and configures Revit schedules
+
+  sheet-layout:
+    profile: domain-revit-editor
+    notes: Creates sheets and places viewports
+
+  site-agent:
+    profile: domain-revit-editor
+    notes: Creates site elements (topography, pads, parking)
+
+  stair-railing-agent:
+    profile: domain-revit-editor
+    notes: Creates stairs, railings, and ramps
+
+  structural-agent:
+    profile: domain-revit-editor
+    notes: Creates structural elements (columns, beams, grids)
+
+  view-agent:
+    profile: domain-revit-editor
+    notes: Creates and manages Revit views (59 MCP methods)
+
+  # ── Revit Admin (domain-revit-admin) ────────────────────────────────────────
+  workset-agent:
+    profile: domain-revit-admin
+    notes: Manages worksharing — enable, create worksets, sync to central (destructive)
+
+  # ── Special Domain Agents ────────────────────────────────────────────────────
+  floor-plan-processor:
+    profile: domain-floor-plan
+    notes: PDF extraction + Revit element creation, uses vision MCP
+
+  excel-reporter:
+    profile: domain-excel
+    notes: Creates Excel workbooks and reports via mcp__excel-mcp__*
+
+  # ── Full / Admin ─────────────────────────────────────────────────────────────
+  orchestrator:
+    profile: full
+    notes: Coordinates all agents via Task tool — needs access to all tools to delegate
+    custom_constraints:
+      - "Prefer delegating implementation to specialist agents rather than implementing directly"
+
+  agent-builder:
+    profile: full
+    notes: Creates new agent definition files in /home/weber/.claude/agents/
+    allowed_directories:
+      - /home/weber/.claude/agents
+      - /mnt/d/_CLAUDE-TOOLS
+
+  devops-agent:
+    profile: domain-devops
+    notes: Docker, SSH, server config, git push, cloud deployment

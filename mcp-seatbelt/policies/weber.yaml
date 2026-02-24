@@ -69,6 +69,7 @@ tools:
   mcp__voice__*:
     risk: 1
     action: log_only
+    tier: 1
     description: "Voice TTS - always allowed"
 
   # --------------------------------------------------------
@@ -78,6 +79,7 @@ tools:
   mcp__claude-memory__*:
     risk: 1
     action: log_only
+    tier: 1
     description: "Memory operations - internal"
 
   # --------------------------------------------------------
@@ -100,6 +102,7 @@ tools:
   mcp__excel-mcp__run_macro_tool:
     risk: 10
     action: block
+    tier: 3
     description: "VBA macros still blocked"
 
   # --------------------------------------------------------

@@ -1,0 +1,10 @@
+{
+  "name": "task_result",
+  "description": "Generic task completion validation — ensures a clear summary and no loose ends",
+  "text_assertions": [
+    {"pattern": "(summary|result|completed|done|finished)", "required": true, "case_insensitive": true},
+    {"pattern": "(TODO|FIXME)(?!.*removed|.*fixed|.*resolved)", "fail_if_present": true, "case_insensitive": false}
+  ],
+  "min_words": 20,
+  "max_retries": 1
+}

@@ -1,0 +1,10 @@
+{
+  "name": "research_report",
+  "description": "Validates research/exploration agent outputs",
+  "text_assertions": [
+    {"pattern": "(source|reference|found in|according to)", "required": true, "case_insensitive": true},
+    {"pattern": "(summary|conclusion|finding|result)", "required": true, "case_insensitive": true}
+  ],
+  "min_words": 200,
+  "max_retries": 1
+}

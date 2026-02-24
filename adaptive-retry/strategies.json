@@ -1,0 +1,34 @@
+{
+  "strategies": [
+    {
+      "name": "quick-fix",
+      "description": "Fix the specific error. Minimal change.",
+      "prompt_modifier": "Fix the specific error shown below. Make the minimal change needed. Do NOT refactor or restructure.",
+      "max_attempts": 2,
+      "timeout_multiplier": 1.0
+    },
+    {
+      "name": "refactor",
+      "description": "Previous fix failed. Read more context, refactor the approach.",
+      "prompt_modifier": "The previous quick-fix attempts failed. Read more surrounding code for context. Consider a different approach to the same problem. Refactor if needed.",
+      "max_attempts": 1,
+      "timeout_multiplier": 1.5
+    },
+    {
+      "name": "alternative",
+      "description": "All previous attempts failed. Try a completely different approach.",
+      "prompt_modifier": "All previous approaches have failed. Try a COMPLETELY DIFFERENT approach. Consider alternative libraries, patterns, or workarounds. Think outside the box.",
+      "max_attempts": 1,
+      "timeout_multiplier": 2.0
+    },
+    {
+      "name": "escalate",
+      "description": "Prepare a detailed failure report for the user.",
+      "prompt_modifier": "All automated fix attempts have failed. Prepare a detailed report: what the error is, what was tried, why each approach failed, and what the user should investigate manually.",
+      "max_attempts": 1,
+      "timeout_multiplier": 1.0
+    }
+  ],
+  "max_total_attempts": 5,
+  "hard_timeout_minutes": 15
+}

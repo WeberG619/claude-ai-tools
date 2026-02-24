@@ -1,545 +1,553 @@
 {
-  "timestamp": "2026-02-23T03:58:30.513590",
+  "timestamp": "2026-02-24T03:59:10.376947",
   "events": [
     {
-      "timestamp": "2026-02-23T01:07:30.866194",
+      "timestamp": "2026-02-24T00:46:11.602813",
       "type": "focus_changed",
-      "details": "MSMC MIAMI SHORES_LS MARKUPS - Bluebeam Revu x64"
+      "details": "Autodesk Revit 2025.4 - [R25 MSMC MIAMI SHORES - Sheet: A104-A - REFLECTED CEILING PLAN - AREA A]"
     },
     {
-      "timestamp": "2026-02-23T01:07:53.799756",
-      "type": "focus_changed",
-      "details": "MSMC MIAMI SHORES_LS MARKUPS - Bluebeam Revu x64"
-    },
-    {
-      "timestamp": "2026-02-23T01:07:57.345267",
-      "type": "info",
-      "details": "Revit MCP connected"
-    },
-    {
-      "timestamp": "2026-02-23T01:08:10.690472",
-      "type": "focus_changed",
-      "details": "Autodesk Revit 2025.4 - [R25 MSMC MIAMI SHORES - Sheet: LS101 - LIFE SAFETY PLAN]"
-    },
-    {
-      "timestamp": "2026-02-23T01:10:27.718983",
-      "type": "focus_changed",
-      "details": "Autodesk Revit 2025.4 - [R25 MSMC MIAMI SHORES - Sheet: LS101 - LIFE SAFETY PLAN]"
-    },
-    {
-      "timestamp": "2026-02-23T01:10:31.061291",
-      "type": "info",
-      "details": "Revit MCP connected"
-    },
-    {
-      "timestamp": "2026-02-23T01:13:02.168399",
-      "type": "focus_changed",
-      "details": "2026.02.16 MIAMI SHORES_ARCH_MARKUPS-DESKTOP-01CMLA9 - Bluebeam Revu x64"
-    },
-    {
-      "timestamp": "2026-02-23T01:13:05.636036",
-      "type": "info",
-      "details": "Revit MCP connected"
-    },
-    {
-      "timestamp": "2026-02-23T01:13:30.906821",
-      "type": "focus_changed",
-      "details": "Autodesk Revit 2025.4 - [R25 MSMC MIAMI SHORES - Sheet: A101 - ROOF PLAN - DEMOLITION]"
-    },
-    {
-      "timestamp": "2026-02-23T01:13:44.860433",
-      "type": "focus_changed",
-      "details": "2026.02.16 MIAMI SHORES_ARCH_MARKUPS-DESKTOP-01CMLA9* - Bluebeam Revu x64"
-    },
-    {
-      "timestamp": "2026-02-23T01:14:10.090074",
-      "type": "focus_changed",
-      "details": "Autodesk Revit 2025.4 - [R25 MSMC MIAMI SHORES - Sheet: A102 - FLOOR PLAN - NEW WORK]"
-    },
-    {
-      "timestamp": "2026-02-23T01:15:05.220871",
-      "type": "focus_changed",
-      "details": "Name"
-    },
-    {
-      "timestamp": "2026-02-23T01:15:18.317400",
-      "type": "focus_changed",
-      "details": "Autodesk Revit 2025.4 - [R25 MSMC MIAMI SHORES - Sheet: A102 - FLOOR PLAN - NEW WORK]"
-    },
-    {
-      "timestamp": "2026-02-23T01:16:07.052091",
-      "type": "focus_changed",
-      "details": "Autodesk Revit 2025.4 - [R25 MSMC MIAMI SHORES - Sheet: A102 - FLOOR PLAN - NEW WORK]"
-    },
-    {
-      "timestamp": "2026-02-23T01:16:26.480442",
-      "type": "info",
-      "details": "Revit MCP connected"
-    },
-    {
-      "timestamp": "2026-02-23T01:19:11.680354",
-      "type": "focus_changed",
-      "details": "Autodesk Revit 2025.4 - [R25 MSMC MIAMI SHORES - Sheet: A102 - FLOOR PLAN - NEW WORK]"
-    },
-    {
-      "timestamp": "2026-02-23T01:19:15.106520",
-      "type": "info",
-      "details": "Revit MCP connected"
-    },
-    {
-      "timestamp": "2026-02-23T01:19:54.203252",
-      "type": "focus_changed",
-      "details": "Visibility/Graphic Overrides for Architectural Plan"
-    },
-    {
-      "timestamp": "2026-02-23T01:20:07.624874",
-      "type": "focus_changed",
-      "details": "Autodesk Revit 2025.4 - [R25 MSMC MIAMI SHORES - Sheet: A102 - FLOOR PLAN - NEW WORK]"
-    },
-    {
-      "timestamp": "2026-02-23T01:21:46.647385",
-      "type": "focus_changed",
-      "details": "Autodesk Revit 2025.4 - [R25 MSMC MIAMI SHORES - Sheet: A102 - FLOOR PLAN - NEW WORK]"
-    },
-    {
-      "timestamp": "2026-02-23T01:21:50.376952",
-      "type": "info",
-      "details": "Revit MCP connected"
-    },
-    {
-      "timestamp": "2026-02-23T01:24:21.580864",
-      "type": "focus_changed",
-      "details": "Autodesk Revit 2025.4 - [R25 MSMC MIAMI SHORES - Sheet: A102 - FLOOR PLAN - NEW WORK]"
-    },
-    {
-      "timestamp": "2026-02-23T01:24:25.033677",
-      "type": "info",
-      "details": "Revit MCP connected"
-    },
-    {
-      "timestamp": "2026-02-23T01:24:37.622993",
-      "type": "focus_changed",
-      "details": "2026.02.16 MIAMI SHORES_ARCH_MARKUPS-DESKTOP-01CMLA9* - Bluebeam Revu x64"
-    },
-    {
-      "timestamp": "2026-02-23T01:24:50.719795",
-      "type": "focus_changed",
-      "details": "Autodesk Revit 2025.4 - [R25 MSMC MIAMI SHORES - Sheet: A102-A - FLOOR PLAN - NEW WORK AREA A]"
-    },
-    {
-      "timestamp": "2026-02-23T01:26:56.088632",
-      "type": "focus_changed",
-      "details": "Autodesk Revit 2025.4 - [R25 MSMC MIAMI SHORES - Sheet: A102-A - FLOOR PLAN - NEW WORK AREA A]"
-    },
-    {
-      "timestamp": "2026-02-23T01:26:59.873565",
-      "type": "info",
-      "details": "Revit MCP connected"
-    },
-    {
-      "timestamp": "2026-02-23T01:27:51.523099",
-      "type": "focus_changed",
-      "details": "Autodesk Revit 2025.4 - [R25 MSMC MIAMI SHORES - Sheet: A102-B - FLOOR PLAN - NEW WORK AREA B]"
-    },
-    {
-      "timestamp": "2026-02-23T01:28:33.945486",
-      "type": "focus_changed",
-      "details": "2026.02.16 MIAMI SHORES_ARCH_MARKUPS-DESKTOP-01CMLA9* - Bluebeam Revu x64"
-    },
-    {
-      "timestamp": "2026-02-23T01:29:30.752337",
-      "type": "focus_changed",
-      "details": "2026.02.16 MIAMI SHORES_ARCH_MARKUPS-DESKTOP-01CMLA9* - Bluebeam Revu x64"
-    },
-    {
-      "timestamp": "2026-02-23T01:29:34.279218",
-      "type": "info",
-      "details": "Revit MCP connected"
-    },
-    {
-      "timestamp": "2026-02-23T01:29:47.156107",
-      "type": "focus_changed",
-      "details": "Autodesk Revit 2025.4 - [R25 MSMC MIAMI SHORES - Sheet: A103 - ROOF PLAN]"
-    },
-    {
-      "timestamp": "2026-02-23T01:30:02.084458",
-      "type": "focus_changed",
-      "details": "Autodesk Revit 2025.4 - [R25 MSMC MIAMI SHORES - Sheet: A105-A - FINISHES PLAN AREA A]"
-    },
-    {
-      "timestamp": "2026-02-23T01:30:15.610968",
-      "type": "focus_changed",
-      "details": "Autodesk Revit 2025.4 - [R25 MSMC MIAMI SHORES - Sheet: A106-A - EQUIPMENT PLAN - AREA A]"
-    },
-    {
-      "timestamp": "2026-02-23T01:30:28.938371",
-      "type": "focus_changed",
-      "details": "Autodesk Revit 2025.4 - [R25 MSMC MIAMI SHORES - Sheet: A000 - COVER AND PROJECT INFORMATION]"
-    },
-    {
-      "timestamp": "2026-02-23T01:31:11.801730",
-      "type": "focus_changed",
-      "details": "2026.02.16 MIAMI SHORES_ARCH_MARKUPS-DESKTOP-01CMLA9 - Bluebeam Revu x64"
-    },
-    {
-      "timestamp": "2026-02-23T01:31:24.810702",
-      "type": "focus_changed",
-      "details": "Autodesk Revit 2025.4 - [R25 MSMC MIAMI SHORES - Sheet: A000 - COVER AND PROJECT INFORMATION]"
-    },
-    {
-      "timestamp": "2026-02-23T01:31:38.338284",
-      "type": "focus_changed",
-      "details": "04 SD - DD"
-    },
-    {
-      "timestamp": "2026-02-23T01:31:51.558090",
-      "type": "focus_changed",
-      "details": "AgentForge_Overview  -  Last saved by user - Word"
-    },
-    {
-      "timestamp": "2026-02-23T01:32:05.301344",
-      "type": "focus_changed",
-      "details": "AgentForge_Overview  -  Last saved by user - Word"
-    },
-    {
-      "timestamp": "2026-02-23T01:32:08.833077",
-      "type": "info",
-      "details": "Revit MCP connected"
-    },
-    {
-      "timestamp": "2026-02-23T01:32:22.733116",
-      "type": "focus_changed",
-      "details": "20260211 - Weekly - Invoice 034 - Word"
-    },
-    {
-      "timestamp": "2026-02-23T01:32:35.371382",
-      "type": "focus_changed",
-      "details": "4,525:10:09 \u0007 Timesheet \u0007 Clockify - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-23T01:32:48.525021",
-      "type": "focus_changed",
-      "details": "20260211 - Weekly - Invoice 034 - Word"
-    },
-    {
-      "timestamp": "2026-02-23T01:33:13.772393",
-      "type": "focus_changed",
-      "details": "Save As"
-    },
-    {
-      "timestamp": "2026-02-23T01:34:08.799097",
-      "type": "focus_changed",
-      "details": "4,525:11:43 \u0007 Timesheet \u0007 Clockify - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-23T01:34:21.542084",
-      "type": "focus_changed",
-      "details": "4,525:11:55 \u0007 Timesheet \u0007 Clockify - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-23T01:34:39.933407",
-      "type": "focus_changed",
-      "details": "4,525:12:14 \u0007 Timesheet \u0007 Clockify - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-23T01:34:43.377201",
-      "type": "info",
-      "details": "Revit MCP connected"
-    },
-    {
-      "timestamp": "2026-02-23T01:34:56.105062",
-      "type": "focus_changed",
-      "details": "4,525:12:30 \u0007 Timesheet \u0007 Clockify - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-23T01:35:08.599801",
-      "type": "focus_changed",
-      "details": "Save As"
-    },
-    {
-      "timestamp": "2026-02-23T01:35:46.904443",
-      "type": "focus_changed",
-      "details": "20260211 - Weekly - Invoice 034 - Word"
-    },
-    {
-      "timestamp": "2026-02-23T01:36:00.482397",
-      "type": "focus_changed",
-      "details": "20260222 - Weekly - Invoice 035 - Word"
-    },
-    {
-      "timestamp": "2026-02-23T01:36:16.654290",
-      "type": "focus_changed",
-      "details": "4,525:13:50 \u0007 Timesheet \u0007 Clockify - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-23T01:36:30.031318",
-      "type": "focus_changed",
-      "details": "20260222 - Weekly - Invoice 035 - Word"
-    },
-    {
-      "timestamp": "2026-02-23T01:37:14.904702",
-      "type": "focus_changed",
-      "details": "4,525:14:49 \u0007 Timesheet \u0007 Clockify - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-23T01:37:18.458153",
-      "type": "info",
-      "details": "Revit MCP connected"
-    },
-    {
-      "timestamp": "2026-02-23T01:37:31.757815",
-      "type": "focus_changed",
-      "details": "20260222 - Weekly - Invoice 035 - Word"
-    },
-    {
-      "timestamp": "2026-02-23T01:38:11.185569",
-      "type": "focus_changed",
-      "details": "4,525:15:45 \u0007 Timesheet \u0007 Clockify - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-23T01:38:24.634234",
-      "type": "focus_changed",
-      "details": "20260222 - Weekly - Invoice 035 - Word"
-    },
-    {
-      "timestamp": "2026-02-23T01:39:49.357857",
-      "type": "focus_changed",
-      "details": "20260222 - Weekly - Invoice 035 - Word"
-    },
-    {
-      "timestamp": "2026-02-23T01:39:52.802395",
-      "type": "info",
-      "details": "Revit MCP connected"
-    },
-    {
-      "timestamp": "2026-02-23T01:40:18.387789",
-      "type": "focus_changed",
-      "details": "4,525:17:52 \u0007 Timesheet \u0007 Clockify - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-23T01:40:32.165750",
-      "type": "focus_changed",
-      "details": "4,525:18:06 \u0007 Timesheet \u0007 Clockify - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-23T01:40:45.507269",
-      "type": "focus_changed",
-      "details": "20260222 - Weekly - Invoice 035 - Word"
-    },
-    {
-      "timestamp": "2026-02-23T01:41:53.209554",
-      "type": "focus_changed",
-      "details": "Connecting to printer."
-    },
-    {
-      "timestamp": "2026-02-23T01:42:05.817829",
-      "type": "focus_changed",
-      "details": "20260222 - Weekly - Invoice 035 - Word"
-    },
-    {
-      "timestamp": "2026-02-23T01:42:24.332017",
-      "type": "focus_changed",
-      "details": "20260222 - Weekly - Invoice 035 - Word"
-    },
-    {
-      "timestamp": "2026-02-23T01:42:27.779507",
-      "type": "info",
-      "details": "Revit MCP connected"
-    },
-    {
-      "timestamp": "2026-02-23T01:42:40.534420",
-      "type": "focus_changed",
-      "details": "Working FIles (D:)"
-    },
-    {
-      "timestamp": "2026-02-23T01:42:53.115277",
-      "type": "focus_changed",
-      "details": "001 - PROJECTS"
-    },
-    {
-      "timestamp": "2026-02-23T01:43:06.330039",
-      "type": "focus_changed",
-      "details": "01 - CLIENT PROJECTS"
-    },
-    {
-      "timestamp": "2026-02-23T01:43:31.716775",
-      "type": "focus_changed",
-      "details": "02 - BRUCE DAVIS ARCHITECT"
-    },
-    {
-      "timestamp": "2026-02-23T01:43:45.140548",
-      "type": "focus_changed",
-      "details": "TIMESHEETS"
-    },
-    {
-      "timestamp": "2026-02-23T01:44:01.211560",
-      "type": "focus_changed",
-      "details": "20260222 - Weekly - Invoice 035 - Bluebeam Revu x64"
-    },
-    {
-      "timestamp": "2026-02-23T01:44:28.181480",
-      "type": "focus_changed",
-      "details": "Inbox - [email] - Outlook"
-    },
-    {
-      "timestamp": "2026-02-23T01:44:41.524383",
-      "type": "focus_changed",
-      "details": "Untitled - Message (HTML)"
-    },
-    {
-      "timestamp": "2026-02-23T01:44:58.862989",
-      "type": "focus_changed",
-      "details": "Untitled - Message (HTML)"
-    },
-    {
-      "timestamp": "2026-02-23T01:45:02.375858",
-      "type": "info",
-      "details": "Revit MCP connected"
-    },
-    {
-      "timestamp": "2026-02-23T01:45:15.331003",
-      "type": "focus_changed",
-      "details": "Weber's Invoice # 035 - Message (HTML)"
-    },
-    {
-      "timestamp": "2026-02-23T01:45:42.256256",
-      "type": "focus_changed",
-      "details": "Insert File"
-    },
-    {
-      "timestamp": "2026-02-23T01:46:22.684272",
-      "type": "focus_changed",
-      "details": "Weber's Invoice # 035 - Message (HTML)"
-    },
-    {
-      "timestamp": "2026-02-23T01:46:39.468479",
-      "type": "focus_changed",
-      "details": "Inbox - [email] - Outlook"
-    },
-    {
-      "timestamp": "2026-02-23T01:46:52.497786",
-      "type": "focus_changed",
-      "details": "4,525:24:26 \u0007 Timesheet \u0007 Clockify - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-23T01:47:05.217261",
+      "timestamp": "2026-02-24T00:46:27.081930",
       "type": "app_opened",
-      "details": "WINWORD: 20260222 - Weekly - Invoice 035 - Word"
+      "details": "Revit: Autodesk Revit 2025.4 - [Home]"
     },
     {
-      "timestamp": "2026-02-23T01:47:05.372124",
-      "type": "app_opened",
-      "details": "TextInputHost: Microsoft Text Input Application"
-    },
-    {
-      "timestamp": "2026-02-23T01:47:05.655530",
-      "type": "app_opened",
-      "details": "ms-teams: Chat | Bruce Davis | BD Architect llc | [email] | Microsoft Teams"
-    },
-    {
-      "timestamp": "2026-02-23T01:47:05.913838",
-      "type": "app_opened",
-      "details": "Revu: 20260222 - Weekly - Invoice 035 - Bluebeam Revu x64"
-    },
-    {
-      "timestamp": "2026-02-23T01:47:06.172295",
-      "type": "app_opened",
-      "details": "WhatsApp.Root: WhatsApp"
-    },
-    {
-      "timestamp": "2026-02-23T01:47:06.477335",
-      "type": "app_opened",
-      "details": "CalculatorApp: Calculator"
-    },
-    {
-      "timestamp": "2026-02-23T01:47:06.764691",
-      "type": "app_opened",
-      "details": "Wispr Flow: Hub"
-    },
-    {
-      "timestamp": "2026-02-23T01:47:07.039283",
-      "type": "app_opened",
-      "details": "ApplicationFrameHost: Calculator"
-    },
-    {
-      "timestamp": "2026-02-23T01:47:07.297569",
-      "type": "app_opened",
-      "details": "Revit: Autodesk Revit 2025.4 - [R25 MSMC MIAMI SHORES - Sheet: A000 - COVER AND PROJECT INFORMATION]"
-    },
-    {
-      "timestamp": "2026-02-23T01:47:07.579632",
-      "type": "app_opened",
-      "details": "SystemSettings: Settings"
-    },
-    {
-      "timestamp": "2026-02-23T01:47:07.871740",
-      "type": "app_opened",
-      "details": "OUTLOOK: Inbox - [email] - Outlook"
-    },
-    {
-      "timestamp": "2026-02-23T01:47:08.172191",
-      "type": "app_opened",
-      "details": "Code: Welcome - Visual Studio Code"
-    },
-    {
-      "timestamp": "2026-02-23T01:47:20.976186",
+      "timestamp": "2026-02-24T00:46:27.370032",
       "type": "app_closed",
-      "details": "Revu: 20260222 - Weekly - Invoice 035 - Bluebeam Revu x64"
+      "details": "Revit: Autodesk Revit 2025.4 - [Family1 - Floor Plan: Ref. Level]"
     },
     {
-      "timestamp": "2026-02-23T01:47:21.275655",
+      "timestamp": "2026-02-24T00:46:28.453315",
+      "type": "focus_changed",
+      "details": "New Family - Select Template File"
+    },
+    {
+      "timestamp": "2026-02-24T00:46:41.704487",
       "type": "app_closed",
-      "details": "WINWORD: 20260222 - Weekly - Invoice 035 - Word"
+      "details": "Revit: Autodesk Revit 2025.4 - [Home]"
     },
     {
-      "timestamp": "2026-02-23T01:47:22.394046",
+      "timestamp": "2026-02-24T00:47:09.583110",
+      "type": "app_opened",
+      "details": "Revit: Autodesk Revit 2025.4 - [Family2 - Floor Plan: Ref. Level]"
+    },
+    {
+      "timestamp": "2026-02-24T00:47:10.636501",
+      "type": "focus_changed",
+      "details": "Autodesk Revit 2025.4 - [Family2 - Floor Plan: Ref. Level]"
+    },
+    {
+      "timestamp": "2026-02-24T00:51:24.748350",
+      "type": "app_opened",
+      "details": "Revit: Autodesk Revit 2025.4 - [R25 MSMC MIAMI SHORES - Sheet: A104-A - REFLECTED CEILING PLAN - AREA A]"
+    },
+    {
+      "timestamp": "2026-02-24T00:51:24.894883",
+      "type": "app_closed",
+      "details": "Revit: Autodesk Revit 2025.4 - [Family2 - Floor Plan: Ref. Level]"
+    },
+    {
+      "timestamp": "2026-02-24T00:51:26.043029",
+      "type": "focus_changed",
+      "details": "Autodesk Revit 2025.4 - [R25 MSMC MIAMI SHORES - Sheet: A104-A - REFLECTED CEILING PLAN - AREA A]"
+    },
+    {
+      "timestamp": "2026-02-24T00:51:30.100291",
+      "type": "info",
+      "details": "Revit MCP connected"
+    },
+    {
+      "timestamp": "2026-02-24T00:52:24.695170",
+      "type": "app_closed",
+      "details": "Revit: Autodesk Revit 2025.4 - [R25 MSMC MIAMI SHORES - Sheet: A104-A - REFLECTED CEILING PLAN - AREA A]"
+    },
+    {
+      "timestamp": "2026-02-24T00:52:38.338353",
+      "type": "app_opened",
+      "details": "Revit: Autodesk Revit 2025.4 - [R25 MSMC MIAMI SHORES - Sheet: A104-A - REFLECTED CEILING PLAN - AREA A]"
+    },
+    {
+      "timestamp": "2026-02-24T00:53:10.810034",
+      "type": "app_opened",
+      "details": "Revit: Autodesk Revit 2025.4 - [R25 MSMC MIAMI SHORES - Sheet: A104 - REFLECTED CEILING PLAN]"
+    },
+    {
+      "timestamp": "2026-02-24T00:53:11.107018",
+      "type": "app_closed",
+      "details": "Revit: Autodesk Revit 2025.4 - [R25 MSMC MIAMI SHORES - Sheet: A104-A - REFLECTED CEILING PLAN - AREA A]"
+    },
+    {
+      "timestamp": "2026-02-24T00:53:12.328434",
+      "type": "focus_changed",
+      "details": "Autodesk Revit 2025.4 - [R25 MSMC MIAMI SHORES - Sheet: A104 - REFLECTED CEILING PLAN]"
+    },
+    {
+      "timestamp": "2026-02-24T00:53:25.284841",
+      "type": "app_opened",
+      "details": "Revit: Autodesk Revit 2025.4 - [R25 MSMC MIAMI SHORES - Sheet: A104-A - REFLECTED CEILING PLAN - AREA A]"
+    },
+    {
+      "timestamp": "2026-02-24T00:53:25.569170",
+      "type": "app_closed",
+      "details": "Revit: Autodesk Revit 2025.4 - [R25 MSMC MIAMI SHORES - Sheet: A104 - REFLECTED CEILING PLAN]"
+    },
+    {
+      "timestamp": "2026-02-24T00:53:26.701046",
+      "type": "focus_changed",
+      "details": "Autodesk Revit 2025.4 - [R25 MSMC MIAMI SHORES - Sheet: A104-A - REFLECTED CEILING PLAN - AREA A]"
+    },
+    {
+      "timestamp": "2026-02-24T00:53:40.116804",
+      "type": "app_opened",
+      "details": "Revit: Autodesk Revit 2025.4 - [R25 MSMC MIAMI SHORES - Sheet: A104 - REFLECTED CEILING PLAN]"
+    },
+    {
+      "timestamp": "2026-02-24T00:53:40.406372",
+      "type": "app_closed",
+      "details": "Revit: Autodesk Revit 2025.4 - [R25 MSMC MIAMI SHORES - Sheet: A104-A - REFLECTED CEILING PLAN - AREA A]"
+    },
+    {
+      "timestamp": "2026-02-24T00:53:41.482162",
+      "type": "focus_changed",
+      "details": "Autodesk Revit 2025.4 - [R25 MSMC MIAMI SHORES - Sheet: A104 - REFLECTED CEILING PLAN]"
+    },
+    {
+      "timestamp": "2026-02-24T00:55:21.398179",
+      "type": "focus_changed",
+      "details": "Autodesk Revit 2025.4 - [R25 MSMC MIAMI SHORES - Sheet: A104-A - REFLECTED CEILING PLAN - AREA A]"
+    },
+    {
+      "timestamp": "2026-02-24T00:55:34.243112",
+      "type": "app_opened",
+      "details": "Revit: Autodesk Revit 2025.4 - [R25 MSMC MIAMI SHORES - Sheet: A104-A - REFLECTED CEILING PLAN - AREA A]"
+    },
+    {
+      "timestamp": "2026-02-24T00:55:34.528757",
+      "type": "app_closed",
+      "details": "Revit: Autodesk Revit 2025.4 - [R25 MSMC MIAMI SHORES - Sheet: A104 - REFLECTED CEILING PLAN]"
+    },
+    {
+      "timestamp": "2026-02-24T00:56:05.925424",
+      "type": "app_opened",
+      "details": "msedge: AI Voice Generator & Text to Speech | ElevenLabs and 4 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-24T00:56:06.204547",
+      "type": "app_closed",
+      "details": "msedge: Watch Prodigal Son: Season 1 | Prime Video and 5 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-24T00:56:07.297908",
+      "type": "focus_changed",
+      "details": "AI Voice Generator & Text to Speech | ElevenLabs and 4 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-24T00:56:20.246946",
+      "type": "app_opened",
+      "details": "msedge: YouTube and 6 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-24T00:56:20.540620",
+      "type": "app_closed",
+      "details": "msedge: AI Voice Generator & Text to Speech | ElevenLabs and 4 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-24T00:56:21.791690",
+      "type": "focus_changed",
+      "details": "YouTube and 6 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-24T00:57:31.991967",
+      "type": "app_opened",
+      "details": "msedge: ALPHALETE TRY-ON haul & what went wrong... - YouTube and 6 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-24T00:57:32.261156",
+      "type": "app_closed",
+      "details": "msedge: YouTube and 6 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-24T00:57:33.376622",
+      "type": "focus_changed",
+      "details": "ALPHALETE TRY-ON haul & what went wrong... - YouTube and 6 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-24T00:59:10.787396",
+      "type": "app_opened",
+      "details": "msedge: YouTube and 6 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-24T00:59:11.055577",
+      "type": "app_closed",
+      "details": "msedge: ALPHALETE TRY-ON haul & what went wrong... - YouTube and 6 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-24T00:59:12.116367",
+      "type": "focus_changed",
+      "details": "YouTube and 6 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-24T00:59:39.358630",
       "type": "focus_changed",
       "details": "Welcome - Visual Studio Code"
     },
     {
-      "timestamp": "2026-02-23T01:47:34.415472",
+      "timestamp": "2026-02-24T01:02:55.745599",
+      "type": "app_opened",
+      "details": "chrome: (5 unread) - [email] - Yahoo Mail - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-24T01:02:56.033952",
       "type": "app_closed",
-      "details": "WhatsApp.Root: WhatsApp"
+      "details": "chrome: (4 unread) - [email] - Yahoo Mail - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-24T01:03:41.522852",
+      "type": "focus_changed",
+      "details": "YouTube and 6 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-24T01:04:38.489114",
+      "type": "app_closed",
+      "details": "msedge: YouTube and 6 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-24T01:04:52.167965",
+      "type": "app_opened",
+      "details": "msedge: YouTube and 6 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-24T01:05:19.307498",
+      "type": "app_opened",
+      "details": "msedge: New tab and 3 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-24T01:05:19.617213",
+      "type": "app_closed",
+      "details": "msedge: YouTube and 6 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-24T01:05:20.847328",
+      "type": "focus_changed",
+      "details": "Welcome - Visual Studio Code"
+    },
+    {
+      "timestamp": "2026-02-24T01:05:48.222573",
+      "type": "focus_changed",
+      "details": "2500173R0* - Bluebeam Revu x64"
+    },
+    {
+      "timestamp": "2026-02-24T01:06:45.950950",
+      "type": "focus_changed",
+      "details": "Autodesk Revit 2025.4 - [R25 MSMC MIAMI SHORES - Sheet: A104-A - REFLECTED CEILING PLAN - AREA A]"
+    },
+    {
+      "timestamp": "2026-02-24T01:06:58.542728",
+      "type": "app_closed",
+      "details": "OUTLOOK: Inbox - [email] - Outlook"
+    },
+    {
+      "timestamp": "2026-02-24T01:06:59.619246",
+      "type": "focus_changed",
+      "details": "New tab and 3 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-24T01:07:29.996332",
+      "type": "focus_changed",
+      "details": "Welcome - Visual Studio Code"
+    },
+    {
+      "timestamp": "2026-02-24T01:07:43.609252",
+      "type": "focus_changed",
+      "details": "New tab and 3 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-24T01:07:56.797877",
+      "type": "app_opened",
+      "details": "msedge: YouTube and 4 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-24T01:07:57.081746",
+      "type": "app_closed",
+      "details": "msedge: New tab and 3 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-24T01:07:58.190416",
+      "type": "focus_changed",
+      "details": "YouTube and 4 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-24T01:09:34.043954",
+      "type": "app_opened",
+      "details": "chrome: (6 unread) - [email] - Yahoo Mail - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-24T01:09:34.350460",
+      "type": "app_closed",
+      "details": "chrome: (5 unread) - [email] - Yahoo Mail - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-24T01:09:47.648890",
+      "type": "app_opened",
+      "details": "chrome: 1 New Message - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-24T01:09:47.954190",
+      "type": "app_closed",
+      "details": "chrome: (6 unread) - [email] - Yahoo Mail - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-24T01:10:01.853592",
+      "type": "app_opened",
+      "details": "msedge: try on haul - YouTube and 4 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-24T01:10:02.133302",
+      "type": "app_closed",
+      "details": "msedge: YouTube and 4 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-24T01:10:03.215491",
+      "type": "focus_changed",
+      "details": "try on haul - YouTube and 4 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-24T01:10:19.303663",
+      "type": "app_opened",
+      "details": "chrome: (6 unread) - [email] - Yahoo Mail - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-24T01:10:19.571596",
+      "type": "app_closed",
+      "details": "chrome: 1 New Message - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-24T01:11:43.838535",
+      "type": "app_opened",
+      "details": "msedge: YouTube and 4 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-24T01:11:44.128529",
+      "type": "app_closed",
+      "details": "msedge: try on haul - YouTube and 4 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-24T01:11:45.218867",
+      "type": "focus_changed",
+      "details": "YouTube and 4 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-24T01:16:20.521741",
+      "type": "app_opened",
+      "details": "msedge: Hymn of pearl - part 1 - by Ioanna Chrysomalli - YouTube and 4 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-24T01:16:20.820858",
+      "type": "app_closed",
+      "details": "msedge: YouTube and 4 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-24T01:16:21.953346",
+      "type": "focus_changed",
+      "details": "Hymn of pearl - part 1 - by Ioanna Chrysomalli - YouTube and 4 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-24T01:17:17.712424",
+      "type": "app_opened",
+      "details": "msedge: YouTube and 4 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-24T01:17:17.978096",
+      "type": "app_closed",
+      "details": "msedge: Hymn of pearl - part 1 - by Ioanna Chrysomalli - YouTube and 4 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-24T01:17:19.051743",
+      "type": "focus_changed",
+      "details": "YouTube and 4 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-24T01:20:17.521069",
+      "type": "focus_changed",
+      "details": "Welcome - Visual Studio Code"
+    },
+    {
+      "timestamp": "2026-02-24T01:22:08.067168",
+      "type": "focus_changed",
+      "details": "YouTube and 4 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-24T01:25:51.403875",
+      "type": "focus_changed",
+      "details": "Autodesk Revit 2025.4 - [R25 MSMC MIAMI SHORES - Sheet: A104-A - REFLECTED CEILING PLAN - AREA A]"
+    },
+    {
+      "timestamp": "2026-02-24T01:27:02.311389",
+      "type": "focus_changed",
+      "details": "Welcome - Visual Studio Code"
+    },
+    {
+      "timestamp": "2026-02-24T01:30:01.059030",
+      "type": "app_opened",
+      "details": "msedge: PChee Bum / Lici Fit Legging try on - YouTube and 4 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-24T01:30:01.345020",
+      "type": "app_closed",
+      "details": "msedge: YouTube and 4 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-24T01:30:02.411877",
+      "type": "focus_changed",
+      "details": "PChee Bum / Lici Fit Legging try on - YouTube and 4 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-24T01:32:05.817280",
+      "type": "app_opened",
+      "details": "msedge: Vacation Try On - Revolve Sale Items! (*Giveaway*) - YouTube and 4 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-24T01:32:06.112592",
+      "type": "app_closed",
+      "details": "msedge: PChee Bum / Lici Fit Legging try on - YouTube and 4 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-24T01:32:07.204724",
+      "type": "focus_changed",
+      "details": "Vacation Try On - Revolve Sale Items! (*Giveaway*) - YouTube and 4 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-24T01:33:04.552626",
+      "type": "app_opened",
+      "details": "msedge: YouTube and 4 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-24T01:33:04.837217",
+      "type": "app_closed",
+      "details": "msedge: Vacation Try On - Revolve Sale Items! (*Giveaway*) - YouTube and 4 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-24T01:33:05.948206",
+      "type": "focus_changed",
+      "details": "YouTube and 4 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-24T01:33:19.826645",
+      "type": "app_closed",
+      "details": "msedge: YouTube and 4 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-24T01:33:21.109293",
+      "type": "focus_changed",
+      "details": "(6 unread) - [email] - Yahoo Mail - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-24T01:33:33.424816",
+      "type": "app_closed",
+      "details": "chrome: (6 unread) - [email] - Yahoo Mail - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-24T01:33:34.558634",
+      "type": "focus_changed",
+      "details": "Welcome - Visual Studio Code"
+    },
+    {
+      "timestamp": "2026-02-24T01:34:17.485837",
+      "type": "app_closed",
+      "details": "ms-teams: Chat | Paola Gomez | BD Architect llc | [email] | Microsoft Teams"
+    },
+    {
+      "timestamp": "2026-02-24T01:34:18.745680",
+      "type": "focus_changed",
+      "details": "Autodesk Revit 2025.4 - [Home]"
+    },
+    {
+      "timestamp": "2026-02-24T01:34:31.280846",
+      "type": "app_closed",
+      "details": "Revit: Autodesk Revit 2025.4 - [R25 MSMC MIAMI SHORES - Sheet: A104-A - REFLECTED CEILING PLAN - AREA A]"
+    },
+    {
+      "timestamp": "2026-02-24T01:34:32.387717",
+      "type": "focus_changed",
+      "details": "Autodesk AutoCAD 2024 - [S - Ceiling Plan.dwg]"
+    },
+    {
+      "timestamp": "2026-02-24T01:35:11.108854",
+      "type": "focus_changed",
+      "details": "Welcome - Visual Studio Code"
+    },
+    {
+      "timestamp": "2026-02-24T01:35:14.735389",
+      "type": "alert",
+      "details": "Revit MCP disconnected"
+    },
+    {
+      "timestamp": "2026-02-24T01:36:18.243077",
+      "type": "app_closed",
+      "details": "acad: Autodesk AutoCAD 2024 - [S - Ceiling Plan.dwg]"
+    },
+    {
+      "timestamp": "2026-02-24T01:36:19.364720",
+      "type": "focus_changed",
+      "details": "AutoCAD"
+    },
+    {
+      "timestamp": "2026-02-24T01:36:32.741490",
+      "type": "focus_changed",
+      "details": "Program Manager"
+    },
+    {
+      "timestamp": "2026-02-24T02:00:04.018116",
+      "type": "focus_changed",
+      "details": "Welcome - Visual Studio Code"
     }
   ],
   "stats": {
     "started_at": "2025-12-04T10:13:59.664371",
-    "updates": 48840,
-    "errors": 11,
-    "restarts": 48
+    "updates": 54930,
+    "errors": 14,
+    "restarts": 51
   },
   "previous_apps": [
     [
+      "ApplicationFrameHost",
+      "Calculator"
+    ],
+    [
       "TextInputHost",
       "Microsoft Text Input Application"
-    ],
-    [
-      "ms-teams",
-      "Chat | Bruce Davis | BD Architect llc | weber@bdarchitect.net | Microsoft Teams"
-    ],
-    [
-      "CalculatorApp",
-      "Calculator"
     ],
     [
       "Wispr Flow",
       "Hub"
     ],
     [
-      "ApplicationFrameHost",
-      "Calculator"
+      "explorer",
+      "video_03_checkpoint"
     ],
     [
-      "Revit",
-      "Autodesk Revit 2025.4 - [R25 MSMC MIAMI SHORES - Sheet: A000 - COVER AND PROJECT INFORMATION]"
+      "explorer",
+      "video_01_retry_ladder"
+    ],
+    [
+      "explorer",
+      "video_02_architecture"
     ],
     [
       "SystemSettings",
       "Settings"
     ],
     [
-      "OUTLOOK",
-      "Inbox - weber@bdarchitect.net - Outlook"
+      "notepad",
+      "*Untitled - Notepad"
+    ],
+    [
+      "CalculatorApp",
+      "Calculator"
+    ],
+    [
+      "Revu",
+      "2500173R0* - Bluebeam Revu x64"
     ],
     [
       "Code",

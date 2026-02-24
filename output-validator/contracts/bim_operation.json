@@ -1,0 +1,10 @@
+{
+  "name": "bim_operation",
+  "description": "Validates BIM/Revit operation outputs — elements, positions, verification",
+  "text_assertions": [
+    {"pattern": "(element|wall|door|window|room|level|sheet|view)", "required": true, "case_insensitive": true},
+    {"pattern": "(created|placed|modified|updated|verified)", "required": true, "case_insensitive": true},
+    {"pattern": "(error|exception|failed to)", "fail_if_present": true, "case_insensitive": true, "severity": "warning"}
+  ],
+  "max_retries": 2
+}

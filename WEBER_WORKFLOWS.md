@@ -1,18 +1,16 @@
-# WEBER GOUIN - MASTER WORKFLOW REFERENCE
-# THIS FILE MUST BE READ AT EVERY SESSION START
+# WEBER GOUIN - WORKFLOW REFERENCE
+# Load when you need contacts, email, calendar, Revit pipes, or project paths.
 
-**User:** Weber Gouin (NEVER "Rick")
+**User:** Weber Gouin
 **Primary Email:** weberg619@gmail.com
-**Browser:** Chrome (NEVER Edge or other)
+**Browser:** Chrome
 **Business:** BIM Ops Studio + WG Design Drafting
 
 ---
 
-## 📧 EMAIL (Gmail)
+## EMAIL (Gmail)
 
-### SENDING an Email
-**Always use Chrome + Gmail. NEVER Outlook.**
-
+### Sending an Email
 ```powershell
 Start-Process "chrome.exe" -ArgumentList "https://mail.google.com/mail/u/0/?view=cm&fs=1&to=EMAIL&su=SUBJECT&body=BODY"
 ```
@@ -24,12 +22,12 @@ Start-Process "chrome.exe" -ArgumentList "https://mail.google.com/mail/u/0/?view
 
 **URL Encoding:** space=%20, newline=%0A, &=%26
 
-### DOWNLOADING Attachments
+### Downloading Attachments
 ```bash
 python3 /mnt/d/_CLAUDE-TOOLS/gmail-attachments/imap_download.py --search "from:sender" --download "/path"
 ```
 
-### Common Contacts (Auto-extracted from Gmail)
+### Common Contacts
 | Name | Email | Company/Notes |
 |------|-------|---------------|
 | M Isa Fantal | ifantal@lesfantal.com | Fantal Consulting / Les Fantal |
@@ -64,7 +62,7 @@ python3 /mnt/d/_CLAUDE-TOOLS/gmail-attachments/imap_download.py --search "from:s
 
 ---
 
-## 📅 CALENDAR (Google Calendar)
+## CALENDAR (Google Calendar)
 
 **Tool:** `/mnt/d/_CLAUDE-TOOLS/google-calendar-mcp/calendar_client.py`
 **Weber's Timezone:** Pacific (3 hours behind ET)
@@ -87,9 +85,9 @@ python3 /mnt/d/_CLAUDE-TOOLS/google-calendar-mcp/calendar_client.py search "keyw
 
 ---
 
-## 🏗️ REVIT (MCP Bridge)
+## REVIT (MCP Bridge)
 
-### Connection Method: NAMED PIPES (NOT HTTP)
+### Connection: Named Pipes
 
 | Version | Pipe Name |
 |---------|-----------|
@@ -109,32 +107,29 @@ $pipe.Close()
 ```
 
 ### Check Which Revit is Open
-Read `/mnt/d/_CLAUDE-TOOLS/system-bridge/live_state.json` - look for Revit in applications list
+Read `/mnt/d/_CLAUDE-TOOLS/system-bridge/live_state.json` — look for Revit in applications list
 
 ---
 
-## 📁 GOOGLE DRIVE
+## GOOGLE DRIVE
 
-**Access:** Via browser or API
 ```powershell
-# Open Google Drive in Chrome
 Start-Process "chrome.exe" -ArgumentList "https://drive.google.com"
 ```
 
 ---
 
-## 📝 MICROSOFT WORD
+## MICROSOFT WORD
 
-**Opening a Word document:**
 ```powershell
 Start-Process "path\to\document.docx"
 ```
 
-**Recent files location:** Check live_state.json for recent_files
+Recent files: check live_state.json
 
 ---
 
-## 📊 MICROSOFT EXCEL
+## MICROSOFT EXCEL
 
 **Launch via COM (required for MCP control):**
 ```powershell
@@ -150,40 +145,33 @@ $wb = $excel.Workbooks.Add()
 Start-Process "path\to\spreadsheet.xlsx"
 ```
 
-**Position on monitor:** See `/mnt/d/_CLAUDE-TOOLS/WINDOW_MANAGEMENT.md`
+**Window positioning:** Load `/mnt/d/_CLAUDE-TOOLS/DESKTOP.md`
 
 ---
 
-## 🔵 BLUEBEAM
+## BLUEBEAM
 
-**Check what's open:** Read live_state.json → bluebeam.document
+**Check what's open:** Read live_state.json
 **MCP Tools:** `mcp__bluebeam__*` functions available
 
 ---
 
-## 🔊 VOICE (Text-to-Speech)
+## VOICE (Text-to-Speech)
 
-**ALWAYS speak summaries after completing tasks:**
-```bash
-python3 /mnt/d/_CLAUDE-TOOLS/voice-mcp/speak.py "Summary text here"
-```
-
-Or use MCP:
 ```
 mcp__voice__speak(text="Summary", voice="andrew")
 ```
 
 ---
 
-## 🧠 MEMORY
+## MEMORY
 
 ### Session Start
 ```
 mcp__claude-memory__memory_smart_context(current_directory="/mnt/d/...")
 ```
 
-### Store Corrections (CRITICAL)
-When Weber corrects me:
+### Store Corrections
 ```
 mcp__claude-memory__memory_store_correction(
     what_claude_said="...",
@@ -194,7 +182,7 @@ mcp__claude-memory__memory_store_correction(
 
 ---
 
-## 📂 PROJECT FOLDER MAPPINGS
+## PROJECT FOLDER MAPPINGS
 
 | Client/Project | Path |
 |----------------|------|
@@ -206,56 +194,10 @@ mcp__claude-memory__memory_store_correction(
 
 ---
 
-## 🖥️ SYSTEM STATE
-
-**Live state file:** `/mnt/d/_CLAUDE-TOOLS/system-bridge/live_state.json`
-- Shows open applications
-- Shows which monitors
-- Shows recent files
-- Shows Revit/Bluebeam status
-
-**ALWAYS check this at session start to know what Weber is working on.**
-
----
-
-## 🖥️ WINDOW MANAGEMENT (Multi-Monitor + DPI)
-
-**Full guide:** `/mnt/d/_CLAUDE-TOOLS/WINDOW_MANAGEMENT.md`
-
-**Quick rules:**
-- 3 monitors, all 2560x1440 virtual (3840x2160 physical, 150% DPI)
-- Center monitor = DISPLAY2, x=-2560 (Weber's preferred demo monitor)
-- **MUST call `SetProcessDPIAware()` before any `SetWindowPos`**
-- **NEVER use `ShowWindow(SW_MAXIMIZE)`** — spans monitors
-- **NEVER use `window_move` MCP tool** — not DPI-aware
-- Use `SetWindowPos(hwnd, 0, -2560, 0, 2560, 1400, 0x0004)` for center monitor
-
----
-
-## ❌ COMMON MISTAKES - NEVER DO THESE
-
-| Wrong | Correct |
-|-------|---------|
-| Open Outlook | Open Gmail in Chrome |
-| Use Edge browser | Use Chrome |
-| Sign as "Rick" | Sign as "Weber Gouin" |
-| HTTP to Revit ports | Use named pipes |
-| Guess paths | Check system state or ask |
-| Skip reading workflows | Always read this file first |
-| Use `window_move` MCP tool | Use DPI-aware `SetWindowPos` pattern |
-| Use `ShowWindow(SW_MAXIMIZE)` | Use `SetWindowPos` to fill monitor |
-| Use `Start-Process excel.exe` | Use `New-Object -ComObject Excel.Application` |
-| Send keys without verifying focus | `SetForegroundWindow` + screenshot first |
-
----
-
-## 🏛️ PERMIT & PROPERTY RESEARCH
+## PERMIT & PROPERTY RESEARCH
 
 ### eTRAKiT Permit Tracking
 **MCP Server:** `mcp__etrakit-mcp__*`
-**Path:** `/mnt/d/_CLAUDE-TOOLS/etrakit-mcp/`
-
-Scrapes CentralSquare eTRAKiT permit portals (Broward County cities). Uses CDP browser automation with 30-minute cache.
 
 ```
 mcp__etrakit-mcp__search_permits(city="...", permit_number="...")
@@ -264,9 +206,6 @@ mcp__etrakit-mcp__get_permit_details(city="...", permit_number="...")
 
 ### Property Appraiser
 **MCP Server:** `mcp__property-appraiser-mcp__*`
-**Path:** `/mnt/d/_CLAUDE-TOOLS/property-appraiser-mcp/`
-
-Scrapes Broward County (BCPA) and Miami-Dade County property appraiser data. 7-day cache TTL.
 
 ```
 mcp__property-appraiser-mcp__search_property(county="broward", address="...")
@@ -274,54 +213,31 @@ mcp__property-appraiser-mcp__get_property_details(folio="...")
 ```
 
 ### Government Data
-**MCP Server:** `mcp__govdata-mcp__*`
-**Path:** `/mnt/d/_CLAUDE-TOOLS/govdata-mcp/`
-
-Building permits, code violations, zoning data from government open data portals.
+**MCP Server:** `mcp__govdata-mcp__*` — Building permits, code violations, zoning data.
 
 ---
 
-## 🔬 RESEARCH TOOLS
+## RESEARCH TOOLS
 
 ### Academic Research
 **MCP Server:** `mcp__research-mcp__*`
-**Path:** `/mnt/d/_CLAUDE-TOOLS/research-mcp/`
-
-Literature discovery and analysis from academic sources.
 
 ### HuggingFace Datasets
 **MCP Server:** `mcp__datasets-mcp__*`
-**Path:** `/mnt/d/_CLAUDE-TOOLS/datasets-mcp/`
-
-Search, explore, preview, and download HuggingFace Hub datasets.
 
 ---
 
-## 👁️ VISUAL MEMORY
+## VISUAL MEMORY
 
 **MCP Server:** `mcp__visual-memory__*`
-**Path:** `/mnt/d/_CLAUDE-TOOLS/visual-memory-mcp/`
-
-Captures screen at intervals, indexes with OCR, enables visual recall. Privacy-first with whitelist/blocklist controls.
 
 ```
-mcp__visual-memory__memory_start_capture()   # Start capturing
-mcp__visual-memory__memory_search(query="...") # Search by text in screenshots
-mcp__visual-memory__memory_recall_recent()    # Get recent captures
-mcp__visual-memory__memory_recall_app(app="...") # Get captures from specific app
+mcp__visual-memory__memory_start_capture()
+mcp__visual-memory__memory_search(query="...")
+mcp__visual-memory__memory_recall_recent()
+mcp__visual-memory__memory_recall_app(app="...")
 ```
 
 ---
 
-## ✅ SESSION START CHECKLIST
-
-1. [ ] Read this file: `/mnt/d/_CLAUDE-TOOLS/WEBER_WORKFLOWS.md`
-2. [ ] Read system state: `/mnt/d/_CLAUDE-TOOLS/system-bridge/live_state.json`
-3. [ ] Load memory context: `memory_smart_context`
-4. [ ] Note what apps are open
-5. [ ] Acknowledge to Weber what you see
-
----
-
-*Last Updated: 2026-02-22*
-*Add new workflows here as they are established*
+*Last Updated: 2026-02-23*

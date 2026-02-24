@@ -1,0 +1,38 @@
+[
+  {
+    "task_id": "fa83f50d-4b35-43da-b3e4-24ed705a2a9f",
+    "video": "video_01_retry_ladder",
+    "clip_idx": 0,
+    "output_path": "/mnt/d/_CLAUDE-TOOLS/video-pipeline/shorts/video_01_retry_ladder/runway_clips/clip_00.mp4"
+  },
+  {
+    "task_id": "415db7e6-c8ae-4bce-86d9-9a9102d0d728",
+    "video": "video_01_retry_ladder",
+    "clip_idx": 1,
+    "output_path": "/mnt/d/_CLAUDE-TOOLS/video-pipeline/shorts/video_01_retry_ladder/runway_clips/clip_01.mp4"
+  },
+  {
+    "task_id": "e592d6b3-5929-447a-aae6-0078b2e063a3",
+    "video": "video_01_retry_ladder",
+    "clip_idx": 2,
+    "output_path": "/mnt/d/_CLAUDE-TOOLS/video-pipeline/shorts/video_01_retry_ladder/runway_clips/clip_02.mp4"
+  },
+  {
+    "task_id": "ba4026f5-9707-4e0c-baf6-9feca212665c",
+    "video": "video_01_retry_ladder",
+    "clip_idx": 3,
+    "output_path": "/mnt/d/_CLAUDE-TOOLS/video-pipeline/shorts/video_01_retry_ladder/runway_clips/clip_03.mp4"
+  },
+  {
+    "task_id": "4c35cdfb-b5f7-4dec-9194-25ba1c70f5b3",
+    "video": "video_01_retry_ladder",
+    "clip_idx": 4,
+    "output_path": "/mnt/d/_CLAUDE-TOOLS/video-pipeline/shorts/video_01_retry_ladder/runway_clips/clip_04.mp4"
+  },
+  {
+    "task_id": "68b69138-3b63-4edd-a18b-6ff2bdd2e464",
+    "video": "video_02_architecture",
+    "clip_idx": 0,
+    "output_path": "/mnt/d/_CLAUDE-TOOLS/video-pipeline/shorts/video_02_architecture/runway_clips/clip_00.mp4"
+  }
+]

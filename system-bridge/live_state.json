@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-02-23T04:00:21.774450",
+  "generated_at": "2026-02-24T04:00:32.860862",
   "source": {
     "daemon_version": "2.1.0",
     "hostname": "DESKTOP-01CMLA9",
-    "pid": 57516
+    "pid": 39612
   },
-  "timestamp": "2026-02-23T04:00:15.780556",
+  "timestamp": "2026-02-24T04:00:29.842758",
   "active_window": "Welcome - Visual Studio Code",
   "monitors": {
     "screens": [
@@ -55,27 +55,27 @@
   },
   "system": {
     "cpu_percent": 0,
-    "memory_percent": 44,
+    "memory_percent": 49,
     "memory_total_gb": 64,
-    "memory_used_gb": 27.9
+    "memory_used_gb": 31.2
   },
-  "clipboard_preview": "2-144 MSMC Miami Shores Physician Practice",
+  "clipboard_preview": "1. Briefing Structure (automatic)                                                                   ...",
   "recent_files": [
-    "Documents",
-    "AgentForge_Overview",
-    "TIMESHEETS",
-    "20260222 - Weekly - Invoice 035",
-    "20260222 - Weekly - Invoice 035 (2)",
-    "20260211 - Weekly - Invoice 034",
     "03 Drawings (2)",
     "R25 MSMC MIAMI SHORES",
-    "04 SD - DD",
-    "2026.02.16 MIAMI SHORES_ARCH_MARKUPS-DESKTOP-01CMLA9",
-    "SD101 - PROPOSED PLAN",
+    "Support Files",
+    "Ceiling Items",
+    "The Internet (2)",
+    "ms-photosspareprocess-viewer (61)",
+    "scenes",
+    "escalate",
+    "Vendor",
+    "S - Ceiling Plan",
+    "2026.01.21",
+    "2500173R0 (2)",
     "CODE REVIEW",
     "MSMC MIAMI SHORES_LS MARKUPS",
-    "2025-12-18 - FIRE_MARKUPS",
-    "hammer-performance-redesign"
+    "04 SD - DD"
   ],
   "applications": [
     {
@@ -124,11 +124,11 @@
       }
     },
     {
-      "Id": 26272,
-      "ProcessName": "ms-teams",
+      "Id": 3784,
+      "ProcessName": "explorer",
       "MonitorIndex": -1,
       "Monitor": "unknown",
-      "MainWindowTitle": "Chat | Bruce Davis | BD Architect llc | weber@bdarchitect.net | Microsoft Teams",
+      "MainWindowTitle": "video_01_retry_ladder",
       "Position": {
         "Left": -21333,
         "Bottom": -21307,
@@ -139,11 +139,11 @@
       }
     },
     {
-      "Id": 15404,
-      "ProcessName": "OUTLOOK",
+      "Id": 13432,
+      "ProcessName": "explorer",
       "MonitorIndex": -1,
       "Monitor": "unknown",
-      "MainWindowTitle": "Inbox - weber@bdarchitect.net - Outlook",
+      "MainWindowTitle": "video_02_architecture",
       "Position": {
         "Left": -21333,
         "Bottom": -21307,
@@ -154,16 +154,46 @@
       }
     },
     {
-      "Id": 37780,
-      "ProcessName": "Revit",
-      "MonitorIndex": 1,
-      "Monitor": "center",
-      "MainWindowTitle": "Autodesk Revit 2025.4 - [R25 MSMC MIAMI SHORES - Sheet: A000 - COVER AND PROJECT INFORMATION]",
+      "Id": 56872,
+      "ProcessName": "explorer",
+      "MonitorIndex": -1,
+      "Monitor": "unknown",
+      "MainWindowTitle": "video_03_checkpoint",
       "Position": {
-        "Left": -2567,
+        "Left": -21333,
+        "Bottom": -21307,
+        "Top": -21333,
+        "Right": -21175,
+        "Height": 26,
+        "Width": 158
+      }
+    },
+    {
+      "Id": 19364,
+      "ProcessName": "notepad",
+      "MonitorIndex": -1,
+      "Monitor": "unknown",
+      "MainWindowTitle": "*Untitled - Notepad",
+      "Position": {
+        "Left": -21333,
+        "Bottom": -21307,
+        "Top": -21333,
+        "Right": -21175,
+        "Height": 26,
+        "Width": 158
+      }
+    },
+    {
+      "Id": 42272,
+      "ProcessName": "Revu",
+      "MonitorIndex": 2,
+      "Monitor": "left",
+      "MainWindowTitle": "2500173R0* - Bluebeam Revu x64",
+      "Position": {
+        "Left": -5127,
         "Bottom": 1408,
         "Top": -7,
-        "Right": 8,
+        "Right": -2552,
         "Height": 1415,
         "Width": 2575
       }
@@ -215,18 +245,16 @@
     }
   ],
   "revit": {
-    "version": "2025",
-    "connected": true,
-    "document": "R25 MSMC MIAMI SHORES",
-    "view": "COVER AND PROJECT INFORMATION",
-    "viewType": "DrawingSheet"
+    "connected": false,
+    "running": false
   },
   "bluebeam": {
-    "running": false
+    "running": true,
+    "document": "2500173R0*"
   },
   "email": {
     "monitoring": true,
-    "last_check": "2026-02-23T03:59:08.215984",
+    "last_check": "2026-02-24T03:59:46.811599",
     "unread_count": 0,
     "urgent_count": 0,
     "needs_response_count": 0,
@@ -234,111 +262,111 @@
   },
   "recent_events": [
     {
-      "timestamp": "2026-02-23T01:45:42.256256",
-      "type": "focus_changed",
-      "details": "Insert File"
-    },
-    {
-      "timestamp": "2026-02-23T01:46:22.684272",
-      "type": "focus_changed",
-      "details": "Weber's Invoice # 035 - Message (HTML)"
-    },
-    {
-      "timestamp": "2026-02-23T01:46:39.468479",
-      "type": "focus_changed",
-      "details": "Inbox - [email] - Outlook"
-    },
-    {
-      "timestamp": "2026-02-23T01:46:52.497786",
-      "type": "focus_changed",
-      "details": "4,525:24:26 \u0007 Timesheet \u0007 Clockify - Google Chrome"
-    },
-    {
-      "timestamp": "2026-02-23T01:47:05.217261",
+      "timestamp": "2026-02-24T01:32:05.817280",
       "type": "app_opened",
-      "details": "WINWORD: 20260222 - Weekly - Invoice 035 - Word"
+      "details": "msedge: Vacation Try On - Revolve Sale Items! (*Giveaway*) - YouTube and 4 more pages - Profile 1 - Microsoft? Edge"
     },
     {
-      "timestamp": "2026-02-23T01:47:05.372124",
-      "type": "app_opened",
-      "details": "TextInputHost: Microsoft Text Input Application"
-    },
-    {
-      "timestamp": "2026-02-23T01:47:05.655530",
-      "type": "app_opened",
-      "details": "ms-teams: Chat | Bruce Davis | BD Architect llc | [email] | Microsoft Teams"
-    },
-    {
-      "timestamp": "2026-02-23T01:47:05.913838",
-      "type": "app_opened",
-      "details": "Revu: 20260222 - Weekly - Invoice 035 - Bluebeam Revu x64"
-    },
-    {
-      "timestamp": "2026-02-23T01:47:06.172295",
-      "type": "app_opened",
-      "details": "WhatsApp.Root: WhatsApp"
-    },
-    {
-      "timestamp": "2026-02-23T01:47:06.477335",
-      "type": "app_opened",
-      "details": "CalculatorApp: Calculator"
-    },
-    {
-      "timestamp": "2026-02-23T01:47:06.764691",
-      "type": "app_opened",
-      "details": "Wispr Flow: Hub"
-    },
-    {
-      "timestamp": "2026-02-23T01:47:07.039283",
-      "type": "app_opened",
-      "details": "ApplicationFrameHost: Calculator"
-    },
-    {
-      "timestamp": "2026-02-23T01:47:07.297569",
-      "type": "app_opened",
-      "details": "Revit: Autodesk Revit 2025.4 - [R25 MSMC MIAMI SHORES - Sheet: A000 - COVER AND PROJECT INFORMATION]"
-    },
-    {
-      "timestamp": "2026-02-23T01:47:07.579632",
-      "type": "app_opened",
-      "details": "SystemSettings: Settings"
-    },
-    {
-      "timestamp": "2026-02-23T01:47:07.871740",
-      "type": "app_opened",
-      "details": "OUTLOOK: Inbox - [email] - Outlook"
-    },
-    {
-      "timestamp": "2026-02-23T01:47:08.172191",
-      "type": "app_opened",
-      "details": "Code: Welcome - Visual Studio Code"
-    },
-    {
-      "timestamp": "2026-02-23T01:47:20.976186",
+      "timestamp": "2026-02-24T01:32:06.112592",
       "type": "app_closed",
-      "details": "Revu: 20260222 - Weekly - Invoice 035 - Bluebeam Revu x64"
+      "details": "msedge: PChee Bum / Lici Fit Legging try on - YouTube and 4 more pages - Profile 1 - Microsoft? Edge"
     },
     {
-      "timestamp": "2026-02-23T01:47:21.275655",
+      "timestamp": "2026-02-24T01:32:07.204724",
+      "type": "focus_changed",
+      "details": "Vacation Try On - Revolve Sale Items! (*Giveaway*) - YouTube and 4 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-24T01:33:04.552626",
+      "type": "app_opened",
+      "details": "msedge: YouTube and 4 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-24T01:33:04.837217",
       "type": "app_closed",
-      "details": "WINWORD: 20260222 - Weekly - Invoice 035 - Word"
+      "details": "msedge: Vacation Try On - Revolve Sale Items! (*Giveaway*) - YouTube and 4 more pages - Profile 1 - Microsoft? Edge"
     },
     {
-      "timestamp": "2026-02-23T01:47:22.394046",
+      "timestamp": "2026-02-24T01:33:05.948206",
+      "type": "focus_changed",
+      "details": "YouTube and 4 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-24T01:33:19.826645",
+      "type": "app_closed",
+      "details": "msedge: YouTube and 4 more pages - Profile 1 - Microsoft? Edge"
+    },
+    {
+      "timestamp": "2026-02-24T01:33:21.109293",
+      "type": "focus_changed",
+      "details": "(6 unread) - [email] - Yahoo Mail - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-24T01:33:33.424816",
+      "type": "app_closed",
+      "details": "chrome: (6 unread) - [email] - Yahoo Mail - Google Chrome"
+    },
+    {
+      "timestamp": "2026-02-24T01:33:34.558634",
       "type": "focus_changed",
       "details": "Welcome - Visual Studio Code"
     },
     {
-      "timestamp": "2026-02-23T01:47:34.415472",
+      "timestamp": "2026-02-24T01:34:17.485837",
       "type": "app_closed",
-      "details": "WhatsApp.Root: WhatsApp"
+      "details": "ms-teams: Chat | Paola Gomez | BD Architect llc | [email] | Microsoft Teams"
+    },
+    {
+      "timestamp": "2026-02-24T01:34:18.745680",
+      "type": "focus_changed",
+      "details": "Autodesk Revit 2025.4 - [Home]"
+    },
+    {
+      "timestamp": "2026-02-24T01:34:31.280846",
+      "type": "app_closed",
+      "details": "Revit: Autodesk Revit 2025.4 - [R25 MSMC MIAMI SHORES - Sheet: A104-A - REFLECTED CEILING PLAN - AREA A]"
+    },
+    {
+      "timestamp": "2026-02-24T01:34:32.387717",
+      "type": "focus_changed",
+      "details": "Autodesk AutoCAD 2024 - [S - Ceiling Plan.dwg]"
+    },
+    {
+      "timestamp": "2026-02-24T01:35:11.108854",
+      "type": "focus_changed",
+      "details": "Welcome - Visual Studio Code"
+    },
+    {
+      "timestamp": "2026-02-24T01:35:14.735389",
+      "type": "alert",
+      "details": "Revit MCP disconnected"
+    },
+    {
+      "timestamp": "2026-02-24T01:36:18.243077",
+      "type": "app_closed",
+      "details": "acad: Autodesk AutoCAD 2024 - [S - Ceiling Plan.dwg]"
+    },
+    {
+      "timestamp": "2026-02-24T01:36:19.364720",
+      "type": "focus_changed",
+      "details": "AutoCAD"
+    },
+    {
+      "timestamp": "2026-02-24T01:36:32.741490",
+      "type": "focus_changed",
+      "details": "Program Manager"
+    },
+    {
+      "timestamp": "2026-02-24T02:00:04.018116",
+      "type": "focus_changed",
+      "details": "Welcome - Visual Studio Code"
     }
   ],
   "daemon_stats": {
     "started_at": "2025-12-04T10:13:59.664371",
-    "updates": 48848,
-    "errors": 11,
-    "restarts": 48
+    "updates": 54936,
+    "errors": 14,
+    "restarts": 51
   },
-  "hash": "93995189a65a5984"
+  "hash": "22ce2be46abf9155"
 }

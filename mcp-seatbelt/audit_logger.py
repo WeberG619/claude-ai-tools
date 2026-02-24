@@ -52,7 +52,8 @@ class AuditLogger:
 
     def log(self, tool_name: str, result: ValidationResult,
             policy: Policy, tool_input: Dict[str, Any],
-            session_id: str = "unknown") -> None:
+            session_id: str = "unknown",
+            tier_result=None) -> None:
         """
         Log a tool call to the audit trail.
 
@@ -62,6 +63,7 @@ class AuditLogger:
             policy: The policy that was matched
             tool_input: Original parameters (will be redacted)
             session_id: Claude session ID if available
+            tier_result: Optional TierResult from tier_classifier
         """
         entry = {
             "schema_version": self.SCHEMA_VERSION,
@@ -71,11 +73,40 @@ class AuditLogger:
             "tool": tool_name,
             "action": result.action,
             "risk_score": result.risk_score,
+            "tier": tier_result.tier if tier_result else None,
+            "tier_label": tier_result.label if tier_result else None,
             "parameters": result.redacted_params,
             "policy_matched": result.policy_matched,
             "rules_checked": result.rules_checked,
             "rules_failed": result.rules_failed,
             "reason": result.message or None,
+        }
+
+        self._write_entry(entry)
+
+    def log_fast(self, tool_name: str, tier_result, session_id: str = "unknown") -> None:
+        """Fast-path logging for Tier 1 (read-only) operations.
+
+        Args:
+            tool_name: The MCP tool that was called
+            tier_result: TierResult from tier_classifier
+            session_id: Claude session ID
+        """
+        entry = {
+            "schema_version": self.SCHEMA_VERSION,
+            "timestamp": self._get_timestamp(),
+            "session_id": session_id,
+            "user": self._get_user(),
+            "tool": tool_name,
+            "action": "fast_pass",
+            "risk_score": 0,
+            "tier": tier_result.tier,
+            "tier_label": tier_result.label,
+            "parameters": {},
+            "policy_matched": None,
+            "rules_checked": [],
+            "rules_failed": [],
+            "reason": tier_result.reason,
         }
 
         self._write_entry(entry)

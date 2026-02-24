@@ -1,0 +1,3 @@
+file '/mnt/d/_CLAUDE-TOOLS/video-pipeline/shorts/video_05_validator/_work_pro/intro.mp4'
+file '/mnt/d/_CLAUDE-TOOLS/video-pipeline/shorts/video_05_validator/_work_pro/pillow_silent.mp4'
+file '/mnt/d/_CLAUDE-TOOLS/video-pipeline/shorts/video_05_validator/_work_pro/outro.mp4'

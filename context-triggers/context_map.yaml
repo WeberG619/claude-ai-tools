@@ -1,0 +1,59 @@
+# Context Trigger Map — Auto-detects when context files should be loaded
+# Used by context_loader_hook.py (UserPromptSubmit hook)
+
+triggers:
+  - id: workflows
+    keywords:
+      - email
+      - gmail
+      - inbox
+      - calendar
+      - contacts
+      - revit pipe
+      - project path
+      - named pipe
+      - send email
+      - check email
+    file: /mnt/d/_CLAUDE-TOOLS/WEBER_WORKFLOWS.md
+    description: Email, contacts, calendar, Revit pipes, project paths
+
+  - id: desktop
+    keywords:
+      - desktop
+      - excel
+      - bluebeam
+      - browser
+      - window
+      - monitor
+      - dpi
+      - position
+      - screenshot
+      - window_move
+      - SetWindowPos
+      - multi-monitor
+    file: /mnt/d/_CLAUDE-TOOLS/DESKTOP.md
+    description: Desktop automation — Excel, Bluebeam, browser, window positioning
+
+  - id: corrections
+    keywords:
+      - correction
+      - mistake
+      - last time
+      - wrong
+      - you got wrong
+      - fix what you did
+      - that was wrong
+    file: /mnt/d/_CLAUDE-TOOLS/agent-common-sense/kernel-corrections.md
+    description: Past corrections and known mistakes
+
+  - id: reference
+    keywords:
+      - aider
+      - route
+      - dispatch
+      - proactive
+      - sub-agent
+      - agent protocol
+      - task routing
+    file: /mnt/d/_CLAUDE-TOOLS/CLAUDE_REFERENCE.md
+    description: Aider strategy, task routing, proactive behaviors

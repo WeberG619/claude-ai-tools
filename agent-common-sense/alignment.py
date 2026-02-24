@@ -329,6 +329,27 @@ class AlignmentCore:
 
     # ─── COMPILATION (THE KEY METHOD) ──────────────────────────
 
+    def _detect_worktree_recommendation(self, task_description: str) -> str:
+        """Detect if task warrants worktree isolation."""
+        desc_lower = task_description.lower()
+        risk_patterns = ["refactor", "rewrite", "restructure", "rename across",
+                         "migrate", "overhaul", "rearchitect"]
+        multi_file_patterns = [".py, ", ".md, ", ".cs, ", "multiple files",
+                               "all files", "across the codebase"]
+
+        has_risk = any(p in desc_lower for p in risk_patterns)
+        has_multi = any(p in desc_lower for p in multi_file_patterns)
+
+        # Count file path references
+        import re
+        path_refs = len(re.findall(r'[\w/]+\.\w{1,4}', task_description))
+
+        if has_risk or has_multi or path_refs >= 3:
+            return ("\n**Worktree recommended:** This task modifies multiple files or involves "
+                    "risky changes. Consider using `isolation: \"worktree\"` in the Task tool, "
+                    "or `git worktree add /tmp/worktree-<id> -b task/<id>` manually.\n")
+        return ""
+
     def compile_profile(self, agent_name: str, task_description: str,
                         project: str = "") -> AlignmentProfile:
         """Compile a full alignment profile for a sub-agent."""
@@ -774,6 +795,13 @@ class AlignmentCore:
 
         if profile.corrections_content:
             parts.append("\n" + profile.corrections_content)
+
+        # Worktree recommendation for risky tasks
+        worktree_note = self._detect_worktree_recommendation(
+            profile.agent_name + " " + profile.task_domain
+        )
+        if worktree_note:
+            parts.append(worktree_note)
 
         if profile.principles:
             parts.append("\n# Alignment Principles\n")

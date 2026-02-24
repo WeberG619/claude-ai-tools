@@ -8,6 +8,17 @@ Anthropic found that combining memory + context editing = **39% performance impr
 
 ## Context Pruning Strategy
 
+### Core Principle: Lossy but Restorable
+Drop content but keep the pointer. Drop file contents but keep the path. Drop web page but keep the URL. This way you can always retrieve what you dropped.
+
+### Tiered Compression Model
+
+| Age | Fidelity | What to Keep |
+|-----|----------|--------------|
+| **Recent** (last 5 tool calls) | Full | Everything — raw outputs, errors, decisions |
+| **Older** (5-15 calls ago) | Summary | Key outcomes + file paths + error messages |
+| **Ancient** (15+ calls ago) | Pointer | One-line description + retrieval path only |
+
 ### When to Prune
 
 #### Trigger Conditions
@@ -15,20 +26,20 @@ Anthropic found that combining memory + context editing = **39% performance impr
 2. **After completing a task batch** - When moving to unrelated work
 3. **After 10+ tool calls** - Accumulated results bloating context
 4. **When changing topics** - User moves to different subject
-5. **After error resolution** - Error details no longer needed
+5. **After error resolution** - Error details no longer needed (but keep the error TYPE)
 
-#### What to Keep
-- Current task requirements
+#### What to Keep (ALWAYS)
+- Current task requirements and _task_state.md
 - Recent corrections (last 5)
 - Active project context
-- Unfinished work items
+- Error messages and stack traces (learning signal — DO NOT clean up)
 - Key decisions made this session
+- File paths / URLs for everything dropped (restoration pointers)
 
 #### What to Prune
-- Old tool results (especially large ones)
-- Intermediate search results
-- Resolved error messages
-- Completed task details
+- Old tool results (especially large ones) — replace with summary + path
+- Intermediate search results — replace with "Found X in files: [list]"
+- Completed task details — replace with one-line outcome
 - Redundant information
 
 ### Memory-First Pattern
