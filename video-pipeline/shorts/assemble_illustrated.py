@@ -92,8 +92,8 @@ VIDEO_01 = {
          ["Nothing works?", "Detailed failure report."]),
 
         ("result", "07_result.mp3",
-         "A triumphant dashboard showing four strategy tiers all illuminated, counters displaying attempt numbers and timeouts, the final successful strategy highlighted in bright green, a resolved status beacon pulsing at the center",
-         "Dashboard counters tick upward, strategy tiers illuminate one by one from bottom to top, the final green success beacon pulses brighter, subtle camera pull-back to reveal the full dashboard.",
+         "Four glowing vertical bars of increasing height arranged left to right in a dark futuristic environment, each bar a different color (cyan, blue, purple, green), the tallest rightmost bar blazing bright green with a pulsing halo of success, abstract holographic energy connections between the bars, dramatic volumetric lighting, purely abstract visualization with absolutely no text no words no letters no numbers no labels no watermarks",
+         "The four bars illuminate one by one from left to right, each pulsing with energy as it activates, the final green bar blazes brightest with a spreading halo, energy arcs flow between bars, subtle camera pull-back.",
          ["4 strategies. 5 max attempts.", "15 minute timeout."]),
 
         ("memory", "08_memory.mp3",
@@ -242,14 +242,22 @@ def burn_caption_overlay(video_path, caption_lines, output_path, seg_duration=No
             line_delays = [CAPTION_DELAY + i * spacing for i in range(len(active))]
 
         for i, line in enumerate(active):
-            escaped = line.replace("'", "'\\''").replace(":", "\\:").replace('"', '\\"')
+            # FFmpeg drawtext escaping: replace ' with right-quote (avoids
+            # filter-string leak when subprocess passes -vf without shell),
+            # escape colons and backslashes for the drawtext parser.
+            escaped = (
+                line.replace("\\", "\\\\")
+                    .replace("'", "\u2019")   # ' → Unicode right single quote
+                    .replace(":", "\\:")
+                    .replace('"', '\\"')
+            )
             y = base_y + i * line_h
             delay = line_delays[i]
             txt_filter = (
                 f"drawtext=text='{escaped}':fontsize=38"
                 f":fontcolor=white:x=(w-tw)/2:y={y}:fontfile='{FONT_BOLD}'"
                 f":shadowcolor=black:shadowx=3:shadowy=3"
-                f":enable='gte(t,{delay:.2f})'"
+                f":enable='gte(t\\,{delay:.2f})'"
             )
             filters.append(txt_filter)
 
@@ -264,6 +272,74 @@ def burn_caption_overlay(video_path, caption_lines, output_path, seg_duration=No
 
     if r.returncode != 0:
         print(f"    Caption burn error: {r.stderr[-300:]}")
+        return False
+    return True
+
+
+def burn_caption_overlay_vertical(video_path, segments, seg_durations, output_path,
+                                   vw, vh, intro_dur=2.0):
+    """Burn all segment captions onto a vertical (post-crop) video in one pass.
+
+    Calculates absolute timestamps from intro_dur + cumulative segment durations
+    so each caption appears at the right moment in the final timeline.
+    """
+    filters = []
+
+    # Watermark top-right (always visible)
+    wm_filter = (
+        f"drawtext=text='CADRE-AI':fontsize=24:fontcolor=0x00FFD0@0.3"
+        f":x=w-tw-20:y=16:fontfile='{FONT_BOLD}'"
+    )
+    filters.append(wm_filter)
+
+    # Walk segments, accumulate time offset
+    t_offset = intro_dur
+    for seg_i, (key, audio_file, scene_prompt, motion_prompt, captions) in enumerate(segments):
+        dur = seg_durations[seg_i]
+        active = [l for l in captions if l.strip()]
+        if active:
+            line_h = 56  # larger for vertical (1080px wide)
+            total_h = line_h * len(active)
+            base_y = vh - 180 - total_h  # more room from bottom on vertical
+
+            if len(active) == 1:
+                line_delays = [CAPTION_DELAY]
+            else:
+                usable = dur - CAPTION_DELAY - 0.5
+                spacing = usable / len(active)
+                line_delays = [CAPTION_DELAY + j * spacing for j in range(len(active))]
+
+            for j, line in enumerate(active):
+                escaped = (
+                    line.replace("\\", "\\\\")
+                        .replace("'", "\u2019")
+                        .replace(":", "\\:")
+                        .replace('"', '\\"')
+                )
+                y = base_y + j * line_h
+                abs_start = t_offset + line_delays[j]
+                abs_end = t_offset + dur
+                txt_filter = (
+                    f"drawtext=text='{escaped}':fontsize=44"
+                    f":fontcolor=white:x=(w-tw)/2:y={y}:fontfile='{FONT_BOLD}'"
+                    f":shadowcolor=black:shadowx=3:shadowy=3"
+                    f":enable='between(t\\,{abs_start:.2f}\\,{abs_end:.2f})'"
+                )
+                filters.append(txt_filter)
+
+        t_offset += dur
+
+    vf = ",".join(filters)
+    r = subprocess.run([
+        "ffmpeg", "-y", "-i", str(video_path),
+        "-vf", vf,
+        "-c:v", "libx264", "-preset", "medium", "-crf", "20",
+        "-pix_fmt", "yuv420p", "-c:a", "copy",
+        str(output_path),
+    ], capture_output=True, text=True)
+
+    if r.returncode != 0:
+        print(f"    Vertical caption burn error: {r.stderr[-300:]}")
         return False
     return True
 
@@ -331,9 +407,12 @@ def assemble_video(video_num, video_config, skip_gen=False):
         seg_durations.append(dur)
         print(f"    {key:12s} {dur:.1f}s")
 
-    # ── 4. Trim clips to audio duration + burn captions ──
+    # ── 4. Trim clips to audio duration ──
+    # We keep uncaptioned trimmed segments for vertical (captions burned after crop)
+    # and burn landscape captions separately for the landscape output.
     print(f"\n[4/7] Trimming + captioning segments...")
-    segment_paths = []
+    segment_paths_captioned = []   # landscape: captions burned at 1920x1080
+    segment_paths_trimmed = []     # uncaptioned: used for vertical pipeline
     for i, (key, audio_file, scene_prompt, motion_prompt, captions) in enumerate(segments):
         dur = seg_durations[i]
         trimmed = work / f"trimmed_{i:02d}_{key}.mp4"
@@ -358,17 +437,18 @@ def assemble_video(video_num, video_config, skip_gen=False):
             print(f"    {key:12s} TRIM FAIL")
             continue
 
-        # Burn captions (pass duration so lines are staggered to match speech)
+        segment_paths_trimmed.append(trimmed)
+
+        # Burn captions for landscape (pass duration so lines are staggered)
         ok = burn_caption_overlay(trimmed, captions, captioned, seg_duration=dur)
         if ok and captioned.exists():
-            segment_paths.append(captioned)
+            segment_paths_captioned.append(captioned)
             print(f"    {key:12s} {dur:.1f}s  OK")
         else:
-            # Use trimmed without captions as fallback
-            segment_paths.append(trimmed)
+            segment_paths_captioned.append(trimmed)
             print(f"    {key:12s} {dur:.1f}s  (no captions)")
 
-    if not segment_paths:
+    if not segment_paths_captioned:
         print("  No segments. Aborting.")
         return False
 
@@ -380,10 +460,11 @@ def assemble_video(video_num, video_config, skip_gen=False):
     render_intro(intro_path)
     render_outro(outro_path)
 
+    # Landscape assembly (captioned segments)
     concat_file = work / "concat.txt"
     with open(concat_file, "w") as f:
         f.write(f"file '{intro_path}'\n")
-        for p in segment_paths:
+        for p in segment_paths_captioned:
             f.write(f"file '{p}'\n")
         f.write(f"file '{outro_path}'\n")
 
@@ -402,6 +483,27 @@ def assemble_video(video_num, video_config, skip_gen=False):
 
     total_dur = get_duration(video_only)
     print(f"    Video assembled: {total_dur:.1f}s")
+
+    # Uncaptioned assembly (for vertical — captions burned after crop)
+    concat_nocap = work / "concat_nocap.txt"
+    with open(concat_nocap, "w") as f:
+        f.write(f"file '{intro_path}'\n")
+        for p in segment_paths_trimmed:
+            f.write(f"file '{p}'\n")
+        f.write(f"file '{outro_path}'\n")
+
+    video_nocap = work / "video_assembled_nocap.mp4"
+    r = subprocess.run([
+        "ffmpeg", "-y",
+        "-f", "concat", "-safe", "0", "-i", str(concat_nocap),
+        "-c:v", "libx264", "-preset", "fast", "-crf", "18",
+        "-pix_fmt", "yuv420p", "-an",
+        str(video_nocap),
+    ], capture_output=True, text=True)
+
+    if r.returncode != 0:
+        print(f"    Uncaptioned concat error: {r.stderr[-300:]}")
+        return False
 
     # ── 6. Build audio and merge ──
     print(f"\n[6/7] Audio + merge...")
@@ -451,16 +553,39 @@ def assemble_video(video_num, video_config, skip_gen=False):
     dur = get_duration(output_landscape)
     print(f"    Landscape: {output_landscape.name} ({mb:.1f} MB, {dur:.1f}s)")
 
-    # ── 7. Vertical crop ──
+    # ── 7. Vertical crop + captions at vertical resolution ──
+    # Crop uncaptioned video first, then burn captions at 1080px width so
+    # text isn't clipped by the center crop.
     print(f"\n[7/7] Vertical (9:16)...")
-    output_vertical = vdir / "illustrated_vertical.mp4"
+
+    # 7a. Merge uncaptioned video with audio
+    vert_nocap_merged = work / "vert_nocap_merged.mp4"
     subprocess.run([
-        "ffmpeg", "-y", "-i", str(output_landscape),
-        "-vf", "crop=608:1080:656:0,scale=1080:1920:flags=lanczos",
-        "-c:v", "libx264", "-preset", "medium", "-crf", "20",
-        "-c:a", "copy",
-        str(output_vertical),
+        "ffmpeg", "-y",
+        "-i", str(video_nocap),
+        "-i", str(combined_audio),
+        "-c:v", "copy", "-c:a", "copy", "-shortest",
+        str(vert_nocap_merged),
     ], capture_output=True)
+
+    # 7b. Crop center 608px from 1920 wide → scale to 1080x1920
+    vert_cropped = work / "vert_cropped.mp4"
+    subprocess.run([
+        "ffmpeg", "-y", "-i", str(vert_nocap_merged),
+        "-vf", "crop=608:1080:656:0,scale=1080:1920:flags=lanczos",
+        "-c:v", "libx264", "-preset", "fast", "-crf", "18",
+        "-pix_fmt", "yuv420p", "-c:a", "copy",
+        str(vert_cropped),
+    ], capture_output=True)
+
+    # 7c. Burn captions onto vertical at 1080px width
+    output_vertical = vdir / "illustrated_vertical.mp4"
+    vert_w, vert_h = 1080, 1920
+    ok = burn_caption_overlay_vertical(
+        vert_cropped, segments, seg_durations,
+        output_vertical, vert_w, vert_h,
+        intro_dur=INTRO_DURATION,
+    )
 
     if output_vertical.exists():
         mb_v = output_vertical.stat().st_size / 1024 / 1024

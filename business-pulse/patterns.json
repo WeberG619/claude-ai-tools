@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-02-24T09:28:15.560983",
+  "payment_speed": [],
+  "revenue_trend": {
+    "trend": "insufficient_data",
+    "months": []
+  },
+  "client_concentration": {
+    "risk": "no_data",
+    "clients": []
+  },
+  "work_patterns": {
+    "by_day_of_week": [],
+    "by_project_type": [],
+    "avg_billable_rate": 0,
+    "billable_ratio": 0,
+    "busiest_day": null
+  },
+  "expense_patterns": {
+    "ytd_total": 0,
+    "by_category": [],
+    "largest_category": null
+  }
+}

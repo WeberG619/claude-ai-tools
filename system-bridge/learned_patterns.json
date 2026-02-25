@@ -1,8 +1,8 @@
 {
-  "analyzed_at": "2026-02-24T03:59:13.453708",
-  "total_actions_recorded": 18845,
-  "total_unique_sequences": 3027,
-  "frequent_sequence_count": 295,
+  "analyzed_at": "2026-02-25T03:55:26.478811",
+  "total_actions_recorded": 20504,
+  "total_unique_sequences": 3091,
+  "frequent_sequence_count": 315,
   "workflow_candidates": [
     {
       "id": "wf_candidate_1",
@@ -20,10 +20,10 @@
         "chrome:chrome"
       ],
       "step_count": 4,
-      "frequency": 136,
-      "avg_duration_seconds": 157.0,
+      "frequency": 155,
+      "avg_duration_seconds": 150.6,
       "status": "candidate",
-      "discovered_at": "2026-02-24T03:59:13.453708"
+      "discovered_at": "2026-02-25T03:55:26.478811"
     },
     {
       "id": "wf_candidate_2",
@@ -39,10 +39,10 @@
         "chrome:chrome"
       ],
       "step_count": 3,
-      "frequency": 166,
-      "avg_duration_seconds": 34.4,
+      "frequency": 190,
+      "avg_duration_seconds": 35.1,
       "status": "candidate",
-      "discovered_at": "2026-02-24T03:59:13.453708"
+      "discovered_at": "2026-02-25T03:55:26.478811"
     },
     {
       "id": "wf_candidate_3",
@@ -60,10 +60,10 @@
         "chrome:chrome"
       ],
       "step_count": 4,
-      "frequency": 122,
-      "avg_duration_seconds": 142.0,
+      "frequency": 131,
+      "avg_duration_seconds": 140.1,
       "status": "candidate",
-      "discovered_at": "2026-02-24T03:59:13.453708"
+      "discovered_at": "2026-02-25T03:55:26.478811"
     },
     {
       "id": "wf_candidate_4",
@@ -85,13 +85,59 @@
         "chrome:chrome"
       ],
       "step_count": 6,
-      "frequency": 51,
-      "avg_duration_seconds": 180.3,
+      "frequency": 56,
+      "avg_duration_seconds": 181.0,
       "status": "candidate",
-      "discovered_at": "2026-02-24T03:59:13.453708"
+      "discovered_at": "2026-02-25T03:55:26.478811"
     },
     {
       "id": "wf_candidate_5",
+      "name": "chrome:chrome -> Code:Code -> msedge:msedge -> chrome:chrome -> chrome:chrome",
+      "steps": [
+        "focus:chrome:chrome",
+        "focus:Code:Code",
+        "open:msedge:msedge",
+        "open:chrome:chrome",
+        "close:chrome:chrome"
+      ],
+      "steps_readable": [
+        "chrome:chrome",
+        "Code:Code",
+        "msedge:msedge",
+        "chrome:chrome",
+        "chrome:chrome"
+      ],
+      "step_count": 5,
+      "frequency": 56,
+      "avg_duration_seconds": 142.2,
+      "status": "candidate",
+      "discovered_at": "2026-02-25T03:55:26.478811"
+    },
+    {
+      "id": "wf_candidate_6",
+      "name": "msedge:msedge -> Code:Code -> msedge:msedge -> chrome:chrome -> chrome:chrome",
+      "steps": [
+        "focus:msedge:msedge",
+        "focus:Code:Code",
+        "open:msedge:msedge",
+        "open:chrome:chrome",
+        "close:chrome:chrome"
+      ],
+      "steps_readable": [
+        "msedge:msedge",
+        "Code:Code",
+        "msedge:msedge",
+        "chrome:chrome",
+        "chrome:chrome"
+      ],
+      "step_count": 5,
+      "frequency": 56,
+      "avg_duration_seconds": 152.7,
+      "status": "candidate",
+      "discovered_at": "2026-02-25T03:55:26.478811"
+    },
+    {
+      "id": "wf_candidate_7",
       "name": "Revit:Revit -> Code:Code -> msedge:msedge -> msedge:msedge -> chrome:chrome ... (7 steps)",
       "steps": [
         "focus:Revit:Revit",
@@ -112,56 +158,10 @@
         "chrome:chrome"
       ],
       "step_count": 7,
-      "frequency": 38,
-      "avg_duration_seconds": 193.5,
+      "frequency": 39,
+      "avg_duration_seconds": 198.3,
       "status": "candidate",
-      "discovered_at": "2026-02-24T03:59:13.453708"
-    },
-    {
-      "id": "wf_candidate_6",
-      "name": "chrome:chrome -> Code:Code -> msedge:msedge -> chrome:chrome -> chrome:chrome",
-      "steps": [
-        "focus:chrome:chrome",
-        "focus:Code:Code",
-        "open:msedge:msedge",
-        "open:chrome:chrome",
-        "close:chrome:chrome"
-      ],
-      "steps_readable": [
-        "chrome:chrome",
-        "Code:Code",
-        "msedge:msedge",
-        "chrome:chrome",
-        "chrome:chrome"
-      ],
-      "step_count": 5,
-      "frequency": 51,
-      "avg_duration_seconds": 143.4,
-      "status": "candidate",
-      "discovered_at": "2026-02-24T03:59:13.453708"
-    },
-    {
-      "id": "wf_candidate_7",
-      "name": "msedge:msedge -> Code:Code -> msedge:msedge -> chrome:chrome -> chrome:chrome",
-      "steps": [
-        "focus:msedge:msedge",
-        "focus:Code:Code",
-        "open:msedge:msedge",
-        "open:chrome:chrome",
-        "close:chrome:chrome"
-      ],
-      "steps_readable": [
-        "msedge:msedge",
-        "Code:Code",
-        "msedge:msedge",
-        "chrome:chrome",
-        "chrome:chrome"
-      ],
-      "step_count": 5,
-      "frequency": 51,
-      "avg_duration_seconds": 158.3,
-      "status": "candidate",
-      "discovered_at": "2026-02-24T03:59:13.453708"
+      "discovered_at": "2026-02-25T03:55:26.478811"
     },
     {
       "id": "wf_candidate_8",
@@ -181,10 +181,10 @@
         "msedge:msedge"
       ],
       "step_count": 5,
-      "frequency": 49,
-      "avg_duration_seconds": 144.0,
+      "frequency": 51,
+      "avg_duration_seconds": 143.1,
       "status": "candidate",
-      "discovered_at": "2026-02-24T03:59:13.453708"
+      "discovered_at": "2026-02-25T03:55:26.478811"
     },
     {
       "id": "wf_candidate_9",
@@ -204,10 +204,10 @@
         "Code:Code"
       ],
       "step_count": 5,
-      "frequency": 49,
-      "avg_duration_seconds": 117.7,
+      "frequency": 51,
+      "avg_duration_seconds": 119.4,
       "status": "candidate",
-      "discovered_at": "2026-02-24T03:59:13.453708"
+      "discovered_at": "2026-02-25T03:55:26.478811"
     },
     {
       "id": "wf_candidate_10",
@@ -229,10 +229,10 @@
         "chrome:chrome"
       ],
       "step_count": 6,
-      "frequency": 39,
-      "avg_duration_seconds": 199.0,
+      "frequency": 42,
+      "avg_duration_seconds": 192.0,
       "status": "candidate",
-      "discovered_at": "2026-02-24T03:59:13.453708"
+      "discovered_at": "2026-02-25T03:55:26.478811"
     },
     {
       "id": "wf_candidate_11",
@@ -254,38 +254,13 @@
         "chrome:chrome"
       ],
       "step_count": 6,
-      "frequency": 38,
-      "avg_duration_seconds": 156.6,
+      "frequency": 39,
+      "avg_duration_seconds": 159.5,
       "status": "candidate",
-      "discovered_at": "2026-02-24T03:59:13.453708"
+      "discovered_at": "2026-02-25T03:55:26.478811"
     },
     {
       "id": "wf_candidate_12",
-      "name": "Revit:Revit -> Code:Code -> msedge:msedge -> msedge:msedge -> chrome:chrome ... (6 steps)",
-      "steps": [
-        "focus:Revit:Revit",
-        "focus:Code:Code",
-        "focus:msedge:msedge",
-        "open:msedge:msedge",
-        "open:chrome:chrome",
-        "close:chrome:chrome"
-      ],
-      "steps_readable": [
-        "Revit:Revit",
-        "Code:Code",
-        "msedge:msedge",
-        "msedge:msedge",
-        "chrome:chrome",
-        "chrome:chrome"
-      ],
-      "step_count": 6,
-      "frequency": 38,
-      "avg_duration_seconds": 152.8,
-      "status": "candidate",
-      "discovered_at": "2026-02-24T03:59:13.453708"
-    },
-    {
-      "id": "wf_candidate_13",
       "name": "Revit:Revit -> Code:Code -> msedge:msedge -> chrome:chrome -> chrome:chrome ... (6 steps)",
       "steps": [
         "focus:Revit:Revit",
@@ -304,13 +279,84 @@
         "chrome:chrome"
       ],
       "step_count": 6,
-      "frequency": 35,
-      "avg_duration_seconds": 201.7,
+      "frequency": 39,
+      "avg_duration_seconds": 206.9,
       "status": "candidate",
-      "discovered_at": "2026-02-24T03:59:13.453708"
+      "discovered_at": "2026-02-25T03:55:26.478811"
+    },
+    {
+      "id": "wf_candidate_13",
+      "name": "Revit:Revit -> Code:Code -> msedge:msedge -> msedge:msedge -> chrome:chrome ... (6 steps)",
+      "steps": [
+        "focus:Revit:Revit",
+        "focus:Code:Code",
+        "focus:msedge:msedge",
+        "open:msedge:msedge",
+        "open:chrome:chrome",
+        "close:chrome:chrome"
+      ],
+      "steps_readable": [
+        "Revit:Revit",
+        "Code:Code",
+        "msedge:msedge",
+        "msedge:msedge",
+        "chrome:chrome",
+        "chrome:chrome"
+      ],
+      "step_count": 6,
+      "frequency": 39,
+      "avg_duration_seconds": 158.9,
+      "status": "candidate",
+      "discovered_at": "2026-02-25T03:55:26.478811"
     },
     {
       "id": "wf_candidate_14",
+      "name": "msedge:msedge -> Code:Code -> chrome:chrome -> chrome:chrome -> chrome:chrome",
+      "steps": [
+        "focus:msedge:msedge",
+        "focus:Code:Code",
+        "open:chrome:chrome",
+        "focus:chrome:chrome",
+        "close:chrome:chrome"
+      ],
+      "steps_readable": [
+        "msedge:msedge",
+        "Code:Code",
+        "chrome:chrome",
+        "chrome:chrome",
+        "chrome:chrome"
+      ],
+      "step_count": 5,
+      "frequency": 42,
+      "avg_duration_seconds": 189.9,
+      "status": "candidate",
+      "discovered_at": "2026-02-25T03:55:26.478811"
+    },
+    {
+      "id": "wf_candidate_15",
+      "name": "chrome:chrome -> Code:Code -> msedge:msedge -> chrome:chrome -> chrome:chrome",
+      "steps": [
+        "focus:chrome:chrome",
+        "focus:Code:Code",
+        "focus:msedge:msedge",
+        "open:chrome:chrome",
+        "close:chrome:chrome"
+      ],
+      "steps_readable": [
+        "chrome:chrome",
+        "Code:Code",
+        "msedge:msedge",
+        "chrome:chrome",
+        "chrome:chrome"
+      ],
+      "step_count": 5,
+      "frequency": 41,
+      "avg_duration_seconds": 189.7,
+      "status": "candidate",
+      "discovered_at": "2026-02-25T03:55:26.478811"
+    },
+    {
+      "id": "wf_candidate_16",
       "name": "Revu:Revu -> Code:Code -> msedge:msedge -> msedge:msedge -> chrome:chrome ... (7 steps)",
       "steps": [
         "focus:Revu:Revu",
@@ -332,35 +378,12 @@
       ],
       "step_count": 7,
       "frequency": 29,
-      "avg_duration_seconds": 197.7,
+      "avg_duration_seconds": 196.4,
       "status": "candidate",
-      "discovered_at": "2026-02-24T03:59:13.453708"
+      "discovered_at": "2026-02-25T03:55:26.478811"
     },
     {
-      "id": "wf_candidate_15",
-      "name": "msedge:msedge -> Code:Code -> chrome:chrome -> chrome:chrome -> chrome:chrome",
-      "steps": [
-        "focus:msedge:msedge",
-        "focus:Code:Code",
-        "open:chrome:chrome",
-        "focus:chrome:chrome",
-        "close:chrome:chrome"
-      ],
-      "steps_readable": [
-        "msedge:msedge",
-        "Code:Code",
-        "chrome:chrome",
-        "chrome:chrome",
-        "chrome:chrome"
-      ],
-      "step_count": 5,
-      "frequency": 39,
-      "avg_duration_seconds": 197.6,
-      "status": "candidate",
-      "discovered_at": "2026-02-24T03:59:13.453708"
-    },
-    {
-      "id": "wf_candidate_16",
+      "id": "wf_candidate_17",
       "name": "Revit:Revit -> Code:Code -> chrome:chrome -> chrome:chrome -> chrome:chrome",
       "steps": [
         "focus:Revit:Revit",
@@ -377,13 +400,13 @@
         "chrome:chrome"
       ],
       "step_count": 5,
-      "frequency": 38,
-      "avg_duration_seconds": 155.2,
+      "frequency": 39,
+      "avg_duration_seconds": 157.4,
       "status": "candidate",
-      "discovered_at": "2026-02-24T03:59:13.453708"
+      "discovered_at": "2026-02-25T03:55:26.478811"
     },
     {
-      "id": "wf_candidate_17",
+      "id": "wf_candidate_18",
       "name": "Revit:Revit -> Code:Code -> msedge:msedge -> chrome:chrome -> chrome:chrome",
       "steps": [
         "focus:Revit:Revit",
@@ -400,13 +423,36 @@
         "chrome:chrome"
       ],
       "step_count": 5,
-      "frequency": 38,
-      "avg_duration_seconds": 115.9,
+      "frequency": 39,
+      "avg_duration_seconds": 120.1,
       "status": "candidate",
-      "discovered_at": "2026-02-24T03:59:13.453708"
+      "discovered_at": "2026-02-25T03:55:26.478811"
     },
     {
-      "id": "wf_candidate_18",
+      "id": "wf_candidate_19",
+      "name": "Revit:Revit -> Code:Code -> msedge:msedge -> chrome:chrome -> chrome:chrome",
+      "steps": [
+        "focus:Revit:Revit",
+        "focus:Code:Code",
+        "focus:msedge:msedge",
+        "open:chrome:chrome",
+        "close:chrome:chrome"
+      ],
+      "steps_readable": [
+        "Revit:Revit",
+        "Code:Code",
+        "msedge:msedge",
+        "chrome:chrome",
+        "chrome:chrome"
+      ],
+      "step_count": 5,
+      "frequency": 39,
+      "avg_duration_seconds": 167.6,
+      "status": "candidate",
+      "discovered_at": "2026-02-25T03:55:26.478811"
+    },
+    {
+      "id": "wf_candidate_20",
       "name": "Revit:Revit -> msedge:msedge -> chrome:chrome -> chrome:chrome -> Code:Code ... (6 steps)",
       "steps": [
         "open:Revit:Revit",
@@ -425,60 +471,10 @@
         "msedge:msedge"
       ],
       "step_count": 6,
-      "frequency": 31,
-      "avg_duration_seconds": 145.7,
+      "frequency": 32,
+      "avg_duration_seconds": 144.7,
       "status": "candidate",
-      "discovered_at": "2026-02-24T03:59:13.453708"
-    },
-    {
-      "id": "wf_candidate_19",
-      "name": "Revit:Revit -> msedge:msedge -> Code:Code -> msedge:msedge -> chrome:chrome ... (7 steps)",
-      "steps": [
-        "focus:Revit:Revit",
-        "focus:msedge:msedge",
-        "focus:Code:Code",
-        "open:msedge:msedge",
-        "open:chrome:chrome",
-        "focus:chrome:chrome",
-        "close:chrome:chrome"
-      ],
-      "steps_readable": [
-        "Revit:Revit",
-        "msedge:msedge",
-        "Code:Code",
-        "msedge:msedge",
-        "chrome:chrome",
-        "chrome:chrome",
-        "chrome:chrome"
-      ],
-      "step_count": 7,
-      "frequency": 25,
-      "avg_duration_seconds": 217.7,
-      "status": "candidate",
-      "discovered_at": "2026-02-24T03:59:13.453708"
-    },
-    {
-      "id": "wf_candidate_20",
-      "name": "Revit:Revit -> Code:Code -> msedge:msedge -> chrome:chrome -> chrome:chrome",
-      "steps": [
-        "focus:Revit:Revit",
-        "focus:Code:Code",
-        "focus:msedge:msedge",
-        "open:chrome:chrome",
-        "close:chrome:chrome"
-      ],
-      "steps_readable": [
-        "Revit:Revit",
-        "Code:Code",
-        "msedge:msedge",
-        "chrome:chrome",
-        "chrome:chrome"
-      ],
-      "step_count": 5,
-      "frequency": 35,
-      "avg_duration_seconds": 161.0,
-      "status": "candidate",
-      "discovered_at": "2026-02-24T03:59:13.454223"
+      "discovered_at": "2026-02-25T03:55:26.478811"
     }
   ],
   "frequent_transitions": [
@@ -487,7 +483,7 @@
       "to": "close:chrome:chrome",
       "from_readable": "chrome:chrome",
       "to_readable": "chrome:chrome",
-      "count": 986,
+      "count": 1169,
       "avg_gap_seconds": 0.7
     },
     {
@@ -495,55 +491,63 @@
       "to": "open:msedge:msedge",
       "from_readable": "msedge:msedge",
       "to_readable": "msedge:msedge",
-      "count": 680,
-      "avg_gap_seconds": 36.6
+      "count": 758,
+      "avg_gap_seconds": 36.5
     },
     {
       "from": "close:chrome:chrome",
       "to": "open:chrome:chrome",
       "from_readable": "chrome:chrome",
       "to_readable": "chrome:chrome",
-      "count": 589,
-      "avg_gap_seconds": 39.5
+      "count": 689,
+      "avg_gap_seconds": 37.1
     },
     {
-      "from": "focus:msedge:msedge",
-      "to": "open:msedge:msedge",
-      "from_readable": "msedge:msedge",
-      "to_readable": "msedge:msedge",
-      "count": 235,
-      "avg_gap_seconds": 40.6
+      "from": "close:firefox:firefox",
+      "to": "open:firefox:firefox",
+      "from_readable": "firefox:firefox",
+      "to_readable": "firefox:firefox",
+      "count": 298,
+      "avg_gap_seconds": 41.5
     },
     {
       "from": "close:msedge:msedge",
       "to": "focus:msedge:msedge",
       "from_readable": "msedge:msedge",
       "to_readable": "msedge:msedge",
-      "count": 234,
-      "avg_gap_seconds": 7.7
+      "count": 265,
+      "avg_gap_seconds": 7.2
+    },
+    {
+      "from": "focus:msedge:msedge",
+      "to": "open:msedge:msedge",
+      "from_readable": "msedge:msedge",
+      "to_readable": "msedge:msedge",
+      "count": 262,
+      "avg_gap_seconds": 42.1
     },
     {
       "from": "focus:msedge:msedge",
       "to": "focus:Code:Code",
       "from_readable": "msedge:msedge",
       "to_readable": "Code:Code",
-      "count": 196,
-      "avg_gap_seconds": 83.8
+      "count": 225,
+      "avg_gap_seconds": 79.9
     },
     {
       "from": "focus:Code:Code",
       "to": "focus:msedge:msedge",
       "from_readable": "Code:Code",
       "to_readable": "msedge:msedge",
-      "count": 191,
-      "avg_gap_seconds": 66.9
+      "count": 222,
+      "avg_gap_seconds": 65.8
     },
     {
       "from": "close:chrome:chrome",
       "to": "focus:chrome:chrome",
       "from_readable": "chrome:chrome",
       "to_readable": "chrome:chrome",
-      "count": 176,
+      "count": 204,
       "avg_gap_seconds": 5.1
     },
     {
@@ -551,79 +555,71 @@
       "to": "focus:Code:Code",
       "from_readable": "msedge:msedge",
       "to_readable": "Code:Code",
-      "count": 174,
-      "avg_gap_seconds": 48.5
+      "count": 197,
+      "avg_gap_seconds": 47.8
     },
     {
       "from": "focus:chrome:chrome",
       "to": "open:chrome:chrome",
       "from_readable": "chrome:chrome",
       "to_readable": "chrome:chrome",
-      "count": 166,
-      "avg_gap_seconds": 33.6
+      "count": 190,
+      "avg_gap_seconds": 34.5
     },
     {
       "from": "focus:Code:Code",
       "to": "open:msedge:msedge",
       "from_readable": "Code:Code",
       "to_readable": "msedge:msedge",
-      "count": 156,
-      "avg_gap_seconds": 70.6
+      "count": 177,
+      "avg_gap_seconds": 69.1
     },
     {
       "from": "close:chrome:chrome",
       "to": "focus:Code:Code",
       "from_readable": "chrome:chrome",
       "to_readable": "Code:Code",
-      "count": 147,
-      "avg_gap_seconds": 43.4
+      "count": 161,
+      "avg_gap_seconds": 43.1
     },
     {
       "from": "focus:Code:Code",
       "to": "open:chrome:chrome",
       "from_readable": "Code:Code",
       "to_readable": "chrome:chrome",
-      "count": 136,
-      "avg_gap_seconds": 72.4
-    },
-    {
-      "from": "close:firefox:firefox",
-      "to": "open:firefox:firefox",
-      "from_readable": "firefox:firefox",
-      "to_readable": "firefox:firefox",
-      "count": 134,
-      "avg_gap_seconds": 42.4
+      "count": 155,
+      "avg_gap_seconds": 70.0
     },
     {
       "from": "focus:chrome:chrome",
       "to": "focus:Code:Code",
       "from_readable": "chrome:chrome",
       "to_readable": "Code:Code",
-      "count": 122,
-      "avg_gap_seconds": 68.8
+      "count": 131,
+      "avg_gap_seconds": 69.4
     },
     {
       "from": "focus:Code:Code",
       "to": "focus:chrome:chrome",
       "from_readable": "Code:Code",
       "to_readable": "chrome:chrome",
-      "count": 120,
-      "avg_gap_seconds": 58.0
+      "count": 123,
+      "avg_gap_seconds": 57.6
     },
     {
       "from": "close:Revit:Revit",
       "to": "open:Revit:Revit",
       "from_readable": "Revit:Revit",
       "to_readable": "Revit:Revit",
-      "count": 99,
-      "avg_gap_seconds": 24.3
+      "count": 111,
+      "avg_gap_seconds": 27.6
     },
     {
       "from": "close:chrome:chrome",
       "to": "close:msedge:msedge",
       "from_readable": "chrome:chrome",
       "to_readable": "msedge:msedge",
-      "count": 98,
+      "count": 101,
       "avg_gap_seconds": 1.5
     },
     {
@@ -631,23 +627,31 @@
       "to": "close:chrome:chrome",
       "from_readable": "msedge:msedge",
       "to_readable": "chrome:chrome",
-      "count": 91,
-      "avg_gap_seconds": 5.1
+      "count": 95,
+      "avg_gap_seconds": 4.9
     },
     {
       "from": "open:Revit:Revit",
       "to": "close:Revit:Revit",
       "from_readable": "Revit:Revit",
       "to_readable": "Revit:Revit",
-      "count": 83,
-      "avg_gap_seconds": 21.8
+      "count": 89,
+      "avg_gap_seconds": 20.5
+    },
+    {
+      "from": "close:chrome:chrome",
+      "to": "focus:msedge:msedge",
+      "from_readable": "chrome:chrome",
+      "to_readable": "msedge:msedge",
+      "count": 58,
+      "avg_gap_seconds": 33.7
     },
     {
       "from": "focus:Revit:Revit",
       "to": "close:Revit:Revit",
       "from_readable": "Revit:Revit",
       "to_readable": "Revit:Revit",
-      "count": 52,
+      "count": 56,
       "avg_gap_seconds": 32.9
     },
     {
@@ -655,71 +659,63 @@
       "to": "open:chrome:chrome",
       "from_readable": "msedge:msedge",
       "to_readable": "chrome:chrome",
-      "count": 51,
-      "avg_gap_seconds": 3.2
-    },
-    {
-      "from": "close:chrome:chrome",
-      "to": "focus:msedge:msedge",
-      "from_readable": "chrome:chrome",
-      "to_readable": "msedge:msedge",
-      "count": 51,
-      "avg_gap_seconds": 27.1
+      "count": 56,
+      "avg_gap_seconds": 3.0
     },
     {
       "from": "open:chrome:chrome",
       "to": "open:msedge:msedge",
       "from_readable": "chrome:chrome",
       "to_readable": "msedge:msedge",
-      "count": 49,
-      "avg_gap_seconds": 7.1
+      "count": 52,
+      "avg_gap_seconds": 6.7
     },
     {
       "from": "open:chrome:chrome",
       "to": "focus:chrome:chrome",
       "from_readable": "chrome:chrome",
       "to_readable": "chrome:chrome",
-      "count": 49,
-      "avg_gap_seconds": 5.1
+      "count": 51,
+      "avg_gap_seconds": 4.9
     },
     {
       "from": "open:Revit:Revit",
       "to": "open:chrome:chrome",
       "from_readable": "Revit:Revit",
       "to_readable": "chrome:chrome",
-      "count": 48,
+      "count": 50,
       "avg_gap_seconds": 0.8
-    },
-    {
-      "from": "close:Revit:Revit",
-      "to": "close:msedge:msedge",
-      "from_readable": "Revit:Revit",
-      "to_readable": "msedge:msedge",
-      "count": 40,
-      "avg_gap_seconds": 0.6
-    },
-    {
-      "from": "focus:chrome:chrome",
-      "to": "close:chrome:chrome",
-      "from_readable": "chrome:chrome",
-      "to_readable": "chrome:chrome",
-      "count": 39,
-      "avg_gap_seconds": 36.4
     },
     {
       "from": "close:chrome:chrome",
       "to": "open:msedge:msedge",
       "from_readable": "chrome:chrome",
       "to_readable": "msedge:msedge",
-      "count": 39,
-      "avg_gap_seconds": 49.2
+      "count": 50,
+      "avg_gap_seconds": 45.2
+    },
+    {
+      "from": "focus:firefox:firefox",
+      "to": "open:firefox:firefox",
+      "from_readable": "firefox:firefox",
+      "to_readable": "firefox:firefox",
+      "count": 43,
+      "avg_gap_seconds": 29.4
+    },
+    {
+      "from": "focus:chrome:chrome",
+      "to": "close:chrome:chrome",
+      "from_readable": "chrome:chrome",
+      "to_readable": "chrome:chrome",
+      "count": 42,
+      "avg_gap_seconds": 35.1
     },
     {
       "from": "close:Revit:Revit",
-      "to": "close:Revu:Revu",
+      "to": "close:msedge:msedge",
       "from_readable": "Revit:Revit",
-      "to_readable": "Revu:Revu",
-      "count": 38,
+      "to_readable": "msedge:msedge",
+      "count": 41,
       "avg_gap_seconds": 0.6
     }
   ]

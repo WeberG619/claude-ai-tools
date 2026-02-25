@@ -1,0 +1,22 @@
+{
+  "generated_at": "2026-02-25T04:00:01.013470",
+  "next_check": "2026-02-25T05:00:01.013470",
+  "status": "clean",
+  "summary": {
+    "total_alerts": 0,
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "drafts_created": 0
+  },
+  "snapshot": {
+    "mtd_revenue": 0,
+    "mtd_expenses": 0,
+    "mtd_net": 0,
+    "total_ar": 0,
+    "unbilled_total": 0,
+    "pipeline": 0
+  },
+  "alerts": []
+}
